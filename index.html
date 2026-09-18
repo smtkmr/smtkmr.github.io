@@ -506,6 +506,103 @@
         </form>
       `;
     }
+
+    function renderVocabularyBuilder(container) {
+      container.innerHTML = `
+        <div class="bg-amber-50 border-3 border-amber-300 rounded-3xl p-5 shadow-sm space-y-3">
+          <h3 class="text-lg font-black text-amber-900 flex items-center gap-2">
+            <span>💡</span> Easy Vocabulary & Meanings (Review Words)
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm font-bold">
+            <div class="bg-white p-3 rounded-2xl border border-amber-200">
+              <span class="text-amber-700 font-black">add:</span> Put together two or more numbers (Jodna)
+            </div>
+            <div class="bg-white p-3 rounded-2xl border border-amber-200">
+              <span class="text-amber-700 font-black">add to:</span> Put more items into an existing group (Aur milana)
+            </div>
+            <div class="bg-white p-3 rounded-2xl border border-amber-200">
+              <span class="text-amber-700 font-black">1 more:</span> Exactly one extra quantity (+1 badhna)
+            </div>
+          </div>
+        </div>
+
+        <form id="vocabForm" onsubmit="evaluateVocabWorksheet(event)" class="space-y-6">
+          
+          <!-- SECTION 1: VISUALIZE IT -->
+          <div class="mint-border-card p-5 space-y-4">
+            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
+              📌 Visualize It (Draw to show 1 more & adding to)
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Q1: 1 More -->
+              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                <p class="font-black text-gray-800">1. Start with 3 Hearts 💜💜💜. What is <b>1 more</b>?</p>
+                <div class="flex items-center gap-3">
+                  <span class="text-xl font-bold">Total Hearts =</span>
+                  <input type="number" id="v_q1" min="0" placeholder="Count" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
+                </div>
+                <div id="v_sol1" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
+              </div>
+
+              <!-- Q2: Add To -->
+              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                <p class="font-black text-gray-800">2. Start with 3 Blue Cubes 🟦🟦🟦 and <b>add to</b> 1 Orange Cube 🟧. How many <b>in all</b>?</p>
+                <div class="flex items-center gap-3">
+                  <span class="text-xl font-bold">In all =</span>
+                  <input type="number" id="v_q2" min="0" placeholder="Total" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
+                </div>
+                <div id="v_sol2" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: UNDERSTAND VOCABULARY -->
+          <div class="mint-border-card p-5 space-y-4">
+            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
+              📌 Understand Vocabulary (Fill in the review words)
+            </h4>
+
+            <div class="space-y-4">
+              <!-- Q3 -->
+              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                <p class="font-black text-gray-800">
+                  3. Sue wants to know how many counters are in two groups. She can ________ to find out.
+                </p>
+                <select id="v_q3" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800 w-full sm:w-auto">
+                  <option value="">-- Choose correct word --</option>
+                  <option value="add">add</option>
+                  <option value="add to">add to</option>
+                  <option value="1 more">1 more</option>
+                </select>
+                <div id="v_sol3" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                <p class="font-black text-gray-800">
+                  4. Pete has 2 apples 🍎🍎. May has 3 apples 🍎🍎🍎. May has ________ apple than Pete.
+                </p>
+                <select id="v_q4" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800 w-full sm:w-auto">
+                  <option value="">-- Choose correct phrase --</option>
+                  <option value="add">add</option>
+                  <option value="add to">add to</option>
+                  <option value="1 more">1 more</option>
+                </select>
+                <div id="v_sol4" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="mint-btn px-10 py-4 text-white font-black text-lg rounded-2xl shadow-xl">
+              Check Answers & Show Solutions ✨
+            </button>
+          </div>
+        </form>
+      `;
+    }
+
     function evaluateVocabWorksheet(e) {
       e.preventDefault();
 
