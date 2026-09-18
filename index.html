@@ -160,7 +160,7 @@
           <button onclick="goBack('stepTopic')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back to Chapters</button>
         </div>
 
-        <!-- VIDEO CONTAINER (HIDDEN) -->
+        <!-- VIDEO CONTAINER (HIDDEN BY DEFAULT) -->
         <div id="videoContainer" class="bg-red-50 border-3 border-red-300 p-5 rounded-3xl flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hidden">
           <div class="flex items-center gap-3 text-center sm:text-left">
             <span class="text-4xl">📺</span>
@@ -210,6 +210,11 @@
     let activeSubtopic = null;
     let completedSubtopics = JSON.parse(localStorage.getItem('econova_completed_subtopics')) || [];
 
+    // Initialize progress on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateProgress();
+    });
+
     function updateProgress() {
       let total = 0;
       syllabusData.forEach(c => total += c.subtopics.length);
@@ -230,6 +235,15 @@
       document.getElementById('stepSubject').classList.add('hidden');
       document.getElementById('stepTopic').classList.remove('hidden');
       renderAccordion();
+    }
+
+    function goBack(targetStep) {
+      document.getElementById('stepClass').classList.add('hidden');
+      document.getElementById('stepSubject').classList.add('hidden');
+      document.getElementById('stepTopic').classList.add('hidden');
+      document.getElementById('stepContent').classList.add('hidden');
+
+      document.getElementById(targetStep).classList.remove('hidden');
     }
 
     function renderAccordion() {
@@ -303,15 +317,7 @@
         videoBox.classList.remove('flex');
       }
 
-      const isDone = completedSubtopics.includes(activeSubtopic.id);
-      const statusEl = document.getElementById('topicStatus');
-      if (isDone) {
-        statusEl.innerText = "Status: Completed ✅";
-        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
-      } else {
-        statusEl.innerText = activeSubtopic.hasContent ? "Status: Ready to Practice" : "Status: Pending Content";
-        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300";
-      }
+      updateSubtopicStatusUI();
 
       const contentBox = document.getElementById('subtopicContainer');
       
@@ -329,6 +335,27 @@
             </p>
           </div>
         `;
+      }
+    }
+
+    function updateSubtopicStatusUI() {
+      const isDone = completedSubtopics.includes(activeSubtopic.id);
+      const statusEl = document.getElementById('topicStatus');
+      if (isDone) {
+        statusEl.innerText = "Status: Completed ✅";
+        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
+      } else {
+        statusEl.innerText = activeSubtopic.hasContent ? "Status: Ready to Practice" : "Status: Pending Content";
+        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300";
+      }
+    }
+
+    function markSubtopicComplete(subId) {
+      if (!completedSubtopics.includes(subId)) {
+        completedSubtopics.push(subId);
+        localStorage.setItem('econova_completed_subtopics', JSON.stringify(completedSubtopics));
+        updateProgress();
+        updateSubtopicStatusUI();
       }
     }
 
@@ -507,6 +534,46 @@
       `;
     }
 
+    function evaluateWorksheet(e) {
+      e.preventDefault();
+
+      const answers = {
+        q1: { correct: "1", sol: "Number 1 is represented by 1 red dot." },
+        q2: { correct: "3", sol: "Number 3 is represented by 3 red dots." },
+        q3: { correct: "5", sol: "There are 5 chicks (🐥)." },
+        q4: { correct: "5", sol: "There are 5 eggs in the nest (🥚)." },
+        q5: { correct: "5", sol: "There are 5 flowers (🌸)." },
+        q6: { correct: "0", sol: "This ladybug has 0 spots." },
+        q7: { correct: "4", sol: "This ladybug has 4 spots." },
+        q8: { correct: "6", sol: "This ladybug has 6 spots." },
+        q9: { correct: "2", sol: "This ladybug has 2 spots." }
+      };
+
+      let score = 0;
+      let total = 9;
+
+      for (let i = 1; i <= total; i++) {
+        const key = 'q' + i;
+        const userVal = document.getElementById(key).value.trim();
+        const solEl = document.getElementById('sol' + i);
+        solEl.classList.remove('hidden');
+
+        if (userVal === answers[key].correct) {
+          score++;
+          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
+          solEl.innerHTML = `✅ Correct! ${answers[key].sol}`;
+        } else {
+          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
+          solEl.innerHTML = `❌ Answer is ${answers[key].correct}. ${answers[key].sol}`;
+        }
+      }
+
+      if (score === total) {
+        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        markSubtopicComplete('c1_s01');
+      }
+    }
+
     function renderVocabularyBuilder(container) {
       container.innerHTML = `
         <div class="bg-amber-50 border-3 border-amber-300 rounded-3xl p-5 shadow-sm space-y-3">
@@ -616,7 +683,7 @@
       let score = 0;
       let total = 4;
 
-      for (let i = 1; i <= 4; i++) {
+      for (let i = 1; i <= total; i++) {
         const key = 'v_q' + i;
         const userVal = document.getElementById(key).value.trim();
         const solEl = document.getElementById('v_sol' + i);
@@ -625,77 +692,18 @@
         if (userVal === answers[key].correct) {
           score++;
           solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
-          solEl.innerHTML = `✅ Correct! <br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
+          solEl.innerHTML = `✅ Correct! ${answers[key].sol}`;
         } else {
           solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
-          solEl.innerHTML = `❌ Your Answer: ${userVal || 'Blank'} | Correct: <b>${answers[key].correct}</b><br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
+          solEl.innerHTML = `❌ Correct answer: "${answers[key].correct}". ${answers[key].sol}`;
         }
       }
 
       if (score === total) {
-        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-        markComplete(activeSubtopic.id);
-      } else {
-        alert(`You got ${score} out of ${total} correct! Check solutions below.`);
+        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        markSubtopicComplete('c1_s02');
       }
     }
-
-    function evaluateWorksheet(e) {
-      e.preventDefault();
-
-      const answers = {
-        q1: { correct: "1", sol: "Number 1 means 1 red dot." },
-        q2: { correct: "3", sol: "Number 3 means 3 red dots." },
-        q3: { correct: "5", sol: "Count chicks one by one: 1, 2, 3, 4, 5 chicks!" },
-        q4: { correct: "5", sol: "Count eggs next to the nest: 1, 2, 3, 4, 5 eggs!" },
-        q5: { correct: "5", sol: "Count yellow flowers: 1, 2, 3, 4, 5 flowers!" },
-        q6: { correct: "0", sol: "This ladybug has NO spots, so the answer is 0." },
-        q7: { correct: "4", sol: "Counting spots on ladybug: 4 spots total." },
-        q8: { correct: "6", sol: "Counting spots on ladybug: 6 spots total." },
-        q9: { correct: "2", sol: "Counting spots on ladybug: 2 spots total." }
-      };
-
-      let score = 0;
-      let total = 9;
-
-      for (let i = 1; i <= 9; i++) {
-        const key = 'q' + i;
-        const userVal = document.getElementById(key).value.trim();
-        const solEl = document.getElementById('sol' + i);
-        solEl.classList.remove('hidden');
-
-        if (userVal === answers[key].correct) {
-          score++;
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
-          solEl.innerHTML = `✅ Correct! <br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
-        } else {
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
-          solEl.innerHTML = `❌ Your Answer: ${userVal || 'Blank'} | Correct: <b>${answers[key].correct}</b><br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
-        }
-      }
-
-      if (score === total) {
-        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-        markComplete(activeSubtopic.id);
-      } else {
-        alert(`You got ${score} out of ${total} correct! Check the solutions below to learn where you made mistakes.`);
-      }
-    }
-
-    function markComplete(subId) {
-      if (!completedSubtopics.includes(subId)) {
-        completedSubtopics.push(subId);
-        localStorage.setItem('econova_completed_subtopics', JSON.stringify(completedSubtopics));
-        updateProgress();
-      }
-    }
-
-    function goBack(stepId) {
-      document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
-      document.getElementById(stepId).classList.remove('hidden');
-    }
-
-    updateProgress();
   </script>
 </body>
 </html>
