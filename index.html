@@ -189,7 +189,7 @@
         title: "Chapter 1: Addition Concepts",
         subtopics: [
           { id: "c1_s01", title: "Show What You Know", hasContent: true, hasVideo: false },
-          { id: "c1_s02", title: "Vocabulary Builder", hasContent: false, hasVideo: false },
+          { id: "c1_s02", title: "Vocabulary Builder", hasContent: true, hasVideo: false },
           { id: "c1_s03", title: "Game: Addition Bingo", hasContent: false, hasVideo: false },
           { id: "c1_s04", title: "1.1 Algebra • Use Pictures to Add To", hasContent: false, hasVideo: false },
           { id: "c1_s05", title: "1.2 Hands On • Model Adding To", hasContent: false, hasVideo: false },
@@ -317,6 +317,8 @@
       
       if (subId === 'c1_s01') {
         renderShowWhatYouKnow(contentBox);
+      } else if (subId === 'c1_s02') {
+        renderVocabularyBuilder(contentBox);
       } else {
         contentBox.innerHTML = `
           <div class="mint-border-card p-8 text-center space-y-3">
@@ -503,6 +505,42 @@
           </div>
         </form>
       `;
+    }
+    function evaluateVocabWorksheet(e) {
+      e.preventDefault();
+
+      const answers = {
+        v_q1: { correct: "4", sol: "3 hearts + 1 more heart = 4 hearts in all." },
+        v_q2: { correct: "4", sol: "3 blue cubes + 1 orange cube = 4 cubes in all." },
+        v_q3: { correct: "add", sol: "To find the total of two groups, she can 'add'." },
+        v_q4: { correct: "1 more", sol: "May has 3 and Pete has 2. 3 is '1 more' than 2." }
+      };
+
+      let score = 0;
+      let total = 4;
+
+      for (let i = 1; i <= 4; i++) {
+        const key = 'v_q' + i;
+        const userVal = document.getElementById(key).value.trim();
+        const solEl = document.getElementById('v_sol' + i);
+        solEl.classList.remove('hidden');
+
+        if (userVal === answers[key].correct) {
+          score++;
+          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
+          solEl.innerHTML = `✅ Correct! <br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
+        } else {
+          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
+          solEl.innerHTML = `❌ Your Answer: ${userVal || 'Blank'} | Correct: <b>${answers[key].correct}</b><br><span class="text-[11px] font-normal">${answers[key].sol}</span>`;
+        }
+      }
+
+      if (score === total) {
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+        markComplete(activeSubtopic.id);
+      } else {
+        alert(`You got ${score} out of ${total} correct! Check solutions below.`);
+      }
     }
 
     function evaluateWorksheet(e) {
