@@ -3,800 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>econova.vip - Class 1 Learning Portal</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Confetti Effect -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
+  <title>Grade 1 Mathematics Hub</title>
   <style>
-    body {
-      user-select: none;
-      -webkit-user-select: none;
-      background-color: #f0fdf4;
-      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    :root {
+      --primary: #2563eb;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
     }
 
-    .mint-header {
-      background-color: #2dd4bf;
-    }
-
-    .mint-border-card {
-      background-color: #ffffff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .mint-text {
-      color: #059669;
-    }
-
-    .mint-btn {
-      background-color: #10b981;
-      transition: transform 0.15s ease, background-color 0.15s ease;
-    }
-    .mint-btn:hover {
-      background-color: #059669;
-      transform: scale(1.03);
-    }
-
-    .yt-btn {
-      background-color: #ff0000;
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
-      transition: transform 0.15s ease, background-color 0.15s ease;
-    }
-    .yt-btn:hover {
-      background-color: #cc0000;
-      transform: scale(1.04);
-    }
-
-    .card-hover {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
-    }
-
-    .accordion-header {
-      cursor: pointer;
-      user-select: none;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding: 2rem 1rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 2.5rem; }
+    header h1 { font-size: 2.25rem; color: var(--text); margin-bottom: 0.5rem; }
+    header p { color: var(--text-muted); font-size: 1.1rem; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); overflow: hidden; }
+    .card-header { padding: 1.25rem; border-bottom: 1px solid var(--border); background: #f1f5f9; }
+    .card-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+    .card-subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+    
+    .list { list-style: none; padding: 0.75rem 0; }
+    .list-item a { display: block; padding: 0.5rem 1.25rem; text-decoration: none; color: var(--text); font-size: 0.95rem; border-left: 3px solid transparent; transition: all 0.2s; }
+    .list-item a:hover { background: #eff6ff; color: var(--primary); border-left-color: var(--primary); }
+    .special-item a { font-weight: 600; color: #d97706; }
+    .special-item a:hover { color: #b45309; border-left-color: #d97706; }
   </style>
 </head>
-<body class="p-3 sm:p-6 text-gray-800">
+<body>
 
-  <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-emerald-400 overflow-hidden">
-    
-    <!-- TOP HEADER -->
-    <header class="mint-header p-4 sm:p-6 text-white flex flex-wrap justify-between items-center gap-4">
-      <div class="flex items-center gap-3">
-        <span class="text-4xl animate-bounce">✨</span>
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-300 drop-shadow-md">econova.vip</h1>
-          <p class="text-emerald-900 font-bold text-sm sm:text-base">Student Portal: <span id="studentName">Class 1 Math</span></p>
-        </div>
+<div class="container">
+  <header>
+    <h1>Grade 1 Mathematics Course Index</h1>
+    <p>Select any module or sub-topic to open its dedicated page.</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- CHAPTER 1 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 1: Addition Concepts</div>
+        <div class="card-subtitle">Domain: Operations and Algebraic Thinking</div>
       </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter1/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter1/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter1/game-addition-bingo.html">Game: Addition Bingo</a></li>
+        <li class="list-item"><a href="chapter1/1-algebra-use-pictures-to-add-to.html">1. Algebra • Use Pictures to Add To</a></li>
+        <li class="list-item"><a href="chapter1/2-hands-on-model-adding-to.html">2. Hands On • Model Adding To</a></li>
+        <li class="list-item"><a href="chapter1/3-hands-on-model-putting-together.html">3. Hands On • Model Putting Together</a></li>
+        <li class="list-item"><a href="chapter1/4-problem-solving-model-addition.html">4. Problem Solving • Model Addition</a></li>
+        <li class="list-item special-item"><a href="chapter1/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter1/5-algebra-add-zero.html">5. Algebra • Add Zero</a></li>
+        <li class="list-item"><a href="chapter1/6-hands-on-algebra-add-in-any-order.html">6. Hands On: Algebra • Add in Any Order</a></li>
+        <li class="list-item"><a href="chapter1/7-hands-on-algebra-put-together-numbers-to-10.html">7. Hands On: Algebra • Put Together Numbers to 10</a></li>
+        <li class="list-item"><a href="chapter1/8-addition-to-10.html">8. Addition to 10</a></li>
+        <li class="list-item special-item"><a href="chapter1/review-test.html">✓ Chapter 1 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter1/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-      <!-- PROGRESS TRACKER -->
-      <div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-2xl border-2 border-white/40 min-w-[200px]">
-        <div class="flex justify-between items-center text-xs font-black text-emerald-950 uppercase mb-1">
-          <span>Overall Progress</span>
-          <span id="progressText" class="text-yellow-300 text-sm">0%</span>
-        </div>
-        <div class="w-full bg-emerald-800/40 h-3.5 rounded-full overflow-hidden p-0.5 border border-white/30">
-          <div id="progressBar" class="bg-yellow-300 h-full rounded-full transition-all duration-500 w-0"></div>
-        </div>
+    <!-- CHAPTER 2 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 2: Subtraction Concepts</div>
+        <div class="card-subtitle">Domain: Operations and Algebraic Thinking</div>
       </div>
-    </header>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter2/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter2/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter2/game-subtraction-slide.html">Game: Subtraction Slide</a></li>
+        <li class="list-item"><a href="chapter2/1-use-pictures-to-show-taking-from.html">1. Use Pictures to Show Taking From</a></li>
+        <li class="list-item"><a href="chapter2/2-hands-on-model-taking-from.html">2. Hands On • Model Taking From</a></li>
+        <li class="list-item"><a href="chapter2/3-hands-on-model-taking-apart.html">3. Hands On • Model Taking Apart</a></li>
+        <li class="list-item"><a href="chapter2/4-problem-solving-model-subtraction.html">4. Problem Solving • Model Subtraction</a></li>
+        <li class="list-item"><a href="chapter2/5-use-pictures-and-subtraction-to-compare.html">5. Use Pictures and Subtraction to Compare</a></li>
+        <li class="list-item"><a href="chapter2/6-hands-on-subtract-to-compare.html">6. Hands On • Subtract to Compare</a></li>
+        <li class="list-item special-item"><a href="chapter2/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter2/7-subtract-all-or-zero.html">7. Subtract All or Zero</a></li>
+        <li class="list-item"><a href="chapter2/8-hands-on-algebra-take-apart-numbers.html">8. Hands On: Algebra • Take Apart Numbers</a></li>
+        <li class="list-item"><a href="chapter2/9-subtraction-from-10-or-less.html">9. Subtraction from 10 or Less</a></li>
+        <li class="list-item special-item"><a href="chapter2/review-test.html">✓ Chapter 2 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter2/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="p-4 sm:p-8 space-y-6">
+    <!-- CHAPTER 3 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 3: Addition Strategies</div>
+        <div class="card-subtitle">Domain: Operations and Algebraic Thinking</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter3/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter3/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter3/game-ducky-sums.html">Game: Ducky Sums</a></li>
+        <li class="list-item"><a href="chapter3/1-algebra-add-in-any-order.html">1. Algebra • Add in Any Order</a></li>
+        <li class="list-item"><a href="chapter3/2-count-on.html">2. Count On</a></li>
+        <li class="list-item"><a href="chapter3/3-hands-on-add-doubles.html">3. Hands On • Add Doubles</a></li>
+        <li class="list-item"><a href="chapter3/4-hands-on-use-doubles-to-add.html">4. Hands On • Use Doubles to Add</a></li>
+        <li class="list-item"><a href="chapter3/5-hands-on-doubles-plus-1-minus-1.html">5. Hands On • Doubles Plus 1 & Minus 1</a></li>
+        <li class="list-item"><a href="chapter3/6-practice-the-strategies.html">6. Practice the Strategies</a></li>
+        <li class="list-item special-item"><a href="chapter3/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter3/7-hands-on-add-10-and-more.html">7. Hands On • Add 10 and More</a></li>
+        <li class="list-item"><a href="chapter3/8-hands-on-make-a-10-to-add.html">8. Hands On • Make a 10 to Add</a></li>
+        <li class="list-item"><a href="chapter3/9-use-make-a-10-to-add.html">9. Use Make a 10 to Add</a></li>
+        <li class="list-item"><a href="chapter3/10-hands-on-algebra-add-3-numbers.html">10. Hands On: Algebra • Add 3 Numbers</a></li>
+        <li class="list-item"><a href="chapter3/11-algebra-add-3-numbers.html">11. Algebra • Add 3 Numbers</a></li>
+        <li class="list-item"><a href="chapter3/12-problem-solving-use-addition-strategies.html">12. Problem Solving • Use Addition Strategies</a></li>
+        <li class="list-item special-item"><a href="chapter3/review-test.html">✓ Chapter 3 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter3/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-      <!-- STEP 1: CLASS SELECTION -->
-      <section id="stepClass" class="space-y-6">
-        <div class="mint-border-card p-4 sm:p-6 text-center">
-          <h2 class="text-2xl sm:text-3xl font-black mint-text flex items-center justify-center gap-2">
-            <span>👇</span> SELECT YOUR CLASS / GRADE:
-          </h2>
-        </div>
+    <!-- CHAPTER 4 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 4: Subtraction Strategies</div>
+        <div class="card-subtitle">Domain: Operations and Algebraic Thinking</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter4/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter4/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter4/game-under-the-sea.html">Game: Under the Sea</a></li>
+        <li class="list-item"><a href="chapter4/1-count-back.html">1. Count Back</a></li>
+        <li class="list-item"><a href="chapter4/2-hands-on-think-addition-to-subtract.html">2. Hands On • Think Addition to Subtract</a></li>
+        <li class="list-item"><a href="chapter4/3-use-think-addition-to-subtract.html">3. Use Think Addition to Subtract</a></li>
+        <li class="list-item special-item"><a href="chapter4/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter4/4-hands-on-use-10-to-subtract.html">4. Hands On • Use 10 to Subtract</a></li>
+        <li class="list-item"><a href="chapter4/5-break-apart-to-subtract.html">5. Break Apart to Subtract</a></li>
+        <li class="list-item"><a href="chapter4/6-problem-solving-use-subtraction-strategies.html">6. Problem Solving • Use Subtraction Strategies</a></li>
+        <li class="list-item special-item"><a href="chapter4/review-test.html">✓ Chapter 4 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter4/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-          <button onclick="selectClass('Class 1')" class="card-hover p-6 bg-emerald-50 border-3 border-emerald-300 hover:border-emerald-500 rounded-3xl font-black text-emerald-800 text-xl shadow-md flex flex-col items-center gap-2">
-            <span class="text-4xl">🎒</span> Class 1
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-4xl">📚</span> Class 2 (Soon)
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-4xl">🎨</span> Class 3 (Soon)
-          </button>
-        </div>
-      </section>
+    <!-- CHAPTER 5 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 5: Addition & Subtraction Relationships</div>
+        <div class="card-subtitle">Domain: Operations and Algebraic Thinking</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter5/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter5/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter5/game-add-to-subtract-bingo.html">Game: Add to Subtract Bingo</a></li>
+        <li class="list-item"><a href="chapter5/1-problem-solving-add-or-subtract.html">1. Problem Solving • Add or Subtract</a></li>
+        <li class="list-item"><a href="chapter5/2-hands-on-record-related-facts.html">2. Hands On • Record Related Facts</a></li>
+        <li class="list-item"><a href="chapter5/3-identify-related-facts.html">3. Identify Related Facts</a></li>
+        <li class="list-item"><a href="chapter5/4-use-addition-to-check-subtraction.html">4. Use Addition to Check Subtraction</a></li>
+        <li class="list-item special-item"><a href="chapter5/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter5/5-hands-on-algebra-missing-numbers.html">5. Hands On: Algebra • Missing Numbers</a></li>
+        <li class="list-item"><a href="chapter5/6-algebra-use-related-facts.html">6. Algebra • Use Related Facts</a></li>
+        <li class="list-item"><a href="chapter5/7-choose-an-operation.html">7. Choose an Operation</a></li>
+        <li class="list-item"><a href="chapter5/8-hands-on-algebra-ways-to-make-numbers-to-20.html">8. Hands On: Algebra • Ways to Make Numbers to 20</a></li>
+        <li class="list-item"><a href="chapter5/9-algebra-equal-and-not-equal.html">9. Algebra • Equal and Not Equal</a></li>
+        <li class="list-item"><a href="chapter5/10-basic-facts-to-20.html">10. Basic Facts to 20</a></li>
+        <li class="list-item special-item"><a href="chapter5/review-test.html">✓ Chapter 5 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter5/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-      <!-- STEP 2: SUBJECT SELECTION -->
-      <section id="stepSubject" class="space-y-6 hidden">
-        <div class="flex items-center justify-between">
-          <h2 class="text-2xl font-black mint-text">Select Subject (<span id="selectedClassLabel" class="text-amber-500"></span>)</h2>
-          <button onclick="goBack('stepClass')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Change Class</button>
-        </div>
+    <!-- CHAPTER 6 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 6: Count and Model Numbers</div>
+        <div class="card-subtitle">Domain: Number and Operations in Base Ten</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter6/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter6/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter6/game-show-the-numbers.html">Game: Show the Numbers</a></li>
+        <li class="list-item"><a href="chapter6/1-count-by-ones-to-120.html">1. Count by Ones to 120</a></li>
+        <li class="list-item"><a href="chapter6/2-count-by-tens-to-120.html">2. Count by Tens to 120</a></li>
+        <li class="list-item"><a href="chapter6/3-understand-ten-and-ones.html">3. Understand Ten and Ones</a></li>
+        <li class="list-item"><a href="chapter6/4-hands-on-make-ten-and-ones.html">4. Hands On • Make Ten and Ones</a></li>
+        <li class="list-item"><a href="chapter6/5-hands-on-tens.html">5. Hands On • Tens</a></li>
+        <li class="list-item special-item"><a href="chapter6/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter6/6-hands-on-tens-and-ones-to-50.html">6. Hands On • Tens and Ones to 50</a></li>
+        <li class="list-item"><a href="chapter6/7-hands-on-tens-and-ones-to-100.html">7. Hands On • Tens and Ones to 100</a></li>
+        <li class="list-item"><a href="chapter6/8-problem-solving-show-numbers-in-different-ways.html">8. Problem Solving • Show Numbers in Different Ways</a></li>
+        <li class="list-item"><a href="chapter6/9-hands-on-model-read-write-100-to-110.html">9. Hands On • Model, Read, Write 100-110</a></li>
+        <li class="list-item"><a href="chapter6/10-hands-on-model-read-write-110-to-120.html">10. Hands On • Model, Read, Write 110-120</a></li>
+        <li class="list-item special-item"><a href="chapter6/review-test.html">✓ Chapter 6 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter6/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          <button onclick="selectSubject('Mathematics')" class="card-hover p-6 bg-amber-50 border-3 border-amber-300 hover:border-amber-500 rounded-3xl font-black text-amber-900 text-xl shadow-md flex flex-col items-center gap-2">
-            <span class="text-5xl">🔢</span> Mathematics
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-5xl">🔬</span> Science (Soon)
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-5xl">📖</span> English (Soon)
-          </button>
-        </div>
-      </section>
+    <!-- CHAPTER 7 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 7: Compare Numbers</div>
+        <div class="card-subtitle">Domain: Number and Operations in Base Ten</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter7/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter7/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter7/game-rainy-day-bingo.html">Game: Rainy Day Bingo</a></li>
+        <li class="list-item"><a href="chapter7/1-hands-on-algebra-greater-than.html">1. Hands On: Algebra • Greater Than</a></li>
+        <li class="list-item"><a href="chapter7/2-hands-on-algebra-less-than.html">2. Hands On: Algebra • Less Than</a></li>
+        <li class="list-item"><a href="chapter7/3-hands-on-algebra-use-symbols-to-compare.html">3. Hands On: Algebra • Use Symbols to Compare</a></li>
+        <li class="list-item special-item"><a href="chapter7/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter7/4-problem-solving-compare-numbers.html">4. Problem Solving • Compare Numbers</a></li>
+        <li class="list-item"><a href="chapter7/5-hands-on-10-less-10-more.html">5. Hands On • 10 Less, 10 More</a></li>
+        <li class="list-item special-item"><a href="chapter7/review-test.html">✓ Chapter 7 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter7/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-      <!-- STEP 3: CHAPTERS & TOPICS LIST -->
-      <section id="stepTopic" class="space-y-6 hidden">
-        <div class="flex items-center justify-between">
-          <div>
-            <h2 class="text-2xl font-black mint-text">Class 1 Mathematics</h2>
-            <p class="text-xs font-bold text-gray-500">Complete Syllabus (Chapters 1 to 12)</p>
-          </div>
-          <button onclick="goBack('stepSubject')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back</button>
-        </div>
+    <!-- CHAPTER 8 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 8: Two-Digit Addition & Subtraction</div>
+        <div class="card-subtitle">Domain: Number and Operations in Base Ten</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter8/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter8/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter8/game-neighborhood-sums.html">Game: Neighborhood Sums</a></li>
+        <li class="list-item"><a href="chapter8/1-add-and-subtract-within-20.html">1. Add and Subtract within 20</a></li>
+        <li class="list-item"><a href="chapter8/2-hands-on-add-tens.html">2. Hands On • Add Tens</a></li>
+        <li class="list-item"><a href="chapter8/3-hands-on-subtract-tens.html">3. Hands On • Subtract Tens</a></li>
+        <li class="list-item special-item"><a href="chapter8/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter8/4-use-a-hundred-chart-to-add.html">4. Use a Hundred Chart to Add</a></li>
+        <li class="list-item"><a href="chapter8/5-hands-on-use-models-to-add.html">5. Hands On • Use Models to Add</a></li>
+        <li class="list-item"><a href="chapter8/6-hands-on-make-ten-to-add.html">6. Hands On • Make Ten to Add</a></li>
+        <li class="list-item"><a href="chapter8/7-hands-on-use-place-value-to-add.html">7. Hands On • Use Place Value to Add</a></li>
+        <li class="list-item"><a href="chapter8/8-problem-solving-addition-word-problems.html">8. Problem Solving • Addition Word Problems</a></li>
+        <li class="list-item"><a href="chapter8/9-practice-addition-and-subtraction.html">9. Practice Addition and Subtraction</a></li>
+        <li class="list-item special-item"><a href="chapter8/review-test.html">✓ Chapter 8 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter8/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-        <div id="chapterAccordion" class="space-y-4"></div>
-      </section>
+    <!-- CHAPTER 9 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 9: Measurement</div>
+        <div class="card-subtitle">Domain: Measurement and Data</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter9/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter9/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter9/game-measure-up.html">Game: Measure Up!</a></li>
+        <li class="list-item"><a href="chapter9/1-hands-on-order-length.html">1. Hands On • Order Length</a></li>
+        <li class="list-item"><a href="chapter9/2-indirect-measurement.html">2. Indirect Measurement</a></li>
+        <li class="list-item"><a href="chapter9/3-hands-on-nonstandard-units-length.html">3. Hands On • Nonstandard Units to Measure Length</a></li>
+        <li class="list-item"><a href="chapter9/4-hands-on-nonstandard-measuring-tool.html">4. Hands On • Make Nonstandard Measuring Tool</a></li>
+        <li class="list-item"><a href="chapter9/5-problem-solving-measure-and-compare.html">5. Problem Solving • Measure and Compare</a></li>
+        <li class="list-item special-item"><a href="chapter9/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter9/6-time-to-the-hour.html">6. Time to the Hour</a></li>
+        <li class="list-item"><a href="chapter9/7-time-to-the-half-hour.html">7. Time to the Half Hour</a></li>
+        <li class="list-item"><a href="chapter9/8-tell-time-to-hour-and-half-hour.html">8. Tell Time to the Hour and Half Hour</a></li>
+        <li class="list-item"><a href="chapter9/9-practice-time.html">9. Practice Time to the Hour and Half Hour</a></li>
+        <li class="list-item special-item"><a href="chapter9/review-test.html">✓ Chapter 9 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter9/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-      <!-- STEP 4: TOPIC CONTENT CONTAINER -->
-      <section id="stepContent" class="space-y-8 hidden">
-        
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b-4 border-emerald-100 pb-4">
-          <div>
-            <h2 id="topicTitle" class="text-2xl sm:text-3xl font-black text-emerald-700"></h2>
-            <span id="topicStatus" class="inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300">Status: Incomplete</span>
-          </div>
-          <button onclick="goBack('stepTopic')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back to Chapters</button>
-        </div>
+    <!-- CHAPTER 10 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 10: Represent Data</div>
+        <div class="card-subtitle">Domain: Measurement and Data</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter10/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter10/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter10/game-graph-game.html">Game: Graph Game</a></li>
+        <li class="list-item"><a href="chapter10/1-read-picture-graphs.html">1. Read Picture Graphs</a></li>
+        <li class="list-item"><a href="chapter10/2-hands-on-make-picture-graphs.html">2. Hands On • Make Picture Graphs</a></li>
+        <li class="list-item"><a href="chapter10/3-read-bar-graphs.html">3. Read Bar Graphs</a></li>
+        <li class="list-item"><a href="chapter10/4-hands-on-make-bar-graphs.html">4. Hands On • Make Bar Graphs</a></li>
+        <li class="list-item special-item"><a href="chapter10/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter10/5-read-tally-charts.html">5. Read Tally Charts</a></li>
+        <li class="list-item"><a href="chapter10/6-hands-on-make-tally-charts.html">6. Hands On • Make Tally Charts</a></li>
+        <li class="list-item"><a href="chapter10/7-problem-solving-represent-data.html">7. Problem Solving • Represent Data</a></li>
+        <li class="list-item special-item"><a href="chapter10/review-test.html">✓ Chapter 10 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter10/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-        <!-- VIDEO CONTAINER (HIDDEN BY DEFAULT) -->
-        <div id="videoContainer" class="bg-red-50 border-3 border-red-300 p-5 rounded-3xl flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hidden">
-          <div class="flex items-center gap-3 text-center sm:text-left">
-            <span class="text-4xl">📺</span>
-            <div>
-              <h3 class="text-lg font-black text-red-900">Watch Video Lesson</h3>
-              <p class="text-xs font-bold text-red-700">Watch video explanation before starting!</p>
-            </div>
-          </div>
-          <a id="youtubeLessonBtn" href="#" target="_blank" class="yt-btn px-6 py-3 font-black rounded-2xl flex items-center gap-2 text-base shadow-lg shrink-0">
-            <span>Play Video</span> ▶
-          </a>
-        </div>
+    <!-- CHAPTER 11 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 11: Three-Dimensional Geometry</div>
+        <div class="card-subtitle">Domain: Geometry</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter11/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter11/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter11/game-shape-match-bingo.html">Game: Shape Match Bingo</a></li>
+        <li class="list-item"><a href="chapter11/1-hands-on-three-dimensional-shapes.html">1. Hands On • Three-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter11/2-hands-on-combine-three-dimensional-shapes.html">2. Hands On • Combine Three-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter11/3-hands-on-make-new-three-dimensional-shapes.html">3. Hands On • Make New Three-Dimensional Shapes</a></li>
+        <li class="list-item special-item"><a href="chapter11/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter11/4-problem-solving-take-apart-3d-shapes.html">4. Problem Solving • Take Apart Three-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter11/5-hands-on-2d-shapes-on-3d-shapes.html">5. Hands On • Two-Dimensional Shapes on Three-Dimensional Shapes</a></li>
+        <li class="list-item special-item"><a href="chapter11/review-test.html">✓ Chapter 11 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter11/performance-task.html">Performance Task</a></li>
+      </ul>
+    </div>
 
-        <!-- DYNAMIC CONTENT / WORKSHEET -->
-        <div id="subtopicContainer" class="space-y-6"></div>
+    <!-- CHAPTER 12 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chapter 12: Two-Dimensional Geometry</div>
+        <div class="card-subtitle">Domain: Geometry</div>
+      </div>
+      <ul class="list">
+        <li class="list-item special-item"><a href="chapter12/show-what-you-know.html">✓ Show What You Know</a></li>
+        <li class="list-item"><a href="chapter12/vocabulary-builder.html">Vocabulary Builder</a></li>
+        <li class="list-item"><a href="chapter12/game-rocket-shapes.html">Game: Rocket Shapes</a></li>
+        <li class="list-item"><a href="chapter12/1-sort-two-dimensional-shapes.html">1. Sort Two-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter12/2-hands-on-describe-2d-shapes.html">2. Hands On • Describe Two-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter12/3-hands-on-combine-2d-shapes.html">3. Hands On • Combine Two-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter12/4-combine-more-shapes.html">4. Combine More Shapes</a></li>
+        <li class="list-item"><a href="chapter12/5-problem-solving-make-new-2d-shapes.html">5. Problem Solving • Make New Two-Dimensional Shapes</a></li>
+        <li class="list-item special-item"><a href="chapter12/mid-chapter-checkpoint.html">✓ Mid-Chapter Checkpoint</a></li>
+        <li class="list-item"><a href="chapter12/6-hands-on-find-shapes-in-shapes.html">6. Hands On • Find Shapes in Shapes</a></li>
+        <li class="list-item"><a href="chapter12/7-take-apart-2d-shapes.html">7. Take Apart Two-Dimensional Shapes</a></li>
+        <li class="list-item"><a href="chapter12/8-equal-or-unequal-parts.html">8. Equal or Unequal Parts</a></li>
+        <li class="list-item"><a href="chapter12/9-halves.html">9. Halves</a></li>
+        <li class="list-item"><a href="chapter12/10-fourths.html">10. Fourths</a></li>
+        <li class="list-item special-item"><a href="chapter12/review-test.html">✓ Chapter 12 Review/Test</a></li>
+        <li class="list-item special-item"><a href="chapter12/performance-task.html">Performance Task</a></li>
+        <li class="list-item"><a href="picture-glossary.html">Picture Glossary</a></li>
+      </ul>
+    </div>
 
-      </section>
-
-    </main>
   </div>
+</div>
 
-  <script>
-    const syllabusData = [
-      {
-        chapterId: "ch1",
-        title: "Chapter 1: Addition Concepts",
-        subtopics: [
-          { id: "c1_s01", title: "Show What You Know", hasContent: true, hasVideo: false },
-          { id: "c1_s02", title: "Vocabulary Builder", hasContent: true, hasVideo: false },
-          { id: "c1_s03", title: "Game: Addition Bingo", hasContent: true, hasVideo: false },
-          { id: "c1_s04", title: "1.1 Algebra • Use Pictures to Add To", hasContent: false, hasVideo: false },
-          { id: "c1_s05", title: "1.2 Hands On • Model Adding To", hasContent: false, hasVideo: false },
-          { id: "c1_s06", title: "1.3 Hands On • Model Putting Together", hasContent: false, hasVideo: false },
-          { id: "c1_s07", title: "1.4 Problem Solving • Model Addition", hasContent: false, hasVideo: false },
-          { id: "c1_s08", title: "Mid-Chapter Checkpoint", hasContent: false, hasVideo: false },
-          { id: "c1_s09", title: "1.5 Algebra • Add Zero", hasContent: false, hasVideo: false },
-          { id: "c1_s10", title: "1.6 Hands On: Algebra • Add in Any Order", hasContent: false, hasVideo: false },
-          { id: "c1_s11", title: "1.7 Hands On: Algebra • Put Together Numbers to 10", hasContent: false, hasVideo: false },
-          { id: "c1_s12", title: "1.8 Addition to 10", hasContent: false, hasVideo: false },
-          { id: "c1_s13", title: "Chapter 1 Review/Test & Performance Task", hasContent: false, hasVideo: false }
-        ]
-      }
-    ];
-
-    let selectedClass = "Class 1";
-    let selectedSubject = "Mathematics";
-    let activeSubtopic = null;
-    let completedSubtopics = JSON.parse(localStorage.getItem('econova_completed_subtopics')) || [];
-
-    document.addEventListener('DOMContentLoaded', () => {
-      updateProgress();
-    });
-
-    function updateProgress() {
-      let total = 0;
-      syllabusData.forEach(c => total += c.subtopics.length);
-      const percentage = Math.min(100, Math.round((completedSubtopics.length / total) * 100));
-      document.getElementById('progressBar').style.width = percentage + '%';
-      document.getElementById('progressText').innerText = percentage + '%';
-    }
-
-    function selectClass(className) {
-      selectedClass = className;
-      document.getElementById('selectedClassLabel').innerText = className;
-      document.getElementById('stepClass').classList.add('hidden');
-      document.getElementById('stepSubject').classList.remove('hidden');
-    }
-
-    function selectSubject(subjectName) {
-      selectedSubject = subjectName;
-      document.getElementById('stepSubject').classList.add('hidden');
-      document.getElementById('stepTopic').classList.remove('hidden');
-      renderAccordion();
-    }
-
-    function goBack(targetStep) {
-      document.getElementById('stepClass').classList.add('hidden');
-      document.getElementById('stepSubject').classList.add('hidden');
-      document.getElementById('stepTopic').classList.add('hidden');
-      document.getElementById('stepContent').classList.add('hidden');
-
-      document.getElementById(targetStep).classList.remove('hidden');
-    }
-
-    function renderAccordion() {
-      const container = document.getElementById('chapterAccordion');
-      container.innerHTML = '';
-
-      syllabusData.forEach((ch, idx) => {
-        const isFirst = idx === 0;
-        let subitemsHtml = ch.subtopics.map(sub => {
-          const isDone = completedSubtopics.includes(sub.id);
-          const hasContentTag = sub.hasContent 
-            ? `<span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-black border border-emerald-300">Ready</span>` 
-            : `<span class="bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded-full font-bold">Pending</span>`;
-
-          return `
-            <div onclick="openSubtopic('${ch.chapterId}', '${sub.id}')" class="p-3 bg-white hover:bg-emerald-50 rounded-xl border border-gray-200 flex justify-between items-center cursor-pointer transition-all">
-              <div class="flex items-center gap-2">
-                <span class="text-lg">${isDone ? '✅' : '📄'}</span>
-                <span class="font-black text-sm text-gray-800">${sub.title}</span>
-              </div>
-              <div class="flex items-center gap-2">
-                ${hasContentTag}
-                <span class="text-xs font-black text-emerald-600">➔</span>
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        container.innerHTML += `
-          <div class="border-3 border-emerald-300 rounded-2xl overflow-hidden bg-white shadow-sm">
-            <div onclick="toggleAccordion('${ch.chapterId}')" class="accordion-header bg-emerald-50 p-4 flex justify-between items-center font-black text-emerald-900 hover:bg-emerald-100">
-              <div class="flex items-center gap-2 text-base sm:text-lg">
-                <span>📚</span> ${ch.title}
-              </div>
-              <span id="icon-${ch.chapterId}" class="text-xl">${isFirst ? '➖' : '➕'}</span>
-            </div>
-            <div id="body-${ch.chapterId}" class="p-3 space-y-2 ${isFirst ? '' : 'hidden'} bg-slate-50 border-t border-emerald-200">
-              ${subitemsHtml}
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    function toggleAccordion(chId) {
-      const body = document.getElementById(`body-${chId}`);
-      const icon = document.getElementById(`icon-${chId}`);
-      if (body.classList.contains('hidden')) {
-        body.classList.remove('hidden');
-        icon.innerText = '➖';
-      } else {
-        body.classList.add('hidden');
-        icon.innerText = '➕';
-      }
-    }
-
-    function openSubtopic(chId, subId) {
-      const chapter = syllabusData.find(c => c.chapterId === chId);
-      activeSubtopic = chapter.subtopics.find(s => s.id === subId);
-
-      document.getElementById('stepTopic').classList.add('hidden');
-      document.getElementById('stepContent').classList.remove('hidden');
-      document.getElementById('topicTitle').innerText = `${chapter.title} - ${activeSubtopic.title}`;
-      
-      const videoBox = document.getElementById('videoContainer');
-      if (activeSubtopic.hasVideo) {
-        videoBox.classList.remove('hidden');
-        videoBox.classList.add('flex');
-      } else {
-        videoBox.classList.add('hidden');
-        videoBox.classList.remove('flex');
-      }
-
-      updateSubtopicStatusUI();
-
-      const contentBox = document.getElementById('subtopicContainer');
-      
-      if (subId === 'c1_s01') {
-        renderShowWhatYouKnow(contentBox);
-      } else if (subId === 'c1_s02') {
-        renderVocabularyBuilder(contentBox);
-      } else if (subId === 'c1_s03') {
-        renderAdditionBingo(contentBox);
-      } else {
-        contentBox.innerHTML = `
-          <div class="mint-border-card p-8 text-center space-y-3">
-            <span class="text-5xl">🛠️</span>
-            <h3 class="text-xl font-black text-gray-700">Aapka placeholder tayyar hai!</h3>
-            <p class="text-sm text-gray-500 font-bold max-w-md mx-auto">
-              Aap jab bhi is section <b>"${activeSubtopic.title}"</b> ka content denge, mai yahan par interactive content add kar dunga!
-            </p>
-          </div>
-        `;
-      }
-    }
-
-    function updateSubtopicStatusUI() {
-      const isDone = completedSubtopics.includes(activeSubtopic.id);
-      const statusEl = document.getElementById('topicStatus');
-      if (isDone) {
-        statusEl.innerText = "Status: Completed ✅";
-        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
-      } else {
-        statusEl.innerText = activeSubtopic.hasContent ? "Status: Ready to Practice" : "Status: Pending Content";
-        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300";
-      }
-    }
-
-    function markSubtopicComplete(subId) {
-      if (!completedSubtopics.includes(subId)) {
-        completedSubtopics.push(subId);
-        localStorage.setItem('econova_completed_subtopics', JSON.stringify(completedSubtopics));
-        updateProgress();
-        updateSubtopicStatusUI();
-      }
-    }
-
-    function renderShowWhatYouKnow(container) {
-      container.innerHTML = `
-        <div class="bg-amber-50 border-3 border-amber-300 rounded-3xl p-5 shadow-sm space-y-3">
-          <h3 class="text-lg font-black text-amber-900 flex items-center gap-2">
-            <span>💡</span> Easy Vocabulary & Meanings (Aasan Shabd-Arth)
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-bold">
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">Explore:</span> To look closely and learn (Khojna / Seekhna)
-            </div>
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">Objects:</span> Things you can see and touch (Cheezein / Vastu)
-            </div>
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">Group:</span> A collection of things together (Samooh)
-            </div>
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">Spots:</span> Small round marks or dots (Dhabbe / Bindu)
-            </div>
-          </div>
-        </div>
-
-        <form id="worksheetForm" onsubmit="evaluateWorksheet(event)" class="space-y-6">
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Section 1: Explore Numbers 1 to 4
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">1. How many dots represent number <b>1</b>?</p>
-                <div class="flex items-center gap-4">
-                  <span class="text-2xl font-black text-emerald-700">1</span>
-                  <select id="q1" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800">
-                    <option value="">Select dots</option>
-                    <option value="1">🔴 (1 Dot)</option>
-                    <option value="2">🔴 🔴 (2 Dots)</option>
-                    <option value="3">🔴 🔴 🔴 (3 Dots)</option>
-                  </select>
-                </div>
-                <div id="sol1" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">2. How many dots represent number <b>3</b>?</p>
-                <div class="flex items-center gap-4">
-                  <span class="text-2xl font-black text-emerald-700">3</span>
-                  <select id="q2" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800">
-                    <option value="">Select dots</option>
-                    <option value="2">🔴 🔴 (2 Dots)</option>
-                    <option value="3">🔴 🔴 🔴 (3 Dots)</option>
-                    <option value="4">🔴 🔴 🔴 🔴 (4 Dots)</option>
-                  </select>
-                </div>
-                <div id="sol2" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Section 2: Numbers 1 to 10 (How many objects are in each group?)
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <div class="text-3xl flex justify-center gap-1">🐥🐥🐥🐥🐥</div>
-                <p class="font-black text-gray-800">3. How many chicks?</p>
-                <input type="number" id="q3" min="0" placeholder="Answer" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol3" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <div class="flex justify-center items-center bg-amber-200/60 p-2 rounded-2xl border-2 border-amber-400 min-h-[50px] gap-1">
-                  <span class="text-2xl">🪹</span>
-                  <div class="flex gap-1 text-xl">🥚🥚🥚🥚🥚</div>
-                </div>
-                <p class="font-black text-gray-800">4. How many eggs?</p>
-                <input type="number" id="q4" min="0" placeholder="Answer" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol4" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <div class="text-3xl flex justify-center gap-1">🌸🌸🌸🌸🌸</div>
-                <p class="font-black text-gray-800">5. How many flowers?</p>
-                <input type="number" id="q5" min="0" placeholder="Answer" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol5" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Section 3: Numbers 0 to 10 (How many spots are on the ladybug?)
-            </h4>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2 text-center flex flex-col items-center">
-                <svg width="60" height="60" viewBox="0 0 100 100">
-                  <ellipse cx="50" cy="55" rx="35" ry="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
-                  <line x1="50" y1="25" x2="50" y2="85" stroke="#000" stroke-width="3"/>
-                  <circle cx="50" cy="30" r="15" fill="#000"/>
-                </svg>
-                <p class="text-xs font-black text-gray-600">6. Plain Ladybug</p>
-                <input type="number" id="q6" min="0" placeholder="Spots" class="w-20 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol6" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left w-full"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2 text-center flex flex-col items-center">
-                <svg width="60" height="60" viewBox="0 0 100 100">
-                  <ellipse cx="50" cy="55" rx="35" ry="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
-                  <line x1="50" y1="25" x2="50" y2="85" stroke="#000" stroke-width="3"/>
-                  <circle cx="50" cy="30" r="15" fill="#000"/>
-                  <circle cx="32" cy="48" r="5" fill="#000"/>
-                  <circle cx="68" cy="48" r="5" fill="#000"/>
-                  <circle cx="32" cy="68" r="5" fill="#000"/>
-                  <circle cx="68" cy="68" r="5" fill="#000"/>
-                </svg>
-                <p class="text-xs font-black text-gray-600">7. 4-Spot Ladybug</p>
-                <input type="number" id="q7" min="0" placeholder="Spots" class="w-20 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol7" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left w-full"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2 text-center flex flex-col items-center">
-                <svg width="60" height="60" viewBox="0 0 100 100">
-                  <ellipse cx="50" cy="55" rx="35" ry="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
-                  <line x1="50" y1="25" x2="50" y2="85" stroke="#000" stroke-width="3"/>
-                  <circle cx="50" cy="30" r="15" fill="#000"/>
-                  <circle cx="32" cy="42" r="4.5" fill="#000"/>
-                  <circle cx="68" cy="42" r="4.5" fill="#000"/>
-                  <circle cx="28" cy="58" r="4.5" fill="#000"/>
-                  <circle cx="72" cy="58" r="4.5" fill="#000"/>
-                  <circle cx="35" cy="72" r="4.5" fill="#000"/>
-                  <circle cx="65" cy="72" r="4.5" fill="#000"/>
-                </svg>
-                <p class="text-xs font-black text-gray-600">8. 6-Spot Ladybug</p>
-                <input type="number" id="q8" min="0" placeholder="Spots" class="w-20 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol8" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left w-full"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2 text-center flex flex-col items-center">
-                <svg width="60" height="60" viewBox="0 0 100 100">
-                  <ellipse cx="50" cy="55" rx="35" ry="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
-                  <line x1="50" y1="25" x2="50" y2="85" stroke="#000" stroke-width="3"/>
-                  <circle cx="50" cy="30" r="15" fill="#000"/>
-                  <circle cx="32" cy="55" r="5" fill="#000"/>
-                  <circle cx="68" cy="55" r="5" fill="#000"/>
-                </svg>
-                <p class="text-xs font-black text-gray-600">9. 2-Spot Ladybug</p>
-                <input type="number" id="q9" min="0" placeholder="Spots" class="w-20 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="sol9" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center pt-2">
-            <button type="submit" class="mint-btn px-10 py-4 text-white font-black text-lg rounded-2xl shadow-xl">
-              Check Answers & Show Solutions ✨
-            </button>
-          </div>
-        </form>
-      `;
-    }
-
-    function evaluateWorksheet(e) {
-      e.preventDefault();
-
-      const answers = {
-        q1: { correct: "1", sol: "Number 1 is represented by 1 red dot." },
-        q2: { correct: "3", sol: "Number 3 is represented by 3 red dots." },
-        q3: { correct: "5", sol: "There are 5 chicks (🐥)." },
-        q4: { correct: "5", sol: "There are 5 eggs in the nest (🥚)." },
-        q5: { correct: "5", sol: "There are 5 flowers (🌸)." },
-        q6: { correct: "0", sol: "This ladybug has 0 spots." },
-        q7: { correct: "4", sol: "This ladybug has 4 spots." },
-        q8: { correct: "6", sol: "This ladybug has 6 spots." },
-        q9: { correct: "2", sol: "This ladybug has 2 spots." }
-      };
-
-      let score = 0;
-      let total = 9;
-
-      for (let i = 1; i <= total; i++) {
-        const key = 'q' + i;
-        const userVal = document.getElementById(key).value.trim();
-        const solEl = document.getElementById('sol' + i);
-        solEl.classList.remove('hidden');
-
-        if (userVal === answers[key].correct) {
-          score++;
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
-          solEl.innerHTML = `✅ Correct! ${answers[key].sol}`;
-        } else {
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
-          solEl.innerHTML = `❌ Answer is ${answers[key].correct}. ${answers[key].sol}`;
-        }
-      }
-
-      if (score === total) {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-        markSubtopicComplete('c1_s01');
-      }
-    }
-
-    function renderVocabularyBuilder(container) {
-      container.innerHTML = `
-        <div class="bg-amber-50 border-3 border-amber-300 rounded-3xl p-5 shadow-sm space-y-3">
-          <h3 class="text-lg font-black text-amber-900 flex items-center gap-2">
-            <span>💡</span> Easy Vocabulary & Meanings (Review Words)
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm font-bold">
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">add:</span> Put together two or more numbers (Jodna)
-            </div>
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">add to:</span> Put more items into an existing group (Aur milana)
-            </div>
-            <div class="bg-white p-3 rounded-2xl border border-amber-200">
-              <span class="text-amber-700 font-black">1 more:</span> Exactly one extra quantity (+1 badhna)
-            </div>
-          </div>
-        </div>
-
-        <form id="vocabForm" onsubmit="evaluateVocabWorksheet(event)" class="space-y-6">
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Visualize It (Draw to show 1 more & adding to)
-            </h4>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">1. Start with 3 Hearts 💜💜💜. What is <b>1 more</b>?</p>
-                <div class="flex items-center gap-3">
-                  <span class="text-xl font-bold">Total Hearts =</span>
-                  <input type="number" id="v_q1" min="0" placeholder="Count" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                </div>
-                <div id="v_sol1" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">2. Start with 3 Blue Cubes 🟦🟦🟦 and <b>add to</b> 1 Orange Cube 🟧. How many <b>in all</b>?</p>
-                <div class="flex items-center gap-3">
-                  <span class="text-xl font-bold">In all =</span>
-                  <input type="number" id="v_q2" min="0" placeholder="Total" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                </div>
-                <div id="v_sol2" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Understand Vocabulary (Fill in the review words)
-            </h4>
-
-            <div class="space-y-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">
-                  3. Sue wants to know how many counters are in two groups. She can ________ to find out.
-                </p>
-                <select id="v_q3" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800 w-full sm:w-auto">
-                  <option value="">-- Choose correct word --</option>
-                  <option value="add">add</option>
-                  <option value="add to">add to</option>
-                  <option value="1 more">1 more</option>
-                </select>
-                <div id="v_sol3" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
-                <p class="font-black text-gray-800">
-                  4. Pete has 2 apples 🍎🍎. May has 3 apples 🍎🍎🍎. May has ________ apple than Pete.
-                </p>
-                <select id="v_q4" class="p-2 rounded-xl border-2 border-emerald-400 font-bold bg-white text-gray-800 w-full sm:w-auto">
-                  <option value="">-- Choose correct phrase --</option>
-                  <option value="add">add</option>
-                  <option value="add to">add to</option>
-                  <option value="1 more">1 more</option>
-                </select>
-                <div id="v_sol4" class="hidden text-xs font-bold p-2 rounded-xl mt-2"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center pt-2">
-            <button type="submit" class="mint-btn px-10 py-4 text-white font-black text-lg rounded-2xl shadow-xl">
-              Check Answers & Show Solutions ✨
-            </button>
-          </div>
-        </form>
-      `;
-    }
-
-    function evaluateVocabWorksheet(e) {
-      e.preventDefault();
-
-      const answers = {
-        v_q1: { correct: "4", sol: "3 hearts + 1 more heart = 4 hearts in all." },
-        v_q2: { correct: "4", sol: "3 blue cubes + 1 orange cube = 4 cubes in all." },
-        v_q3: { correct: "add", sol: "To find the total of two groups, she can 'add'." },
-        v_q4: { correct: "1 more", sol: "May has 3 and Pete has 2. 3 is '1 more' than 2." }
-      };
-
-      let score = 0;
-      let total = 4;
-
-      for (let i = 1; i <= total; i++) {
-        const key = 'v_q' + i;
-        const userVal = document.getElementById(key).value.trim();
-        const solEl = document.getElementById('v_sol' + i);
-        solEl.classList.remove('hidden');
-
-        if (userVal === answers[key].correct) {
-          score++;
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
-          solEl.innerHTML = `✅ Correct! ${answers[key].sol}`;
-        } else {
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
-          solEl.innerHTML = `❌ Correct answer: "${answers[key].correct}". ${answers[key].sol}`;
-        }
-      }
-
-      if (score === total) {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-        markSubtopicComplete('c1_s02');
-      }
-    }
-
-    // NEW FUNCTION FOR ADDITION BINGO
-    function renderAdditionBingo(container) {
-      container.innerHTML = `
-        <div class="bg-purple-50 border-3 border-purple-300 rounded-3xl p-5 shadow-sm space-y-3">
-          <h3 class="text-lg font-black text-purple-900 flex items-center gap-2">
-            <span>🎲</span> How to Play Addition Bingo!
-          </h3>
-          <p class="text-xs sm:text-sm font-bold text-purple-800 leading-relaxed">
-            1. Solve the addition problem (e.g., 2 + 1 = 3).<br>
-            2. Find the sum/answer on your Bingo board.<br>
-            3. Fill 3 numbers in a row (Horizontal, Vertical, or Diagonal) to call <b>BINGO!</b> 🎉
-          </p>
-        </div>
-
-        <div class="mint-border-card p-5 space-y-4">
-          <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2 flex items-center justify-between">
-            <span>🎯 Practice Board: Interactive Bingo Grid</span>
-            <span class="text-xs font-bold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Click numbers to mark</span>
-          </h4>
-
-          <div class="grid grid-cols-3 gap-3 max-w-xs mx-auto my-4 text-center">
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">2</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">5</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">3</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">1</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">4</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">6</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">3</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">2</button>
-            <button onclick="toggleBingoCell(this)" class="p-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl font-black text-2xl text-emerald-900 hover:bg-emerald-200 transition-all">4</button>
-          </div>
-        </div>
-
-        <form id="bingoQuizForm" onsubmit="evaluateBingoQuiz(event)" class="space-y-6">
-          <div class="mint-border-card p-5 space-y-4">
-            <h4 class="text-lg font-black text-emerald-800 border-b-2 border-emerald-100 pb-2">
-              📌 Match the Addition Problem to its Bingo Number
-            </h4>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <p class="font-black text-lg text-emerald-900">1 + 2 = ?</p>
-                <input type="number" id="b_q1" min="0" placeholder="Sum" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="b_sol1" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <p class="font-black text-lg text-emerald-900">3 + 2 = ?</p>
-                <input type="number" id="b_q2" min="0" placeholder="Sum" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="b_sol2" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-
-              <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3 text-center">
-                <p class="font-black text-lg text-emerald-900">2 + 2 = ?</p>
-                <input type="number" id="b_q3" min="0" placeholder="Sum" class="w-24 p-2 text-center rounded-xl border-2 border-emerald-400 font-bold bg-white">
-                <div id="b_sol3" class="hidden text-xs font-bold p-2 rounded-xl mt-2 text-left"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center pt-2">
-            <button type="submit" class="mint-btn px-10 py-4 text-white font-black text-lg rounded-2xl shadow-xl">
-              Check Bingo Answers ✨
-            </button>
-          </div>
-        </form>
-      `;
-    }
-
-    function toggleBingoCell(btn) {
-      if (btn.classList.contains('bg-yellow-300')) {
-        btn.classList.remove('bg-yellow-300', 'text-yellow-900', 'scale-105');
-        btn.classList.add('bg-emerald-100', 'text-emerald-900');
-      } else {
-        btn.classList.remove('bg-emerald-100', 'text-emerald-900');
-        btn.classList.add('bg-yellow-300', 'text-yellow-900', 'scale-105');
-      }
-    }
-
-    function evaluateBingoQuiz(e) {
-      e.preventDefault();
-
-      const answers = {
-        b_q1: { correct: "3", sol: "1 + 2 = 3" },
-        b_q2: { correct: "5", sol: "3 + 2 = 5" },
-        b_q3: { correct: "4", sol: "2 + 2 = 4" }
-      };
-
-      let score = 0;
-      let total = 3;
-
-      for (let i = 1; i <= total; i++) {
-        const key = 'b_q' + i;
-        const userVal = document.getElementById(key).value.trim();
-        const solEl = document.getElementById('b_sol' + i);
-        solEl.classList.remove('hidden');
-
-        if (userVal === answers[key].correct) {
-          score++;
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-emerald-100 text-emerald-800 border border-emerald-300";
-          solEl.innerHTML = `✅ Correct! ${answers[key].sol}`;
-        } else {
-          solEl.className = "text-xs font-bold p-2 rounded-xl mt-2 bg-red-100 text-red-800 border border-red-300";
-          solEl.innerHTML = `❌ Answer is ${answers[key].correct}. ${answers[key].sol}`;
-        }
-      }
-
-      if (score === total) {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-        markSubtopicComplete('c1_s03');
-      }
-    }
-  </script>
 </body>
 </html>
