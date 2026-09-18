@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>econova.vip - Class 1 Learning Portal</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Confetti Effect -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: #f0fdf4;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    }
+
+    .mint-header {
+      background-color: #2dd4bf;
+    }
+
+    .mint-border-card {
+      background-color: #f0fdf4;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .mint-text {
+      color: #059669;
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.03);
+    }
+
+    .yt-btn {
+      background-color: #ff0000;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .yt-btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.04);
+    }
+
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
+    }
+
+    .accordion-header {
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 text-gray-800">
+
+  <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-emerald-400 overflow-hidden">
+    
+    <!-- TOP HEADER -->
+    <header class="mint-header p-4 sm:p-6 text-white flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <span class="text-4xl animate-bounce">✨</span>
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-300 drop-shadow-md">econova.vip</h1>
+          <p class="text-emerald-900 font-bold text-sm sm:text-base">Student Portal: <span id="studentName">Class 1 Math</span></p>
+        </div>
+      </div>
+
+      <!-- PROGRESS TRACKER -->
+      <div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-2xl border-2 border-white/40 min-w-[200px]">
+        <div class="flex justify-between items-center text-xs font-black text-emerald-950 uppercase mb-1">
+          <span>Overall Progress</span>
+          <span id="progressText" class="text-yellow-300 text-sm">0%</span>
+        </div>
+        <div class="w-full bg-emerald-800/40 h-3.5 rounded-full overflow-hidden p-0.5 border border-white/30">
+          <div id="progressBar" class="bg-yellow-300 h-full rounded-full transition-all duration-500 w-0"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="p-4 sm:p-8 space-y-6">
+
+      <!-- STEP 1: CLASS SELECTION -->
+      <section id="stepClass" class="space-y-6">
+        <div class="mint-border-card p-4 sm:p-6 text-center">
+          <h2 class="text-2xl sm:text-3xl font-black mint-text flex items-center justify-center gap-2">
+            <span>👇</span> SELECT YOUR CLASS / GRADE:
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+          <button onclick="selectClass('Class 1')" class="card-hover p-6 bg-emerald-50 border-3 border-emerald-300 hover:border-emerald-500 rounded-3xl font-black text-emerald-800 text-xl shadow-md flex flex-col items-center gap-2">
+            <span class="text-4xl">🎒</span> Class 1
+          </button>
+          <button onclick="selectClass('Class 2')" class="card-hover p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
+            <span class="text-4xl">📚</span> Class 2 (Soon)
+          </button>
+          <button onclick="selectClass('Class 3')" class="card-hover p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
+            <span class="text-4xl">🎨</span> Class 3 (Soon)
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 2: SUBJECT SELECTION -->
+      <section id="stepSubject" class="space-y-6 hidden">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-black mint-text">Select Subject (<span id="selectedClassLabel" class="text-amber-500"></span>)</h2>
+          <button onclick="goBack('stepClass')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Change Class</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <button onclick="selectSubject('Mathematics')" class="card-hover p-6 bg-amber-50 border-3 border-amber-300 hover:border-amber-500 rounded-3xl font-black text-amber-900 text-xl shadow-md flex flex-col items-center gap-2">
+            <span class="text-5xl">🔢</span> Mathematics
+          </button>
+          <button class="card-hover p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
+            <span class="text-5xl">🔬</span> Science (Soon)
+          </button>
+          <button class="card-hover p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
+            <span class="text-5xl">📖</span> English (Soon)
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 3: CHAPTERS & TOPICS LIST -->
+      <section id="stepTopic" class="space-y-6 hidden">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-2xl font-black mint-text">Class 1 Mathematics</h2>
+            <p class="text-xs font-bold text-gray-500">Complete Syllabus (Chapters 1 to 12)</p>
+          </div>
+          <button onclick="goBack('stepSubject')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back</button>
+        </div>
+
+        <!-- CHAPTER ACCORDION CONTAINER -->
+        <div id="chapterAccordion" class="space-y-4">
+          <!-- Dynamically filled with Chapters & Subtopics -->
+        </div>
+      </section>
+
+      <!-- STEP 4: TOPIC CONTENT CONTAINER -->
+      <section id="stepContent" class="space-y-8 hidden">
+        
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b-4 border-emerald-100 pb-4">
+          <div>
+            <h2 id="topicTitle" class="text-2xl sm:text-3xl font-black text-emerald-700"></h2>
+            <span id="topicStatus" class="inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300">Status: Incomplete</span>
+          </div>
+          <button onclick="goBack('stepTopic')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back to Chapters</button>
+        </div>
+
+        <!-- YOUTUBE LESSON LINK -->
+        <div class="bg-red-50 border-3 border-red-300 p-5 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div class="flex items-center gap-3 text-center sm:text-left">
+            <span class="text-4xl">📺</span>
+            <div>
+              <h3 class="text-lg font-black text-red-900">Watch Video Lesson</h3>
+              <p class="text-xs font-bold text-red-700">Watch the video explanation before starting the practice worksheet!</p>
+            </div>
+          </div>
+          <a id="youtubeLessonBtn" href="#" target="_blank" class="yt-btn px-6 py-3 font-black rounded-2xl flex items-center gap-2 text-base shadow-lg shrink-0">
+            <span>Play Video</span> ▶
+          </a>
+        </div>
+
+        <!-- DYNAMIC CONTENT / WORKSHEET -->
+        <div class="mint-border-card p-4 sm:p-6 space-y-4">
+          <h3 class="text-xl font-black mint-text flex items-center gap-2">
+            <span>🎨</span> Interactive Section Content
+          </h3>
+          <div id="subtopicContainer" class="bg-white p-4 sm:p-6 rounded-2xl border-2 border-emerald-200 font-bold text-gray-700">
+            <!-- Dynamic Content loads here -->
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // FULL SYLLABUS DATA BASED ON THE CHAPTER IMAGES
+    const syllabusData = [
+      {
+        chapterId: "ch1",
+        title: "Chapter 1: Addition Concepts",
+        subtopics: [
+          { id: "c1_s01", title: "Show What You Know", hasContent: false },
+          { id: "c1_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c1_s03", title: "Game: Addition Bingo", hasContent: false },
+          { id: "c1_s04", title: "1.1 Algebra • Use Pictures to Add To", hasContent: false },
+          { id: "c1_s05", title: "1.2 Hands On • Model Adding To", hasContent: false },
+          { id: "c1_s06", title: "1.3 Hands On • Model Putting Together", hasContent: false },
+          { id: "c1_s07", title: "1.4 Problem Solving • Model Addition", hasContent: false },
+          { id: "c1_s08", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c1_s09", title: "1.5 Algebra • Add Zero", hasContent: false },
+          { id: "c1_s10", title: "1.6 Hands On: Algebra • Add in Any Order", hasContent: false },
+          { id: "c1_s11", title: "1.7 Hands On: Algebra • Put Together Numbers to 10", hasContent: false },
+          { id: "c1_s12", title: "1.8 Addition to 10", hasContent: false },
+          { id: "c1_s13", title: "Chapter 1 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch2",
+        title: "Chapter 2: Subtraction Concepts",
+        subtopics: [
+          { id: "c2_s01", title: "Show What You Know", hasContent: false },
+          { id: "c2_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c2_s03", title: "Game: Subtraction Slide", hasContent: false },
+          { id: "c2_s04", title: "2.1 Use Pictures to Show Taking From", hasContent: false },
+          { id: "c2_s05", title: "2.2 Hands On • Model Taking From", hasContent: false },
+          { id: "c2_s06", title: "2.3 Hands On • Model Taking Apart", hasContent: false },
+          { id: "c2_s07", title: "2.4 Problem Solving • Model Subtraction", hasContent: false },
+          { id: "c2_s08", title: "2.5 Use Pictures and Subtraction to Compare", hasContent: false },
+          { id: "c2_s09", title: "2.6 Hands On • Subtract to Compare", hasContent: false },
+          { id: "c2_s10", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c2_s11", title: "2.7 Subtract All or Zero", hasContent: false },
+          { id: "c2_s12", title: "2.8 Hands On: Algebra • Take Apart Numbers", hasContent: false },
+          { id: "c2_s13", title: "2.9 Subtraction from 10 or Less", hasContent: false },
+          { id: "c2_s14", title: "Chapter 2 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch3",
+        title: "Chapter 3: Addition Strategies",
+        subtopics: [
+          { id: "c3_s01", title: "Show What You Know", hasContent: false },
+          { id: "c3_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c3_s03", title: "Game: Ducky Sums", hasContent: false },
+          { id: "c3_s04", title: "3.1 Algebra • Add in Any Order", hasContent: false },
+          { id: "c3_s05", title: "3.2 Count On", hasContent: false },
+          { id: "c3_s06", title: "3.3 Hands On • Add Doubles", hasContent: false },
+          { id: "c3_s07", title: "3.4 Hands On • Use Doubles to Add", hasContent: false },
+          { id: "c3_s08", title: "3.5 Hands On • Doubles Plus 1 and Doubles Minus 1", hasContent: false },
+          { id: "c3_s09", title: "3.6 Practice the Strategies", hasContent: false },
+          { id: "c3_s10", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c3_s11", title: "3.7 Hands On • Add 10 and More", hasContent: false },
+          { id: "c3_s12", title: "3.8 Hands On • Make a 10 to Add", hasContent: false },
+          { id: "c3_s13", title: "3.9 Use Make a 10 to Add", hasContent: false },
+          { id: "c3_s14", title: "3.10 Hands On: Algebra • Add 3 Numbers", hasContent: false },
+          { id: "c3_s15", title: "3.11 Algebra • Add 3 Numbers", hasContent: false },
+          { id: "c3_s16", title: "3.12 Problem Solving • Use Addition Strategies", hasContent: false },
+          { id: "c3_s17", title: "Chapter 3 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch4",
+        title: "Chapter 4: Subtraction Strategies",
+        subtopics: [
+          { id: "c4_s01", title: "Show What You Know", hasContent: false },
+          { id: "c4_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c4_s03", title: "Game: Under the Sea", hasContent: false },
+          { id: "c4_s04", title: "4.1 Count Back", hasContent: false },
+          { id: "c4_s05", title: "4.2 Hands On • Think Addition to Subtract", hasContent: false },
+          { id: "c4_s06", title: "4.3 Use Think Addition to Subtract", hasContent: false },
+          { id: "c4_s07", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c4_s08", title: "4.4 Hands On • Use 10 to Subtract", hasContent: false },
+          { id: "c4_s09", title: "4.5 Break Apart to Subtract", hasContent: false },
+          { id: "c4_s10", title: "4.6 Problem Solving • Use Subtraction Strategies", hasContent: false },
+          { id: "c4_s11", title: "Chapter 4 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch5",
+        title: "Chapter 5: Addition and Subtraction Relationships",
+        subtopics: [
+          { id: "c5_s01", title: "Show What You Know", hasContent: false },
+          { id: "c5_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c5_s03", title: "Game: Add to Subtract Bingo", hasContent: false },
+          { id: "c5_s04", title: "5.1 Problem Solving • Add or Subtract", hasContent: false },
+          { id: "c5_s05", title: "5.2 Hands On • Record Related Facts", hasContent: false },
+          { id: "c5_s06", title: "5.3 Identify Related Facts", hasContent: false },
+          { id: "c5_s07", title: "5.4 Use Addition to Check Subtraction", hasContent: false },
+          { id: "c5_s08", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c5_s09", title: "5.5 Hands On: Algebra • Missing Numbers", hasContent: false },
+          { id: "c5_s10", title: "5.6 Algebra • Use Related Facts", hasContent: false },
+          { id: "c5_s11", title: "5.7 Choose an Operation", hasContent: false },
+          { id: "c5_s12", title: "5.8 Hands On: Algebra • Ways to Make Numbers to 20", hasContent: false },
+          { id: "c5_s13", title: "5.9 Algebra • Equal and Not Equal", hasContent: false },
+          { id: "c5_s14", title: "5.10 Basic Facts to 20", hasContent: false },
+          { id: "c5_s15", title: "Chapter 5 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch6",
+        title: "Chapter 6: Count and Model Numbers (Base Ten)",
+        subtopics: [
+          { id: "c6_s01", title: "Show What You Know", hasContent: false },
+          { id: "c6_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c6_s03", title: "Game: Show the Numbers", hasContent: false },
+          { id: "c6_s04", title: "6.1 Count by Ones to 120", hasContent: false },
+          { id: "c6_s05", title: "6.2 Count by Tens to 120", hasContent: false },
+          { id: "c6_s06", title: "6.3 Understand Ten and Ones", hasContent: false },
+          { id: "c6_s07", title: "6.4 Hands On • Make Ten and Ones", hasContent: false },
+          { id: "c6_s08", title: "6.5 Hands On • Tens", hasContent: false },
+          { id: "c6_s09", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c6_s10", title: "6.6 Hands On • Tens and Ones to 50", hasContent: false },
+          { id: "c6_s11", title: "6.7 Hands On • Tens and Ones to 100", hasContent: false },
+          { id: "c6_s12", title: "6.8 Problem Solving • Show Numbers in Different Ways", hasContent: false },
+          { id: "c6_s13", title: "6.9 Hands On • Model, Read, and Write Numbers from 100 to 110", hasContent: false },
+          { id: "c6_s14", title: "6.10 Hands On • Model, Read, and Write Numbers from 110 to 120", hasContent: false },
+          { id: "c6_s15", title: "Chapter 6 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch7",
+        title: "Chapter 7: Compare Numbers",
+        subtopics: [
+          { id: "c7_s01", title: "Show What You Know", hasContent: false },
+          { id: "c7_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c7_s03", title: "Game: Rainy Day Bingo", hasContent: false },
+          { id: "c7_s04", title: "7.1 Hands On: Algebra • Greater Than", hasContent: false },
+          { id: "c7_s05", title: "7.2 Hands On: Algebra • Less Than", hasContent: false },
+          { id: "c7_s06", title: "7.3 Hands On: Algebra • Use Symbols to Compare", hasContent: false },
+          { id: "c7_s07", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c7_s08", title: "7.4 Problem Solving • Compare Numbers", hasContent: false },
+          { id: "c7_s09", title: "7.5 Hands On • 10 Less, 10 More", hasContent: false },
+          { id: "c7_s10", title: "Chapter 7 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch8",
+        title: "Chapter 8: Two-Digit Addition and Subtraction",
+        subtopics: [
+          { id: "c8_s01", title: "Show What You Know", hasContent: false },
+          { id: "c8_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c8_s03", title: "Game: Neighborhood Sums", hasContent: false },
+          { id: "c8_s04", title: "8.1 Add and Subtract within 20", hasContent: false },
+          { id: "c8_s05", title: "8.2 Hands On • Add Tens", hasContent: false },
+          { id: "c8_s06", title: "8.3 Hands On • Subtract Tens", hasContent: false },
+          { id: "c8_s07", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c8_s08", title: "8.4 Use a Hundred Chart to Add", hasContent: false },
+          { id: "c8_s09", title: "8.5 Hands On • Use Models to Add", hasContent: false },
+          { id: "c8_s10", title: "8.6 Hands On • Make Ten to Add", hasContent: false },
+          { id: "c8_s11", title: "8.7 Hands On • Use Place Value to Add", hasContent: false },
+          { id: "c8_s12", title: "8.8 Problem Solving • Addition Word Problems", hasContent: false },
+          { id: "c8_s13", title: "8.9 Practice Addition and Subtraction", hasContent: false },
+          { id: "c8_s14", title: "Chapter 8 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch9",
+        title: "Chapter 9: Measurement",
+        subtopics: [
+          { id: "c9_s01", title: "Show What You Know", hasContent: false },
+          { id: "c9_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c9_s03", title: "Game: Measure Up!", hasContent: false },
+          { id: "c9_s04", title: "9.1 Hands On • Order Length", hasContent: false },
+          { id: "c9_s05", title: "9.2 Indirect Measurement", hasContent: false },
+          { id: "c9_s06", title: "9.3 Hands On • Use Nonstandard Units to Measure Length", hasContent: false },
+          { id: "c9_s07", title: "9.4 Hands On • Make a Nonstandard Measuring Tool", hasContent: false },
+          { id: "c9_s08", title: "9.5 Problem Solving • Measure and Compare", hasContent: false },
+          { id: "c9_s09", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c9_s10", title: "9.6 Time to the Hour", hasContent: false },
+          { id: "c9_s11", title: "9.7 Time to the Half Hour", hasContent: false },
+          { id: "c9_s12", title: "9.8 Tell Time to the Hour and Half Hour", hasContent: false },
+          { id: "c9_s13", title: "9.9 Practice Time to the Hour and Half Hour", hasContent: false },
+          { id: "c9_s14", title: "Chapter 9 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch10",
+        title: "Chapter 10: Represent Data",
+        subtopics: [
+          { id: "c10_s01", title: "Show What You Know", hasContent: false },
+          { id: "c10_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c10_s03", title: "Game: Graph Game", hasContent: false },
+          { id: "c10_s04", title: "10.1 Read Picture Graphs", hasContent: false },
+          { id: "c10_s05", title: "10.2 Hands On • Make Picture Graphs", hasContent: false },
+          { id: "c10_s06", title: "10.3 Read Bar Graphs", hasContent: false },
+          { id: "c10_s07", title: "10.4 Hands On • Make Bar Graphs", hasContent: false },
+          { id: "c10_s08", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c10_s09", title: "10.5 Read Tally Charts", hasContent: false },
+          { id: "c10_s10", title: "10.6 Hands On • Make Tally Charts", hasContent: false },
+          { id: "c10_s11", title: "10.7 Problem Solving • Represent Data", hasContent: false },
+          { id: "c10_s12", title: "Chapter 10 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch11",
+        title: "Chapter 11: Three-Dimensional Geometry",
+        subtopics: [
+          { id: "c11_s01", title: "Show What You Know", hasContent: false },
+          { id: "c11_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c11_s03", title: "Game: Shape Match Bingo", hasContent: false },
+          { id: "c11_s04", title: "11.1 Hands On • Three-Dimensional Shapes", hasContent: false },
+          { id: "c11_s05", title: "11.2 Hands On • Combine Three-Dimensional Shapes", hasContent: false },
+          { id: "c11_s06", title: "11.3 Hands On • Make New Three-Dimensional Shapes", hasContent: false },
+          { id: "c11_s07", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c11_s08", title: "11.4 Problem Solving • Take Apart Three-Dimensional Shapes", hasContent: false },
+          { id: "c11_s09", title: "11.5 Hands On • Two-Dimensional Shapes on Three-Dimensional Shapes", hasContent: false },
+          { id: "c11_s10", title: "Chapter 11 Review/Test & Performance Task", hasContent: false }
+        ]
+      },
+      {
+        chapterId: "ch12",
+        title: "Chapter 12: Two-Dimensional Geometry",
+        subtopics: [
+          { id: "c12_s01", title: "Show What You Know", hasContent: false },
+          { id: "c12_s02", title: "Vocabulary Builder", hasContent: false },
+          { id: "c12_s03", title: "Game: Rocket Shapes", hasContent: false },
+          { id: "c12_s04", title: "12.1 Sort Two-Dimensional Shapes", hasContent: false },
+          { id: "c12_s05", title: "12.2 Hands On • Describe Two-Dimensional Shapes", hasContent: false },
+          { id: "c12_s06", title: "12.3 Hands On • Combine Two-Dimensional Shapes", hasContent: false },
+          { id: "c12_s07", title: "12.4 Combine More Shapes", hasContent: false },
+          { id: "c12_s08", title: "12.5 Problem Solving • Make New Two-Dimensional Shapes", hasContent: false },
+          { id: "c12_s09", title: "Mid-Chapter Checkpoint", hasContent: false },
+          { id: "c12_s10", title: "12.6 Hands On • Find Shapes in Shapes", hasContent: false },
+          { id: "c12_s11", title: "12.7 Take Apart Two-Dimensional Shapes", hasContent: false },
+          { id: "c12_s12", title: "12.8 Equal or Unequal Parts", hasContent: false },
+          { id: "c12_s13", title: "12.9 Halves", hasContent: false },
+          { id: "c12_s14", title: "12.10 Fourths", hasContent: false },
+          { id: "c12_s15", title: "Chapter 12 Review/Test & Performance Task", hasContent: false }
+        ]
+      }
+    ];
+
+    // APPLICATION STATE
+    let selectedClass = "Class 1";
+    let selectedSubject = "Mathematics";
+    let activeSubtopic = null;
+    let completedSubtopics = JSON.parse(localStorage.getItem('econova_completed_subtopics')) || [];
+
+    function updateProgress() {
+      let total = 0;
+      syllabusData.forEach(c => total += c.subtopics.length);
+      const percentage = Math.min(100, Math.round((completedSubtopics.length / total) * 100));
+      document.getElementById('progressBar').style.width = percentage + '%';
+      document.getElementById('progressText').innerText = percentage + '%';
+    }
+
+    function selectClass(className) {
+      selectedClass = className;
+      document.getElementById('selectedClassLabel').innerText = className;
+      document.getElementById('stepClass').classList.add('hidden');
+      document.getElementById('stepSubject').classList.remove('hidden');
+    }
+
+    function selectSubject(subjectName) {
+      selectedSubject = subjectName;
+      document.getElementById('stepSubject').classList.add('hidden');
+      document.getElementById('stepTopic').classList.remove('hidden');
+
+      renderAccordion();
+    }
+
+    function renderAccordion() {
+      const container = document.getElementById('chapterAccordion');
+      container.innerHTML = '';
+
+      syllabusData.forEach((ch, idx) => {
+        const isFirst = idx === 0;
+        let subitemsHtml = ch.subtopics.map(sub => {
+          const isDone = completedSubtopics.includes(sub.id);
+          const hasContentTag = sub.hasContent 
+            ? `<span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-black border border-emerald-300">Ready</span>` 
+            : `<span class="bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded-full font-bold">Pending Content</span>`;
+
+          return `
+            <div onclick="openSubtopic('${ch.chapterId}', '${sub.id}')" class="p-3 bg-white hover:bg-emerald-50 rounded-xl border border-gray-200 flex justify-between items-center cursor-pointer transition-all">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">${isDone ? '✅' : '📄'}</span>
+                <span class="font-black text-sm text-gray-800">${sub.title}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                ${hasContentTag}
+                <span class="text-xs font-black text-emerald-600">➔</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        container.innerHTML += `
+          <div class="border-3 border-emerald-300 rounded-2xl overflow-hidden bg-white shadow-sm">
+            <div onclick="toggleAccordion('${ch.chapterId}')" class="accordion-header bg-emerald-50 p-4 flex justify-between items-center font-black text-emerald-900 hover:bg-emerald-100">
+              <div class="flex items-center gap-2 text-base sm:text-lg">
+                <span>📚</span> ${ch.title}
+              </div>
+              <span id="icon-${ch.chapterId}" class="text-xl">${isFirst ? '➖' : '➕'}</span>
+            </div>
+            <div id="body-${ch.chapterId}" class="p-3 space-y-2 ${isFirst ? '' : 'hidden'} bg-slate-50 border-t border-emerald-200">
+              ${subitemsHtml}
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function toggleAccordion(chId) {
+      const body = document.getElementById(`body-${chId}`);
+      const icon = document.getElementById(`icon-${chId}`);
+      if (body.classList.contains('hidden')) {
+        body.classList.remove('hidden');
+        icon.innerText = '➖';
+      } else {
+        body.classList.add('hidden');
+        icon.innerText = '➕';
+      }
+    }
+
+    function openSubtopic(chId, subId) {
+      const chapter = syllabusData.find(c => c.chapterId === chId);
+      activeSubtopic = chapter.subtopics.find(s => s.id === subId);
+
+      document.getElementById('stepTopic').classList.add('hidden');
+      document.getElementById('stepContent').classList.remove('hidden');
+
+      document.getElementById('topicTitle').innerText = `${chapter.title} - ${activeSubtopic.title}`;
+      
+      const isDone = completedSubtopics.includes(activeSubtopic.id);
+      const statusEl = document.getElementById('topicStatus');
+      if (isDone) {
+        statusEl.innerText = "Status: Completed ✅";
+        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
+      } else {
+        statusEl.innerText = "Status: Pending Content";
+        statusEl.className = "inline-block mt-2 text-xs font-black px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300";
+      }
+
+      const contentBox = document.getElementById('subtopicContainer');
+      
+      if (!activeSubtopic.hasContent) {
+        contentBox.innerHTML = `
+          <div class="text-center py-10 space-y-3">
+            <span class="text-5xl">🛠️</span>
+            <h3 class="text-xl font-black text-gray-700">Aapka placeholder tayyar hai!</h3>
+            <p class="text-sm text-gray-500 font-bold max-w-md mx-auto">
+              Aap jab bhi is section <b>"${activeSubtopic.title}"</b> ka content (text/images/questions) denge, mai yahan par interactive content add kar dunga!
+            </p>
+            <button onclick="markComplete('${activeSubtopic.id}')" class="mint-btn mt-4 px-6 py-2 text-white font-black text-sm rounded-xl shadow">
+              Mark Section as Completed ⭐
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    function markComplete(subId) {
+      if (!completedSubtopics.includes(subId)) {
+        completedSubtopics.push(subId);
+        localStorage.setItem('econova_completed_subtopics', JSON.stringify(completedSubtopics));
+        updateProgress();
+      }
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      alert("🎉 Section Marked as Done!");
+      goBack('stepTopic');
+    }
+
+    function goBack(stepId) {
+      document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(stepId).classList.remove('hidden');
+    }
+
+    updateProgress();
+  </script>
+</body>
+</html>
