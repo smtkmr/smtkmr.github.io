@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roll & Find Grid Game | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title {
+      font-family: var(--font-heading);
+    }
+
+    header {
+      background-color: #2dd4bf;
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047;
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 0px #059669;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    .mint-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 0px 0px #059669;
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 0px #cc0000;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    /* 2D/3D RELIABLE DICE STYLING */
+    .dice-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px auto 20px;
+    }
+
+    .dice-display {
+      width: 140px;
+      height: 140px;
+      background: #ffffff;
+      border: 5px solid #10b981;
+      border-radius: 28px;
+      box-shadow: 0 8px 0px #059669, inset 0 0 10px rgba(16, 185, 129, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.1s ease;
+      user-select: none;
+    }
+
+    /* Continuous Rolling Animation Class */
+    .rolling {
+      animation: diceRoll 0.6s ease-in-out infinite;
+    }
+
+    @keyframes diceRoll {
+      0% { transform: rotate(0deg) scale(0.9); }
+      25% { transform: rotate(90deg) scale(1.1); }
+      50% { transform: rotate(180deg) scale(0.9); }
+      75% { transform: rotate(270deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    /* GRID CELLS */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .cell {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 18px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 0px #a7f3d0;
+      font-family: var(--font-heading);
+    }
+
+    .cell:hover {
+      transform: scale(1.05);
+      border-color: #10b981;
+    }
+
+    .cell.selected {
+      background-color: #fde047;
+      border-color: #eab308;
+      box-shadow: 0 4px 0px #ca8a04;
+      color: #854d0e;
+    }
+
+    .win { color: #059669; }
+    .lose { color: #dc2626; }
+  </style>
+</head>
+<body class="p-0 pb-12">
+
+  <!-- Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="../index.html" class="btn-red px-5 py-2 font-extrabold text-sm sm:text-base no-underline flex items-center gap-1">
+      🏠 Home
+    </a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-3xl mx-auto p-4 sm:p-6 space-y-8">
+    
+    <!-- Title Header -->
+    <div class="text-center space-y-2">
+      <h1 class="hero-title text-3xl sm:text-5xl font-black text-emerald-600">
+        🎲 Roll & Tap Grid Game!
+      </h1>
+      <p class="text-gray-600 font-bold text-base sm:text-lg">
+        Click <span class="text-emerald-600 font-extrabold">Roll Dice</span>, count the dots, tap the matching number on the grid, and click <span class="text-emerald-600 font-extrabold">Submit Answer</span>!
+      </p>
+    </div>
+
+    <!-- Game Card -->
+    <section class="mint-card p-6 sm:p-8 shadow-md text-center space-y-6">
+      
+      <!-- Big Visual Dice Display -->
+      <div class="space-y-4">
+        <div class="dice-wrapper">
+          <div id="dice" class="dice-display">
+            <!-- SVG Dots rendered via JS -->
+          </div>
+        </div>
+        <button id="rollBtn" class="mint-btn px-8 py-3 text-xl font-extrabold" onclick="rollDice()">
+          🎲 Roll Dice
+        </button>
+      </div>
+
+      <!-- Grid Area (Numbers 1 to 6) -->
+      <div class="grid-container py-2" id="grid">
+        <div class="cell" onclick="selectCell(this, 1)">1</div>
+        <div class="cell" onclick="selectCell(this, 2)">2</div>
+        <div class="cell" onclick="selectCell(this, 3)">3</div>
+        <div class="cell" onclick="selectCell(this, 4)">4</div>
+        <div class="cell" onclick="selectCell(this, 5)">5</div>
+        <div class="cell" onclick="selectCell(this, 6)">6</div>
+      </div>
+
+      <!-- Submit Action -->
+      <div class="space-y-4">
+        <button class="mint-btn px-8 py-3 text-xl font-extrabold" onclick="checkAnswer()">
+          Submit Answer
+        </button>
+        <div id="result" class="text-2xl font-black min-h-[36px]"></div>
+      </div>
+
+    </section>
+
+    <!-- Navigation / Action Footer -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 border-t-2 border-emerald-200">
+      <a href="../index.html" class="btn-red text-center font-extrabold text-base py-3 px-8 no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+        ⬅ Back to Lessons
+      </a>
+      <a href="https://www.youtube.com" target="_blank" class="btn-red text-center font-extrabold text-base py-3 px-8 no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+        📺 Watch Video Solution
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    let currentRoll = null;
+    let selectedNumber = null;
+    let lastRoll = null;
+    let isRolling = false;
+
+    // SVG Pip Templates for 1 to 6 dots
+    const diceSVG = {
+      1: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="12" fill="#059669" />
+          </svg>`,
+      2: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="25" cy="25" r="11" fill="#059669" />
+            <circle cx="75" cy="75" r="11" fill="#059669" />
+          </svg>`,
+      3: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="25" cy="25" r="10" fill="#059669" />
+            <circle cx="50" cy="50" r="10" fill="#059669" />
+            <circle cx="75" cy="75" r="10" fill="#059669" />
+          </svg>`,
+      4: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="25" cy="25" r="10" fill="#059669" />
+            <circle cx="75" cy="25" r="10" fill="#059669" />
+            <circle cx="25" cy="75" r="10" fill="#059669" />
+            <circle cx="75" cy="75" r="10" fill="#059669" />
+          </svg>`,
+      5: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="25" cy="25" r="10" fill="#059669" />
+            <circle cx="75" cy="25" r="10" fill="#059669" />
+            <circle cx="50" cy="50" r="10" fill="#059669" />
+            <circle cx="25" cy="75" r="10" fill="#059669" />
+            <circle cx="75" cy="75" r="10" fill="#059669" />
+          </svg>`,
+      6: `<svg width="90" height="90" viewBox="0 0 100 100">
+            <circle cx="25" cy="20" r="9" fill="#059669" />
+            <circle cx="75" cy="20" r="9" fill="#059669" />
+            <circle cx="25" cy="50" r="9" fill="#059669" />
+            <circle cx="75" cy="50" r="9" fill="#059669" />
+            <circle cx="25" cy="80" r="9" fill="#059669" />
+            <circle cx="75" cy="80" r="9" fill="#059669" />
+          </svg>`
+    };
+
+    // Render initial question mark / face
+    document.getElementById("dice").innerHTML = diceSVG[1];
+
+    function rollDice() {
+      if (isRolling) return;
+      
+      isRolling = true;
+      document.getElementById("result").innerText = "";
+      clearSelection();
+
+      const dice = document.getElementById("dice");
+      const rollBtn = document.getElementById("rollBtn");
+      rollBtn.disabled = true;
+
+      dice.classList.add("rolling");
+
+      // Rapidly shuffle dots while rolling
+      let shuffleInterval = setInterval(() => {
+        let randomFace = Math.floor(Math.random() * 6) + 1;
+        dice.innerHTML = diceSVG[randomFace];
+      }, 70);
+
+      // Stop roll and display final face
+      setTimeout(() => {
+        clearInterval(shuffleInterval);
+        dice.classList.remove("rolling");
+
+        let newRoll;
+        do {
+          newRoll = Math.floor(Math.random() * 6) + 1;
+        } while (newRoll === lastRoll);
+
+        lastRoll = newRoll;
+        currentRoll = newRoll;
+
+        dice.innerHTML = diceSVG[currentRoll];
+        isRolling = false;
+        rollBtn.disabled = false;
+      }, 600);
+    }
+
+    function selectCell(element, number) {
+      if (isRolling) return;
+      clearSelection();
+      element.classList.add("selected");
+      selectedNumber = number;
+    }
+
+    function clearSelection() {
+      selectedNumber = null;
+      let cells = document.querySelectorAll('.cell');
+      cells.forEach(cell => cell.classList.remove('selected'));
+    }
+
+    function checkAnswer() {
+      if (isRolling) return;
+      let resultDiv = document.getElementById("result");
+      
+      if (currentRoll === null) {
+        resultDiv.innerText = "Please roll the dice first!";
+        resultDiv.className = "text-xl font-bold text-amber-600";
+        return;
+      }
+      
+      if (selectedNumber === null) {
+        resultDiv.innerText = "Please select a number on the grid!";
+        resultDiv.className = "text-xl font-bold text-amber-600";
+        return;
+      }
+
+      if (selectedNumber === currentRoll) {
+        resultDiv.innerText = "🎉 YOU WIN! Perfect Match!";
+        resultDiv.className = "text-2xl font-black win";
+      } else {
+        resultDiv.innerText = "❌ YOU LOSE! Try Again!";
+        resultDiv.className = "text-2xl font-black lose";
+      }
+    }
+  </script>
+</body>
+</html>
