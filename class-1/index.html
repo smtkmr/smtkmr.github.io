@@ -13,8 +13,8 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Lottie Player for HD Animated Visuals -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Lordicon for Cute Animated Icons -->
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
   <!-- Vanilla Tilt JS for 3D Card Hover Effects -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
@@ -62,7 +62,8 @@
 
     .mint-card:hover {
       border-color: #10b981;
-      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(16, 185, 129, 0.18);
     }
 
     /* Secondary / Action Button Styling */
@@ -88,13 +89,25 @@
 
     .mint-btn:hover {
       background-color: #059669;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
-    .lottie-box {
-      width: 150px;
-      height: 150px;
-      transform: translateZ(30px);
+    /* Cute Icon Floating Animation */
+    .icon-box {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0fdf4;
+      border-radius: 50%;
+      border: 4px dashed #a7f3d0;
+      animation: gentle-bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-bounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
   </style>
 </head>
@@ -127,33 +140,52 @@
 
       <!-- English Card -->
       <a href="english/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
-        <div class="lottie-box flex justify-center items-center">
-          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_dmw3t0vg.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        <div class="icon-box">
+          <lordicon
+            src="https://cdn.lordicon.com/wxnxrtyw.json"
+            trigger="loop"
+            delay="1000"
+            colors="primary:#2563eb,secondary:#f59e0b"
+            style="width:100px;height:100px">
+          </lordicon>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-blue-600">ENGLISH</h2>
-        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
           Explore 🔤
         </span>
       </a>
 
       <!-- Maths Card -->
       <a href="maths/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
-        <div class="lottie-box flex justify-center items-center">
-          <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qp15623e.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        <div class="icon-box">
+          <lordicon
+            src="https://cdn.lordicon.com/qhg grid.json"
+            src="https://cdn.lordicon.com/nocovpnu.json"
+            trigger="loop"
+            delay="1000"
+            colors="primary:#10b981,secondary:#f59e0b"
+            style="width:100px;height:100px">
+          </lordicon>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-emerald-600">MATHS</h2>
-        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
           Explore 🔢
         </span>
       </a>
 
       <!-- Science Card -->
       <a href="science/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
-        <div class="lottie-box flex justify-center items-center">
-          <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_s2lry28d.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        <div class="icon-box">
+          <lordicon
+            src="https://cdn.lordicon.com/vhyzwkyr.json"
+            trigger="loop"
+            delay="1000"
+            colors="primary:#d97706,secondary:#10b981"
+            style="width:100px;height:100px">
+          </lordicon>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-amber-600">SCIENCE</h2>
-        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
           Explore 🧪
         </span>
       </a>
