@@ -5,314 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class 1 - Econova Kids 🎨</title>
   
-  <!-- Modern Kids Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- Lottie Player for HD Animated Visuals -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  
+
   <!-- Vanilla Tilt JS for 3D Card Hover Effects -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
   <style>
     :root {
-      --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #fbc2eb 100%);
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.4);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Fredoka', cursive, sans-serif;
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
     }
 
     body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4; /* Light Mint */
+      color: #1f2937; /* Dark Gray */
       min-height: 100vh;
-      background: var(--primary-bg);
-      background-size: 300% 300%;
-      animation: gradientBG 12s ease infinite;
-      overflow-x: hidden;
       display: flex;
       flex-direction: column;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
     }
 
-    /* Background Ambient Floating Bubbles */
-    .bg-bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      animation: float 8s infinite ease-in-out;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .bubble-1 { width: 120px; height: 120px; top: 10%; left: 5%; animation-delay: 0s; }
-    .bubble-2 { width: 180px; height: 180px; bottom: 15%; right: 8%; animation-delay: 2s; }
-    .bubble-3 { width: 90px; height: 90px; top: 60%; left: 12%; animation-delay: 4s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-25px) rotate(10deg); }
-    }
-
-    /* Top Navigation Header */
+    /* Mint Header */
     header {
-      position: relative;
-      z-index: 10;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      border-bottom: 2px solid var(--glass-border);
+      background-color: #2dd4bf; /* Mint Teal */
+      border-bottom: 4px solid #10b981;
     }
 
-    .logo {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 2rem;
-      color: #fff;
-      text-decoration: none;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .brand-logo {
+      color: #fde047; /* Yellow Accent */
+      text-shadow: 2px 2px 0px #059669;
     }
 
-    .back-btn {
-      background: #ff4757;
-      color: white;
-      padding: 10px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
+    /* Mint Card Styling */
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
       transition: all 0.3s ease;
-      border: 3px solid #fff;
-    }
-
-    .back-btn:hover {
-      transform: scale(1.08) translateY(-2px);
-    }
-
-    /* Main Container */
-    main {
-      position: relative;
-      z-index: 5;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 15px;
-      text-align: center;
-    }
-
-    .page-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 3.5rem;
-      color: #ffffff;
-      text-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      margin-bottom: 10px;
-    }
-
-    .page-subtitle {
-      font-size: 1.2rem;
-      color: #f1f2f6;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 8px 20px;
-      border-radius: 30px;
-      backdrop-filter: blur(5px);
-      margin-bottom: 35px;
-      display: inline-block;
-    }
-
-    /* Responsive Subject Cards Container */
-    .cards-container {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      width: 100%;
-    }
-
-    /* Glassmorphism 3D Card Style */
-    .card {
-      width: 280px;
-      height: 360px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(16px);
-      border: 3px solid var(--glass-border);
-      border-radius: 35px;
-      padding: 20px;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       transform-style: preserve-3d;
-      transition: all 0.3s ease;
     }
 
-    .card:hover {
-      border-color: #ffffff;
+    .mint-card:hover {
+      border-color: #10b981;
+      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Secondary / Action Button Styling */
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.05);
     }
 
     .lottie-box {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       transform: translateZ(30px);
-    }
-
-    .card-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transform: translateZ(25px);
-    }
-
-    .action-badge {
-      background: #ffffff;
-      padding: 10px 22px;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      transform: translateZ(20px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      transition: all 0.3s ease;
-    }
-
-    .card-english .action-badge { color: #2e86de; }
-    .card-maths .action-badge { color: #ff4757; }
-    .card-science .action-badge { color: #10ac84; }
-
-    .card:hover .action-badge {
-      background: #ffdd59;
-      color: #000;
-      transform: translateZ(40px) scale(1.08);
-    }
-
-    /* MOBILE RESPONSIVE MEDIA QUERIES */
-    @media (max-width: 768px) {
-      header {
-        padding: 12px 15px;
-        flex-direction: row;
-      }
-
-      .logo {
-        font-size: 1.4rem;
-      }
-
-      .back-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-      }
-
-      .page-title {
-        font-size: 2.2rem;
-      }
-
-      .page-subtitle {
-        font-size: 0.95rem;
-        padding: 6px 16px;
-        margin-bottom: 25px;
-      }
-
-      .cards-container {
-        gap: 20px;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .card {
-        width: 90%;
-        max-width: 320px;
-        height: 320px;
-        padding: 15px;
-      }
-
-      .lottie-box {
-        width: 130px;
-        height: 130px;
-      }
-
-      .card-title {
-        font-size: 1.7rem;
-      }
-
-      .action-badge {
-        font-size: 0.9rem;
-        padding: 8px 18px;
-      }
     }
   </style>
 </head>
-<body>
-
-  <!-- Background Ambient Particles -->
-  <div class="bg-bubble bubble-1"></div>
-  <div class="bg-bubble bubble-2"></div>
-  <div class="bg-bubble bubble-3"></div>
+<body class="p-0">
 
   <!-- Header -->
-  <header>
-    <a href="../index.html" class="logo">✨ ECONOVA KIDS</a>
-    <a href="../index.html" class="back-btn">🏠 Home</a>
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12">
+    <a href="../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="../index.html" class="btn-red px-5 py-2 font-extrabold text-sm sm:text-base shadow-md no-underline flex items-center gap-1">
+      🏠 Home
+    </a>
   </header>
 
   <!-- Main Area -->
-  <main>
-    <h1 class="page-title">Class 1 World 🚀</h1>
-    <p class="page-subtitle">Pick a subject & start your adventure!</p>
+  <main class="flex-1 flex flex-col items-center justify-center text-center p-6 space-y-6 max-w-6xl mx-auto w-full">
+    
+    <div>
+      <h1 class="hero-title text-4xl sm:text-6xl font-black text-emerald-600 mb-2">
+        Class 1 World 🚀
+      </h1>
+      <p class="text-lg sm:text-xl font-bold text-gray-700 bg-emerald-100/60 py-2 px-6 rounded-full inline-block border border-emerald-300">
+        Pick a subject & start your adventure!
+      </p>
+    </div>
 
-    <div class="cards-container">
+    <!-- Cards Container -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl pt-4">
 
       <!-- English Card -->
-      <a href="english/index.html" class="card card-english" data-tilt data-tilt-max="12" data-tilt-speed="400">
-        <div class="lottie-box">
+      <a href="english/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="lottie-box flex justify-center items-center">
           <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_dmw3t0vg.json" background="transparent" speed="1" loop autoplay></lottie-player>
         </div>
-        <h2 class="card-title">ENGLISH</h2>
-        <span class="action-badge">Explore 🔤</span>
+        <h2 class="card-title text-3xl font-extrabold text-blue-600">ENGLISH</h2>
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+          Explore 🔤
+        </span>
       </a>
 
       <!-- Maths Card -->
-      <a href="maths/index.html" class="card card-maths" data-tilt data-tilt-max="12" data-tilt-speed="400">
-        <div class="lottie-box">
+      <a href="maths/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="lottie-box flex justify-center items-center">
           <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qp15623e.json" background="transparent" speed="1" loop autoplay></lottie-player>
         </div>
-        <h2 class="card-title">MATHS</h2>
-        <span class="action-badge">Explore 🔢</span>
+        <h2 class="card-title text-3xl font-extrabold text-emerald-600">MATHS</h2>
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+          Explore 🔢
+        </span>
       </a>
 
       <!-- Science Card -->
-      <a href="science/index.html" class="card card-science" data-tilt data-tilt-max="12" data-tilt-speed="400">
-        <div class="lottie-box">
+      <a href="science/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="lottie-box flex justify-center items-center">
           <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_s2lry28d.json" background="transparent" speed="1" loop autoplay></lottie-player>
         </div>
-        <h2 class="card-title">SCIENCE</h2>
-        <span class="action-badge">Explore 🧪</span>
+        <h2 class="card-title text-3xl font-extrabold text-amber-600">SCIENCE</h2>
+        <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md">
+          Explore 🧪
+        </span>
       </a>
 
     </div>
+
   </main>
 
-  <!-- 3D Tilt Script -->
+  <!-- 3D Tilt Script Initialization -->
   <script>
     if (window.innerWidth > 768) {
-      VanillaTilt.init(document.querySelectorAll(".card"));
+      VanillaTilt.init(document.querySelectorAll(".mint-card"));
     }
   </script>
+
 </body>
 </html>
