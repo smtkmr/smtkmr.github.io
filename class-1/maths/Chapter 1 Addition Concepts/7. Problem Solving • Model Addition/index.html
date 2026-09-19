@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic: Addition & H.O.T. Coloring Challenges | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
+    }
+
+    header {
+      background-color: #2dd4bf;
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047;
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+    }
+
+    /* BUTTON STYLES STRICTLY FOLLOWING DESIGN SYSTEM */
+    .mint-btn {
+      background-color: #0dbe7a;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(13, 190, 122, 0.3);
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    .mint-btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 9999px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: translateY(-2px);
+    }
+
+    .btn-blue {
+      background-color: #0085d1;
+      color: #ffffff;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 133, 209, 0.25);
+    }
+
+    .btn-blue:hover {
+      background-color: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    .opt-btn {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      color: #1f2937;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 16px;
+      padding: 12px 18px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 0px #a7f3d0;
+      cursor: pointer;
+    }
+
+    .opt-btn:hover {
+      background-color: #ecfdf5;
+      border-color: #10b981;
+      transform: translateY(-2px);
+    }
+
+    .opt-btn.selected {
+      background-color: #fde047;
+      border-color: #eab308;
+      box-shadow: 0 4px 0px #ca8a04;
+      color: #854d0e;
+    }
+
+    .correct-badge {
+      background-color: #d1fae5;
+      color: #047857;
+      border: 2px solid #10b981;
+    }
+
+    .incorrect-badge {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      border: 2px solid #ef4444;
+    }
+
+    /* INTERACTIVE OBJECT CONTAINER */
+    .color-item {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 3px dashed #cbd5e1;
+      width: 85px;
+      height: 85px;
+    }
+
+    .color-item svg {
+      width: 100%;
+      height: 100%;
+      fill: #cbd5e1; /* Base gray */
+      transition: fill 0.3s ease, transform 0.2s ease;
+    }
+
+    .color-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Target Colors */
+    .color-red {
+      background-color: #fee2e2 !important;
+      border: 3px solid #ef4444 !important;
+    }
+    .color-red svg { fill: #ef4444 !important; }
+
+    .color-blue {
+      background-color: #dbeafe !important;
+      border: 3px solid #3b82f6 !important;
+    }
+    .color-blue svg { fill: #3b82f6 !important; }
+
+    .color-green {
+      background-color: #dcfce7 !important;
+      border: 3px solid #22c55e !important;
+    }
+    .color-green svg { fill: #22c55e !important; }
+
+    .color-yellow {
+      background-color: #fef9c3 !important;
+      border: 3px solid #eab308 !important;
+    }
+    .color-yellow svg { fill: #eab308 !important; }
+
+    .color-purple {
+      background-color: #f3e8ff !important;
+      border: 3px solid #a855f7 !important;
+    }
+    .color-purple svg { fill: #a855f7 !important; }
+
+    .color-orange {
+      background-color: #ffedd5 !important;
+      border: 3px solid #f97316 !important;
+    }
+    .color-orange svg { fill: #f97316 !important; }
+  </style>
+</head>
+<body class="p-0 pb-12">
+
+  <!-- Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="../index.html" class="btn-red px-6 py-2.5 text-sm sm:text-base no-underline flex items-center gap-1">
+      ← Back to Lessons
+    </a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-8">
+    
+    <div class="text-center space-y-2">
+      <span class="bg-emerald-100 text-emerald-800 font-extrabold text-sm px-4 py-1.5 rounded-full inline-block uppercase tracking-wider">
+        Topic: Test Prep & H.O.T. Coloring Practice
+      </span>
+      <h1 class="hero-title text-3xl sm:text-5xl font-black text-emerald-600">
+        Math Prep & Exact Color Challenges 🎨
+      </h1>
+      <p class="text-gray-600 font-bold text-base sm:text-lg">
+        Touch each object to color it step-by-step and solve the questions!
+      </p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="amber-card p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="font-bold text-xl text-amber-900">
+        🌟 Overall Progress: <span id="completedCount" class="text-emerald-600 font-black">0</span> / 10 Completed
+      </div>
+      <button class="mint-btn px-6 py-2.5 text-base" onclick="resetAll()">
+        🔄 Reset All Tasks
+      </button>
+    </div>
+
+    <!-- Tasks List Container -->
+    <div id="tasksContainer" class="space-y-8"></div>
+
+    <!-- Navigation Footer -->
+    <div class="pt-8 border-t-2 border-emerald-200">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="../index.html" class="btn-red text-center font-extrabold text-lg py-3.5 px-8 no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+          ← Back to Lessons
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="btn-blue text-center font-extrabold text-lg py-3.5 px-8 no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+          📺 Watch Video Solution
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // REALISTIC & CUTE BIRD SVG VECTOR
+    const svgTemplates = {
+      bird: `<svg viewBox="0 0 64 64"><path d="M48,16 C48,16 56,20 58,22 C60,24 58,26 54,26 C50,26 46,24 46,24 C46,24 44,30 38,36 C32,42 22,44 14,40 C10,38 6,34 4,28 C2,22 6,18 10,18 C12,18 14,20 14,20 C14,20 12,14 16,10 C20,6 28,6 34,10 C38,8 44,8 48,12 C46,14 44,16 48,16 Z M20,22 C21.1,22 22,21.1 22,20 C22,18.9 21.1,18 20,18 C18.9,18 18,18.9 18,20 C18,21.1 18.9,22 20,22 Z M12,42 L8,56 L14,56 L16,44 Z M26,44 L24,56 L30,56 L30,42 Z"/></svg>`,
+      apple: `<svg viewBox="0 0 64 64"><path d="M32 12c-4-6-12-6-12-6 0 8 4 12 4 12S12 18 12 32c0 14 10 24 20 24s20-10 20-24c0-14-12-14-12-14s4-4 4-12c0 0-8 0-12 6z"/></svg>`,
+      frog: `<svg viewBox="0 0 64 64"><path d="M16 16c-4 0-8 4-8 8s4 8 8 8 8-4 8-8-4-8-8-8zm32 0c-4 0-8 4-8 8s4 8 8 8 8-4 8-8-4-8-8-8zM10 32c0 12 10 22 22 22s22-10 22-22H10z"/></svg>`,
+      balloon: `<svg viewBox="0 0 64 64"><path d="M32 6c-11 0-20 9-20 20 0 16 20 30 20 30s20-14 20-30c0-11-9-20-20-20zm-2 52h4v4h-4z"/></svg>`,
+      car: `<svg viewBox="0 0 64 64"><path d="M12 28l4-12h32l4 12h8v16h-4a8 8 0 0 1-16 0H24a8 8 0 0 1-16 0H4V28h8z"/></svg>`
+    };
+
+    const tasksData = [
+      {
+        id: 1,
+        title: "Task 1: H.O.T. Birds on a Branch 🐦",
+        isHot: true,
+        problem: "There are 5 birds on a branch in total. 3 are red birds. Some blue birds join them.",
+        action: "Touch the birds to color 3 RED and the remaining BLUE!",
+        question: "How many blue birds are there?",
+        totalObjects: 5,
+        svgType: "bird",
+        colorRule: { firstCount: 3, firstColor: 'red', secondColor: 'blue' },
+        options: ["2 blue birds", "3 blue birds", "1 blue bird"],
+        correctAnswer: "2 blue birds",
+        summaryText: "5 total - 3 red = 2 blue birds!"
+      },
+      {
+        id: 2,
+        title: "Task 2: Test Prep • Buzzing Bees 🐝",
+        isHot: false,
+        problem: "2 bees and 5 more bees → ___ bees.",
+        options: ["(A) 3", "(B) 5", "(C) 7", "(D) 8"],
+        correctAnswer: "(C) 7",
+        summaryText: "2 bees + 5 bees = 7 bees in all!"
+      },
+      {
+        id: 3,
+        title: "Task 3: H.O.T. Apples in a Basket 🍎",
+        isHot: true,
+        problem: "There are 6 apples in a basket. 4 are green apples. The rest are red apples.",
+        action: "Touch the apples to color 4 GREEN and the remaining RED!",
+        question: "How many red apples are there?",
+        totalObjects: 6,
+        svgType: "apple",
+        colorRule: { firstCount: 4, firstColor: 'green', secondColor: 'red' },
+        options: ["2 red apples", "3 red apples", "4 red apples"],
+        correctAnswer: "2 red apples",
+        summaryText: "6 total - 4 green = 2 red apples!"
+      },
+      {
+        id: 4,
+        title: "Task 4: Test Prep • Swimming Fish 🐟",
+        isHot: false,
+        problem: "4 fish and 3 more fish → ___ fish.",
+        options: ["(A) 5", "(B) 6", "(C) 7", "(D) 8"],
+        correctAnswer: "(C) 7",
+        summaryText: "4 fish + 3 fish = 7 fish in all!"
+      },
+      {
+        id: 5,
+        title: "Task 5: H.O.T. Frogs on a Log 🐸",
+        isHot: true,
+        problem: "There are 7 frogs sitting on a log. 5 are green frogs. Some yellow frogs join them.",
+        action: "Touch the frogs to color 5 GREEN and the remaining YELLOW!",
+        question: "How many yellow frogs are there?",
+        totalObjects: 7,
+        svgType: "frog",
+        colorRule: { firstCount: 5, firstColor: 'green', secondColor: 'yellow' },
+        options: ["2 yellow frogs", "3 yellow frogs", "1 yellow frog"],
+        correctAnswer: "2 yellow frogs",
+        summaryText: "7 total - 5 green = 2 yellow frogs!"
+      },
+      {
+        id: 6,
+        title: "Task 6: Test Prep • Hopping Bunnies 🐰",
+        isHot: false,
+        problem: "3 bunnies and 6 more bunnies → ___ bunnies.",
+        options: ["(A) 7", "(B) 8", "(C) 9", "(D) 10"],
+        correctAnswer: "(C) 9",
+        summaryText: "3 bunnies + 6 bunnies = 9 bunnies in all!"
+      },
+      {
+        id: 7,
+        title: "Task 7: H.O.T. Balloons at the Park 🎈",
+        isHot: true,
+        problem: "A child holds 8 balloons. 3 are purple balloons. The rest are orange balloons.",
+        action: "Touch the balloons to color 3 PURPLE and the remaining ORANGE!",
+        question: "How many orange balloons are there?",
+        totalObjects: 8,
+        svgType: "balloon",
+        colorRule: { firstCount: 3, firstColor: 'purple', secondColor: 'orange' },
+        options: ["4 orange balloons", "5 orange balloons", "6 orange balloons"],
+        correctAnswer: "5 orange balloons",
+        summaryText: "8 total - 3 purple = 5 orange balloons!"
+      },
+      {
+        id: 8,
+        title: "Task 8: Test Prep • Fluttering Butterflies 🦋",
+        isHot: false,
+        problem: "1 butterfly and 5 more butterflies → ___ butterflies.",
+        options: ["(A) 4", "(B) 5", "(C) 6", "(D) 7"],
+        correctAnswer: "(C) 6",
+        summaryText: "1 butterfly + 5 butterflies = 6 butterflies in all!"
+      },
+      {
+        id: 9,
+        title: "Task 9: H.O.T. Cars in the Parking Lot 🚗",
+        isHot: true,
+        problem: "There are 9 cars parked. 6 are blue cars. The rest are red cars.",
+        action: "Touch the cars to color 6 BLUE and the remaining RED!",
+        question: "How many red cars are there?",
+        totalObjects: 9,
+        svgType: "car",
+        colorRule: { firstCount: 6, firstColor: 'blue', secondColor: 'red' },
+        options: ["2 red cars", "3 red cars", "4 red cars"],
+        correctAnswer: "3 red cars",
+        summaryText: "9 total - 6 blue = 3 red cars!"
+      },
+      {
+        id: 10,
+        title: "Task 10: Test Prep • Crawling Ants 🐜",
+        isHot: false,
+        problem: "5 ants and 4 more ants → ___ ants.",
+        options: ["(A) 8", "(B) 9", "(C) 10", "(D) 6"],
+        correctAnswer: "(B) 9",
+        summaryText: "5 ants + 4 ants = 9 ants in all!"
+      }
+    ];
+
+    let userSelections = {};
+    let taskStatus = {};
+    let objectColorState = {};
+
+    function renderTasks() {
+      const container = document.getElementById("tasksContainer");
+      container.innerHTML = tasksData.map(task => {
+        const cardClass = task.isHot ? 'amber-card' : 'mint-card';
+        const badgeTag = task.isHot 
+          ? '<span class="bg-amber-200 text-amber-900 text-xs font-black px-3 py-1 rounded-full uppercase">🎨 H.O.T. Touch to Color</span>'
+          : '<span class="bg-emerald-100 text-emerald-800 text-xs font-black px-3 py-1 rounded-full uppercase">📝 Test Prep</span>';
+
+        return `
+        <div class="${cardClass} p-6 sm:p-8 shadow-md space-y-5" id="card-${task.id}">
+          
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-emerald-100 pb-3">
+            <div class="flex items-center gap-2">
+              <h3 class="card-title text-2xl sm:text-3xl font-black text-emerald-600">
+                ${task.title}
+              </h3>
+              ${badgeTag}
+            </div>
+            <div id="badge-${task.id}" class="hidden text-sm font-bold px-3 py-1 rounded-full"></div>
+          </div>
+
+          <div class="${task.isHot ? 'bg-amber-100/50 border-amber-300' : 'bg-emerald-50 border-emerald-200'} rounded-2xl p-5 sm:p-6 border-2 text-center space-y-3">
+            
+            <p class="text-gray-800 font-bold text-lg sm:text-xl">
+              ❓ Problem: ${task.problem}
+            </p>
+
+            ${task.isHot ? `
+              <p class="text-amber-800 font-extrabold text-base sm:text-lg bg-amber-200/60 p-2 rounded-lg inline-block">
+                🖍️ Action: ${task.action}
+              </p>
+
+              <div class="py-4 flex flex-wrap justify-center items-center gap-3">
+                ${Array.from({ length: task.totalObjects }).map((_, idx) => {
+                  const state = (objectColorState[task.id] && objectColorState[task.id][idx]) || '';
+                  return `
+                    <div 
+                      class="color-item ${state ? 'color-' + state : ''}" 
+                      onclick="touchColorObject(${task.id}, ${idx})"
+                      title="Touch to color me!"
+                    >
+                      ${svgTemplates[task.svgType]}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+
+              <p class="text-emerald-900 font-black text-lg">
+                🤔 Question: ${task.question}
+              </p>
+            ` : ''}
+
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${task.options.length > 3 ? '4' : '3'} gap-4">
+            ${task.options.map(opt => `
+              <button 
+                class="opt-btn ${userSelections[task.id] === opt ? 'selected' : ''}" 
+                onclick="selectOption(${task.id}, '${opt}')"
+              >
+                ${opt}
+              </button>
+            `).join('')}
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <button class="mint-btn px-8 py-3.5 text-lg w-full sm:w-auto flex items-center justify-center gap-2" onclick="checkTask(${task.id})">
+              Check Answers 🎯
+            </button>
+            <div id="result-${task.id}" class="text-xl font-black min-h-[32px] text-center sm:text-right"></div>
+          </div>
+
+        </div>
+      `}).join('');
+
+      updateProgress();
+    }
+
+    function touchColorObject(taskId, objIndex) {
+      const task = tasksData.find(t => t.id === taskId);
+      if (!task || !task.isHot) return;
+
+      if (!objectColorState[taskId]) {
+        objectColorState[taskId] = {};
+      }
+
+      if (objectColorState[taskId][objIndex]) {
+        delete objectColorState[taskId][objIndex];
+      } else {
+        const currentColoredCount = Object.keys(objectColorState[taskId]).length;
+        if (currentColoredCount < task.colorRule.firstCount) {
+          objectColorState[taskId][objIndex] = task.colorRule.firstColor;
+        } else {
+          objectColorState[taskId][objIndex] = task.colorRule.secondColor;
+        }
+      }
+
+      renderTasks();
+    }
+
+    function selectOption(taskId, option) {
+      userSelections[taskId] = option;
+      renderTasks();
+    }
+
+    function checkTask(taskId) {
+      const task = tasksData.find(t => t.id === taskId);
+      const selected = userSelections[taskId];
+      const resultDiv = document.getElementById(`result-${taskId}`);
+      const badgeDiv = document.getElementById(`badge-${taskId}`);
+
+      if (!selected) {
+        resultDiv.innerText = "Please select an answer first!";
+        resultDiv.className = "text-amber-600 font-bold text-lg";
+        return;
+      }
+
+      if (selected === task.correctAnswer) {
+        resultDiv.innerText = `🎉 Excellent! ${task.summaryText}`;
+        resultDiv.className = "text-emerald-600 font-black text-xl";
+        
+        badgeDiv.innerText = "✓ Correct";
+        badgeDiv.className = "correct-badge text-sm font-bold px-3 py-1 rounded-full block";
+        taskStatus[taskId] = true;
+      } else {
+        resultDiv.innerText = "❌ Incorrect! Try again.";
+        resultDiv.className = "text-red-600 font-black text-xl";
+        
+        badgeDiv.innerText = "✕ Try Again";
+        badgeDiv.className = "incorrect-badge text-sm font-bold px-3 py-1 rounded-full block";
+        taskStatus[taskId] = false;
+      }
+
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const completed = Object.values(taskStatus).filter(Boolean).length;
+      document.getElementById("completedCount").innerText = completed;
+    }
+
+    function resetAll() {
+      userSelections = {};
+      taskStatus = {};
+      objectColorState = {};
+      renderTasks();
+    }
+
+    renderTasks();
+  </script>
+</body>
+</html>
