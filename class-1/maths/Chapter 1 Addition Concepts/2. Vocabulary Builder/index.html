@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition Vocabulary Practice | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
+    }
+
+    header {
+      background-color: #2dd4bf;
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047;
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.02);
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .btn-tv {
+      background-color: #0284c7;
+      color: #ffffff;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-tv:hover {
+      background-color: #0369a1;
+      transform: scale(1.02);
+    }
+
+    .drawing-box {
+      min-height: 80px;
+      background-color: #fafafa;
+      border: 2px dashed #34d399;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .shape-item {
+      font-size: 2rem;
+      animation: pop 0.2s ease-out;
+      user-select: none;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="p-0 pb-12">
+
+  <!-- Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="../index.html" class="btn-red px-5 py-2 font-extrabold text-sm sm:text-base shadow-md no-underline flex items-center gap-1">
+      🏠 Home
+    </a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-8">
+    
+    <!-- Title Header & Vocabulary Keys -->
+    <div class="text-center space-y-4">
+      <h1 class="hero-title text-3xl sm:text-4xl font-black text-emerald-600">
+        📚 Lesson: Addition Vocabulary 🎈
+      </h1>
+      
+      <!-- Key Words Box -->
+      <div class="mint-card p-5 text-left max-w-2xl mx-auto space-y-2 shadow-sm">
+        <h3 class="text-xl font-black text-emerald-700 border-b-2 border-emerald-100 pb-1">🔑 Key Words to Know</h3>
+        <ul class="space-y-2 text-sm sm:text-base font-bold text-gray-700">
+          <li><span class="text-emerald-600 font-extrabold">add:</span> To put groups together.</li>
+          <li><span class="text-emerald-600 font-extrabold">add to:</span> To put more objects with an existing group.</li>
+          <li><span class="text-emerald-600 font-extrabold">1 more:</span> Exactly one extra object added.</li>
+        </ul>
+      </div>
+    </div>
+
+    <form id="quizForm" onsubmit="calculateScore(event)" class="space-y-8">
+
+      <!-- PART 1 -->
+      <section class="amber-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-amber-700 flex items-center gap-2">
+          💜 Part 1: "1 More" Tasks
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Empty box par click karke 1 more shape draw karein aur total write karein.</p>
+
+        <!-- Task 1 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 1:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-purple-300 rounded-xl p-3 bg-purple-50">💜 💜</div>
+            <span class="text-purple-600 text-lg sm:text-xl">➔ 1 more ➔</span>
+            <div id="box-1" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(1, '💜')">
+              <span id="shape-1" class="shape-item hidden">💜</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-1" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-purple-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-purple-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-1" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 2:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-purple-300 rounded-xl p-3 bg-purple-50">💜 💜 💜</div>
+            <span class="text-purple-600 text-lg sm:text-xl">➔ 1 more ➔</span>
+            <div id="box-2" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(2, '💜')">
+              <span id="shape-2" class="shape-item hidden">💜</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-2" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-purple-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-purple-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-2" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 3:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-purple-300 rounded-xl p-3 bg-purple-50">💜 💜 💜 💜</div>
+            <span class="text-purple-600 text-lg sm:text-xl">➔ 1 more ➔</span>
+            <div id="box-3" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(3, '💜')">
+              <span id="shape-3" class="shape-item hidden">💜</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-3" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-purple-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-purple-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-3" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- PART 2 -->
+      <section class="mint-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-emerald-700 flex items-center gap-2">
+          🟦 Part 2: "Add To" Tasks
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Extra block(s) box par click karke add karein aur total write karein.</p>
+
+        <!-- Task 4 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 4:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-blue-300 rounded-xl p-3 bg-white">🟦 🟦 🟦</div>
+            <span class="text-emerald-600">+ 🟧 ➔ add to ➔</span>
+            <div id="box-4" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(4, '🟧')">
+              <span id="shape-4" class="shape-item hidden">🟧</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-4" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-4" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 5:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-blue-300 rounded-xl p-3 bg-white">🟦 🟦</div>
+            <span class="text-emerald-600">+ 🟧 🟧 ➔ add to ➔</span>
+            <div id="box-5" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(5, '🟧 🟧')">
+              <span id="shape-5" class="shape-item hidden">🟧 🟧</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-5" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-5" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 6:</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-2xl font-black">
+            <div class="border-2 border-blue-300 rounded-xl p-3 bg-white">🟦 🟦 🟦 🟦</div>
+            <span class="text-emerald-600">+ 🟧 ➔ add to ➔</span>
+            <div id="box-6" class="drawing-box p-3 min-w-[100px] flex items-center justify-center" onclick="toggleShape(6, '🟧')">
+              <span id="shape-6" class="shape-item hidden">🟧</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <input type="number" id="ans-6" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">in all</span>
+          </div>
+          <div id="expl-6" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- PART 3 -->
+      <section class="amber-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-amber-700 flex items-center gap-2">
+          🍎 Part 3: Count and Compare
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Pictures dekhein aur missing number fill karein.</p>
+
+        <!-- Task 7 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 7:</p>
+          <div class="flex flex-wrap justify-around items-center gap-4 bg-amber-50/50 p-3 rounded-xl border border-amber-100">
+            <div class="text-center">
+              <div class="text-2xl">🍎 🍎 🍎</div>
+              <span class="text-xs font-bold text-gray-500">(Group A: 3)</span>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl">🍎 🍎 🍎 🍎</div>
+              <span class="text-xs font-bold text-gray-500">(Group B: 4)</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-2 font-bold text-gray-800 pt-2">
+            <span>Group B has</span>
+            <input type="number" id="ans-7" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+            <span>more apple than Group A.</span>
+          </div>
+          <div id="expl-7" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 8 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 8:</p>
+          <div class="flex flex-wrap justify-around items-center gap-4 bg-amber-50/50 p-3 rounded-xl border border-amber-100">
+            <div class="text-center">
+              <div class="text-2xl">⭐ ⭐</div>
+              <span class="text-xs font-bold text-gray-500">(Group A: 2)</span>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl">⭐ ⭐ ⭐</div>
+              <span class="text-xs font-bold text-gray-500">(Group B: 3)</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-2 font-bold text-gray-800 pt-2">
+            <span>Group B has</span>
+            <input type="number" id="ans-8" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+            <span>more star than Group A.</span>
+          </div>
+          <div id="expl-8" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- PART 4 -->
+      <section class="mint-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-emerald-700 flex items-center gap-2">
+          ✏️ Part 4: Word Matching
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Correct vocabulary word (<code class="bg-emerald-100 text-emerald-800 px-1 rounded">add</code> ya <code class="bg-emerald-100 text-emerald-800 px-1 rounded">1 more</code>) choose karein.</p>
+
+        <!-- Task 9 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 9:</p>
+          <p class="font-bold text-gray-700 leading-relaxed">
+            Sue wants to know how many counters are in two groups. She can 
+            <select id="ans-9" class="p-2 border-2 border-emerald-400 rounded-xl font-extrabold text-emerald-700 focus:outline-none focus:border-emerald-600">
+              <option value="">-- select --</option>
+              <option value="add">add</option>
+              <option value="1 more">1 more</option>
+            </select> 
+            to find out.
+          </p>
+          <div id="expl-9" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 10 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-3">
+          <p class="font-extrabold text-gray-800">Task 10:</p>
+          <p class="font-bold text-gray-700 leading-relaxed">
+            Pete has 2 apples. May has 3 apples. May has 
+            <select id="ans-10" class="p-2 border-2 border-emerald-400 rounded-xl font-extrabold text-emerald-700 focus:outline-none focus:border-emerald-600">
+              <option value="">-- select --</option>
+              <option value="add">add</option>
+              <option value="1 more">1 more</option>
+            </select> 
+            apple than Pete.
+          </p>
+          <div id="expl-10" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- Check Answers Submit Button -->
+      <div class="text-center pt-2">
+        <button type="submit" class="mint-btn text-xl py-4 px-10 shadow-lg cursor-pointer">
+          Check Answers 🎯
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Results Box -->
+    <div id="resultBox" class="hidden mint-card p-6 text-center space-y-4 border-4 border-emerald-500 shadow-xl">
+      <h2 class="text-3xl font-black text-emerald-700">🎉 Quiz Result</h2>
+      <p id="scoreText" class="text-2xl font-extrabold text-gray-800"></p>
+      <p id="feedbackText" class="text-lg font-bold text-emerald-600"></p>
+    </div>
+
+    <!-- Final Navigation Buttons: Video Solution (TV) & Back to Lessons -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6 border-t-2 border-emerald-200">
+      <a href="../index.html" class="btn-red text-center font-extrabold text-lg py-3.5 px-8 shadow-md no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+        ⬅ Back to Lessons
+      </a>
+      <a href="https://www.youtube.com" target="_blank" class="btn-tv text-center font-extrabold text-lg py-3.5 px-8 shadow-md no-underline w-full sm:w-auto flex items-center justify-center gap-2">
+        📺 Watch Video Solution
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    const boxState = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false };
+
+    const correctAnswers = {
+      1: 3,
+      2: 4,
+      3: 5,
+      4: 4,
+      5: 4,
+      6: 5,
+      7: 1,
+      8: 1,
+      9: "add",
+      10: "1 more"
+    };
+
+    const explanations = {
+      1: "Task 1: 2 + 1 = 3 shapes in all.",
+      2: "Task 2: 3 + 1 = 4 shapes in all.",
+      3: "Task 3: 4 + 1 = 5 shapes in all.",
+      4: "Task 4: 3 + 1 = 4 blocks in all.",
+      5: "Task 5: 2 + 2 = 4 blocks in all.",
+      6: "Task 6: 4 + 1 = 5 blocks in all.",
+      7: "Task 7: 4 apples minus 3 apples = 1 more apple.",
+      8: "Task 8: 3 stars minus 2 stars = 1 more star.",
+      9: "Task 9: Groups ko milane ke liye 'add' shabd ka use hota hai.",
+      10: "Task 10: 3 apples, 2 apples se '1 more' hai."
+    };
+
+    function toggleShape(id, text) {
+      boxState[id] = !boxState[id];
+      const shapeEl = document.getElementById(`shape-${id}`);
+      if (boxState[id]) {
+        shapeEl.classList.remove('hidden');
+      } else {
+        shapeEl.classList.add('hidden');
+      }
+    }
+
+    function calculateScore(e) {
+      e.preventDefault();
+      let score = 0;
+
+      // Validate Tasks 1-6 (Needs Box Draw + Number Answer)
+      for (let i = 1; i <= 6; i++) {
+        const userVal = parseInt(document.getElementById(`ans-${i}`).value, 10);
+        const isDrawn = boxState[i];
+        const correctVal = correctAnswers[i];
+        const explDiv = document.getElementById(`expl-${i}`);
+        explDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+        if (userVal === correctVal && isDrawn) {
+          score++;
+          explDiv.classList.add('bg-green-100', 'text-green-800');
+          explDiv.innerHTML = `✅ Sahi jawab! - ${explanations[i]}`;
+        } else {
+          explDiv.classList.add('bg-red-100', 'text-red-800');
+          let reason = !isDrawn ? 'Aapne box mein shape draw nahi kiya tha.' : `Aapka answer: ${isNaN(userVal) ? 'Empty' : userVal}.`;
+          explDiv.innerHTML = `❌ Galat! ${reason} Sahi answer: ${correctVal}. - ${explanations[i]}`;
+        }
+      }
+
+      // Validate Tasks 7-8 (Number Answers)
+      for (let i = 7; i <= 8; i++) {
+        const userVal = parseInt(document.getElementById(`ans-${i}`).value, 10);
+        const correctVal = correctAnswers[i];
+        const explDiv = document.getElementById(`expl-${i}`);
+        explDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+        if (userVal === correctVal) {
+          score++;
+          explDiv.classList.add('bg-green-100', 'text-green-800');
+          explDiv.innerHTML = `✅ Sahi jawab! - ${explanations[i]}`;
+        } else {
+          explDiv.classList.add('bg-red-100', 'text-red-800');
+          explDiv.innerHTML = `❌ Galat! Aapka answer: ${isNaN(userVal) ? 'Empty' : userVal}. Sahi answer: ${correctVal}. - ${explanations[i]}`;
+        }
+      }
+
+      // Validate Tasks 9-10 (Select Vocabulary Answers)
+      for (let i = 9; i <= 10; i++) {
+        const userVal = document.getElementById(`ans-${i}`).value;
+        const correctVal = correctAnswers[i];
+        const explDiv = document.getElementById(`expl-${i}`);
+        explDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+        if (userVal === correctVal) {
+          score++;
+          explDiv.classList.add('bg-green-100', 'text-green-800');
+          explDiv.innerHTML = `✅ Sahi jawab! - ${explanations[i]}`;
+        } else {
+          explDiv.classList.add('bg-red-100', 'text-red-800');
+          explDiv.innerHTML = `❌ Galat! Aapka answer: ${userVal === "" ? 'Empty' : userVal}. Sahi answer: "${correctVal}". - ${explanations[i]}`;
+        }
+      }
+
+      // Show Results Box
+      const resultBox = document.getElementById('resultBox');
+      const scoreText = document.getElementById('scoreText');
+      const feedbackText = document.getElementById('feedbackText');
+
+      resultBox.classList.remove('hidden');
+      scoreText.innerText = `Aapka Score: ${score} / 10`;
+
+      if (score === 10) {
+        feedbackText.innerText = '🌟 Perfect Score! Addition Vocabulary master ho gaya!';
+      } else if (score >= 7) {
+        feedbackText.innerText = '👏 Great effort! Thoda aur practice karein!';
+      } else {
+        feedbackText.innerText = '💪 Accha try tha! Dubara try karke seekhein!';
+      }
+
+      resultBox.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
