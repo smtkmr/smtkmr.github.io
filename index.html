@@ -3,48 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoNova Kids Portal - Primary Learning</title>
+  <title>EcoNova Kids Portal | 🌱 EcoNova Learning</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+    
     body {
       user-select: none;
       -webkit-user-select: none;
-      background-color: #f0fdf4;
-      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+      background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #fef3c7 100%);
+      min-height: 100vh;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-badge {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
   </style>
 </head>
-<body class="p-4 sm:p-8 text-gray-800">
+<body class="p-3 sm:p-6 text-gray-800 flex flex-col items-center justify-center min-h-screen">
 
-  <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-emerald-400 p-6 space-y-6">
+  <div class="w-full max-w-4xl glass-card rounded-3xl shadow-2xl border-4 border-emerald-400 p-5 sm:p-10 space-y-8 relative overflow-hidden">
     
-    <!-- Header -->
-    <div class="text-center border-b-4 border-emerald-100 pb-4">
-      <h1 class="text-3xl sm:text-5xl font-black text-emerald-600 tracking-wide">
-        🌱 EcoNova Learning
+    <!-- Background Decor Elements -->
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-300 rounded-full opacity-40 blur-xl pointer-events-none"></div>
+    <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-emerald-300 rounded-full opacity-40 blur-xl pointer-events-none"></div>
+
+    <!-- HEADER SECTION -->
+    <header class="text-center border-b-4 border-emerald-100 pb-6 relative">
+      <div class="inline-block bg-emerald-100 text-emerald-800 font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-full mb-3 shadow-inner border border-emerald-300 floating-badge">
+        🌟 Interactive Rural Preschool Portal / ई-लर्निंग पोर्टल
+      </div>
+      <h1 class="text-3xl sm:text-6xl font-black text-emerald-600 tracking-wide drop-shadow-sm flex justify-center items-center gap-2 sm:gap-3">
+        <span>🌱</span> EcoNova Learning
       </h1>
-      <p class="text-base sm:text-xl font-bold text-gray-600 mt-2">
+      <p class="text-base sm:text-2xl font-black text-amber-600 mt-2">
         Class 1 Mathematics / कक्षा 1 गणित
       </p>
-    </div>
+    </header>
 
-    <!-- Chapter List Section -->
-    <div class="space-y-4">
-      <h2 class="text-xl sm:text-2xl font-black text-emerald-800 flex items-center gap-2">
-        📚 Chapter 1: Numbers 0 to 10 / संख्याएँ 0 से 10
-      </h2>
-
-      <div class="grid grid-cols-1 gap-3">
-        <!-- Lesson 1.1 Link -->
-        <a href="class-1/maths/chapter-1/show-what-you-know.html" class="block p-4 sm:p-5 bg-emerald-50 hover:bg-emerald-100 rounded-2xl border-3 border-emerald-300 font-black text-emerald-900 text-lg sm:text-xl transition-all shadow-md flex justify-between items-center">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">✔️</span>
-            <span>Show What You Know (संख्या 0 से 10 तक पहचानो)</span>
-          </div>
-          <span class="text-2xl text-emerald-600">➔</span>
-        </a>
+    <!-- CHAPTER 1 SECTION -->
+    <main class="space-y-6">
+      
+      <!-- Chapter Header Box -->
+      <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-5 sm:p-6 rounded-2xl shadow-lg border-b-4 border-teal-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="bg-amber-400 text-amber-950 text-xs font-black px-3 py-1 rounded-lg uppercase tracking-wider">Unit 1</span>
+          <h2 class="text-xl sm:text-3xl font-black mt-1">
+            📚 Chapter 1: Numbers 0 to 10
+          </h2>
+          <p class="text-emerald-100 font-semibold text-sm sm:text-base mt-0.5">
+            संख्याएँ 0 से 10 तक पहचानना और गिनना
+          </p>
+        </div>
+        <div class="text-4xl sm:text-5xl bg-white/20 p-3 rounded-2xl backdrop-blur-md">
+          🔢
+        </div>
       </div>
-    </div>
+
+      <!-- Module / Lesson Cards List -->
+      <div class="grid grid-cols-1 gap-4">
+        
+        <!-- Module 1: Show What You Know -->
+        <a href="class-1/maths/chapter-1/show-what-you-know.html" 
+           class="group block p-4 sm:p-6 bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 rounded-2xl border-3 border-emerald-300 hover:border-emerald-500 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-1">
+          <div class="flex items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-4">
+              <!-- Icon Box -->
+              <div class="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-500 group-hover:bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-black shadow-md transition-colors flex-shrink-0">
+                ✔️
+              </div>
+              
+              <!-- Text Info -->
+              <div>
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Lesson 1.1</span>
+                <h3 class="text-lg sm:text-2xl font-black text-gray-800 group-hover:text-emerald-900">
+                  Show What You Know
+                </h3>
+                <p class="text-sm sm:text-base font-bold text-emerald-700 mt-0.5">
+                  संख्या पहचानो और गिनो (Dots, Groups & Ladybugs)
+                </p>
+              </div>
+            </div>
+
+            <!-- Arrow Button -->
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl border-2 border-emerald-300 text-emerald-600 flex items-center justify-center text-xl sm:text-2xl font-black group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all flex-shrink-0">
+              ➔
+            </div>
+
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center pt-4 border-t-2 border-emerald-100">
+      <p class="text-xs sm:text-sm font-bold text-gray-500">
+        🎈 EcoNova Educational Portal &bull; Easy Interactive Learning for Kids
+      </p>
+    </footer>
 
   </div>
 
