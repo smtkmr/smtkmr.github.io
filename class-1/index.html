@@ -13,9 +13,6 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Lordicon for Cute Animated Icons -->
-  <script src="https://cdn.lordicon.com/lordicon.js"></script>
-
   <!-- Vanilla Tilt JS for 3D Card Hover Effects -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
@@ -92,7 +89,7 @@
       transform: scale(1.03);
     }
 
-    /* Cute Icon Floating Animation */
+    /* Cute Badge Floating Container */
     .icon-box {
       width: 140px;
       height: 140px;
@@ -103,11 +100,35 @@
       border-radius: 50%;
       border: 4px dashed #a7f3d0;
       animation: gentle-bounce 3s ease-in-out infinite;
+      position: relative;
     }
 
     @keyframes gentle-bounce {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    /* 3D Text Graphics Style */
+    .text-3d-abc {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #3b82f6, #ec4899, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(3px 4px 0px rgba(0,0,0,0.15));
+      letter-spacing: 2px;
+    }
+
+    .text-3d-123 {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #10b981, #f59e0b, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(3px 4px 0px rgba(0,0,0,0.15));
+      letter-spacing: 2px;
     }
   </style>
 </head>
@@ -138,16 +159,10 @@
     <!-- Cards Container -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl pt-4">
 
-      <!-- English Card -->
+      <!-- English Card (3D ABC) -->
       <a href="english/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
         <div class="icon-box">
-          <lordicon
-            src="https://cdn.lordicon.com/wxnxrtyw.json"
-            trigger="loop"
-            delay="1000"
-            colors="primary:#2563eb,secondary:#f59e0b"
-            style="width:100px;height:100px">
-          </lordicon>
+          <div class="text-3d-abc">ABC</div>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-blue-600">ENGLISH</h2>
         <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
@@ -155,17 +170,10 @@
         </span>
       </a>
 
-      <!-- Maths Card -->
+      <!-- Maths Card (3D 123) -->
       <a href="maths/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
         <div class="icon-box">
-          <lordicon
-            src="https://cdn.lordicon.com/qhg grid.json"
-            src="https://cdn.lordicon.com/nocovpnu.json"
-            trigger="loop"
-            delay="1000"
-            colors="primary:#10b981,secondary:#f59e0b"
-            style="width:100px;height:100px">
-          </lordicon>
+          <div class="text-3d-123">123</div>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-emerald-600">MATHS</h2>
         <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
@@ -173,16 +181,21 @@
         </span>
       </a>
 
-      <!-- Science Card -->
+      <!-- Science Card (Cute Science Flask & Atom - NO Medical Equipment) -->
       <a href="science/index.html" class="mint-card p-6 flex flex-col items-center justify-between no-underline space-y-4 shadow-lg" data-tilt data-tilt-max="10" data-tilt-speed="400">
         <div class="icon-box">
-          <lordicon
-            src="https://cdn.lordicon.com/vhyzwkyr.json"
-            trigger="loop"
-            delay="1000"
-            colors="primary:#d97706,secondary:#10b981"
-            style="width:100px;height:100px">
-          </lordicon>
+          <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Flask Body -->
+            <path d="M26 12H38V22L48 42C50.5 47 47 52 41 52H23C17 52 13.5 47 16 42L26 22V12Z" fill="#f59e0b" stroke="#d97706" stroke-width="3" stroke-linejoin="round"/>
+            <!-- Liquid -->
+            <path d="M19 40L23 32H41L45 40C47 44 44 48 39 48H25C20 48 17 44 19 40Z" fill="#10b981"/>
+            <!-- Bubbles -->
+            <circle cx="28" cy="40" r="2.5" fill="#ffffff" opacity="0.8"/>
+            <circle cx="35" cy="36" r="1.5" fill="#ffffff" opacity="0.8"/>
+            <circle cx="32" cy="24" r="2" fill="#10b981"/>
+            <!-- Flask Neck Rim -->
+            <rect x="23" y="8" width="18" height="5" rx="2.5" fill="#fcd34d" stroke="#d97706" stroke-width="2"/>
+          </svg>
         </div>
         <h2 class="card-title text-3xl font-extrabold text-amber-600">SCIENCE</h2>
         <span class="mint-btn px-6 py-3 text-base font-bold w-full shadow-md flex items-center justify-center gap-2">
