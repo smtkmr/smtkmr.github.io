@@ -3,175 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Econova Kids Learning</title>
+  <title>Econova Kids Learning 🎈</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Fredoka', cursive, sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow-x: hidden;
     }
 
-    /* Navbar */
+    /* Top Navigation Bar */
     header {
       background: #ffffff;
-      padding: 1rem 5%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 0.8rem 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #ff5722;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #FF3366;
+      text-shadow: 2px 2px 0px #FFD700;
       letter-spacing: 1px;
     }
 
-    .logo span {
-      color: #00bcd4;
+    /* Horizontal Class Navigation Bar */
+    .class-nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
+    .class-btn {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
       font-size: 1.1rem;
-      color: #666;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 4px 0px rgba(0,0,0,0.2);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
     }
 
-    /* Classes Container */
-    .main-container {
+    .class-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 0px rgba(0,0,0,0.2);
+    }
+
+    /* Individual Color Themes for Classes */
+    .c1 { background: #FF4757; }
+    .c2 { background: #2ED573; }
+    .c3 { background: #FFA502; }
+    .c4 { background: #1E90FF; }
+    .c5 { background: #9B59B6; }
+
+    /* Hero / Park Playground Section */
+    .hero-park {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      color: #FF4757;
+      text-shadow: 3px 3px 0px #FFF, 5px 5px 0px #2ED573;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.03); }
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      color: #2F3542;
+      background: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 20px;
+    }
+
+    /* Main Showcase Cards */
+    .playground {
       max-width: 1100px;
-      margin: 2rem auto;
+      margin: 1rem auto 4rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
       padding: 0 1rem;
     }
 
-    .grid-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
+    .park-card {
+      width: 180px;
+      height: 220px;
+      border-radius: 24px;
       text-decoration: none;
-      color: #333;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      box-shadow: 0 10px 0px rgba(0,0,0,0.15);
       transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
-      border: 2px solid transparent;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-      border-color: #00bcd4;
+    .park-card:hover {
+      transform: translateY(-10px) rotate(-2deg);
     }
 
-    .card .class-icon {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+    .park-card .icon {
+      font-size: 4rem;
+      margin-bottom: 10px;
     }
 
-    .card h2 {
-      font-size: 1.4rem;
-      color: #2c3e50;
-    }
-
-    .card p {
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: auto;
-      background: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+    .park-card h2 {
+      font-size: 1.6rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Top Navbar with Horizontal Class Buttons -->
   <header>
-    <div class="logo">Econova <span>Kids</span></div>
+    <div class="logo">Econova Kids 🎈</div>
+    <nav class="class-nav">
+      <a href="class-1/index.html" class="class-btn c1">Class 1</a>
+      <a href="class-2/index.html" class="class-btn c2">Class 2</a>
+      <a href="class-3/index.html" class="class-btn c3">Class 3</a>
+      <a href="class-4/index.html" class="class-btn c4">Class 4</a>
+      <a href="class-5/index.html" class="class-btn c5">Class 5</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Econova Kids Learning! 🚀</h1>
-    <p>Apni class chuniye aur fun learning shuru kijiye</p>
+  <!-- Fun Park Area -->
+  <section class="hero-park">
+    <h1 class="hero-title">Welcome to the Fun Park! 🎮🚀</h1>
+    <p class="hero-subtitle">Upar di gayi buttons se apni class chuno aur seekhna shuru karo!</p>
   </section>
 
-  <!-- Main Grid for Classes -->
-  <main class="main-container">
-    <div class="grid-cards">
-      
-      <!-- Layer 1 se Layer 2 Connect ho rha hai -->
-      <a href="class-1/index.html" class="card">
-        <div class="class-icon">🎨</div>
-        <h2>Class 1</h2>
-        <p>Maths • Science • English</p>
-      </a>
-
-      <a href="class-2/index.html" class="card">
-        <div class="class-icon">🚀</div>
-        <h2>Class 2</h2>
-        <p>Maths • Science • English</p>
-      </a>
-
-      <a href="class-3/index.html" class="card">
-        <div class="class-icon">🧩</div>
-        <h2>Class 3</h2>
-        <p>Maths • Science • English</p>
-      </a>
-
-      <a href="class-4/index.html" class="card">
-        <div class="class-icon">💡</div>
-        <h2>Class 4</h2>
-        <p>Maths • Science • English</p>
-      </a>
-
-      <a href="class-5/index.html" class="card">
-        <div class="class-icon">⭐</div>
-        <h2>Class 5</h2>
-        <p>Maths • Science • English</p>
-      </a>
-
-    </div>
+  <!-- Interactive Class Cards Area -->
+  <main class="playground">
+    <a href="class-1/index.html" class="park-card c1">
+      <div class="icon">🎨</div>
+      <h2>Class 1</h2>
+    </a>
+    <a href="class-2/index.html" class="park-card c2">
+      <div class="icon">🚀</div>
+      <h2>Class 2</h2>
+    </a>
+    <a href="class-3/index.html" class="park-card c3">
+      <div class="icon">🧩</div>
+      <h2>Class 3</h2>
+    </a>
+    <a href="class-4/index.html" class="park-card c4">
+      <div class="icon">💡</div>
+      <h2>Class 4</h2>
+    </a>
+    <a href="class-5/index.html" class="park-card c5">
+      <div class="icon">⭐</div>
+      <h2>Class 5</h2>
+    </a>
   </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2026 Econova Kids Learning. All Rights Reserved.
-  </footer>
 
 </body>
 </html>
