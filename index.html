@@ -3,135 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoNova Kids Portal | Class 1 Learning</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <title>Econova Kids Learning</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      user-select: none;
-      -webkit-user-select: none;
-      font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
-      background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #fef3c7 100%);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .glass-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+    /* Navbar */
+    header {
+      background: #ffffff;
+      padding: 1rem 5%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .bounce-slow {
-      animation: bounce 2.5s infinite;
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ff5722;
+      letter-spacing: 1px;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    .logo span {
+      color: #00bcd4;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* Classes Container */
+    .main-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      border-color: #00bcd4;
+    }
+
+    .card .class-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-<body class="p-3 sm:p-6 text-gray-800 flex flex-col items-center justify-center min-h-screen">
+<body>
 
-  <div class="w-full max-w-4xl glass-card rounded-3xl shadow-2xl border-4 border-emerald-400 p-5 sm:p-10 space-y-8 relative overflow-hidden">
-    
-    <!-- HEADER SECTION -->
-    <header class="text-center border-b-4 border-emerald-100 pb-6 relative">
-      <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-full mb-3 shadow-inner border border-emerald-300 bounce-slow">
-        <span>📚</span> Kids Educational Portal
-      </div>
-      <h1 class="text-4xl sm:text-6xl font-black text-emerald-600 tracking-wide flex justify-center items-center gap-3">
-        🌱 econova.vip
-      </h1>
-      <p class="text-base sm:text-2xl font-black text-amber-600 mt-2">
-        Welcome Kids! Select Your Subject & Chapter 📖
-      </p>
-    </header>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Econova <span>Kids</span></div>
+  </header>
 
-    <!-- STEP 1: CLASS & SUBJECT SELECTOR -->
-    <section class="space-y-4">
-      <div class="flex items-center gap-3">
-        <span class="bg-amber-400 text-amber-950 font-black text-sm px-3 py-1 rounded-xl shadow">Step 1</span>
-        <h2 class="text-xl sm:text-2xl font-black text-gray-800">Select Grade & Subject</h2>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Econova Kids Learning! 🚀</h1>
+    <p>Apni class chuniye aur fun learning shuru kijiye</p>
+  </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Class 1 Maths (Active Selection) -->
-        <div class="p-5 bg-emerald-500 text-white rounded-2xl shadow-lg border-b-4 border-emerald-700 flex items-center justify-between cursor-pointer">
-          <div class="flex items-center gap-4">
-            <span class="text-4xl bg-white/20 p-2.5 rounded-2xl">📐</span>
-            <div>
-              <span class="text-xs font-extrabold text-emerald-200 uppercase tracking-wider">Class 1</span>
-              <h3 class="text-2xl font-black">Mathematics</h3>
-            </div>
-          </div>
-          <span class="text-2xl font-black bg-white text-emerald-700 w-10 h-10 rounded-full flex items-center justify-center shadow">✓</span>
-        </div>
-
-        <!-- Other Subjects (Coming Soon Placeholder) -->
-        <div class="p-5 bg-gray-100 text-gray-400 rounded-2xl border-2 border-dashed border-gray-300 flex items-center justify-between opacity-70">
-          <div class="flex items-center gap-4">
-            <span class="text-4xl">🎨</span>
-            <div>
-              <span class="text-xs font-bold uppercase">Class 1</span>
-              <h3 class="text-2xl font-black">English / Art</h3>
-            </div>
-          </div>
-          <span class="text-xs bg-gray-200 text-gray-600 font-bold px-3 py-1 rounded-full">Coming Soon</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- STEP 2: CHAPTER 1 & LESSON ACCESS -->
-    <section class="space-y-4">
-      <div class="flex items-center gap-3">
-        <span class="bg-emerald-500 text-white font-black text-sm px-3 py-1 rounded-xl shadow">Step 2</span>
-        <h2 class="text-xl sm:text-2xl font-black text-gray-800">Chapter 1: Numbers 0 to 10</h2>
-      </div>
-
-      <!-- Lesson Card: Show What You Know -->
-      <a href="class-1/maths/chapter-1/show-what-you-know.html" 
-         class="group block p-5 sm:p-6 bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 rounded-2xl border-3 border-emerald-300 hover:border-emerald-500 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-1">
-        <div class="flex items-center justify-between gap-4">
-          
-          <div class="flex items-center gap-4">
-            <!-- Icon Box -->
-            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-500 group-hover:bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-black shadow-md transition-colors flex-shrink-0">
-              ✔️
-            </div>
-            
-            <!-- Details -->
-            <div>
-              <span class="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">Lesson 1.1</span>
-              <h3 class="text-xl sm:text-2xl font-black text-gray-800 group-hover:text-emerald-900">
-                Show What You Know
-              </h3>
-              <p class="text-sm font-bold text-emerald-700 mt-0.5">
-                Explore & Count Numbers 0 to 10
-              </p>
-            </div>
-          </div>
-
-          <!-- Action Arrow Button -->
-          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl border-2 border-emerald-300 text-emerald-600 flex items-center justify-center text-xl sm:text-2xl font-black group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all flex-shrink-0 shadow">
-            ➔
-          </div>
-
-        </div>
+  <!-- Main Grid for Classes -->
+  <main class="main-container">
+    <div class="grid-cards">
+      
+      <!-- Layer 1 se Layer 2 Connect ho rha hai -->
+      <a href="class-1/index.html" class="card">
+        <div class="class-icon">🎨</div>
+        <h2>Class 1</h2>
+        <p>Maths • Science • English</p>
       </a>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="text-center pt-4 border-t-2 border-emerald-100">
-      <p class="text-xs sm:text-sm font-bold text-gray-500">
-        🎈 econova.vip &bull; Interactive Primary Learning Portal
-      </p>
-    </footer>
+      <a href="class-2/index.html" class="card">
+        <div class="class-icon">🚀</div>
+        <h2>Class 2</h2>
+        <p>Maths • Science • English</p>
+      </a>
 
-  </div>
+      <a href="class-3/index.html" class="card">
+        <div class="class-icon">🧩</div>
+        <h2>Class 3</h2>
+        <p>Maths • Science • English</p>
+      </a>
+
+      <a href="class-4/index.html" class="card">
+        <div class="class-icon">💡</div>
+        <h2>Class 4</h2>
+        <p>Maths • Science • English</p>
+      </a>
+
+      <a href="class-5/index.html" class="card">
+        <div class="class-icon">⭐</div>
+        <h2>Class 5</h2>
+        <p>Maths • Science • English</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Econova Kids Learning. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
