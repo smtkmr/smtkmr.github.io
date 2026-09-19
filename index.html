@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>econova.vip - Class 1 Learning Portal</title>
-
-  <!-- Tailwind CSS -->
+  <title>EcoNova Kids Portal - Primary Learning</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     body {
       user-select: none;
@@ -15,131 +12,41 @@
       background-color: #f0fdf4;
       font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
     }
-
-    .mint-header {
-      background-color: #2dd4bf;
-    }
-
-    .mint-border-card {
-      background-color: #ffffff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .mint-text {
-      color: #059669;
-    }
-
-    .card-hover {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
-    }
   </style>
 </head>
-<body class="p-3 sm:p-6 text-gray-800">
+<body class="p-4 sm:p-8 text-gray-800">
 
-  <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-emerald-400 overflow-hidden">
+  <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-emerald-400 p-6 space-y-6">
     
-    <!-- TOP HEADER -->
-    <header class="mint-header p-4 sm:p-6 text-white flex flex-wrap justify-between items-center gap-4">
-      <div class="flex items-center gap-3">
-        <span class="text-4xl">✨</span>
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-300 drop-shadow-md">econova.vip</h1>
-          <p class="text-emerald-900 font-bold text-sm sm:text-base">Student Learning Portal</p>
-        </div>
+    <!-- Header -->
+    <div class="text-center border-b-4 border-emerald-100 pb-4">
+      <h1 class="text-3xl sm:text-5xl font-black text-emerald-600 tracking-wide">
+        🌱 EcoNova Learning
+      </h1>
+      <p class="text-base sm:text-xl font-bold text-gray-600 mt-2">
+        Class 1 Mathematics / कक्षा 1 गणित
+      </p>
+    </div>
+
+    <!-- Chapter List Section -->
+    <div class="space-y-4">
+      <h2 class="text-xl sm:text-2xl font-black text-emerald-800 flex items-center gap-2">
+        📚 Chapter 1: Numbers 0 to 10 / संख्याएँ 0 से 10
+      </h2>
+
+      <div class="grid grid-cols-1 gap-3">
+        <!-- Lesson Link -->
+        <a href="class-1/maths/chapter-1/show-what-you-know.html" class="block p-4 sm:p-5 bg-emerald-50 hover:bg-emerald-100 rounded-2xl border-3 border-emerald-300 font-black text-emerald-900 text-lg sm:text-xl transition-all shadow-md flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">✔️</span>
+            <span>Show What You Know (संख्या पहचानो और गिनो)</span>
+          </div>
+          <span class="text-2xl text-emerald-600">➔</span>
+        </a>
       </div>
-    </header>
+    </div>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="p-4 sm:p-8 space-y-6">
-
-      <!-- STEP 1: CLASS SELECTION -->
-      <section id="stepClass" class="space-y-6">
-        <div class="mint-border-card p-4 sm:p-6 text-center">
-          <h2 class="text-2xl sm:text-3xl font-black mint-text flex items-center justify-center gap-2">
-            <span>👇</span> SELECT YOUR CLASS / GRADE:
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-          <button onclick="selectClass('Class 1')" class="card-hover p-6 bg-emerald-50 border-3 border-emerald-300 hover:border-emerald-500 rounded-3xl font-black text-emerald-800 text-xl shadow-md flex flex-col items-center gap-2">
-            <span class="text-4xl">🎒</span> Class 1
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-4xl">📚</span> Class 2 (Soon)
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-300 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-4xl">🎨</span> Class 3 (Soon)
-          </button>
-        </div>
-      </section>
-
-      <!-- STEP 2: SUBJECT SELECTION -->
-      <section id="stepSubject" class="space-y-6 hidden">
-        <div class="flex items-center justify-between">
-          <h2 class="text-2xl font-black mint-text">Select Subject (<span id="selectedClassLabel" class="text-amber-500"></span>)</h2>
-          <button onclick="goBack('stepClass')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Change Class</button>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          <button onclick="selectSubject('Mathematics')" class="card-hover p-6 bg-amber-50 border-3 border-amber-300 hover:border-amber-500 rounded-3xl font-black text-amber-900 text-xl shadow-md flex flex-col items-center gap-2">
-            <span class="text-5xl">🔢</span> Mathematics
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-5xl">🔬</span> Science (Soon)
-          </button>
-          <button class="p-6 bg-gray-100 border-3 border-gray-200 rounded-3xl font-black text-gray-400 text-xl shadow-md flex flex-col items-center gap-2 opacity-60" disabled>
-            <span class="text-5xl">📖</span> English (Soon)
-          </button>
-        </div>
-      </section>
-
-      <!-- STEP 3: CHAPTERS LIST -->
-      <section id="stepTopic" class="space-y-6 hidden">
-        <div class="flex items-center justify-between">
-          <div>
-            <h2 class="text-2xl font-black mint-text">Class 1 Mathematics</h2>
-            <p class="text-xs font-bold text-gray-500">Syllabus Chapters</p>
-          </div>
-          <button onclick="goBack('stepSubject')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 font-extrabold text-gray-700 rounded-xl shadow text-sm">← Back</button>
-        </div>
-
-        <div class="space-y-4">
-          <div class="border-3 border-emerald-300 rounded-2xl p-4 bg-white shadow-sm space-y-3">
-            <h3 class="font-black text-xl text-emerald-800">Chapter 1: Addition Concepts</h3>
-            <a href="class-1/maths/chapter-1/1-1-draw-one-more.html" class="block p-4 bg-emerald-50 hover:bg-emerald-100 rounded-xl border border-emerald-300 font-bold text-emerald-900 flex justify-between items-center">
-              <span>🎨 1.1 Draw One More & Print How Many</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
   </div>
 
-  <script>
-    function selectClass(className) {
-      document.getElementById('selectedClassLabel').innerText = className;
-      document.getElementById('stepClass').classList.add('hidden');
-      document.getElementById('stepSubject').classList.remove('hidden');
-    }
-
-    function selectSubject(subjectName) {
-      document.getElementById('stepSubject').classList.add('hidden');
-      document.getElementById('stepTopic').classList.remove('hidden');
-    }
-
-    function goBack(targetStep) {
-      document.getElementById('stepClass').classList.add('hidden');
-      document.getElementById('stepSubject').classList.add('hidden');
-      document.getElementById('stepTopic').classList.add('hidden');
-      document.getElementById(targetStep).classList.remove('hidden');
-    }
-  </script>
 </body>
 </html>
