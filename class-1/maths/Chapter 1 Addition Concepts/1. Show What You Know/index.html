@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Counting & Numbers Practice | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
+    }
+
+    header {
+      background-color: #2dd4bf;
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047;
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.02);
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .drawing-box {
+      min-height: 100px;
+      background-color: #fafafa;
+      border: 2px dashed #34d399;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .dot-item {
+      width: 28px;
+      height: 28px;
+      background-color: #ef4444;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      animation: pop 0.2s ease-out;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="p-0 pb-12">
+
+  <!-- Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="#" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="#" class="btn-red px-5 py-2 font-extrabold text-sm sm:text-base shadow-md no-underline flex items-center gap-1">
+      🏠 Home
+    </a>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-8">
+    
+    <!-- Title Header -->
+    <div class="text-center space-y-2">
+      <h1 class="hero-title text-3xl sm:text-4xl font-black text-emerald-600">
+        Numbers & Counting Fun (0 to 10) 🎈
+      </h1>
+      <p class="text-gray-600 font-bold text-sm sm:text-base">
+        Tasks complete karein aur neeche Submit button daba kar score check karein!
+      </p>
+    </div>
+
+    <form id="quizForm" onsubmit="calculateScore(event)" class="space-y-8">
+
+      <!-- ACTIVITY 1 -->
+      <section class="amber-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-amber-700 flex items-center gap-2">
+          🔴 Activity 1: Draw the Red Dots
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Box ke andar click karke utne red dots lagayein. Dubara click karke dot remove kar sakte hain.</p>
+
+        <!-- Task 1 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <label class="font-extrabold text-gray-800">Task 1: Show number 3</label>
+          <div id="box-1" class="drawing-box p-3 flex flex-wrap gap-2 items-center justify-center" onclick="addDot(1)"></div>
+          <div class="flex justify-between items-center text-xs font-bold text-gray-500">
+            <span>Dots count: <span id="count-1" class="text-emerald-600 text-sm">0</span></span>
+            <button type="button" onclick="clearDots(1)" class="text-red-500 underline">Clear</button>
+          </div>
+          <div id="expl-1" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <label class="font-extrabold text-gray-800">Task 2: Show number 6</label>
+          <div id="box-2" class="drawing-box p-3 flex flex-wrap gap-2 items-center justify-center" onclick="addDot(2)"></div>
+          <div class="flex justify-between items-center text-xs font-bold text-gray-500">
+            <span>Dots count: <span id="count-2" class="text-emerald-600 text-sm">0</span></span>
+            <button type="button" onclick="clearDots(2)" class="text-red-500 underline">Clear</button>
+          </div>
+          <div id="expl-2" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <label class="font-extrabold text-gray-800">Task 3: Show number 8</label>
+          <div id="box-3" class="drawing-box p-3 flex flex-wrap gap-2 items-center justify-center" onclick="addDot(3)"></div>
+          <div class="flex justify-between items-center text-xs font-bold text-gray-500">
+            <span>Dots count: <span id="count-3" class="text-emerald-600 text-sm">0</span></span>
+            <button type="button" onclick="clearDots(3)" class="text-red-500 underline">Clear</button>
+          </div>
+          <div id="expl-3" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- ACTIVITY 2 -->
+      <section class="mint-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-emerald-700 flex items-center gap-2">
+          🐥 Activity 2: Count the Objects
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Objects ko count karein aur sahi number box mein type karein.</p>
+
+        <!-- Task 4 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 4:</p>
+          <div class="text-3xl tracking-widest my-2">🐥 🐥 🐥 🐥</div>
+          <div class="flex items-center gap-3">
+            <input type="number" id="ans-4" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">chicks</span>
+          </div>
+          <div id="expl-4" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 5:</p>
+          <div class="text-3xl tracking-widest my-2">🌸 🌸 🌸 🌸 🌸 🌸 🌸</div>
+          <div class="flex items-center gap-3">
+            <input type="number" id="ans-5" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">flowers</span>
+          </div>
+          <div id="expl-5" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 6:</p>
+          <div class="text-3xl tracking-widest my-2">🪺 🪺 🪺 🪺 🪺</div>
+          <div class="flex items-center gap-3">
+            <input type="number" id="ans-6" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">nests</span>
+          </div>
+          <div id="expl-6" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 7 -->
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 7:</p>
+          <div class="text-3xl tracking-widest my-2">⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="flex items-center gap-3">
+            <input type="number" id="ans-7" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-emerald-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-emerald-600">
+            <span class="font-bold text-gray-700">stars</span>
+          </div>
+          <div id="expl-7" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- ACTIVITY 3 -->
+      <section class="amber-card p-6 shadow-md space-y-6">
+        <h2 class="text-2xl font-black text-amber-700 flex items-center gap-2">
+          🐞 Activity 3: Ladybug Spot Counting
+        </h2>
+        <p class="text-sm font-bold text-gray-700">Ladybugs ke spots count karke answer fill karein.</p>
+
+        <!-- Task 8 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 8: 🐞 (Smooth back, no spots)</p>
+          <div class="flex items-center gap-3 mt-2">
+            <input type="number" id="ans-8" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+            <span class="font-bold text-gray-700">spots</span>
+          </div>
+          <div id="expl-8" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 9 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 9: 🐞 (4 black spots)</p>
+          <div class="flex items-center gap-3 mt-2">
+            <input type="number" id="ans-9" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+            <span class="font-bold text-gray-700">spots</span>
+          </div>
+          <div id="expl-9" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+
+        <!-- Task 10 -->
+        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+          <p class="font-extrabold text-gray-800">Task 10: 🐞 (7 black spots)</p>
+          <div class="flex items-center gap-3 mt-2">
+            <input type="number" id="ans-10" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+            <span class="font-bold text-gray-700">spots</span>
+          </div>
+          <div id="expl-10" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+        </div>
+      </section>
+
+      <!-- Submit Button -->
+      <div class="text-center pt-4">
+        <button type="submit" class="mint-btn text-xl py-4 px-10 shadow-lg cursor-pointer">
+          Submit Answers 🎯
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Results Box -->
+    <div id="resultBox" class="hidden mint-card p-6 text-center space-y-4 border-4 border-emerald-500 shadow-xl">
+      <h2 class="text-3xl font-black text-emerald-700">🎉 Quiz Result</h2>
+      <p id="scoreText" class="text-2xl font-extrabold text-gray-800"></p>
+      <p id="feedbackText" class="text-lg font-bold text-emerald-600"></p>
+    </div>
+
+  </main>
+
+  <script>
+    const dotCounts = { 1: 0, 2: 0, 3: 0 };
+    const correctAnswers = {
+      1: 3,
+      2: 6,
+      3: 8,
+      4: 4,
+      5: 7,
+      6: 5,
+      7: 10,
+      8: 0,
+      9: 4,
+      10: 7
+    };
+
+    const explanations = {
+      1: "Task 1: Total 3 red dots banane the.",
+      2: "Task 2: Total 6 red dots banane the.",
+      3: "Task 3: Total 8 red dots banane the.",
+      4: "Task 4: Group me total 4 chicks (🐥) hain.",
+      5: "Task 5: Group me total 7 flowers (🌸) hain.",
+      6: "Task 6: Group me total 5 nests (🪺) hain.",
+      7: "Task 7: Group me total 10 stars (⭐) hain.",
+      8: "Task 8: Ladybug par koi spot nahi tha, isliye answer 0 hai.",
+      9: "Task 9: Ladybug ke back par 4 black spots hain.",
+      10: "Task 10: Ladybug ke back par 7 black spots hain."
+    };
+
+    function addDot(taskId) {
+      if (dotCounts[taskId] < 10) {
+        dotCounts[taskId]++;
+        updateBox(taskId);
+      }
+    }
+
+    function clearDots(taskId) {
+      dotCounts[taskId] = 0;
+      updateBox(taskId);
+    }
+
+    function updateBox(taskId) {
+      const box = document.getElementById(`box-${taskId}`);
+      const countLabel = document.getElementById(`count-${taskId}`);
+      box.innerHTML = '';
+      for (let i = 0; i < dotCounts[taskId]; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot-item';
+        box.appendChild(dot);
+      }
+      countLabel.textContent = dotCounts[taskId];
+    }
+
+    function calculateScore(e) {
+      e.preventDefault();
+      let score = 0;
+
+      // Validate Tasks 1-3
+      for (let i = 1; i <= 3; i++) {
+        const userVal = dotCounts[i];
+        const correctVal = correctAnswers[i];
+        const explDiv = document.getElementById(`expl-${i}`);
+        explDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+        if (userVal === correctVal) {
+          score++;
+          explDiv.classList.add('bg-green-100', 'text-green-800');
+          explDiv.innerHTML = `✅ Sahi jawab! (${userVal} dots) - ${explanations[i]}`;
+        } else {
+          explDiv.classList.add('bg-red-100', 'text-red-800');
+          explDiv.innerHTML = `❌ Galat! Aapne ${userVal} dots banaye. Sahi answer: ${correctVal}. - ${explanations[i]}`;
+        }
+      }
+
+      // Validate Tasks 4-10
+      for (let i = 4; i <= 10; i++) {
+        const inputEl = document.getElementById(`ans-${i}`);
+        const userVal = parseInt(inputEl.value, 10);
+        const correctVal = correctAnswers[i];
+        const explDiv = document.getElementById(`expl-${i}`);
+        explDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+        if (userVal === correctVal) {
+          score++;
+          explDiv.classList.add('bg-green-100', 'text-green-800');
+          explDiv.innerHTML = `✅ Sahi jawab! (${correctVal}) - ${explanations[i]}`;
+        } else {
+          explDiv.classList.add('bg-red-100', 'text-red-800');
+          explDiv.innerHTML = `❌ Galat! Aapka answer: ${isNaN(userVal) ? 'Empty' : userVal}. Sahi answer: ${correctVal}. - ${explanations[i]}`;
+        }
+      }
+
+      // Show Results Box
+      const resultBox = document.getElementById('resultBox');
+      const scoreText = document.getElementById('scoreText');
+      const feedbackText = document.getElementById('feedbackText');
+
+      resultBox.classList.remove('hidden');
+      scoreText.innerText = `Aapka Score: ${score} / 10`;
+
+      if (score === 10) {
+        feedbackText.innerText = '🌟 Perfect Score! Excellent job!';
+      } else if (score >= 7) {
+        feedbackText.innerText = '👏 Great effort! Thoda aur practice karein!';
+      } else {
+        feedbackText.innerText = '💪 Accha try tha! Dubara try karke aur seekhein!';
+      }
+
+      resultBox.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
