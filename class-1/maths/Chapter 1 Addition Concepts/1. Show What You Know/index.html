@@ -229,34 +229,98 @@
         <p class="text-sm font-bold text-gray-700">Ladybugs ke spots count karke answer fill karein.</p>
 
         <!-- Task 8 -->
-        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
-          <p class="font-extrabold text-gray-800">Task 8: 🐞 (Smooth back, no spots)</p>
-          <div class="flex items-center gap-3 mt-2">
-            <input type="number" id="ans-8" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
-            <span class="font-bold text-gray-700">spots</span>
+        <div class="bg-white p-5 rounded-xl border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="space-y-2 w-full sm:w-auto">
+            <p class="font-extrabold text-gray-800 text-lg">Task 8: 🐞 <span class="text-amber-700">(No spots)</span></p>
+            <div class="flex items-center gap-3 mt-2">
+              <input type="number" id="ans-8" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+              <span class="font-bold text-gray-700 text-lg">spots</span>
+            </div>
           </div>
-          <div id="expl-8" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+          <!-- Large Ladybug SVG (0 spots) -->
+          <div class="flex-shrink-0">
+            <svg width="150" height="150" viewBox="0 0 100 100">
+              <!-- Legs -->
+              <path d="M 20 35 L 5 25 M 20 50 L 3 50 M 20 65 L 5 75 M 80 35 L 95 25 M 80 50 L 97 50 M 80 65 L 95 75" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+              <!-- Head -->
+              <path d="M 35 25 A 20 20 0 0 1 65 25 Z" fill="#1f2937"/>
+              <!-- Antennae -->
+              <path d="M 42 12 Q 38 2 30 5 M 58 12 Q 62 2 70 5" stroke="#1f2937" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Body / Shell -->
+              <circle cx="50" cy="55" r="32" fill="#ef4444" stroke="#1f2937" stroke-width="3"/>
+              <!-- Center Line -->
+              <line x1="50" y1="23" x2="50" y2="87" stroke="#1f2937" stroke-width="3"/>
+            </svg>
+          </div>
         </div>
+        <div id="expl-8" class="hidden p-3 rounded-lg text-sm font-bold"></div>
 
         <!-- Task 9 -->
-        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
-          <p class="font-extrabold text-gray-800">Task 9: 🐞 (4 black spots)</p>
-          <div class="flex items-center gap-3 mt-2">
-            <input type="number" id="ans-9" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
-            <span class="font-bold text-gray-700">spots</span>
+        <div class="bg-white p-5 rounded-xl border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="space-y-2 w-full sm:w-auto">
+            <p class="font-extrabold text-gray-800 text-lg">Task 9: 🐞 <span class="text-amber-700">(Count black spots)</span></p>
+            <div class="flex items-center gap-3 mt-2">
+              <input type="number" id="ans-9" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+              <span class="font-bold text-gray-700 text-lg">spots</span>
+            </div>
           </div>
-          <div id="expl-9" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+          <!-- Large Ladybug SVG (4 spots) -->
+          <div class="flex-shrink-0">
+            <svg width="150" height="150" viewBox="0 0 100 100">
+              <!-- Legs -->
+              <path d="M 20 35 L 5 25 M 20 50 L 3 50 M 20 65 L 5 75 M 80 35 L 95 25 M 80 50 L 97 50 M 80 65 L 95 75" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+              <!-- Head -->
+              <path d="M 35 25 A 20 20 0 0 1 65 25 Z" fill="#1f2937"/>
+              <!-- Antennae -->
+              <path d="M 42 12 Q 38 2 30 5 M 58 12 Q 62 2 70 5" stroke="#1f2937" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Body / Shell -->
+              <circle cx="50" cy="55" r="32" fill="#ef4444" stroke="#1f2937" stroke-width="3"/>
+              <!-- Center Line -->
+              <line x1="50" y1="23" x2="50" y2="87" stroke="#1f2937" stroke-width="3"/>
+              <!-- 4 Black Spots -->
+              <circle cx="35" cy="42" r="5" fill="#1f2937"/>
+              <circle cx="33" cy="65" r="5" fill="#1f2937"/>
+              <circle cx="65" cy="42" r="5" fill="#1f2937"/>
+              <circle cx="67" cy="65" r="5" fill="#1f2937"/>
+            </svg>
+          </div>
         </div>
+        <div id="expl-9" class="hidden p-3 rounded-lg text-sm font-bold"></div>
 
         <!-- Task 10 -->
-        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
-          <p class="font-extrabold text-gray-800">Task 10: 🐞 (7 black spots)</p>
-          <div class="flex items-center gap-3 mt-2">
-            <input type="number" id="ans-10" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
-            <span class="font-bold text-gray-700">spots</span>
+        <div class="bg-white p-5 rounded-xl border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="space-y-2 w-full sm:w-auto">
+            <p class="font-extrabold text-gray-800 text-lg">Task 10: 🐞 <span class="text-amber-700">(Count black spots)</span></p>
+            <div class="flex items-center gap-3 mt-2">
+              <input type="number" id="ans-10" min="0" max="10" placeholder="?" class="w-20 p-2 border-2 border-amber-400 rounded-xl text-center font-black text-xl focus:outline-none focus:border-amber-600">
+              <span class="font-bold text-gray-700 text-lg">spots</span>
+            </div>
           </div>
-          <div id="expl-10" class="hidden mt-2 p-3 rounded-lg text-sm font-bold"></div>
+          <!-- Large Ladybug SVG (7 spots) -->
+          <div class="flex-shrink-0">
+            <svg width="150" height="150" viewBox="0 0 100 100">
+              <!-- Legs -->
+              <path d="M 20 35 L 5 25 M 20 50 L 3 50 M 20 65 L 5 75 M 80 35 L 95 25 M 80 50 L 97 50 M 80 65 L 95 75" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+              <!-- Head -->
+              <path d="M 35 25 A 20 20 0 0 1 65 25 Z" fill="#1f2937"/>
+              <!-- Antennae -->
+              <path d="M 42 12 Q 38 2 30 5 M 58 12 Q 62 2 70 5" stroke="#1f2937" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Body / Shell -->
+              <circle cx="50" cy="55" r="32" fill="#ef4444" stroke="#1f2937" stroke-width="3"/>
+              <!-- Center Line -->
+              <line x1="50" y1="23" x2="50" y2="87" stroke="#1f2937" stroke-width="3"/>
+              <!-- 7 Black Spots -->
+              <circle cx="35" cy="40" r="4.5" fill="#1f2937"/>
+              <circle cx="30" cy="56" r="4.5" fill="#1f2937"/>
+              <circle cx="36" cy="72" r="4.5" fill="#1f2937"/>
+              <circle cx="65" cy="40" r="4.5" fill="#1f2937"/>
+              <circle cx="70" cy="56" r="4.5" fill="#1f2937"/>
+              <circle cx="64" cy="72" r="4.5" fill="#1f2937"/>
+              <circle cx="50" cy="52" r="4.5" fill="#1f2937"/> <!-- Center spot -->
+            </svg>
+          </div>
         </div>
+        <div id="expl-10" class="hidden p-3 rounded-lg text-sm font-bold"></div>
       </section>
 
       <!-- Submit Button -->
