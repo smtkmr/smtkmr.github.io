@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1 - Addition Concepts ➕ | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vanilla Tilt JS for 3D Card Hover Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4; /* Light Mint */
+      color: #1f2937; /* Dark Gray */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
+    }
+
+    /* Mint Header */
+    header {
+      background-color: #2dd4bf; /* Mint Teal */
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047; /* Yellow Accent */
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    /* Mint Card Styling */
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+      min-height: 180px;
+    }
+
+    .mint-card:hover {
+      border-color: #10b981;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.18);
+    }
+
+    /* Amber Card Styling */
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+      min-height: 180px;
+    }
+
+    .amber-card:hover {
+      border-color: #f59e0b;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.18);
+    }
+
+    /* Action Buttons */
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.02);
+    }
+
+    /* Icon Container */
+    .section-icon-box {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      background: #f0fdf4;
+      border: 2px dashed #a7f3d0;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="p-0">
+
+  <!-- Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="../../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <div class="flex gap-3">
+      <a href="../index.html" class="btn-red px-5 py-2 font-extrabold text-sm sm:text-base shadow-md no-underline flex items-center gap-1">
+        🏠 Maths Menu
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col items-center justify-center text-center p-6 space-y-6 max-w-7xl mx-auto w-full">
+    
+    <!-- Title Section -->
+    <div>
+      <span class="text-sm font-black text-emerald-600 bg-emerald-100 px-4 py-1 rounded-full uppercase tracking-wider border border-emerald-300">
+        Chapter 01
+      </span>
+      <h1 class="hero-title text-4xl sm:text-5xl font-black text-emerald-600 mt-2 mb-2">
+        Addition Concepts ➕
+      </h1>
+      <p class="text-base sm:text-lg font-bold text-gray-700 bg-emerald-100/70 py-1.5 px-6 rounded-full inline-block border border-emerald-300">
+        Pick a lesson to start practicing!
+      </p>
+    </div>
+
+    <!-- Section Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full pt-4">
+
+      <!-- 1. Show What You Know -->
+      <a href="1. Show What You Know/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Lightbulb / Brainstorm Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 1</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Show What You Know</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 2. Vocabulary Builder -->
+      <a href="2. Vocabulary Builder/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Book / Vocabulary Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="9" y1="7" x2="15" y2="7"></line><line x1="9" y1="11" x2="13" y2="11"></line></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Topic 2</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Vocabulary Builder</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 3. Game Addition Bingo -->
+      <a href="3. Game Addition Bingo/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Game Controller / Dice Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><circle cx="15" cy="10" r="1" fill="#10b981"></circle><circle cx="18" cy="13" r="1" fill="#10b981"></circle></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 3</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Game Addition Bingo</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Play Game 🎮</span>
+      </a>
+
+      <!-- 4. Algebra • Use Pictures to Add To -->
+      <a href="4. Algebra • Use Pictures to Add To/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Image / Picture Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Topic 4</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Algebra • Use Pictures to Add To</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 5. Hands On • Model Adding To -->
+      <a href="5. Hands On • Model Adding To/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Hand / Interactive Blocks Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"></path><path d="M14 10V4a2 2 0 0 0-4 0v6"></path><path d="M10 10.5V6a2 2 0 0 0-4 0v9"></path><path d="M18 11a2 2 0 0 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.8-5.9-2.2L2 14"></path></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 5</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Hands On • Model Adding To</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 6. Hands On • Model Putting Together -->
+      <a href="6. Hands On • Model Putting Together/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Puzzle Piece Putting Together Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.43 12.98A10 10 0 0 0 12 2a10 10 0 0 0-7.43 10.98L3 17h18l-1.57-4.02z"></path><path d="M12 9v4"></path><path d="M10 11h4"></path></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Topic 6</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Hands On • Model Putting Together</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 7. Problem Solving • Model Addition -->
+      <a href="7. Problem Solving • Model Addition/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Target / Solution Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2" fill="#10b981"></circle></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 7</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Problem Solving • Model Addition</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 8. Mid-Chapter Checkpoint -->
+      <a href="8. Mid-Chapter Checkpoint/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Flag Checkpoint Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Checkpoint</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Mid-Chapter Checkpoint</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Check Progress 🏁</span>
+      </a>
+
+      <!-- 9. Algebra • Add Zero -->
+      <a href="9. Algebra • Add Zero/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Number 0 Circle Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8"></path></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 9</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Algebra • Add Zero</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 10. Hands On Algebra • Add in Any Order -->
+      <a href="10. Hands On Algebra • Add in Any Order/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Shuffle / Swap Order Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Topic 10</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Hands On Algebra • Add in Any Order</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 11. Hands On Algebra • Put Together Numbers to 10 -->
+      <a href="11. Hands On Algebra • Put Together Numbers to 10/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Number 10 / Combine Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="14" rx="2"></rect><circle cx="17" cy="12" r="4"></circle></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Topic 11</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Hands On Algebra • Put Together Numbers to 10</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 12. Addition to 10 -->
+      <a href="12. Addition to 10/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Plus Circle Badge Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Topic 12</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Addition to 10</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Lesson ➔</span>
+      </a>
+
+      <!-- 13. Chapter 1 ReviewTest Test Prep -->
+      <a href="13. Chapter 1 ReviewTest Test Prep/index.html" class="mint-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box">
+            <!-- Review Test Paper Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Assessment</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Chapter 1 Review / Test Prep</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Test Prep 📝</span>
+      </a>
+
+      <!-- 14. Performance Task -->
+      <a href="14. Performance Task/index.html" class="amber-card p-5 flex flex-col justify-between no-underline space-y-4 shadow-md text-left" data-tilt data-tilt-max="6" data-tilt-speed="400">
+        <div class="flex items-center gap-4">
+          <div class="section-icon-box" style="background: #fffbeb; border-color: #fcd34d;">
+            <!-- Star Trophy / Task Icon -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Final Challenge</span>
+            <h2 class="card-title text-lg font-extrabold text-gray-800 leading-snug">Performance Task</h2>
+          </div>
+        </div>
+        <span class="mint-btn py-2 px-4 text-center text-sm shadow block w-full">Start Task ⭐</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- 3D Tilt Script Initialization -->
+  <script>
+    if (window.innerWidth > 768) {
+      VanillaTilt.init(document.querySelectorAll(".mint-card, .amber-card"));
+    }
+  </script>
+
+</body>
+</html>
