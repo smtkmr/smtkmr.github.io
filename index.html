@@ -4,184 +4,245 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Econova Kids Learning 🎈</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Fredoka', cursive, sans-serif;
+      font-family: 'Quicksand', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+      background-color: #00d2ff;
+      background-image: linear-gradient(180deg, #00d2ff 0%, #3a7bd5 100%);
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Top Navigation Bar */
+    /* PBS Kids Style Top Header */
     header {
-      background: #ffffff;
-      padding: 0.8rem 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background: #7bdcb5;
+      padding: 12px 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 6px solid #10ac84;
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #FF3366;
-      text-shadow: 2px 2px 0px #FFD700;
+    .logo-badge {
+      background: #ff4757;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      text-transform: uppercase;
       letter-spacing: 1px;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 0px rgba(0,0,0,0.15);
+      text-shadow: 2px 2px 0px #000;
     }
 
-    /* Horizontal Class Navigation Bar */
-    .class-nav {
+    /* Top Horizontal Class Selection Bar */
+    .class-bar {
       display: flex;
-      gap: 12px;
-      align-items: center;
+      gap: 10px;
     }
 
-    .class-btn {
+    .class-pill {
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 25px;
+      font-family: 'Fredoka One', cursive;
       font-size: 1.1rem;
-      font-weight: 700;
-      color: white;
-      box-shadow: 0 4px 0px rgba(0,0,0,0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      color: #fff;
+      border: 3px solid #fff;
+      box-shadow: 0 5px 0px rgba(0,0,0,0.2);
       transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      display: inline-block;
     }
 
-    .class-btn:hover {
-      transform: translateY(-4px) scale(1.05);
+    .class-pill:hover {
+      transform: translateY(-4px) scale(1.08);
       box-shadow: 0 8px 0px rgba(0,0,0,0.2);
     }
 
-    /* Individual Color Themes for Classes */
-    .c1 { background: #FF4757; }
-    .c2 { background: #2ED573; }
-    .c3 { background: #FFA502; }
-    .c4 { background: #1E90FF; }
-    .c5 { background: #9B59B6; }
+    .c-1 { background: #ff6b6b; }
+    .c-2 { background: #feca57; }
+    .c-3 { background: #ff9ff3; }
+    .c-4 { background: #54a0ff; }
+    .c-5 { background: #5f27cd; }
 
-    /* Hero / Park Playground Section */
-    .hero-park {
+    /* Playground Hero Section */
+    .hero {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2.5rem 1rem 1rem;
     }
 
-    .hero-title {
-      font-size: 3rem;
-      color: #FF4757;
-      text-shadow: 3px 3px 0px #FFF, 5px 5px 0px #2ED573;
-      margin-bottom: 10px;
-      animation: pulse 2s infinite alternate;
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.2rem;
+      color: #fff;
+      text-shadow: 4px 4px 0px #000;
+      letter-spacing: 1px;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.03); }
-    }
-
-    .hero-subtitle {
-      font-size: 1.4rem;
-      color: #2F3542;
-      background: rgba(255, 255, 255, 0.6);
-      display: inline-block;
-      padding: 6px 20px;
-      border-radius: 20px;
-    }
-
-    /* Main Showcase Cards */
-    .playground {
-      max-width: 1100px;
-      margin: 1rem auto 4rem;
+    /* Big Circular Class Buttons (PBS Style Show Icons) */
+    .class-circle-container {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .park-card {
-      width: 180px;
-      height: 220px;
-      border-radius: 24px;
-      text-decoration: none;
+    .class-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #fff;
+      border: 6px solid #feca57;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: white;
-      box-shadow: 0 10px 0px rgba(0,0,0,0.15);
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 10px 0px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
-      position: relative;
+      cursor: pointer;
     }
 
-    .park-card:hover {
-      transform: translateY(-10px) rotate(-2deg);
+    .class-circle:hover {
+      transform: scale(1.15) rotate(5deg);
+      border-color: #ff4757;
     }
 
-    .park-card .icon {
-      font-size: 4rem;
-      margin-bottom: 10px;
+    .class-circle .icon {
+      font-size: 3rem;
     }
 
-    .park-card h2 {
-      font-size: 1.6rem;
+    .class-circle span {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2rem;
+      color: #2f3542;
+      margin-top: 4px;
     }
+
+    /* Curved Bottom Wave Area for Content/Subjects */
+    .wave-section {
+      background: #fff;
+      margin-top: 3rem;
+      padding: 3rem 1rem;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      box-shadow: 0 -10px 0px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .wave-section h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.2rem;
+      color: #2f3542;
+      margin-bottom: 2rem;
+    }
+
+    .subject-grid {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .subject-card {
+      width: 220px;
+      padding: 2rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Fredoka One', cursive;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 0px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .sub-math { background: #ff4757; }
+    .sub-sci { background: #2ed573; }
+    .sub-eng { background: #1e90ff; }
+
   </style>
 </head>
 <body>
 
-  <!-- Top Navbar with Horizontal Class Buttons -->
+  <!-- PBS Kids Header -->
   <header>
-    <div class="logo">Econova Kids 🎈</div>
-    <nav class="class-nav">
-      <a href="class-1/index.html" class="class-btn c1">Class 1</a>
-      <a href="class-2/index.html" class="class-btn c2">Class 2</a>
-      <a href="class-3/index.html" class="class-btn c3">Class 3</a>
-      <a href="class-4/index.html" class="class-btn c4">Class 4</a>
-      <a href="class-5/index.html" class="class-btn c5">Class 5</a>
+    <div class="logo-badge">Econova</div>
+    
+    <!-- Top Class Navigation Bar -->
+    <nav class="class-bar">
+      <a href="class-1/index.html" class="class-pill c-1">Class 1</a>
+      <a href="class-2/index.html" class="class-pill c-2">Class 2</a>
+      <a href="class-3/index.html" class="class-pill c-3">Class 3</a>
+      <a href="class-4/index.html" class="class-pill c-4">Class 4</a>
+      <a href="class-5/index.html" class="class-pill c-5">Class 5</a>
     </nav>
   </header>
 
-  <!-- Fun Park Area -->
-  <section class="hero-park">
-    <h1 class="hero-title">Welcome to the Fun Park! 🎮🚀</h1>
-    <p class="hero-subtitle">Upar di gayi buttons se apni class chuno aur seekhna shuru karo!</p>
+  <!-- Hero Title -->
+  <section class="hero">
+    <h1>CHOOSE YOUR CLASS! 🚀</h1>
   </section>
 
-  <!-- Interactive Class Cards Area -->
-  <main class="playground">
-    <a href="class-1/index.html" class="park-card c1">
+  <!-- PBS Kids Style Circular Class Buttons -->
+  <div class="class-circle-container">
+    <a href="class-1/index.html" class="class-circle" style="border-color: #ff6b6b;">
       <div class="icon">🎨</div>
-      <h2>Class 1</h2>
+      <span>Class 1</span>
     </a>
-    <a href="class-2/index.html" class="park-card c2">
+    <a href="class-2/index.html" class="class-circle" style="border-color: #feca57;">
       <div class="icon">🚀</div>
-      <h2>Class 2</h2>
+      <span>Class 2</span>
     </a>
-    <a href="class-3/index.html" class="park-card c3">
+    <a href="class-3/index.html" class="class-circle" style="border-color: #ff9ff3;">
       <div class="icon">🧩</div>
-      <h2>Class 3</h2>
+      <span>Class 3</span>
     </a>
-    <a href="class-4/index.html" class="park-card c4">
+    <a href="class-4/index.html" class="class-circle" style="border-color: #54a0ff;">
       <div class="icon">💡</div>
-      <h2>Class 4</h2>
+      <span>Class 4</span>
     </a>
-    <a href="class-5/index.html" class="park-card c5">
+    <a href="class-5/index.html" class="class-circle" style="border-color: #5f27cd;">
       <div class="icon">⭐</div>
-      <h2>Class 5</h2>
+      <span>Class 5</span>
     </a>
-  </main>
+  </div>
+
+  <!-- Bottom Curved White Section (Direct Subject Launch) -->
+  <section class="wave-section">
+    <h2>POPULAR SUBJECTS 📚</h2>
+    <div class="subject-grid">
+      <a href="class-1/maths/index.html" class="subject-card sub-math">
+        <div style="font-size: 3rem;">🔢</div>
+        <h3>MATHS</h3>
+      </a>
+      <a href="class-1/science/index.html" class="subject-card sub-sci">
+        <div style="font-size: 3rem;">🧪</div>
+        <h3>SCIENCE</h3>
+      </a>
+      <a href="class-1/english/index.html" class="subject-card sub-eng">
+        <div style="font-size: 3rem;">🔤</div>
+        <h3>ENGLISH</h3>
+      </a>
+    </div>
+  </section>
 
 </body>
 </html>
