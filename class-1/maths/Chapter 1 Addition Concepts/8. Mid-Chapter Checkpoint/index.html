@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition & H.O.T. Challenges | Econova Kids</title>
+  
+  <!-- Google Fonts: Outfit (600, 800, 900) & Quicksand (600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .brand-logo, .hero-title, .card-title {
+      font-family: var(--font-heading);
+    }
+
+    /* HEADER STYLES */
+    header {
+      background-color: #2dd4bf;
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047;
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    /* CARD CONTAINERS */
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+    }
+
+    /* STRICT BUTTON STYLING */
+    .mint-btn {
+      background-color: #0dbe7a;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(13, 190, 122, 0.3);
+      padding: 12px 24px;
+      cursor: pointer;
+    }
+
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    .mint-btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      border-radius: 9999px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+      padding: 12px 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: translateY(-2px);
+    }
+
+    .btn-blue {
+      background-color: #0085d1;
+      color: #ffffff;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 133, 209, 0.25);
+      padding: 12px 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .btn-blue:hover {
+      background-color: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    .opt-btn {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      color: #1f2937;
+      font-weight: 800;
+      font-size: 1.15rem;
+      border-radius: 16px;
+      padding: 12px 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 0px #a7f3d0;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .opt-btn:hover {
+      background-color: #ecfdf5;
+      border-color: #10b981;
+      transform: translateY(-2px);
+    }
+
+    .opt-btn.selected {
+      background-color: #fde047;
+      border-color: #eab308;
+      box-shadow: 0 4px 0px #ca8a04;
+      color: #854d0e;
+    }
+
+    /* BADGES */
+    .correct-badge {
+      background-color: #d1fae5;
+      color: #047857;
+      border: 2px solid #10b981;
+    }
+
+    .incorrect-badge {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      border: 2px solid #ef4444;
+    }
+
+    /* VISUAL CUBES & OBJECTS */
+    .cube-block {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: white;
+      box-shadow: inset -2px -2px 0px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .cube-blue { background-color: #3b82f6; border: 2px solid #1d4ed8; }
+    .cube-red { background-color: #ef4444; border: 2px solid #b91c1c; }
+    .cube-green { background-color: #10b981; border: 2px solid #047857; }
+    .cube-orange { background-color: #f97316; border: 2px solid #c2410c; }
+    .cube-purple { background-color: #a855f7; border: 2px solid #7e22ce; }
+
+    .vis-item {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .vis-item svg { width: 100%; height: 100%; fill: #059669; }
+  </style>
+</head>
+<body class="p-0 pb-12">
+
+  <!-- Main Header -->
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
+    <a href="../index.html" class="brand-logo text-2xl sm:text-3xl font-extrabold tracking-wide no-underline">
+      ✨ ECONOVA KIDS
+    </a>
+    <a href="../index.html" class="btn-red text-sm sm:text-base">
+      ← Back to Lessons
+    </a>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-8">
+    
+    <!-- Title Area -->
+    <div class="text-center space-y-2">
+      <span class="bg-emerald-100 text-emerald-800 font-extrabold text-sm px-4 py-1.5 rounded-full inline-block uppercase tracking-wider">
+        Interactive Lesson • Chapter 1 Addition
+      </span>
+      <h1 class="hero-title text-3xl sm:text-5xl font-black text-emerald-600">
+        Adding To & Sum Challenges 🧩
+      </h1>
+      <p class="text-gray-600 font-bold text-base sm:text-lg">
+        Use the interactive visuals and cubes to find the correct sum!
+      </p>
+    </div>
+
+    <!-- Overall Progress Container -->
+    <div class="amber-card p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="font-bold text-xl text-amber-900">
+        🌟 Overall Progress: <span id="completedCount" class="text-emerald-600 font-black">0</span> / 14 Completed
+      </div>
+      <button class="mint-btn text-base" onclick="resetAll()">
+        🔄 Reset All Tasks
+      </button>
+    </div>
+
+    <!-- Tasks Output Container -->
+    <div id="tasksContainer" class="space-y-8"></div>
+
+    <!-- STRICT NAVIGATION FOOTER -->
+    <div class="pt-8 border-t-2 border-emerald-200">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="../index.html" class="btn-red text-center font-extrabold text-lg py-3.5 px-8 w-full sm:w-auto">
+          ← Back to Lessons
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="btn-blue text-center font-extrabold text-lg py-3.5 px-8 w-full sm:w-auto">
+          📺 Watch Video Solution
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // SVG VISUAL ICONS FOR TEXTBOOK ITEMS
+    const svgIcons = {
+      cat: `<svg viewBox="0 0 64 64"><path d="M16 12l10 12h12l10-12v16c6 4 10 10 10 18 0 10-12 14-26 14S8 56 8 46c0-8 4-14 10-18V12z"/><circle cx="22" cy="38" r="3" fill="#fff"/><circle cx="42" cy="38" r="3" fill="#fff"/><path d="M32 42l-4 3h8z" fill="#fff"/></svg>`,
+      bird: `<svg viewBox="0 0 64 64"><path d="M48,16 C48,16 56,20 58,22 C60,24 58,26 54,26 C50,26 46,24 46,24 C46,24 44,30 38,36 C32,42 22,44 14,40 C10,38 6,34 4,28 C2,22 6,18 10,18 C12,18 14,20 14,20 C14,20 12,14 16,10 C20,6 28,6 34,10 C38,8 44,8 48,12 C46,14 44,16 48,16 Z M20,22 C21.1,22 22,21.1 22,20 C22,18.9 21.1,18 20,18 C18.9,18 18,18.9 18,20 C18,21.1 18.9,22 20,22 Z M12,42 L8,56 L14,56 L16,44 Z M26,44 L24,56 L30,56 L30,42 Z"/></svg>`,
+      bug: `<svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="10"/><path d="M16 28c0 14 7 24 16 24s16-10 16-24H16z"/><path d="M12 24l10 6M52 24l-10 6M8 38l12 2M56 38l-12 2M14 52l10-4M50 52l-10-4" stroke="#059669" stroke-width="4" stroke-linecap="round"/></svg>`,
+      fish: `<svg viewBox="0 0 64 64"><path d="M52 32 C36 12 16 20 8 32 C16 44 36 52 52 32 Z"/><path d="M52 32 L60 20 V44 Z"/><circle cx="20" cy="28" r="3" fill="#fff"/></svg>`,
+      dog: `<svg viewBox="0 0 64 64"><path d="M16 16l-6 16v12h44V32l-6-16H16z"/><circle cx="24" cy="30" r="3" fill="#fff"/><circle cx="40" cy="30" r="3" fill="#fff"/><ellipse cx="32" cy="38" rx="5" ry="3" fill="#fff"/></svg>`,
+      bee: `<svg viewBox="0 0 64 64"><ellipse cx="32" cy="36" rx="16" ry="20"/><path d="M16 30h32M16 40h32" stroke="#fff" stroke-width="4"/><circle cx="26" cy="20" r="3"/><circle cx="38" cy="20" r="3"/><path d="M12 20c-8-8 0-16 8-8M52 20c8-8 0-16-8-8" stroke="#059669" stroke-width="3" fill="none"/></svg>`,
+      frog: `<svg viewBox="0 0 64 64"><circle cx="20" cy="18" r="8"/><circle cx="44" cy="18" r="8"/><path d="M8 32c0 12 10 22 24 22s24-10 24-22H8z"/><circle cx="20" cy="18" r="3" fill="#fff"/><circle cx="44" cy="18" r="3" fill="#fff"/></svg>`,
+      ant: `<svg viewBox="0 0 64 64"><circle cx="16" cy="32" r="8"/><circle cx="32" cy="32" r="6"/><circle cx="48" cy="32" r="10"/><path d="M28 32l-4 16M32 32v16M36 32l4 16M12 26L6 16M14 26l6-10" stroke="#059669" stroke-width="3"/></svg>`,
+      triangle: `<svg viewBox="0 0 64 64"><polygon points="32,8 56,54 8,54" fill="#f97316"/></svg>`,
+      square: `<svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44" rx="6" fill="#eab308"/></svg>`,
+      circle: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#10b981"/></svg>`,
+      rabbit: `<svg viewBox="0 0 64 64"><path d="M24 6c-2 10 2 18 2 18S18 30 18 42c0 10 6 16 14 16s14-6 14-16c0-12-8-18-8-18s4-8 2-18c-4 0-6 8-6 8s-2-8-6-8z"/><circle cx="26" cy="36" r="2" fill="#fff"/><circle cx="38" cy="36" r="2" fill="#fff"/></svg>`
+    };
+
+    // ALL 14 TASKS DATA EXTRACTED FROM TEXTBOOK
+    const tasksData = [
+      {
+        id: 1,
+        section: "Share and Show",
+        title: "Task 1: Cats Addition 🐱",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "3 cats and 1 more cat",
+        equationPrompt: "3 + 1 = ?",
+        firstGroup: { count: 3, item: "cat", label: "3 cats" },
+        secondGroup: { count: 1, item: "cat", label: "1 more cat" },
+        cubeColors: { first: "blue", second: "red" },
+        options: ["3", "4", "5", "6"],
+        correctAnswer: "4",
+        summaryText: "3 cats + 1 cat = 4 cats in all!"
+      },
+      {
+        id: 2,
+        section: "Share and Show",
+        title: "Task 2: Birds Addition 🐦",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "2 birds and 3 more birds",
+        equationPrompt: "2 + 3 = ?",
+        firstGroup: { count: 2, item: "bird", label: "2 birds" },
+        secondGroup: { count: 3, item: "bird", label: "3 more birds" },
+        cubeColors: { first: "blue", second: "green" },
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+        summaryText: "2 birds + 3 birds = 5 birds in all!"
+      },
+      {
+        id: 3,
+        section: "Share and Show",
+        title: "Task 3: Bugs Addition 🐛",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "4 bugs and 4 more bugs",
+        equationPrompt: "4 + 4 = ?",
+        firstGroup: { count: 4, item: "bug", label: "4 bugs" },
+        secondGroup: { count: 4, item: "bug", label: "4 more bugs" },
+        cubeColors: { first: "purple", second: "orange" },
+        options: ["6", "7", "8", "9"],
+        correctAnswer: "8",
+        summaryText: "4 bugs + 4 bugs = 8 bugs in all!"
+      },
+      {
+        id: 4,
+        section: "Share and Show",
+        title: "Task 4: Fish Addition 🐟",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "4 fish and 2 more fish",
+        equationPrompt: "4 + 2 = ?",
+        firstGroup: { count: 4, item: "fish", label: "4 fish" },
+        secondGroup: { count: 2, item: "fish", label: "2 more fish" },
+        cubeColors: { first: "blue", second: "orange" },
+        options: ["5", "6", "7", "8"],
+        correctAnswer: "6",
+        summaryText: "4 fish + 2 fish = 6 fish in all!"
+      },
+      {
+        id: 5,
+        section: "On Your Own",
+        title: "Task 5: Dogs Addition 🐶",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "5 dogs and 4 more dogs",
+        equationPrompt: "5 + 4 = ?",
+        firstGroup: { count: 5, item: "dog", label: "5 dogs" },
+        secondGroup: { count: 4, item: "dog", label: "4 more dogs" },
+        cubeColors: { first: "blue", second: "red" },
+        options: ["7", "8", "9", "10"],
+        correctAnswer: "9",
+        summaryText: "5 dogs + 4 dogs = 9 dogs in all!"
+      },
+      {
+        id: 6,
+        section: "On Your Own",
+        title: "Task 6: Bees Addition 🐝",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "4 bees and 3 more bees",
+        equationPrompt: "4 + 3 = ?",
+        firstGroup: { count: 4, item: "bee", label: "4 bees" },
+        secondGroup: { count: 3, item: "bee", label: "3 more bees" },
+        cubeColors: { first: "orange", second: "green" },
+        options: ["6", "7", "8", "9"],
+        correctAnswer: "7",
+        summaryText: "4 bees + 3 bees = 7 bees in all!"
+      },
+      {
+        id: 7,
+        section: "On Your Own",
+        title: "Task 7: Frogs Addition 🐸",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "4 frogs and 1 more frog",
+        equationPrompt: "4 + 1 = ?",
+        firstGroup: { count: 4, item: "frog", label: "4 frogs" },
+        secondGroup: { count: 1, item: "frog", label: "1 more frog" },
+        cubeColors: { first: "green", second: "blue" },
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+        summaryText: "4 frogs + 1 frog = 5 frogs in all!"
+      },
+      {
+        id: 8,
+        section: "On Your Own",
+        title: "Task 8: Ants Addition 🐜",
+        isHot: false,
+        instruction: "Use cubes to show adding to. Draw the cubes. Write the sum.",
+        problem: "3 ants and 5 more ants",
+        equationPrompt: "3 + 5 = ?",
+        firstGroup: { count: 3, item: "ant", label: "3 ants" },
+        secondGroup: { count: 5, item: "ant", label: "5 more ants" },
+        cubeColors: { first: "purple", second: "red" },
+        options: ["7", "8", "9", "10"],
+        correctAnswer: "8",
+        summaryText: "3 ants + 5 ants = 8 ants in all!"
+      },
+      {
+        id: 9,
+        section: "H.O.T. Task",
+        title: "Task 9: Fix Corey's Cube Drawing 🧠 🔥",
+        isHot: true,
+        instruction: "Corey drew 2 cubes and 7 cubes to represent adding. Fix his picture to show 2 + 8.",
+        problem: "Equation to show: 2 + 8 = ?",
+        isFixCorey: true,
+        options: ["2 + 8 = 9", "2 + 8 = 10", "2 + 8 = 11"],
+        correctAnswer: "2 + 8 = 10",
+        summaryText: "Corey needed 8 cubes in the second set instead of 7! 2 + 8 = 10."
+      },
+      {
+        id: 10,
+        section: "Problem Solving • Real World",
+        title: "Task 10: Count Triangles 🔺",
+        isHot: false,
+        instruction: "Shapes Picture: Top row (3 triangles, 3 squares, 1 circle); Bottom row (3 circles, 2 triangles, 3 squares)",
+        problem: "Count the triangles in top and bottom rows:",
+        equationPrompt: "3 Triangles + 2 Triangles = ? in all",
+        options: ["4", "5", "6", "7"],
+        correctAnswer: "5",
+        summaryText: "3 top triangles + 2 bottom triangles = 5 triangles!"
+      },
+      {
+        id: 11,
+        section: "Problem Solving • Real World",
+        title: "Task 11: Count Circles 🟢",
+        isHot: false,
+        instruction: "Shapes Picture: Top row (3 triangles, 3 squares, 1 circle); Bottom row (3 circles, 2 triangles, 3 squares)",
+        problem: "Count the circles in top and bottom rows:",
+        equationPrompt: "1 Circle + 3 Circles = ? in all",
+        options: ["3", "4", "5", "6"],
+        correctAnswer: "4",
+        summaryText: "1 top circle + 3 bottom circles = 4 circles!"
+      },
+      {
+        id: 12,
+        section: "Problem Solving • Real World",
+        title: "Task 12: Count Squares 🟨",
+        isHot: false,
+        instruction: "Shapes Picture: Top row (3 triangles, 3 squares, 1 circle); Bottom row (3 circles, 2 triangles, 3 squares)",
+        problem: "Count the squares in top and bottom rows:",
+        equationPrompt: "3 Squares + 3 Squares = ? in all",
+        options: ["5", "6", "7", "8"],
+        correctAnswer: "6",
+        summaryText: "3 top squares + 3 bottom squares = 6 squares!"
+      },
+      {
+        id: 13,
+        section: "H.O.T. Task",
+        title: "Task 13: Find the Group for 3 + 1 = 4 🐰 🔥",
+        isHot: true,
+        instruction: "Circle or select the picture group that represents the equation 3 + 1 = 4.",
+        problem: "Which group shows a total sum of 4?",
+        isGroupSelect: true,
+        options: ["Group 1: 3 rabbits", "Group 2: 5 rabbits", "Group 3: 4 rabbits"],
+        correctAnswer: "Group 3: 4 rabbits",
+        summaryText: "Group 3 has 4 rabbits, matching 3 + 1 = 4!"
+      },
+      {
+        id: 14,
+        section: "Test Prep",
+        title: "Task 14: Sum of 4 and 3 📝",
+        isHot: false,
+        instruction: "Multiple Choice Test Prep Question",
+        problem: "What is the sum of 4 and 3?",
+        options: ["1", "6", "7", "8"],
+        correctAnswer: "7",
+        summaryText: "4 + 3 = 7!"
+      }
+    ];
+
+    let userSelections = {};
+    let taskStatus = {};
+
+    function renderTasks() {
+      const container = document.getElementById("tasksContainer");
+      container.innerHTML = tasksData.map(task => {
+        const cardClass = task.isHot ? 'amber-card' : 'mint-card';
+        const badgeTag = task.isHot 
+          ? '<span class="bg-amber-200 text-amber-900 text-xs font-black px-3 py-1 rounded-full uppercase">🔥 H.O.T. Task</span>'
+          : `<span class="bg-emerald-100 text-emerald-800 text-xs font-black px-3 py-1 rounded-full uppercase">${task.section}</span>`;
+
+        return `
+        <div class="${cardClass} p-6 sm:p-8 shadow-md space-y-5" id="card-${task.id}">
+          
+          <!-- Card Header -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-emerald-100 pb-3">
+            <div class="flex items-center gap-2">
+              <h3 class="card-title text-2xl sm:text-3xl font-black text-emerald-600">
+                ${task.title}
+              </h3>
+              ${badgeTag}
+            </div>
+            <div id="badge-${task.id}" class="hidden text-sm font-bold px-3 py-1 rounded-full"></div>
+          </div>
+
+          <!-- Instruction & Problem Box -->
+          <div class="${task.isHot ? 'bg-amber-100/50 border-amber-300' : 'bg-emerald-50 border-emerald-200'} rounded-2xl p-5 border-2 text-center space-y-3">
+            <p class="text-xs sm:text-sm font-black uppercase text-emerald-800 tracking-wider">
+              ${task.instruction}
+            </p>
+            <p class="text-gray-800 font-bold text-lg sm:text-2xl">
+              ❓ ${task.problem}
+            </p>
+
+            <!-- Visual Item Representation -->
+            ${task.firstGroup ? `
+              <div class="py-3 flex flex-wrap justify-center items-center gap-6">
+                <!-- Group 1 -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="flex gap-1.5">
+                    ${Array(task.firstGroup.count).fill(0).map(() => `
+                      <div class="vis-item">${svgIcons[task.firstGroup.item]}</div>
+                    `).join('')}
+                  </div>
+                  <span class="text-xs font-extrabold text-emerald-700">${task.firstGroup.label}</span>
+                </div>
+
+                <span class="text-2xl font-black text-emerald-600">+</span>
+
+                <!-- Group 2 -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="flex gap-1.5">
+                    ${Array(task.secondGroup.count).fill(0).map(() => `
+                      <div class="vis-item">${svgIcons[task.secondGroup.item]}</div>
+                    `).join('')}
+                  </div>
+                  <span class="text-xs font-extrabold text-emerald-700">${task.secondGroup.label}</span>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Cube Representation -->
+            ${task.cubeColors ? `
+              <div class="py-2 flex flex-col items-center gap-2">
+                <span class="text-xs font-extrabold text-amber-800 uppercase">Connecting Cubes Visual:</span>
+                <div```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Practice - Adding To</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap)" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-page: #f0fdf4;
+            --text-primary: #1f2937;
+            --text-mint: #059669;
+            --header-bg: #2dd4bf;
+            --header-text: #fde047;
+            
+            --mint-card-bg: #ffffff;
+            --mint-card-border: #34d399;
+            
+            --amber-card-bg: #fffbeb;
+            --amber-card-border: #fcd34d;
+            
+            --btn-mint: #0dbe7a;
+            --btn-mint-hover: #059669;
+            
+            --btn-red: #ff0000;
+            --btn-red-hover: #cc0000;
+            
+            --btn-blue: #0085d1;
+            --btn-blue-hover: #0369a1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Quicksand', sans-serif;
+            padding-bottom: 40px;
+        }
+
+        h1, h2, h3, .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 24px 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px #0f766e;
+        }
+
+        header p {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .section-header {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-mint);
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background-color: var(--mint-card-border);
+            border-radius: 2px;
+        }
+
+        /* Card Container Styles */
+        .card {
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-mint {
+            background-color: var(--mint-card-bg);
+            border: 3px solid var(--mint-card-border);
+        }
+
+        .card-amber {
+            background-color: var(--amber-card-bg);
+            border: 3px solid var(--amber-card-border);
+        }
+
+        .task-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .task-badge {
+            background: #dcfce7;
+            color: var(--text-mint);
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+
+        /* Interactive Cube Area */
+        .cube-area {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            padding: 16px;
+            border-radius: 16px;
+            margin: 12px 0 16px 0;
+            min-height: 80px;
+        }
+
+        .cube-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .cube {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cube-blue { background-color: #3b82f6; }
+        .cube-red { background-color: #ef4444; }
+        .cube-green { background-color: #10b981; }
+        .cube-purple { background-color: #a855f7; }
+        .cube-orange { background-color: #f97316; }
+
+        .plus-sign {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #64748b;
+            margin: 0 4px;
+        }
+
+        /* Input Controls */
+        .equation-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .math-input {
+            width: 60px;
+            height: 50px;
+            border: 3px solid #cbd5e1;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .math-input:focus {
+            border-color: var(--text-mint);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+        }
+
+        .math-input.correct {
+            border-color: #10b981;
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .math-input.incorrect {
+            border-color: #ef4444;
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+
+        /* Interactive Cube Canvas/Draw Button */
+        .btn-draw {
+            background-color: #e2e8f0;
+            color: #334155;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        .btn-draw:hover {
+            background-color: #cbd5e1;
+        }
+
+        /* Specific Visual Elements */
+        /* Shapes Picture (Task 10) */
+        .shapes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #fff;
+            padding: 16px;
+            border-radius: 16px;
+            border: 2px solid #e2e8f0;
+            margin-bottom: 16px;
+        }
+
+        .shape-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shape {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+        }
+
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            border-bottom: 32px solid #f97316;
+        }
+
+        .shape-square {
+            background-color: #facc15;
+            border-radius: 4px;
+        }
+
+        .shape-circle {
+            background-color: #22c55e;
+            border-radius: 50%;
+        }
+
+        /* Radio Options for Task 11 */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .option-card {
+            border: 2px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .option-card:hover {
+            border-color: var(--mint-card-border);
+            background-color: #f0fdf4;
+        }
+
+        .option-card.selected {
+            border-color: var(--text-mint);
+            background-color: #dcfce7;
+        }
+
+        .option-card input {
+            display: none;
+        }
+
+        /* Test Prep Radio List (Task 12) */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .radio-label:hover {
+            border-color: var(--mint-card-border);
+        }
+
+        .radio-label input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--text-mint);
+        }
+
+        /* Global Submit Button Section */
+        .check-answers-container {
+            text-align: center;
+            margin: 40px 0 30px 0;
+        }
+
+        .mint-btn {
+            background-color: var(--btn-mint);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(13, 190, 122, 0.4);
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mint-btn:hover {
+            background-color: var(--btn-mint-hover);
+            transform: scale(1.03);
+        }
+
+        /* Footer & Navigation */
+        .footer-nav-container {
+            border-top: 2px solid #a7f3d0;
+            padding-top: 24px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-red {
+            background-color: var(--btn-red);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-red:hover {
+            background-color: var(--btn-red-hover);
+        }
+
+        .btn-blue {
+            background-color: var(--btn-blue);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            padding: 12px 28px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-blue:hover {
+            background-color: var(--btn-blue-hover);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .equation-row {
+                font-size: 1.1rem;
+            }
+            .math-input {
+                width: 48px;
+                height: 42px;
+                font-size: 1.2rem;
+            }
+            .footer-nav-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Adding To - Interactive Practice</h1>
+        <p>Use cubes to show addition and write the sum!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION: Share and Show -->
+        <div class="section-header">Share and Show</div>
+        <p style="margin-bottom: 16px; font-size: 1.05rem;">Instructions: Use cubes to show adding to. Draw/Generate the cubes. Write the sum.</p>
+
+        <!-- Task 1 -->
+        <div class="card card-mint" id="task-1">
+            <div class="task-title"><span class="task-badge">Task 1</span> 3 cats and 1 more cat</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-1', 3, 1)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-1">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>3 + 1 = </span>
+                <input type="number" class="math-input" data-answer="4" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="card card-mint" id="task-2">
+            <div class="task-title"><span class="task-badge">Task 2</span> 2 birds and 3 more birds</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-2', 2, 3)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-2">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>2 + 3 = </span>
+                <input type="number" class="math-input" data-answer="5" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="card card-mint" id="task-3">
+            <div class="task-title"><span class="task-badge">Task 3</span> 4 bugs and 4 more bugs</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-3', 4, 4)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-3">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>4 + 4 = </span>
+                <input type="number" class="math-input" data-answer="8" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="card card-mint" id="task-4">
+            <div class="task-title"><span class="task-badge">Task 4</span> 4 fish and 2 more fish</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-4', 4, 2)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-4">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>4 + 2 = </span>
+                <input type="number" class="math-input" data-answer="6" maxlength="2">
+            </div>
+        </div>
+
+        <!-- SECTION: On Your Own -->
+        <div class="section-header">On Your Own</div>
+        <p style="margin-bottom: 16px; font-size: 1.05rem;">Instructions: Use cubes to show adding to. Draw the cubes. Write the sum.</p>
+
+        <!-- Task 5 -->
+        <div class="card card-mint" id="task-5">
+            <div class="task-title"><span class="task-badge">Task 5</span> 5 dogs and 4 more dogs</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-5', 5, 4)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-5">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>5 + 4 = </span>
+                <input type="number" class="math-input" data-answer="9" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="card card-mint" id="task-6">
+            <div class="task-title"><span class="task-badge">Task 6</span> 4 bees and 3 more bees</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-6', 4, 3)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-6">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>4 + 3 = </span>
+                <input type="number" class="math-input" data-answer="7" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 7 -->
+        <div class="card card-mint" id="task-7">
+            <div class="task-title"><span class="task-badge">Task 7</span> 4 frogs and 1 more frog</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-7', 4, 1)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-7">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>4 + 1 = </span>
+                <input type="number" class="math-input" data-answer="5" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 8 -->
+        <div class="card card-mint" id="task-8">
+            <div class="task-title"><span class="task-badge">Task 8</span> 3 ants and 5 more ants</div>
+            <button class="btn-draw" onclick="renderCubes('cube-area-8', 3, 5)">🎲 Show Cubes</button>
+            <div class="cube-area" id="cube-area-8">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click 'Show Cubes' to visualize...</span>
+            </div>
+            <div class="equation-row">
+                <span>3 + 5 = </span>
+                <input type="number" class="math-input" data-answer="8" maxlength="2">
+            </div>
+        </div>
+
+        <!-- Task 9: HOT Task -->
+        <div class="card card-amber" id="task-9">
+            <div class="task-title"><span class="task-badge" style="background:#fef3c7; color:#d97706;">Task 9 - H.O.T.</span> Fix Corey's Picture</div>
+            <p style="margin-bottom: 12px;">Corey drew <strong>2 cubes</strong> and <strong>7 cubes</strong>, but the equation says <strong>2 + 8 =</strong>. Draw/Show the correct cubes to fix Corey's picture and write the sum.</p>
+            
+            <div style="margin-bottom: 10px; font-weight: 700; color: #b45309;">Corey's Incorrect Drawing:</div>
+            <div class="cube-area" style="background: #fff; margin-bottom: 12px;">
+                <div class="cube-group">
+                    <div class="cube cube-blue">1</div><div class="cube cube-blue">2</div>
+                </div>
+                <span class="plus-sign">+</span>
+                <div class="cube-group">
+                    <div class="cube cube-red">1</div><div class="cube cube-red">2</div><div class="cube cube-red">3</div><div class="cube cube-red">4</div><div class="cube cube-red">5</div><div class="cube cube-red">6</div><div class="cube cube-red">7</div>
+                </div>
+            </div>
+
+            <button class="btn-draw" onclick="renderCubes('cube-area-9', 2, 8)">✨ Fix Picture (Show Correct Cubes)</button>
+            <div class="cube-area" id="cube-area-9" style="background: #fff;">
+                <span style="color: #94a3b8; font-size: 0.95rem;">Click to fix picture...</span>
+            </div>
+
+            <div class="equation-row">
+                <span>2 + 8 = </span>
+                <input type="number" class="math-input" data-answer="10" maxlength="2">
+            </div>
+        </div>
+
+        <!-- SECTION: Problem Solving -->
+        <div class="section-header">Problem Solving • Real World</div>
+
+        <!-- Task 10 -->
+        <div class="card card-mint" id="task-10">
+            <div class="task-title"><span class="task-badge">Task 10</span> Shapes Picture Analysis</div>
+            <p style="margin-bottom: 12px;">Use the picture below to help you complete the addition sentences.</p>
+            
+            <div class="shapes-container">
+                <div class="shape-row">
+                    <div class="shape shape-triangle" title="Orange Triangle"></div>
+                    <div class="shape shape-triangle" title="Orange Triangle"></div>
+                    <div class="shape shape-triangle" title="Orange Triangle"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                    <div class="shape shape-circle" title="Green Circle"></div>
+                </div>
+                <div class="shape-row">
+                    <div class="shape shape-circle" title="Green Circle"></div>
+                    <div class="shape shape-circle" title="Green Circle"></div>
+                    <div class="shape shape-circle" title="Green Circle"></div>
+                    <div class="shape shape-triangle" title="Orange Triangle"></div>
+                    <div class="shape shape-triangle" title="Orange Triangle"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                    <div class="shape shape-square" title="Yellow Square"></div>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="equation-row">
+                    <input type="number" class="math-input" data-answer="3"> <span>Triangles + </span>
+                    <input type="number" class="math-input" data-answer="2"> <span>Triangles = </span>
+                    <input type="number" class="math-input" data-answer="5"> <span>in all</span>
+                </div>
+                <div class="equation-row">
+                    <input type="number" class="math-input" data-answer="1"> <span>Circles + </span>
+                    <input type="number" class="math-input" data-answer="3"> <span>Circles = </span>
+                    <input type="number" class="math-input" data-answer="4"> <span>in all</span>
+                </div>
+                <div class="equation-row">
+                    <input type="number" class="math-input" data-answer="3"> <span>Squares + </span>
+                    <input type="number" class="math-input" data-answer="3"> <span>Squares = </span>
+                    <input type="number" class="math-input" data-answer="6"> <span>in all</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 11: HOT Task -->
+        <div class="card card-amber" id="task-11">
+            <div class="task-title"><span class="task-badge" style="background:#fef3c7; color:#d97706;">Task 11 - H.O.T.</span> Select the Correct Picture</div>
+            <p>Which group represents the addition total for <strong>3 + 1 = 4</strong>?</p>
+            
+            <div class="options-grid">
+                <label class="option-card" onclick="selectCard(this)">
+                    <input type="radio" name="hot-group" value="group1">
+                    <div style="font-size: 2rem; margin-bottom: 4px;">🐇🐇🐇</div>
+                    <div style="font-weight: 800;">Group 1</div>
+                    <div style="font-size: 0.9rem; color: #64748b;">3 Rabbits</div>
+                </label>
+
+                <label class="option-card" onclick="selectCard(this)">
+                    <input type="radio" name="hot-group" value="group2">
+                    <div style="font-size: 2rem; margin-bottom: 4px;">🐇🐇🐇🐇🐇</div>
+                    <div style="font-weight: 800;">Group 2</div>
+                    <div style="font-size: 0.9rem; color: #64748b;">5 Rabbits</div>
+                </label>
+
+                <label class="option-card" onclick="selectCard(this)" id="correct-group-card">
+                    <input type="radio" name="hot-group" value="group3" data-correct="true">
+                    <div style="font-size: 2rem; margin-bottom: 4px;">🐇🐇🐇🐇</div>
+                    <div style="font-weight: 800;">Group 3</div>
+                    <div style="font-size: 0.9rem; color: #64748b;">4 Rabbits</div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Task 12: Test Prep -->
+        <div class="card card-mint" id="task-12">
+            <div class="task-title"><span class="task-badge">Task 12</span> Test Prep</div>
+            <p style="font-size: 1.1rem; font-weight: 700;">What is the sum of 4 and 3?</p>
+            
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="test-prep" value="1">
+                    <span>1</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="test-prep" value="6">
+                    <span>6</span>
+                </label>
+                <label class="radio-label" id="test-prep-correct">
+                    <input type="radio" name="test-prep" value="7" data-correct="true">
+                    <span>7</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="test-prep" value="8">
+                    <span>8</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Global Submit Button -->
+        <div class="check-answers-container">
+            <button class="mint-btn" onclick="checkAllAnswers()">Check Answers 🎯</button>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="footer-nav-container">
+            <a href="#" class="btn-red">← Back to Lessons</a>
+            <a href="#" class="btn-blue">📺 Watch Video Solution</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Render Cubes Visual Helper
+        function renderCubes(containerId, count1, count2) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            const group1 = document.createElement('div');
+            group1.className = 'cube-group';
+            for (let i = 1; i <= count1; i++) {
+                const cube = document.createElement('div');
+                cube.className = 'cube cube-blue';
+                cube.innerText = i;
+                group1.appendChild(cube);
+            }
+
+            const plus = document.createElement('span');
+            plus.className = 'plus-sign';
+            plus.innerText = '+';
+
+            const group2 = document.createElement('div');
+            group2.className = 'cube-group';
+            for (let i = 1; i <= count2; i++) {
+                const cube = document.createElement('div');
+                cube.className = 'cube cube-red';
+                cube.innerText = i;
+                group2.appendChild(cube);
+            }
+
+            container.appendChild(group1);
+            container.appendChild(plus);
+            container.appendChild(group2);
+        }
+
+        // Card Selection Handler for Task 11
+        function selectCard(element) {
+            const cards = document.querySelectorAll('.option-card');
+            cards.forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            const radio = element.querySelector('input[type="radio"]');
+            if(radio) radio.checked = true;
+        }
+
+        // Global Answer Verification
+        function checkAllAnswers() {
+            let totalCorrect = 0;
+            let totalQuestions = 0;
+
+            // 1. Check numeric inputs
+            const inputs = document.querySelectorAll('.math-input');
+            inputs.forEach(input => {
+                totalQuestions++;
+                const expected = input.getAttribute('data-answer');
+                const val = input.value.trim();
+
+                if (val === expected) {
+                    input.classList.remove('incorrect');
+                    input.classList.add('correct');
+                    totalCorrect++;
+                } else {
+                    input.classList.remove('correct');
+                    input.classList.add('incorrect');
+                }
+            });
+
+            // 2. Check Task 11 (Group Selection)
+            totalQuestions++;
+            const task11Selected = document.querySelector('input[name="hot-group"]:checked');
+            const task11Card = document.getElementById('task-11');
+            if (task11Selected && task11Selected.getAttribute('data-correct') === 'true') {
+                totalCorrect++;
+                task11Card.style.borderColor = '#10b981';
+            } else {
+                task11Card.style.borderColor = '#ef4444';
+            }
+
+            // 3. Check Task 12 (Test Prep Radio)
+            totalQuestions++;
+            const task12Selected = document.querySelector('input[name="test-prep"]:checked');
+            const task12Card = document.getElementById('task-12');
+            if (task12Selected && task12Selected.getAttribute('data-correct') === 'true') {
+                totalCorrect++;
+                task12Card.style.borderColor = '#10b981';
+            } else {
+                task12Card.style.borderColor = '#ef4444';
+            }
+
+            // Alert Feedback
+            setTimeout(() => {
+                if (totalCorrect === totalQuestions) {
+                    alert('🌟 Outstanding! You got all answers correct!');
+                } else {
+                    alert(`You got ${totalCorrect} out of ${totalQuestions} correct. Keep going! Check the red highlighted areas.`);
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
