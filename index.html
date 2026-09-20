@@ -60,17 +60,17 @@
 
     .dropbtn:hover {
       background-color: #059669;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
-      top: 55px;
+      top: 45px;
       background-color: #ffffff;
-      min-width: 200px;
-      border-radius: 20px;
+      min-width: 160px;
+      border-radius: 16px;
       border: 3px solid #34d399;
       box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
       overflow: hidden;
@@ -79,12 +79,12 @@
 
     .dropdown-content a {
       color: #1f2937;
-      padding: 12px 20px;
+      padding: 10px 16px;
       text-decoration: none;
       display: block;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       transition: background 0.2s ease;
       border-bottom: 2px dashed #ecfdf5;
     }
@@ -107,14 +107,15 @@
       background-color: #ff0000;
       color: #ffffff;
       font-weight: 800;
-      border-radius: 16px;
+      border-radius: 12px;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+      box-shadow: 0 3px 8px rgba(255, 0, 0, 0.25);
+      white-space: nowrap;
     }
 
     .video-btn:hover {
       background-color: #cc0000;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     /* Mint & Amber Cards */
@@ -167,22 +168,22 @@
 <body class="p-0">
 
   <!-- Header Section -->
-  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
-    <div class="brand-logo text-3xl sm:text-4xl font-extrabold tracking-wide">
+  <header class="p-3 sm:p-5 shadow-md flex justify-between items-center px-3 sm:px-12 sticky top-0 z-50">
+    <div class="brand-logo text-xl sm:text-4xl font-extrabold tracking-wide">
       Econova.vip 🎈
     </div>
     
     <!-- Navigation Options near Class button -->
-    <div class="flex items-center gap-3 sm:gap-4">
+    <div class="flex items-center gap-1.5 sm:gap-4">
       
-      <!-- Red YouTube Subscribe Button -->
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-btn px-4 sm:px-6 py-3 font-bold text-base sm:text-lg flex items-center gap-2">
-        🔔 SUBSCRIBE!
+      <!-- Compact Red YouTube Subscribe Button -->
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-btn px-2.5 sm:px-5 py-1.5 sm:py-2.5 text-xs sm:text-lg flex items-center gap-1 sm:gap-2">
+        <span>🔔</span> SUBSCRIBE!
       </a>
 
       <!-- Class Select Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn px-6 py-3 rounded-2xl font-bold text-lg shadow-md flex items-center gap-2">
+        <button class="dropbtn px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-lg shadow-md flex items-center gap-1">
           CLASS ▾
         </button>
         <div class="dropdown-content">
@@ -205,7 +206,7 @@
       
       <!-- Top Badges -->
       <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
-        <span class="bg-amber-300 text-amber-900 font-black text-sm sm:text-base px-6 py-2 rounded-full border-2 border-amber-400 shadow-sm uppercase tracking-wider">
+        <span class="bg-amber-300 text-amber-900 font-black text-xs sm:text-base px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-2 border-amber-400 shadow-sm uppercase tracking-wider">
           THOMAS & EMILY PRESENTS
         </span>
       </div>
@@ -215,18 +216,18 @@
         
         <!-- Left Side: Hero Typography -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="hero-banner-title text-6xl sm:text-8xl tracking-tight uppercase">
+          <div class="hero-banner-title text-5xl sm:text-8xl tracking-tight uppercase">
             KIDS<br>
             <span class="text-amber-500">ACTIVITY</span>
           </div>
 
-          <div class="inline-block bg-emerald-50 border-2 border-emerald-300 rounded-full px-8 py-3">
-            <p class="text-xl sm:text-2xl font-black tracking-widest text-emerald-700 uppercase">
+          <div class="inline-block bg-emerald-50 border-2 border-emerald-300 rounded-full px-6 sm:px-8 py-2 sm:py-3">
+            <p class="text-lg sm:text-2xl font-black tracking-widest text-emerald-700 uppercase">
               FUN LEARNING! ✨
             </p>
           </div>
 
-          <p class="text-lg font-bold text-gray-600 max-w-md mx-auto lg:mx-0">
+          <p class="text-base sm:text-lg font-bold text-gray-600 max-w-md mx-auto lg:mx-0">
             Click the <strong class="text-emerald-600">CLASS</strong> button above to explore interactive worksheets, puzzles, and engaging video lessons!
           </p>
         </div>
@@ -235,26 +236,26 @@
         <div class="lg:col-span-5 relative flex justify-center items-center py-6">
           
           <!-- Animated Elements & Badges -->
-          <div class="absolute -top-4 left-4 text-4xl float-slow">⭐</div>
-          <div class="absolute top-1/2 right-0 text-4xl float-delay">✈️</div>
-          <div class="absolute bottom-0 left-8 text-4xl float-slow">🌟</div>
+          <div class="absolute -top-4 left-4 text-3xl sm:text-4xl float-slow">⭐</div>
+          <div class="absolute top-1/2 right-0 text-3xl sm:text-4xl float-delay">✈️</div>
+          <div class="absolute bottom-0 left-8 text-3xl sm:text-4xl float-slow">🌟</div>
 
           <!-- Open Book & Kids Activity Display -->
           <div class="amber-card p-6 w-full text-center shadow-lg relative z-10 border-4 border-amber-400 space-y-4">
-            <div class="text-7xl sm:text-8xl float-slow">
+            <div class="text-6xl sm:text-8xl float-slow">
               📖 🧑‍🎓 👧
             </div>
             <div class="bg-white p-4 rounded-xl border-2 border-emerald-300 shadow-inner">
-              <span class="font-extrabold text-emerald-800 text-lg block">
+              <span class="font-extrabold text-emerald-800 text-base sm:text-lg block">
                 Interactive Learning Hub 🚀
               </span>
-              <span class="text-sm font-bold text-gray-500">
+              <span class="text-xs sm:text-sm font-bold text-gray-500">
                 100+ Visual Worksheets & Puzzles
               </span>
             </div>
             
             <!-- Non-Clickable Text Badge -->
-            <div class="static-badge w-full py-3.5 text-lg sm:text-xl font-black uppercase tracking-wider shadow-sm">
+            <div class="static-badge w-full py-3.5 text-base sm:text-xl font-black uppercase tracking-wider shadow-sm">
               START LEARNING NOW!
             </div>
           </div>
@@ -269,20 +270,20 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       
       <div class="mint-card p-6 shadow-md flex items-start gap-4">
-        <div class="text-4xl bg-emerald-100 p-3 rounded-2xl">🧩</div>
+        <div class="text-3xl sm:text-4xl bg-emerald-100 p-3 rounded-2xl">🧩</div>
         <div>
-          <h3 class="text-xl font-black text-emerald-700 mb-1">Visual Worksheets</h3>
-          <p class="font-bold text-gray-600 text-sm">
+          <h3 class="text-lg sm:text-xl font-black text-emerald-700 mb-1">Visual Worksheets</h3>
+          <p class="font-bold text-gray-600 text-xs sm:text-sm">
             Step-by-step visual cube challenges and counting exercises for easy understanding.
           </p>
         </div>
       </div>
 
       <div class="amber-card p-6 shadow-md flex items-start gap-4">
-        <div class="text-4xl bg-amber-100 p-3 rounded-2xl">📺</div>
+        <div class="text-3xl sm:text-4xl bg-amber-100 p-3 rounded-2xl">📺</div>
         <div>
-          <h3 class="text-xl font-black text-amber-800 mb-1">Video Solutions</h3>
-          <p class="font-bold text-amber-900/80 text-sm">
+          <h3 class="text-lg sm:text-xl font-black text-amber-800 mb-1">Video Solutions</h3>
+          <p class="font-bold text-amber-900/80 text-xs sm:text-sm">
             Detailed video explanations to assist students and parents with every chapter task.
           </p>
         </div>
@@ -293,7 +294,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="mt-auto py-6 text-center text-emerald-800 font-bold bg-emerald-100 border-t-2 border-emerald-200 text-sm">
+  <footer class="mt-auto py-6 text-center text-emerald-800 font-bold bg-emerald-100 border-t-2 border-emerald-200 text-xs sm:text-sm">
     <p>© 2026 Econova.vip - Fun & Interactive Learning Platform</p>
   </footer>
 
