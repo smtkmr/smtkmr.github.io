@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> ✨ Econova Kids Learning </title>
+  <title>Econova Kids Learning - Kids Activity & Fun Learning</title>
   
   <!-- Google Fonts: Outfit & Quicksand -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
       font-family: var(--font-heading);
     }
 
-    /* Mint Header */
+    /* Main Mint Header */
     header {
       background-color: #2dd4bf; /* Mint Teal */
       border-bottom: 4px solid #10b981;
@@ -46,7 +46,7 @@
       text-shadow: 2px 2px 0px #059669;
     }
 
-    /* Dropdown Button & Menu */
+    /* Class Dropdown */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -102,26 +102,22 @@
       display: block;
     }
 
-    /* Floating 3D Animation */
-    .floating-3d span {
-      font-family: var(--font-heading);
-      font-weight: 900;
-      display: inline-block;
-      text-shadow: 3px 3px 0px #ffffff, 5px 5px 0px rgba(0,0,0,0.05);
+    /* Red Header Subscribe Button */
+    .video-btn {
+      background-color: #ff0000;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
     }
 
-    .num-1 { color: #10b981; animation: float 3s ease-in-out infinite; }
-    .num-a { color: #f59e0b; animation: float 3s ease-in-out 0.5s infinite; }
-    .num-2 { color: #3b82f6; animation: float 3s ease-in-out 1s infinite; }
-    .num-b { color: #ec4899; animation: float 3s ease-in-out 1.5s infinite; }
-    .num-3 { color: #8b5cf6; animation: float 3s ease-in-out 2s infinite; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
+    .video-btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
     }
 
-    /* Custom Cards */
+    /* Mint & Amber Cards */
     .mint-card {
       background-color: #ffffff;
       border: 3px solid #34d399;
@@ -134,79 +130,172 @@
       border-radius: 24px;
     }
 
-    .mint-btn {
-      background-color: #10b981;
+    /* Static Non-Clickable Badge Styling */
+    .static-badge {
+      background-color: #059669;
       color: #ffffff;
       font-weight: 800;
-      border-radius: 16px;
-      transition: transform 0.15s ease, background-color 0.15s ease;
+      border-radius: 18px;
+      text-align: center;
+      cursor: default;
+      pointer-events: none;
     }
 
-    .mint-btn:hover {
-      background-color: #059669;
-      transform: scale(1.03);
+    /* Text & Graphics Animations */
+    .hero-banner-title {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      color: #059669;
+      text-shadow: 4px 4px 0px #34d399, 8px 8px 0px rgba(0,0,0,0.05);
+      line-height: 0.95;
+    }
+
+    .float-slow {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float-delay {
+      animation: float 4s ease-in-out 2s infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
     }
   </style>
 </head>
 <body class="p-0">
 
   <!-- Header Section -->
-  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12">
+  <header class="p-4 sm:p-6 shadow-md flex justify-between items-center px-6 sm:px-12 sticky top-0 z-50">
     <div class="brand-logo text-3xl sm:text-4xl font-extrabold tracking-wide">
-      Econova 🎈
+      Econova.vip 🎈
     </div>
     
-    <!-- Class Select Dropdown -->
-    <div class="dropdown">
-      <button class="dropbtn px-6 py-3 rounded-2xl font-bold text-lg shadow-md flex items-center gap-2">
-        CLASS ▾
-      </button>
-      <div class="dropdown-content">
-        <a href="class-1/index.html">🎨 Class 1</a>
-        <a href="class-2/index.html">🚀 Class 2</a>
-        <a href="class-3/index.html">🧩 Class 3</a>
-        <a href="class-4/index.html">💡 Class 4</a>
-        <a href="class-5/index.html">⭐ Class 5</a>
+    <!-- Navigation Options near Class button -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      
+      <!-- Red YouTube Subscribe Button -->
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-btn px-4 sm:px-6 py-3 font-bold text-base sm:text-lg flex items-center gap-2">
+        🔔 SUBSCRIBE!
+      </a>
+
+      <!-- Class Select Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn px-6 py-3 rounded-2xl font-bold text-lg shadow-md flex items-center gap-2">
+          CLASS ▾
+        </button>
+        <div class="dropdown-content">
+          <a href="class-1/index.html">🎨 Class 1</a>
+          <a href="class-2/index.html">🚀 Class 2</a>
+          <a href="class-3/index.html">🧩 Class 3</a>
+          <a href="class-4/index.html">💡 Class 4</a>
+          <a href="class-5/index.html">⭐ Class 5</a>
+        </div>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero / Playground Section -->
-  <main class="flex-1 flex flex-col items-center justify-center text-center p-6 space-y-6 max-w-4xl mx-auto">
+  <!-- Main Hero Layout -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-8 space-y-8">
     
-    <div class="mint-card p-8 sm:p-12 shadow-xl w-full space-y-6">
-      <h1 class="hero-title text-4xl sm:text-6xl font-black text-emerald-600">
-        ECONOVA KIDS PARK! 🎈
-      </h1>
+    <!-- Interactive Banner Block -->
+    <div class="mint-card p-6 sm:p-12 shadow-2xl relative overflow-hidden">
       
-      <p class="text-xl sm:text-2xl font-bold text-gray-700 bg-emerald-50 py-3 px-6 rounded-full inline-block border border-emerald-200">
-        Click the CLASS button above to start learning!
-      </p>
-
-      <!-- Floating 3D Elements -->
-      <div class="floating-3d text-5xl sm:text-7xl space-x-4 py-4">
-        <span class="num-1">1</span>
-        <span class="num-a">A</span>
-        <span class="num-2">2</span>
-        <span class="num-b">B</span>
-        <span class="num-3">3</span>
+      <!-- Top Badges -->
+      <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+        <span class="bg-amber-300 text-amber-900 font-black text-sm sm:text-base px-6 py-2 rounded-full border-2 border-amber-400 shadow-sm uppercase tracking-wider">
+          THOMAS & EMILY PRESENTS
+        </span>
       </div>
 
-      <!-- Playful Emojis -->
-      <div class="text-5xl sm:text-6xl space-x-2 filter drop-shadow-md pt-2">
-        🤾‍♀️ 🧩 🏃‍♂️ 📚 🎨
+      <!-- Main Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Side: Hero Typography -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="hero-banner-title text-6xl sm:text-8xl tracking-tight uppercase">
+            KIDS<br>
+            <span class="text-amber-500">ACTIVITY</span>
+          </div>
+
+          <div class="inline-block bg-emerald-50 border-2 border-emerald-300 rounded-full px-8 py-3">
+            <p class="text-xl sm:text-2xl font-black tracking-widest text-emerald-700 uppercase">
+              FUN LEARNING! ✨
+            </p>
+          </div>
+
+          <p class="text-lg font-bold text-gray-600 max-w-md mx-auto lg:mx-0">
+            Click the <strong class="text-emerald-600">CLASS</strong> button above to explore interactive worksheets, puzzles, and engaging video lessons!
+          </p>
+        </div>
+
+        <!-- Right Side: Graphic Visual Stage -->
+        <div class="lg:col-span-5 relative flex justify-center items-center py-6">
+          
+          <!-- Animated Elements & Badges -->
+          <div class="absolute -top-4 left-4 text-4xl float-slow">⭐</div>
+          <div class="absolute top-1/2 right-0 text-4xl float-delay">✈️</div>
+          <div class="absolute bottom-0 left-8 text-4xl float-slow">🌟</div>
+
+          <!-- Open Book & Kids Activity Display -->
+          <div class="amber-card p-6 w-full text-center shadow-lg relative z-10 border-4 border-amber-400 space-y-4">
+            <div class="text-7xl sm:text-8xl float-slow">
+              📖 🧑‍🎓 👧
+            </div>
+            <div class="bg-white p-4 rounded-xl border-2 border-emerald-300 shadow-inner">
+              <span class="font-extrabold text-emerald-800 text-lg block">
+                Interactive Learning Hub 🚀
+              </span>
+              <span class="text-sm font-bold text-gray-500">
+                100+ Visual Worksheets & Puzzles
+              </span>
+            </div>
+            
+            <!-- Non-Clickable Text Badge -->
+            <div class="static-badge w-full py-3.5 text-lg sm:text-xl font-black uppercase tracking-wider shadow-sm">
+              START LEARNING NOW!
+            </div>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
 
-    <!-- Quick Info Amber Card -->
-    <div class="amber-card p-6 w-full text-center shadow-md">
-      <h3 class="text-xl font-extrabold text-amber-800 mb-2">🌟 Interactive & Fun Learning</h3>
-      <p class="font-bold text-amber-900/80">
-        Select your class grade to explore interactive math worksheets, games, and video lessons!
-      </p>
+    <!-- Secondary Info Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <div class="mint-card p-6 shadow-md flex items-start gap-4">
+        <div class="text-4xl bg-emerald-100 p-3 rounded-2xl">🧩</div>
+        <div>
+          <h3 class="text-xl font-black text-emerald-700 mb-1">Visual Worksheets</h3>
+          <p class="font-bold text-gray-600 text-sm">
+            Step-by-step visual cube challenges and counting exercises for easy understanding.
+          </p>
+        </div>
+      </div>
+
+      <div class="amber-card p-6 shadow-md flex items-start gap-4">
+        <div class="text-4xl bg-amber-100 p-3 rounded-2xl">📺</div>
+        <div>
+          <h3 class="text-xl font-black text-amber-800 mb-1">Video Solutions</h3>
+          <p class="font-bold text-amber-900/80 text-sm">
+            Detailed video explanations to assist students and parents with every chapter task.
+          </p>
+        </div>
+      </div>
+
     </div>
 
   </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-6 text-center text-emerald-800 font-bold bg-emerald-100 border-t-2 border-emerald-200 text-sm">
+    <p>© 2026 Econova.vip - Fun & Interactive Learning Platform</p>
+  </footer>
 
 </body>
 </html>
