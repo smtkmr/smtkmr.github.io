@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about adding zero, practice addition facts, and solve math word problems.">
+  <meta name="description" content="Interactive algebra and addition lesson for kids: Add Zero and Add in Any Order with visual dot models, word problems, and real-time validation.">
   <meta name="theme-color" content="#2dd4bf">
-  <title>Adding Zero · Addition Concepts | Econova</title>
+  <title>Add Zero & Add in Any Order · Algebra Foundations | Econova</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,9 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-orange: #f97316;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 110px; }
@@ -29,11 +32,11 @@
     h1, h2, h3, .logo, .eyebrow, .number { font-family: var(--heading); }
     h1, h2, h3, p { margin: 0; }
     button, a, summary { -webkit-tap-highlight-color: transparent; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
     .wrap { max-width: 1180px; margin: auto; padding: 0 28px; }
     .skip { position: fixed; left: 20px; top: -80px; background: white; padding: 10px; z-index: 100; }
     .skip:focus { top: 10px; }
-    
+
     header { background: var(--teal); border-bottom: 3px solid var(--button); position: sticky; top: 0; z-index: 20; }
     .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .logo { font-size: 32px; font-weight: 900; letter-spacing: -1.3px; color: #fff; display: flex; align-items: center; gap: 10px; }
@@ -42,690 +45,607 @@
     nav { display: flex; align-items: center; gap: 26px; }
     nav a { font-family: var(--heading); font-weight: 600; color: #fff; }
     nav a:hover { text-decoration: underline; text-underline-offset: 7px; }
-    .mint-btn { background: var(--button); color: #fff; border: 0; border-radius: 16px; padding: 14px 23px; display: inline-flex; justify-content: center; align-items: center; gap: 16px; font-weight: 800; box-shadow: 0 4px 0 var(--brand); transition: transform .2s, background .2s; }
+    .mint-btn { background: var(--button); color: #fff; border: 0; border-radius: 16px; padding: 14px 23px; display: inline-flex; justify-content: center; align-items: center; gap: 12px; font-weight: 800; box-shadow: 0 4px 0 var(--brand); transition: transform .2s, background .2s; }
     .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
     .nav .mint-btn { font-size: 14px; padding: 10px 17px; }
     .eyebrow { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; color: var(--brand); }
     .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 24px; }
     .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 24px; }
-    
+
     .breadcrumb { display: flex; gap: 10px; align-items: center; font-size: 12px; padding-top: 24px; color: var(--brand); }
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb span:last-child { color: var(--ink); }
-    
-    .lesson-hero { display: grid; grid-template-columns: 1.3fr .7fr; gap: 35px; align-items: center; padding: 32px 0; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 7px 13px; font-size: 12px; color: var(--brand); font-weight: bold; }
-    .pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--button); }
-    .lesson-hero h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -2px; font-weight: 900; line-height: 1.06; margin: 23px 0; }
+
+    .lesson-hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 35px; align-items: center; padding: 32px 0; }
+    .lesson-hero h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -2px; line-height: 1.05; margin: 16px 0; }
     .lesson-hero .green { color: var(--brand); }
     .underline { position: relative; white-space: nowrap; isolation: isolate; }
     .underline:after { content: ''; position: absolute; left: 0; right: 0; bottom: 4px; height: 14px; background: var(--yellow); z-index: -1; transform: rotate(-2deg); border-radius: 8px; }
-    .lesson-hero .intro { max-width: 600px; font-size: 14px; line-height: 1.85; }
-    .hero-note { font-size: 12px; display: flex; gap: 18px; color: var(--brand); margin-top: 20px; }
+    .intro { max-width: 600px; font-size: 15px; line-height: 1.8; }
+    .hero-note { font-size: 12px; display: flex; gap: 18px; color: var(--brand); margin-top: 20px; font-weight: bold; }
     
-    .hero-sample { padding: 27px; text-align: center; transform: rotate(2deg); box-shadow: 7px 8px 0 #d1fae5; }
-    .hero-sample .sample-number { font-family: var(--heading); font-size: 48px; font-weight: 900; color: var(--brand); line-height: 1.3; }
-    .hero-sample p { font-size: 13px; }
-    .sample-dots { display: flex; justify-content: center; gap: 8px; margin: 18px 0; }
-    .sample-dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #b91c1c; background: #ef4444; }
-    
-    .lesson-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; }
+    .concept-stage { padding: 24px; text-align: center; }
+    .domino-group { display: flex; justify-content: center; gap: 20px; margin: 18px 0; flex-wrap: wrap; }
+    .domino { width: 140px; height: 75px; border: 3px solid var(--ink); border-radius: 16px; background: #fff; display: flex; overflow: hidden; box-shadow: 4px 4px 0 #a7f3d0; }
+    .domino-half { width: 50%; height: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 6px; gap: 4px; }
+    .domino-half:first-child { border-right: 2px solid var(--ink); }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .dot.red { background: #ef4444; }
+    .dot.green { background: #10b981; }
+    .dot.blue { background: var(--accent-blue); }
+    .dot.purple { background: var(--accent-purple); }
+    .dot.orange { background: var(--accent-orange); }
+
+    .lesson-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; margin-bottom: 20px; }
     .lesson-jumps { display: flex; gap: 15px; flex-wrap: wrap; font-size: 13px; font-weight: bold; color: var(--brand); }
-    .lesson-jumps a:hover { text-decoration: underline; }
-    .progress-block { min-width: 190px; font-size: 12px; color: var(--brand); }
-    progress { display: block; width: 100%; height: 10px; margin-top: 7px; accent-color: var(--button); }
-    
-    .section { padding-top: 62px; padding-bottom: 6px; }
+    .progress-block { min-width: 210px; font-size: 12px; color: var(--brand); font-weight: bold; }
+    progress { display: block; width: 100%; height: 12px; margin-top: 7px; accent-color: var(--button); border-radius: 6px; }
+
+    .section { padding-top: 40px; padding-bottom: 20px; }
     .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 25px; }
-    h2 { font-size: 36px; letter-spacing: -1.1px; line-height: 1.2; margin-top: 8px; }
-    .section-heading > p { font-size: 13px; max-width: 330px; }
-    
-    .concept-box { padding: 30px; margin-bottom: 30px; }
-    .concept-text { font-size: 16px; margin-bottom: 20px; font-weight: 600; color: #111827; }
-    .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .model-card { background: var(--bg); border: 2px solid var(--line); border-radius: 18px; padding: 20px; text-align: center; }
-    .model-boxes { display: flex; justify-content: center; align-items: center; gap: 12px; margin: 15px 0; }
-    .dot-box { width: 100px; height: 80px; border: 2px dashed var(--brand); border-radius: 12px; background: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; padding: 8px; }
-    .dot { width: 16px; height: 16px; border-radius: 50%; }
-    .dot.red { background: #ef4444; border: 1.5px solid #b91c1c; }
-    .dot.green { background: #22c55e; border: 1.5px solid #15803d; }
-    .model-math { font-family: var(--heading); font-size: 28px; font-weight: 900; color: var(--brand); }
+    h2 { font-size: 34px; letter-spacing: -1.1px; line-height: 1.2; }
     
     .task-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-    .task-card { padding: 25px; display: flex; flex-direction: column; min-width: 0; scroll-margin-top: 110px; }
-    .task-heading { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-    .task-status { font-size: 11px; color: var(--brand); background: var(--bg); padding: 3px 9px; border-radius: 20px; font-weight: bold; }
-    .task-card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 15px; }
+    .task-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .task-card { padding: 24px; display: flex; flex-direction: column; min-width: 0; scroll-margin-top: 110px; }
+    .task-heading { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .task-status { font-size: 11px; color: var(--brand); background: var(--bg); padding: 4px 10px; border-radius: 20px; font-weight: bold; }
+    .task-card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 12px; }
     
-    .boxes-display { display: flex; justify-content: center; align-items: center; gap: 12px; background: var(--bg); padding: 20px; border-radius: 16px; margin-bottom: 15px; }
-    .mini-box { width: 90px; height: 70px; border: 2px solid var(--line); border-radius: 10px; background: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; padding: 6px; }
-    .dot.purple { background: #a855f7; border: 1.5px solid #6b21a8; }
-    .dot.blue { background: #3b82f6; border: 1.5px solid #1d4ed8; }
-    .dot.orange { background: #f97316; border: 1.5px solid #c2410c; }
-    
-    .math-expr { font-family: var(--heading); font-size: 22px; font-weight: 800; color: var(--brand); display: flex; align-items: center; gap: 8px; margin-bottom: 15px; }
-    .answer-label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 8px; }
-    .number-answer { width: 88px; border: 2px solid var(--line); border-radius: 14px; padding: 8px 10px; text-align: center; background: white; color: var(--ink); font: 800 22px var(--heading); }
-    .number-answer:focus-visible { outline: 3px solid #059669; outline-offset: 3px; }
-    .number-answer[aria-invalid="true"] { border-color: #dc2626; }
-    
-    .task-bottom { margin-top: auto; padding-top: 17px; border-top: 1px solid #d1fae5; }
-    .check-btn { font-size: 13px; padding: 11px 18px; }
-    .task-feedback { font-size: 13px; font-weight: bold; margin: 13px 0; color: var(--brand); min-height: 21px; }
-    .task-feedback:empty { display: none; }
+    .domino-box { height: 90px; border: 2px dashed var(--line); border-radius: 16px; background: var(--bg); display: flex; width: 180px; margin: 0 auto 16px; overflow: hidden; }
+    .domino-box .half { width: 50%; height: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 8px; gap: 6px; }
+    .domino-box .half:first-child { border-right: 2px dashed var(--line); }
+
+    .equation-row { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--heading); font-size: 22px; font-weight: 800; margin-bottom: 15px; }
+    .math-input { width: 55px; height: 50px; border: 2px solid var(--line); border-radius: 12px; text-align: center; font: 800 22px var(--heading); background: white; color: var(--ink); }
+    .math-input:focus-visible { outline: 3px solid var(--brand); border-color: var(--brand); }
+    .math-input[aria-invalid="true"] { border-color: #dc2626; background: #fef2f2; }
+
+    .word-pb-img { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 16px; padding: 16px; text-align: center; font-size: 40px; margin-bottom: 15px; display: flex; justify-content: center; gap: 10px; }
+
+    .task-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid #d1fae5; }
+    .check-btn { font-size: 13px; padding: 10px 16px; width: 100%; }
+    .task-feedback { font-size: 12px; font-weight: bold; margin: 10px 0 0; color: var(--brand); min-height: 18px; }
     .task-feedback[data-state="retry"] { color: #9a3412; }
-    
-    .solution { margin-top: 16px; padding: 12px 15px; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 14px; font-size: 13px; }
-    .solution summary { cursor: pointer; font-weight: bold; min-height: 25px; }
-    .solution p { margin-top: 8px; line-height: 1.75; }
-    
-    .independent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .equation-card { padding: 18px; display: flex; flex-direction: column; align-items: center; }
-    .hot-badge { background: #fef3c7; color: #b45309; border: 1px solid #fde047; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 800; font-family: var(--heading); margin-bottom: 6px; }
-    
-    .problem-card { padding: 25px; margin-bottom: 20px; }
-    .problem-story { font-size: 15px; font-weight: 600; margin-bottom: 15px; }
-    
+    .solution { margin-top: 12px; padding: 10px 12px; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 12px; font-size: 12px; }
+    .solution summary { cursor: pointer; font-weight: bold; }
+    .solution p { margin-top: 6px; line-height: 1.6; }
+
     .check-all { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 40px; padding: 26px; }
-    .check-all h2 { font-size: 27px; margin-top: 0; }
-    .check-all p { font-size: 13px; margin-top: 8px; }
-    
     .result { padding: 25px; margin-top: 20px; text-align: center; }
-    .result h2 { font-size: 30px; }
-    .result p { margin-top: 12px; }
     
-    .lesson-end { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 35px 0 42px; }
-    .text-link { color: var(--brand); font-weight: bold; font-size: 14px; }
-    .text-link:hover { text-decoration: underline; }
-    
-    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 25px 0; }
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 25px 0; margin-top: 50px; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 11px; }
     .footer-brand { font-family: var(--heading); font-size: 21px; color: var(--brand); font-weight: 900; }
-    .footer-links { display: flex; gap: 18px; }
 
+    @media (max-width: 900px) {
+      .task-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 650px) {
-      .wrap { padding-left: 20px; padding-right: 20px; }
-      .nav { min-height: 76px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; gap: 10px; }
-      .logo { font-size: 26px; }
-      .logo-mark { width: 32px; height: 32px; font-size: 23px; }
-      nav > a:not(.mint-btn) { display: none; }
-      .lesson-hero { grid-template-columns: 1fr; gap: 20px; padding: 22px 0 30px; }
-      .hero-sample { transform: none; padding: 18px; }
-      .lesson-toolbar { flex-direction: column; align-items: stretch; padding: 20px; }
-      .task-grid { grid-template-columns: 1fr; gap: 17px; }
-      .independent-grid { grid-template-columns: 1fr 1fr; }
-      .check-all { align-items: stretch; flex-direction: column; padding: 23px; }
-      .lesson-end { flex-direction: column; align-items: stretch; text-align: center; }
-      .breadcrumb { flex-wrap: wrap; font-size: 11px; }
-      .section-heading { gap: 10px; flex-direction: column; align-items: flex-start; }
-      .section-heading > p { max-width: none; }
-      h2 { font-size: 31px; }
+      .lesson-hero { grid-template-columns: 1fr; gap: 20px; }
+      .task-grid, .task-grid-3 { grid-template-columns: 1fr; }
+      .check-all { flex-direction: column; text-align: center; }
+      .lesson-toolbar { flex-direction: column; align-items: stretch; }
+      .equation-row { font-size: 18px; }
+      .math-input { width: 48px; height: 44px; font-size: 18px; }
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+
   <header>
     <div class="wrap nav">
-      <a class="logo" href="../../../../index.html" aria-label="Econova home">
+      <a class="logo" href="#" aria-label="Econova home">
         <span class="logo-mark" aria-hidden="true">✦</span>
         <span>Econova<em>.vip</em></span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="../index.html">Chapter 1</a>
-        <a href="#concept">Model &amp; Draw</a>
-        <a href="#guided">Guided Practice</a>
-        <a href="#independent">Independent Practice</a>
-        <a href="#problem-solving">Problem Solving</a>
-        <a class="mint-btn" href="../index.html">All lessons <span aria-hidden="true">↗</span></a>
+        <a href="#model">Model & Draw</a>
+        <a href="#share">Guided Practice</a>
+        <a href="#order">Add in Any Order</a>
+        <a class="mint-btn" href="#problems">Problem Solving</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../../index.html">Class 1</a><span aria-hidden="true">/</span>
-      <a href="../../index.html">Maths</a><span aria-hidden="true">/</span>
-      <a href="../index.html">Addition Concepts</a><span aria-hidden="true">/</span>
-      <span aria-current="page">Adding Zero</span>
+      <a href="#">Class 1</a><span aria-hidden="true">/</span>
+      <a href="#">Maths</a><span aria-hidden="true">/</span>
+      <a href="#">Algebra Foundations</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Add Zero & Order Property</span>
     </nav>
 
-    <section class="lesson-hero" aria-labelledby="lesson-title">
+    <!-- HERO / CONCEPT SECTION -->
+    <section class="lesson-hero" id="model">
       <div>
-        <div class="pill"><span aria-hidden="true"></span> Chapter 01 · Lesson 02</div>
-        <h1 id="lesson-title">Adding <br><span class="green"><span class="underline">Zero.</span></span></h1>
-        <p class="intro">Discover what happens when you add zero to a number, or add a number to zero. Explore dot models, practice addition facts, and solve fun word problems!</p>
+        <div class="pill"><span aria-hidden="true"></span> Chapter 01 · Lesson 05</div>
+        <h1>Algebra: <br><span class="green">Add Zero</span> &amp; <span class="underline">Any Order</span></h1>
+        <p class="intro">Discover the magical secrets of addition! Learn what happens when you add zero to any number, and how numbers can swap places without changing the total sum.</p>
         <div class="hero-note">
-          <span>✦ Model &amp; Draw</span>
-          <span>✦ Addition Facts</span>
-          <span>✦ Word Problems</span>
+          <span>✦ Visual Domino Models</span>
+          <span>✦ Interactive Answers</span>
+          <span>✦ Self-Paced Practice</span>
         </div>
       </div>
-      <div class="amber-card hero-sample">
-        <p class="eyebrow">Zero Means Nothing</p>
-        <div class="sample-number">5 + 0 = 5</div>
-        <div class="sample-dots" role="img" aria-label="Five red dots on left, zero on right">
-          <span class="sample-dot"></span><span class="sample-dot"></span><span class="sample-dot"></span><span class="sample-dot"></span><span class="sample-dot"></span>
+      <div class="amber-card concept-stage">
+        <p class="eyebrow">Concept 1: Model &amp; Draw</p>
+        <p style="font-size:13px; font-weight:bold; margin-top:6px;">What happens when zero is added?</p>
+        <div class="domino-group">
+          <div>
+            <div class="domino" aria-label="5 red dots and 0 dots">
+              <div class="domino-half"><span class="dot red"></span><span class="dot red"></span><span class="dot red"></span><span class="dot red"></span><span class="dot red"></span></div>
+              <div class="domino-half"></div>
+            </div>
+            <p style="font-size:14px; font-weight:bold; margin-top:6px;">5 + 0 = 5</p>
+          </div>
+          <div>
+            <div class="domino" aria-label="0 dots and 3 green dots">
+              <div class="domino-half"></div>
+              <div class="domino-half"><span class="dot green"></span><span class="dot green"></span><span class="dot green"></span></div>
+            </div>
+            <p style="font-size:14px; font-weight:bold; margin-top:6px;">0 + 3 = 3</p>
+          </div>
         </div>
-        <p>Adding zero leaves the<br>number completely unchanged!</p>
+        <p style="font-size:12px; color:var(--brand);"><strong>Rule:</strong> Zero means 0 added. The number stays the same!</p>
       </div>
     </section>
 
+    <!-- PROGRESS TOOLBAR -->
     <div class="mint-card lesson-toolbar">
-      <nav class="lesson-jumps" aria-label="Activity shortcuts">
-        <a href="#concept">01 · Concept</a>
-        <a href="#guided">02 · Guided Practice</a>
-        <a href="#independent">03 · Independent Practice</a>
-        <a href="#problem-solving">04 · Problem Solving</a>
+      <nav class="lesson-jumps" aria-label="Lesson shortcuts">
+        <a href="#share">01 · Share &amp; Show</a>
+        <a href="#own">02 · On Your Own</a>
+        <a href="#order">03 · Any Order</a>
+        <a href="#problems">04 · Word Problems</a>
       </nav>
       <div class="progress-block">
-        <span id="progress-label" role="status">0 of 20 answers correct</span>
-        <progress id="lesson-progress" max="20" value="0" aria-label="Correct answers out of twenty"></progress>
+        <span id="progress-label" role="status">0 of 14 tasks completed</span>
+        <progress id="lesson-progress" max="14" value="0" aria-label="Lesson completion progress"></progress>
       </div>
     </div>
 
-    <!-- 1. Concept: Model and Draw -->
-    <section id="concept" class="section" aria-labelledby="concept-title">
+    <!-- SECTION 1: SHARE AND SHOW -->
+    <section id="share" class="section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">1. Concept</p>
-          <h2 id="concept-title">Model and Draw</h2>
+          <p class="eyebrow">Activity 01 · Guided Practice</p>
+          <h2>Share and Show</h2>
         </div>
-        <p>When you add zero to a number, or add a number to zero, the number stays the same! Zero means nothing is added.</p>
+        <p style="font-size:13px;">Use the domino pictures to write each part and find the sum.</p>
       </div>
-      <div class="mint-card concept-box">
-        <p class="concept-text">When you add zero to a number, or add a number to zero, the number stays the same! Zero means nothing is added.</p>
-        <div class="model-grid">
-          <div class="model-card">
-            <div class="model-math">5 + 0 = 5</div>
-            <div class="model-boxes">
-              <div class="dot-box" aria-label="5 red dots">
-                <span class="dot red"></span><span class="dot red"></span><span class="dot red"></span><span class="dot red"></span><span class="dot red"></span>
-              </div>
-              <span style="font-size:20px; font-weight:bold;">+</span>
-              <div class="dot-box" aria-label="0 dots (empty)"></div>
-            </div>
-            <p style="font-size:12px; color:var(--brand); font-weight:bold;">5 red dots in the left box, 0 dots in the right box → total is 5</p>
-          </div>
-          <div class="model-card">
-            <div class="model-math">0 + 3 = 3</div>
-            <div class="model-boxes">
-              <div class="dot-box" aria-label="0 dots (empty)"></div>
-              <span style="font-size:20px; font-weight:bold;">+</span>
-              <div class="dot-box" aria-label="3 green dots">
-                <span class="dot green"></span><span class="dot green"></span><span class="dot green"></span>
-              </div>
-            </div>
-            <p style="font-size:12px; color:var(--brand); font-weight:bold;">0 dots in the left box, 3 green dots in the right box → total is 3</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 2. Share and Show (Guided Practice) -->
-    <section id="guided" class="section" aria-labelledby="guided-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">2. Share and Show</p>
-          <h2 id="guided-title">Guided Practice</h2>
-        </div>
-        <p>Look at the two boxes and write the addition sentence.</p>
-      </div>
       <div class="task-grid">
-        <!-- Question 1 -->
-        <article class="mint-card task-card" id="task-1" aria-labelledby="title-1">
+        <!-- Task 1 -->
+        <article class="mint-card task-card" id="task-card-1">
           <div class="task-heading">
             <span class="eyebrow">Question 01</span>
             <span class="task-status" id="status-1">Your turn</span>
           </div>
-          <h3 id="title-1">Look at the boxes and complete the addition sentence</h3>
-          <div class="boxes-display">
-            <div class="mini-box" aria-label="1 green dot"><span class="dot green"></span></div>
-            <span style="font-weight:bold;">+</span>
-            <div class="mini-box" aria-label="empty box"></div>
+          <div class="domino-box" aria-label="1 green dot on left, right empty">
+            <div class="half"><span class="dot green"></span></div>
+            <div class="half"></div>
           </div>
-          <div class="math-expr">
-            <input id="ans-1-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(1)">
+          <div class="equation-row">
+            <input type="number" id="t1-a" class="math-input" placeholder="?" aria-label="First number">
             <span>+</span>
-            <input id="ans-1-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(1)">
+            <input type="number" id="t1-b" class="math-input" placeholder="?" aria-label="Second number">
             <span>=</span>
-            <input id="ans-1-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Sum" oninput="invalidate(1)">
+            <input type="number" id="t1-c" class="math-input" placeholder="?" aria-label="Sum">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(1)">Check answer <span aria-hidden="true">✓</span></button>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(1, [1, 0, 1])">Check Answer ✓</button>
             <p class="task-feedback" id="feedback-1" role="status"></p>
-            <details id="solution-1" class="solution">
-              <summary>Short solution</summary>
-              <p>1 green dot in the left box and 0 dots in the right box gives: <strong>1 + 0 = 1</strong>.</p>
-            </details>
+            <details class="solution" id="solution-1"><summary>Solution</summary><p>Left side has 1 green dot, right side has 0 dots. So, 1 + 0 = 1.</p></details>
           </div>
         </article>
 
-        <!-- Question 2 -->
-        <article class="mint-card task-card" id="task-2" aria-labelledby="title-2">
+        <!-- Task 2 -->
+        <article class="mint-card task-card" id="task-card-2">
           <div class="task-heading">
             <span class="eyebrow">Question 02</span>
             <span class="task-status" id="status-2">Your turn</span>
           </div>
-          <h3 id="title-2">Look at the boxes and complete the addition sentence</h3>
-          <div class="boxes-display">
-            <div class="mini-box" aria-label="empty box"></div>
-            <span style="font-weight:bold;">+</span>
-            <div class="mini-box" aria-label="2 purple dots"><span class="dot purple"></span><span class="dot purple"></span></div>
+          <div class="domino-box" aria-label="Left empty, 2 purple dots on right">
+            <div class="half"></div>
+            <div class="half"><span class="dot purple"></span><span class="dot purple"></span></div>
           </div>
-          <div class="math-expr">
-            <input id="ans-2-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(2)">
+          <div class="equation-row">
+            <input type="number" id="t2-a" class="math-input" placeholder="?" aria-label="First number">
             <span>+</span>
-            <input id="ans-2-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(2)">
+            <input type="number" id="t2-b" class="math-input" placeholder="?" aria-label="Second number">
             <span>=</span>
-            <input id="ans-2-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Sum" oninput="invalidate(2)">
+            <input type="number" id="t2-c" class="math-input" placeholder="?" aria-label="Sum">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(2)">Check answer <span aria-hidden="true">✓</span></button>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(2, [0, 2, 2])">Check Answer ✓</button>
             <p class="task-feedback" id="feedback-2" role="status"></p>
-            <details id="solution-2" class="solution">
-              <summary>Short solution</summary>
-              <p>0 dots in the left box and 2 purple dots in the right box gives: <strong>0 + 2 = 2</strong>.</p>
-            </details>
+            <details class="solution" id="solution-2"><summary>Solution</summary><p>Left side has 0 dots, right side has 2 purple dots. So, 0 + 2 = 2.</p></details>
           </div>
         </article>
 
-        <!-- Question 3 -->
-        <article class="mint-card task-card" id="task-3" aria-labelledby="title-3">
+        <!-- Task 3 -->
+        <article class="mint-card task-card" id="task-card-3">
           <div class="task-heading">
             <span class="eyebrow">Question 03</span>
             <span class="task-status" id="status-3">Your turn</span>
           </div>
-          <h3 id="title-3">Look at the boxes and complete the addition sentence</h3>
-          <div class="boxes-display">
-            <div class="mini-box" aria-label="empty box"></div>
-            <span style="font-weight:bold;">+</span>
-            <div class="mini-box" aria-label="4 blue dots"><span class="dot blue"></span><span class="dot blue"></span><span class="dot blue"></span><span class="dot blue"></span></div>
+          <div class="domino-box" aria-label="Left empty, 4 blue dots on right">
+            <div class="half"></div>
+            <div class="half"><span class="dot blue"></span><span class="dot blue"></span><span class="dot blue"></span><span class="dot blue"></span></div>
           </div>
-          <div class="math-expr">
-            <input id="ans-3-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(3)">
+          <div class="equation-row">
+            <input type="number" id="t3-a" class="math-input" placeholder="?" aria-label="First number">
             <span>+</span>
-            <input id="ans-3-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(3)">
+            <input type="number" id="t3-b" class="math-input" placeholder="?" aria-label="Second number">
             <span>=</span>
-            <input id="ans-3-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Sum" oninput="invalidate(3)">
+            <input type="number" id="t3-c" class="math-input" placeholder="?" aria-label="Sum">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(3)">Check answer <span aria-hidden="true">✓</span></button>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(3, [0, 4, 4])">Check Answer ✓</button>
             <p class="task-feedback" id="feedback-3" role="status"></p>
-            <details id="solution-3" class="solution">
-              <summary>Short solution</summary>
-              <p>0 dots in the left box and 4 blue dots in the right box gives: <strong>0 + 4 = 4</strong>.</p>
-            </details>
+            <details class="solution" id="solution-3"><summary>Solution</summary><p>Left side has 0 dots, right side has 4 blue dots. So, 0 + 4 = 4.</p></details>
           </div>
         </article>
 
-        <!-- Question 4 -->
-        <article class="mint-card task-card" id="task-4" aria-labelledby="title-4">
+        <!-- Task 4 -->
+        <article class="mint-card task-card" id="task-card-4">
           <div class="task-heading">
             <span class="eyebrow">Question 04</span>
             <span class="task-status" id="status-4">Your turn</span>
           </div>
-          <h3 id="title-4">Look at the boxes and complete the addition sentence</h3>
-          <div class="boxes-display">
-            <div class="mini-box" aria-label="6 orange dots"><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span></div>
-            <span style="font-weight:bold;">+</span>
-            <div class="mini-box" aria-label="empty box"></div>
+          <div class="domino-box" aria-label="6 orange dots on left, right empty">
+            <div class="half"><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span><span class="dot orange"></span></div>
+            <div class="half"></div>
           </div>
-          <div class="math-expr">
-            <input id="ans-4-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(4)">
+          <div class="equation-row">
+            <input type="number" id="t4-a" class="math-input" placeholder="?" aria-label="First number">
             <span>+</span>
-            <input id="ans-4-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(4)">
+            <input type="number" id="t4-b" class="math-input" placeholder="?" aria-label="Second number">
             <span>=</span>
-            <input id="ans-4-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Sum" oninput="invalidate(4)">
+            <input type="number" id="t4-c" class="math-input" placeholder="?" aria-label="Sum">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(4)">Check answer <span aria-hidden="true">✓</span></button>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(4, [6, 0, 6])">Check Answer ✓</button>
             <p class="task-feedback" id="feedback-4" role="status"></p>
-            <details id="solution-4" class="solution">
-              <summary>Short solution</summary>
-              <p>6 orange dots in the left box and 0 dots in the right box gives: <strong>6 + 0 = 6</strong>.</p>
-            </details>
+            <details class="solution" id="solution-4"><summary>Solution</summary><p>Left side has 6 orange dots, right side has 0 dots. So, 6 + 0 = 6.</p></details>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 3. On Your Own (Independent Practice) -->
-    <section id="independent" class="section" aria-labelledby="independent-title">
+    <!-- SECTION 2: ON YOUR OWN -->
+    <section id="own" class="section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">3. On Your Own</p>
-          <h2 id="independent-title">Independent Practice</h2>
+          <p class="eyebrow">Activity 02 · Independent Practice</p>
+          <h2>On Your Own</h2>
         </div>
-        <p>Solve each addition problem carefully.</p>
+        <p style="font-size:13px;">Add zero or find the sums directly.</p>
       </div>
-      <div class="independent-grid">
-        <!-- 5 -->
-        <article class="mint-card equation-card" id="task-5">
-          <span class="eyebrow">Problem 5</span>
-          <div class="math-expr" style="margin:15px 0;">2 + 0 = <input id="ans-5" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(5)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(5)">Check</button>
-          <p class="task-feedback" id="feedback-5" role="status"></p>
-          <details id="solution-5" class="solution" style="width:100%;"><summary>Solution</summary><p>2 + 0 = <strong>2</strong></p></details>
+
+      <div class="task-grid-3">
+        <!-- Task 5 -->
+        <article class="mint-card task-card" id="task-card-5">
+          <span class="eyebrow">Question 05</span>
+          <div class="equation-row" style="margin:20px 0;">
+            <span>2 + 0 =</span>
+            <input type="number" id="t5-ans" class="math-input" placeholder="?">
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkSingle(5, 2)">Check ✓</button>
+            <p class="task-feedback" id="feedback-5" role="status"></p>
+          </div>
         </article>
-        <!-- 6 -->
-        <article class="mint-card equation-card" id="task-6">
-          <span class="eyebrow">Problem 6</span>
-          <div class="math-expr" style="margin:15px 0;">0 + 1 = <input id="ans-6" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(6)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(6)">Check</button>
-          <p class="task-feedback" id="feedback-6" role="status"></p>
-          <details id="solution-6" class="solution" style="width:100%;"><summary>Solution</summary><p>0 + 1 = <strong>1</strong></p></details>
+
+        <!-- Task 6 -->
+        <article class="mint-card task-card" id="task-card-6">
+          <span class="eyebrow">Question 06</span>
+          <div class="equation-row" style="margin:20px 0;">
+            <span>0 + 5 =</span>
+            <input type="number" id="t6-ans" class="math-input" placeholder="?">
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkSingle(6, 5)">Check ✓</button>
+            <p class="task-feedback" id="feedback-6" role="status"></p>
+          </div>
         </article>
-        <!-- 7 -->
-        <article class="mint-card equation-card" id="task-7">
-          <span class="eyebrow">Problem 7</span>
-          <div class="math-expr" style="margin:15px 0;">4 + 6 = <input id="ans-7" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(7)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(7)">Check</button>
-          <p class="task-feedback" id="feedback-7" role="status"></p>
-          <details id="solution-7" class="solution" style="width:100%;"><summary>Solution</summary><p>4 + 6 = <strong>10</strong></p></details>
-        </article>
-        <!-- 8 -->
-        <article class="mint-card equation-card" id="task-8">
-          <span class="eyebrow">Problem 8</span>
-          <div class="math-expr" style="margin:15px 0;">0 + 5 = <input id="ans-8" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(8)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(8)">Check</button>
-          <p class="task-feedback" id="feedback-8" role="status"></p>
-          <details id="solution-8" class="solution" style="width:100%;"><summary>Solution</summary><p>0 + 5 = <strong>5</strong></p></details>
-        </article>
-        <!-- 9 -->
-        <article class="mint-card equation-card" id="task-9">
-          <span class="eyebrow">Problem 9</span>
-          <div class="math-expr" style="margin:15px 0;">3 + 4 = <input id="ans-9" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(9)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(9)">Check</button>
-          <p class="task-feedback" id="feedback-9" role="status"></p>
-          <details id="solution-9" class="solution" style="width:100%;"><summary>Solution</summary><p>3 + 4 = <strong>7</strong></p></details>
-        </article>
-        <!-- 10 -->
-        <article class="mint-card equation-card" id="task-10">
-          <span class="eyebrow">Problem 10</span>
-          <div class="math-expr" style="margin:15px 0;">0 + 6 = <input id="ans-10" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(10)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(10)">Check</button>
-          <p class="task-feedback" id="feedback-10" role="status"></p>
-          <details id="solution-10" class="solution" style="width:100%;"><summary>Solution</summary><p>0 + 6 = <strong>6</strong></p></details>
-        </article>
-        <!-- 11 -->
-        <article class="mint-card equation-card" id="task-11">
-          <span class="eyebrow">Problem 11</span>
-          <div class="math-expr" style="margin:15px 0;">3 + 0 = <input id="ans-11" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(11)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(11)">Check</button>
-          <p class="task-feedback" id="feedback-11" role="status"></p>
-          <details id="solution-11" class="solution" style="width:100%;"><summary>Solution</summary><p>3 + 0 = <strong>3</strong></p></details>
-        </article>
-        <!-- 12 -->
-        <article class="mint-card equation-card" id="task-12">
-          <span class="eyebrow">Problem 12</span>
-          <div class="math-expr" style="margin:15px 0;">1 + 4 = <input id="ans-12" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(12)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(12)">Check</button>
-          <p class="task-feedback" id="feedback-12" role="status"></p>
-          <details id="solution-12" class="solution" style="width:100%;"><summary>Solution</summary><p>1 + 4 = <strong>5</strong></p></details>
-        </article>
-        <!-- 13 -->
-        <article class="mint-card equation-card" id="task-13">
-          <span class="eyebrow">Problem 13</span>
-          <div class="math-expr" style="margin:15px 0;">4 + 0 = <input id="ans-13" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(13)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(13)">Check</button>
-          <p class="task-feedback" id="feedback-13" role="status"></p>
-          <details id="solution-13" class="solution" style="width:100%;"><summary>Solution</summary><p>4 + 0 = <strong>4</strong></p></details>
-        </article>
-        <!-- 14 -->
-        <article class="mint-card equation-card" id="task-14">
-          <span class="eyebrow">Problem 14</span>
-          <div class="math-expr" style="margin:15px 0;">5 + 2 = <input id="ans-14" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(14)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(14)">Check</button>
-          <p class="task-feedback" id="feedback-14" role="status"></p>
-          <details id="solution-14" class="solution" style="width:100%;"><summary>Solution</summary><p>5 + 2 = <strong>7</strong></p></details>
-        </article>
-        <!-- 15 -->
-        <article class="mint-card equation-card" id="task-15">
-          <span class="eyebrow">Problem 15</span>
-          <div class="math-expr" style="margin:15px 0;">1 + 3 = <input id="ans-15" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(15)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(15)">Check</button>
-          <p class="task-feedback" id="feedback-15" role="status"></p>
-          <details id="solution-15" class="solution" style="width:100%;"><summary>Solution</summary><p>1 + 3 = <strong>4</strong></p></details>
-        </article>
-        <!-- 16 -->
-        <article class="mint-card equation-card" id="task-16">
-          <span class="eyebrow">Problem 16</span>
-          <div class="math-expr" style="margin:15px 0;">5 + 4 = <input id="ans-16" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(16)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(16)">Check</button>
-          <p class="task-feedback" id="feedback-16" role="status"></p>
-          <details id="solution-16" class="solution" style="width:100%;"><summary>Solution</summary><p>5 + 4 = <strong>9</strong></p></details>
-        </article>
-        <!-- 17 HOT Challenge -->
-        <article class="amber-card equation-card" id="task-17" style="grid-column: 1 / -1;">
-          <span class="hot-badge">H.O.T. Challenge</span>
-          <span class="eyebrow">Problem 17</span>
-          <div class="math-expr" style="margin:15px 0;">0 + 0 = <input id="ans-17" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" oninput="invalidate(17)"></div>
-          <button type="button" class="mint-btn check-btn" onclick="checkTask(17)">Check Challenge</button>
-          <p class="task-feedback" id="feedback-17" role="status"></p>
-          <details id="solution-17" class="solution" style="width:100%;"><summary>Solution</summary><p>Adding zero to zero gives: <strong>0 + 0 = 0</strong>.</p></details>
+
+        <!-- Task 7 (H.O.T.) -->
+        <article class="amber-card task-card" id="task-card-7">
+          <span class="eyebrow">🔥 H.O.T. Challenge 07</span>
+          <div class="equation-row" style="margin:15px 0;">
+            <input type="number" id="t7-a" class="math-input" placeholder="?">
+            <span>+</span>
+            <input type="number" id="t7-b" class="math-input" placeholder="?">
+            <span>= 0</span>
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkEqTwo(7, [0, 0])">Check ✓</button>
+            <p class="task-feedback" id="feedback-7" role="status"></p>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- 4. Problem Solving (Real-World Applications) -->
-    <section id="problem-solving" class="section" aria-labelledby="ps-title">
+    <!-- SECTION 3: ADD IN ANY ORDER -->
+    <section id="order" class="section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">4. Problem Solving</p>
-          <h2 id="ps-title">Real-World Applications</h2>
+          <p class="eyebrow">Activity 03 · Commutative Property</p>
+          <h2>Add in Any Order</h2>
         </div>
-        <p>Apply your addition knowledge to solve these story problems!</p>
+        <p style="font-size:13px;">Changing the order of addends does not change the sum!</p>
       </div>
-      <div>
-        <!-- Problem 18 -->
-        <article class="mint-card problem-card" id="task-18">
-          <span class="eyebrow">Problem 18 · Books Problem</span>
-          <p class="problem-story" style="margin-top:10px;">Mike has 7 books. Cheryl does not have any books (0). How many books do they have in all?</p>
-          <div class="math-expr">
-            <input id="ans-18-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(18)">
+
+      <div class="amber-card concept-stage" style="margin-bottom:25px;">
+        <h3>The Swapping Rule</h3>
+        <p style="font-size:14px; margin-top:8px;">Look at these two equations:</p>
+        <div style="display:flex; justify-content:center; gap:30px; font-family:var(--heading); font-size:24px; font-weight:900; margin:15px 0; color:var(--brand);">
+          <span>4 + 2 = 6</span>
+          <span>↔</span>
+          <span>2 + 4 = 6</span>
+        </div>
+        <p style="font-size:12px;">No matter which number comes first, the sum is always <strong>6</strong>!</p>
+      </div>
+
+      <div class="task-grid">
+        <!-- Task 8 -->
+        <article class="mint-card task-card" id="task-card-8">
+          <div class="task-heading">
+            <span class="eyebrow">Question 08</span>
+            <span class="task-status" id="status-8">Your turn</span>
+          </div>
+          <h3>Change the order and solve:</h3>
+          <p style="font-size:14px; font-weight:bold; margin-bottom:10px;">If 3 + 5 = 8, then:</p>
+          <div class="equation-row">
+            <input type="number" id="t8-a" class="math-input" placeholder="?">
             <span>+</span>
-            <input id="ans-18-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(18)">
+            <input type="number" id="t8-b" class="math-input" placeholder="?">
             <span>=</span>
-            <input id="ans-18-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Total books" oninput="invalidate(18)">
-            <span style="font-size:16px; font-weight:bold; color:var(--brand);">books</span>
+            <input type="number" id="t8-c" class="math-input" placeholder="?">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(18)">Check answer <span aria-hidden="true">✓</span></button>
-            <p class="task-feedback" id="feedback-18" role="status"></p>
-            <details id="solution-18" class="solution">
-              <summary>Short solution</summary>
-              <p>7 + 0 = <strong>7 books</strong></p>
-            </details>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(8, [5, 3, 8])">Check Order ✓</button>
+            <p class="task-feedback" id="feedback-8" role="status"></p>
           </div>
         </article>
 
-        <!-- Problem 19 -->
-        <article class="mint-card problem-card" id="task-19">
-          <span class="eyebrow">Problem 19 · Dogs Problem</span>
-          <p class="problem-story" style="margin-top:10px;">3 dogs sit. 5 dogs run to them. How many dogs are there now?</p>
-          <div class="math-expr">
-            <input id="ans-19-a" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="First addend" oninput="invalidate(19)">
+        <!-- Task 9 -->
+        <article class="mint-card task-card" id="task-card-9">
+          <div class="task-heading">
+            <span class="eyebrow">Question 09</span>
+            <span class="task-status" id="status-9">Your turn</span>
+          </div>
+          <h3>Change the order and solve:</h3>
+          <p style="font-size:14px; font-weight:bold; margin-bottom:10px;">If 6 + 1 = 7, then:</p>
+          <div class="equation-row">
+            <input type="number" id="t9-a" class="math-input" placeholder="?">
             <span>+</span>
-            <input id="ans-19-b" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Second addend" oninput="invalidate(19)">
+            <input type="number" id="t9-b" class="math-input" placeholder="?">
             <span>=</span>
-            <input id="ans-19-c" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Total dogs" oninput="invalidate(19)">
-            <span style="font-size:16px; font-weight:bold; color:var(--brand);">dogs</span>
+            <input type="number" id="t9-c" class="math-input" placeholder="?">
           </div>
           <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(19)">Check answer <span aria-hidden="true">✓</span></button>
-            <p class="task-feedback" id="feedback-19" role="status"></p>
-            <details id="solution-19" class="solution">
-              <summary>Short solution</summary>
-              <p>3 + 5 = <strong>8 dogs</strong></p>
-            </details>
-          </div>
-        </article>
-
-        <!-- Problem 20 HOT -->
-        <article class="amber-card problem-card" id="task-20">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-            <span class="eyebrow">Problem 20 · Birds Problem</span>
-            <span class="hot-badge">H.O.T. Challenge</span>
-          </div>
-          <p class="problem-story" style="margin-top:10px;">There are 5 birds total. Outside the birdhouse, you can see 4 birds (1 purple, 1 yellow, 1 green, 1 blue). How many birds are inside?</p>
-          <div class="math-expr">
-            <input id="ans-20" class="number-answer" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="?" aria-label="Birds inside" oninput="invalidate(20)">
-            <span style="font-size:16px; font-weight:bold; color:var(--brand);">bird(s) inside</span>
-          </div>
-          <div class="task-bottom">
-            <button type="button" class="mint-btn check-btn" onclick="checkTask(20)">Check answer <span aria-hidden="true">✓</span></button>
-            <p class="task-feedback" id="feedback-20" role="status"></p>
-            <details id="solution-20" class="solution">
-              <summary>Short solution</summary>
-              <p>5 total - 4 visible = <strong>1 bird</strong> inside.</p>
-            </details>
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(9, [1, 6, 7])">Check Order ✓</button>
+            <p class="task-feedback" id="feedback-9" role="status"></p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Celebration / Check All -->
+    <!-- SECTION 4: PROBLEM SOLVING -->
+    <section id="problems" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Activity 04 · Real-World Applications</p>
+          <h2>Problem Solving</h2>
+        </div>
+        <p style="font-size:13px;">Read the story problems and write the addition sentences.</p>
+      </div>
+
+      <div class="task-grid">
+        <!-- Task 10: Books -->
+        <article class="mint-card task-card" id="task-card-10">
+          <span class="eyebrow">Question 10 · Books</span>
+          <div class="word-pb-img">📕 📖</div>
+          <h3>Mike has 7 books. Cheryl has no books (0). How many books do they have in all?</h3>
+          <div class="equation-row" style="margin:15px 0;">
+            <input type="number" id="t10-a" class="math-input" placeholder="?">
+            <span>+</span>
+            <input type="number" id="t10-b" class="math-input" placeholder="?">
+            <span>=</span>
+            <input type="number" id="t10-c" class="math-input" placeholder="?">
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(10, [7, 0, 7])">Check Answer ✓</button>
+            <p class="task-feedback" id="feedback-10" role="status"></p>
+          </div>
+        </article>
+
+        <!-- Task 11: Dogs -->
+        <article class="mint-card task-card" id="task-card-11">
+          <span class="eyebrow">Question 11 · Dogs</span>
+          <div class="word-pb-img">🐕 🐶</div>
+          <h3>3 dogs are sitting. 5 dogs run over to join them. How many dogs are there now?</h3>
+          <div class="equation-row" style="margin:15px 0;">
+            <input type="number" id="t11-a" class="math-input" placeholder="?">
+            <span>+</span>
+            <input type="number" id="t11-b" class="math-input" placeholder="?">
+            <span>=</span>
+            <input type="number" id="t11-c" class="math-input" placeholder="?">
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkEq(11, [3, 5, 8])">Check Answer ✓</button>
+            <p class="task-feedback" id="feedback-11" role="status"></p>
+          </div>
+        </article>
+
+        <!-- Task 12: Birds (H.O.T.) -->
+        <article class="amber-card task-card" id="task-card-12">
+          <span class="eyebrow">🔥 Question 12 · Birds (H.O.T.)</span>
+          <div class="word-pb-img">🐦 🪺 🐦</div>
+          <h3>There are 5 birds in total. You see 4 birds outside the birdhouse. How many are inside?</h3>
+          <div class="equation-row" style="margin:15px 0;">
+            <span>Inside =</span>
+            <input type="number" id="t12-ans" class="math-input" placeholder="?">
+            <span>bird(s)</span>
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkSingle(12, 1)">Check Answer ✓</button>
+            <p class="task-feedback" id="feedback-12" role="status"></p>
+            <details class="solution" id="solution-12"><summary>Short Solution</summary><p>5 total birds - 4 outside birds = 1 bird inside!</p></details>
+          </div>
+        </article>
+
+        <!-- Task 13 & 14: Test Prep -->
+        <article class="mint-card task-card" id="task-card-13">
+          <span class="eyebrow">Question 13 · Test Prep</span>
+          <h3>What is the sum for 0 + 6?</h3>
+          <div class="equation-row" style="margin:20px 0;">
+            <span>0 + 6 =</span>
+            <input type="number" id="t13-ans" class="math-input" placeholder="?">
+          </div>
+          <div class="task-bottom">
+            <button type="button" class="mint-btn check-btn" onclick="checkSingle(13, 6)">Check Answer ✓</button>
+            <p class="task-feedback" id="feedback-13" role="status"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CELEBRATION & SUMMARY -->
     <section class="amber-card check-all">
       <div>
         <h2>Ready for a little celebration?</h2>
-        <p>Check all 20 questions. You can keep trying and improving!</p>
+        <p>Complete all activities to test your algebra knowledge!</p>
       </div>
-      <button class="mint-btn" type="button" onclick="checkAll()">Check all answers <span aria-hidden="true">✓</span></button>
+      <button class="mint-btn" type="button" onclick="checkAll()">Check All Answers ✓</button>
     </section>
 
-    <section class="mint-card result" id="result" hidden tabindex="-1" aria-labelledby="result-title">
-      <h2 id="result-title">Your learning snapshot</h2>
-      <p id="score-text" role="status"></p>
-      <p id="score-note"></p>
+    <section class="mint-card result" id="result" hidden tabindex="-1">
+      <h2 id="result-title">Learning Snapshot</h2>
+      <p id="score-text" role="status" style="font-size:18px; font-weight:bold; margin-top:10px;"></p>
+      <p id="score-note" style="margin-top:6px; color:var(--brand);"></p>
     </section>
-
-    <nav class="lesson-end" aria-label="Lesson navigation">
-      <a class="text-link" href="../index.html">← Back to all lessons</a>
-      <a class="mint-btn" href="../3.%20Vocabulary%20Builder/index.html">Next: Vocabulary Builder →</a>
-    </nav>
   </main>
 
   <footer>
     <div class="wrap footer-inner">
-      <a class="footer-brand" href="../../../../index.html">Econova.vip ✦</a>
-      <p>© 2026 Econova.vip · Every little try counts.</p>
-      <div class="footer-links">
-        <a href="../index.html">Lessons</a>
-        <a href="#main">Back to top ↑</a>
+      <a class="footer-brand" href="#">Econova.vip ✦</a>
+      <p>© 2026 Econova.vip · Practice makes progress!</p>
+      <div style="display:flex; gap:15px;">
+        <a href="#model">Back to Top ↑</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const checked = new Map();
-    const byId = id => document.getElementById(id);
+    const completedTasks = new Set();
+    const totalTasks = 13;
 
-    function progress() {
-      const total = Array.from(checked.values()).filter(Boolean).length;
-      byId('lesson-progress').value = total;
-      byId('progress-label').textContent = total + ' of 20 answers correct';
-      return total;
+    function updateProgress() {
+      const count = completedTasks.size;
+      document.getElementById('lesson-progress').value = count;
+      document.getElementById('progress-label').textContent = `${count} of ${totalTasks} tasks completed`;
     }
 
-    function invalidate(n) {
-      checked.delete(n);
-      byId('feedback-' + n).textContent = '';
-      const statusEl = byId('status-' + n);
-      if (statusEl) statusEl.textContent = 'Your turn';
-      byId('solution-' + n).open = false;
-      
-      const inputs = document.querySelectorAll('#task-' + n + ' .number-answer');
-      inputs.forEach(input => input.removeAttribute('aria-invalid'));
-      byId('result').hidden = true;
-      progress();
+    function setTaskFeedback(id, isCorrect, msg) {
+      const fb = document.getElementById(`feedback-${id}`);
+      fb.textContent = msg;
+      fb.setAttribute('data-state', isCorrect ? 'correct' : 'retry');
+      const status = document.getElementById(`status-${id}`);
+      if (status) {
+        status.textContent = isCorrect ? '✓ Correct' : 'Try again';
+      }
+      if (isCorrect) {
+        completedTasks.add(id);
+      } else {
+        completedTasks.delete(id);
+      }
+      updateProgress();
     }
 
-    function checkTask(n) {
-      let isCorrect = false;
+    function checkEq(id, expected) {
+      const a = parseInt(document.getElementById(`t${id}-a`).value, 10);
+      const b = parseInt(document.getElementById(`t${id}-b`).value, 10);
+      const c = parseInt(document.getElementById(`t${id}-c`).value, 10);
 
-      if (n >= 1 && n <= 4) {
-        const targets = [
-          [1, 0, 1],
-          [0, 2, 2],
-          [0, 4, 4],
-          [6, 0, 6]
-        ];
-        const [targetA, targetB, targetC] = targets[n - 1];
-        const valA = Number(byId('ans-' + n + '-a').value.trim());
-        const valB = Number(byId('ans-' + n + '-b').value.trim());
-        const valC = Number(byId('ans-' + n + '-c').value.trim());
-        
-        const valid = !isNaN(valA) && !isNaN(valB) && !isNaN(valC);
-        isCorrect = valid && valA === targetA && valB === targetB && valC === targetC;
-        
-        const feedback = byId('feedback-' + n);
-        feedback.textContent = !valid ? 'Please fill in all 3 numbers.' : isCorrect ? '✓ Correct! A lovely little win.' : 'Not quite yet. Read the short solution and try again.';
-        feedback.dataset.state = isCorrect ? 'correct' : 'retry';
-        if (byId('status-' + n)) byId('status-' + n).textContent = isCorrect ? '✓ Correct' : 'Try again';
-        byId('solution-' + n).open = valid;
-      } 
-      else if (n >= 5 && n <= 17) {
-        const targets = { 5: 2, 6: 1, 7: 10, 8: 5, 9: 7, 10: 6, 11: 3, 12: 5, 13: 4, 14: 7, 15: 4, 16: 9, 17: 0 };
-        const val = Number(byId('ans-' + n).value.trim());
-        const valid = byId('ans-' + n).value.trim() !== '' && !isNaN(val);
-        isCorrect = valid && val === targets[n];
-        
-        const feedback = byId('feedback-' + n);
-        feedback.textContent = !valid ? 'Enter a number.' : isCorrect ? '✓ Correct!' : 'Not quite yet. Try again.';
-        feedback.dataset.state = isCorrect ? 'correct' : 'retry';
-        byId('solution-' + n).open = valid;
-      } 
-      else if (n === 18) {
-        const valA = Number(byId('ans-18-a').value.trim());
-        const valB = Number(byId('ans-18-b').value.trim());
-        const valC = Number(byId('ans-18-c').value.trim());
-        const valid = !isNaN(valA) && !isNaN(valB) && !isNaN(valC);
-        isCorrect = valid && valA === 7 && valB === 0 && valC === 7;
-        
-        const feedback = byId('feedback-18');
-        feedback.textContent = !valid ? 'Please fill in all numbers.' : isCorrect ? '✓ Correct! 7 + 0 = 7 books.' : 'Not quite yet. Check your numbers and try again.';
-        feedback.dataset.state = isCorrect ? 'correct' : 'retry';
-        byId('solution-18').open = valid;
-      } 
-      else if (n === 19) {
-        const valA = Number(byId('ans-19-a').value.trim());
-        const valB = Number(byId('ans-19-b').value.trim());
-        const valC = Number(byId('ans-19-c').value.trim());
-        const valid = !isNaN(valA) && !isNaN(valB) && !isNaN(valC);
-        isCorrect = valid && valA === 3 && valB === 5 && valC === 8;
-        
-        const feedback = byId('feedback-19');
-        feedback.textContent = !valid ? 'Please fill in all numbers.' : isCorrect ? '✓ Correct! 3 + 5 = 8 dogs.' : 'Not quite yet. Check your numbers and try again.';
-        feedback.dataset.state = isCorrect ? 'correct' : 'retry';
-        byId('solution-19').open = valid;
-      } 
-      else if (n === 20) {
-        const val = Number(byId('ans-20').value.trim());
-        const valid = byId('ans-20').value.trim() !== '' && !isNaN(val);
-        isCorrect = valid && val === 1;
-        
-        const feedback = byId('feedback-20');
-        feedback.textContent = !valid ? 'Enter a number.' : isCorrect ? '✓ Correct! 1 bird is inside.' : 'Not quite yet. Check the visible vs total birds and try again.';
-        feedback.dataset.state = isCorrect ? 'correct' : 'retry';
-        byId('solution-20').open = valid;
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        setTaskFeedback(id, false, 'Please fill in all 3 numbers!');
+        return false;
       }
 
-      checked.set(n, isCorrect);
-      byId('result').hidden = true;
-      progress();
-      return isCorrect;
+      if (a === expected[0] && b === expected[1] && c === expected[2]) {
+        setTaskFeedback(id, true, '✓ Excellent job! That is correct.');
+        return true;
+      } else {
+        setTaskFeedback(id, false, 'Not quite. Double-check your numbers and try again!');
+        return false;
+      }
+    }
+
+    function checkEqTwo(id, expected) {
+      const a = parseInt(document.getElementById(`t${id}-a`).value, 10);
+      const b = parseInt(document.getElementById(`t${id}-b`).value, 10);
+
+      if (isNaN(a) || isNaN(b)) {
+        setTaskFeedback(id, false, 'Fill in both boxes!');
+        return false;
+      }
+
+      if (a === expected[0] && b === expected[1]) {
+        setTaskFeedback(id, true, '✓ Awesome! 0 + 0 is indeed 0.');
+        return true;
+      } else {
+        setTaskFeedback(id, false, 'Remember, the sum must equal 0!');
+        return false;
+      }
+    }
+
+    function checkSingle(id, expected) {
+      const ans = parseInt(document.getElementById(`t${id}-ans`).value, 10);
+
+      if (isNaN(ans)) {
+        setTaskFeedback(id, false, 'Please enter a number!');
+        return false;
+      }
+
+      if (ans === expected) {
+        setTaskFeedback(id, true, '✓ Correct! Great thinking.');
+        return true;
+      } else {
+        setTaskFeedback(id, false, 'Try again!');
+        return false;
+      }
     }
 
     function checkAll() {
-      for (let n = 1; n <= 20; n++) {
-        checkTask(n);
-      }
-      const score = progress();
-      byId('score-text').textContent = 'You have ' + score + ' out of 20 answers correct.';
-      byId('score-note').textContent = score === 20 ? 'Wonderful work! You have mastered adding zero and solving addition problems.' : 'Keep exploring. Open the short solutions to review any tricky questions!';
-      byId('result').hidden = false;
-      byId('result').focus();
+      checkEq(1, [1, 0, 1]);
+      checkEq(2, [0, 2, 2]);
+      checkEq(3, [0, 4, 4]);
+      checkEq(4, [6, 0, 6]);
+      checkSingle(5, 2);
+      checkSingle(6, 5);
+      checkEqTwo(7, [0, 0]);
+      checkEq(8, [5, 3, 8]);
+      checkEq(9, [1, 6, 7]);
+      checkEq(10, [7, 0, 7]);
+      checkEq(11, [3, 5, 8]);
+      checkSingle(12, 1);
+      checkSingle(13, 6);
+
+      const result = document.getElementById('result');
+      const scoreText = document.getElementById('score-text');
+      const scoreNote = document.getElementById('score-note');
+      
+      result.hidden = false;
+      scoreText.textContent = `You completed ${completedTasks.size} of ${totalTasks} exercises correctly!`;
+      scoreNote.textContent = completedTasks.size === totalTasks 
+        ? '🌟 Perfect score! You have mastered adding zero and adding in any order!' 
+        : 'Keep going! Review any marked items and try them again.';
+      result.focus();
     }
   </script>
 </body>
