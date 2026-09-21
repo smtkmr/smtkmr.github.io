@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Math Lesson: Addition & Bar Models</title>
+  
+  <!-- Google Fonts: Outfit & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --font-main: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #f0fdf4; /* Light Mint */
+      color: #1f2937; /* Dark Gray */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    h1, h2, h3, h4, .brand-logo, .dropbtn {
+      font-family: var(--font-heading);
+    }
+
+    /* Main Mint Header */
+    header {
+      background-color: #2dd4bf; /* Mint Teal */
+      border-bottom: 4px solid #10b981;
+    }
+
+    .brand-logo {
+      color: #fde047; /* Yellow Accent */
+      text-shadow: 2px 2px 0px #059669;
+    }
+
+    /* Class Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #10b981;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .dropbtn:hover {
+      background-color: #059669;
+      transform: scale(1.03);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background-color: #ffffff;
+      min-width: 160px;
+      border-radius: 16px;
+      border: 3px solid #34d399;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      color: #1f2937;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+      border-bottom: 2px dashed #ecfdf5;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ecfdf5;
+      color: #059669;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Red Header Subscribe Button */
+    .video-btn {
+      background-color: #ff0000;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 8px rgba(255, 0, 0, 0.25);
+      white-space: nowrap;
+    }
+
+    .video-btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.03);
+    }
+
+    /* Card Containers */
+    .mint-card {
+      background-color: #ffffff;
+      border: 3px solid #34d399;
+      border-radius: 24px;
+    }
+
+    .amber-card {
+      background-color: #fffbeb;
+      border: 3px solid #fcd34d;
+      border-radius: 24px;
+    }
+
+    /* Action Buttons */
+    .mint-btn {
+      background-color: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    }
+    .mint-btn:hover {
+      background-color: #059669;
+      transform: scale(1.03);
+    }
+
+    .btn-red {
+      background-color: #ff0000;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+    }
+    .btn-red:hover {
+      background-color: #cc0000;
+      transform: scale(1.03);
+    }
+
+    .btn-blue {
+      background-color: #0284c7;
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+    .btn-blue:hover {
+      background-color: #0369a1;
+      transform: scale(1.03);
+    }
+
+    /* Inputs & Form Elements */
+    .input-box {
+      border: 2px solid #34d399;
+      border-radius: 12px;
+      padding: 6px 12px;
+      text-align: center;
+      font-weight: bold;
+      outline: none;
+      background-color: #ffffff;
+      transition: all 0.2s ease;
+    }
+    .input-box:focus {
+      border-color: #059669;
+      background-color: #f0fdf4;
+    }
+
+    .input-correct {
+      border-color: #10b981 !important;
+      background-color: #dcfce7 !important;
+      color: #047857 !important;
+    }
+
+    .input-wrong {
+      border-color: #ef4444 !important;
+      background-color: #fee2e2 !important;
+      color: #b91c1c !important;
+    }
+
+    /* Dynamic Visual Drawing Pads */
+    .counter-pad {
+      border: 3px dashed #34d399;
+      background-color: #f0fdf4;
+      border-radius: 20px;
+      min-height: 90px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .draw-object-icon {
+      width: 44px;
+      height: 44px;
+      display: inline-block;
+      animation: popIn 0.3s ease-out;
+      transition: transform 0.2s ease;
+    }
+
+    .draw-object-icon:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      80% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Visual Item Icons */
+    .item-badge {
+      font-size: 2rem;
+      background-color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 16px;
+      border: 2px solid #a7f3d0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Bar Model UI Component */
+    .bar-model-container {
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+      border: 3px solid #1f2937;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .bar-parts {
+      display: flex;
+      border-bottom: 3px solid #1f2937;
+    }
+
+    .bar-part {
+      padding: 12px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bar-part:first-child {
+      border-right: 3px solid #1f2937;
+      background-color: #e0f2fe; /* Light Blue */
+    }
+
+    .bar-part:last-child {
+      background-color: #fef3c7; /* Light Amber */
+    }
+
+    .bar-total {
+      padding: 12px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-align: center;
+      background-color: #dcfce7; /* Light Green */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Radio Button Custom Styling */
+    .choice-card {
+      border: 2px solid #a7f3d0;
+      border-radius: 16px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #ffffff;
+      font-weight: 700;
+    }
+
+    .choice-card:hover {
+      background-color: #ecfdf5;
+      border-color: #10b981;
+    }
+
+    .choice-card.correct-choice {
+      background-color: #dcfce7 !important;
+      border-color: #10b981 !important;
+      color: #047857;
+    }
+
+    .choice-card.wrong-choice {
+      background-color: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c;
+    }
+
+    .choice-card input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #10b981;
+    }
+  .counter-pad { align-items: stretch; gap: 16px; }
+    .object-group { flex: 1 1 180px; padding: 12px; background: white; border-radius: 12px; border: 1px solid #a7f3d0; }
+    .object-group-label { margin: 0 0 10px; font-weight: bold; color: #065f46; }
+    .object-group-items { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; min-height: 58px; }
+    .exact-object { width: 48px; height: 52px; flex: 0 0 auto; }
+    .exact-object.small { width: 32px; height: 35px; }
+    .exact-object.big { width: 54px; height: 58px; }
+    .counter-pad:empty::before { content: 'Click “Show objects” to see both groups.'; color: #475569; font-size: .9rem; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    .task-check-panel { border-top: 1px solid #d1fae5; padding-top: 18px; margin-top: 20px; }
+    .task-check-button { padding: 12px 22px; min-height: 44px; }
+    .task-feedback { font-weight: 700; margin: 12px 0; }
+    .task-feedback:empty { display: none; }
+    .task-solution { margin-top: 14px; padding: 12px 16px; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 12px; color: #78350f; }
+    .task-solution summary { cursor: pointer; font-weight: 700; min-height: 28px; }
+    .task-solution p { margin-top: 8px; line-height: 1.6; }
+    button:focus-visible, summary:focus-visible { outline: 3px solid #0369a1; outline-offset: 4px; }
+    </style>
+</head>
+<body class="p-0">
+
+  <!-- Header Section -->
+  <header class="p-3 sm:p-5 shadow-md flex justify-between items-center px-3 sm:px-12 sticky top-0 z-50">
+    <div class="brand-logo text-xl sm:text-4xl font-extrabold tracking-wide">
+      Econova.vip 🎈
+    </div>
+    
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-8 space-y-8">
+    
+    <!-- Hero Title Card -->
+    <div class="mint-card p-6 sm:p-8 text-center shadow-lg">
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-emerald-700 mb-2">Math Lesson ✏️</h1>
+      <h2 class="text-xl sm:text-2xl font-bold text-amber-500">Addition Word Problems & Bar Models</h2>
+    </div>
+
+    <!-- Dynamic Score Result Board -->
+    <div id="score-board" class="hidden amber-card p-6 text-center shadow-md animate-bounce">
+      <h3 id="score-title" class="text-3xl font-black text-amber-800 mb-2">🎉 Well Done!</h3>
+      <p id="score-details" class="text-xl font-bold text-emerald-700"></p>
+    </div>
+
+    <!-- PART 1 -->
+    <section class="space-y-6">
+      <div class="amber-card p-4 sm:p-6 shadow-sm">
+        <h3 class="text-2xl font-black text-amber-800">Part 1: Basic Addition with Drawing Objects</h3>
+        <p class="font-bold text-gray-700 text-sm sm:text-base mt-1">
+          Click “Show objects” to see the two groups. Count each group, then add them together.
+        </p>
+      </div>
+
+      <!-- Task 1 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-1">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 1</h4>
+          <div class="item-badge">✏️ ✏️</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 4 red pencils and 2 green pencils. How many pencils are there in total?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-1', 'card-task-1')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-1')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-1" class="counter-pad" data-target="6"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="4">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="2">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="6">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="6"> pencils
+        </div>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-2">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 2</h4>
+          <div class="item-badge">✂️ ✂️</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 5 pairs of blue scissors and 3 pairs of yellow scissors. How many pairs of scissors are there in total?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-2', 'card-task-2')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-2')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-2" class="counter-pad" data-target="8"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="5">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="3">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="8">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="8"> pairs of scissors
+        </div>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-3">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 3</h4>
+          <div class="item-badge">👧 👦</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 4 girls and 4 boys running. How many children are running?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-3', 'card-task-3')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-3')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-3" class="counter-pad" data-target="8"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="4">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="4">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="8">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="8"> children
+        </div>
+      </div>
+
+      <!-- Task 4 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-4">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 4</h4>
+          <div class="item-badge">🐱 🐈</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 3 small cats and 4 big cats. How many cats are there?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-4', 'card-task-4')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-4')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-4" class="counter-pad" data-target="7"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="3">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="4">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="7">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="7"> cats
+        </div>
+      </div>
+
+      <!-- Task 5 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-5">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 5</h4>
+          <div class="item-badge">🟥 🟦</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 6 red cubes and 3 blue cubes. How many cubes are there?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-5', 'card-task-5')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-5')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-5" class="counter-pad" data-target="9"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="6">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="3">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="9">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="9"> cubes
+        </div>
+      </div>
+
+      <!-- Task 6 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-6">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 6</h4>
+          <div class="item-badge">🌹 🌻</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 2 red flowers and 8 yellow flowers. How many flowers are there?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-6', 'card-task-6')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-6')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-6" class="counter-pad" data-target="10"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="2">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="8">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="10">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="10"> flowers
+        </div>
+      </div>
+
+      <!-- Task 7 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-7">
+        <div class="flex justify-between items-center">
+          <h4 class="font-black text-emerald-700 text-lg">Task 7</h4>
+          <div class="item-badge">🔴 🔵</div>
+        </div>
+        <p class="font-bold text-gray-700 problem-desc">There are 5 red marbles and 4 blue marbles. How many marbles are there?</p>
+        
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-sm font-bold text-emerald-800">Count the objects:</label>
+            <div class="space-x-2">
+              <button onclick="autoDrawObjects('counter-7', 'card-task-7')" class="mint-btn text-xs px-3 py-1.5">Show objects</button>
+              <button onclick="clearCounters('counter-7')" class="bg-gray-200 text-gray-700 rounded-lg text-xs px-3 py-1.5 font-bold hover:bg-gray-300">Clear</button>
+            </div>
+          </div>
+          <div id="counter-7" class="counter-pad" data-target="9"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 font-bold text-lg pt-2">
+          <span>Number Sentence:</span>
+          <input type="text" class="w-14 input-box ans-num1" data-ans="5">
+          <span>+</span>
+          <input type="text" class="w-14 input-box ans-num2" data-ans="4">
+          <span>=</span>
+          <input type="text" class="w-16 input-box ans-total" data-ans="9">
+        </div>
+
+        <div class="font-bold text-lg">
+          Answer: <input type="text" class="w-20 input-box ans-final" data-ans="9"> marbles
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="space-y-6">
+      <div class="amber-card p-4 sm:p-6 shadow-sm">
+        <h3 class="text-2xl font-black text-amber-800">Part 2: Missing Addend & Bar Model Problems</h3>
+        <p class="font-bold text-gray-700 text-sm sm:text-base mt-1">
+          Instruction: Look at the bar model. Fill in the missing numbers to complete the bar and solve the equation.
+        </p>
+      </div>
+
+      <!-- Task 8 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-8">
+        <h4 class="font-black text-emerald-700 text-lg">Task 8 🐶</h4>
+        <p class="font-bold text-gray-700 problem-desc">There are 7 dogs in the park. Then 1 more dog joins them. How many dogs are in the park now?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 70%;">7</div>
+            <div class="bar-part" style="width: 30%;">1</div>
+          </div>
+          <div class="bar-total">
+            Total: <input type="text" class="w-16 input-box ml-2 bar-ans" data-ans="8">
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: 7 + 1 = <input type="text" class="w-16 input-box eq-ans" data-ans="8">
+        </div>
+      </div>
+
+      <!-- Task 9 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-9">
+        <h4 class="font-black text-emerald-700 text-lg">Task 9 🐦</h4>
+        <p class="font-bold text-gray-700 problem-desc">Some birds are sitting in a tree. 4 more birds sit in the tree. Then there are 9 birds. How many birds were in the tree before?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 55%;"><input type="text" class="w-12 input-box bar-ans" data-ans="5"></div>
+            <div class="bar-part" style="width: 45%;">4</div>
+          </div>
+          <div class="bar-total">
+            Total: 9
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: <input type="text" class="w-16 input-box eq-ans" data-ans="5"> + 4 = 9
+        </div>
+      </div>
+
+      <!-- Task 10 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-10">
+        <h4 class="font-black text-emerald-700 text-lg">Task 10 🐴</h4>
+        <p class="font-bold text-gray-700 problem-desc">There are 4 horses in the field. Some more horses run to the field. Then there were 10 horses in the field. How many horses ran to the field?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 40%;">4</div>
+            <div class="bar-part" style="width: 60%;"><input type="text" class="w-12 input-box bar-ans" data-ans="6"></div>
+          </div>
+          <div class="bar-total">
+            Total: 10
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: 4 + <input type="text" class="w-16 input-box eq-ans" data-ans="6"> = 10
+        </div>
+      </div>
+
+      <!-- Task 11 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-11">
+        <h4 class="font-black text-emerald-700 text-lg">Task 11 🖍️</h4>
+        <p class="font-bold text-gray-700 problem-desc">Luis has 12 crayons. 5 of the crayons are red. The rest are blue. How many crayons are blue?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 40%;">5</div>
+            <div class="bar-part" style="width: 60%;"><input type="text" class="w-12 input-box bar-ans" data-ans="7"></div>
+          </div>
+          <div class="bar-total">
+            Total: 12
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: 5 + <input type="text" class="w-16 input-box eq-ans" data-ans="7"> = 12
+        </div>
+      </div>
+
+      <!-- Task 12 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-12">
+        <h4 class="font-black text-emerald-700 text-lg">Task 12 🦆</h4>
+        <p class="font-bold text-gray-700 problem-desc">Some ducks are swimming in a pond. 3 more ducks swim in the pond. Then there are 6 ducks in the pond. How many ducks were in the pond before?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 50%;"><input type="text" class="w-12 input-box bar-ans" data-ans="3"></div>
+            <div class="bar-part" style="width: 50%;">3</div>
+          </div>
+          <div class="bar-total">
+            Total: 6
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: <input type="text" class="w-16 input-box eq-ans" data-ans="3"> + 3 = 6
+        </div>
+      </div>
+
+      <!-- Task 13 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-13">
+        <h4 class="font-black text-emerald-700 text-lg">Task 13 🐝</h4>
+        <p class="font-bold text-gray-700 problem-desc">8 bugs are flying. 2 more bugs fly with them. How many bugs are flying now?</p>
+        
+        <div class="bar-model-container">
+          <div class="bar-parts">
+            <div class="bar-part" style="width: 80%;">8</div>
+            <div class="bar-part" style="width: 20%;">2</div>
+          </div>
+          <div class="bar-total">
+            Total: <input type="text" class="w-16 input-box ml-2 bar-ans" data-ans="10">
+          </div>
+        </div>
+
+        <div class="text-center font-bold text-lg pt-2">
+          Equation: 8 + 2 = <input type="text" class="w-16 input-box eq-ans" data-ans="10">
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="space-y-6">
+      <div class="amber-card p-4 sm:p-6 shadow-sm">
+        <h3 class="text-2xl font-black text-amber-800">Part 3: Test Prep Choice Questions</h3>
+        <p class="font-bold text-gray-700 text-sm sm:text-base mt-1">
+          Instruction: Solve the problem and select the correct answer circle.
+        </p>
+      </div>
+
+      <!-- Task 14 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-14">
+        <h4 class="font-black text-emerald-700 text-lg">Task 14 🍎</h4>
+        <p class="font-bold text-gray-700 problem-desc">There are 7 red apples and 3 green apples. How many apples are there in total?</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="mcq-14" data-correct="B">
+          <label class="choice-card">
+            <input type="radio" name="task14" value="A"> A) 11
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task14" value="B"> B) 10
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task14" value="C"> C) 7
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task14" value="D"> D) 4
+          </label>
+        </div>
+      </div>
+
+      <!-- Task 15 -->
+      <div class="mint-card p-6 space-y-4 shadow-sm" id="card-task-15">
+        <h4 class="font-black text-emerald-700 text-lg">Task 15 🐰</h4>
+        <p class="font-bold text-gray-700 problem-desc">6 bunnies sit in the grass. 2 more bunnies join them. How many bunnies are in the grass now?</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="mcq-15" data-correct="C">
+          <label class="choice-card">
+            <input type="radio" name="task15" value="A"> A) 3
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task15" value="B"> B) 4
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task15" value="C"> C) 8
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="task15" value="D"> D) 9
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Check Answer Action -->
+    <div class="text-center pt-4">
+      <button onclick="calculateScore()" class="mint-btn px-10 py-4 text-xl sm:text-2xl shadow-lg">
+        Check All Answers 🎯
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Navigation Section above Footer -->
+  <div class="border-t-2 border-emerald-200 mt-12 pt-6 pb-6 max-w-4xl mx-auto w-full px-4">
+    <div class="flex flex-row justify-between items-center gap-4">
+      <a href="../index.html" class="btn-red px-4 sm:px-6 py-3 text-sm sm:text-base flex items-center justify-center gap-2">
+        ← Back to Lessons
+      </a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn-blue px-4 sm:px-6 py-3 text-sm sm:text-base flex items-center justify-center gap-2">
+        📺 Watch Video Solution
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-6 text-center text-emerald-800 font-bold bg-emerald-100 border-t-2 border-emerald-200 text-xs sm:text-sm">
+    <p>© 2026 Econova.vip - Fun & Interactive Learning Platform</p>
+  </footer>
+
+  <script>
+    // Standard color code mapping
+    const colorMap = {
+      red: '#ef4444',
+      green: '#22c55e',
+      blue: '#3b82f6',
+      yellow: '#eab308',
+      orange: '#f97316',
+      purple: '#a855f7',
+      pink: '#ec4899',
+      brown: '#78350f',
+      black: '#1f2937',
+      small: '#f59e0b',
+      big: '#3b82f6'
+    };
+
+    // Vector Icon Render Engines (SVGs)
+    function getPencilSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 21l3-1 11-11-2-2L4 18l-1 3z" fill="${color}"/>
+        <path d="M15 7l2-2 2 2-2 2-2-2z" fill="#fca5a5"/>
+        <path d="M3 21l1.5-4.5L7 19.5 3 21z" fill="#fde047"/>
+        <path d="M21 5l-2-2a1 1 0 00-1.4 0l-1.6 1.6 3.4 3.4 1.6-1.6a1 1 0 000-1.4z" fill="#94a3b8"/>
+      </svg>`;
+    }
+
+    function getScissorsSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6" cy="6" r="3" stroke="${color}" stroke-width="2"/>
+        <circle cx="6" cy="18" r="3" stroke="${color}" stroke-width="2"/>
+        <path d="M8.5 7.5L20 18M8.5 16.5L20 6" stroke="${color}" stroke-width="2" stroke-linecap="round"/>
+      </svg>`;
+    }
+
+    function getDogSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13c0-1.1-.9-2-2-2h-1l-1.5-4.5C14.2 5.6 13.2 5 12 5s-2.2.6-2.5 1.5L8 11H7c-1.1 0-2 .9-2 2v3c0 .6.4 1 1 1h1v3c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-3h6v3c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-3h1c.6 0 1-.4 1-1v-3z"/>
+      </svg>`;
+    }
+
+    function getCatSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4c-3.87 0-7 3.13-7 7 0 2.38 1.19 4.47 3 5.74V20c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-3.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zM7 3l3 3H7V3zm10 0v3h-3l3-3z"/>
+      </svg>`;
+    }
+
+    function getChildSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="6" r="4"/>
+        <path d="M12 11c-4.42 0-8 2.24-8 5v3h16v-3c0-2.76-3.58-5-8-5z"/>
+      </svg>`;
+    }
+
+    function getCubeSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="18" height="18" rx="4" />
+      </svg>`;
+    }
+
+    function getFlowerSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="3" fill="#fde047"/>
+        <circle cx="12" cy="6" r="3"/>
+        <circle cx="12" cy="18" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="12" r="3"/>
+      </svg>`;
+    }
+
+    function getMarbleSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9" fill="${color}"/>
+        <circle cx="9" cy="9" r="3" fill="#ffffff" opacity="0.4"/>
+      </svg>`;
+    }
+
+    function getDefaultSVG(color) {
+      return `<svg class="draw-object-icon" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9"/>
+      </svg>`;
+    }
+
+
+    // Explicit lesson data avoids guessing object names from English sentences.
+    const objectGroups = {
+      'card-task-1': [[4,'red pencils','pencil','#ef4444'],[2,'green pencils','pencil','#22c55e']],
+      'card-task-2': [[5,'pairs of blue scissors','scissors','#3b82f6'],[3,'pairs of yellow scissors','scissors','#eab308']],
+      'card-task-3': [[4,'girls running','girl','#8b5cf6'],[4,'boys running','boy','#0284c7']],
+      'card-task-4': [[3,'small cats','cat','#d97706','small'],[4,'big cats','cat','#d97706','big']],
+      'card-task-5': [[6,'red cubes','cube','#ef4444'],[3,'blue cubes','cube','#3b82f6']],
+      'card-task-6': [[2,'red flowers','flower','#ef4444'],[8,'yellow flowers','flower','#eab308']],
+      'card-task-7': [[5,'red marbles','marble','#ef4444'],[4,'blue marbles','marble','#3b82f6']]
+    };
+    function exactObjectSVG(type, color, label, size) {
+      const drawings = {
+        pencil: '<path d="M15 7L23 3 29 9 25 17Z" fill="#f9a8d4"/><path d="M15 7L25 17 11 31 3 23Z" fill="'+color+'" stroke="#334155" stroke-width="1.2"/><path d="M3 23L11 31 1 34Z" fill="#f5d7a2"/><path d="M1 34L3 28 7 32Z" fill="#334155"/><path d="M8 23L20 11" stroke="white" stroke-width="2" opacity=".6"/>',
+        scissors: '<path d="M13 23L29 5 20 25 7 5 17 23" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/><circle cx="18" cy="21" r="2" fill="#475569"/><ellipse cx="10" cy="29" rx="6" ry="5" fill="none" stroke="'+color+'" stroke-width="4"/><ellipse cx="26" cy="29" rx="6" ry="5" fill="none" stroke="'+color+'" stroke-width="4"/>',
+        girl: '<path d="M12 7Q18-2 24 7L27 17 9 17Z" fill="#713f12"/><circle cx="18" cy="9" r="5" fill="#f3c49d"/><path d="M16 15L22 16 26 26 13 24Z" fill="'+color+'"/><path d="M16 17L9 20 5 16M22 17L27 14 31 17M17 25L11 29 8 34M23 25L28 29 33 27" fill="none" stroke="#713f12" stroke-width="3" stroke-linecap="round"/>',
+        boy: '<circle cx="18" cy="9" r="5" fill="#f3c49d"/><path d="M13 8Q12 0 22 4L24 8 18 6Z" fill="#713f12"/><path d="M14 15L22 15 24 25 14 25Z" fill="'+color+'"/><path d="M15 17L9 20 5 16M22 17L27 14 31 17M16 25L11 29 8 34M22 25L28 29 33 27" fill="none" stroke="#713f12" stroke-width="3" stroke-linecap="round"/>',
+        cat: '<path d="M26 28Q36 24 31 18" fill="none" stroke="'+color+'" stroke-width="3"/><ellipse cx="18" cy="26" rx="9" ry="8" fill="'+color+'"/><path d="M9 14L9 4 16 9 22 9 28 4 28 15Q28 23 18 23 8 23 9 14" fill="'+color+'" stroke="#92400e"/><path d="M11 7L15 11 11 12M26 7L22 11 26 12" fill="#fda4af"/><circle cx="14" cy="15" r="1.3"/><circle cx="23" cy="15" r="1.3"/><path d="M17 18L20 18 18.5 20Z" fill="#713f12"/><path d="M11 18L3 16M11 20L3 21M26 18L34 16M26 20L34 21" stroke="#713f12"/>',
+        cube: '<path d="M18 2L33 10 18 19 3 10Z" fill="'+color+'"/><path d="M3 10L18 19 18 35 3 26Z" fill="'+color+'"/><path d="M18 19L33 10 33 26 18 35Z" fill="'+color+'"/><path d="M18 19L33 10 33 26 18 35Z" fill="black" opacity=".18"/><path d="M3 10L18 19 33 10M18 19V35" fill="none" stroke="white" stroke-width="1.4"/>',
+        flower: '<path d="M18 18V35M18 30Q7 30 9 24Q17 24 18 30M18 27Q28 27 28 22Q21 21 18 27" fill="#22c55e" stroke="#15803d" stroke-width="2"/><g fill="'+color+'" stroke="#854d0e" stroke-width=".5"><circle cx="18" cy="7" r="6"/><circle cx="26" cy="13" r="6"/><circle cx="23" cy="22" r="6"/><circle cx="13" cy="22" r="6"/><circle cx="9" cy="13" r="6"/></g><circle cx="18" cy="15" r="5" fill="#78350f"/>',
+        marble: '<circle cx="18" cy="18" r="15" fill="'+color+'" stroke="#334155" stroke-width="1"/><path d="M10 6Q29 15 12 29Q33 23 25 8" fill="white" opacity=".4"/><ellipse cx="11" cy="10" rx="4" ry="3" fill="white" opacity=".8"/>'
+      };
+      if (!drawings[type]) throw new Error('Unknown lesson object: '+type);
+      return '<svg class="draw-object-icon exact-object '+(size || '')+'" role="img" aria-label="'+label+'" viewBox="0 0 36 38" xmlns="http://www.w3.org/2000/svg"><title>'+label+'</title>'+drawings[type]+'</svg>';
+    }
+    function autoDrawObjects(containerId, cardId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      objectGroups[cardId].forEach(([count,label,type,color,size]) => {
+        const group = document.createElement('div');
+        group.className = 'object-group';
+        const heading = document.createElement('p');
+        heading.className = 'object-group-label';
+        heading.textContent = count+' '+label;
+        group.appendChild(heading);
+        const objects = document.createElement('div');
+        objects.className = 'object-group-items';
+        for(let i=0;i<count;i++) objects.insertAdjacentHTML('beforeend',exactObjectSVG(type,color,label,size));
+        group.appendChild(objects);
+        container.appendChild(group);
+      });
+    }
+
+    function clearCounters(containerId) {
+      document.getElementById(containerId).innerHTML = '';
+    }
+
+    function markField(inputElement, isValid) {
+      if (!inputElement) return;
+      if (isValid) {
+        inputElement.classList.add('input-correct');
+        inputElement.classList.remove('input-wrong');
+      } else {
+        inputElement.classList.add('input-wrong');
+        inputElement.classList.remove('input-correct');
+      }
+    }
+
+
+    const solutions = [
+      'Add the two groups: 4 + 2 = 6 pencils.',
+      'Add the two groups: 5 + 3 = 8 pairs of scissors.',
+      'Add the girls and boys: 4 + 4 = 8 children.',
+      'Add the small and big cats: 3 + 4 = 7 cats.',
+      'Add the red and blue cubes: 6 + 3 = 9 cubes.',
+      'Add the red and yellow flowers: 2 + 8 = 10 flowers.',
+      'Add the red and blue marbles: 5 + 4 = 9 marbles.',
+      'Start with 7 dogs and add 1 more: 7 + 1 = 8 dogs.',
+      'Take the 4 new birds away from the total: 9 − 4 = 5. So 5 + 4 = 9 birds.',
+      'Subtract the 4 horses already there: 10 − 4 = 6. So 4 + 6 = 10 horses.',
+      'Subtract the 5 red crayons from all 12 crayons: 12 − 5 = 7 blue crayons.',
+      'Take away the 3 new ducks: 6 − 3 = 3. So 3 + 3 = 6 ducks.',
+      'Add 2 more bugs to 8 bugs: 8 + 2 = 10 bugs.',
+      'Add the red and green apples: 7 + 3 = 10 apples. Choose B.',
+      'Add the 2 new bunnies to the 6 bunnies: 6 + 2 = 8 bunnies. Choose C.'
+    ];
+    function checkTask(number) {
+      const card = document.getElementById('card-task-' + number);
+      const fields = Array.from(card.querySelectorAll('input[data-ans]'));
+      const choice = card.querySelector('[data-correct]');
+      let complete = true;
+      let correct = true;
+      const first = card.querySelector('.ans-num1');
+      const second = card.querySelector('.ans-num2');
+      const reversed = first && second && first.value.trim() === second.dataset.ans && second.value.trim() === first.dataset.ans;
+      fields.forEach(field => {
+        const filled = field.value.trim() !== '';
+        const valid = filled && (field.value.trim() === field.dataset.ans || (reversed && (field === first || field === second)));
+        complete = complete && filled;
+        correct = correct && Boolean(valid);
+        field.classList.remove('input-correct','input-wrong');
+        field.removeAttribute('aria-invalid');
+        if (filled) { markField(field,valid); field.setAttribute('aria-invalid',String(!valid)); }
+      });
+      if (choice) {
+        const selected = choice.querySelector('input:checked');
+        choice.querySelectorAll('.choice-card').forEach(label => label.classList.remove('correct-choice','wrong-choice'));
+        complete = Boolean(selected);
+        correct = Boolean(selected && selected.value === choice.dataset.correct);
+        if (selected) selected.closest('.choice-card').classList.add(correct ? 'correct-choice' : 'wrong-choice');
+      }
+      const feedback = card.querySelector('.task-feedback');
+      feedback.textContent = !complete ? 'Fill in every answer for this question, then try again.' : correct ? '✓ Correct! Well done.' : 'Not quite yet. Read the short solution and try again.';
+      feedback.style.color = correct ? '#047857' : '#9a3412';
+      if (complete) card.querySelector('.task-solution').open = true;
+      return complete && correct;
+    }
+    function calculateScore() {
+      let score = 0;
+      solutions.forEach((_,i) => { if(checkTask(i+1)) score++; });
+      document.getElementById('score-board').classList.remove('hidden');
+      document.getElementById('score-title').textContent = score === 15 ? 'Perfect score! Well done!' : 'Keep learning — you can try again!';
+      document.getElementById('score-details').textContent = 'You scored '+score+' out of 15!';
+      document.getElementById('score-board').scrollIntoView({behavior:'smooth'});
+    }
+    solutions.forEach((solution,i) => {
+      const card = document.getElementById('card-task-'+(i+1));
+      const panel = document.createElement('div');
+      panel.className = 'task-check-panel';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'mint-btn task-check-button';
+      button.textContent = 'Check answer';
+      button.setAttribute('aria-label','Check answer for question '+(i+1));
+      button.addEventListener('click',()=>checkTask(i+1));
+      const feedback = document.createElement('p');
+      feedback.className = 'task-feedback';
+      feedback.setAttribute('role','status');
+      const details = document.createElement('details');
+      details.className = 'task-solution';
+      const summary = document.createElement('summary');
+      summary.textContent = 'Short solution';
+      const explanation = document.createElement('p');
+      explanation.textContent = solution;
+      details.append(summary,explanation);
+      panel.append(button,feedback,details);
+      card.appendChild(panel);
+      card.addEventListener('input',()=> {
+        feedback.textContent = '';
+        card.querySelectorAll('input[data-ans]').forEach(field=>{field.classList.remove('input-correct','input-wrong');field.removeAttribute('aria-invalid');});
+        card.querySelectorAll('.choice-card').forEach(label=>label.classList.remove('correct-choice','wrong-choice'));
+        document.getElementById('score-board').classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
