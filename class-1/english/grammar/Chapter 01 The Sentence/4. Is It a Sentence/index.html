@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is It a Sentence? · Class 1 English | Econova.vip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--body:'Comic Sans MS','Chalkboard SE','Comic Neue',sans-serif;--heading:'Outfit','Quicksand',sans-serif;--bg:#f0fdf4;--ink:#1f2937;--brand:#059669;--teal:#2dd4bf;--yellow:#fde047;--line:#34d399;--button:#10b981}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--body)}
+h1,h2,h3,p,dl,dd{margin:0}
+h1,h2,h3,.logo,.eyebrow{font-family:var(--heading)}
+a{color:inherit;text-decoration:none}
+button,input,summary{font:inherit}
+button,summary{cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:4px}
+.wrap{max-width:1200px;margin:auto;padding:0 28px}
+header{position:sticky;top:0;z-index:30;background:var(--teal);border-bottom:3px solid var(--button)}
+.nav{display:flex;justify-space-between;align-items:center;gap:20px;min-height:85px}
+.logo{display:flex;align-items:center;gap:0px;color:white;font-size:30px;font-weight:900;letter-spacing:-1px}
+.logo em{font-style:normal;color:var(--yellow)}
+.nav nav{display:flex;align-items:center;gap:24px}
+.nav nav>a:not(.mint-btn){color:white;font-family:var(--heading);font-weight:600}
+.mint-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--button);color:white;border:0;border-radius:16px;padding:13px 22px;font-weight:bold;box-shadow:0 4px 0 var(--brand);transition:transform .15s,background .15s}
+.mint-btn:hover{background:var(--brand);transform:translateY(-2px)}
+.nav .mint-btn{font-size:13px;padding:10px 16px}
+.mint-card{background:#fff;border:3px solid #34d399;border-radius:24px}
+.amber-card{background:#fffbeb;border:3px solid #fcd34d;border-radius:24px}
+.eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:800;color:var(--brand);text-transform:uppercase}
+.hero{padding:43px 0 34px;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 13px;border:1px solid var(--line);border-radius:30px;background:white;font-size:12px;color:var(--brand);font-weight:bold}
+.pill:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--button)}
+h1{font-size:clamp(40px,5vw,64px);line-height:1.05;letter-spacing:-2px;font-weight:900;margin:23px 0 12px}
+.green{color:var(--brand)}
+.underline{position:relative;isolation:isolate;white-space:nowrap}
+.underline:after{position:absolute;content:'';height:13px;bottom:2px;left:0;right:0;background:var(--yellow);z-index:-1;transform:rotate(-2deg);border-radius:5px}
+.hero-description{max-width:490px;font-size:14px;line-height:1.9}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin:24px 0 19px}
+.hero-art{padding:16px;background:#fffbeb;border:3px solid #fcd34d;border-radius:32px;transform:rotate(2deg);box-shadow:8px 9px 0 #d1fae5;text-align:center}
+.art-caption{font-size:11px;letter-spacing:1px;color:var(--brand);text-align:center;font-family:var(--heading);font-weight:800;margin:14px 0 6px}
+.section{padding-top:52px}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:24px}
+h2{font-size:34px;letter-spacing:-.8px;line-height:1.25;margin-top:8px}
+.quiet-btn{border:1px solid var(--line);border-radius:12px;padding:9px 12px;color:var(--brand);background:white;font-size:12px;min-height:42px;font-weight:bold}
+.quiet-btn:hover{background:#d1fae5}
+.story-lines{display:grid;gap:13px}
+.story-line{padding:18px 21px;background:#fff;border:1px solid #a7f3d0;border-radius:18px}
+.speaker{font-family:var(--heading);font-size:11px;font-weight:800;color:var(--brand)}
+.english{font-family:'Quicksand',var(--body);font-size:18px;font-weight:700;line-height:1.65}
+.language-support{padding-top:11px;margin-top:11px;border-top:1px dashed #d1fae5}
+.language-support p{font-size:14px;margin-top:4px}
+.line-label{font-size:10px;display:inline-block;min-width:60px;color:var(--brand);font-weight:bold}
+.pronunciation{color:#596273}
+.translation{color:var(--ink)}
+.sentence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+.name-part{color:#059669;background:#e0f2fe;border-bottom:3px solid #0284c7;padding:2px 5px;border-radius:5px}
+.action-part{color:#059669;background:#fef9c3;border-bottom:3px solid #10b981;padding:2px 5px;border-radius:5px}
+.progress-box{padding:20px;margin-top:20px;position:sticky;top:90px;z-index:20}
+.progress-box progress{width:100%;height:12px;accent-color:#10b981;margin-top:8px}
+.question-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.question{padding:23px;display:flex;flex-direction:column;min-width:0;scroll-margin-top:110px}
+.question-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:13px}
+.question-state{font-size:10px;background:var(--bg);border-radius:20px;color:var(--brand);padding:4px 9px}
+.qtext{font:700 17px/1.7 var(--body);margin-bottom:8px}
+.choices{display:grid;gap:9px;border:0;padding:0;margin:0 0 20px;min-width:0}
+.choice{display:flex;gap:10px;align-items:center;position:relative;padding:11px 12px;background:var(--bg);border:2px solid #a7f3d0;border-radius:14px;cursor:pointer;font-size:14px;line-height:1.6;min-height:49px;font-weight:700}
+.choice input{accent-color:var(--brand);width:18px;height:18px;flex-shrink:0;margin:0}
+.choice:has(input:checked){background:#fffbeb;border-color:var(--brand)}
+.question-bottom{margin-top:auto;border-top:1px solid #d1fae5;padding-top:17px}
+.feedback{font-size:13px;font-weight:bold;margin-top:14px;color:var(--brand)}
+.solution{font-size:12px;margin-top:8px;padding:10px 12px;background:#e0f2fe;border-left:4px solid #0284c7;border-radius:6px;color:#0369a1;display:none}
+.word-input{width:100%;border:2px solid var(--line);border-radius:14px;padding:12px 14px;font-size:16px;background:white;margin-bottom:15px;color:var(--ink)}
+.word-input[aria-invalid=true]{border-color:#dc2626}
+.check-all{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px;margin-top:35px}
+.reset-area{margin-top:20px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;top:-100px;left:15px;z-index:100;background:white;padding:10px}
+.skip:focus{top:10px}
+.hide-support .language-support{display:none!important}
+footer{background:white;border-top:2px solid #a7f3d0;padding:23px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:11px}
+.footer-brand{font:900 22px var(--heading);color:var(--brand)}
+@media(max-width:950px){.question-grid,.sentence-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;padding-top:28px}}
+@media(max-width:680px){.wrap{padding:0 18px}.nav nav>a:not(.mint-btn){display:none}.check-all{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to lesson</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">✦ Econova.vip</a>
+    <nav>
+      <a href="#learn">Learn</a>
+      <a href="#sec-mcq">MCQs</a>
+      <a href="#sec-blanks">Fill Blanks</a>
+      <a class="mint-btn" href="#">← Back to lessons</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <span class="pill">Class 1 English · Chapter Topic</span>
+      <h1><span class="green"><span class="underline">Is It a Sentence?</span></span></h1>
+      <p class="hero-description">Learn about naming parts, action parts, and complete sentences. Read key examples with Hindi pronunciations and meanings, then test your knowledge with 30 practice questions!</p>
+      <div class="hero-actions">
+        <a class="mint-btn" href="#learn">Start Learning →</a>
+        <a class="quiet-btn" href="#sec-mcq">30 Practice Questions ↓</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div style="font-size: 66px; line-height: 1.8; padding: 10px 0;">🐸 🪨 🐟 🌊</div>
+      <p class="art-caption">A big frog jumps. Fish swim in the water.</p>
+    </div>
+  </section>
+
+  <!-- LESSON CONTENT -->
+  <section class="section" id="learn">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Part 1: Lesson Content</p>
+        <h2>पाठ की सामग्री</h2>
+      </div>
+      <button class="quiet-btn" id="language-toggle" onclick="toggleLanguage()">Hide Hindi Support</button>
+    </div>
+
+    <!-- Lesson 1 -->
+    <article class="mint-card story-line" style="margin-bottom: 20px;">
+      <span class="speaker">1. WHAT IS A SENTENCE? (वाक्य क्या है?)</span>
+      <p class="english" style="margin-top:10px;">A complete sentence has a naming part and an action part.</p>
+      <button class="quiet-btn listen" style="margin-top:6px;" onclick="speak('A complete sentence has a naming part and an action part.')">🔊 Listen</button>
+      <div class="language-support">
+        <p class="pronunciation"><span class="line-label">Say:</span> ए कम्प्लीट सेंटेंस हैज ए नेमिंग पार्ट एंड एन एक्शन पार्ट।</p>
+        <p class="translation"><span class="line-label">Meaning:</span> एक पूरे वाक्य में एक नाम बताने वाला हिस्सा (naming part) और एक काम बताने वाला हिस्सा (action part) होता है.</p>
+      </div>
+    </article>
+
+    <!-- Lesson 2 -->
+    <div class="mint-card" style="padding: 22px; margin-bottom: 20px;">
+      <h3 style="font-size:22px; color:var(--brand); margin-bottom:15px;">2. Key Parts of a Sentence (वाक्य के मुख्य भाग)</h3>
+      <div class="sentence-grid">
+        <div class="amber-card" style="padding: 16px;">
+          <h4 style="font-size:18px; color:var(--brand);">Naming Part (नाम वाला भाग)</h4>
+          <p class="english" style="font-size:15px; margin:8px 0;">Tells who or what the sentence is about (e.g., A big frog).</p>
+          <button class="quiet-btn listen" onclick="speak('Tells who or what the sentence is about (e.g., A big frog).')">🔊 Listen</button>
+          <div class="language-support">
+            <p class="pronunciation"><span class="line-label">Say:</span> टेल्स हू और वॉट द सेंटेंस इज़ अबाउट (ए बिग फ्रॉग्)।</p>
+            <p class="translation"><span class="line-label">Meaning:</span> यह बताता है कि वाक्य किसके बारे में है (जैसे—एक बड़ा मेंढक).</p>
+          </div>
+        </div>
+        <div class="amber-card" style="padding: 16px;">
+          <h4 style="font-size:18px; color:var(--brand);">Action Part (काम वाला भाग)</h4>
+          <p class="english" style="font-size:15px; margin:8px 0;">Tells what the naming part does (e.g., jumps off a rock).</p>
+          <button class="quiet-btn listen" onclick="speak('Tells what the naming part does (e.g., jumps off a rock).')">🔊 Listen</button>
+          <div class="language-support">
+            <p class="pronunciation"><span class="line-label">Say:</span> टेल्स वॉट द नेमिंग पार्ट डज (जम्प्स ऑफ ए रॉक्)।</p>
+            <p class="translation"><span class="line-label">Meaning:</span> यह बताता है कि नाम वाला हिस्सा क्या काम करता है (जैसे—चट्टान से कूदता है).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson 3 -->
+    <div class="mint-card" style="padding: 22px; margin-bottom: 20px;">
+      <h3 style="font-size:22px; color:var(--brand); margin-bottom:15px;">3. Complete Sentences vs. Word Groups (पूर्ण वाक्य बनाम शब्दों के समूह)</h3>
+      <div class="story-lines">
+        <article class="story-line">
+          <p class="english"><strong class="name-part">Fish</strong> <strong class="action-part">swim in the water.</strong> — <span style="color:var(--brand); font-weight:bold;">Yes</span></p>
+          <div class="language-support">
+            <p class="translation"><span class="line-label">Meaning:</span> मछली पानी में तैरती है। (यह एक पूर्ण वाक्य है क्योंकि इसका पूरा अर्थ निकलता है).</p>
+          </div>
+        </article>
+        <article class="story-line">
+          <p class="english"><strong class="action-part">Sleeps on a log.</strong> — <span style="color:#dc2626; font-weight:bold;">No</span></p>
+          <div class="language-support">
+            <p class="translation"><span class="line-label">Meaning:</span> लॉग पर सोता है। (यह पूर्ण वाक्य नहीं है क्योंकि इसमें यह नहीं बताया गया कि कौन सोता है).</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <div class="mint-card progress-box">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <strong id="progress-text">0 of 30 correct</strong>
+      <span class="eyebrow">Practice Progress</span>
+    </div>
+    <progress id="progress" max="30" value="0" aria-label="Correct practice answers"></progress>
+  </div>
+
+  <!-- PART 2: PRACTICE SET -->
+  <section class="section" id="practice-set">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Part 2: Practice Set</p>
+        <h2>अभ्यास सेट - 30 Questions</h2>
+      </div>
+    </div>
+
+    <!-- SECTION A: MCQS -->
+    <h3 id="sec-mcq" style="font-size:26px; color:var(--brand); margin: 20px 0;">Section A: Multiple Choice Questions (MCQs 1 to 15)</h3>
+    <div class="question-grid">
+
+      <!-- Q1 -->
+      <article class="mint-card question" id="q0">
+        <div class="question-top"><span class="eyebrow">Question 1</span><span class="question-state" id="state0">Your turn</span></div>
+        <p class="qtext">What does a complete sentence always have?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 1</legend>
+          <label class="choice"><input type="radio" name="q0" value="A">A) Only a naming part</label>
+          <label class="choice"><input type="radio" name="q0" value="B">B) Only an action part</label>
+          <label class="choice"><input type="radio" name="q0" value="C">C) A naming part and an action part</label>
+          <label class="choice"><input type="radio" name="q0" value="D">D) Only numbers</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(0, 'C')">Check Answer ✓</button>
+          <p class="feedback" id="feedback0" role="status"></p>
+          <div class="solution" id="solution0"><strong>Short Solution:</strong> A sentence must have both a naming part (who/what) and an action part (what happens) to give complete meaning.</div>
+        </div>
+      </article>
+
+      <!-- Q2 -->
+      <article class="mint-card question" id="q1">
+        <div class="question-top"><span class="eyebrow">Question 2</span><span class="question-state" id="state1">Your turn</span></div>
+        <p class="qtext">What is the Hindi meaning of "action part"?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 2</legend>
+          <label class="choice"><input type="radio" name="q1" value="A">A) नाम वाला भाग</label>
+          <label class="choice"><input type="radio" name="q1" value="B">B) काम वाला भाग</label>
+          <label class="choice"><input type="radio" name="q1" value="C">C) जगह का नाम</label>
+          <label class="choice"><input type="radio" name="q1" value="D">D) प्रश्न चिन्ह</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(1, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback1" role="status"></p>
+          <div class="solution" id="solution1"><strong>Short Solution:</strong> Action means work or action performed, so "action part" translates to "काम वाला भाग".</div>
+        </div>
+      </article>
+
+      <!-- Q3 -->
+      <article class="mint-card question" id="q2">
+        <div class="question-top"><span class="eyebrow">Question 3</span><span class="question-state" id="state2">Your turn</span></div>
+        <p class="qtext">In the sentence “A big frog jumps off a rock,” what is "A big frog"?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 3</legend>
+          <label class="choice"><input type="radio" name="q2" value="A">A) Action part</label>
+          <label class="choice"><input type="radio" name="q2" value="B">B) Naming part</label>
+          <label class="choice"><input type="radio" name="q2" value="C">C) Question mark</label>
+          <label class="choice"><input type="radio" name="q2" value="D">D) Incomplete word</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(2, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback2" role="status"></p>
+          <div class="solution" id="solution2"><strong>Short Solution:</strong> "A big frog" tells us who the sentence is about, so it is the naming part.</div>
+        </div>
+      </article>
+
+      <!-- Q4 -->
+      <article class="mint-card question" id="q3">
+        <div class="question-top"><span class="eyebrow">Question 4</span><span class="question-state" id="state3">Your turn</span></div>
+        <p class="qtext">In the sentence “A big frog jumps off a rock,” what is "jumps off a rock"?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 4</legend>
+          <label class="choice"><input type="radio" name="q3" value="A">A) Naming part</label>
+          <label class="choice"><input type="radio" name="q3" value="B">B) Action part</label>
+          <label class="choice"><input type="radio" name="q3" value="C">C) Warning sign</label>
+          <label class="choice"><input type="radio" name="q3" value="D">D) Title</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(3, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback3" role="status"></p>
+          <div class="solution" id="solution3"><strong>Short Solution:</strong> "jumps off a rock" describes the action done by the frog, so it is the action part.</div>
+        </div>
+      </article>
+
+      <!-- Q5 -->
+      <article class="mint-card question" id="q4">
+        <div class="question-top"><span class="eyebrow">Question 5</span><span class="question-state" id="state4">Your turn</span></div>
+        <p class="qtext">Which of the following is a complete sentence?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 5</legend>
+          <label class="choice"><input type="radio" name="q4" value="A">A) Sleeps on a log.</label>
+          <label class="choice"><input type="radio" name="q4" value="B">B) Fish swim in the water.</label>
+          <label class="choice"><input type="radio" name="q4" value="C">C) Floats away.</label>
+          <label class="choice"><input type="radio" name="q4" value="D">D) Deep water.</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(4, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback4" role="status"></p>
+          <div class="solution" id="solution4"><strong>Short Solution:</strong> "Fish swim in the water." has both a naming subject ("Fish") and an action ("swim in the water").</div>
+        </div>
+      </article>
+
+      <!-- Q6 -->
+      <article class="mint-card question" id="q5">
+        <div class="question-top"><span class="eyebrow">Question 6</span><span class="question-state" id="state5">Your turn</span></div>
+        <p class="qtext">Which of the following is not a complete sentence?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 6</legend>
+          <label class="choice"><input type="radio" name="q5" value="A">A) Plants grow.</label>
+          <label class="choice"><input type="radio" name="q5" value="B">B) Three birds sing.</label>
+          <label class="choice"><input type="radio" name="q5" value="C">C) Floats on the pond.</label>
+          <label class="choice"><input type="radio" name="q5" value="D">D) It falls down.</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(5, 'C')">Check Answer ✓</button>
+          <p class="feedback" id="feedback5" role="status"></p>
+          <div class="solution" id="solution5"><strong>Short Solution:</strong> "Floats on the pond." lacks a naming part to tell what or who is floating.</div>
+        </div>
+      </article>
+
+      <!-- Q7 -->
+      <article class="mint-card question" id="q6">
+        <div class="question-top"><span class="eyebrow">Question 7</span><span class="question-state" id="state6">Your turn</span></div>
+        <p class="qtext">If a word group only says "Floats away," is it a complete sentence?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 7</legend>
+          <label class="choice"><input type="radio" name="q6" value="A">A) Yes, write 'yes'</label>
+          <label class="choice"><input type="radio" name="q6" value="B">B) No, write 'no'</label>
+          <label class="choice"><input type="radio" name="q6" value="C">C) It is a naming part</label>
+          <label class="choice"><input type="radio" name="q6" value="D">D) It is a warning</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(6, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback6" role="status"></p>
+          <div class="solution" id="solution6"><strong>Short Solution:</strong> No, because it missing the naming part, making it incomplete.</div>
+        </div>
+      </article>
+
+      <!-- Q8 -->
+      <article class="mint-card question" id="q7">
+        <div class="question-top"><span class="eyebrow">Question 8</span><span class="question-state" id="state7">Your turn</span></div>
+        <p class="qtext">Choose the complete sentence from these options:</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 8</legend>
+          <label class="choice"><input type="radio" name="q7" value="A">A) Deep water.</label>
+          <label class="choice"><input type="radio" name="q7" value="B">B) The seeds open.</label>
+          <label class="choice"><input type="radio" name="q7" value="C">C) Floats away.</label>
+          <label class="choice"><input type="radio" name="q7" value="D">D) Swims and runs.</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(7, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback7" role="status"></p>
+          <div class="solution" id="solution7"><strong>Short Solution:</strong> "The seeds open." has a naming part ("The seeds") and an action part ("open").</div>
+        </div>
+      </article>
+
+      <!-- Q9 -->
+      <article class="mint-card question" id="q8">
+        <div class="question-top"><span class="eyebrow">Question 9</span><span class="question-state" id="state8">Your turn</span></div>
+        <p class="qtext">What should you write after a complete sentence like “Plants grow.”?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 9</legend>
+          <label class="choice"><input type="radio" name="q8" value="A">A) no</label>
+          <label class="choice"><input type="radio" name="q8" value="B">B) yes</label>
+          <label class="choice"><input type="radio" name="q8" value="C">C) stop</label>
+          <label class="choice"><input type="radio" name="q8" value="D">D) rock</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(8, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback8" role="status"></p>
+          <div class="solution" id="solution8"><strong>Short Solution:</strong> Write "yes" to confirm that it is a complete sentence.</div>
+        </div>
+      </article>
+
+      <!-- Q10 -->
+      <article class="mint-card question" id="q9">
+        <div class="question-top"><span class="eyebrow">Question 10</span><span class="question-state" id="state9">Your turn</span></div>
+        <p class="qtext">What should you write after an incomplete word group like “Deep water.”?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 10</legend>
+          <label class="choice"><input type="radio" name="q9" value="A">A) yes</label>
+          <label class="choice"><input type="radio" name="q9" value="B">B) no</label>
+          <label class="choice"><input type="radio" name="q9" value="C">C) frog</label>
+          <label class="choice"><input type="radio" name="q9" value="D">D) swim</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(9, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback9" role="status"></p>
+          <div class="solution" id="solution9"><strong>Short Solution:</strong> Write "no" because "Deep water." lacks an action part and is not complete.</div>
+        </div>
+      </article>
+
+      <!-- Q11 -->
+      <article class="mint-card question" id="q10">
+        <div class="question-top"><span class="eyebrow">Question 11</span><span class="question-state" id="state10">Your turn</span></div>
+        <p class="qtext">Which group of words forms a complete sentence suitable for a sign?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 11</legend>
+          <label class="choice"><input type="radio" name="q10" value="A">A) Swims and runs.</label>
+          <label class="choice"><input type="radio" name="q10" value="B">B) Ducks live here.</label>
+          <label class="choice"><input type="radio" name="q10" value="C">C) Little children and dogs.</label>
+          <label class="choice"><input type="radio" name="q10" value="D">D) A big lake.</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(10, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback10" role="status"></p>
+          <div class="solution" id="solution10"><strong>Short Solution:</strong> "Ducks live here." is a complete sentence containing both subject and action.</div>
+        </div>
+      </article>
+
+      <!-- Q12 -->
+      <article class="mint-card question" id="q11">
+        <div class="question-top"><span class="eyebrow">Question 12</span><span class="question-state" id="state11">Your turn</span></div>
+        <p class="qtext">Identify the naming part in the sentence: “The green frog.”</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 12</legend>
+          <label class="choice"><input type="radio" name="q11" value="A">A) green</label>
+          <label class="choice"><input type="radio" name="q11" value="B">B) frog</label>
+          <label class="choice"><input type="radio" name="q11" value="C">C) The green frog</label>
+          <label class="choice"><input type="radio" name="q11" value="D">D) There is no naming part</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(11, 'C')">Check Answer ✓</button>
+          <p class="feedback" id="feedback11" role="status"></p>
+          <div class="solution" id="solution11"><strong>Short Solution:</strong> "The green frog" is the complete noun phrase acting as the naming part.</div>
+        </div>
+      </article>
+
+      <!-- Q13 -->
+      <article class="mint-card question" id="q12">
+        <div class="question-top"><span class="eyebrow">Question 13</span><span class="question-state" id="state12">Your turn</span></div>
+        <p class="qtext">Which word group tells an action being performed?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 13</legend>
+          <label class="choice"><input type="radio" name="q12" value="A">A) Three birds</label>
+          <label class="choice"><input type="radio" name="q12" value="B">B) The green frog</label>
+          <label class="choice"><input type="radio" name="q12" value="C">C) jumps off a rock</label>
+          <label class="choice"><input type="radio" name="q12" value="D">D) A big rock</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(12, 'C')">Check Answer ✓</button>
+          <p class="feedback" id="feedback12" role="status"></p>
+          <div class="solution" id="solution12"><strong>Short Solution:</strong> "jumps off a rock" contains the action verb "jumps".</div>
+        </div>
+      </article>
+
+      <!-- Q14 -->
+      <article class="mint-card question" id="q13">
+        <div class="question-top"><span class="eyebrow">Question 14</span><span class="question-state" id="state13">Your turn</span></div>
+        <p class="qtext">How do you pronounce "Naming Part" in Hindi approximation?</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 14</legend>
+          <label class="choice"><input type="radio" name="q13" value="A">A) नेमिंग पार्ट</label>
+          <label class="choice"><input type="radio" name="q13" value="B">B) एक्शन पार्ट</label>
+          <label class="choice"><input type="radio" name="q13" value="C">C) फ्रॉग जंप</label>
+          <label class="choice"><input type="radio" name="q13" value="D">D) वाटर स्विम</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(13, 'A')">Check Answer ✓</button>
+          <p class="feedback" id="feedback13" role="status"></p>
+          <div class="solution" id="solution13"><strong>Short Solution:</strong> Phonetically, "Naming Part" is pronounced as "नेमिंग पार्ट".</div>
+        </div>
+      </article>
+
+      <!-- Q15 -->
+      <article class="mint-card question" id="q14">
+        <div class="question-top"><span class="eyebrow">Question 15</span><span class="question-state" id="state14">Your turn</span></div>
+        <p class="qtext">Complete sentences always express a complete...</p>
+        <fieldset class="choices">
+          <legend class="sr-only">Question 15</legend>
+          <label class="choice"><input type="radio" name="q14" value="A">A) letter</label>
+          <label class="choice"><input type="radio" name="q14" value="B">B) thought or idea</label>
+          <label class="choice"><input type="radio" name="q14" value="C">C) number</label>
+          <label class="choice"><input type="radio" name="q14" value="D">D) color</label>
+        </fieldset>
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkMCQ(14, 'B')">Check Answer ✓</button>
+          <p class="feedback" id="feedback14" role="status"></p>
+          <div class="solution" id="solution14"><strong>Short Solution:</strong> Sentences express a complete thought or idea so that the reader understands the message fully.</div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION B: FILL IN THE BLANKS -->
+    <h3 id="sec-blanks" style="font-size:26px; color:var(--brand); margin: 40px 0 20px;">Section B: Fill in the Blanks (Questions 16 to 30)</h3>
+    <div class="question-grid">
+
+      <!-- Q16 -->
+      <article class="mint-card question" id="q15">
+        <div class="question-top"><span class="eyebrow">Question 16</span><span class="question-state" id="state15">Your turn</span></div>
+        <p class="qtext">A complete sentence has a naming part and an action ______.</p>
+        <label for="ans15" class="sr-only">Answer</label>
+        <input class="word-input" id="ans15" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(15, 'part')">Check Answer ✓</button>
+          <p class="feedback" id="feedback15" role="status"></p>
+          <div class="solution" id="solution15"><strong>Short Solution:</strong> The missing word is "part", completing "action part".</div>
+        </div>
+      </article>
+
+      <!-- Q17 -->
+      <article class="mint-card question" id="q16">
+        <div class="question-top"><span class="eyebrow">Question 17</span><span class="question-state" id="state16">Your turn</span></div>
+        <p class="qtext">In the sentence “Fish swim in the water,” the naming part is "Fish" and the action part is "______ in the water".</p>
+        <label for="ans16" class="sr-only">Answer</label>
+        <input class="word-input" id="ans16" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(16, 'swim')">Check Answer ✓</button>
+          <p class="feedback" id="feedback16" role="status"></p>
+          <div class="solution" id="solution16"><strong>Short Solution:</strong> "swim" is the action verb performed by the fish.</div>
+        </div>
+      </article>
+
+      <!-- Q18 -->
+      <article class="mint-card question" id="q17">
+        <div class="question-top"><span class="eyebrow">Question 18</span><span class="question-state" id="state17">Your turn</span></div>
+        <p class="qtext">Read and copy each word group. Write yes after each complete sentence and ______ after the other word groups.</p>
+        <label for="ans17" class="sr-only">Answer</label>
+        <input class="word-input" id="ans17" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(17, 'no')">Check Answer ✓</button>
+          <p class="feedback" id="feedback17" role="status"></p>
+          <div class="solution" id="solution17"><strong>Short Solution:</strong> Write "no" for incomplete word groups.</div>
+        </div>
+      </article>
+
+      <!-- Q19 -->
+      <article class="mint-card question" id="q18">
+        <div class="question-top"><span class="eyebrow">Question 19</span><span class="question-state" id="state18">Your turn</span></div>
+        <p class="qtext">In the example, “The seeds open. ______”.</p>
+        <label for="ans18" class="sr-only">Answer</label>
+        <input class="word-input" id="ans18" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(18, 'yes')">Check Answer ✓</button>
+          <p class="feedback" id="feedback18" role="status"></p>
+          <div class="solution" id="solution18"><strong>Short Solution:</strong> Write "yes" because "The seeds open." is a complete sentence.</div>
+        </div>
+      </article>
+
+      <!-- Q20 -->
+      <article class="mint-card question" id="q19">
+        <div class="question-top"><span class="eyebrow">Question 20</span><span class="question-state" id="state19">Your turn</span></div>
+        <p class="qtext">The word group “Plants grow.” is a complete sentence, so we write ______.</p>
+        <label for="ans19" class="sr-only">Answer</label>
+        <input class="word-input" id="ans19" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(19, 'yes')">Check Answer ✓</button>
+          <p class="feedback" id="feedback19" role="status"></p>
+          <div class="solution" id="solution19"><strong>Short Solution:</strong> "yes" is written because "Plants grow." is full and complete.</div>
+        </div>
+      </article>
+
+      <!-- Q21 -->
+      <article class="mint-card question" id="q20">
+        <div class="question-top"><span class="eyebrow">Question 21</span><span class="question-state" id="state20">Your turn</span></div>
+        <p class="qtext">The word group “Floats away.” is not a complete sentence, so we write ______.</p>
+        <label for="ans20" class="sr-only">Answer</label>
+        <input class="word-input" id="ans20" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(20, 'no')">Check Answer ✓</button>
+          <p class="feedback" id="feedback20" role="status"></p>
+          <div class="solution" id="solution20"><strong>Short Solution:</strong> Write "no" as it lacks a naming part.</div>
+        </div>
+      </article>
+
+      <!-- Q22 -->
+      <article class="mint-card question" id="q21">
+        <div class="question-top"><span class="eyebrow">Question 22</span><span class="question-state" id="state21">Your turn</span></div>
+        <p class="qtext">The word group “Deep water.” is incomplete, so we write ______.</p>
+        <label for="ans21" class="sr-only">Answer</label>
+        <input class="word-input" id="ans21" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(21, 'no')">Check Answer ✓</button>
+          <p class="feedback" id="feedback21" role="status"></p>
+          <div class="solution" id="solution21"><strong>Short Solution:</strong> Write "no" because it misses an action part.</div>
+        </div>
+      </article>
+
+      <!-- Q23 -->
+      <article class="mint-card question" id="q22">
+        <div class="question-top"><span class="eyebrow">Question 23</span><span class="question-state" id="state22">Your turn</span></div>
+        <p class="qtext">The word group “It falls down.” is a complete sentence, so we write ______.</p>
+        <label for="ans22" class="sr-only">Answer</label>
+        <input class="word-input" id="ans22" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(22, 'yes')">Check Answer ✓</button>
+          <p class="feedback" id="feedback22" role="status"></p>
+          <div class="solution" id="solution22"><strong>Short Solution:</strong> Write "yes" as "It" is the naming part and "falls down" is the action part.</div>
+        </div>
+      </article>
+
+      <!-- Q24 -->
+      <article class="mint-card question" id="q23">
+        <div class="question-top"><span class="eyebrow">Question 24</span><span class="question-state" id="state23">Your turn</span></div>
+        <p class="qtext">Ducks live here is an example of a complete sentence used to make a ______.</p>
+        <label for="ans23" class="sr-only">Answer</label>
+        <input class="word-input" id="ans23" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(23, 'sign')">Check Answer ✓</button>
+          <p class="feedback" id="feedback23" role="status"></p>
+          <div class="solution" id="solution23"><strong>Short Solution:</strong> "sign" is the correct context word.</div>
+        </div>
+      </article>
+
+      <!-- Q25 -->
+      <article class="mint-card question" id="q24">
+        <div class="question-top"><span class="eyebrow">Question 25</span><span class="question-state" id="state24">Your turn</span></div>
+        <p class="qtext">“Children swim here.” is a complete sentence because it tells who is swimming and what they ______.</p>
+        <label for="ans24" class="sr-only">Answer</label>
+        <input class="word-input" id="ans24" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(24, 'do')">Check Answer ✓</button>
+          <p class="feedback" id="feedback24" role="status"></p>
+          <div class="solution" id="solution24"><strong>Short Solution:</strong> "do" completes the explanation of action.</div>
+        </div>
+      </article>
+
+      <!-- Q26 -->
+      <article class="mint-card question" id="q25">
+        <div class="question-top"><span class="eyebrow">Question 26</span><span class="question-state" id="state25">Your turn</span></div>
+        <p class="qtext">“Swims and runs.” lacks a naming part, so it is not a complete ______.</p>
+        <label for="ans25" class="sr-only">Answer</label>
+        <input class="word-input" id="ans25" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(25, 'sentence')">Check Answer ✓</button>
+          <p class="feedback" id="feedback25" role="status"></p>
+          <div class="solution" id="solution25"><strong>Short Solution:</strong> "sentence" is the term for a complete thought unit.</div>
+        </div>
+      </article>
+
+      <!-- Q27 -->
+      <article class="mint-card question" id="q26">
+        <div class="question-top"><span class="eyebrow">Question 27</span><span class="question-state" id="state26">Your turn</span></div>
+        <p class="qtext">“Little children and dogs.” lacks an action part, so we write ______ after it.</p>
+        <label for="ans26" class="sr-only">Answer</label>
+        <input class="word-input" id="ans26" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(26, 'no')">Check Answer ✓</button>
+          <p class="feedback" id="feedback26" role="status"></p>
+          <div class="solution" id="solution26"><strong>Short Solution:</strong> Write "no" because it has no verb or action part.</div>
+        </div>
+      </article>
+
+      <!-- Q28 -->
+      <article class="mint-card question" id="q27">
+        <div class="question-top"><span class="eyebrow">Question 28</span><span class="question-state" id="state27">Your turn</span></div>
+        <p class="qtext">“All boats stay out.” is a complete sentence, so we write ______ after it.</p>
+        <label for="ans27" class="sr-only">Answer</label>
+        <input class="word-input" id="ans27" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(27, 'yes')">Check Answer ✓</button>
+          <p class="feedback" id="feedback27" role="status"></p>
+          <div class="solution" id="solution27"><strong>Short Solution:</strong> Write "yes" because it gives full sense.</div>
+        </div>
+      </article>
+
+      <!-- Q29 -->
+      <article class="mint-card question" id="q28">
+        <div class="question-top"><span class="eyebrow">Question 28</span><span class="question-state" id="state28">Your turn</span></div>
+        <p class="qtext">A naming part tells who or what the ______ is about.</p>
+        <label for="ans28" class="sr-only">Answer</label>
+        <input class="word-input" id="ans28" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(28, 'sentence')">Check Answer ✓</button>
+          <p class="feedback" id="feedback28" role="status"></p>
+          <div class="solution" id="solution28"><strong>Short Solution:</strong> The definition states that naming parts tell what the "sentence" is about.</div>
+        </div>
+      </article>
+
+      <!-- Q30 -->
+      <article class="mint-card question" id="q29">
+        <div class="question-top"><span class="eyebrow">Question 30</span><span class="question-state" id="state29">Your turn</span></div>
+        <p class="qtext">An action part tells what the ______ part does.</p>
+        <label for="ans29" class="sr-only">Answer</label>
+        <input class="word-input" id="ans29" placeholder="Type answer here..." autocomplete="off">
+        <div class="question-bottom">
+          <button class="mint-btn" onclick="checkText(29, 'naming')">Check Answer ✓</button>
+          <p class="feedback" id="feedback29" role="status"></p>
+          <div class="solution" id="solution29"><strong>Short Solution:</strong> An action part shows what the "naming" part does.</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SUMMARY & RESET -->
+  <section class="amber-card check-all">
+    <div>
+      <h2>Great Job Practising!</h2>
+      <p>Want to clear your answers and try again?</p>
+    </div>
+    <div class="reset-area">
+      <button class="quiet-btn" onclick="resetAll()">Reset All Answers</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="footer-brand">Econova.vip✦</span>
+    <p>Is It a Sentence? · Class 1 English</p>
+    <a class="quiet-btn" href="#main">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+const results = new Map();
+
+function updateProgress() {
+  const correctCount = Array.from(results.values()).filter(Boolean).length;
+  document.getElementById('progress').value = correctCount;
+  document.getElementById('progress-text').textContent = correctCount + ' of 30 correct';
+}
+
+function checkMCQ(index, expected) {
+  const selected = document.querySelector(`input[name="q${index}"]:checked`);
+  const feedback = document.getElementById(`feedback${index}`);
+  const state = document.getElementById(`state${index}`);
+  const solution = document.getElementById(`solution${index}`);
+
+  if (!selected) {
+    feedback.textContent = 'Please select an option!';
+    feedback.setAttribute('data-state', 'retry');
+    return;
+  }
+
+  solution.style.display = 'block';
+
+  if (selected.value === expected) {
+    feedback.textContent = '✓ Correct!';
+    feedback.removeAttribute('data-state');
+    state.textContent = 'Correct';
+    state.style.background = '#d1fae5';
+    results.set(index, true);
+  } else {
+    feedback.textContent = '✕ Try again!';
+    feedback.setAttribute('data-state', 'retry');
+    state.textContent = 'Try again';
+    state.style.background = '#ffedd5';
+    results.set(index, false);
+  }
+  updateProgress();
+}
+
+function checkText(index, expected) {
+  const input = document.getElementById(`ans${index}`);
+  const val = input.value.trim().toLowerCase();
+  const feedback = document.getElementById(`feedback${index}`);
+  const state = document.getElementById(`state${index}`);
+  const solution = document.getElementById(`solution${index}`);
+
+  if (!val) {
+    feedback.textContent = 'Please type an answer!';
+    feedback.setAttribute('data-state', 'retry');
+    input.setAttribute('aria-invalid', 'true');
+    return;
+  }
+
+  solution.style.display = 'block';
+
+  if (val === expected.toLowerCase()) {
+    feedback.textContent = '✓ Correct!';
+    feedback.removeAttribute('data-state');
+    input.removeAttribute('aria-invalid');
+    state.textContent = 'Correct';
+    state.style.background = '#d1fae5';
+    results.set(index, true);
+  } else {
+    feedback.textContent = `✕ Try again! (Hint: starts with '${expected[0]}')`;
+    feedback.setAttribute('data-state', 'retry');
+    input.setAttribute('aria-invalid', 'true');
+    state.textContent = 'Try again';
+    state.style.background = '#ffedd5';
+    results.set(index, false);
+  }
+  updateProgress();
+}
+
+function resetAll() {
+  results.clear();
+  document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+  document.querySelectorAll('.word-input').forEach(i => { i.value = ''; i.removeAttribute('aria-invalid'); });
+  document.querySelectorAll('.feedback').forEach(f => { f.textContent = ''; f.removeAttribute('data-state'); });
+  document.querySelectorAll('.solution').forEach(s => { s.style.display = 'none'; });
+  document.querySelectorAll('.question-state').forEach(s => { s.textContent = 'Your turn'; s.style.background = 'var(--bg)'; });
+  updateProgress();
+}
+
+function toggleLanguage() {
+  const main = document.getElementById('main');
+  main.classList.toggle('hide-support');
+  const btn = document.getElementById('language-toggle');
+  if (main.classList.contains('hide-support')) {
+    btn.textContent = 'Show Hindi Support';
+  } else {
+    btn.textContent = 'Hide Hindi Support';
+  }
+}
+
+function speak(text) {
+  if (!text) return;
+  if (!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-IN';
+  u.rate = 0.85;
+  speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
