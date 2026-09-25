@@ -1,5 +1,7 @@
-title: Sumit Kumar
+title: Econova
+description: Playful learning activities and lessons for young learners.
+url: https://econova.vip
+baseurl: ""
 logo: /asset/sumit.jpeg
-# description: Looking for entry level opportunity
-show_downloads: True
+show_downloads: true
 theme: jekyll-theme-minimal
