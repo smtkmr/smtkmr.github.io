@@ -169,18 +169,11 @@
       21:{type:'model', number:83, caption:'The underlined 8 is in the tens place.'},
       22:{type:'compare', parts:['43','?','34'], caption:'Compare the number of books and children.'}
     };
-    function addUnits(container, className, count, limit) {
-      const shown = Math.min(count, limit);
-      for (let i = 0; i < shown; i++) {
+    function addUnits(container, className, count) {
+      for (let i = 0; i < count; i++) {
         const unit = document.createElement('i');
         unit.className = className;
         container.append(unit);
-      }
-      if (count > limit) {
-        const extra = document.createElement('small');
-        extra.textContent = `+${count - limit}`;
-        extra.style.fontWeight = '800';
-        container.append(extra);
       }
     }
     function addQuestionVisual(question) {
@@ -198,12 +191,14 @@
         number.innerHTML = `<span class="v-tens">${tens}</span><span class="v-ones">${ones}</span>`;
         const units = document.createElement('span');
         units.className = 'visual-units';
-        addUnits(units, 'mini-rod', tens, 5);
-        const plus = document.createElement('b');
-        plus.textContent = '+';
-        plus.style.margin = '0 3px';
-        units.append(plus);
-        addUnits(units, 'mini-one', ones, 9);
+        addUnits(units, 'mini-rod', tens);
+        if (ones > 0) {
+          const plus = document.createElement('b');
+          plus.textContent = '+';
+          plus.style.margin = '0 3px';
+          units.append(plus);
+          addUnits(units, 'mini-one', ones);
+        }
         const caption = document.createElement('span');
         caption.className = 'visual-caption';
         caption.textContent = data.caption;
@@ -211,12 +206,14 @@
       } else if (data.type === 'units') {
         const units = document.createElement('span');
         units.className = 'visual-units';
-        addUnits(units, 'mini-rod', data.tens, 5);
-        const plus = document.createElement('b');
-        plus.textContent = '+';
-        plus.style.margin = '0 3px';
-        units.append(plus);
-        addUnits(units, 'mini-one', data.ones, 9);
+        addUnits(units, 'mini-rod', data.tens);
+        if (data.ones > 0) {
+          const plus = document.createElement('b');
+          plus.textContent = '+';
+          plus.style.margin = '0 3px';
+          units.append(plus);
+          addUnits(units, 'mini-one', data.ones);
+        }
         visual.append(units);
         const caption = document.createElement('span');
         caption.className = 'visual-caption';
@@ -251,7 +248,7 @@
       } else if (data.type === 'story') {
         const row = document.createElement('div');
         row.className = 'story-visual';
-        addUnits(row, 'mini-rod', data.tens, 4);
+        addUnits(row, 'mini-rod', data.tens);
         const plus = document.createElement('b');
         plus.className = 'plus';
         plus.textContent = '+';
@@ -280,7 +277,7 @@
           const extras = document.createElement('span');
           extras.className = 'mini-extra';
           extras.setAttribute('aria-hidden', 'true');
-          addUnits(extras, 'mini-one', data.extra, 9);
+          addUnits(extras, 'mini-one', data.extra);
           frames.append(extras);
         }
         visual.append(frames);
