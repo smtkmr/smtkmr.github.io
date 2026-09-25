@@ -1,0 +1,116 @@
+/* Shared chapter and lesson-list cards for Class 1 and Class 2. */
+.topics,
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.topic,
+.chapter-grid > .chapter {
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr) 24px;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 2px 12px;
+  min-height: 81px;
+  padding: 12px;
+  border: 2px solid #34d399;
+  border-radius: 17px;
+  background: #fff;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.topic:nth-child(3n + 2),
+.chapter-grid > .chapter:nth-child(3n + 2) {
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.topic:hover,
+.chapter-grid > .chapter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #d1fae5;
+}
+
+.topic:focus-visible,
+.chapter-grid > .chapter:focus-visible {
+  outline: 3px solid #1f2937;
+  outline-offset: 3px;
+}
+
+.topic[hidden] { display: none !important; }
+
+.topic-id,
+.chapter-grid > .chapter .chapter-top > .eyebrow {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #d1fae5;
+  color: #059669;
+  font: 800 11px 'Outfit', 'Quicksand', sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.topic:nth-child(3n + 2) .topic-id,
+.chapter-grid > .chapter:nth-child(3n + 2) .chapter-top > .eyebrow {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.topic h3,
+.chapter-grid > .chapter h3 {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.topic p,
+.chapter-grid > .chapter > p {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 3px;
+  color: #059669;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.topic .arrow,
+.chapter-grid > .chapter .begin {
+  display: grid;
+  grid-column: 3;
+  grid-row: 1 / 3;
+  place-items: center;
+  width: 24px;
+  min-height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: transparent;
+  font-size: 0;
+}
+
+.topic .arrow::after,
+.chapter-grid > .chapter .begin::after {
+  content: '→';
+  color: #059669;
+  font: 900 19px 'Outfit', 'Quicksand', sans-serif;
+}
+
+.chapter-grid > .chapter .chapter-top { display: contents; }
+.chapter-grid > .chapter .chapter-icon { display: none; }
+
+@media (max-width: 700px) {
+  .topics,
+  .chapter-grid { grid-template-columns: 1fr; }
+  .topic,
+  .chapter-grid > .chapter { min-height: 74px; }
+}
