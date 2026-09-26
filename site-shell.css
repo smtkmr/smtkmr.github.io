@@ -1,0 +1,370 @@
+/* Shared Econova header and footer used by every page. */
+.econova-site-header,
+.econova-site-header * {
+  box-sizing: border-box;
+}
+
+.econova-site-header {
+  display: block !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  min-height: 130px !important;
+  margin: 0 !important;
+  padding: 0 5.7% !important;
+  border: 0 !important;
+  border-bottom: 4px solid #10b981 !important;
+  background: #2dd4bf !important;
+  font-family: Outfit, Quicksand, Arial, sans-serif !important;
+}
+
+.econova-site-header__inner {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 1700px !important;
+  min-height: 126px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+.econova-site-brand {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  gap: 14px !important;
+  color: #fff !important;
+  font: 900 46px/1 Outfit, Quicksand, Arial, sans-serif !important;
+  letter-spacing: -1.7px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.econova-site-brand__mark {
+  display: grid !important;
+  width: 64px !important;
+  height: 64px !important;
+  flex: 0 0 64px !important;
+  place-items: center !important;
+  border-radius: 21px !important;
+  background: #fde047 !important;
+  color: #059669 !important;
+  font: 900 41px/1 Outfit, Arial, sans-serif !important;
+  transform: rotate(-8deg) !important;
+}
+
+.econova-site-brand em {
+  color: #fde047 !important;
+  font-style: normal !important;
+}
+
+.econova-site-nav {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 38px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.econova-site-nav a {
+  color: #fff !important;
+  font: 700 21px/1.2 Quicksand, Outfit, Arial, sans-serif !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.econova-site-nav a:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+}
+
+.econova-site-nav .econova-site-nav__cta {
+  display: inline-flex !important;
+  min-height: 66px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 22px !important;
+  padding: 0 27px !important;
+  border-radius: 23px !important;
+  background: #10b981 !important;
+  box-shadow: 0 5px 0 #059669 !important;
+  font-weight: 900 !important;
+}
+
+.econova-site-nav .econova-site-nav__cta:hover {
+  background: #059669 !important;
+  text-decoration: none !important;
+}
+
+.econova-context-header {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 8px 5.7% !important;
+  border: 0 !important;
+  border-bottom: 1px solid #d1fae5 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  font-family: Outfit, Quicksand, Arial, sans-serif !important;
+}
+
+.econova-context-header--hidden {
+  display: none !important;
+}
+
+.econova-context-header .logo,
+.econova-context-header .logo-mark,
+.econova-context-header .mark,
+.econova-context-header .brand {
+  display: none !important;
+}
+
+.econova-context-header .nav,
+.econova-context-header nav,
+.econova-context-header .navlinks {
+  display: flex !important;
+  min-height: 0 !important;
+  max-width: 1700px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+  flex-wrap: wrap !important;
+}
+
+.econova-context-header a {
+  color: #047857 !important;
+  font: 700 13px/1.4 Quicksand, Outfit, Arial, sans-serif !important;
+  text-decoration: none !important;
+}
+
+.econova-context-header a:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+.econova-context-header .mint-btn,
+.econova-context-header .nav-btn,
+.econova-context-header a.btn {
+  display: none !important;
+}
+
+.econova-legacy-footer {
+  display: none !important;
+}
+
+.econova-site-footer,
+.econova-site-footer * {
+  box-sizing: border-box;
+}
+
+.econova-site-footer {
+  width: 100% !important;
+  margin: 42px 0 0 !important;
+  padding: 30px 5.7% !important;
+  border: 0 !important;
+  border-top: 2px solid #a7f3d0 !important;
+  background: #fff !important;
+  color: #1f2937 !important;
+  font-family: Quicksand, Arial, sans-serif !important;
+}
+
+.econova-site-footer__inner {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 1700px !important;
+  min-height: 62px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+.econova-site-footer__brand {
+  color: #059669 !important;
+  font: 900 30px/1 Outfit, Quicksand, Arial, sans-serif !important;
+  letter-spacing: -.7px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.econova-site-footer__copy {
+  margin: 0 !important;
+  color: #1f2937 !important;
+  font: 600 15px/1.5 Quicksand, Arial, sans-serif !important;
+  text-align: center !important;
+}
+
+.econova-site-footer__links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.econova-site-footer__links a {
+  color: #1f2937 !important;
+  font: 700 15px/1.4 Quicksand, Arial, sans-serif !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.econova-site-footer__links a:hover {
+  color: #059669 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+}
+
+.econova-site-skip {
+  position: fixed !important;
+  top: -100px !important;
+  left: 15px !important;
+  z-index: 1100 !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: #065f46 !important;
+  font: 700 14px Quicksand, Arial, sans-serif !important;
+}
+
+.econova-site-skip:focus {
+  top: 12px !important;
+}
+
+@media (max-width: 900px) {
+  .econova-site-header {
+    min-height: 88px !important;
+    padding: 0 22px !important;
+  }
+
+  .econova-site-header__inner {
+    min-height: 84px !important;
+    gap: 14px !important;
+  }
+
+  .econova-site-brand {
+    gap: 9px !important;
+    font-size: 30px !important;
+    letter-spacing: -1px !important;
+  }
+
+  .econova-site-brand__mark {
+    width: 42px !important;
+    height: 42px !important;
+    flex-basis: 42px !important;
+    border-radius: 14px !important;
+    font-size: 27px !important;
+  }
+
+  .econova-site-nav {
+    gap: 17px !important;
+  }
+
+  .econova-site-nav a {
+    font-size: 14px !important;
+  }
+
+  .econova-site-nav .econova-site-nav__cta {
+    min-height: 46px !important;
+    gap: 10px !important;
+    padding: 0 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .econova-site-footer__inner {
+    flex-wrap: wrap !important;
+  }
+
+  .econova-site-footer__copy {
+    order: 3 !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .econova-site-header {
+    min-height: 74px !important;
+    padding: 0 16px !important;
+  }
+
+  .econova-site-header__inner {
+    min-height: 70px !important;
+  }
+
+  .econova-site-brand {
+    font-size: 24px !important;
+  }
+
+  .econova-site-brand__mark {
+    width: 34px !important;
+    height: 34px !important;
+    flex-basis: 34px !important;
+    border-radius: 12px !important;
+    font-size: 22px !important;
+  }
+
+  .econova-site-nav {
+    gap: 0 !important;
+  }
+
+  .econova-site-nav a:not(.econova-site-nav__cta) {
+    display: none !important;
+  }
+
+  .econova-site-nav .econova-site-nav__cta {
+    min-height: 40px !important;
+    padding: 0 11px !important;
+    font-size: 12px !important;
+  }
+
+  .econova-context-header {
+    padding: 7px 16px !important;
+  }
+
+  .econova-context-header .nav,
+  .econova-context-header nav,
+  .econova-context-header .navlinks {
+    gap: 12px !important;
+  }
+
+  .econova-context-header a {
+    font-size: 11px !important;
+  }
+
+  .econova-site-footer {
+    margin-top: 30px !important;
+    padding: 23px 20px !important;
+  }
+
+  .econova-site-footer__inner {
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+
+  .econova-site-footer__brand {
+    font-size: 24px !important;
+  }
+
+  .econova-site-footer__links {
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .econova-site-footer__links a,
+  .econova-site-footer__copy {
+    font-size: 12px !important;
+  }
+}
