@@ -1,6 +1,6 @@
 {
   "name": "The Gentle Way - English Poem Lesson",
-  "description": "Interactive Class 1 English lesson for the poem 'The Gentle Way' by Rodney O'Hurd with line-by-line Hindi pronunciation, meanings, vocabulary, and 30 interactive practice questions.",
+  "description": "Interactive Class 1 English lesson for 'True Friends Never Leave' with line-by-line Hindi pronunciation, meanings, vocabulary, and 50 interactive practice questions.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

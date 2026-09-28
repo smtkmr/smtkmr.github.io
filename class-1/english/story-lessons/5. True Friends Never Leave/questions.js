@@ -1,653 +1,653 @@
-// 50 Practice Questions for Poem: True Friends Never Leave (Bilingual English & Hindi)
+// 50 Practice Questions for True Friends Never Leave (Bilingual English & Hindi)
 export const questions = [
   {
     "num": 1,
     "section": "A",
     "kind": "mcq",
-    "title": "What does the poem celebrate?",
-    "prompt": "What does the poem celebrate? / यह कविता किस बात का उत्सव मनाती है?",
+    "title": "Who was Ella's special bird friends?",
+    "prompt": "Who were Ella's close friends in the story? / कहानी में एला के खास दोस्त कौन थे?",
     "choices": [
-      "A birthday",
-      "The beauty of friendship",
-      "A rainy day",
-      "A school picnic"
+      "Two parrots",
+      "Two egrets",
+      "Two monkeys",
+      "Two ducks"
     ],
     "answer": 1,
-    "hint": "Sentence 1: This joyful poem celebrates the beauty of friendship. (दोस्ती की सुंदरता)"
+    "hint": "Part 1: Ella had two egrets as friends. (दो बगुले — two egrets)"
   },
   {
     "num": 2,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends are like ________ on a rainy day.",
-    "prompt": "Friends are like ________ on a rainy day. / दोस्त बारिश के दिन किसकी तरह होते हैं?",
+    "title": "Where did the egrets sit when Ella walked?",
+    "prompt": "Where did the two egrets sit as Ella moved? / घास में चलते समय बगुले कहाँ बैठते थे?",
     "choices": [
-      "Raindrops",
-      "Sunshine",
-      "Thunder",
-      "Rainbows"
+      "On Ella's head",
+      "On Ella's back",
+      "On Ella's trunk",
+      "On tree branches"
     ],
     "answer": 1,
-    "hint": "Line 1: Friends are like sunshine on a rainy day. (धूप — sunshine)"
+    "hint": "Part 1: They sat on Ella's back as she walked through the grass. (एला की पीठ पर)"
   },
   {
     "num": 3,
     "section": "A",
     "kind": "mcq",
-    "title": "What do friends make go away on a rainy day?",
-    "prompt": "What do friends make go away on a rainy day? / दोस्त बारिश के दिन किसे दूर भगा देते हैं?",
+    "title": "What did Ella stir up as she walked?",
+    "prompt": "What did Ella stir up from the grass for the egrets? / चलते समय एला घास से क्या उड़ाती थी?",
     "choices": [
-      "Clouds",
+      "Leaves",
       "Flowers",
-      "Sunshine",
-      "Toys"
+      "Bugs",
+      "Seeds"
     ],
-    "answer": 0,
-    "hint": "Line 2: They make the clouds all go away. (बादल — clouds)"
+    "answer": 2,
+    "hint": "Part 1: As Ella walked, she stirred up bugs which the egrets ate. (कीड़े — bugs)"
   },
   {
     "num": 4,
     "section": "A",
     "kind": "mcq",
-    "title": "What do friends make us do?",
-    "prompt": "What do friends make us do? / दोस्त हमें क्या कराते हैं?",
+    "title": "How did the other animals feel about Ella?",
+    "prompt": "How did all the animals in the forest feel towards Ella? / जंगल के अन्य जानवर एला के प्रति कैसा महसूस करते थे?",
     "choices": [
-      "Cry",
-      "Laugh and smile",
-      "Fight",
-      "Sleep"
+      "They feared her",
+      "They loved her",
+      "They ignored her",
+      "They were angry"
     ],
     "answer": 1,
-    "hint": "Line 3: They make us laugh, they make us smile. (हंसाना और मुस्कान लाना)"
+    "hint": "Part 1: The egrets loved Ella. So did all the other animals. (सभी जानवर उससे प्यार करते थे)"
   },
   {
     "num": 5,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends stay with us every ________.",
-    "prompt": "Friends stay with us every ________. / दोस्त हर ________ हमारे साथ रहते हैं।",
+    "title": "What was Ella always ready to do?",
+    "prompt": "What was Ella's nature regarding others? / एला हमेशा क्या करने को तैयार रहती थी?",
     "choices": [
-      "Hour",
-      "Mile",
-      "Year",
-      "Second"
+      "Ready to sleep",
+      "Ready to fight",
+      "Ready to help anyone",
+      "Ready to hide"
     ],
-    "answer": 1,
-    "hint": "Line 4: They stay with us every mile. (हर मोड़ / मील — mile)"
+    "answer": 2,
+    "hint": "Part 2: Ella was always good and ready to help anyone. (किसी की भी मदद करने के लिए तैयार)"
   },
   {
     "num": 6,
     "section": "A",
     "kind": "mcq",
-    "title": "What do friends share every day?",
-    "prompt": "What do friends share every day? / दोस्त रोज़ाना आपस में क्या बांटते हैं?",
+    "title": "What did Ella use like a trumpet to warn animals?",
+    "prompt": "Which part of her body did Ella use like a trumpet in danger? / खतरे के समय एला तुरही की तरह किसका इस्तेमाल करती थी?",
     "choices": [
-      "Clothes",
-      "Books",
-      "Snacks",
-      "Money"
+      "Her big ears",
+      "Her long trunk",
+      "Her heavy feet",
+      "Her tail"
     ],
-    "answer": 2,
-    "hint": "Line 6: We share our snacks every day. (नाश्ता — snacks)"
+    "answer": 1,
+    "hint": "Part 2: Ella would use her long trunk like a trumpet to warn the rest of the animals. (लंबी सूंड — long trunk)"
   },
   {
     "num": 7,
     "section": "A",
     "kind": "mcq",
-    "title": "What activities do friends do together in the poem?",
-    "prompt": "What activities do friends do together in the poem? / कविता में दोस्त मिलकर कौन-कौन सी गतिविधियाँ करते हैं?",
+    "title": "Whom did Ella help look after?",
+    "prompt": "Which group of animals did Ella care for? / एला ने किनकी देखभाल करने में मदद की?",
     "choices": [
-      "Jump and run",
-      "Skip and play",
-      "Draw, read, and talk",
-      "All of the above"
+      "A group of young elephants",
+      "A flock of birds",
+      "A herd of deer",
+      "A pack of wolves"
     ],
-    "answer": 3,
-    "hint": "Lines 5 & 7: We jump and run, skip and play, draw, read, talk a lot. (उपरोक्त सभी)"
+    "answer": 0,
+    "hint": "Part 2: She also helped to look after a group of young elephants. (छोटे हाथियों का समूह)"
   },
   {
     "num": 8,
     "section": "A",
     "kind": "mcq",
-    "title": "A friend like you is a ________!",
-    "prompt": "A friend like you is a ________! / तुम्हारे जैसा दोस्त होना कैसा विचार है?",
+    "title": "What did the egrets notice one day about Ella?",
+    "prompt": "What change did the egrets notice in Ella? / एक दिन बगुलों ने एला के बारे में क्या ध्यान दिया?",
     "choices": [
-      "Bad thought",
-      "Happy thought",
-      "Sad thought",
-      "Long thought"
+      "She ran very fast",
+      "She walked slower than usual",
+      "She was singing loudly",
+      "She flew in the air"
     ],
     "answer": 1,
-    "hint": "Line 8: A friend like you is a happy thought! (सुखद विचार — happy thought)"
+    "hint": "Part 3: One day the egrets noticed that Ella walked slower than usual. (धीमी चाल — walked slower)"
   },
   {
     "num": 9,
     "section": "A",
     "kind": "mcq",
-    "title": "What does a good friend do if you fall?",
-    "prompt": "What does a good friend do if you fall? / यदि आप गिर जाते हैं, तो एक अच्छा दोस्त क्या करता है?",
+    "title": "What did Ella tell the egrets when they asked what was wrong?",
+    "prompt": "How did Ella explain her condition? / जब बगुलों ने पूछा तो एला ने क्या कहा?",
     "choices": [
-      "Laugh at you",
-      "Run away",
-      "Help you stand",
-      "Ignore you"
+      "\"I am hungry\"",
+      "\"I am tired, very, very tired\"",
+      "\"I am lost\"",
+      "\"I am playful\""
     ],
-    "answer": 2,
-    "hint": "Line 9: If I fall, you help me stand. (खड़े होने में मदद करना)"
+    "answer": 1,
+    "hint": "Part 3: \"I'm tired,\" said Ella. \"I'm very, very tired.\" (बहुत ज्यादा थक गई हूँ)"
   },
   {
     "num": 10,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends always give a ________.",
-    "prompt": "Friends always give a ________. / दोस्त हमेशा क्या बढ़ाते हैं?",
+    "title": "Why did the egrets think Ella was tired?",
+    "prompt": "What reason did the egrets give for Ella's tiredness? / बगुलों के अनुसार एला क्यों थक गई थी?",
     "choices": [
-      "Helping hand",
-      "Toy",
-      "Present",
-      "Push"
+      "She walked in rain",
+      "She worked too hard yesterday",
+      "She didn't eat",
+      "She stayed awake all night"
     ],
-    "answer": 0,
-    "hint": "Line 10: You always give a helping hand. (मदद का हाथ — helping hand)"
+    "answer": 1,
+    "hint": "Part 3: \"You worked too hard yesterday,\" the egrets said. (कल बहुत ज्यादा मेहनत की थी)"
   },
   {
     "num": 11,
     "section": "A",
     "kind": "mcq",
-    "title": "Together, friends can touch the ________!",
-    "prompt": "Together, friends can touch the ________! / साथ मिलकर दोस्त किसे छू सकते हैं?",
+    "title": "Where did Ella go to lie down and rest?",
+    "prompt": "Where did Ella rest when she felt tired? / आराम करने के लिए एला कहाँ लेटने गई?",
     "choices": [
-      "Tree",
-      "Sky",
-      "Wall",
-      "Stars"
+      "In the river",
+      "Under a tree",
+      "In a dark cave",
+      "On the grass hill"
     ],
     "answer": 1,
-    "hint": "Line 12: Together we can touch the sky! (आसमान — sky)"
+    "hint": "Part 3: Ella said and went to lie under a tree. (एक पेड़ के नीचे — under a tree)"
   },
   {
     "num": 12,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends are compared to ________ that always grow.",
-    "prompt": "Friends are compared to ________ that always grow. / दोस्तों की तुलना किससे की गई है जो हमेशा खिलते रहते हैं?",
+    "title": "How was Ella when she awoke under the tree?",
+    "prompt": "What happened to Ella when she woke up? / जब एला जागी तो उसकी हालत कैसी थी?",
     "choices": [
-      "Trees",
-      "Flowers",
-      "Grass",
-      "Seeds"
+      "She was very energetic",
+      "She was very ill and weak",
+      "She had flown away",
+      "She was laughing"
     ],
     "answer": 1,
-    "hint": "Line 13: Friends are flowers that always grow. (फूल — flowers)"
+    "hint": "Part 4: When Ella awoke, she was very ill. She was so weak she could not get up. (बहुत बीमार और कमज़ोर)"
   },
   {
     "num": 13,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends bring us ________, as we all know.",
-    "prompt": "Friends bring us ________, as we all know. / दोस्त हमारे जीवन में क्या लाते हैं?",
+    "title": "What did the first egret do when he saw Ella ill?",
+    "prompt": "How did the first egret comfort Ella? / पहले बगुले ने एला को कैसे सांत्वना दी?",
     "choices": [
-      "Joy",
-      "Sadness",
-      "Anger",
-      "Fear"
+      "Flew away scared",
+      "Stroked Ella's head with his wing",
+      "Brought an apple",
+      "Called the birds"
     ],
-    "answer": 0,
-    "hint": "Line 14: They bring us joy, as well all know. (खुशियाँ — joy)"
+    "answer": 1,
+    "hint": "Part 4: He stroked Ella's head with his wing. (पंख से सिर सहलाया)"
   },
   {
     "num": 14,
     "section": "A",
     "kind": "mcq",
-    "title": "How should we hold our friends?",
-    "prompt": "How should we hold our friends? / हमें अपने दोस्तों को कैसे रखना चाहिए?",
+    "title": "What did the second egret do to help Ella?",
+    "prompt": "Where did the second egret go? / दूसरा बगुला क्या करने गया?",
     "choices": [
-      "Far away",
-      "Close and near",
-      "Tightly in a box",
-      "Loosely"
+      "Flew to sleep",
+      "Flew away to get help",
+      "Ate more bugs",
+      "Went to drink water"
     ],
     "answer": 1,
-    "hint": "Line 15: So hold them close and keep them near. (करीब और दिल के पास)"
+    "hint": "Part 4: The second egret flew away to get help. (मदद लेने के लिए उड़ गया)"
   },
   {
     "num": 15,
     "section": "A",
     "kind": "mcq",
-    "title": "A friend is someone we hold ________!",
-    "prompt": "A friend is someone we hold ________! / दोस्त वह है जिसे हम बहुत क्या मानते हैं?",
+    "title": "With whom did the second egret return?",
+    "prompt": "Who came back with the second egret? / दूसरा बगुला किनके साथ वापस आया?",
     "choices": [
-      "Dear",
-      "Far",
-      "High",
-      "Low"
+      "With hunters",
+      "With many other elephants",
+      "With lions",
+      "With monkeys"
     ],
-    "answer": 0,
-    "hint": "Line 16: A friend is someone we hold dear! (प्यारा — dear)"
+    "answer": 1,
+    "hint": "Part 4: Soon he returned with many other elephants. (कई अन्य हाथियों के साथ)"
   },
   {
     "num": 16,
     "section": "A",
     "kind": "mcq",
-    "title": "What kind of poem is this?",
-    "prompt": "What kind of poem is this? / यह किस प्रकार की कविता है?",
+    "title": "Who took charge of helping Ella?",
+    "prompt": "Who stepped forward to lead the rescue? / एला की देखभाल की कमान किसने संभाली?",
     "choices": [
-      "Sad",
-      "Joyful",
-      "Scary",
-      "Boring"
+      "The youngest elephant",
+      "One of the older elephants",
+      "The forest guard",
+      "The lion king"
     ],
     "answer": 1,
-    "hint": "Sentence 1: This joyful poem celebrates the beauty of friendship. (आनंददायक — joyful)"
+    "hint": "Part 4: One of the older elephants took charge. (बड़े हाथियों में से एक ने)"
   },
   {
     "num": 17,
     "section": "A",
     "kind": "mcq",
-    "title": "Friends bring happiness, care, and ________ in every moment.",
-    "prompt": "Friends bring happiness, care, and ________ in every moment. / दोस्त हर पल में खुशी, देखभाल और क्या लाते हैं?",
+    "title": "What did the older elephant send the young elephants to bring?",
+    "prompt": "What task was given to the young elephants? / छोटे हाथियों को क्या लाने भेजा गया?",
     "choices": [
-      "Money",
-      "Support",
-      "Trouble",
-      "Work"
+      "Fruits",
+      "Water for Ella",
+      "Leaves",
+      "A blanket"
     ],
     "answer": 1,
-    "hint": "Sentence 2: Friends bring happiness, care and support in every moment. (सहारा — support)"
+    "hint": "Part 4: She sent the young elephants to bring water for Ella. (पानी लाने भेजा)"
   },
   {
     "num": 18,
     "section": "A",
     "kind": "mcq",
-    "title": "What values make life meaningful and joyful?",
-    "prompt": "What values make life meaningful and joyful? / कौन से मूल्य जीवन को अर्थपूर्ण और आनंदमय बनाते हैं?",
+    "title": "What did the older elephant ask the egrets to fetch?",
+    "prompt": "What special item did the egrets bring? / बगुलों से क्या लाने को कहा गया?",
     "choices": [
-      "Kindness and helping others",
-      "True friendship and caring",
-      "Both (a) and (b)",
-      "None of the above"
+      "A special plant",
+      "A piece of wood",
+      "A fresh fish",
+      "Flowers"
     ],
-    "answer": 2,
-    "hint": "Sentence 3: True friendship, kindness, helping others, and caring are values that make life meaningful. (दोनों a और b)"
+    "answer": 0,
+    "hint": "Part 4: She asked the egrets to fetch a special plant for Ella. (एक खास पौधा — special plant)"
   },
   {
     "num": 19,
     "section": "A",
     "kind": "mcq",
-    "title": "In the poem, friends talk ________.",
-    "prompt": "In the poem, friends talk ________. / कविता में दोस्त आपस में कितनी बातें करते हैं?",
+    "title": "What did the other elephants do while Ella was resting?",
+    "prompt": "Where did the herd of elephants stay? / बाकी हाथी कहाँ रुके रहे?",
     "choices": [
-      "A little",
-      "Never",
-      "A lot",
-      "Quietly"
+      "They left the forest",
+      "They stood around Ella",
+      "They climbed trees",
+      "They played in mud"
     ],
-    "answer": 2,
-    "hint": "Line 7: We draw, we read, we talk a lot. (बहुत सारी बातें — a lot)"
+    "answer": 1,
+    "hint": "Part 4: The other elephants stood around Ella. (एला के चारों ओर खड़े रहे)"
   },
   {
     "num": 20,
     "section": "A",
     "kind": "mcq",
-    "title": "Which of the following rhymed with \"mile\" in the poem?",
-    "prompt": "Which of the following rhymed with \"mile\" in the poem? / कविता में \"mile\" के साथ कौन सा शब्द तुकबंदी (rhyme) करता है?",
+    "title": "What did Ella eat to recover?",
+    "prompt": "What did Ella consume for medicine? / एला ने ठीक होने के लिए क्या खाया?",
     "choices": [
-      "Day",
-      "Smile",
-      "Play",
-      "Thought"
+      "Grass",
+      "The plant the egrets brought",
+      "Dry leaves",
+      "Sweet honey"
     ],
     "answer": 1,
-    "hint": "Lines 3 & 4: smile / mile. (smile तुकबंदी करता है)"
+    "hint": "Part 5: Ella ate the plant the egrets brought. (बगुलों द्वारा लाया गया खास पौधा)"
   },
   {
     "num": 21,
     "section": "A",
     "kind": "mcq",
-    "title": "Which word rhymes with \"play\"?",
-    "prompt": "Which word rhymes with \"play\"? / \"play\" के साथ तुकबंदी करने वाला शब्द कौन सा है?",
+    "title": "Whose water did Ella drink?",
+    "prompt": "Who brought the water that Ella drank? / एला ने किसका लाया हुआ पानी पिया?",
     "choices": [
-      "Mile",
-      "Day",
-      "Sky",
-      "Stand"
+      "From the young elephants",
+      "From the rain clouds",
+      "From the river alone",
+      "From the egrets"
     ],
-    "answer": 1,
-    "hint": "Lines 5 & 6: play / day. (day तुकबंदी करता है)"
+    "answer": 0,
+    "hint": "Part 5: She drank the water from the young elephants. (छोटे हाथियों द्वारा लाया गया पानी)"
   },
   {
     "num": 22,
     "section": "A",
     "kind": "mcq",
-    "title": "Which word rhymes with \"hand\"?",
-    "prompt": "Which word rhymes with \"hand\"? / \"hand\" के साथ तुकबंदी करने वाले शब्द कौन से हैं?",
+    "title": "How long did Ella sleep after taking medicine and water?",
+    "prompt": "How did Ella rest after drinking water? / पानी पीने के बाद एला कितनी देर सोई?",
     "choices": [
-      "Stand",
-      "Land",
-      "Both (a) and (b)",
-      "Grow"
+      "For five minutes",
+      "For a long time",
+      "Not at all",
+      "For one second"
     ],
-    "answer": 2,
-    "hint": "Stand and Land both rhyme with hand. (दोनों a और b)"
+    "answer": 1,
+    "hint": "Part 5: She slept for a long time. (काफी देर तक सोई)"
   },
   {
     "num": 23,
     "section": "A",
     "kind": "mcq",
-    "title": "Which word rhymes with \"try\"?",
-    "prompt": "Which word rhymes with \"try\"? / \"try\" के साथ तुकबंदी करने वाले शब्द कौन से हैं?",
+    "title": "How did Ella feel the next morning?",
+    "prompt": "What was Ella's condition when morning came? / अगली सुबह एला ने कैसा महसूस किया?",
     "choices": [
-      "Sky",
-      "High",
-      "Both (a) and (b)",
-      "Day"
+      "Still weak",
+      "Ella felt better",
+      "Tired again",
+      "Angry"
     ],
-    "answer": 2,
-    "hint": "Sky and High both rhyme with try. (दोनों a और b)"
+    "answer": 1,
+    "hint": "Part 5: The next morning Ella felt better. (बेहतर महसूस किया — felt better)"
   },
   {
     "num": 24,
     "section": "A",
     "kind": "mcq",
-    "title": "Which word rhymes with \"know\"?",
-    "prompt": "Which word rhymes with \"know\"? / \"know\" के साथ तुकबंदी करने वाला शब्द कौन सा है?",
+    "title": "What did the egrets ask excitedly when Ella felt better?",
+    "prompt": "What question did the happy egrets ask? / बगुलों ने खुशी से क्या पूछा?",
     "choices": [
-      "Grow",
-      "Joy",
-      "Near",
-      "Smile"
+      "\"Are you hungry now?\"",
+      "\"Are you better now?\"",
+      "\"Where is the water?\"",
+      "\"Can we go home?\""
     ],
-    "answer": 0,
-    "hint": "Lines 13 & 14: grow / know. (grow तुकबंदी करता है)"
+    "answer": 1,
+    "hint": "Part 5: \"Ella! Ella! Ella! Are you better now?\" they asked her. (क्या अब तुम बेहतर हो?)"
   },
   {
     "num": 25,
     "section": "A",
     "kind": "mcq",
-    "title": "Which word rhymes with \"near\"?",
-    "prompt": "Which word rhymes with \"near\"? / \"near\" के साथ तुकबंदी करने वाले शब्द कौन से हैं?",
+    "title": "What did Ella say about her friends in the end?",
+    "prompt": "What beautiful words did Ella say about true friends? / अंत में एला ने अपने दोस्तों के बारे में क्या कहा?",
     "choices": [
-      "Dear",
-      "Clear",
-      "Both (a) and (b)",
-      "Far"
+      "\"I will be fine as long as I have friends like you all!\"",
+      "\"I want to live alone from now on.\"",
+      "\"Elephants do not need friends.\"",
+      "\"I will never help anyone again.\""
     ],
-    "answer": 2,
-    "hint": "Dear and Clear both rhyme with near. (दोनों a और b)"
+    "answer": 0,
+    "hint": "Part 5: \"I will be fine as long as I have friends like you all!\" (जब तक मेरे पास आप जैसे दोस्त हैं!)"
   },
   {
     "num": 26,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends are like ________ on a rainy day. / दोस्त बारिश के दिन ________ की तरह होते हैं।",
+    "prompt": "Ella had two ________ as friends. / एला के दो ________ दोस्त थे।",
     "accepted": [
-      "sunshine"
+      "egrets"
     ],
-    "hint": "Line 1: Friends are like sunshine on a rainy day. (धूप — sunshine)"
+    "hint": "Part 1: Ella had two egrets as friends. (बगुले — egrets)"
   },
   {
     "num": 27,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "They make the ________ all go away. / वे उदासी रूपी ________ को दूर भगा देते हैं।",
+    "prompt": "The egrets sat on Ella's back as she walked through the ________. / घास में चलते समय वे एला की पीठ पर बैठ जाते थे।",
     "accepted": [
-      "clouds"
+      "grass"
     ],
-    "hint": "Line 2: They make the clouds all go away. (बादल — clouds)"
+    "hint": "Part 1: ...walked through the grass. (घास — grass)"
   },
   {
     "num": 28,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends make us laugh and make us ________. / दोस्त हमें हंसाते हैं और चेहरे पर ________ लाते हैं।",
+    "prompt": "As Ella walked, she stirred up ________ which the egrets ate. / एला घास से ________ उड़ाती थी जिन्हें बगुले खा जाते थे।",
     "accepted": [
-      "smile"
+      "bugs"
     ],
-    "hint": "Line 3: They make us laugh, they make us smile. (मुस्कान — smile)"
+    "hint": "Part 1: ...she stirred up bugs which the egrets ate. (कीड़े — bugs)"
   },
   {
     "num": 29,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "They stay with us every ________. / वे हर ________ हमारे साथ रहते हैं।",
+    "prompt": "The egrets ________ Ella very much. / बगुले एला से बहुत ________ करते थे।",
     "accepted": [
-      "mile"
+      "loved"
     ],
-    "hint": "Line 4: They stay with us every mile. (कदम / मील — mile)"
+    "hint": "Part 1: The egrets loved Ella. (प्यार — loved)"
   },
   {
     "num": 30,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "We jump and ________, we skip and play. / हम कूदते हैं और ________, हम रस्सी कूदते हैं और खेलते हैं।",
+    "prompt": "Ella was always good and ready to ________ anyone. / एला हमेशा किसी की भी ________ करने के लिए तैयार रहती थी।",
     "accepted": [
-      "run"
+      "help"
     ],
-    "hint": "Line 5: We jump and run... (दौड़ते — run)"
+    "hint": "Part 2: ...ready to help anyone. (मदद — help)"
   },
   {
     "num": 31,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "We share our ________ every day. / हम हर दिन अपना ________ आपस में बांटते हैं।",
+    "prompt": "When there was ________, Ella warned the other animals. / जब ________ होता था, तो एला बाकी जानवरों को चेतावनी देती थी।",
     "accepted": [
-      "snacks"
+      "danger"
     ],
-    "hint": "Line 6: We share our snacks every day. (नाश्ता — snacks)"
+    "hint": "Part 2: When there was danger... (खतरा — danger)"
   },
   {
     "num": 32,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "We draw, we read, we talk a ________. / हम चित्र बनाते हैं, पढ़ते हैं, और ________ बातें करते हैं।",
+    "prompt": "Ella used her long ________ like a trumpet. / एला अपनी लंबी ________ का उपयोग तुरही की तरह करती थी।",
     "accepted": [
-      "lot"
+      "trunk"
     ],
-    "hint": "Line 7: We draw, we read, we talk a lot. (बहुत सारी — lot)"
+    "hint": "Part 2: ...used her long trunk like a trumpet... (सूंड — trunk)"
   },
   {
     "num": 33,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "A friend like you is a ________ thought! / तुम्हारे जैसा दोस्त होना एक ________ विचार है!",
+    "prompt": "Ella blew her trunk like a ________ to warn the animals. / एला तुरही (________) की तरह आवाज़ निकालती थी।",
     "accepted": [
-      "happy"
+      "trumpet"
     ],
-    "hint": "Line 8: A friend like you is a happy thought! (सुखद — happy)"
+    "hint": "Part 2: ...like a trumpet to warn the rest... (तुरही — trumpet)"
   },
   {
     "num": 34,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "If I fall, you help me ________. / अगर मैं गिर जाऊँ, तो तुम मुझे ________ होने में मदद करते हो।",
+    "prompt": "Ella helped look after a group of young ________. / एला ने छोटे ________ के समूह की देखभाल की।",
     "accepted": [
-      "stand"
+      "elephants"
     ],
-    "hint": "Line 9: If I fall, you help me stand. (खड़ा होना — stand)"
+    "hint": "Part 2: ...a group of young elephants. (हाथी — elephants)"
   },
   {
     "num": 35,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "You always give a ________ hand. / तुम हमेशा ________ का हाथ बढ़ाते हो।",
+    "prompt": "One day Ella walked ________ than usual. / एक दिन एला सामान्य से अधिक ________ चल रही थी।",
     "accepted": [
-      "helping"
+      "slower"
     ],
-    "hint": "Line 10: You always give a helping hand. (मददगार — helping)"
+    "hint": "Part 3: ...walked slower than usual. (धीमी — slower)"
   },
   {
     "num": 36,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "We care, we ________, we always try. / हम परवाह करते हैं, आपस में ________ हैं, और हमेशा कोशिश करते हैं।",
+    "prompt": "\"I'm ________,\" said Ella. \"I'm very, very tired.\" / \"मैं बहुत ________ हूँ,\" एला ने कहा।",
     "accepted": [
-      "share"
+      "tired"
     ],
-    "hint": "Line 11: We care, we share, we always try. (बांटना — share)"
+    "hint": "Part 3: \"I'm tired,\" said Ella. (थकी हुई — tired)"
   },
   {
     "num": 37,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Together we can touch the ________! / साथ मिलकर हम ________ को छू सकते हैं!",
+    "prompt": "The egrets said, \"You worked too ________ yesterday.\" / बगुलों ने कहा, \"तुमने कल बहुत ज्यादा ________ किया था।\"",
     "accepted": [
-      "sky"
+      "hard"
     ],
-    "hint": "Line 12: Together we can touch the sky! (आसमान — sky)"
+    "hint": "Part 3: \"You worked too hard yesterday...\" (कठिन परिश्रम — hard)"
   },
   {
     "num": 38,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends are ________ that always grow. / दोस्त उन ________ की तरह हैं जो हमेशा खिलते रहते हैं।",
+    "prompt": "Ella went to lie under a ________. / एला एक ________ के नीचे लेटने चली गई।",
     "accepted": [
-      "flowers"
+      "tree"
     ],
-    "hint": "Line 13: Friends are flowers that always grow. (फूल — flowers)"
+    "hint": "Part 3: ...went to lie under a tree. (पेड़ — tree)"
   },
   {
     "num": 39,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "They bring us ________, as well all know. / वे हमारे जीवन में ________ लाते हैं, जैसा हम सब जानते हैं।",
+    "prompt": "When Ella awoke, she was very ________. / जब एला जागी, तो वह बहुत ________ थी।",
     "accepted": [
-      "joy"
+      "ill"
     ],
-    "hint": "Line 14: They bring us joy, as well all know. (खुशी — joy)"
+    "hint": "Part 4: When Ella awoke, she was very ill. (बीमार — ill)"
   },
   {
     "num": 40,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "So hold them ________ and keep them near. / इसलिए उन्हें अपने ________ रखो और पास रखो।",
+    "prompt": "Ella was so ________ she could not get up. / एला इतनी ________ थी कि वह उठ नहीं पा रही थी।",
     "accepted": [
-      "close"
+      "weak"
     ],
-    "hint": "Line 15: So hold them close and keep them near. (करीब — close)"
+    "hint": "Part 4: She was so weak she could not get up. (कमज़ोर — weak)"
   },
   {
     "num": 41,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "A friend is someone we hold ________! / दोस्त वह है जो हमारे लिए बहुत ________ होता है!",
+    "prompt": "The first egret stroked Ella's head with his ________. / पहले बगुले ने अपने ________ से एला का सिर सहलाया।",
     "accepted": [
-      "dear"
+      "wing"
     ],
-    "hint": "Line 16: A friend is someone we hold dear! (प्यारा — dear)"
+    "hint": "Part 4: He stroked Ella’s head with his wing. (पंख — wing)"
   },
   {
     "num": 42,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "This joyful poem celebrates the beauty of ________. / यह कविता ________ की सुंदरता का उत्सव मनाती है।",
+    "prompt": "The second egret flew away to get ________. / दूसरा बगुला ________ लेने के लिए उड़ गया।",
     "accepted": [
-      "friendship"
+      "help"
     ],
-    "hint": "Sentence 1: This joyful poem celebrates the beauty of friendship. (दोस्ती — friendship)"
+    "hint": "Part 4: The second egret flew away to get help. (मदद — help)"
   },
   {
     "num": 43,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends bring happiness, care, and ________. / दोस्त खुशी, देखभाल और ________ लाते हैं।",
+    "prompt": "One of the ________ elephants took charge. / ________ हाथियों में से एक ने कमान संभाली।",
     "accepted": [
-      "support"
+      "older"
     ],
-    "hint": "Sentence 2: Friends bring happiness, care and support... (सहारा — support)"
+    "hint": "Part 4: One of the older elephants took charge. (बुजुर्ग / बड़े — older)"
   },
   {
     "num": 44,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "True friendship makes life ________ and sweet. / सच्ची दोस्ती जीवन को ________ और मधुर बनाती है।",
+    "prompt": "The young elephants were sent to bring ________. / छोटे हाथियों को ________ लाने भेजा गया।",
     "accepted": [
-      "meaningful"
+      "water"
     ],
-    "hint": "Sentence 3: ...values that make life meaningful, joyful and truly sweet. (अर्थपूर्ण — meaningful)"
+    "hint": "Part 4: ...to bring water for Ella. (पानी — water)"
   },
   {
     "num": 45,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "A good buddy is another name for a ________. / \"बडी\" (buddy) किसका दूसरा नाम है?",
+    "prompt": "The egrets were asked to fetch a special ________. / बगुलों से एक खास ________ लाने को कहा गया।",
     "accepted": [
-      "friend"
+      "plant"
     ],
-    "hint": "Buddy means friend. (दोस्त — friend)"
+    "hint": "Part 4: ...to fetch a special plant for Ella. (पौधा — plant)"
   },
   {
     "num": 46,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends make us smile instead of making us ________. / दोस्त हमें रुलाने के बजाय ________ कराते हैं।",
+    "prompt": "Ella ________ for a long time after drinking water. / पानी पीने के बाद एला बहुत देर तक ________।",
     "accepted": [
-      "cry"
+      "slept"
     ],
-    "hint": "Friends make us smile instead of making us cry. (रोना — cry)"
+    "hint": "Part 5: She slept for a long time. (सो गई — slept)"
   },
   {
     "num": 47,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "When we are with friends, we share our snacks every ________. / हम हर ________ अपना नाश्ता बांटते हैं।",
+    "prompt": "Her friends ________ over her while she rested. / आराम करते समय उसके दोस्तों ने उसकी ________ की।",
     "accepted": [
-      "day"
+      "watched"
     ],
-    "hint": "Line 6: We share our snacks every day. (दिन — day)"
+    "hint": "Part 5: Her friends watched over her. (देखभाल की — watched)"
   },
   {
     "num": 48,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends help us stand when we ________. / जब हम ________ जाते हैं, तो दोस्त हमें खड़ा करते हैं।",
+    "prompt": "The next morning Ella felt ________. / अगली सुबह एला ने ________ महसूस किया।",
     "accepted": [
-      "fall"
+      "better"
     ],
-    "hint": "Line 9: If I fall, you help me stand. (गिरना — fall)"
+    "hint": "Part 5: The next morning Ella felt better. (बेहतर — better)"
   },
   {
     "num": 49,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "Friends are like growing ________ in a garden. / दोस्त बगीचे में खिलते हुए ________ की तरह हैं।",
+    "prompt": "The egrets ________ around Ella when she got well. / जब एला ठीक हुई, तो बगुले उसके चारों ओर ________ लगे।",
     "accepted": [
-      "flowers"
+      "flew"
     ],
-    "hint": "Line 13: Friends are flowers that always grow. (फूल — flowers)"
+    "hint": "Part 5: The egrets flew around Ella. (उड़ने लगे — flew)"
   },
   {
     "num": 50,
     "section": "B",
     "kind": "fill",
     "title": "Fill in the blank",
-    "prompt": "True friends never ________. / सच्चे दोस्त कभी साथ नहीं ________।",
+    "prompt": "Ella will be fine as long as she has ________ like all of them. / जब तक उसके पास ऐसे ________ हैं, वह बिल्कुल ठीक रहेगी।",
     "accepted": [
-      "leave"
+      "friends"
     ],
-    "hint": "Poem Title: True Friends Never Leave. (छोड़ना — leave)"
+    "hint": "Part 5: ...as long as I have friends like you all! (सच्चे दोस्त — friends)"
   }
 ];
