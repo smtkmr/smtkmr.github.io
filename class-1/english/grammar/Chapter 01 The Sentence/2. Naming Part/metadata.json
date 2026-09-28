@@ -1,0 +1,6 @@
+{
+  "name": "The Gentle Way - English Poem Lesson",
+  "description": "Interactive Class 1 English Grammar lesson: 'Naming Part of a Sentence' with circus scenes, line-by-line Hindi pronunciation, meanings, interactive naming finder, vocabulary, and 30 practice questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
