@@ -1,0 +1,6 @@
+{
+  "name": "The Gentle Way - English Poem Lesson",
+  "description": "Interactive Class 1 English Grammar lesson: 'What Is a Sentence?' with line-by-line Hindi pronunciation, meanings, sentence builder, vocabulary, and interactive practice questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
