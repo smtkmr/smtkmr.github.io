@@ -1,4 +1,4 @@
-// 50 Practice Questions for Poem: True Friends Never Leave (Bilingual English & Hindi)
+// 50 Practice Questions for Poem: My Special Buddy (Bilingual English & Hindi)
 export const questions = [
   {
     "num": 1,
