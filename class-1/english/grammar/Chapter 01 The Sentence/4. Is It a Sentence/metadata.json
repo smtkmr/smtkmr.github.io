@@ -1,0 +1,6 @@
+{
+  "name": "The Gentle Way - English Poem Lesson",
+  "description": "Interactive Class 1 English Grammar lesson: 'Is It a Sentence?' with 3 golden rules, Capital letter and Full Stop checks, Sentence Detective Machine, bilingual Hindi pronunciation, and 30 practice questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
