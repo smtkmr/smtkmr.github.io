@@ -8,10 +8,10 @@
   <title>The Gentle Way · Read, Say & Discover | Econova</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --body: 'Quicksand', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+      --body: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
       --heading: 'Outfit', 'Quicksand', sans-serif;
       --bg: #f0fdf4;
       --ink: #1f2937;
@@ -22,7 +22,7 @@
       --button: #10b981;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 130px; }
     body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.7 var(--body); }
     h1, h2, h3, p, dl, dd { margin: 0; }
     h1, h2, h3, .logo, .eyebrow { font-family: var(--heading); }
@@ -32,20 +32,193 @@
     a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; }
     .wrap { max-width: 1200px; margin: auto; padding: 0 28px; }
     .hi { font-family: var(--body); line-height: 1.8; }
+
+    /* Exact Econova Header */
+    .econova-site-header,
+    .econova-site-header * {
+      box-sizing: border-box;
+    }
+    .econova-site-header {
+      display: block !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      width: 100% !important;
+      min-height: 112px !important;
+      margin: 0 !important;
+      padding: 0 5.7% !important;
+      border: 0 !important;
+      border-bottom: 4px solid #10b981 !important;
+      background: #2dd4bf !important;
+      font-family: Outfit, Quicksand, Arial, sans-serif !important;
+    }
+    .econova-site-header__inner {
+      display: flex !important;
+      width: 100% !important;
+      max-width: 1700px !important;
+      min-height: 108px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+    }
+    .econova-site-brand {
+      display: inline-flex !important;
+      flex: 0 0 auto !important;
+      align-items: center !important;
+      gap: 14px !important;
+      color: #fff !important;
+      font: 900 44px/1 Outfit, Quicksand, Arial, sans-serif !important;
+      letter-spacing: -1.5px !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+    }
+    .econova-site-brand__mark {
+      display: grid !important;
+      width: 58px !important;
+      height: 58px !important;
+      flex: 0 0 58px !important;
+      place-items: center !important;
+      border-radius: 19px !important;
+      background: #fde047 !important;
+      color: #059669 !important;
+      font: 900 38px/1 Outfit, Arial, sans-serif !important;
+      transform: rotate(-8deg) !important;
+    }
+    .econova-site-brand em {
+      color: #fde047 !important;
+      font-style: normal !important;
+    }
+    .econova-site-nav {
+      display: flex !important;
+      flex: 0 0 auto !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 36px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .econova-site-nav a {
+      color: #fff !important;
+      font: 700 20px/1.2 Quicksand, Outfit, Arial, sans-serif !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+    }
+    .econova-site-nav a:hover {
+      text-decoration: underline !important;
+      text-underline-offset: 6px !important;
+    }
+    .econova-site-nav .econova-site-nav__cta {
+      display: inline-flex !important;
+      min-height: 58px !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      padding: 0 26px !important;
+      border-radius: 22px !important;
+      background: #10b981 !important;
+      box-shadow: 0 5px 0 #059669 !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      font-size: 20px !important;
+      transition: transform .15s, background .15s !important;
+    }
+    .econova-site-nav .econova-site-nav__cta:hover {
+      background: #059669 !important;
+      text-decoration: none !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Exact Econova Footer */
+    .econova-site-footer,
+    .econova-site-footer * {
+      box-sizing: border-box;
+    }
+    .econova-site-footer {
+      width: 100% !important;
+      margin: 42px 0 0 !important;
+      padding: 30px 5.7% !important;
+      border: 0 !important;
+      border-top: 2px solid #a7f3d0 !important;
+      background: #fff !important;
+      color: #1f2937 !important;
+      font-family: Quicksand, Arial, sans-serif !important;
+    }
+    .econova-site-footer__inner {
+      display: flex !important;
+      width: 100% !important;
+      max-width: 1700px !important;
+      min-height: 62px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+    }
+    .econova-site-footer__brand {
+      color: #059669 !important;
+      font: 900 30px/1 Outfit, Quicksand, Arial, sans-serif !important;
+      letter-spacing: -.7px !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+    }
+    .econova-site-footer__copy {
+      margin: 0 !important;
+      color: #1f2937 !important;
+      font: 600 15px/1.5 Quicksand, Arial, sans-serif !important;
+      text-align: center !important;
+    }
+    .econova-site-footer__links {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 24px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .econova-site-footer__links a {
+      color: #1f2937 !important;
+      font: 700 15px/1.4 Quicksand, Arial, sans-serif !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+    }
+    .econova-site-footer__links a:hover {
+      color: #059669 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 4px !important;
+    }
+
+    @media (max-width: 900px) {
+      .econova-site-header { min-height: 88px !important; padding: 0 20px !important; }
+      .econova-site-header__inner { min-height: 84px !important; gap: 14px !important; }
+      .econova-site-brand { gap: 9px !important; font-size: 30px !important; letter-spacing: -1px !important; }
+      .econova-site-brand__mark { width: 42px !important; height: 42px !important; flex-basis: 42px !important; border-radius: 14px !important; font-size: 26px !important; }
+      .econova-site-nav { gap: 18px !important; }
+      .econova-site-nav a { font-size: 15px !important; }
+      .econova-site-nav .econova-site-nav__cta { min-height: 46px !important; gap: 8px !important; padding: 0 16px !important; border-radius: 14px !important; font-size: 15px !important; }
+      .econova-site-footer__inner { flex-wrap: wrap !important; }
+      .econova-site-footer__copy { order: 3 !important; width: 100% !important; text-align: left !important; }
+    }
+
+    @media (max-width: 620px) {
+      .econova-site-header { min-height: 74px !important; padding: 0 16px !important; }
+      .econova-site-header__inner { min-height: 70px !important; }
+      .econova-site-brand { font-size: 24px !important; }
+      .econova-site-brand__mark { width: 34px !important; height: 34px !important; flex-basis: 34px !important; border-radius: 12px !important; font-size: 22px !important; }
+      .econova-site-nav { gap: 0 !important; }
+      .econova-site-nav a:not(.econova-site-nav__cta) { display: none !important; }
+      .econova-site-nav .econova-site-nav__cta { min-height: 40px !important; padding: 0 12px !important; font-size: 13px !important; }
+      .econova-site-footer { margin-top: 30px !important; padding: 22px 18px !important; }
+      .econova-site-footer__inner { align-items: flex-start !important; gap: 14px !important; }
+      .econova-site-footer__brand { font-size: 24px !important; }
+      .econova-site-footer__links { justify-content: flex-start !important; gap: 14px !important; flex-wrap: wrap !important; }
+      .econova-site-footer__links a, .econova-site-footer__copy { font-size: 12px !important; }
+    }
     
-    /* Header & Navigation */
-    header { position: sticky; top: 0; z-index: 30; background: var(--teal); border-bottom: 3px solid var(--button); }
-    .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 85px; }
-    .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 30px; font-weight: 900; letter-spacing: -1px; }
-    .logo em { font-style: normal; color: var(--yellow); }
-    .logo-mark { width: 39px; height: 39px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; border-radius: 13px; transform: rotate(-8deg); font-size: 24px; font-weight: 900; }
-    .nav nav { display: flex; align-items: center; gap: 24px; }
-    .nav nav > a:not(.mint-btn) { color: white; font-family: var(--heading); font-weight: 700; transition: opacity .15s; }
-    .nav nav > a:not(.mint-btn):hover { opacity: 0.85; }
     .mint-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--button); color: white; border: 0; border-radius: 16px; padding: 13px 22px; font-weight: bold; box-shadow: 0 4px 0 var(--brand); transition: transform .15s, background .15s; }
     .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
     .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
-    .nav .mint-btn { font-size: 13px; padding: 10px 16px; }
     .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 24px; }
     .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 24px; }
     .eyebrow { font-size: 11px; letter-spacing: 1.7px; font-weight: 800; color: var(--brand); text-transform: uppercase; }
@@ -298,18 +471,18 @@
 
   <a href="#main" class="skip">Skip to content</a>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap nav">
-      <a class="logo" href="#main" aria-label="Econova lesson top">
-        <span class="logo-mark" aria-hidden="true">✦</span>
+  <!-- Exact Econova Site Header -->
+  <header class="econova-site-header">
+    <div class="econova-site-header__inner">
+      <a class="econova-site-brand" href="#main" aria-label="Econova home">
+        <span class="econova-site-brand__mark" aria-hidden="true">✦</span>
         <span>Econova<em>.vip</em></span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="#stanza-1">Poem Lines</a>
-        <a href="#word-corner">Vocabulary</a>
-        <a href="#practice">Practise (30 MCQs)</a>
-        <a class="mint-btn" href="#practice">Start Quiz ↘</a>
+      <nav class="econova-site-nav" aria-label="Main navigation">
+        <a href="#stanza-1">Our classes</a>
+        <a href="#word-corner">Explore &amp; learn</a>
+        <a href="#practice">Services</a>
+        <a class="econova-site-nav__cta" href="#practice">Let’s learn <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -882,16 +1055,18 @@
     </nav>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrap footer-inner">
-      <a class="footer-brand" href="#main">Econova.vip ✦</a>
-      <p>Class 1 English · Poem Lesson: The Gentle Way · Author: Rodney O'Hurd · Read, say and discover.</p>
-      <div class="footer-links">
-        <a href="#word-corner">Words</a>
-        <a href="#practice">Practise</a>
-        <a href="#main">Top ↑</a>
-      </div>
+  <!-- Exact Econova Site Footer -->
+  <footer class="econova-site-footer" id="top">
+    <div class="econova-site-footer__inner">
+      <a class="econova-site-footer__brand" href="#main">Econova.vip ✦</a>
+      <p class="econova-site-footer__copy">© 2026 Econova.vip · Made for little minds with big ideas.</p>
+      <nav class="econova-site-footer__links" aria-label="Footer navigation">
+        <a href="#classes">Classes</a>
+        <a href="#explore">Explore</a>
+        <a href="#services">Services</a>
+        <a href="mailto:econovavip@gmail.com">Contact</a>
+        <a href="#main" class="econova-back-to-top">Back to top ↑</a>
+      </nav>
     </div>
   </footer>
 
