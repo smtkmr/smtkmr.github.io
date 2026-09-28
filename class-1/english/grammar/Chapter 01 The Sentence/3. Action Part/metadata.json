@@ -1,0 +1,6 @@
+{
+  "name": "The Gentle Way - English Poem Lesson",
+  "description": "Interactive Class 1 English Grammar lesson: 'Action Part of a Sentence' with playground and jobs scenes, line-by-line Hindi pronunciation, meanings, interactive action builder, vocabulary, and 30 practice questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
