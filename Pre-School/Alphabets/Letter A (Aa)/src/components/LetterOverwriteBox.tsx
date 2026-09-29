@@ -32,9 +32,9 @@ interface LetterOverwriteBoxProps {
   speakWord?: string;
 }
 
-function getCheckpointsForPattern(pattern: OverwritePattern, hasWordSuffix: boolean): Point[] {
-  const pts: Point[] = [];
-  const offsetX = hasWordSuffix && pattern === 'A' ? -36 : 0;
+// Well-spaced checkpoints without overlapping at corners/junctions
+function getCheckpointsForPattern(pattern: OverwritePattern): Point[] {
+  const rawPts: Point[] = [];
 
   const addLine = (
     x1: number,
@@ -46,8 +46,8 @@ function getCheckpointsForPattern(pattern: OverwritePattern, hasWordSuffix: bool
   ) => {
     for (let i = 0; i <= steps; i++) {
       const t = i / steps;
-      pts.push({
-        x: Math.round((x1 + offsetX + (x2 - x1) * t) * 10) / 10,
+      rawPts.push({
+        x: Math.round((x1 + (x2 - x1) * t) * 10) / 10,
         y: Math.round((y1 + (y2 - y1) * t) * 10) / 10,
         strokeGroup,
       });
@@ -55,68 +55,65 @@ function getCheckpointsForPattern(pattern: OverwritePattern, hasWordSuffix: bool
   };
 
   if (pattern === 'A') {
-    addLine(110, 32, 62, 140, 10, 1); // Left slant (11 pts)
-    addLine(110, 32, 158, 140, 10, 2); // Right slant (11 pts)
-    addLine(78, 104, 142, 104, 6, 3); // Middle bar (7 pts)
+    addLine(110, 32, 62, 140, 7, 1); // Left slant
+    addLine(110, 32, 158, 140, 7, 2); // Right slant
+    addLine(84, 104, 136, 104, 4, 3); // Middle bar (inset so endpoints don't collide with slants)
   } else if (pattern === 'stroke1') {
-    addLine(110, 32, 62, 140, 14, 1);
+    addLine(110, 32, 62, 140, 8, 1);
   } else if (pattern === 'stroke2') {
-    addLine(110, 32, 158, 140, 14, 1);
+    addLine(110, 32, 158, 140, 8, 1);
   } else if (pattern === 'stroke3') {
-    addLine(74, 104, 146, 104, 12, 1);
+    addLine(74, 104, 146, 104, 7, 1);
   } else if (pattern === 'a') {
     const curvePts: [number, number][] = [
-      [130, 92],
-      [122, 82],
-      [110, 77],
-      [96, 78],
-      [84, 84],
-      [76, 95],
+      [128, 90],
+      [114, 78],
+      [94, 78],
+      [78, 90],
       [74, 108],
-      [76, 121],
-      [84, 131],
+      [80, 126],
       [96, 137],
-      [110, 137],
-      [122, 131],
-      [130, 122],
+      [116, 135],
     ];
-    curvePts.forEach(([x, y]) => pts.push({ x, y, strokeGroup: 1 }));
-    addLine(132, 76, 132, 140, 9, 2);
+    curvePts.forEach(([x, y]) => rawPts.push({ x, y, strokeGroup: 1 }));
+    addLine(132, 76, 132, 140, 6, 2);
   } else if (pattern === 'Aa') {
-    addLine(68, 34, 34, 140, 8, 1);
-    addLine(68, 34, 102, 140, 8, 2);
-    addLine(46, 104, 90, 104, 5, 3);
+    addLine(68, 34, 34, 140, 6, 1);
+    addLine(68, 34, 102, 140, 6, 2);
+    addLine(52, 104, 84, 104, 3, 3);
     const smallCurvePts: [number, number][] = [
-      [178, 94],
-      [168, 82],
-      [154, 80],
-      [140, 86],
-      [132, 96],
+      [174, 90],
+      [156, 80],
+      [138, 88],
       [132, 108],
-      [135, 122],
-      [144, 132],
-      [158, 135],
-      [170, 130],
-      [178, 122],
+      [140, 128],
+      [160, 135],
     ];
-    smallCurvePts.forEach(([x, y]) => pts.push({ x, y, strokeGroup: 4 }));
-    addLine(180, 80, 180, 140, 7, 5);
+    smallCurvePts.forEach(([x, y]) => rawPts.push({ x, y, strokeGroup: 4 }));
+    addLine(180, 80, 180, 140, 5, 5);
   } else if (pattern === 'A-trio') {
     [45, 110, 175].forEach((cx, gIdx) => {
-      addLine(cx, 42, cx - 22, 138, 6, gIdx * 3 + 1);
-      addLine(cx, 42, cx + 22, 138, 6, gIdx * 3 + 2);
-      addLine(cx - 14, 102, cx + 14, 102, 3, gIdx * 3 + 3);
+      addLine(cx, 42, cx - 22, 138, 5, gIdx * 3 + 1);
+      addLine(cx, 42, cx + 22, 138, 5, gIdx * 3 + 2);
+      addLine(cx - 10, 102, cx + 10, 102, 2, gIdx * 3 + 3);
     });
   }
-  return pts;
+
+  // Filter out any points that are too close (< 10px) to an existing point so dots never overlap visually
+  const filtered: Point[] = [];
+  for (const pt of rawPts) {
+    const tooClose = filtered.some((existing) => Math.hypot(existing.x - pt.x, existing.y - pt.y) < 10);
+    if (!tooClose) {
+      filtered.push(pt);
+    }
+  }
+  return filtered;
 }
 
 export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
   pattern,
   label,
   labelHi,
-  wordSuffix,
-  wordPrefix,
   emoji,
   theme,
   size = 'medium',
@@ -143,10 +140,9 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
 
   const [isCompleted, setIsCompleted] = useState<boolean>(Boolean(isCompletedExternal));
 
-  const hasWordSuffix = Boolean(wordSuffix);
   const checkpoints = useMemo(
-    () => getCheckpointsForPattern(pattern, hasWordSuffix),
-    [pattern, hasWordSuffix]
+    () => getCheckpointsForPattern(pattern),
+    [pattern]
   );
 
   const resetVisualsDom = useCallback(() => {
@@ -162,8 +158,8 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
     }
     checkpointElsRef.current.forEach((el) => {
       if (el) {
-        el.setAttribute('fill', '#cbd5e1');
-        el.setAttribute('r', '3.2');
+        el.setAttribute('fill', '#94a3b8');
+        el.setAttribute('r', '3');
       }
     });
   }, []);
@@ -211,7 +207,6 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
     const rawRatio = covered.size / total;
     const pct = Math.min(99, Math.round(rawRatio * 100));
 
-    // Verify every stroke group of the letter has been overwritten (>= 85% per stroke)
     const groupTotals = new Map<number, number>();
     const groupCovered = new Map<number, number>();
 
@@ -225,13 +220,12 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
     let allGroupsSatisfied = true;
     groupTotals.forEach((gTotal, gId) => {
       const gCov = groupCovered.get(gId) || 0;
-      if (gCov / gTotal < 0.78) {
+      if (gCov / gTotal < 0.75) {
         allGroupsSatisfied = false;
       }
     });
 
-    // Only fill complete 3D color when >= 86% of total checkpoints AND every stroke group are overwritten
-    if (rawRatio >= 0.86 && allGroupsSatisfied) {
+    if (rawRatio >= 0.85 && allGroupsSatisfied) {
       triggerComplete();
     } else if (progressBadgeRef.current) {
       progressBadgeRef.current.textContent = `${pct}% Overwritten`;
@@ -241,7 +235,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
   const markSegmentCheckpoints = useCallback(
     (from: { x: number; y: number }, to: { x: number; y: number }) => {
       if (completedRef.current) return;
-      const hitRadius = pattern === 'A-trio' ? 16 : 20;
+      const hitRadius = pattern === 'A-trio' ? 17 : 21;
       const distTotal = Math.hypot(to.x - from.x, to.y - from.y);
       const steps = Math.max(1, Math.ceil(distTotal / 4));
 
@@ -260,7 +254,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               const dotEl = checkpointElsRef.current[idx];
               if (dotEl) {
                 dotEl.setAttribute('fill', '#10b981');
-                dotEl.setAttribute('r', '4.5');
+                dotEl.setAttribute('r', '4.2');
               }
             }
           }
@@ -332,7 +326,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
     if (onReset) onReset();
   };
 
-  const boxHeight = size === 'large' ? 200 : size === 'compact' ? 155 : 175;
+  const boxHeight = size === 'large' ? 200 : size === 'compact' ? 165 : 180;
   const strokeW = pattern === 'A-trio' ? 14 : 22;
 
   return (
@@ -351,7 +345,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
           alignItems: 'center',
           width: '100%',
           marginBottom: '8px',
-          gap: '6px',
+          gap: '8px',
           flexWrap: 'wrap',
         }}
       >
@@ -380,7 +374,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
           style={{
             fontSize: '11px',
             fontWeight: 800,
-            padding: '2px 8px',
+            padding: '2px 9px',
             borderRadius: '12px',
             background: isCompleted ? '#dcfce7' : '#fef9c3',
             color: isCompleted ? '#065f46' : '#854d0e',
@@ -392,7 +386,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
         </span>
       </div>
 
-      {/* Pure SVG Interactive 4-Line Notebook Tracing Box (Zero <canvas> elements!) */}
+      {/* Centered Pure SVG 4-Line Notebook Tracing Box (No overlapping text!) */}
       <div
         style={{
           position: 'relative',
@@ -433,41 +427,15 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
           </defs>
 
           {/* 4-Line Notebook Lines */}
-          <line x1="8" y1="32" x2="212" y2="32" stroke="#fca5a5" strokeWidth="1.5" />
-          <line x1="8" y1="74" x2="212" y2="74" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="4 3" />
-          <line x1="8" y1="140" x2="212" y2="140" stroke="#60a5fa" strokeWidth="2" />
-          <line x1="8" y1="166" x2="212" y2="166" stroke="#fca5a5" strokeWidth="1.5" />
+          <line x1="10" y1="32" x2="210" y2="32" stroke="#fca5a5" strokeWidth="1.5" />
+          <line x1="10" y1="74" x2="210" y2="74" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="4 3" />
+          <line x1="10" y1="140" x2="210" y2="140" stroke="#60a5fa" strokeWidth="2" />
+          <line x1="10" y1="166" x2="210" y2="166" stroke="#fca5a5" strokeWidth="1.5" />
 
-          {/* Optional Word Prefix / Suffix inside box */}
-          {wordPrefix && (
-            <text
-              x="38"
-              y="136"
-              fontSize="44"
-              fontWeight="900"
-              fontFamily="Outfit, sans-serif"
-              fill="#334155"
-            >
-              {wordPrefix}
-            </text>
-          )}
-          {wordSuffix && (
-            <text
-              x="128"
-              y="136"
-              fontSize="28"
-              fontWeight="800"
-              fontFamily="Outfit, sans-serif"
-              fill="#059669"
-            >
-              {wordSuffix}
-            </text>
-          )}
-
-          {/* LAYER 1: PARTIALLY VISIBLE LETTER + USER LIVE STROKE (Always mounted, hidden via opacity when completed) */}
+          {/* LAYER 1: CENTERED PARTIALLY VISIBLE LETTER + USER LIVE STROKE */}
           <g style={{ opacity: isCompleted ? 0 : 1, transition: 'opacity 0.2s ease' }}>
             {pattern === 'A' && (
-              <g transform={wordSuffix ? 'translate(-36, 0)' : undefined}>
+              <g>
                 <g
                   stroke="#e2e8f0"
                   strokeWidth="22"
@@ -481,9 +449,9 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
                 </g>
                 <g
                   stroke="#94a3b8"
-                  strokeWidth="4"
+                  strokeWidth="3.5"
                   strokeLinecap="round"
-                  strokeDasharray="6 8"
+                  strokeDasharray="5 7"
                   fill="none"
                 >
                   <path d="M110 32 L62 140" />
@@ -497,7 +465,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               <g>
                 <path d="M110 32 L158 140 M76 104 L144 104" stroke="#f1f5f9" strokeWidth="18" strokeLinecap="round" fill="none" />
                 <path d="M110 32 L62 140" stroke="#e2e8f0" strokeWidth="22" strokeLinecap="round" fill="none" />
-                <path d="M110 32 L62 140" stroke="#059669" strokeWidth="4" strokeDasharray="6 7" strokeLinecap="round" fill="none" />
+                <path d="M110 32 L62 140" stroke="#059669" strokeWidth="3.5" strokeDasharray="5 7" strokeLinecap="round" fill="none" />
               </g>
             )}
 
@@ -505,7 +473,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               <g>
                 <path d="M110 32 L62 140" stroke={theme.frontEnd} strokeWidth="20" strokeLinecap="round" fill="none" opacity="0.45" />
                 <path d="M110 32 L158 140" stroke="#e2e8f0" strokeWidth="22" strokeLinecap="round" fill="none" />
-                <path d="M110 32 L158 140" stroke="#059669" strokeWidth="4" strokeDasharray="6 7" strokeLinecap="round" fill="none" />
+                <path d="M110 32 L158 140" stroke="#059669" strokeWidth="3.5" strokeDasharray="5 7" strokeLinecap="round" fill="none" />
               </g>
             )}
 
@@ -513,7 +481,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               <g>
                 <path d="M110 32 L62 140 M110 32 L158 140" stroke={theme.frontEnd} strokeWidth="20" strokeLinecap="round" fill="none" opacity="0.45" />
                 <path d="M74 104 L146 104" stroke="#e2e8f0" strokeWidth="22" strokeLinecap="round" fill="none" />
-                <path d="M74 104 L146 104" stroke="#059669" strokeWidth="4" strokeDasharray="6 7" strokeLinecap="round" fill="none" />
+                <path d="M74 104 L146 104" stroke="#059669" strokeWidth="3.5" strokeDasharray="5 7" strokeLinecap="round" fill="none" />
               </g>
             )}
 
@@ -523,7 +491,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
                   <path d="M130 92 C118 72, 74 74, 74 108 C74 140, 118 142, 130 122" />
                   <path d="M132 76 L132 140" />
                 </g>
-                <g stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" strokeDasharray="5 7" fill="none">
+                <g stroke="#94a3b8" strokeWidth="3.5" strokeLinecap="round" strokeDasharray="5 7" fill="none">
                   <path d="M130 92 C118 72, 74 74, 74 108 C74 140, 118 142, 130 122" />
                   <path d="M132 76 L132 140" />
                 </g>
@@ -567,7 +535,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               </g>
             )}
 
-            {/* User's Live Drawn SVG Stroke Path (Updated directly via ref, 0 re-renders!) */}
+            {/* User's Live Drawn SVG Stroke Path */}
             <path
               ref={userOuterPathRef}
               d=""
@@ -588,7 +556,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
               fill="none"
             />
 
-            {/* Interactive Checkpoint Guide Dots along the letter */}
+            {/* Clean, non-overlapping Checkpoint Guide Dots */}
             <g>
               {checkpoints.map((pt, idx) => (
                 <circle
@@ -598,8 +566,8 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
                   }}
                   cx={pt.x}
                   cy={pt.y}
-                  r="3.2"
-                  fill="#cbd5e1"
+                  r="3"
+                  fill="#94a3b8"
                   stroke="#ffffff"
                   strokeWidth="1"
                 />
@@ -607,10 +575,10 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
             </g>
           </g>
 
-          {/* LAYER 2: COMPLETED 3D FULL-COLORED LETTER STATE (Always mounted, shown via opacity when completed) */}
+          {/* LAYER 2: COMPLETED 3D FULL-COLORED LETTER STATE (Centered) */}
           <g style={{ opacity: isCompleted ? 1 : 0, transition: 'opacity 0.25s ease' }}>
             {(pattern === 'A' || pattern === 'stroke1' || pattern === 'stroke2' || pattern === 'stroke3') && (
-              <g transform={wordSuffix ? 'translate(-36, 0)' : undefined}>
+              <g>
                 {[6, 4, 2].map((off) => (
                   <g
                     key={off}
@@ -759,7 +727,7 @@ export const LetterOverwriteBox: React.FC<LetterOverwriteBoxProps> = ({
         >
           {isCompleted
             ? '✓ Full Letter Overwritten! / पूरा रंग भर गया!'
-            : '✍️ Trace all dots on letter / पूरे अक्षर पर हाथ फेरें'}
+            : '✍️ Trace over the letter / पूरे अक्षर पर हाथ फेरें'}
         </span>
         <button
           type="button"
