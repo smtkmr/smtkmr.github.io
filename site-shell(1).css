@@ -10,7 +10,7 @@
   top: 0 !important;
   z-index: 1000 !important;
   width: 100% !important;
-  min-height: 100px !important;
+  min-height: 130px !important;
   margin: 0 !important;
   padding: 0 5.7% !important;
   border: 0 !important;
@@ -23,7 +23,7 @@
   display: flex !important;
   width: 100% !important;
   max-width: 1700px !important;
-  min-height: 96px !important;
+  min-height: 126px !important;
   margin: 0 auto !important;
   padding: 0 !important;
   align-items: center !important;
@@ -37,22 +37,22 @@
   align-items: center !important;
   gap: 14px !important;
   color: #fff !important;
-  font: 900 38px/1 Outfit, Quicksand, Arial, sans-serif !important;
-  letter-spacing: -1.4px !important;
+  font: 900 46px/1 Outfit, Quicksand, Arial, sans-serif !important;
+  letter-spacing: -1.7px !important;
   text-decoration: none !important;
   white-space: nowrap !important;
 }
 
 .econova-site-brand__mark {
   display: grid !important;
-  width: 52px !important;
-  height: 52px !important;
-  flex: 0 0 52px !important;
+  width: 64px !important;
+  height: 64px !important;
+  flex: 0 0 64px !important;
   place-items: center !important;
-  border-radius: 17px !important;
+  border-radius: 21px !important;
   background: #fde047 !important;
   color: #059669 !important;
-  font: 900 34px/1 Outfit, Arial, sans-serif !important;
+  font: 900 41px/1 Outfit, Arial, sans-serif !important;
   transform: rotate(-8deg) !important;
 }
 
@@ -66,14 +66,14 @@
   flex: 0 0 auto !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  gap: 32px !important;
+  gap: 38px !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 .econova-site-nav a {
   color: #fff !important;
-  font: 700 18px/1.2 Quicksand, Outfit, Arial, sans-serif !important;
+  font: 700 21px/1.2 Quicksand, Outfit, Arial, sans-serif !important;
   text-decoration: none !important;
   white-space: nowrap !important;
 }
@@ -85,12 +85,12 @@
 
 .econova-site-nav .econova-site-nav__cta {
   display: inline-flex !important;
-  min-height: 54px !important;
+  min-height: 66px !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 18px !important;
-  padding: 0 24px !important;
-  border-radius: 20px !important;
+  gap: 22px !important;
+  padding: 0 27px !important;
+  border-radius: 23px !important;
   background: #10b981 !important;
   box-shadow: 0 5px 0 #059669 !important;
   font-weight: 900 !important;

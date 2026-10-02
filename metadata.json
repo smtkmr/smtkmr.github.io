@@ -1,6 +1,0 @@
-{
-  "name": "Econova",
-  "description": "Playful learning activities, grammar lessons, and interactive activities for young learners.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
