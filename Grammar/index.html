@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore playful English Grammar lessons, sentence building, naming words, and interactive fun with Econova.">
+  <meta name="theme-color" content="#2dd4bf">
+  <title>Grammar Adventures · Econova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--body:'Comic Sans MS','Chalkboard SE','Comic Neue',sans-serif;--heading:'Outfit','Quicksand',sans-serif;--bg:#f0fdf4;--ink:#1f2937;--brand:#059669;--teal:#2dd4bf;--yellow:#fde047;--line:#34d399;--button:#10b981}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}h1,h2,h3,.logo,.eyebrow,.number{font-family:var(--heading)}h1,h2,h3,p{margin:0}.wrap{max-width:1180px;margin:auto;padding:0 28px}.skip{position:fixed;left:20px;top:-80px;background:white;padding:10px;z-index:100}.skip:focus{top:10px}
+    header{background:var(--teal);border-bottom:3px solid var(--button);position:sticky;top:0;z-index:20}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-size:32px;font-weight:900;letter-spacing:-1.3px;color:#fff;display:flex;align-items:center;gap:10px}.logo em{font-style:normal;color:var(--yellow)}.logo-mark{width:40px;height:40px;border-radius:14px;background:var(--yellow);color:var(--brand);display:grid;place-items:center;font-size:29px;transform:rotate(-9deg)}nav{display:flex;align-items:center;gap:26px}nav a{font-family:var(--heading);font-weight:600;color:#fff}nav a:hover{text-decoration:underline;text-underline-offset:7px}.mint-btn{background:var(--button);color:#fff;border:0;border-radius:16px;padding:14px 23px;display:inline-flex;justify-content:center;align-items:center;gap:12px;font-weight:800;box-shadow:0 4px 0 var(--brand);transition:transform .2s,background .2s}.mint-btn:hover{background:var(--brand);transform:translateY(-2px)}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--brand)}.mint-card{background:#fff;border:3px solid #34d399;border-radius:24px;padding:26px}.amber-card{background:#fffbeb;border:3px solid #fcd34d;border-radius:24px;padding:26px}
+    .hero{padding:48px 0 32px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}h1{font-size:clamp(40px,5vw,64px);font-weight:900;line-height:1.1;letter-spacing:-2px;margin:18px 0}h1 .green{color:var(--brand)}.chapter-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:28px}.lesson-pill{display:inline-block;padding:6px 12px;border-radius:20px;background:#d1fae5;color:var(--brand);font-size:12px;font-weight:bold;margin:4px 4px 4px 0}.quiz-interactive{margin-top:20px;padding:20px;background:#fff;border:2px solid #a7f3d0;border-radius:16px;text-align:center}.quiz-btn{background:#f0fdf4;border:2px solid var(--line);border-radius:12px;padding:10px 18px;margin:6px;font-weight:bold;color:var(--brand)}.quiz-btn:hover{background:#34d399;color:white}
+    @media(max-width:800px){.hero{grid-template-columns:1fr}.chapter-list{grid-template-columns:1fr}}
+  </style>
+  <link rel="stylesheet" href="../site-shell.css">
+  <script defer src="../site-shell.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header><div class="wrap nav"><a class="logo" href="../index.html" aria-label="Econova home"><span class="logo-mark" aria-hidden="true">✦</span><span>Econova<em>.vip</em></span></a><nav aria-label="Main navigation"><a href="../index.html#classes">Our classes</a><a href="../index.html#explore">Explore</a><a href="../index.html" class="mint-btn">← Back to Home</a></nav></div></header>
+  <main id="main" class="wrap" style="padding-top:20px;padding-bottom:50px;">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">📖 English Grammar &amp; Words</p>
+        <h1>Playful words.<br><span class="green">Happy <span style="background:var(--yellow);padding:0 6px;border-radius:8px;">Sentences.</span></span></h1>
+        <p style="font-size:16px;line-height:1.8;">Learn naming words, action words, punctuation and complete sentences through joyful activities and little stories!</p>
+        <div style="margin-top:24px;display:flex;gap:16px;">
+          <a href="#lessons" class="mint-btn">Start Lesson 1 →</a>
+          <a href="../index.html" style="font-weight:bold;color:var(--brand);display:inline-flex;align-items:center;">← All Classes</a>
+        </div>
+      </div>
+      <div class="amber-card" style="text-align:center;">
+        <span style="font-size:54px;">🔤</span>
+        <h3 style="font-size:22px;margin:12px 0 8px;">Quick Practice</h3>
+        <p style="font-size:13px;">Find the <b>Naming Part</b> (Who or What):</p>
+        <div class="quiz-interactive">
+          <p style="font-size:18px;font-weight:bold;margin-bottom:12px;">"The little bird sings."</p>
+          <button class="quiz-btn" onclick="document.getElementById('res').textContent='🎉 Super star! The naming part is The little bird.'">The little bird</button>
+          <button class="quiz-btn" onclick="document.getElementById('res').textContent='Almost! Sings is the action part.'">sings</button>
+          <p id="res" style="margin-top:12px;font-weight:bold;color:var(--brand);min-height:24px;"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lessons" style="padding-top:30px;">
+      <h2 style="font-size:32px;margin-bottom:8px;">Grammar Chapters</h2>
+      <p style="font-size:14px;color:#52615a;margin-bottom:24px;">Explore chapters designed for little thinkers and language explorers.</p>
+      
+      <div class="chapter-list">
+        <div class="mint-card">
+          <span style="font-size:32px;">📝</span>
+          <h3 style="font-size:22px;margin:10px 0;">Chapter 01: The Sentence</h3>
+          <p style="font-size:13px;margin-bottom:16px;">A sentence tells a complete idea and starts with a capital letter.</p>
+          <div>
+            <span class="lesson-pill">1. What Is a Sentence</span>
+            <span class="lesson-pill">2. Naming Part</span>
+            <span class="lesson-pill">3. Action Part</span>
+            <span class="lesson-pill">4. Is It a Sentence?</span>
+          </div>
+        </div>
+
+        <div class="amber-card">
+          <span style="font-size:32px;">🎨</span>
+          <h3 style="font-size:22px;margin:10px 0;">Chapter 07: Adjectives</h3>
+          <p style="font-size:13px;margin-bottom:16px;">Describing words that tell what kind, what color, and how many!</p>
+          <div>
+            <span class="lesson-pill">Color words</span>
+            <span class="lesson-pill">Size &amp; Shape</span>
+            <span class="lesson-pill">Numbers &amp; Feels</span>
+          </div>
+        </div>
+
+        <div class="mint-card">
+          <span style="font-size:32px;">📚</span>
+          <h3 style="font-size:22px;margin:10px 0;">Story Reading &amp; Practice</h3>
+          <p style="font-size:13px;margin-bottom:16px;">Read short stories and find verbs, nouns, and naming words.</p>
+          <div>
+            <span class="lesson-pill">The Little Red Hen</span>
+            <span class="lesson-pill">Sparrow's Rainy Secret</span>
+            <span class="lesson-pill">A Special Day</span>
+          </div>
+        </div>
+
+        <div class="amber-card">
+          <span style="font-size:32px;">✨</span>
+          <h3 style="font-size:22px;margin:10px 0;">Fun Rules &amp; Punctuation</h3>
+          <p style="font-size:13px;margin-bottom:16px;">Capital letters, full stops, question marks and joyful expressions.</p>
+          <div>
+            <span class="lesson-pill">Capital letters (ABC)</span>
+            <span class="lesson-pill">Full stop (.)</span>
+            <span class="lesson-pill">Question mark (?)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
