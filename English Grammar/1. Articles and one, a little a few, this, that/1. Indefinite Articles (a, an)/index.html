@@ -154,6 +154,37 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
+    /* Custom YouTube Button Design */
+    .youtube-btn {
+      background: #ff0000;
+      color: #ffffff !important;
+      border-radius: 20px;
+      padding: 8px 18px !important;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 0 #b30000;
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+    }
+
+    .youtube-btn:hover {
+      background: #e60000 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #b30000;
+    }
+
+    .youtube-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #b30000;
+    }
+
+    .youtube-btn span {
+      font-size: 11px;
+    }
+
     .mint-btn {
       background: var(--button);
       color: #fff;
@@ -960,6 +991,9 @@
       nav a {
         display: none;
       }
+      .nav .youtube-btn {
+        display: inline-flex;
+      }
       .nav .mint-btn {
         font-size: 12px;
         padding: 8px 14px;
@@ -998,6 +1032,7 @@
         <a href="#topic-2">2. Use of a/an</a>
         <a href="#topic-3">3. Omission</a>
         <a href="#topic-4">4. a/an vs one</a>
+        <a href="https://youtu.be/FkKoei0AjBo" target="_blank" class="youtube-btn">Our YouTube <span>▶</span></a>
         <a class="mint-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
       </nav>
     </div>
@@ -2036,7 +2071,7 @@
           "Neither is correct"
         ],
         ans: 2,
-        expl: "Badi sankhya ya currency me 'a million' aur 'one million' dono hi bilkul sahi hote hain."
+        expl: "Badi sankhya ya currency me 'a million' aur 'one million' dono hi bilkul sahi होते हैं।"
       },
       {
         id: 49,
