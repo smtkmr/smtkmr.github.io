@@ -24,6 +24,7 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
+      --youtube-red: #ff0000;
     }
 
     * {
@@ -176,6 +177,32 @@
     .mint-btn:active {
       transform: translateY(2px);
       box-shadow: 0 2px 0 var(--brand);
+    }
+
+    .yt-btn {
+      background: var(--youtube-red);
+      color: #fff;
+      border-radius: 16px;
+      padding: 10px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      font-family: var(--heading);
+      box-shadow: 0 4px 0 #b30000;
+      transition: transform .15s, background .15s;
+    }
+
+    .yt-btn:hover {
+      background: #cc0000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .yt-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #b30000;
     }
 
     .nav .mint-btn {
@@ -954,6 +981,10 @@
         font-size: 12px;
         padding: 8px 14px;
       }
+      .yt-btn {
+        font-size: 12px;
+        padding: 8px 14px;
+      }
       h1 {
         font-size: 36px;
       }
@@ -975,7 +1006,7 @@
 <body>
   <a href="#main" class="skip">Skip to content</a>
 
-  <!-- Header matching Econova theme (Straight .vip, No YouTube button) -->
+  <!-- Header with YouTube Link and Button -->
   <header>
     <div class="wrap nav">
       <a class="logo" href="#main" aria-label="Econova Home">
@@ -988,6 +1019,12 @@
         <a href="#topic-2">2. Kinds of Verbs</a>
         <a href="#topic-3">3. Strong vs Weak</a>
         <a href="#topic-4">4. Tense vs Time</a>
+        <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor" aria-hidden="true">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          YouTube
+        </a>
         <a class="mint-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
       </nav>
     </div>
@@ -1197,7 +1234,7 @@
           </div>
           <div class="example-box" style="background:#fffdf5; border-color:#fcd34d;">
             <b>(b) Helping Verb or Auxiliary (सहायक क्रिया)</b>
-            <span>वे शब्द जो मुख्य क्रिया के साथ मिलकर वाक्य को निश्चित अर्थ, काल (tense) और पहचान प्रदान करते हैं।<br>
+            <span>वे शब्द जो मुख्य क्रिया के साथ मिलकर वाक्य को निश्चित अर्थ, काल (tense) और पहचान प्रदान करते हैं。<br>
             • e.g. <em>She is reading a book.</em> (यहाँ 'is' helping verb है जो 'reading' के साथ Present Continuous Tense बनाती है)<br>
             • Examples: <em>is, am, are, was, were, have, has, had, do, does, did, will, can</em>.</span>
           </div>
@@ -1257,7 +1294,7 @@
         <div style="margin-top:14px; padding:12px; background:#fef3c7; border:1px solid #fde68a; border-radius:12px; font-size:13px; color:#92400e;">
           ⚠️ <strong>सावधानी (Contrast Example):</strong> एक ही क्रिया संदर्भ के अनुसार बदल सकती है:<br>
           • <em>The driver stopped the bus.</em> → यहाँ <strong>the bus</strong> Object है, अतः 'stopped' <strong>Transitive</strong> है।<br>
-          • <em>The bus stopped suddenly.</em> → यहाँ कोई Object नहीं है ('suddenly' Adverb है), अतः 'stopped' <strong>Intransitive</strong> है।
+          • <em>The bus stopped suddenly.</em> → यहाँ कोई Object नहीं है ('suddenly' Adverb है), अतः 'stopped' <strong>Intransitive</strong> है。
         </div>
       </article>
     </section>
@@ -1427,7 +1464,7 @@
           <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
             <div>
               <b>1. The Prime Minister visited our city last week.</b>
-              <p style="font-size:12px; color:#6b7280;">यहाँ 'visited' क्रिया है और 'last week' समय है।</p>
+              <p style="font-size:12px; color:#6b7280;">यहाँ 'visited' क्रिया है और 'last week' समय है。</p>
             </div>
             <span class="badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">Past Tense, Past Time (दोनों समान)</span>
           </div>
@@ -1443,7 +1480,7 @@
           <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
             <div>
               <b>3. Abhishek has finished his work.</b>
-              <p style="font-size:12px; color:#6b7280;">कार्य पूर्ण हो चुका है, परंतु रूप Present Perfect है।</p>
+              <p style="font-size:12px; color:#6b7280;">कार्य पूर्ण हो चुका है, परंतु रूप Present Perfect है。</p>
             </div>
             <span class="badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">Present Tense, Past Time</span>
           </div>
@@ -1733,7 +1770,7 @@
           "They decided to build a bridge."
         ],
         ans: 1,
-        expl: "'To err' (गलती करना) yahan sentence ka Subject hai jo verb 'is' se pehle aaya hai."
+        expl: "'To err' (गलती करना) yahan sentence ka Subject hai jo verb 'is' se pehle आया है."
       },
       {
         id: 12,
@@ -1880,755 +1917,794 @@
         hi: "(A) 'चालक ने बस रोकी' बनाम (B) 'बस अचानक रुक गई'। वाक्य (B) में 'stopped' क्रिया क्या है?",
         options: [
           "Transitive Verb",
-          "Intransitive Verb used without any object",
-          "Auxiliary Verb",
-          "Gerund"
+          "Intransitive Verb used without object",
+          "Helping Verb",
+          "Strong Verb only"
         ],
         ans: 1,
-        expl: "Sentence (A) me 'the bus' object hai to Transitive hai, lekin (B) me bus khud ruki aur koi object nahi hai, isliye Intransitive hai."
+        expl: "Sentence B me 'stopped' ke baad koi Object nahi hai ('suddenly' Adverb hai), isliye yahan 'stopped' Intransitive ke roop me kaam kar rahi hai."
       },
       {
         id: 22,
         cat: "kinds",
         label: "Kinds of Verbs",
-        q: "Which of the following contains an Auxiliary Verb of the 'do' group?",
-        hi: "निम्नलिखित में से किस वाक्य में 'do' वर्ग की सहायक क्रिया है?",
+        q: "Which of the following contains a Transitive Verb?",
+        hi: "निम्नलिखित में से किस वाक्य में सकर्मक क्रिया (Transitive Verb) है?",
         options: [
-          "She is writing a letter.",
-          "They have eaten their lunch.",
-          "He did not attend the meeting.",
-          "We were playing chess."
+          "The baby slept peacefully.",
+          "The sun shines brightly.",
+          "Rohan wrote a long story.",
+          "The dog barked loudly."
         ],
         ans: 2,
-        expl: "'did' helping verb hai jo negative aur interrogative sentences banane me use hoti hai."
+        expl: "Rohan wrote what? -> 'a long story'. Yahan 'a long story' object hai, isliye 'wrote' Transitive Verb hai."
       },
       {
         id: 23,
         cat: "kinds",
         label: "Kinds of Verbs",
-        q: "Which word in 'They have been working since morning' acts as the Main Verb?",
-        hi: "'They have been working since morning' वाक्य में मुख्य क्रिया (Main Verb) कौन सी है?",
+        q: "In 'I appreciate your hard work', the verb 'appreciate' is used as:",
+        hi: "'I appreciate your hard work' वाक्य में 'appreciate' किस प्रकार की क्रिया है?",
         options: [
-          "have",
-          "been",
-          "working",
-          "since"
+          "Helping Verb",
+          "Main Verb with independent meaning",
+          "Modal Auxiliary",
+          "Infinitive"
         ],
-        ans: 2,
-        expl: "'working' mukhya action bata raha hai, jabki 'have' aur 'been' helping verbs hain."
+        ans: 1,
+        expl: "'appreciate' (सराहना करना) ka swatantra artha hai, isliye yeh Main Verb (Principal Verb) hai."
       },
       {
         id: 24,
         cat: "kinds",
         label: "Kinds of Verbs",
-        q: "In 'The sun shines brightly', the word 'brightly' is:",
-        hi: "'The sun shines brightly' में 'brightly' क्या है?",
+        q: "In 'The bell rang loudly', the verb 'rang' is:",
+        hi: "'The bell rang loudly' वाक्य में 'rang' क्रिया किस प्रकार की है?",
         options: [
-          "Direct object of shines",
-          "Adverb modifying the intransitive verb shines",
-          "Subject complement",
-          "Auxiliary verb"
+          "Transitive Verb",
+          "Intransitive Verb",
+          "Auxiliary Verb",
+          "Defective Verb"
         ],
         ans: 1,
-        expl: "'brightly' tareeka (manner) bata raha hai ki suraj kaise chamakta hai. Yeh Adverb hai, Object nahi!"
+        expl: "'rang' ke baad 'loudly' Adverb hai (kaise baji). Koi Object nahi hai, isliye 'rang' Intransitive hai."
       },
       {
         id: 25,
         cat: "kinds",
         label: "Kinds of Verbs",
-        q: "Which of the following is a Modal Auxiliary verb expressing ability?",
-        hi: "योग्यता (ability) दर्शाने वाली मॉडल सहायक क्रिया कौन सी है?",
+        q: "In 'The peon rang the bell', the verb 'rang' is:",
+        hi: "'The peon rang the bell' वाक्य में 'rang' क्रिया किस प्रकार की है?",
         options: [
-          "can",
-          "must",
-          "should",
-          "might"
+          "Transitive Verb taking 'the bell' as object",
+          "Intransitive Verb",
+          "Helping Verb",
+          "Participle"
         ],
         ans: 0,
-        expl: "'can' kisi kaam ko karne ki ability ya samarthya ko darshata hai (e.g. He can solve this math problem)."
+        expl: "Yahan 'rang' ke baad 'the bell' Object ke roop me aaya hai (Rang what? -> the bell). Isliye yeh Transitive hai."
       },
       {
         id: 26,
         cat: "kinds",
         label: "Kinds of Verbs",
-        q: "A verb that requires an object to make complete sense is called:",
-        hi: "जिस क्रिया को अपना पूर्ण अर्थ प्रकट करने के लिए कर्म की आवश्यकता होती है, उसे क्या कहते हैं?",
+        q: "Which pair of words represents Helping Verbs (Auxiliaries)?",
+        hi: "निम्नलिखित में से कौन सा जोड़ा सहायक क्रियाओं (Helping Verbs) का प्रतिनिधित्व करता है?",
         options: [
-          "Intransitive Verb",
-          "Transitive Verb",
-          "Weak Verb",
-          "Strong Verb"
+          "run, jump",
+          "is, have",
+          "write, read",
+          "sing, dance"
         ],
         ans: 1,
-        expl: "Transitive verb bina object ke adhuri rehti hai (jaise 'He delivers...' ke baad 'lectures' bolna zaroori hai)."
+        expl: "'is' aur 'have' Helping Verbs hain jo Tense nirmit karne me Main Verbs ki sahayata karti hain."
       },
 
-      // UNIT 3: Strong Verbs vs Weak Verbs (12 Questions: 27 to 38)
+      // UNIT 3: Strong vs Weak Verbs (12 Questions: 27 to 38)
       {
         id: 27,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "How are verbs classified into 'Strong' and 'Weak' categories?",
-        hi: "क्रियाओं को 'Strong' और 'Weak' श्रेणियों में किस आधार पर वर्गीकृत किया जाता है?",
+        label: "Strong vs Weak",
+        q: "What defines a 'Strong Verb' according to Class 9 grammar rules?",
+        hi: "कक्षा 9 के व्याकरण के नियमों के अनुसार 'Strong Verb' (अनियमित क्रिया) की क्या परिभाषा है?",
         options: [
-          "On the basis of their sentence length",
-          "According to the manner in which they form the Past Tense and Past Participle",
-          "On whether they need an object or not",
-          "According to whether they start with vowels"
+          "Verbs that end with -ed in all forms",
+          "Verbs whose three forms are quite different and form past tense by changing internal vowel without adding -ed",
+          "Verbs that never change spelling in any tense",
+          "Verbs that only act as helping verbs"
         ],
         ans: 1,
-        expl: "Book statement: 'Verbs are classified as Strong and Weak according to the manner in which they form the Past Tense and the Past Participle.'"
+        expl: "Strong Verbs apne bina -ed jode internal vowel badalkar past tense banati hain (jaise: go-went-gone, write-wrote-written)."
       },
       {
         id: 28,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "What defines a 'Strong Verb' in Class 9 English Grammar?",
-        hi: "कक्षा 9 के व्याकरण के अनुसार 'Strong Verb' की क्या पहचान है?",
+        label: "Strong vs Weak",
+        q: "What is the Past (V2) and Past Participle (V3) form of the Strong Verb 'sing'?",
+        hi: "Strong Verb 'sing' के Past (V2) और Past Participle (V3) रूप कौन से हैं?",
         options: [
-          "It always ends in -ed in all forms",
-          "Its three forms are quite different, formed by changing the internal vowel",
-          "It cannot be used with helping verbs",
-          "It never changes form"
+          "singed, singed",
+          "sang, sung",
+          "song, sung",
+          "singing, sang"
         ],
         ans: 1,
-        expl: "Strong verbs apne stem ke andruni vowel ko badal kar V2 aur V3 banate hain (e.g. go-went-gone, write-wrote-written, ride-rode-ridden)."
+        expl: "'sing' ka V2 'sang' aur V3 'sung' hota hai (Internal vowel i -> a -> u badalta hai)."
       },
       {
         id: 29,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "Which set of verb forms belongs to Strong Verbs?",
-        hi: "कौन सा क्रिया रूप समूह Strong Verbs से संबंधित है?",
+        label: "Strong vs Weak",
+        q: "According to the textbook definition, 'Weak Verbs' are those which:",
+        hi: "पाठ्यपुस्तक की परिभाषा के अनुसार, 'Weak Verbs' (नियमित क्रियाएँ) वे हैं जो:",
         options: [
-          "clean - cleaned - cleaned",
-          "wish - wished - wished",
-          "ride - rode - ridden",
-          "shut - shut - shut"
+          "Have at least two forms same in spelling, or form past by adding -d, -ed, or -t",
+          "Change all internal vowels completely in V1, V2, and V3",
+          "Can never be used in past tense",
+          "Do not have a present participle form"
         ],
-        ans: 2,
-        expl: "'ride - rode - ridden' teeno forms alag hain aur vowel change se bani hain, isliye yeh Strong Verb hai."
+        ans: 0,
+        expl: "Weak Verbs ke kam se kam do forms ki spelling same hoti hai (e.g. cut-cut-cut, wish-wished-wished) ya -d/-ed/-t jodkar banti hain."
       },
       {
         id: 30,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "What characterizes 'Weak Verbs' according to the textbook?",
-        hi: "पाठ्यपुस्तक के अनुसार 'Weak Verbs' की क्या विशेषता होती है?",
+        label: "Strong vs Weak",
+        q: "Identify the Weak Verb whose all three forms (V1, V2, V3) remain identical in spelling:",
+        hi: "वह Weak Verb पहचानिए जिसके तीनों रूप (V1, V2, V3) स्पेलिंग में बिल्कुल समान रहते हैं:",
         options: [
-          "They cannot express past tense",
-          "They form past by adding -d, -ed, -t or have at least two forms same in spelling",
-          "They are always shorter than three letters",
-          "They are only used in negative sentences"
+          "break",
+          "cut",
+          "write",
+          "drive"
         ],
         ans: 1,
-        expl: "Book definition: 'Weak Verbs - These verbs have at least two forms same in spelling' ya fir yeh -ed, -d, -t jodkar banti hain (cut/cut/cut, clean/cleaned/cleaned)."
+        expl: "'cut - cut - cut' teeno forms spelling me bilkul same rehti hain. Yeh Weak Verb ki category me aati hai."
       },
       {
         id: 31,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "The verb 'cut' has forms: cut - cut - cut. In which category is it placed?",
-        hi: "'cut' क्रिया के तीनों रूप cut - cut - cut होते हैं। इसे किस श्रेणी में रखा गया है?",
+        label: "Strong vs Weak",
+        q: "The verb 'read' has forms read - read - read. Why is it classified as a Weak Verb?",
+        hi: "'read' क्रिया के रूप read - read - read होते हैं। इसे Weak Verb क्यों माना जाता है?",
         options: [
-          "Strong Verb",
-          "Weak Verb (having all three forms same in spelling)",
-          "Auxiliary Verb",
-          "Transitive Verb only"
+          "Because its pronunciation changes in V2 and V3 while spellings stay same",
+          "Because all forms have identical spellings (at least two forms same rule)",
+          "Because it takes -ed at the end",
+          "Both A and B are correct"
         ],
-        ans: 1,
-        expl: "Class 9 textbook me 'cut - cut - cut', 'shut - shut - shut', 'cast - cast - cast' ko Weak Verbs me rakha gaya hai kyunki inke forms same rehte hain."
+        ans: 3,
+        expl: "'read' ki teeno forms ki spelling same rehti hai ('read'), jabki V2/V3 ka uchcharan 'red' hota hai. Isliye yeh Weak Verb hai."
       },
       {
         id: 32,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "What are the three principal forms of the strong verb 'write'?",
-        hi: "'write' क्रिया के तीनों प्रमुख रूप कौन से हैं?",
+        label: "Strong vs Weak",
+        q: "Which set contains ONLY Strong Verbs?",
+        hi: "किस समूह में केवल Strong Verbs (अनियमित क्रियाएँ) शामिल हैं?",
         options: [
-          "write - writed - writed",
-          "write - wrote - written",
-          "write - writing - wrote",
-          "write - wrote - wrote"
+          "wish, clean, shut",
+          "go, write, break, ride",
+          "cut, cast, shut, put",
+          "walk, talk, play, help"
         ],
         ans: 1,
-        expl: "Present: write | Past: wrote | Past Participle: written. Teeno forms different hain."
+        expl: "go-went-gone, write-wrote-written, break-broke-broken, ride-rode-ridden sabhi internal vowel badalne wali Strong Verbs hain."
       },
       {
         id: 33,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "The verb 'read' is spelled 'read - read - read'. How is its past form pronounced?",
-        hi: "'read' क्रिया के तीनों रूप स्पेलिंग में समान होते हैं। इसके भूतकालिक रूप (past) का उच्चारण क्या होता है?",
+        label: "Strong vs Weak",
+        q: "Which set contains ONLY Weak Verbs?",
+        hi: "किस समूह में केवल Weak Verbs (नियमित क्रियाएँ) शामिल हैं?",
         options: [
-          "pronounced exactly like 'reed'",
-          "pronounced like the color 'red' (/red/)",
-          "pronounced as 'rode'",
-          "pronounced as 'rid'"
+          "sing, sang, sung",
+          "cut, shut, cast, wished",
+          "drive, drove, driven",
+          "eat, ate, eaten"
         ],
         ans: 1,
-        expl: "Spelling wahi rehti hai (read - read - read), lekin past form (V2) aur past participle (V3) ka ucharan 'red' (/red/) hota hai."
+        expl: "cut (same), shut (same), cast (same), wish (wished) - yeh sabhi Weak Verbs ki definition ko satisfy karti hain."
       },
       {
         id: 34,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "Which of the following verbs is a Weak Verb formed by adding -ed?",
-        hi: "निम्नलिखित में से कौन सी -ed जोड़कर बनने वाली Weak Verb है?",
+        label: "Strong vs Weak",
+        q: "What are the V2 and V3 forms of the Strong Verb 'write'?",
+        hi: "Strong Verb 'write' के V2 और V3 रूप क्या हैं?",
         options: [
-          "speak - spoke - spoken",
-          "clean - cleaned - cleaned",
-          "fly - flew - flown",
-          "begin - began - begun"
+          "writed, writed",
+          "wrote, written",
+          "writing, wrote",
+          "writes, written"
         ],
         ans: 1,
-        expl: "'clean' me -ed jud kar 'cleaned' banta hai, isliye yeh Regular / Weak Verb hai."
+        expl: "'write' ka Past (V2) 'wrote' aur Past Participle (V3) 'written' hota hai."
       },
       {
         id: 35,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "Find the odd one out that is a Strong Verb while others are Weak Verbs:",
-        hi: "विषम विकल्प चुनिए जो Strong Verb है जबकि अन्य Weak Verbs हैं:",
+        label: "Strong vs Weak",
+        q: "What are the V2 and V3 forms of the Weak Verb 'clean'?",
+        hi: "Weak Verb 'clean' के V2 और V3 रूप क्या हैं?",
         options: [
-          "shut (shut - shut - shut)",
-          "cast (cast - cast - cast)",
-          "go (go - went - gone)",
-          "wish (wish - wished - wished)"
+          "clans, clansen",
+          "cleaned, cleaned",
+          "cloned, clonen",
+          "cleaning, cleaned"
         ],
-        ans: 2,
-        expl: "'go - went - gone' Strong Verb hai kyunki iske teeno forms alag hain. Baaki teeno Weak Verbs hain."
+        ans: 1,
+        expl: "'clean' me -ed jodkar 'cleaned - cleaned' V2 aur V3 roop banaye jaate hain."
       },
       {
         id: 36,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "The verb 'buy' has forms 'buy - bought - bought'. It is classified as:",
-        hi: "'buy' क्रिया के रूप 'buy - bought - bought' होते हैं। इसे किस रूप में वर्गीकृत किया गया है?",
+        label: "Strong vs Weak",
+        q: "What are the V2 and V3 forms of 'cast'?",
+        hi: "'cast' क्रिया के V2 और V3 रूप क्या होते हैं?",
         options: [
-          "Weak Verb (Past and Past Participle are identical)",
-          "Strong Verb because it has irregular spelling",
-          "Intransitive verb only",
-          "Modal verb"
+          "casted, casted",
+          "cast, cast",
+          "cost, cost",
+          "casting, casted"
         ],
-        ans: 0,
-        expl: "Jinki V2 aur V3 forms identical hoti hain (bought - bought) aur dental suffix (-t) lagti hai, unhe Weak Verb maana jaata hai."
+        ans: 1,
+        expl: "'cast - cast - cast' teeno forms same rehti hain ('casted' kehna ashuddh hai)."
       },
       {
         id: 37,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "What is the past participle (V3) form of the strong verb 'break'?",
-        hi: "'break' क्रिया का Past Participle (V3) रूप क्या है?",
+        label: "Strong vs Weak",
+        q: "The past participle form (V3) of the Strong Verb 'ride' is:",
+        hi: "Strong Verb 'ride' का Past Participle (V3) रूप क्या है?",
         options: [
-          "broke",
-          "broken",
-          "breaked",
-          "breaking"
+          "rided",
+          "rode",
+          "ridden",
+          "riding"
         ],
-        ans: 1,
-        expl: "Present: break | Past (V2): broke | Past Participle (V3): broken."
+        ans: 2,
+        expl: "'ride' (V1) -> 'rode' (V2) -> 'ridden' (V3)."
       },
       {
         id: 38,
         cat: "strongweak",
-        label: "Strong vs Weak Verbs",
-        q: "Which list contains only verbs that do NOT change their spelling across V1, V2, and V3?",
-        hi: "वह सूची पहचानिए जिसमें V1, V2 और V3 में स्पेलिंग कभी नहीं बदलती:",
+        label: "Strong vs Weak",
+        q: "Why is 'shut' categorized as a Weak Verb in English grammar?",
+        hi: "'shut' को अंग्रेजी व्याकरण में Weak Verb क्यों माना जाता है?",
         options: [
-          "cut, shut, cast, put, hit",
-          "play, jump, look, dance",
-          "take, give, make, see",
-          "write, ride, drive, rise"
+          "Because it forms past tense by internal vowel change",
+          "Because its three forms (shut - shut - shut) are identical in spelling",
+          "Because it cannot take an object",
+          "Because it is an auxiliary verb"
         ],
-        ans: 0,
-        expl: "cut, shut, cast, put, hit ke sabhi 3 forms bilkul ek jaise hote hain (cut-cut-cut, shut-shut-shut, etc.)."
+        ans: 1,
+        expl: "Jis verb ke kam se kam do roop (yahan teeno) spelling me same hon, use Weak Verb kehte hain."
       },
 
-      // UNIT 4: Tense and Time Distinction (12 Questions: 39 to 50)
+      // UNIT 4: Tense vs Time (12 Questions: 39 to 50)
       {
         id: 39,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "What is the key conceptual difference between 'Time' and 'Tense'?",
-        hi: "'Time' (समय) और 'Tense' (काल) में मुख्य वैचारिक अंतर क्या है?",
+        q: "Which statement accurately expresses the relation between Time and Tense?",
+        hi: "Time (समय) और Tense (काल) के संबंध में कौन सा कथन पूरी तरह सत्य है?",
         options: [
-          "There is no difference; both are the exact same concept",
-          "Time is a universal non-linguistic natural concept, whereas Tense is a grammatical verb form",
-          "Tense can be measured in clock seconds, but Time cannot",
-          "Time exists only in English grammar"
+          "Time and Tense are exactly the same concept and always match",
+          "Time is a universal non-linguistic concept, whereas Tense is a grammatical form of the verb; they do NOT always go together",
+          "Tense is measured in minutes and hours, whereas Time is measured in verb forms",
+          "Future Time can never be expressed by Present Tense"
         ],
         ans: 1,
-        expl: "Textbook clarity: Time ek universal non-linguistic concept hai jise ghante/din me naapte hain, jabki Tense verb ka ek vyakaranik roop (grammatical form) hai."
+        expl: "Book statement: 'Time is a universal, non-linguistic concept... Time and tense do not go altogether same.' Verb form (Tense) aur vyakt time alag ho sakte hain."
       },
       {
         id: 40,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'The Prime Minister visits our city tomorrow', what is the Tense and what is the Time?",
-        hi: "'The Prime Minister visits our city tomorrow' में कौन सा Tense है और कौन सा Time?",
+        q: "Analyze: 'The Prime Minister visits our city tomorrow.' What is the Tense and Time here?",
+        hi: "'The Prime Minister visits our city tomorrow' में Tense और Time का सही संयोजन क्या है?",
         options: [
           "Future Tense, Future Time",
-          "Present Tense (visits), but Future Time (tomorrow)",
-          "Past Tense, Past Time",
-          "Present Tense, Present Time"
+          "Present Tense, Future Time",
+          "Past Tense, Present Time",
+          "Present Tense, Past Time"
         ],
         ans: 1,
-        expl: "Verb form 'visits' Simple Present Tense hai, lekin ghatna 'tomorrow' bhavishya (Future Time) ki hai. Isse saaf hai ki Tense aur Time ek nahi hote!"
+        expl: "Verb form 'visits' (Present Simple Tense) hai, par 'tomorrow' word bata raha hai ki samay Future Time hai."
       },
       {
         id: 41,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'The Prime Minister visited our city last week', what corresponds between Tense and Time?",
-        hi: "'The Prime Minister visited our city last week' में Tense और Time का क्या संबंध है?",
+        q: "Analyze: 'The Prime Minister visited our city last week.' What is the Tense and Time?",
+        hi: "'The Prime Minister visited our city last week' में Tense और Time क्या हैं?",
         options: [
-          "Present Tense, Future Time",
-          "Past Tense, Past Time (both coincide)",
-          "Future Tense, Past Time",
-          "Past Tense, Present Time"
+          "Past Tense, Past Time",
+          "Present Tense, Past Time",
+          "Past Tense, Future Time",
+          "Future Tense, Past Time"
         ],
-        ans: 1,
-        expl: "'visited' Past Tense hai aur 'last week' bita hua kal (Past Time) hai. Yahan Tense aur Time dono milte hain."
+        ans: 0,
+        expl: "Yahan 'visited' Past Tense hai aur 'last week' Past Time batata hai. Dono ek saath mel khate hain."
       },
       {
         id: 42,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'Abhishek has finished his work', what does the present perfect form express?",
-        hi: "'Abhishek has finished his work' में Present Perfect Tense किस समय को व्यक्त करता है?",
+        q: "Analyze: 'Abhishek has finished his work.' What is the Tense and Time?",
+        hi: "'Abhishek has finished his work' में Tense और Time का संयोजन क्या है?",
         options: [
-          "Future Time",
-          "Present Tense form expressing an action completed in Past Time",
-          "Continuous action in Present Time",
-          "Universal truth belonging to all times"
+          "Present Tense (Present Perfect form), Past Time (action is finished)",
+          "Past Tense, Future Time",
+          "Future Tense, Present Time",
+          "Past Tense, Past Time"
         ],
-        ans: 1,
-        expl: "Kaam pehle hi pura ho chuka hai (Past Time), par use Present Perfect form ('has finished') me likha gaya hai."
+        ans: 0,
+        expl: "Verb form 'has finished' Present Perfect Tense hai, par karya pehle hi poora ho chuka hai, isliye Time Past hai."
       },
       {
         id: 43,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'Anurag is practising tennis these days', what are the Tense and Time?",
-        hi: "'Anurag is practising tennis these days' वाक्य में Tense और Time क्या हैं?",
+        q: "In 'The sun rises in the east', what time concept does the Universal Truth belong to?",
+        hi: "'The sun rises in the east' जैसे सार्वभौमिक सत्य (Universal Truth) किस समय काल से संबंधित होते हैं?",
         options: [
-          "Past Tense, Past Time",
-          "Present Tense, Present Time",
-          "Future Tense, Present Time",
-          "Present Tense, Future Time"
+          "Only Present Time",
+          "Belongs to all times (Past, Present and Future)",
+          "Only Future Time",
+          "Only Past Time"
         ],
         ans: 1,
-        expl: "'is practising' Present Tense hai aur 'these days' vartaman samay (Present Time) ko darshata hai."
+        expl: "Universal Truths hamesha satya rehte hain — it belongs to all times (Past, Present, Future)."
       },
       {
         id: 44,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "Sentence 'The sun rises in the east' expresses:",
-        hi: "'The sun rises in the east' वाक्य क्या दर्शाता है?",
+        q: "In 'I want a glass of water', the Present Tense expresses:",
+        hi: "'I want a glass of water' वाक्य में Present Tense क्या व्यक्त कर रहा है?",
         options: [
-          "Past time event only",
-          "Universal Truth (belongs to all times: past, present, and future)",
-          "An action happening only tomorrow",
-          "An immediate request"
+          "Future plan",
+          "Immediate Present desire at the moment of speaking",
+          "Past habit",
+          "Universal scientific law"
         ],
         ans: 1,
-        expl: "Yeh Universal Truth (सार्वभौमिक सत्य) hai jo har samay (past, present, future sabhi) ke liye sahi hai. Iske liye Simple Present Tense use hota hai."
+        expl: "Textbook example: Yeh bolte samay ki tatkalik ichha (Immediate Present) ko darsa raha hai."
       },
       {
         id: 45,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'I want a glass of water', which specific time-aspect is expressed?",
-        hi: "'I want a glass of water' में कौन सा विशिष्ट समय भाव व्यक्त होता है?",
+        q: "In 'He leaves for Delhi next week', the Simple Present Tense is used to express:",
+        hi: "'He leaves for Delhi next week' में Simple Present Tense का प्रयोग किस लिए हुआ है?",
         options: [
-          "Remote Past",
-          "Immediate Present (the exact moment of speaking)",
-          "Fixed Future Activity",
-          "Universal Law"
+          "A past action",
+          "A fixed future planned program / activity",
+          "A continuous process in past",
+          "An imaginary past event"
         ],
         ans: 1,
-        expl: "Book note: 'I want a glass of water' (Immediate Present - bolte samay tatkaal aavashyakta)."
+        expl: "Poorv-nirdharit bhavishya karyakram (fixed future program) ko vyakt karne ke liye Simple Present Tense ka prayog hota hai."
       },
       {
         id: 46,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'He leaves for Delhi next week', what does the Present Tense verb form express?",
-        hi: "'He leaves for Delhi next week' में Present Tense क्रिया क्या व्यक्त कर रही है?",
+        q: "In 'Water boils at 100° centigrade', the Present Tense expresses a:",
+        hi: "'Water boils at 100° centigrade' में Present Tense क्या व्यक्त करता है?",
         options: [
-          "An action that happened last month",
-          "A planned future activity (Future Time)",
-          "An impossible condition",
-          "A completed past habit"
+          "Temporary action happening right now",
+          "Permanent scientific law / Universal fact",
+          "Future activity",
+          "Past habitual action"
         ],
         ans: 1,
-        expl: "'leaves' Simple Present form hai, par yeh pehle se nirdharit 'next week' (Future activity) ko express karta hai."
+        expl: "Yeh sthayi vaigyanik satya (Scientific law/fact) hai, jiske liye hamesha Simple Present Tense ka prayog hota hai."
       },
       {
         id: 47,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'Water boils at 100° centigrade', which category does this statement belong to?",
-        hi: "'Water boils at 100° centigrade' यह कथन किस श्रेणी में आता है?",
+        q: "Analyze: 'Anurag is practising tennis these days.' What is the Tense and Time?",
+        hi: "'Anurag is practising tennis these days' में Tense और Time क्या दर्शाते हैं?",
         options: [
-          "Belongs to all times (Scientific Fact)",
-          "Future schedule only",
-          "Temporary action of today",
-          "Past historical narration"
+          "Present Tense, Present Time",
+          "Past Tense, Future Time",
+          "Future Tense, Present Time",
+          "Present Tense, Future Time"
         ],
         ans: 0,
-        expl: "Textbook example: 'Water boils at 100° centigrade (Belongs to all times - scientific law)'."
+        expl: "Verb form 'is practising' Present Tense hai aur vartaman me jari abhyas (Present Time) ko darsata hai."
       },
       {
         id: 48,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "In 'She goes to school everyday', what is the relation between Tense and Time?",
-        hi: "'She goes to school everyday' में Tense और Time का क्या संबंध है?",
+        q: "How is 'Time' measured in real life compared to 'Tense'?",
+        hi: "वास्तविक जीवन में 'Time' की माप कैसे की जाती है?",
         options: [
-          "Only Future Time is expressed",
-          "Present Tense form expressing a habitual action encompassing Past, Present and Future time",
-          "Past Tense form expressing present time",
-          "No tense exists in habitual statements"
+          "By verb conjugations V1, V2, V3",
+          "By seconds, minutes, hours, days, months, years and centuries",
+          "By using prepositions only",
+          "By active and passive transformations"
         ],
         ans: 1,
-        expl: "Daily routine (everyday) ka matlab hai ki woh kal bhi gayi thi, aaj bhi jaati hai aur kal bhi jayegi (Present, Past and Future time), jise Present Tense me likhte hain."
+        expl: "Time ko ghadi aur calendar se (seconds, minutes, hours, days, years) mapa jata hai, jabki Tense vyakaranik verb form hai."
       },
       {
         id: 49,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "Which units can be used to measure 'Time' as non-linguistic concept?",
-        hi: "गैर-भाषावैज्ञानिक अवधारणा के रूप में 'Time' को किन इकाइयों में मापा जा सकता है?",
+        q: "In 'She goes to school everyday', the Simple Present Tense indicates:",
+        hi: "'She goes to school everyday' में Simple Present Tense क्या दर्शाता है?",
         options: [
-          "Seconds, minutes, hours, days, centuries",
-          "Nouns, pronouns, verbs, adjectives",
-          "Affirmative, negative, interrogative",
-          "Transitive, intransitive"
+          "Habitual action extending over Past, Present and Future time",
+          "Action strictly happening only tomorrow",
+          "Completed past action",
+          "Conditional future event"
         ],
         ans: 0,
-        expl: "Book statement: 'Time can be measured in seconds, minutes, hours, days, months, years, decades, centuries and ages.'"
+        expl: "Habitual actions (aadat) vartaman, bhoot aur bhavishya sabhi samay me lagu hoti hain."
       },
       {
         id: 50,
         cat: "tensetime",
         label: "Tense vs Time",
-        q: "What is the ultimate takeaway statement regarding Tense and Time from Chapter 1?",
-        hi: "अध्याय 1 से Tense और Time के संबंध में अंतिम महत्वपूर्ण निष्कर्ष क्या है?",
+        q: "Why can't we say that 'Present Tense always means Present Time'?",
+        hi: "हम यह क्यों नहीं कह सकते कि 'Present Tense का अर्थ हमेशा Present Time ही होता है'?",
         options: [
-          "Tense and Time are identical words in English",
-          "One tense form can express past, present and future time; they do not always go altogether same",
-          "Tense can only express one single clock second",
-          "Future time cannot be expressed using present tense"
+          "Because Present Tense verbs can express Future planned events and Past completed facts with present relevance",
+          "Because Tenses do not exist in English",
+          "Because Time is a grammatical unit",
+          "Because all verbs are weak verbs"
         ],
-        ans: 1,
-        expl: "Golden takeaway: 'Time and tense do not go altogether same. One tense form can express past, present and future time.'"
+        ans: 0,
+        expl: "Jaisa ki humne dekha: 'PM visits tomorrow' (Future Time) aur 'Abhishek has finished' (Past Time) - dono me Present Tense forms hain!"
       }
     ];
 
-    // Live sentences for Inspector
-    const liveSentences = [
-      {
-        sentence: "The Prime Minister visits our city tomorrow.",
-        tense: "Simple Present Tense (visits - V1)",
-        time: "Future Time (tomorrow)",
-        badge: "Present Tense → Future Time",
-        desc: "यहाँ क्रिया 'visits' Present Tense रूप में है, परंतु घटना आने वाले कल (tomorrow) की है। इससे सिद्ध होता है कि Tense और Time एक नहीं हैं।"
-      },
-      {
-        sentence: "The Prime Minister visited our city last week.",
-        tense: "Simple Past Tense (visited - V2)",
-        time: "Past Time (last week)",
-        badge: "Past Tense = Past Time",
-        desc: "यहाँ Verb form (visited) और वास्तविक समय (last week) दोनों भूतकाल में हैं, इसलिए Tense और Time दोनों आपस में मेल खाते हैं।"
-      },
-      {
-        sentence: "The sun rises in the east.",
-        tense: "Simple Present Tense (rises - V1)",
-        time: "Universal Truth (Belongs to all times)",
-        badge: "Universal Law",
-        desc: "सूर्य कल भी पूर्व में उगता था, आज भी उगता है और भविष्य में भी उगेगा। सार्वभौमिक सत्य (Universal Truth) को दर्शाने के लिए Present Tense रूप का प्रयोग होता है।"
-      },
-      {
-        sentence: "Abhishek has finished his work.",
-        tense: "Present Perfect Tense (has finished)",
-        time: "Past Time (Completed action)",
-        badge: "Present Form → Past Time",
-        desc: "कार्य पहले ही समाप्त हो चुका है (Past Time), परंतु इसका वर्तमान प्रभाव दिखाने के लिए Present Perfect tense form का उपयोग हुआ है।"
-      },
-      {
-        sentence: "Water boils at 100° centigrade.",
-        tense: "Simple Present Tense (boils - V1)",
-        time: "Permanent Scientific Fact",
-        badge: "Scientific Truth",
-        desc: "यह वैज्ञानिक नियम हर काल (past, present, future) में सत्य रहता है। इसके लिए Simple Present Tense का प्रयोग किया जाता है।"
-      }
-    ];
-
-    let userAnswers = {};
-    let checkedStatus = {};
-    let activeCategory = 'all';
+    // State Variables
+    let userAnswers = Array(questions.length).fill(null);
+    let currentFilter = 'all';
     let currentPage = 1;
     const pageSize = 10;
 
-    function getFilteredList() {
-      if (activeCategory === 'all') return questions;
-      return questions.filter(q => q.cat === activeCategory);
+    // Interactive Inspector Data
+    const liveExamples = [
+      {
+        title: "1. Future Planned Event",
+        sentence: "The Prime Minister visits our city tomorrow.",
+        tense: "Present Simple Tense (visits)",
+        time: "Future Time (tomorrow)",
+        note: "पूर्व-निर्धारित भविष्य कार्यक्रम के लिए Present Tense का प्रयोग।"
+      },
+      {
+        title: "2. Completed Past Action",
+        sentence: "Abhishek has finished his work.",
+        tense: "Present Perfect Tense (has finished)",
+        time: "Past Time (कार्य पूर्ण हो चुका है)",
+        note: "कार्य भूतकाल में पूरा हुआ, परंतु उसका प्रभाव वर्तमान में है।"
+      },
+      {
+        title: "3. Universal Fact",
+        sentence: "The sun rises in the east.",
+        tense: "Present Simple Tense (rises)",
+        time: "All Time (Past, Present, Future)",
+        note: "सार्वभौमिक सत्य जो भूत, वर्तमान और भविष्य तीनों में समान रहता है।"
+      },
+      {
+        title: "4. Immediate Present",
+        sentence: "I want a glass of water.",
+        tense: "Present Simple Tense (want)",
+        time: "Present Time (Immediate desire)",
+        note: "बोलते समय की तात्कालिक आवश्यकता या इच्छा।"
+      }
+    ];
+
+    function initInspector() {
+      const container = document.getElementById('live-btns');
+      if (!container) return;
+      container.innerHTML = '';
+      liveExamples.forEach((item, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = idx === 0 ? 'mint-btn' : 'quiet-btn';
+        btn.style.fontSize = '12px';
+        btn.style.padding = '6px 12px';
+        btn.innerText = item.title;
+        btn.onclick = () => selectInspector(idx);
+        container.appendChild(btn);
+      });
+      selectInspector(0);
     }
 
-    function updateProgress() {
-      let count = 0;
-      Object.keys(checkedStatus).forEach(id => {
-        if (checkedStatus[id].checked && checkedStatus[id].isCorrect) {
-          count++;
+    function selectInspector(index) {
+      const btns = document.querySelectorAll('#live-btns button');
+      btns.forEach((btn, i) => {
+        btn.className = i === index ? 'mint-btn' : 'quiet-btn';
+      });
+
+      const data = liveExamples[index];
+      const display = document.getElementById('live-display');
+      display.innerHTML = `
+        <div style="font-size:16px; font-weight:800; color:var(--brand); margin-bottom:8px;">
+          "${data.sentence}"
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; font-size:13px; margin-bottom:8px;">
+          <span style="background:#eff6ff; color:#1e40af; padding:4px 10px; border-radius:8px; border:1px solid #bfdbfe;">
+            <b>Tense:</b> ${data.tense}
+          </span>
+          <span style="background:#fef3c7; color:#92400e; padding:4px 10px; border-radius:8px; border:1px solid #fde68a;">
+            <b>Time:</b> ${data.time}
+          </span>
+        </div>
+        <p style="font-size:13px; color:#4b5563;">👉 <strong>व्याख्या:</strong> ${data.note}</p>
+      `;
+    }
+
+    // Filter Logic
+    function getFilteredQuestions() {
+      if (currentFilter === 'all') return questions;
+      return questions.filter(q => q.cat === currentFilter);
+    }
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      currentPage = 1;
+      
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === cat) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
         }
       });
-      document.getElementById('lesson-progress').value = count;
-      document.getElementById('progress-label').textContent = `${count} of 50 answers correct (${Math.round((count/50)*100)}%)`;
-      renderJumpGrid();
+
+      renderNavigationGrid();
+      renderPage();
     }
 
-    function renderJumpGrid() {
+    // Navigation Grid
+    function renderNavigationGrid() {
       const grid = document.getElementById('jump-grid');
+      if (!grid) return;
       grid.innerHTML = '';
 
-      questions.forEach(q => {
+      const filtered = getFilteredQuestions();
+
+      filtered.forEach((q) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'jump-btn';
-        btn.textContent = q.id;
-        btn.title = `Question ${q.id} (${q.label})`;
-
-        const st = checkedStatus[q.id];
-        if (st && st.checked) {
-          btn.classList.add(st.isCorrect ? 'correct' : 'retry');
-        } else if (userAnswers[q.id] !== undefined) {
-          btn.classList.add('selected');
+        btn.innerText = q.id;
+        
+        const qIndex = q.id - 1;
+        const state = userAnswers[qIndex];
+        
+        if (state !== null) {
+          if (state.checked) {
+            btn.classList.add(state.isCorrect ? 'correct' : 'retry');
+          } else {
+            btn.classList.add('selected');
+          }
         }
 
-        btn.onclick = () => {
-          activeCategory = 'all';
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.toggle('active', b.dataset.filter === 'all');
-          });
-          const filtered = getFilteredList();
-          const idx = filtered.findIndex(item => item.id === q.id);
-          currentPage = Math.floor(idx / pageSize) + 1;
-          renderQuestions();
-
-          setTimeout(() => {
-            const card = document.getElementById(`q-card-${q.id}`);
-            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 80);
-        };
-
+        btn.onclick = () => jumpToQuestion(q.id);
         grid.appendChild(btn);
       });
     }
 
-    function renderQuestions() {
+    function jumpToQuestion(qId) {
+      const filtered = getFilteredQuestions();
+      const itemIndex = filtered.findIndex(q => q.id === qId);
+      if (itemIndex === -1) return;
+
+      currentPage = Math.floor(itemIndex / pageSize) + 1;
+      renderPage();
+
+      setTimeout(() => {
+        const target = document.getElementById(`card-q-${qId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+
+    // Render Page Tasks
+    function renderPage() {
       const container = document.getElementById('task-container');
+      if (!container) return;
       container.innerHTML = '';
 
-      const filtered = getFilteredList();
+      const filtered = getFilteredQuestions();
       const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+      
       if (currentPage > totalPages) currentPage = totalPages;
       if (currentPage < 1) currentPage = 1;
 
       const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
+      const end = start + pageSize;
+      const pageItems = filtered.slice(start, end);
 
-      document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
-      document.getElementById('page-summary-text').textContent = `Showing Page ${currentPage} of ${totalPages} (${filtered.length} Questions).`;
-      document.getElementById('btn-prev').disabled = currentPage === 1;
-      document.getElementById('btn-next').disabled = currentPage === totalPages;
+      pageItems.forEach((q) => {
+        const qIndex = q.id - 1;
+        const savedState = userAnswers[qIndex];
+        const isChecked = savedState && savedState.checked;
+        const selectedOpt = savedState ? savedState.selected : null;
 
-      pageItems.forEach(q => {
         const card = document.createElement('article');
+        card.id = `card-q-${q.id}`;
         card.className = 'mint-card task-card';
-        card.id = `q-card-${q.id}`;
 
-        const st = checkedStatus[q.id];
-        const selected = userAnswers[q.id];
+        let statusText = `Question ${q.id} of 50 · ${q.label}`;
+        let statusClass = 'task-status';
 
-        let statusText = 'Your turn';
-        let statusClass = '';
-        if (st && st.checked) {
-          statusText = st.isCorrect ? '✓ Correct' : 'Try again';
-          statusClass = st.isCorrect ? 'correct' : 'retry';
-        } else if (selected !== undefined) {
-          statusText = 'Selected';
+        if (isChecked) {
+          if (savedState.isCorrect) {
+            statusText = `✓ Correct · Q${q.id}`;
+            statusClass = 'task-status correct';
+          } else {
+            statusText = `✕ Retry · Q${q.id}`;
+            statusClass = 'task-status retry';
+          }
+        } else if (selectedOpt !== null) {
+          statusText = `Selected · Q${q.id}`;
         }
 
-        let choicesHtml = '<div class="choices">';
-        q.options.forEach((opt, idx) => {
-          const isSelected = selected === idx;
-          let optClass = 'choice';
-          if (isSelected) optClass += ' selected';
-
-          if (st && st.checked) {
-            if (idx === q.ans) optClass += ' right-choice';
-            else if (isSelected && !st.isCorrect) optClass += ' wrong-choice';
+        let choicesHtml = '';
+        q.options.forEach((opt, optIdx) => {
+          let choiceClass = 'choice';
+          if (selectedOpt === optIdx) choiceClass += ' selected';
+          
+          if (isChecked) {
+            if (optIdx === q.ans) choiceClass += ' right-choice';
+            else if (selectedOpt === optIdx && optIdx !== q.ans) choiceClass += ' wrong-choice';
           }
 
+          const badgeChar = String.fromCharCode(65 + optIdx);
           choicesHtml += `
-            <div class="${optClass}" onclick="selectChoice(${q.id}, ${idx})">
-              <span class="choice-badge">${String.fromCharCode(65 + idx)}</span>
+            <div class="${choiceClass}" onclick="selectChoice(${qIndex}, ${optIdx})">
+              <span class="choice-badge">${badgeChar}</span>
               <span>${opt}</span>
             </div>
           `;
         });
-        choicesHtml += '</div>';
 
         let feedbackHtml = '';
-        if (st && st.checked) {
-          feedbackHtml = `<p class="task-feedback" data-state="${st.isCorrect ? 'correct' : 'retry'}">
-            ${st.isCorrect ? '✓ Correct! बहुत बढ़िया।' : '✗ Not quite yet. Solution padhein aur dobara koshish karein.'}
-          </p>`;
+        if (isChecked) {
+          if (savedState.isCorrect) {
+            feedbackHtml = `<div class="task-feedback">✓ Sahi uttar! Shabash!</div>`;
+          } else {
+            feedbackHtml = `<div class="task-feedback" data-state="retry">✕ Galat uttar. Sahi uttar option (${String.fromCharCode(65 + q.ans)}) hai.</div>`;
+          }
         }
-
-        const isSolOpen = st && st.checked && !st.isCorrect;
 
         card.innerHTML = `
           <div class="task-heading">
-            <span class="eyebrow">Question ${q.id < 10 ? '0' + q.id : q.id} · ${q.label}</span>
-            <span class="task-status ${statusClass}">${statusText}</span>
+            <span class="eyebrow">${q.label}</span>
+            <span class="${statusClass}">${statusText}</span>
           </div>
-          <h3>${q.q}</h3>
-          <p class="task-hindi">${q.hi}</p>
-          ${choicesHtml}
+          <h3>Q${q.id}. ${q.q}</h3>
+          <p class="task-hindi">👉 ${q.hi}</p>
+          
+          <div class="choices">
+            ${choicesHtml}
+          </div>
+
           <div class="task-bottom">
             <div class="task-actions">
-              <button class="mint-btn" style="font-size:13px; padding:10px 18px;" type="button" onclick="checkSingle(${q.id})">Check answer ✓</button>
-              <button class="quiet-btn" type="button" onclick="toggleSol(${q.id})">Short solution · समझें</button>
+              <button class="mint-btn" type="button" style="font-size:12px; padding:8px 14px;" onclick="checkSingle(${qIndex})">Check answer</button>
+              <button class="quiet-btn" type="button" onclick="resetSingle(${qIndex})">Clear</button>
             </div>
             ${feedbackHtml}
-            <details id="sol-${q.id}" class="solution" ${isSolOpen ? 'open' : ''}>
-              <summary>Short solution · समझें</summary>
-              <p><strong>Correct:</strong> Option ${String.fromCharCode(65 + q.ans)} ("${q.options[q.ans]}")</p>
-              <p style="color:#78350f;"><strong>Easy Explanation:</strong> ${q.expl}</p>
+            <details class="solution">
+              <summary>View Explanation (व्याख्या पढ़ें)</summary>
+              <p>${q.expl}</p>
             </details>
           </div>
         `;
 
         container.appendChild(card);
       });
+
+      // Update Pagination Controls
+      document.getElementById('page-indicator').innerText = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById('btn-prev').disabled = (currentPage === 1);
+      document.getElementById('btn-next').disabled = (currentPage === totalPages);
+      
+      document.getElementById('page-summary-text').innerText = 
+        `Showing questions ${start + 1} to ${Math.min(end, filtered.length)} of ${filtered.length} (${currentFilter.toUpperCase()} view).`;
+
+      updateProgressBar();
     }
 
-    function selectChoice(qId, idx) {
-      userAnswers[qId] = idx;
-      checkedStatus[qId] = { checked: false, isCorrect: false };
-      updateProgress();
-      renderQuestions();
+    function selectChoice(qIndex, optIdx) {
+      if (!userAnswers[qIndex]) {
+        userAnswers[qIndex] = { selected: optIdx, checked: false, isCorrect: false };
+      } else {
+        userAnswers[qIndex].selected = optIdx;
+        userAnswers[qIndex].checked = false; // Reset check on re-selection
+      }
+      renderNavigationGrid();
+      renderPage();
     }
 
-    function checkSingle(qId) {
-      const q = questions.find(item => item.id === qId);
-      if (!q) return;
-      const sel = userAnswers[qId];
-      if (sel === undefined) {
-        alert('Pehle koi option select karein!');
+    function checkSingle(qIndex) {
+      const state = userAnswers[qIndex];
+      if (!state || state.selected === null) {
+        alert("Kripya pehle kisi ek vikalp (option) ko chunein!");
         return;
       }
-      const isCorrect = sel === q.ans;
-      checkedStatus[qId] = { checked: true, isCorrect };
-      updateProgress();
-      renderQuestions();
+      const q = questions[qIndex];
+      state.checked = true;
+      state.isCorrect = (state.selected === q.ans);
+
+      renderNavigationGrid();
+      renderPage();
     }
 
-    function toggleSol(qId) {
-      const el = document.getElementById(`sol-${qId}`);
-      if (el) el.open = !el.open;
+    function resetSingle(qIndex) {
+      userAnswers[qIndex] = null;
+      renderNavigationGrid();
+      renderPage();
     }
 
     function checkCurrentPage() {
-      const filtered = getFilteredList();
+      const filtered = getFilteredQuestions();
       const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
+      const end = start + pageSize;
+      const pageItems = filtered.slice(start, end);
+
       pageItems.forEach(q => {
-        if (userAnswers[q.id] !== undefined) {
-          checkSingle(q.id);
+        const qIndex = q.id - 1;
+        const state = userAnswers[qIndex];
+        if (state && state.selected !== null) {
+          state.checked = true;
+          state.isCorrect = (state.selected === q.ans);
         }
       });
-    }
 
-    function changePage(delta) {
-      currentPage += delta;
-      renderQuestions();
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function filterCategory(cat) {
-      activeCategory = cat;
-      currentPage = 1;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.filter === cat);
-      });
-      renderQuestions();
+      renderNavigationGrid();
+      renderPage();
     }
 
     function resetAll() {
-      if (confirm('Kya aap sabhi answers aur score reset karna chahte hain?')) {
-        userAnswers = {};
-        checkedStatus = {};
+      if (confirm("Kya aap sabhi uttar reset karna chahte hain?")) {
+        userAnswers = Array(questions.length).fill(null);
         currentPage = 1;
-        updateProgress();
-        renderQuestions();
+        renderNavigationGrid();
+        renderPage();
       }
     }
 
-    // Interactive Inspector setup
-    function setupInspector() {
-      const container = document.getElementById('live-btns');
-      if (!container) return;
-      container.innerHTML = '';
-
-      liveSentences.forEach((item, idx) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'filter-btn';
-        if (idx === 0) btn.classList.add('active');
-        btn.textContent = `Example ${idx + 1}`;
-        btn.onclick = () => {
-          document.querySelectorAll('#live-btns .filter-btn').forEach((b, i) => {
-            b.classList.toggle('active', i === idx);
-          });
-          renderInspectorCard(idx);
-        };
-        container.appendChild(btn);
-      });
-
-      renderInspectorCard(0);
+    function changePage(delta) {
+      const filtered = getFilteredQuestions();
+      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+      currentPage += delta;
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      
+      renderPage();
+      document.getElementById('practice').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function renderInspectorCard(idx) {
-      const item = liveSentences[idx];
-      const display = document.getElementById('live-display');
-      if (!display) return;
-      display.innerHTML = `
-        <div style="font-size:18px; font-weight:900; color:#0f172a; margin-bottom:8px;">
-          "${item.sentence}"
-        </div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
-          <span class="badge" style="background:#dcfce7; color:#15803d; border-color:#86efac; font-size:12px; padding:4px 8px;">
-            Tense: ${item.tense}
-          </span>
-          <span class="badge" style="background:#fef3c7; color:#b45309; border-color:#fcd34d; font-size:12px; padding:4px 8px;">
-            Time: ${item.time}
-          </span>
-        </div>
-        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
-          ${item.desc}
-        </p>
-      `;
+    function updateProgressBar() {
+      const solvedCount = userAnswers.filter(a => a && a.checked && a.isCorrect).length;
+      const progressEl = document.getElementById('lesson-progress');
+      const labelEl = document.getElementById('progress-label');
+      
+      if (progressEl) progressEl.value = solvedCount;
+      if (labelEl) labelEl.innerText = `${solvedCount} of 50 questions solved correctly`;
     }
 
-    // Initial load
-    renderJumpGrid();
-    renderQuestions();
-    setupInspector();
+    // Initialize on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      initInspector();
+      renderNavigationGrid();
+      renderPage();
+    });
   </script>
 </body>
 </html>
