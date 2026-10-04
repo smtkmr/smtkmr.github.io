@@ -1,3 +1,96 @@
+<!-- ================= ECONOVA LOCK CODE START ================= -->
+<script>
+(function() {
+  // 1. APNA SECRET PASSWORD YAHAN SET KAREIN
+  const SECRET_PASSWORD = "ECONOVA123"; 
+
+  // 2. APNA SUBSCRIBE / TELEGRAM / YOUTUBE LINK YAHAN SET KAREIN
+  const SUBSCRIBE_LINK = "https://youtube.com"; 
+
+  // Style Inject Karein
+  const style = document.createElement('style');
+  style.innerHTML = `
+    body { display: none !important; }
+    #econova-lock-overlay {
+      position: fixed !important; top: 0 !important; left: 0 !important;
+      width: 100vw !important; height: 100vh !important;
+      background: #0f172a !important; display: flex !important;
+      justify-content: center !important; align-items: center !important;
+      z-index: 99999999 !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    .econova-lock-box {
+      background: #ffffff !important; padding: 32px 24px !important;
+      border-radius: 16px !important; text-align: center !important;
+      max-width: 360px !important; width: 88% !important;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3) !important;
+    }
+    .econova-lock-box h2 {
+      margin: 0 0 8px 0 !important; color: #0f172a !important;
+      font-size: 22px !important; font-weight: 700 !important;
+    }
+    .econova-lock-box p {
+      margin: 0 0 20px 0 !important; color: #64748b !important;
+      font-size: 14px !important; line-height: 1.5 !important;
+    }
+    .econova-sub-btn {
+      display: inline-block !important; width: 100% !important;
+      padding: 12px 0 !important; background: #dc2626 !important;
+      color: #ffffff !important; text-decoration: none !important;
+      border-radius: 8px !important; font-weight: 600 !important;
+      font-size: 15px !important; margin-bottom: 16px !important;
+      box-sizing: border-box !important;
+    }
+    .econova-lock-box input {
+      width: 100% !important; padding: 12px !important;
+      margin-bottom: 12px !important; border: 1px solid #cbd5e1 !important;
+      border-radius: 8px !important; text-align: center !important;
+      font-size: 16px !important; box-sizing: border-box !important;
+      outline: none !important;
+    }
+    .econova-lock-box button {
+      width: 100% !important; padding: 12px !important;
+      background: #2563eb !important; color: #ffffff !important;
+      border: none !important; border-radius: 8px !important;
+      font-weight: 600 !important; font-size: 16px !important;
+      cursor: pointer !important; box-sizing: border-box !important;
+    }
+    .econova-error {
+      color: #ef4444 !important; font-size: 13px !important;
+      margin-top: 10px !important; display: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Lock Overlay Window Load Hone Par Banayein
+  window.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.createElement('div');
+    overlay.id = 'econova-lock-overlay';
+    overlay.innerHTML = `
+      <div class="econova-lock-box">
+        <h2>🔒 Access Locked</h2>
+        <p>Is content ko dekhne ke liye pehle subscribe karein aur secret access code daalein.</p>
+        <a href="${SUBSCRIBE_LINK}" target="_blank" class="econova-sub-btn">Subscribe Channel</a>
+        <input type="password" id="econova-pass-field" placeholder="Enter Access Code">
+        <button id="econova-submit-btn">Unlock Content</button>
+        <p id="econova-err-msg" class="econova-error">❌ Galat Code! Sahi Code Daalein.</p>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // Lock Unlock Functionality
+    document.getElementById('econova-submit-btn').onclick = function() {
+      const code = document.getElementById('econova-pass-field').value;
+      if (code === SECRET_PASSWORD) {
+        overlay.remove();
+        document.body.style.display = 'block';
+      } else {
+        document.getElementById('econova-err-msg').style.display = 'block';
+      }
+    };
+  });
+})();
+</script>
+<!-- ================= ECONOVA LOCK CODE END ================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
