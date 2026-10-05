@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kinds, Position & Order of Adjectives (विशेषण के प्रकार, स्थिति और क्रम) - 6 Kinds, Participles, Link Verbs, Meaning Shifts, and Adjective Order with 50 interactive MCQs and easy Hindi explanations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Kinds, Position & Order of Adjectives (विशेषण के प्रकार, स्थिति और क्रम) - 6 Kinds, Participles, Link Verbs vs Adverbs, Meaning Shifts, and Adjective Order with 20 embedded concept examples and a 30-question 15-minute exam.">
   <meta name="theme-color" content="#2dd4bf">
-  <meta property="og:title" content="Chapter 3: Adjectives - Kinds, Position & Order (विशेषण के नियम)">
-  <meta property="og:description" content="Master English Adjectives with 5 Foundation Units, comprehensive Hindi rules, and 50 interactive MCQs.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Chapter 3: Adjectives - Kinds, Position & Order (विशेषण के नियम) | Econova English Grammar</title>
-
-  <!-- Google Fonts matching reference design -->
+  <title>Kinds, Position & Order of Adjectives (विशेषण के नियम) | Econova English Grammar</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --body: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Quicksand', sans-serif;
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
       --heading: 'Outfit', 'Quicksand', sans-serif;
       --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
       --bg: #f0fdf4;
@@ -28,1183 +23,348 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
+      --yt-red: #ff0000;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 18px; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-    }
+    /* Header & Responsive Navigation */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 23px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 32px; height: 32px; border-radius: 9px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-8deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 6px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 12.5px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-    }
+    .header-actions { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: 0;
-      background: transparent;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    h1, h2, h3, h4, .logo, .eyebrow, .number {
-      font-family: var(--heading);
-    }
-
-    a:focus-visible, button:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--ink);
-      outline-offset: 4px;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 28px;
-    }
-
-    .skip {
-      position: fixed;
-      left: 20px;
-      top: -80px;
-      background: white;
-      padding: 10px;
-      z-index: 100;
-      border-radius: 8px;
-      border: 2px solid var(--brand);
-      font-weight: bold;
-      transition: top 0.2s;
-    }
-
-    .skip:focus {
-      top: 10px;
-    }
-
-    /* Header & Navigation matching Econova style */
-    header {
-      background: var(--teal);
-      border-bottom: 2.5px solid var(--button);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
-    }
-
-    .nav {
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.8px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .logo em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-      background: var(--yellow);
-      color: var(--brand);
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      transform: rotate(-9deg);
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .nav-links {
-      display: flex;
+    .yt-btn {
+      background: var(--yt-red);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 13px;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-      flex-wrap: nowrap;
-    }
-
-    .nav-links a {
+      font-weight: 800;
+      font-size: 12px;
       font-family: var(--heading);
-      font-weight: 700;
-      color: #fff;
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 9999px;
+      box-shadow: 0 3px 0 #b30000;
       white-space: nowrap;
-      transition: background 0.15s, transform 0.1s;
+      flex-shrink: 0;
+      transition: all 0.15s;
     }
+    .yt-btn:hover { background: #e60000; transform: translateY(-1px); }
+    .yt-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #b30000; }
 
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-
-    .mint-btn {
+    .nav-test-btn {
       background: var(--button);
-      color: #fff;
-      border: 0;
-      border-radius: 16px;
-      padding: 13px 22px;
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 13px;
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
       font-weight: 800;
       font-family: var(--heading);
-      box-shadow: 0 4px 0 var(--brand);
-      transition: transform .15s, background .15s, box-shadow .15s;
-      cursor: pointer;
-    }
-
-    .mint-btn:hover {
-      background: var(--brand);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 #047857;
-    }
-
-    .mint-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--brand);
-    }
-
-    .nav-practice-btn {
-      font-size: 12.5px;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      white-space: nowrap;
+      font-size: 12px;
       box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
       flex-shrink: 0;
-    }
-
-    .quiet-btn {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 14px;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 9px 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .quiet-btn:hover {
-      background: #d1fae5;
-    }
-
-    /* Cards */
-    .mint-card {
-      background: #fff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .amber-card {
-      background: #fffbeb;
-      border: 3px solid #fcd34d;
-      border-radius: 24px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--brand);
-    }
-
-    /* Hero section */
-    .hero {
-      padding-top: 44px;
-      padding-bottom: 35px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid #34d399;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12px;
-      color: var(--brand);
-      font-weight: bold;
-    }
-
-    .pill span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--button);
-    }
-
-    h1 {
-      font-size: clamp(34px, 4.8vw, 56px);
-      font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -1.6px;
-      margin: 18px 0 14px;
-    }
-
-    h1 .green {
-      color: var(--brand);
-    }
-
-    .underline {
-      position: relative;
-      white-space: normal;
-      isolation: isolate;
-    }
-
-    .underline:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 4px;
-      height: 14px;
-      background: var(--yellow);
-      z-index: -1;
-      transform: rotate(-1.5deg);
-      border-radius: 8px;
-    }
-
-    .intro {
-      max-width: 560px;
-      font-size: 15.5px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin: 24px 0 18px;
-      flex-wrap: wrap;
-    }
-
-    .text-link {
-      color: var(--brand);
-      font-weight: bold;
-      font-size: 14px;
+      transition: all .15s;
       cursor: pointer;
     }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-1px); }
+    .nav-test-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--brand); }
 
-    .text-link:hover {
-      text-decoration: underline;
-    }
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
 
-    .hero-note {
-      font-size: 12px;
-      display: flex;
-      gap: 16px;
-      color: var(--brand);
-      font-weight: bold;
-      flex-wrap: wrap;
-    }
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
 
-    /* Hero sample card */
-    .hero-sample {
-      padding: 26px;
-      text-align: left;
-      transform: rotate(1deg);
-      box-shadow: 7px 8px 0 #d1fae5;
-    }
+    /* Hero */
+    .hero { padding: 30px 0 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 5px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(28px, 4.2vw, 50px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; font-family: var(--heading); }
+    h1 .green { color: var(--brand); }
 
-    .hero-sample .sample-number {
-      font-family: var(--heading);
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--brand);
-      line-height: 1.2;
-      margin: 8px 0;
-    }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
 
-    .hero-sample p {
-      font-size: 13.8px;
-      line-height: 1.7;
-    }
+    .section { padding: 28px 0 10px; }
+    .rule-card { padding: 18px 20px; margin-bottom: 18px; background: #fff; border: 2px solid #a7f3d0; border-radius: 16px; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    
+    .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 10px 14px; margin: 10px 0; line-height: 1.65; }
+    .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #991b1b; }
+    .trap-box b { display: block; font-size: 13.5px; margin-bottom: 4px; color: #b91c1c; }
 
-    /* Lesson toolbar & jump bar */
-    .lesson-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-      margin: 15px 0 40px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps a {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 12px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: background 0.15s, transform 0.1s;
-    }
-
-    .lesson-jumps a:hover {
-      background: #d1fae5;
-      transform: translateY(-1px);
-    }
-
-    .progress-block {
-      min-width: 220px;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    progress {
-      display: block;
-      width: 100%;
-      height: 12px;
-      margin-top: 6px;
-      accent-color: var(--button);
-      border-radius: 6px;
-    }
-
-    /* Sections */
-    .section {
-      padding-top: 48px;
-      padding-bottom: 12px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      font-size: 30px;
-      letter-spacing: -0.8px;
-      line-height: 1.25;
-      margin-top: 6px;
-      font-weight: 900;
-    }
-
-    .section-heading > p {
-      font-size: 14px;
-      max-width: 420px;
-      color: #4b5563;
-    }
-
-    /* 5 Topic overview cards */
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .topic-card {
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .topic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 0 #a7f3d0;
-    }
-
-    .topic-icon {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    .topic-card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-
-    .topic-card p {
-      font-size: 12.5px;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .topic-tag {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 4px 10px;
-      background: var(--bg);
-      border-radius: 12px;
-      color: var(--brand);
-      border: 1px solid var(--line);
-    }
-
-    /* Rule Cards */
-    .rule-card {
-      padding: 22px 26px;
-      margin-bottom: 18px;
-      background: #fff;
-      border: 2px solid #a7f3d0;
-      border-radius: 20px;
-      max-width: 100%;
-      overflow: hidden;
-    }
-
-    .rule-card.highlight {
-      border-left: 6px solid var(--button);
-    }
-
-    .rule-card.warning {
-      border-left: 6px solid #f59e0b;
-      background: #fffdf5;
-    }
-
-    .rule-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-    }
-
-    .rule-header h3 {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 8px;
-      background: #ecfdf5;
-      color: var(--brand);
-      border: 1px solid #34d399;
-    }
-
-    .badge-amber {
-      background: #fef3c7;
-      color: #b45309;
-      border: 1px solid #fcd34d;
-    }
-
-    .badge-red {
-      background: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #fca5a5;
-    }
-
-    .easy-hi {
-      font-family: var(--hi-font);
-      font-size: 14.5px;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 12px 16px;
-      margin: 12px 0;
-      line-height: 1.75;
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .example-box {
-      background: var(--bg);
-      border: 1.5px solid #a7f3d0;
-      border-radius: 14px;
-      padding: 10px 14px;
-    }
-
-    .example-box b {
-      font-size: 14.5px;
-      color: var(--brand);
-      display: block;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .example-box span {
-      font-size: 13px;
-      color: #4b5563;
-    }
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
+    .compare-table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 12.5px; }
+    .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
 
     /* Speech Chip */
     .speech-chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: #e0f2fe;
       border: 1px solid #7dd3fc;
       color: #0369a1;
-      padding: 3px 8px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .speech-chip:hover {
-      background: #bae6fd;
-      transform: scale(1.03);
-    }
-
-    /* Table Wrapper */
-    .table-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 14px;
-      margin-top: 10px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .table-wrap::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-track {
-      background: #f1f5f9;
+      padding: 2px 7px;
       border-radius: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb {
-      background: #34d399;
-      border-radius: 6px;
-    }
-
-    .table-scroll-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--brand);
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 20px;
-      padding: 4px 10px;
-      margin-top: 8px;
-    }
-
-    /* Comparison Table */
-    .compare-table {
-      width: 100%;
-      min-width: 520px;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      line-height: 1.5;
-    }
-
-    .compare-table th, .compare-table td {
-      padding: 10px 14px;
-      border: 1px solid #e2e8f0;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .compare-table th {
-      background: #e2e8f0;
-      font-family: var(--heading);
-      font-weight: 800;
-      color: #1e293b;
-      white-space: nowrap;
-    }
-
-    .compare-table tr:nth-child(even) {
-      background: #f8fafc;
-    }
-
-    .wrong {
-      color: #dc2626;
-      font-weight: bold;
-    }
-
-    .right {
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    /* Practice Arena Section */
-    .practice-box {
-      margin-top: 35px;
-      padding: 26px 30px;
-    }
-
-    .filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 16px;
-    }
-
-    .filter-btn {
-      padding: 9px 15px;
-      border: 2px solid var(--line);
-      border-radius: 14px;
-      background: white;
-      color: var(--brand);
-      font-size: 13px;
-      font-weight: bold;
-      transition: all 0.15s;
-    }
-
-    .filter-btn:hover {
-      background: #d1fae5;
-    }
-
-    .filter-btn.active {
-      background: var(--button);
-      color: white;
-      box-shadow: 0 3px 0 var(--brand);
-    }
-
-    /* Jump Grid Map */
-    .jump-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .jump-btn {
-      height: 34px;
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      font-family: var(--heading);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--brand);
-      transition: all 0.15s;
-    }
-
-    .jump-btn:hover {
-      background: #d1fae5;
-    }
-
-    .jump-btn.correct {
-      background: #10b981;
-      color: white;
-      border-color: #059669;
-    }
-
-    .jump-btn.retry {
-      background: #ef4444;
-      color: white;
-      border-color: #b91c1c;
-    }
-
-    .jump-btn.selected {
-      background: #fde047;
-      color: #78350f;
-      border-color: #d97706;
-    }
-
-    /* Task / Question Cards */
-    .task-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .task-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      scroll-margin-top: 110px;
-    }
-
-    .task-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .task-status {
       font-size: 11px;
-      font-weight: bold;
-      color: var(--brand);
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-
-    .task-status.correct {
-      background: #dcfce7;
-      border-color: #22c55e;
-      color: #15803d;
-    }
-
-    .task-status.retry {
-      background: #fee2e2;
-      border-color: #ef4444;
-      color: #b91c1c;
-    }
-
-    .task-card h3 {
-      font-size: 18px;
-      line-height: 1.45;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .task-hindi {
-      font-family: var(--hi-font);
-      font-size: 13.5px;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    /* Choices list */
-    .choices {
-      display: grid;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
-
-    .choice {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 11px 14px;
-      background: var(--bg);
-      border: 2px solid #a7f3d0;
-      border-radius: 14px;
+      font-weight: 700;
       cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
       transition: all 0.15s;
     }
+    .speech-chip:hover { background: #bae6fd; transform: scale(1.02); }
 
-    .choice:hover {
-      border-color: var(--brand);
-      background: #ecfdf5;
-    }
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 10px; }
+    .pair-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12px; }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+    
+    .choices-sm { display: grid; gap: 5px; margin: 6px 0; }
+    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; flex-shrink: 0; }
 
-    .choice.selected {
-      background: #fffbeb;
-      border-color: #f59e0b;
-    }
+    /* Test Arena */
+    .test-section { margin-top: 36px; padding: 20px; scroll-margin-top: 80px; }
+    .test-timer-bar { position: sticky; top: 66px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 18px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 10px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
-    .choice.right-choice {
-      background: #dcfce7 !important;
-      border-color: #22c55e !important;
-      color: #15803d !important;
-    }
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 4px; margin: 8px 0; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); }
 
-    .choice.wrong-choice {
-      background: #fee2e2 !important;
-      border-color: #ef4444 !important;
-      color: #b91c1c !important;
-    }
+    .test-card { padding: 18px; background: #fff; border: 2.5px solid var(--line); border-radius: 18px; }
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
 
-    .choice-badge {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: white;
-      border: 1.5px solid var(--line);
-      display: grid;
-      place-items: center;
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px; }
+    .score-circle { font-family: var(--heading); font-size: 38px; font-weight: 900; color: var(--brand); }
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 16px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px; font-size: 12px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #fff; font-size: 12.5px; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
+
+    /* Mobile Floating Quick Test Jump */
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 16px;
       font-family: var(--heading);
-      font-size: 12px;
       font-weight: 800;
-      color: var(--brand);
-      flex-shrink: 0;
-    }
-
-    .task-bottom {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #d1fae5;
-    }
-
-    .task-actions {
-      display: flex;
-      gap: 10px;
+      font-size: 13px;
+      display: none;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .task-feedback {
-      font-size: 13px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: var(--brand);
-    }
-
-    .task-feedback[data-state=retry] {
-      color: #b91c1c;
-    }
-
-    .solution {
-      margin-top: 14px;
-      padding: 12px 14px;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 14px;
-      font-size: 13px;
-    }
-
-    .solution summary {
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
       cursor: pointer;
-      font-weight: bold;
-      color: #78350f;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 20px 0; margin-top: 40px; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 58px; }
+      .mobile-float-btn { display: inline-flex; }
     }
 
-    .solution p {
-      margin-top: 6px;
-      line-height: 1.7;
+    @media (max-width: 640px) {
+      .wrap { padding: 0 10px; }
+      .nav { min-height: 58px; gap: 6px; }
+      .logo { font-size: 16px; gap: 5px; }
+      .logo-mark { width: 28px; height: 28px; font-size: 14px; border-radius: 8px; }
+      
+      .header-actions { gap: 6px; display: flex; align-items: center; }
+      .yt-btn {
+        padding: 6px 10px;
+        font-size: 11.5px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 #b30000;
+      }
+      .nav-test-btn {
+        padding: 6px 11px;
+        font-size: 11.5px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 var(--brand);
+      }
+
+      .hero-actions { flex-direction: column; width: 100%; gap: 10px; }
+      .hero-actions .mint-btn, .hero-actions .hero-test-btn { width: 100%; justify-content: center; text-align: center; padding: 11px 16px; }
+
+      .test-section { padding: 14px 10px; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .pal-btn { height: 32px; font-size: 11.5px; }
+
+      .test-actions-bar { flex-direction: column-reverse; gap: 8px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+
+      .rule-card { padding: 15px 14px; border-radius: 15px; }
     }
 
-    .check-all-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 36px;
-      padding: 26px;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      background: #fff;
-      border-top: 2px solid #a7f3d0;
-      padding: 28px 0;
-      margin-top: 60px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-size: 12px;
-    }
-
-    .footer-brand {
-      font-family: var(--heading);
-      font-size: 24px;
-      color: var(--brand);
-      font-weight: 900;
-    }
-
-    .footer-brand em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-weight: bold;
-      color: var(--brand);
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1024px) {
-      .topics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 1050px) {
-      .nav-links a {
-        font-size: 12px;
-        padding: 5px 8px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .task-grid {
-        grid-template-columns: 1fr;
-      }
-      .topics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .wrap {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-      .rule-card {
-        padding: 16px 14px;
-        border-radius: 16px;
-      }
-      .compare-table {
-        font-size: 12.5px;
-        min-width: 480px;
-      }
-      .compare-table th, .compare-table td {
-        padding: 8px 10px;
-      }
-      .nav {
-        min-height: 56px;
-        gap: 8px;
-      }
-      .logo {
-        font-size: 20px;
-      }
-      .logo-mark {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-      }
-      .nav-links {
-        display: none;
-      }
-      .nav-practice-btn {
-        font-size: 12px;
-        padding: 7px 12px;
-      }
-      h1 {
-        font-size: 32px;
-      }
-      .topics-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .check-all-section {
-        flex-direction: column;
-        text-align: center;
-      }
+    @media (max-width: 380px) {
+      .wrap { padding: 0 8px; }
+      .logo { font-size: 15px; gap: 4px; }
+      .logo span span { display: none; }
+      .header-actions { gap: 4px; }
+      .yt-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
+      .nav-test-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
     }
   </style>
 </head>
 
 <body>
-  <a href="#main" class="skip">Skip to content</a>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
 
-  <!-- Header matching Econova theme -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#main" aria-label="Econova Home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span>Econova<em>.vip</em></span>
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#unit-1">1. Kinds</a>
-        <a href="#unit-2">2. Agreement</a>
-        <a href="#unit-3">3. Position</a>
-        <a href="#unit-4">4. Traps</a>
-        <a href="#unit-5">5. Order</a>
+      <nav class="main-nav">
+        <a href="#topic-1">1. Kinds &amp; Participles</a>
+        <a href="#topic-2">2. Agreement &amp; Preps</a>
+        <a href="#topic-3">3. Position &amp; Link Verbs</a>
+        <a href="#topic-4">4. Meaning Shifts &amp; Traps</a>
+        <a href="#topic-5">5. Order of Adjectives</a>
       </nav>
 
-      <a class="mint-btn nav-practice-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
+      <div class="header-actions">
+        <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer" title="YouTube Video Lesson">
+          <svg width="16" height="12" viewBox="0 0 20 14" fill="currentColor">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()" title="Start 30-Question Test">
+          <span style="font-size:12px; line-height:1;">⏱</span>
+          <span>30-Q Test (15m)</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <main id="main" class="wrap">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="lesson-title">
+    <!-- Hero -->
+    <section class="hero">
       <div>
         <div class="pill">
-          <span aria-hidden="true"></span>
-          Class 4–10 English · Chapter 3: Adjectives
+          <span></span>
+          Class 4–10 English Grammar · Chapter 3: Adjectives
         </div>
 
-        <h1 id="lesson-title">
-          Kinds, Position &amp; Order of <span class="green">Adjectives</span><br>
-          <span class="underline">विशेषण के प्रकार, स्थिति और क्रम.</span>
+        <h1>
+          Master <span class="green">Adjectives &amp; Rules</span><br>
+          विशेषण के प्रकार, स्थिति और क्रम.
         </h1>
 
-        <p class="intro">
-          In English grammar, an <strong>Adjective (विशेषण)</strong> qualifies or describes a noun or pronoun. Master the <strong>6 Kinds of Adjectives</strong>, <strong>Active vs Passive Participles (-ing vs -ed)</strong>, <strong>Agreement &amp; Prepositions</strong>, <strong>Attributive vs Predicative Position</strong>, <strong>Link Verbs vs Action Verbs</strong>, <strong>Meaning Shifts (small farmer, early/late, poor)</strong>, and the exact <strong>Order of Adjectives of Quality (OSASCOMP + little/old/young)</strong> — all explained with simple, clear Hindi explanations!
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;">
+          In English grammar, an <strong>Adjective (विशेषण)</strong> qualifies or describes a noun or pronoun. Adjectives के संपूर्ण व्याकरण को समझने के लिए इसके <strong>6 Kinds</strong> (Demonstrative, Distributive, Quantitative, Interrogative, Possessive, Quality), <strong>Active vs Passive Participles (-ing vs -ed)</strong>, <strong>Agreement &amp; Fixed Prepositions</strong>, <strong>Attributive vs Predicative Position</strong>, <strong>Link Verbs vs Action Verbs (Adjective vs Adverb का जाल)</strong>, <strong>अर्थ परिवर्तन (small farmer, early/late, poor)</strong>, तथा <strong>विशेषणों का क्रम (OSASCOMP + little/old/young)</strong> को जानना आवश्यक है। यहाँ प्रत्येक नियम के साथ <strong>2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong> दिया गया है।
         </p>
 
         <div class="hero-actions">
-          <a class="mint-btn" href="#unit-1">Start Chapter Rules →</a>
-          <a class="text-link" href="#practice">Direct Practise 50 MCQs ↘</a>
-        </div>
-
-        <div class="hero-note">
-          <span>✦ 5 Comprehensive Foundation Units</span>
-          <span>✦ 50 Interactive MCQs with Solutions</span>
-          <span>✦ Crystal-Clear Hindi Understanding (सरल हिंदी व्याख्या)</span>
-          <span>✦ Pronunciation Audio 🔊</span>
+          <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; 20 Examples →</a>
+          <button class="mint-btn hero-test-btn" style="background:#047857; box-shadow:0 3px 0 #064e3b;" type="button" onclick="scrollToTest()">
+            ⏱ 30-Question Test (15m)
+          </button>
         </div>
       </div>
 
-      <!-- Golden Rule Card on Right -->
-      <div class="amber-card hero-sample">
-        <p class="eyebrow">The Golden Rules of Adjectives</p>
-        <div class="sample-number">Form, Position &amp; Order!</div>
-        <p>
-          <strong>Essential keys to remember for exams &amp; speaking:</strong><br>
-          • <strong>Participles:</strong> <em>-ing</em> causes the feeling (<em>boring, tiring</em>); <em>-ed</em> experiences the feeling (<em>bored, tired</em>).<br>
-          • <strong>Agreement:</strong> Only <em>this/that</em> change to <em>these/those</em>. Other adjectives NEVER change form for plural or gender!<br>
-          • <strong>Link Verbs:</strong> Take adjectives, NOT adverbs (<em>He looked calm</em> ✓, NOT <em>calmly</em>).<br>
-          • <strong>Predicative Only:</strong> <em>afraid, asleep, alone, alive</em> never precede a noun (<em>The boy was afraid</em> ✓).<br>
-          • <strong>Adjective Order:</strong> Size → Opinion/Quality → Age/Little → Shape → Colour → Material → Origin → Purpose!
+      <div class="amber-card" style="padding:18px; text-align:center;">
+        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The Golden Rules</p>
+        <div style="font-family:var(--heading); font-size:30px; font-weight:900; color:var(--brand); margin:4px 0;">Form, Position &amp; Order!</div>
+        <p style="text-align:left; font-size:12.5px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+          <strong>वाक्य में विशेषण के आवश्यक नियम (Exam Essentials):</strong><br>
+          • <strong>Participles:</strong> <em>-ing</em> कारण/प्रभावक है (<em>boring, tiring</em>); <em>-ed</em> असर महसूस करने वाला है (<em>bored, tired</em>)।<br>
+          • <strong>Agreement:</strong> केवल <em>this/that</em> बहुवचन में <em>these/those</em> बनते हैं; अन्य विशेषण कभी नहीं बदलते!<br>
+          • <strong>Link Verbs:</strong> Adverbs नहीं, बल्कि Adjectives लेते हैं (<em>He looked calm</em> ✓, NOT <em>calmly</em>)।<br>
+          • <strong>Predicative Only:</strong> <em>afraid, asleep, alone, alive</em> कभी सीधे संज्ञा से पहले नहीं आते।<br>
+          • <strong>Order:</strong> Size → Quality/Opinion → Age/Little → Shape → Colour → Material → Origin → Purpose!
         </p>
       </div>
     </section>
 
-    <!-- Toolbar & Shortcuts -->
-    <div class="mint-card lesson-toolbar">
-      <nav class="lesson-jumps" aria-label="Lesson shortcuts">
-        <a href="#unit-1">01 · Kinds &amp; Participles</a>
-        <a href="#unit-2">02 · Agreement &amp; Prepositions</a>
-        <a href="#unit-3">03 · Position &amp; Link Verbs</a>
-        <a href="#unit-4">04 · Meaning Shifts &amp; Traps</a>
-        <a href="#unit-5">05 · Order of Adjectives</a>
-      </nav>
-
-      <div class="progress-block">
-        <span id="progress-label" role="status">0 of 50 questions solved</span>
-        <progress id="lesson-progress" max="50" value="0" aria-label="Questions solved out of 50"></progress>
-      </div>
-    </div>
-
-    <!-- 5 Topics Overview Grid -->
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Chapter Structure</p>
-          <h2>The Five Foundation Units.</h2>
-        </div>
-        <p>These 5 units systematically cover every single detail from Sections 17, 18 &amp; 19 with rich examples and Hindi explanations.</p>
-      </div>
-
-      <div class="topics-grid">
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🏷️</div>
-          <h3>1. Kinds &amp; Participles</h3>
-          <p>6 main kinds &amp; -ing vs -ed participles (active vs passive).</p>
-          <span class="topic-tag">Unit 01 · Sec 17</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">🔗</div>
-          <h3>2. Agreement &amp; Preps</h3>
-          <p>Unchanging form, this/these exceptions, and adjective + preposition pairs.</p>
-          <span class="topic-tag">Unit 02 · Sec 17</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">⚖️</div>
-          <h3>3. Position &amp; Link Verbs</h3>
-          <p>Attributive vs predicative and the crucial link verb vs adverb trap.</p>
-          <span class="topic-tag">Unit 03 · Sec 18</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">⚠️</div>
-          <h3>4. Meaning Shifts &amp; Traps</h3>
-          <p>Small farmer, early/late train, poor, afraid vs frightened, and 'and'.</p>
-          <span class="topic-tag">Unit 04 · Sec 18</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">📐</div>
-          <h3>5. Order of Adjectives</h3>
-          <p>OSASCOMP sequence, little/old/young combos, approval &amp; pretty.</p>
-          <span class="topic-tag">Unit 05 · Sec 19</span>
-        </article>
-      </div>
-    </section>
-
     <!-- ========================================== -->
-    <!-- UNIT 1: Kinds of Adjectives & Participles -->
+    <!-- UNIT 01: KINDS OF ADJECTIVES & PARTICIPLES -->
     <!-- ========================================== -->
-    <section id="unit-1" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 01 · Fundamentals (Section 17)</p>
-          <h2>1. Kinds of Adjectives &amp; Participles (विशेषण के प्रकार और कृदंत)</h2>
-        </div>
-        <p>Learn the 6 main categories of adjectives and understand the active vs passive difference between -ing and -ed participles.</p>
+    <section id="topic-1" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 01 · Fundamentals</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. Kinds of Adjectives &amp; Participles (विशेषण के प्रकार और कृदंत)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1A: 6 Kinds -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. The Six Main Kinds of Adjectives</h3>
-          <span class="badge">Core Classification</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Six Main Kinds of Adjectives (विशेषण के छह भेद)</h3>
+          <span class="badge">Core Concept</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>सरल समझ (Hindi Explanation):</strong> अंग्रेज़ी में विशेषणों को मुख्य रूप से 6 श्रेणियों में बाँटा जाता है:<br>
-          1. <strong>Demonstrative (संकेतवाचक):</strong> किसी निश्चित वस्तु या व्यक्ति की ओर इशारा करने वाले शब्द — <em>this, that, these, those</em>.<br>
+          👉 <strong>विस्तृत अवधारणा (Detailed Breakdown):</strong><br>
+          1. <strong>Demonstrative (संकेतवाचक):</strong> किसी निश्चित वस्तु या व्यक्ति की ओर इशारा करने वाले — <em>this, that, these, those</em>.<br>
           2. <strong>Distributive (विभागसूचक):</strong> समूह के प्रत्येक व्यक्ति या वस्तु का अलग-अलग बोध कराने वाले — <em>each, every, either, neither</em>.<br>
           3. <strong>Quantitative (परिमाण व संख्यावाचक):</strong> मात्रा या संख्या बताने वाले — <em>some, any, no; little, few; many, much; one, twenty</em>.<br>
           4. <strong>Interrogative (प्रश्नवाचक):</strong> संज्ञा के साथ प्रश्न पूछने वाले — <em>which, what, whose</em>.<br>
@@ -1212,58 +372,42 @@
           6. <strong>Of Quality (गुणवाचक):</strong> संज्ञा के रंग, रूप, आकार, स्वभाव या गुण-दोष बताने वाले — <em>clever, dry, fat, golden, good, heavy, square</em>.
         </div>
 
-        <div class="example-grid">
-          <div class="example-box">
-            <b>Demonstrative</b>
-            <span>this book, that man, these cats, those men</span>
-          </div>
-          <div class="example-box">
-            <b>Distributive</b>
-            <span>each boy, every day, either side, neither answer</span>
-          </div>
-          <div class="example-box">
-            <b>Quantitative</b>
-            <span>some water, much sugar, few friends, twenty chairs</span>
-          </div>
-          <div class="example-box">
-            <b>Interrogative</b>
-            <span>which boy, what question, whose dog</span>
-          </div>
-          <div class="example-box">
-            <b>Possessive</b>
-            <span>my brother, your car, her pen, their house</span>
-          </div>
-          <div class="example-box">
-            <b>Of Quality</b>
-            <span>clever girl, dry cloth, heavy box, golden ring</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>B. Participles Used as Adjectives: Present (-ing) vs Past (-ed)</h3>
-          <span class="badge badge-amber">Golden Concept · Exam Favorite</span>
-        </div>
-        <p>Both <strong>present participles (-ing)</strong> and <strong>past participles (-ed)</strong> can be used as adjectives. Care must be taken not to confuse them!</p>
-        <div class="easy-hi" style="background:#fef3c7; border-color:#fcd34d; color:#78350f;">
-          👉 <strong>नियम (Active vs Passive):</strong><br>
-          • <strong>Present Participle (-ing):</strong> यह <strong>Active (सक्रिय)</strong> होता है और इसका अर्थ होता है <em>'having this effect'</em> (प्रभाव या अनुभूति पैदा करने वाला/कारण)।<br>
-          • <strong>Past Participle (-ed):</strong> यह <strong>Passive (निष्क्रिय)</strong> होता है और इसका अर्थ होता है <em>'affected in this way'</em> (उस प्रभाव या असर को महसूस करने वाला)।
-        </div>
-
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Present Participle (-ing) [Active: प्रभावक]</th>
-                <th>Past Participle (-ed) [Passive: प्रभावित]</th>
-                <th>Hindi Meaning &amp; Context (सरल अर्थ)</th>
-                <th>Listen 🔊</th>
-              </tr>
+              <tr><th>Kind of Adjective</th><th>परिभाषा (Meaning)</th><th>Textbook Examples</th><th>पहचान नियम</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Demonstrative</strong></td><td>निश्चित व्यक्ति/वस्तु की ओर इशारा</td><td>this book, that man, these cats</td><td>This/that का बहुवचन these/those</td></tr>
+              <tr><td><strong>Distributive</strong></td><td>समूह के प्रत्येक का अलग बोध</td><td>each boy, every day, either side</td><td>हमेशा एकवचन संज्ञा के साथ</td></tr>
+              <tr><td><strong>Quantitative</strong></td><td>मात्रा या संख्या का बोध</td><td>some water, much sugar, few friends</td><td>Countable (few, many) vs Uncountable (little, much)</td></tr>
+              <tr><td><strong>Interrogative</strong></td><td>संज्ञा के साथ प्रश्न पूछना</td><td>which boy, what question, whose dog</td><td>संज्ञा के ठीक पहले प्रयुक्त</td></tr>
+              <tr><td><strong>Possessive</strong></td><td>अधिकार व संबंध दर्शाना</td><td>my brother, your car, their house</td><td>संज्ञा से पहले (Pronouns से अलग)</td></tr>
+              <tr><td><strong>Of Quality</strong></td><td>रंग, आकार, गुण व स्थिति</td><td>clever girl, heavy box, golden ring</td><td>Attributive व Predicative दोनों संभव</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 2 Example Questions for 1A -->
+        <div class="concept-pair-box" id="pair-1a"></div>
+      </article>
+
+      <!-- Sub-concept 1B: Participles -ing vs -ed -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Participles as Adjectives: Present (-ing) vs Past (-ed)</h3>
+          <span class="badge">Active vs Passive</span>
+        </div>
+        <div class="easy-hi">
+          👉 <strong>सक्रिय बनाम निष्क्रिय का नियम (Active vs Passive):</strong><br>
+          • <strong>Present Participle (-ing):</strong> यह <strong>Active (सक्रिय)</strong> होता है। इसका अर्थ होता है <em>'having this effect'</em> (प्रभाव या अनुभूति पैदा करने वाला/कारण)।<br>
+          • <strong>Past Participle (-ed):</strong> यह <strong>Passive (निष्क्रिय)</strong> होता है। इसका अर्थ होता है <em>'affected in this way'</em> (उस प्रभाव या असर को महसूस करने वाला)।
+        </div>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr><th>Present Participle (-ing) [Active: प्रभावक]</th><th>Past Participle (-ed) [Passive: प्रभावित]</th><th>हिंदी व्याख्या व संदर्भ</th><th>Listen 🔊</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -1287,263 +431,213 @@
               <tr>
                 <td><strong>An infuriating woman</strong><br>(गुस्सा दिला देने वाली महिला)</td>
                 <td><strong>An infuriated woman</strong><br>(क्रोधित/गुस्से में भरी हुई महिला)</td>
-                <td><em>Infuriating:</em> उसने हमें क्रोधित कर दिया (She made us furious).<br><em>Infuriated:</em> किसी बात ने उसे क्रोधित कर दिया था।</td>
+                <td><em>Infuriating:</em> उसने हमें क्रोधित किया।<br><em>Infuriated:</em> वह स्वयं किसी बात से बहुत गुस्से में है।</td>
                 <td><button type="button" class="speech-chip" onclick="speakWord('An infuriating woman. An infuriated woman.')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>An amusing story</strong><br>(मनोरंजक कहानी)</td>
-                <td><strong>An amused listener</strong><br>(प्रसन्न/मनोरंजित श्रोता)</td>
-                <td>कहानी हँसाने वाली है; सुनने वाला व्यक्ति खुश/मुस्कुरा रहा है।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('An amusing story. An amused listener.')">Listen 🔊</button></td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 1B -->
+        <div class="concept-pair-box" id="pair-1b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 2: Agreement & Prepositions -->
+    <!-- UNIT 02: AGREEMENT & PREPOSITIONS -->
     <!-- ========================================== -->
-    <section id="unit-2" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 02 · Grammar Rules (Section 17)</p>
-          <h2>2. Agreement of Adjectives &amp; Prepositions (लिंग-वचन और Prepositions)</h2>
-        </div>
-        <p>English adjectives do not change for gender or number — except for demonstratives. Also learn key prepositions following adjectives.</p>
+    <section id="topic-2" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 02 · Agreement &amp; Prepositions</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Agreement &amp; Fixed Prepositions (लिंग-वचन और Prepositions)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 2A: Invariance & this/that -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Agreement Rule: No Change for Number or Gender</h3>
-          <span class="badge">Rule of Invariance</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Agreement of Adjectives: Rule of Invariance &amp; Demonstratives</h3>
+          <span class="badge">Core Rule</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>अपरिवर्तनशीलता का नियम:</strong> अन्य भाषाओं के विपरीत, अंग्रेज़ी में विशेषण एकवचन/बहुवचन या पुल्लिंग/स्त्रीलिंग के अनुसार अपना रूप <strong>कभी नहीं बदलते</strong>:<br>
+          👉 <strong>अपरिवर्तनशीलता का नियम (No Plural for Adjectives):</strong><br>
+          अन्य भाषाओं के विपरीत, अंग्रेज़ी में विशेषण एकवचन/बहुवचन या पुल्लिंग/स्त्रीलिंग के अनुसार अपना रूप <strong>कभी नहीं बदलते</strong>:<br>
           • <em>a <strong>good</strong> boy</em> (एक अच्छा लड़का) → <em><strong>good</strong> boys</em> (अच्छे लड़के) [कभी 'goods boys' न लिखें ✗]<br>
-          • <em>a <strong>good</strong> girl</em> (एक अच्छी लड़की) → <em><strong>good</strong> girls</em> (अच्छी लड़कियाँ)<br><br>
+          • <em>a <strong>clever</strong> girl</em> → <em><strong>clever</strong> girls</em> [कभी 'clevers girls' न लिखें ✗]<br><br>
           ⚠️ <strong>एकमात्र अपवाद (The Only Exception):</strong><br>
           संकेतवाचक विशेषण <strong>this</strong> और <strong>that</strong> बहुवचन संज्ञाओं के पहले बदलकर क्रमशः <strong>these</strong> और <strong>those</strong> हो जाते हैं:<br>
           • <em><strong>this</strong> cat</em> (यह बिल्ली) → <em><strong>these</strong> cats</em> (ये बिल्लियाँ)<br>
           • <em><strong>that</strong> man</em> (वह आदमी) → <em><strong>those</strong> men</em> (वे आदमी)
         </div>
+
+        <!-- 2 Example Questions for 2A -->
+        <div class="concept-pair-box" id="pair-2a"></div>
       </article>
 
+      <!-- Sub-concept 2B: Fixed Prepositions -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>B. Adjectives and Participles Followed by Prepositions</h3>
+          <h3 style="font-size:16px; font-weight:800;">B. Adjectives and Participles Followed by Fixed Prepositions</h3>
           <span class="badge">Fixed Prepositions</span>
         </div>
-        <p>Many adjectives and participles require specific fixed prepositions to link with their objects:</p>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          कई विशेषणों और कृदंतों के बाद एक निश्चित Preposition का आना अनिवार्य होता है:
+        </p>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Adjective + Preposition</th>
-                <th>Hindi Meaning (सरल अर्थ)</th>
-                <th>Example Sentence</th>
-                <th>Pronounce 🔊</th>
-              </tr>
+              <tr><th>Adjective + Preposition</th><th>Hindi Meaning (सरल अर्थ)</th><th>Example Sentence</th><th>Listen 🔊</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>good at</strong></td>
-                <td>किसी काम या विषय में निपुण होना</td>
-                <td><em>She is <strong>good at</strong> mathematics and chess.</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('She is good at mathematics')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>tired of</strong></td>
-                <td>किसी चीज़ से ऊब या तंग आ जाना</td>
-                <td><em>I am <strong>tired of</strong> your endless excuses.</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('I am tired of your endless excuses')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>afraid of</strong></td>
-                <td>किसी चीज़ से डरना</td>
-                <td><em>The little boy is <strong>afraid of</strong> the dark.</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('The little boy is afraid of the dark')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>fond of</strong></td>
-                <td>किसी चीज़ का शौकीन होना / पसंद करना</td>
-                <td><em>She is very <strong>fond of</strong> classical music.</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('She is very fond of classical music')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>interested in</strong></td>
-                <td>किसी विषय में रुचि रखना</td>
-                <td><em>Are you <strong>interested in</strong> modern art?</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('Are you interested in modern art')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>proud of</strong></td>
-                <td>गर्व महसूस करना</td>
-                <td><em>They are extremely <strong>proud of</strong> their daughter.</em></td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('They are extremely proud of their daughter')">Listen 🔊</button></td>
-              </tr>
+              <tr><td><strong>good at</strong></td><td>किसी काम या विषय में निपुण होना</td><td><em>She is <strong>good at</strong> mathematics and chess.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('She is good at mathematics')">Listen 🔊</button></td></tr>
+              <tr><td><strong>tired of</strong></td><td>किसी बात से ऊब या तंग आ जाना</td><td><em>I am <strong>tired of</strong> your endless excuses.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('I am tired of your endless excuses')">Listen 🔊</button></td></tr>
+              <tr><td><strong>afraid of</strong></td><td>किसी चीज़ से डरना / भयभीत होना</td><td><em>The little boy is <strong>afraid of</strong> the dark.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('The little boy is afraid of the dark')">Listen 🔊</button></td></tr>
+              <tr><td><strong>fond of</strong></td><td>किसी चीज़ का शौकीन होना / पसंद करना</td><td><em>She is very <strong>fond of</strong> classical music.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('She is very fond of classical music')">Listen 🔊</button></td></tr>
+              <tr><td><strong>interested in</strong></td><td>किसी विषय में रुचि रखना</td><td><em>Are you <strong>interested in</strong> modern art?</em></td><td><button type="button" class="speech-chip" onclick="speakWord('Are you interested in modern art')">Listen 🔊</button></td></tr>
+              <tr><td><strong>proud of</strong></td><td>गर्व महसूस करना</td><td><em>They are extremely <strong>proud of</strong> their daughter.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('They are extremely proud of their daughter')">Listen 🔊</button></td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 2B -->
+        <div class="concept-pair-box" id="pair-2b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 3: Attributive vs Predicative & Link Verbs -->
+    <!-- UNIT 03: POSITION & LINK VERBS -->
     <!-- ========================================== -->
-    <section id="unit-3" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 03 · Position (Section 18)</p>
-          <h2>3. Attributive vs Predicative Position &amp; Link Verbs</h2>
-        </div>
-        <p>Where adjectives stand in a sentence: directly before nouns (attributive) or following copular/link verbs (predicative).</p>
+    <section id="topic-3" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 03 · Position &amp; Copulas</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Attributive vs Predicative &amp; Link Verbs</h2>
       </div>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>A. Attributive Position (संज्ञा से ठीक पहले)</h3>
-          <span class="badge">Position 1</span>
-        </div>
-        <div class="easy-hi">
-          Demonstrative, Distributive, Quantitative, Interrogative, और Possessive विशेषण हमेशा अपनी <strong>संज्ञा से पहले</strong> आते हैं:<br>
-          • <em><strong>this</strong> book</em> • <em><strong>which</strong> boy</em> • <em><strong>my</strong> dog</em> • <em><strong>every</strong> child</em> • <em><strong>some</strong> water</em>.<br>
-          जब कोई विशेषण संज्ञा के ठीक पहले बैठकर उसकी विशेषता बताता है, तो उसे <strong>Attributive Adjective (गुणारोपी विशेषण)</strong> कहा जाता है।
-        </div>
-      </article>
-
+      <!-- Sub-concept 3A: Attributive vs Predicative -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>B. Predicative Position &amp; Linking Verbs (Copulas)</h3>
-          <span class="badge">Position 2</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Attributive Position vs Predicative Position (Copulas)</h3>
+          <span class="badge">Position 1 &amp; 2</span>
         </div>
-        <p>Adjectives of quality can come either <strong>before their nouns</strong> (<em>a rich man, a happy girl</em>) or <strong>after a linking verb</strong>:</p>
         <div class="easy-hi">
-          👉 <strong>Group (a) Linking Verbs:</strong> <em>be (is, am, are, was, were), become, seem</em>:<br>
-          • <em>Tom became <strong>rich</strong>.</em> • <em>Ann seems <strong>happy</strong>.</em> • <em>The weather is <strong>cold</strong>.</em><br><br>
-          👉 <strong>Group (b) Sensory &amp; State Verbs:</strong> <em>appear, feel, get / grow (= become), keep, look (= appear), make, smell, sound, taste, turn</em>:<br>
-          • <em>Tom felt <strong>cold</strong>.</em> (टॉम को ठंड लगी)<br>
-          • <em>He got/grew <strong>impatient</strong>.</em> (वह अधीर हो गया)<br>
-          • <em>He made her <strong>happy</strong>.</em> (उसने उसे खुश किया)<br>
-          • <em>The idea sounds <strong>interesting</strong>.</em> (विचार दिलचस्प लगता है)<br>
-          • <em>The soup smells <strong>delicious</strong>.</em> (सूप से बहुत अच्छी खुशबू आ रही है)<br>
-          इस स्थिति में प्रयुक्त विशेषणों को <strong>Predicative Adjectives (विधेय विशेषण)</strong> और इन क्रियाओं को <strong>Link Verbs या Copulas</strong> कहा जाता है।
+          👉 <strong>1. Attributive Position (संज्ञा से ठीक पहले):</strong><br>
+          Demonstrative, Distributive, Quantitative, Interrogative, और Possessive हमेशा अपनी <strong>संज्ञा से पहले</strong> आते हैं:<br>
+          • <em><strong>this</strong> book</em> • <em><strong>which</strong> boy</em> • <em><strong>my</strong> dog</em> • <em><strong>every</strong> child</em> • <em><strong>some</strong> water</em>.<br>
+          जब कोई गुणवाचक विशेषण संज्ञा के ठीक पहले बैठे, तो उसे <strong>Attributive</strong> कहते हैं (<em>a rich man, a happy girl</em>)।<br><br>
+          👉 <strong>2. Predicative Position (लिंकिंग क्रिया के बाद):</strong><br>
+          जब विशेषण क्रिया के बाद आकर कर्ता की स्थिति या रूप बताता है, तो उसे <strong>Predicative Adjective</strong> कहते हैं:<br>
+          • <strong>Group (a) Copulas:</strong> <em>be (is, am, are, was, were), become, seem</em>:<br>
+          <em>Tom became <strong>rich</strong>.</em> / <em>Ann seems <strong>happy</strong>.</em> / <em>The weather is <strong>cold</strong>.</em><br>
+          • <strong>Group (b) Sensory Verbs:</strong> <em>appear, feel, get / grow, keep, look, make, smell, sound, taste, turn</em>:<br>
+          <em>Tom felt <strong>cold</strong>.</em> / <em>The idea sounds <strong>interesting</strong>.</em> / <em>The soup smells <strong>delicious</strong>.</em>
         </div>
+
+        <!-- 2 Example Questions for 3A -->
+        <div class="concept-pair-box" id="pair-3a"></div>
       </article>
 
-      <article class="rule-card warning">
+      <!-- Sub-concept 3B: Link Verb vs Action Verb -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>C. Critical Trap: Link Verbs vs Deliberate Action Verbs (Adjective vs Adverb!)</h3>
-          <span class="badge badge-red">High-Yield Exam Trap</span>
+          <h3 style="font-size:16px; font-weight:800;">B. Critical Trap: Link Verb + Adjective vs Action Verb + Adverb</h3>
+          <span class="badge">High-Yield Exam Trap</span>
         </div>
-        <p>A big problem is that when these sensory verbs are NOT used as link verbs, they represent <strong>deliberate physical actions</strong> and must be modified by <strong>adverbs</strong>. Confused students often mistakenly use adverbs after link verbs!</p>
+        <div class="trap-box">
+          <b>⚠️ परीक्षा का सबसे बड़ा जाल (Adjective vs Adverb Trap):</b>
+          जब ये संवेदी क्रियाएँ लिंकिंग क्रिया न होकर <strong>सक्रिय शारीरिक क्रिया (deliberate physical action)</strong> दर्शाती हैं, तो ये <strong>Adverb (क्रियाविशेषण)</strong> लेती हैं! भ्रमित छात्र अक्सर लिंकिंग क्रिया के बाद गलती से adverb लगा देते हैं:
+        </div>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to compare Adjective vs Adverb</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Verb</th>
-                <th>Link Verb + Adjective (अवस्था / रूप)</th>
-                <th>Action Verb + Adverb (सक्रिय क्रिया / ढंग)</th>
-                <th>Listen 🔊</th>
-              </tr>
+              <tr><th>Verb</th><th>Link Verb + Adjective (अवस्था / रूप)</th><th>Action Verb + Adverb (सक्रिय क्रिया / ढंग)</th><th>Listen 🔊</th></tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>look</strong></td>
                 <td><em>He looked <strong>calm</strong>.</em><br>(= He had a calm expression. वह शांत दिख रहा था)</td>
-                <td><em>He looked <strong>calmly</strong> at the angry crowd.</em><br>(= Looked here is a deliberate physical action. उसने शांतिपूर्वक भीड़ की ओर देखा)</td>
+                <td><em>He looked <strong>calmly</strong> at the angry crowd.</em><br>(= Looked deliberate action. उसने शांतिपूर्वक भीड़ की ओर देखा)</td>
                 <td><button type="button" class="speech-chip" onclick="speakWord('He looked calm. He looked calmly at the crowd.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>turn</strong></td>
-                <td><em>She turned <strong>pale</strong>.</em><br>(= She became pale. उसका रंग पीला पड़ गया / वह कांतिहीन हो गई)</td>
-                <td><em>He turned <strong>angrily</strong> to the man behind him.</em><br>(= Turned here is a deliberate physical turn. वह गुस्से से पीछे मुड़ा)</td>
+                <td><em>She turned <strong>pale</strong>.</em><br>(= She became pale. उसका रंग पीला पड़ गया)</td>
+                <td><em>He turned <strong>angrily</strong> to the man behind him.</em><br>(= Turned physical turn. वह गुस्से से पीछे मुड़ा)</td>
                 <td><button type="button" class="speech-chip" onclick="speakWord('She turned pale. He turned angrily.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>taste</strong></td>
                 <td><em>The soup tasted <strong>horrible</strong>.</em><br>(= It had a horrible taste. सूप का स्वाद घटिया था)</td>
-                <td><em>He tasted the soup <strong>suspiciously</strong>.</em><br>(= Tasted here is a deliberate action of sampling. उसने शक के साथ सूप चखा)</td>
+                <td><em>He tasted the soup <strong>suspiciously</strong>.</em><br>(= Tasted active sampling. उसने शक के साथ सूप चखा)</td>
                 <td><button type="button" class="speech-chip" onclick="speakWord('The soup tasted horrible. He tasted the soup suspiciously.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>feel</strong></td>
-                <td><em>Tom felt <strong>cold</strong>.</em><br>(= Tom experienced coldness. टॉम को ठंड महसूस हुई)</td>
-                <td><em>The doctor felt the pulse <strong>carefully</strong>.</em><br>(= Felt here is an active medical examination. डॉक्टर ने सावधानी से नब्ज़ जाँची)</td>
+                <td><em>Tom felt <strong>cold</strong>.</em><br>(= Tom experienced coldness. टॉम को ठंड लगी)</td>
+                <td><em>The doctor felt the pulse <strong>carefully</strong>.</em><br>(= Felt physical exam. डॉक्टर ने सावधानी से नब्ज़ जाँची)</td>
                 <td><button type="button" class="speech-chip" onclick="speakWord('Tom felt cold. The doctor felt the pulse carefully.')">Listen 🔊</button></td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 3B -->
+        <div class="concept-pair-box" id="pair-3b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 4: Meaning Shifts & Position Traps -->
+    <!-- UNIT 04: MEANING SHIFTS & POSITION TRAPS -->
     <!-- ========================================== -->
-    <section id="unit-4" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 04 · Position Traps (Section 18)</p>
-          <h2>4. Meaning Shifts, Position-Locked Adjectives &amp; 'And'</h2>
-        </div>
-        <p>Some adjectives completely change their meaning when shifted, while others can ONLY be used attributively or predicatively.</p>
+    <section id="topic-4" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 04 · Position Traps</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Meaning Shifts, Position Traps &amp; 'And'</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 4A: Meaning Shifts & Early/Late/Poor -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Adjectives that Change Meaning When Moved (Small Farmer vs Farmer is Small)</h3>
-          <span class="badge">Meaning Shifts</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Meaning Shifts (Small Farmer vs Farmer is Small) &amp; Early/Late/Poor</h3>
+          <span class="badge">Context Shifts</span>
         </div>
         <div class="easy-hi">
-          विशेषण जैसे <em>bad, good, big, small, heavy, light, old</em> जब संज्ञाओं के साथ विशेष मुहावरेदार अर्थ में जुड़ते हैं (जैसे <em>bad sailor, good swimmer, big eater, small farmer, heavy drinker, light sleeper, old friend</em>), तो इन्हें बिना अर्थ बदले क्रिया के बाद (predicatively) नहीं ले जाया जा सकता:<br><br>
-          • <strong>a small farmer:</strong> इसका अर्थ है वह किसान जिसके पास एक छोटा खेत है (a man who has a small farm)।<br>
-          • <strong>The farmer is small:</strong> इसका अर्थ बदल जाता है कि वह शारीरिक कद में नाटा/छोटा है (he is a small man physically)!<br><br>
-          • <strong>an old friend:</strong> ऐसा मित्र जिसे हम बहुत लंबे समय से जानते हैं (a friend of long standing)।<br>
-          • <strong>The friend is old:</strong> मित्र उम्र में बूढ़ा/वृद्ध है (aged in years)!<br><br>
-          • <strong>a heavy drinker:</strong> बहुत अधिक शराब पीने वाला व्यक्ति। (The drinker is heavy = उसका शारीरिक वजन भारी है!)
+          👉 <strong>स्थान बदलने पर अर्थ बदलना:</strong><br>
+          • <strong>a small farmer:</strong> छोटे खेत का मालिक (a man who has a small farm)।<br>
+          • <strong>The farmer is small:</strong> शारीरिक कद में नाटा/छोटा व्यक्ति (he is small in stature)!<br><br>
+          • <strong>an old friend:</strong> पुराना मित्र जिसे बहुत वर्षों से जानते हैं (a friend of long standing)।<br>
+          • <strong>The friend is old:</strong> मित्र उम्र में बूढ़ा/वृद्ध है (aged in biological years)!<br><br>
+          • <strong>early/late train:</strong> समय सारिणी के अनुसार सुबह या देर रात चलने वाली ट्रेन (scheduled early/late)। 'The train is early' = नियत समय से पहले पहुँच गई!<br><br>
+          • <strong>poor के 3 अर्थ:</strong> (1) निर्धन: <em>a poor man / He is poor</em>. (2) बेचारा/दयनीय: हमेशा संज्ञा से पहले (<em>Poor Tom! the poor dog</em>). (3) कमज़ोर/अपर्याप्त: <em>poor student</em> / <em>poor sight</em>.
         </div>
+
+        <!-- 2 Example Questions for 4A -->
+        <div class="concept-pair-box" id="pair-4a"></div>
       </article>
 
-      <article class="rule-card warning">
+      <!-- Sub-concept 4B: Attributive-only vs Predicative-only & 'And' -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>B. Attributive-ONLY vs Predicative-ONLY Adjectives</h3>
-          <span class="badge badge-amber">Golden Exam Traps</span>
-        </div>
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
+          <h3 style="font-size:16px; font-weight:800;">B. Attributive-Only vs Predicative-Only &amp; The Use of 'And'</h3>
+          <span class="badge">Position Traps</span>
         </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Category</th>
-                <th>Adjectives List</th>
-                <th>Grammar Rule &amp; Examples</th>
-                <th>Incorrect Usage ✗</th>
-              </tr>
+              <tr><th>वर्ग (Category)</th><th>शब्द सूची (List)</th><th>नियम व उदाहरण (Grammar Rule)</th><th>अशुद्ध प्रयोग ✗</th></tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Attributive ONLY<br>(केवल संज्ञा से पहले)</strong></td>
                 <td><strong>chief, main, principal, sheer, utter</strong></td>
                 <td>ये शब्द केवल संज्ञा से पहले आकर जोर देते हैं:<br>• <em>the <strong>main</strong> reason</em><br>• <em><strong>sheer</strong> luck</em> (निरी किस्मत)<br>• <em><strong>utter</strong> nonsense</em> (कोरी बकवास)</td>
-                <td><span class="wrong">The reason is main ✗<br>The nonsense was utter ✗</span></td>
+                <td><span style="color:#dc2626; font-weight:bold;">The reason is main ✗<br>The nonsense was utter ✗</span></td>
               </tr>
               <tr>
                 <td><strong>Predicative ONLY<br>(केवल क्रिया के बाद)</strong></td>
                 <td><strong>afraid, upset, adrift, afloat, alike, alive, alone, ashamed, asleep</strong></td>
-                <td>ये शब्द (विशेषकर 'a-' से शुरू होने वाले) कभी भी सीधे संज्ञा के पहले नहीं आते। ये क्रिया के बाद आते हैं:<br>• <em>The child is <strong>afraid</strong>.</em><br>• <em>The baby is <strong>asleep</strong>.</em><br>• <em>He was left <strong>alone</strong>.</em></td>
-                <td><span class="wrong">an afraid child ✗<br>an asleep baby ✗<br>an alive snake ✗</span><br>(कहें: <em>a sleeping baby ✓, a living snake ✓</em>)</td>
+                <td>ये शब्द (विशेषकर 'a-' वाले) सीधे संज्ञा के पहले नहीं आते:<br>• <em>The child is <strong>afraid</strong>.</em><br>• <em>The baby is <strong>asleep</strong>.</em><br>• <em>He was left <strong>alone</strong>.</em></td>
+                <td><span style="color:#dc2626; font-weight:bold;">an afraid child ✗<br>an asleep baby ✗<br>an alive snake ✗</span><br>(कहें: <em>a sleeping baby ✓, a living snake ✓</em>)</td>
               </tr>
               <tr>
                 <td><strong>Both Positions Allowed</strong></td>
@@ -1554,54 +648,32 @@
             </tbody>
           </table>
         </div>
-      </article>
 
-      <article class="rule-card">
-        <div class="rule-header">
-          <h3>C. Nuances of 'Early / Late' and 'Poor'</h3>
-        </div>
         <div class="easy-hi">
-          👉 <strong>early / late का अर्थ स्थान पर निर्भर करता है:</strong><br>
-          • <em>an <strong>early/late train</strong>:</em> इसका अर्थ है समय सारिणी के अनुसार दिन के शुरुआती या देर रात के समय चलने वाली ट्रेन (scheduled to run early or late in the day)।<br>
-          • <em>The train is <strong>early/late</strong>:</em> इसका अर्थ है ट्रेन अपने नियत समय से पहले आ गई या देर से चल रही है (before/after its proper scheduled time)!<br><br>
-          👉 <strong>'poor' के तीन अलग-अलग अर्थ और स्थितियाँ:</strong><br>
-          1. <strong>'Without enough money' (गरीब/निर्धन):</strong> संज्ञा के पहले या क्रिया के बाद दोनों जगह आ सकता है — <em>a poor man</em> अथवा <em>He is poor</em>.<br>
-          2. <strong>'Unfortunate / Pitiable' (बेचारा/दयनीय):</strong> यह हमेशा <strong>संज्ञा से पहले</strong> ही आता है — <em>Poor Tom!</em> (बेचारा टॉम!), <em>the poor animal</em>.<br>
-          3. <strong>'Weak / Inadequate' (कमज़ोर/अपर्याप्त):</strong> व्यक्तियों के साथ संज्ञा से पहले आता है (<em>poor student, poor worker</em>), परंतु निर्जीव संज्ञाओं के साथ दोनों जगह आ सकता है — <em>He has <strong>poor sight</strong></em> अथवा <em>His sight is <strong>poor</strong></em>.
+          👉 <strong>'And' का प्रयोग:</strong><br>
+          • <strong>संज्ञा से पहले (Attributive):</strong> मुख्य रूप से <strong>रंगों के विशेषणों</strong> के बीच अंतिम रंग से पहले लगता है: <em>a green <strong>and</strong> brown carpet</em>; <em>a red, white <strong>and</strong> blue flag</em>.<br>
+          • <strong>क्रिया के बाद (Predicative):</strong> अंतिम दो विशेषणों के बीच लगता है: <em>The day was cold, wet <strong>and</strong> windy.</em>
         </div>
-      </article>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>D. The Use of 'And' with Adjectives</h3>
-        </div>
-        <div class="easy-hi">
-          • <strong>Attributive Adjectives (संज्ञा के पहले):</strong> 'and' का प्रयोग मुख्य रूप से तब होता है जब दो या दो से अधिक <strong>रंगों के विशेषण (colours)</strong> हों। इसे अंतिम रंग से पहले रखा जाता है:<br>
-          <em>a green <strong>and</strong> brown carpet</em> (हरा और भूरा कालीन)<br>
-          <em>a red, white <strong>and</strong> blue flag</em> (लाल, सफेद और नीला झंडा)<br>
-          (नोट: बिना रंगों वाले विशेषणों में 'and' नहीं लगता: <em>a long sharp knife</em>, <em>an old plastic bucket</em>).<br><br>
-          • <strong>Predicative Adjectives (क्रिया के बाद):</strong> जब कई विशेषण क्रिया के बाद आते हैं, तो 'and' को अंतिम दो विशेषणों के बीच रखा जाता है:<br>
-          <em>The day was cold, wet <strong>and</strong> windy.</em> (दिन ठंडा, भीगा और हवादार था।)
-        </div>
+        <!-- 2 Example Questions for 4B -->
+        <div class="concept-pair-box" id="pair-4b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 5: Order of Adjectives of Quality -->
+    <!-- UNIT 05: ORDER OF ADJECTIVES OF QUALITY -->
     <!-- ========================================== -->
-    <section id="unit-5" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 05 · Word Order (Section 19)</p>
-          <h2>5. Order of Adjectives of Quality (विशेषणों का सही क्रम)</h2>
-        </div>
-        <p>Learn the standard sequence when multiple adjectives describe a noun, rules for little/old/young, and pretty as an adverb.</p>
+    <section id="topic-5" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 05 · Word Order</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">5. Order of Adjectives of Quality (विशेषणों का सही क्रम)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 5A: OSASCOMP Standard Order -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. The Standard Order of Adjectives</h3>
-          <span class="badge">OSASCOMP Order</span>
+          <h3 style="font-size:16px; font-weight:800;">A. The Standard Order of Adjectives (OSASCOMP) &amp; Personality</h3>
+          <span class="badge">Word Sequence</span>
         </div>
         <div class="easy-hi">
           जब एक ही संज्ञा के आगे एक से अधिक विशेषण आते हैं, तो उनका सामान्य और स्वाभाविक क्रम यह होता है:<br>
@@ -1612,1066 +684,673 @@
           <strong>(e) Colour (रंग):</strong> <em>blue, red, green, black</em><br>
           <strong>(f) Material (पदार्थ/सामग्री):</strong> <em>plastic, velvet, wooden, leather</em><br>
           <strong>(g) Origin (उत्पत्ति/देश):</strong> <em>French, Welsh, Indian, Italian</em><br>
-          <strong>(h) Purpose (उद्देश्य/प्रयोजन - Gerund):</strong> <em>walking stick, riding boots, frying pan</em>
+          <strong>(h) Purpose (उद्देश्य/प्रयोजन - Gerund):</strong> <em>walking stick, riding boots, frying pan</em><br><br>
+          👉 <strong>व्यक्तित्व/स्वभाव के विशेषण:</strong> (<em>suspicious, patient, anxious, kindly, inquisitive</em>) शारीरिक रूप-रंग के <strong>बाद</strong> लेकिन रंगों के <strong>पहले</strong> आते हैं: <em>a small <strong>suspicious</strong> official</em>, <em>an <strong>inquisitive</strong> brown dog</em>.
         </div>
 
-        <div class="example-grid">
-          <div class="example-box">
-            <b>a long sharp knife</b>
-            <span>Size (long) + Description (sharp)</span>
-          </div>
-          <div class="example-box">
-            <b>a small round bath</b>
-            <span>Size (small) + Shape (round)</span>
-          </div>
-          <div class="example-box">
-            <b>new hexagonal coins</b>
-            <span>Age (new) + Shape (hexagonal)</span>
-          </div>
-          <div class="example-box">
-            <b>blue velvet curtains</b>
-            <span>Colour (blue) + Material (velvet)</span>
-          </div>
-          <div class="example-box">
-            <b>an old plastic bucket</b>
-            <span>Age (old) + Material (plastic)</span>
-          </div>
-          <div class="example-box">
-            <b>an elegant French clock</b>
-            <span>Description (elegant) + Origin (French)</span>
-          </div>
-        </div>
+        <!-- 2 Example Questions for 5A -->
+        <div class="concept-pair-box" id="pair-5a"></div>
       </article>
 
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>B. Adjectives of Personality and Emotion</h3>
-          <span class="badge badge-amber">Position Rule</span>
-        </div>
-        <div class="easy-hi">
-          व्यक्ति के स्वभाव या भावना को दर्शाने वाले विशेषण (<em>suspicious, patient, anxious, kindly, inquisitive</em>) शारीरिक रूप-रंग वाले विशेषणों (जैसे <em>dark, fair, pale, small, long</em>) के <strong>बाद</strong>, लेकिन रंगों (colours) के <strong>पहले</strong> आते हैं:<br>
-          • <em>a small <strong>suspicious</strong> official</em> (Size + Personality)<br>
-          • <em>a long <strong>patient</strong> queue</em> (Size + Emotion/Attitude)<br>
-          • <em>a pale <strong>anxious</strong> girl</em> (Physical description + Emotion)<br>
-          • <em>a <strong>kindly</strong> black doctor</em> (Personality + Colour/Origin)<br>
-          • <em>an <strong>inquisitive</strong> brown dog</em> (Personality + Colour)
-        </div>
-      </article>
-
+      <!-- Sub-concept 5B: Little/Old/Young, Approval & Pretty -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>C. Special Rules for 'Little', 'Old', and 'Young'</h3>
+          <h3 style="font-size:16px; font-weight:800;">B. Rules for Little/Old/Young, Approval Words &amp; 'Pretty' as Adverb</h3>
+          <span class="badge">Special Traps</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>संज्ञा के ठीक बगल में मुहावरेदार प्रयोग:</strong><br>
-          <em>little, old</em> और <em>young</em> का प्रयोग अक्सर केवल सूचना देने के लिए नहीं, बल्कि संज्ञा के साथ एक स्नेहपूर्ण संयोजन (adjective-noun combination) के रूप में होता है। तब ये संज्ञा के ठीक पास रखे जाते हैं:<br>
-          • <em>Your nephew is a nice <strong>little boy</strong>.</em><br>
-          • <em>That <strong>young man</strong> drives too fast.</em><br><br>
-          ⚠️ <strong>Combination Trap:</strong><br>
+          👉 <strong>1. Little, Old, और Young का संयोजन:</strong><br>
+          • <em>little, old, young</em> संज्ञा के साथ स्नेहपूर्ण संयोजन बनाते हैं (<em>nice little boy</em>, <em>that young man</em>)।<br>
           • <strong>little + old + noun संभव है:</strong> <em>a little old lady</em> (एक नन्हीं वृद्ध महिला) ✓<br>
-          • परंतु <strong>little + young कभी संभव नहीं है</strong> (<em>a little young man</em> ✗)!<br><br>
-          👉 <strong>सूचना देने के लिए (Factual Information):</strong><br>
-          जब ये उम्र की जानकारी देते हैं, तो position (c) में आते हैं: <em>a young coloured man</em>, <em>an old Welsh harp</em>.<br>
-          • स्वभाव के विशेषण इनके आगे या पीछे आ सकते हैं: <em>a <strong>young ambitious</strong> man</em> (यहाँ young पर अधिक ज़ोर है) अथवा <em>an <strong>ambitious young</strong> man</em>.<br>
-          • <em>small</em> बनाम <em>little</em>: शारीरिक आकार पर बल देने के लिए <em>small</em> का प्रयोग <em>little</em> से बेहतर होता है (<em>a small room</em>).
+          • <strong>little + young कभी संभव नहीं होता:</strong> (<em>a little young man</em> ✗)!<br><br>
+          👉 <strong>2. स्वीकृति व पसंद (Approval):</strong><br>
+          <em>fine, lovely, nice, beautiful</em> जब आकार या तापमान के विशेषणों के साथ आते हैं, तो वे उस आकार या तापमान के प्रति <strong>पसंद और स्वीकृति</strong> दर्शाते हैं: <em>a beautiful big room</em>, <em>a lovely warm house</em>, <em>nice thick steaks</em>.<br><br>
+          👉 <strong>3. 'Pretty' Adverb vs Adjective:</strong><br>
+          • बिना कॉमा के: <em>“She's a <strong>pretty tall</strong> girl.”</em> = यहाँ pretty एक <strong>adverb of degree</strong> है जिसका अर्थ <strong>very / quite (काफी/बहुत)</strong> होता है!<br>
+          • कॉमा के साथ: <em>“a <strong>pretty, tall</strong> girl”</em> = लड़की जो सुंदर भी है और लंबी भी!
         </div>
-      </article>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>D. 'Fine', 'Lovely', 'Nice', 'Beautiful' &amp; 'Pretty' as an Adverb</h3>
-        </div>
-        <div class="easy-hi">
-          👉 <strong>सराहना (Approval) व्यक्त करना:</strong><br>
-          <em>fine, lovely, nice</em> और कभी-कभी <em>beautiful</em> जब आकार (except little), आकृति और तापमान के विशेषणों के साथ आते हैं, तो वे उस आकार या तापमान के प्रति <strong>पसंद और स्वीकृति</strong> दर्शाते हैं:<br>
-          • <em>a <strong>beautiful big</strong> room</em> (बड़ा कमरा जो हमें पसंद है)<br>
-          • <em>a <strong>lovely warm</strong> house</em> (घर की सुखद गरमाहट)<br>
-          • <em><strong>nice thick</strong> steaks</em> (पसंदीदा मोटा गोश्त)<br>
-          • <em>fine strong coffee</em>, <em>a lovely quiet beach</em>, <em>a nice dry day</em>.<br>
-          जब इन्हें predicatively इस्तेमाल किया जाता है, तो बीच में 'and' लगता है: <em>The coffee was fine and strong. The day was nice and dry.</em> (इस रूप में <em>beautiful</em> का predicative प्रयोग कम होता है)।<br><br>
-          👉 <strong>'Pretty' Adverb vs Adjective Trap:</strong><br>
-          • जब <strong>pretty</strong> के बाद बिना कॉमा के कोई अन्य विशेषण आता है, तो वह <strong>adverb of degree (क्रियाविशेषण)</strong> बन जाता है जिसका अर्थ <strong>very / quite (काफी/बहुत)</strong> होता है:<br>
-          <em>“She's a <strong>pretty tall</strong> girl.”</em> = She is <strong>quite / very tall</strong> (वह काफी लंबी लड़की है).<br>
-          • परंतु कॉमा लगाने पर: <em>“a <strong>pretty, tall</strong> girl”</em> (या <em>a tall, pretty girl</em>) का अर्थ होता है वह लड़की जो सुंदर भी है और लंबी भी!
-        </div>
+        <!-- 2 Example Questions for 5B -->
+        <div class="concept-pair-box" id="pair-5b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- 50 MCQs PRACTICE ARENA -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
     <!-- ========================================== -->
-    <section id="practice" class="mint-card practice-box">
-      <div class="section-heading" style="margin-bottom:12px;">
-        <div>
-          <p class="eyebrow">Interactive Practice Arena</p>
-          <h2>50 Chapter MCQs: Test Your Knowledge.</h2>
-        </div>
-        <p>Solve each question, check your answer, listen to pronunciation, and view the short solution below.</p>
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:28px; font-weight:900; margin:8px 0;">Final 30-Question Adjectives Test</h2>
+        <p style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+          यह टेस्ट विशेषण के सभी 5 इकाइयों (Kinds, Participles, Agreement, Position, Meaning Shifts, और Adjective Order) की परीक्षा-स्तरीय समझ का मूल्यांकन करता है। जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> चालू हो जाएगा। समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
+          🚀 Start 30-Question Exam Now (15:00 Timer)
+        </button>
       </div>
 
-      <!-- Filter Buttons matching Econova style -->
-      <div class="filter-row" role="tablist">
-        <button type="button" class="filter-btn active" data-filter="all" onclick="filterCategory('all')">All 50 MCQs</button>
-        <button type="button" class="filter-btn" data-filter="kinds" onclick="filterCategory('kinds')">1. Kinds &amp; Participles (10)</button>
-        <button type="button" class="filter-btn" data-filter="agreement" onclick="filterCategory('agreement')">2. Agreement &amp; Preps (10)</button>
-        <button type="button" class="filter-btn" data-filter="linkverbs" onclick="filterCategory('linkverbs')">3. Position &amp; Link Verbs (10)</button>
-        <button type="button" class="filter-btn" data-filter="shifts" onclick="filterCategory('shifts')">4. Meaning Shifts &amp; Traps (10)</button>
-        <button type="button" class="filter-btn" data-filter="order" onclick="filterCategory('order')">5. Order of Adjectives (10)</button>
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
+            Submit Test ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:8px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:12.5px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:7px 10px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div class="test-actions-bar">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Quick Question Jump Map -->
-      <details class="solution" style="margin-top:10px; background:#fff;" open>
-        <summary>✦ Question Navigation Grid: Click any number (1 to 50)</summary>
-        <div class="jump-grid" id="jump-grid">
-          <!-- 50 buttons generated by JS -->
-        </div>
-      </details>
-
-      <!-- Question Cards Grid -->
-      <div class="task-grid" id="task-container">
-        <!-- Rendered by JS: 10 per page -->
-      </div>
-
-      <!-- Check Page / All Section -->
-      <section class="amber-card check-all-section">
-        <div>
-          <h2 style="font-size:24px;">Check your answers</h2>
-          <p id="page-summary-text" style="font-size:13px; margin-top:4px;">Showing Page 1 of 5.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="mint-btn" type="button" onclick="checkCurrentPage()">Check this page <span aria-hidden="true">✓</span></button>
-          <button class="quiet-btn" type="button" onclick="resetAll()">Reset all</button>
-        </div>
-      </section>
-
-      <!-- Pagination -->
-      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:28px;">
-        <button id="btn-prev" class="quiet-btn" type="button" onclick="changePage(-1)">← Previous 10</button>
-        <span id="page-indicator" style="font-family:var(--heading); font-weight:800; color:var(--brand); font-size:14px;">Page 1 of 5</span>
-        <button id="btn-next" class="quiet-btn" type="button" onclick="changePage(1)">Next 10 →</button>
-      </div>
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
     </section>
-  </main>
 
-  <!-- Footer matching Econova theme -->
-  <footer>
-    <div class="wrap footer-inner">
-      <a class="footer-brand" href="#main">
-        Econova<em>.vip</em> ✦
-      </a>
-      <p>Class 4 to 10 English · Chapter 3: Adjectives · Kinds, Position &amp; Order · Learn with clarity.</p>
-      <div class="footer-links">
-        <a href="#unit-1">Kinds</a>
-        <a href="#unit-2">Agreement</a>
-        <a href="#unit-3">Position</a>
-        <a href="#unit-4">Traps</a>
-        <a href="#unit-5">Order</a>
-        <a href="#main">Top ↑</a>
+    <!-- Submit Warning Modal -->
+    <div class="modal-overlay" id="submit-modal" style="display:none;">
+      <div class="modal-box">
+        <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
+        <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
+        <p style="font-size:13px; color:#475569; margin-bottom:12px;" id="modal-msg"></p>
+        <div style="display:flex; justify-content:center; gap:8px;">
+          <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Test (हल करते रहें)</button>
+          <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Safe target for React Vite root -->
-  <div id="root" style="display:none"></div>
-  <script type="module" src="/src/main.tsx"></script>
+    <!-- Footer -->
+    <footer>
+      <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:#64748b;">
+        <div>
+          <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+          Class 4–10 English Grammar · Chapter 3: Kinds, Position &amp; Order of Adjectives.
+        </div>
+        <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand);">
+          <a href="#topic-1">Kinds</a>
+          <a href="#topic-2">Agreement</a>
+          <a href="#topic-3">Position</a>
+          <a href="#topic-4">Traps</a>
+          <a href="#topic-5">Order</a>
+          <a href="#test-arena">30-Q Test</a>
+        </div>
+      </div>
+    </footer>
 
-  <!-- Audio Helper -->
-  <script>
-    function speakWord(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-GB';
-        utterance.rate = 0.9;
-        window.speechSynthesis.speak(utterance);
+    <!-- Target container for Vite -->
+    <div id="root" style="display:none;"></div>
+
+    <!-- Audio Helper -->
+    <script>
+      function speakWord(text) {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'en-GB';
+          utterance.rate = 0.9;
+          window.speechSynthesis.speak(utterance);
+        }
       }
-    }
-  </script>
+    </script>
 
-  <!-- Complete 50 MCQs & Interactive Engine -->
-  <script>
-    const questions = [
-      // UNIT 1: Kinds & Participles (Q1 - Q10)
-      {
-        id: 1,
-        cat: "kinds",
-        label: "Kinds of Adjectives",
-        q: "Which kind of adjective are 'this', 'that', 'these', and 'those'?",
-        hi: "'this', 'that', 'these' और 'those' किस प्रकार के विशेषण हैं?",
-        options: [
-          "Demonstrative Adjectives (संकेतवाचक)",
-          "Distributive Adjectives (विभागसूचक)",
-          "Possessive Adjectives (संबंधसूचक)",
-          "Quantitative Adjectives (परिमाणवाचक)"
-        ],
-        ans: 0,
-        expl: "This, that, these, those किसी वस्तु या व्यक्ति की ओर प्रत्यक्ष संकेत करते हैं, इसलिए इन्हें Demonstrative (संकेतवाचक) विशेषण कहते हैं।"
-      },
-      {
-        id: 2,
-        cat: "kinds",
-        label: "Participles as Adjectives",
-        q: "In 'The play was boring', what does the present participle (-ing) adjective signify?",
-        hi: "'The play was boring' में present participle (-ing) विशेषण का क्या अर्थ है?",
-        options: [
-          "It is passive and means the play felt bored",
-          "It is active and means the play had the effect of producing boredom",
-          "It is an adverb of manner",
-          "It means the audience was bored"
-        ],
-        ans: 1,
-        expl: "Present participle (-ing) विशेषण Active (सक्रिय) होता है और इसका अर्थ होता है 'having this effect' (वह प्रभाव उत्पन्न करने वाला)। नाटक ने दर्शकों में ऊब पैदा की।"
-      },
-      {
-        id: 3,
-        cat: "kinds",
-        label: "Participles as Adjectives",
-        q: "Fill in the blank: 'The workers worked for ten hours without a break; they were soon ___.'",
-        hi: "'The workers worked for ten hours without a break; they were soon ___.' सही शब्द चुनें:",
-        options: ["tiring", "tired", "tiresome", "tiredly"],
-        ans: 1,
-        expl: "मज़दूरों ने थकावट महसूस की (affected in this way / passive state), इसलिए Past Participle 'tired' आएगा। काम के लिए 'tiring' आता है।"
-      },
-      {
-        id: 4,
-        cat: "kinds",
-        label: "Participles as Adjectives",
-        q: "What is the difference between 'an infuriating woman' and 'an infuriated woman'?",
-        hi: "'an infuriating woman' और 'an infuriated woman' में क्या अंतर है?",
-        options: [
-          "Both mean the woman is angry",
-          "'Infuriating' means she makes others furious; 'infuriated' means something made her furious",
-          "'Infuriating' is past tense; 'infuriated' is present tense",
-          "There is no difference in modern English"
-        ],
-        ans: 1,
-        expl: "Infuriating महिला दूसरों को क्रोधित करती है (She made us furious); जबकि Infuriated महिला स्वयं किसी बात से बहुत गुस्से में है (Something had made her furious)।"
-      },
-      {
-        id: 5,
-        cat: "kinds",
-        label: "Kinds of Adjectives",
-        q: "Which of the following is a Distributive Adjective?",
-        hi: "निम्नलिखित में से कौन सा विभागसूचक विशेषण (Distributive Adjective) है?",
-        options: ["Every", "Clever", "These", "Whose"],
-        ans: 0,
-        expl: "Each, every, either, neither समूह के प्रत्येक व्यक्ति या वस्तु का अलग-अलग बोध कराते हैं, इसलिए ये Distributive Adjectives हैं।"
-      },
-      {
-        id: 6,
-        cat: "kinds",
-        label: "Kinds of Adjectives",
-        q: "In 'Whose dog is barking outside?', what kind of adjective is 'Whose'?",
-        hi: "'Whose dog is barking outside?' में 'Whose' किस प्रकार का विशेषण है?",
-        options: [
-          "Interrogative Adjective (प्रश्नवाचक)",
-          "Demonstrative Adjective",
-          "Distributive Adjective",
-          "Adjective of Quality"
-        ],
-        ans: 0,
-        expl: "Which, what, whose जब संज्ञा (dog) के साथ आकर प्रश्न पूछने का काम करते हैं, तो इन्हें Interrogative Adjectives कहते हैं।"
-      },
-      {
-        id: 7,
-        cat: "kinds",
-        label: "Participles as Adjectives",
-        q: "'The scene in the accident was ___.' Which adjective correctly describes the horrifying nature of the scene?",
-        hi: "'The scene in the accident was ___.' दुर्घटना के दृश्य के लिए सही विशेषण क्या होगा?",
-        options: ["horrified", "horrifying", "horrify", "horrifies"],
-        ans: 1,
-        expl: "दृश्य ने देखने वालों में भय उत्पन्न किया (active cause), इसलिए Present Participle 'horrifying' आएगा। दर्शक भयभीत हुए तो 'The spectators were horrified' होता।"
-      },
-      {
-        id: 8,
-        cat: "kinds",
-        label: "Kinds of Adjectives",
-        q: "'My, your, his, her, its, our, their' are classified as:",
-        hi: "'My, your, his, her, its, our, their' को किस श्रेणी में रखा जाता है?",
-        options: [
-          "Possessive Adjectives (संबंधसूचक विशेषण)",
-          "Possessive Pronouns",
-          "Demonstrative Adjectives",
-          "Adjectives of Quality"
-        ],
-        ans: 0,
-        expl: "ये शब्द संज्ञा से पहले आकर स्वामित्व या संबंध दर्शाते हैं (my book, their house), इसलिए इन्हें Possessive Adjectives कहते हैं।"
-      },
-      {
-        id: 9,
-        cat: "kinds",
-        label: "Kinds of Adjectives",
-        q: "Which of the following contains an Adjective of Quality?",
-        hi: "किस विकल्प में गुणवाचक विशेषण (Adjective of Quality) का प्रयोग हुआ है?",
-        options: [
-          "She bought a golden ring.",
-          "I want that pen.",
-          "Each child got a toy.",
-          "Whose bag is this?"
-        ],
-        ans: 0,
-        expl: "'Golden' (सोने की/सुनहरी) अंगूठी के गुण/धातु को व्यक्त करता है। अन्य वाक्यों में demonstrative (that), distributive (each) और interrogative (whose) हैं।"
-      },
-      {
-        id: 10,
-        cat: "kinds",
-        label: "Participles as Adjectives",
-        q: "In 'The audience was amused by the clown', why is 'amused' used instead of 'amusing'?",
-        hi: "'The audience was amused by the clown' में 'amused' का प्रयोग क्यों हुआ है?",
-        options: [
-          "Because the clown was bored",
-          "Because the audience experienced the feeling of amusement (passive state)",
-          "Because 'amusing' is an adverb",
-          "Because amused is a noun"
-        ],
-        ans: 1,
-        expl: "दर्शकों ने हँसी और मनोरंजन का अनुभव किया (affected in this way); जबकि जोकर मनोरंजक था (The clown was amusing)।"
-      },
+    <script>
+    // 20 Embedded Concept Practice Questions (10 Pairs)
+    // Distributed: C (40%), D (35%), A (20%), B (5% - least B)
+    const conceptQuestions = [
+      // Pair 1A: 6 Kinds of Adjectives
+      { id:1, sub:'1a', q:"In 'These mangoes are very sweet', what kind of adjective is 'These'?", hi:"'These mangoes are very sweet' में 'These' किस प्रकार का विशेषण है?", opts:["Possessive Adjective","Quantitative Adjective","Demonstrative Adjective (संकेतवाचक)","Distributive Adjective"], ans:2, expl:"'These' किसी वस्तु/संज्ञा की ओर प्रत्यक्ष संकेत करता है, अतः यह Demonstrative Adjective है।" },
+      { id:2, sub:'1a', q:"Which of the following sentences contains an Adjective of Quality (गुणवाचक विशेषण)?", hi:"किस वाक्य में गुणवाचक विशेषण (Adjective of Quality) का प्रयोग हुआ है?", opts:["Whose bag is this?","I have some money.","Each boy got a prize.","She wore a heavy golden necklace."], ans:3, expl:"'Heavy' और 'golden' हार के गुण/विशेषता को बताते हैं, अतः ये Adjectives of Quality हैं।" },
 
-      // UNIT 2: Agreement & Prepositions (Q11 - Q20)
-      {
-        id: 11,
-        cat: "agreement",
-        label: "Agreement of Adjectives",
-        q: "How does the English adjective 'good' change when modifying plural nouns (e.g. good boys)?",
-        hi: "बहुवचन संज्ञाओं (जैसे good boys) की विशेषता बताते समय अंग्रेज़ी विशेषण 'good' में क्या बदलाव आता है?",
-        options: [
-          "It adds an '-s' (goods boys)",
-          "It has the exact same form (good boys)",
-          "It changes vowel sound",
-          "It takes an apostrophe"
-        ],
-        ans: 1,
-        expl: "अंग्रेज़ी में विशेषण एकवचन/बहुवचन या स्त्रीलिंग/पुल्लिंग के लिए अपना रूप कभी नहीं बदलते (a good boy, good boys, a good girl, good girls)।"
-      },
-      {
-        id: 12,
-        cat: "agreement",
-        label: "Agreement Exceptions",
-        q: "Which are the ONLY adjectives in English that change their form before plural nouns?",
-        hi: "अंग्रेज़ी में वे एकमात्र विशेषण कौन से हैं जो बहुवचन संज्ञा के पहले अपना रूप बदलते हैं?",
-        options: [
-          "Possessive adjectives (my -> our)",
-          "Demonstrative adjectives 'this' and 'that' (to 'these' and 'those')",
-          "Adjectives of quality (good -> goods)",
-          "Distributive adjectives (each -> all)"
-        ],
-        ans: 1,
-        expl: "केवल Demonstrative विशेषण 'this' और 'that' बहुवचन में बदलकर 'these' और 'those' बनते हैं (this cat -> these cats; that man -> those men)।"
-      },
-      {
-        id: 13,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'She has always been very good ___ mathematics.' Choose the correct preposition:",
-        hi: "'She has always been very good ___ mathematics.' सही preposition चुनें:",
-        options: ["in", "at", "for", "with"],
-        ans: 1,
-        expl: "किसी विषय, खेल या कौशल में निपुण होने के लिए 'good at' का प्रयोग होता है (good at mathematics, good at chess)।"
-      },
-      {
-        id: 14,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'I am thoroughly tired ___ hearing your excuses every single day.' Choose the correct preposition:",
-        hi: "'I am thoroughly tired ___ hearing your excuses every single day.' सही preposition क्या है?",
-        options: ["from", "with", "of", "by"],
-        ans: 2,
-        expl: "किसी बात से ऊब या तंग आ जाने के लिए 'tired of' का प्रयोग किया जाता है (tired of excuses, tired of waiting)।"
-      },
-      {
-        id: 15,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'The young child is afraid ___ stray dogs.' Choose the correct preposition:",
-        hi: "'The young child is afraid ___ stray dogs.' रिक्त स्थान भरें:",
-        options: ["to", "from", "of", "with"],
-        ans: 2,
-        expl: "'Afraid' के साथ हमेशा 'of' preposition आता है (afraid of dogs, afraid of the dark)।"
-      },
-      {
-        id: 16,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'My grandfather is very fond ___ gardening.' What preposition follows 'fond'?",
-        hi: "'My grandfather is very fond ___ gardening.' 'fond' के बाद कौन सा preposition आता है?",
-        options: ["in", "of", "about", "for"],
-        ans: 1,
-        expl: "किसी काम या चीज़ का शौकीन होने के लिए 'fond of' का प्रयोग किया जाता है (fond of music, fond of sweets)।"
-      },
-      {
-        id: 17,
-        cat: "agreement",
-        label: "Agreement of Adjectives",
-        q: "Choose the grammatically correct sentence:",
-        hi: "व्याकरण की दृष्टि से शुद्ध वाक्य चुनें:",
-        options: [
-          "Those clevers girls won the quiz.",
-          "Those clever girls won the quiz.",
-          "That clever girls won the quiz.",
-          "These clever boy won the quiz."
-        ],
-        ans: 1,
-        expl: "विशेषण 'clever' में कभी 's' नहीं जुड़ता ('clevers' गलत है), और बहुवचन 'girls' के साथ 'those' का प्रयोग सही है।"
-      },
-      {
-        id: 18,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'The parents were extremely proud ___ their son's academic achievements.' Choose the preposition:",
-        hi: "'The parents were extremely proud ___ their son's academic achievements.' सही preposition चुनें:",
-        options: ["with", "of", "for", "on"],
-        ans: 1,
-        expl: "गर्व करने के लिए 'proud of' आता है (proud of him, proud of their achievement)।"
-      },
-      {
-        id: 19,
-        cat: "agreement",
-        label: "Prepositions after Adjectives",
-        q: "'Are you interested ___ learning French?' Choose the correct preposition:",
-        hi: "'Are you interested ___ learning French?' सही विकल्प चुनें:",
-        options: ["at", "for", "in", "with"],
-        ans: 2,
-        expl: "रुचि रखने के लिए 'interested in' का प्रयोग होता है (interested in music, interested in science)।"
-      },
-      {
-        id: 20,
-        cat: "agreement",
-        label: "Agreement Exceptions",
-        q: "Complete the plural: 'this book' becomes '___ books', and 'that house' becomes '___ houses':",
-        hi: "'this book' का बहुवचन '___ books' और 'that house' का बहुवचन '___ houses' होगा:",
-        options: [
-          "these, those",
-          "this, that",
-          "those, these",
-          "theirs, them"
-        ],
-        ans: 0,
-        expl: "This का बहुवचन 'these' और that का बहुवचन 'those' होता है।"
-      },
+      // Pair 1B: Participles (-ing vs -ed)
+      { id:3, sub:'1b', q:"In 'The marathon was tiring', why is the present participle (-ing) used?", hi:"'The marathon was tiring' में '-ing' कृदंत क्यों प्रयुक्त हुआ है?", opts:["Because the marathon was feeling tired","Because it is an adverb","Because it is active and signifies producing the effect of tiredness","Because tiring is a noun"], ans:2, expl:"Present participle (-ing) सक्रिय (Active) होता है और थकान पैदा करने वाले प्रभावक/कारण को दर्शाता है।" },
+      { id:4, sub:'1b', q:"'The spectators were completely ___ by the horrifying accident.' Choose the correct form:", hi:"'The spectators were completely ___ by the horrifying accident.' सही शब्द चुनें:", opts:["horrifying","horrify","horrifies","horrified (affected in this way - passive state)"], ans:3, expl:"दर्शकों पर भय का असर हुआ (passive state of being affected), इसलिए Past Participle 'horrified' आएगा।" },
 
-      // UNIT 3: Position & Link Verbs (Q21 - Q30)
-      {
-        id: 21,
-        cat: "linkverbs",
-        label: "Attributive vs Predicative",
-        q: "In 'a rich man', 'rich' is used ___, whereas in 'Tom became rich', 'rich' is used ___:",
-        hi: "'a rich man' में 'rich' का प्रयोग ___ है, जबकि 'Tom became rich' में ___ है:",
-        options: [
-          "predicatively; attributively",
-          "attributively; predicatively",
-          "as an adverb; as a noun",
-          "comparatively; superlatively"
-        ],
-        ans: 1,
-        expl: "जब विशेषण सीधे संज्ञा से पहले आए (a rich man), तो वह Attributive होता है; जब लिंकिंग क्रिया के बाद आए (Tom became rich), तो वह Predicative होता है।"
-      },
-      {
-        id: 22,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'He looked ___ at the angry crowd.' (deliberate physical action). Choose the correct word:",
-        hi: "'He looked ___ at the angry crowd.' (भीड़ को जानबूझकर शांति से देखा - Deliberate Action). सही शब्द चुनें:",
-        options: ["calm", "calmly", "calmness", "calmer"],
-        ans: 1,
-        expl: "जब 'look' का अर्थ जानबूझकर किसी दिशा में देखना (deliberate action) हो, तो यह क्रियाविशेषण (Adverb: calmly) लेता है।"
-      },
-      {
-        id: 23,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'He looked ___ despite the chaos around him.' (He had a calm expression / state). Choose the correct word:",
-        hi: "'He looked ___ despite the chaos around him.' (वह शांत दिख रहा था - Link verb). सही शब्द चुनें:",
-        options: ["calm", "calmly", "calmness", "calmingly"],
-        ans: 0,
-        expl: "जब 'look' एक लिंकिंग क्रिया (लिंक वर्ब) की तरह 'प्रतीत होना/दिखना' का अर्थ दे, तो इसके बाद विशेषण (Adjective: calm) आता है।"
-      },
-      {
-        id: 24,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'When she heard the tragic news, she turned ___.' (She became pale). Choose the correct word:",
-        hi: "'When she heard the tragic news, she turned ___.' (उसका चेहरा पीला पड़ गया - became). सही शब्द चुनें:",
-        options: ["pale", "palely", "paleness", "paled"],
-        ans: 0,
-        expl: "यहाँ 'turn' का अर्थ 'become' (हो जाना) है, जो एक Link Verb है। इसलिए इसके बाद Adjective 'pale' आएगा ('palely' नहीं)।"
-      },
-      {
-        id: 25,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'He turned ___ to the man who tapped him on the shoulder.' (deliberate physical movement). Choose the word:",
-        hi: "'He turned ___ to the man who tapped him on the shoulder.' (वह गुस्से में मुड़ा - Physical Action). सही शब्द:",
-        options: ["angry", "angrily", "anger", "angriness"],
-        ans: 1,
-        expl: "यहाँ 'turn' मुड़ने की शारीरिक क्रिया (deliberate physical turn) है, इसलिए क्रिया का ढंग बताने के लिए Adverb 'angrily' आएगा।"
-      },
-      {
-        id: 26,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'The tomato soup tasted ___.' (It had a horrible taste). Choose the correct word:",
-        hi: "'The tomato soup tasted ___.' (सूप का स्वाद खराब था - Link Verb). सही शब्द चुनें:",
-        options: ["horribly", "horrible", "horribleness", "horrified"],
-        ans: 1,
-        expl: "'taste' यहाँ लिंकिंग क्रिया है जो सूप के स्वाद की विशेषता बता रही है, इसलिए Adjective 'horrible' आएगा (horribly गलत है)।"
-      },
-      {
-        id: 27,
-        cat: "linkverbs",
-        label: "Link Verbs vs Action Verbs",
-        q: "'The detective tasted the mysterious liquid ___.' (deliberate sampling action). Choose the correct word:",
-        hi: "'The detective tasted the mysterious liquid ___.' (जासूस ने शक के साथ तरल को चखा - Action). सही शब्द:",
-        options: ["suspicious", "suspiciously", "suspicion", "suspiciousness"],
-        ans: 1,
-        expl: "यहाँ जासूस सक्रिय रूप से चखने की क्रिया कर रहा है (action of sampling), इसलिए क्रिया की रीति बताने वाला Adverb 'suspiciously' लगेगा।"
-      },
-      {
-        id: 28,
-        cat: "linkverbs",
-        label: "Link Verbs List",
-        q: "Which of the following verbs can function as a Link Verb (Copula) taking an adjective complement?",
-        hi: "इनमें से कौन सी क्रिया लिंकिंग क्रिया (Link Verb) के रूप में विशेषण ले सकती है?",
-        options: ["seem", "feel", "sound", "All of the above"],
-        ans: 3,
-        expl: "seem (Ann seems happy), feel (Tom felt cold), और sound (The idea sounds interesting) तीनों ही link verbs (copulas) हैं।"
-      },
-      {
-        id: 29,
-        cat: "linkverbs",
-        label: "Attributive Groups",
-        q: "Adjectives in groups (a) - (e) (Demonstrative, Distributive, Quantitative, Interrogative, Possessive) normally come:",
-        hi: "Demonstrative, Distributive, Quantitative, Interrogative और Possessive विशेषण सामान्यतः कहाँ आते हैं?",
-        options: [
-          "Before their nouns (attributive position)",
-          "After link verbs (predicative position)",
-          "At the very end of the paragraph",
-          "After prepositions only"
-        ],
-        ans: 0,
-        expl: "ये सभी विशेषण अपनी संज्ञाओं से ठीक पहले (attributive position) आते हैं: this book, every boy, some sugar, which car, my house।"
-      },
-      {
-        id: 30,
-        cat: "linkverbs",
-        label: "Link Verbs Trap",
-        q: "'The freshly baked bread smells ___.' Choose the correct word:",
-        hi: "'The freshly baked bread smells ___.' सही शब्द चुनें:",
-        options: ["delicious", "deliciously", "delight", "delicacy"],
-        ans: 0,
-        expl: "'smell' यहाँ सुगंध/गंध की स्थिति बताने वाला Link Verb है, इसलिए Adjective 'delicious' लगेगा ('deliciously' गलत है)।"
-      },
+      // Pair 2A: Agreement & Demonstratives
+      { id:5, sub:'2a', q:"What happens to the adjective 'clever' in the plural phrase 'clever girls'?", hi:"बहुवचन 'clever girls' में विशेषण 'clever' में क्या परिवर्तन आता है?", opts:["It remains unchanged: clever (English adjectives never take plural -s)","It becomes 'clevers'","It takes an apostrophe","It adds '-es'"], ans:0, expl:"अंग्रेज़ी में विशेषण लिंग या वचन के अनुसार कभी नहीं बदलते (a clever boy, clever boys, clever girls)।" },
+      { id:6, sub:'2a', q:"Which are the ONLY adjectives in English that change their form before plural nouns?", hi:"अंग्रेज़ी में वे एकमात्र विशेषण कौन से हैं जो बहुवचन संज्ञा के पहले रूप बदलते हैं?", opts:["Possessive adjectives","Adjectives of quality","Demonstrative adjectives 'this' and 'that' (to 'these' and 'those')","Distributive adjectives"], ans:2, expl:"केवल Demonstratives 'this' और 'that' बहुवचन में 'these' और 'those' बनते हैं।" },
 
-      // UNIT 4: Meaning Shifts & Traps (Q31 - Q40)
-      {
-        id: 31,
-        cat: "shifts",
-        label: "Meaning Shifts",
-        q: "What is the difference between 'a small farmer' and 'The farmer is small'?",
-        hi: "'a small farmer' और 'The farmer is small' के अर्थ में क्या अंतर है?",
-        options: [
-          "Both mean the farmer is poor",
-          "'A small farmer' owns a small farm; 'The farmer is small' means he is physically short/small in stature",
-          "'A small farmer' is a child; 'The farmer is small' owns cattle",
-          "There is no difference in meaning"
-        ],
-        ans: 1,
-        expl: "'a small farmer' का अर्थ है छोटे खेत का मालिक (छोटा किसान); जबकि 'The farmer is small' का अर्थ है कि वह व्यक्ति शारीरिक रूप से छोटे कद का है।"
-      },
-      {
-        id: 32,
-        cat: "shifts",
-        label: "Meaning Shifts",
-        q: "What does 'an old friend' mean compared to 'The friend is old'?",
-        hi: "'an old friend' और 'The friend is old' में क्या अंतर है?",
-        options: [
-          "'An old friend' means a friendship of long standing; 'The friend is old' refers to advanced biological age",
-          "Both mean the friend is over 80 years old",
-          "'An old friend' means former friend; 'The friend is old' means wise",
-          "Both mean childhood classmates"
-        ],
-        ans: 0,
-        expl: "'an old friend' का अर्थ है पुराना दोस्त (जिसे बहुत पहले से जानते हैं); जबकि 'The friend is old' का अर्थ है कि वह उम्रदराज़/बूढ़ा व्यक्ति है।"
-      },
-      {
-        id: 33,
-        cat: "shifts",
-        label: "Predicative-Only Adjectives",
-        q: "Which of the following adjectives can NEVER be used attributively before a noun (e.g. an ___ child ✗)?",
-        hi: "इनमें से कौन सा विशेषण कभी भी संज्ञा से पहले attributively प्रयोग नहीं हो सकता?",
-        options: ["afraid", "frightened", "scared", "fearful"],
-        ans: 0,
-        expl: "'Afraid' हमेशा क्रिया के बाद predicatively आता है (The child is afraid ✓; an afraid child ✗)। जबकि 'frightened' दोनों जगह आ सकता है (a frightened child ✓)।"
-      },
-      {
-        id: 34,
-        cat: "shifts",
-        label: "Attributive-Only Adjectives",
-        q: "Which group of adjectives must ALWAYS precede their nouns (attributive only)?",
-        hi: "कौन से विशेषण हमेशा अपनी संज्ञा से पहले ही आते हैं (केवल attributive)?",
-        options: [
-          "chief, main, principal, sheer, utter",
-          "afraid, asleep, alone, alive",
-          "cold, wet, windy, dry",
-          "rich, poor, happy, sad"
-        ],
-        ans: 0,
-        expl: "Chief, main, principal, sheer, utter हमेशा संज्ञा से पहले आते हैं (the main reason, sheer luck, utter nonsense)। 'The reason is main' नहीं कहा जाता।"
-      },
-      {
-        id: 35,
-        cat: "shifts",
-        label: "Predicative-Only Adjectives",
-        q: "Why is 'an asleep baby' grammatically incorrect?",
-        hi: "'an asleep baby' व्याकरण की दृष्टि से अशुद्ध क्यों है?",
-        options: [
-          "Because 'asleep' must follow the verb predicatively (The baby is asleep)",
-          "Because babies cannot sleep",
-          "Because asleep is an adverb only",
-          "Because sleeping is an adjective of colour"
-        ],
-        ans: 0,
-        expl: "Asleep, awake, alone, afraid, alive, afloat आदि केवल Predicative विशेषण हैं। संज्ञा के पहले 'a sleeping baby' कहना सही होता है।"
-      },
-      {
-        id: 36,
-        cat: "shifts",
-        label: "Meaning of Early and Late",
-        q: "'We caught an early train.' What does 'an early train' mean here?",
-        hi: "'We caught an early train.' यहाँ 'an early train' का क्या अर्थ है?",
-        options: [
-          "A train running before its scheduled time",
-          "A train scheduled to run early in the day (सुबह के समय की ट्रेन)",
-          "A very fast high-speed bullet train",
-          "A train that broke down"
-        ],
-        ans: 1,
-        expl: "'an early/late train' का अर्थ है समय सारिणी के अनुसार सुबह या देर रात चलने वाली ट्रेन। 'The train is early' का अर्थ होता है नियत समय से पहले पहुँच जाना।"
-      },
-      {
-        id: 37,
-        cat: "shifts",
-        label: "Meaning of 'Poor'",
-        q: "In 'Poor Tom lost his wallet', what does 'poor' mean, and can it be used predicatively here?",
-        hi: "'Poor Tom lost his wallet' में 'poor' का क्या अर्थ है और क्या इसे क्रिया के बाद रखा जा सकता है?",
-        options: [
-          "It means 'unfortunate/pitiable' and must precede the noun (cannot be predicative here)",
-          "It means without money and can say 'Tom is poor'",
-          "It means bad quality",
-          "It means physically small"
-        ],
-        ans: 0,
-        expl: "जब 'poor' का अर्थ 'दयनीय/बेचारा' (unfortunate) होता है, तो यह हमेशा संज्ञा से पहले ही आता है (Poor Tom!, the poor dog)!"
-      },
-      {
-        id: 38,
-        cat: "shifts",
-        label: "Use of 'And'",
-        q: "With attributive adjectives, 'and' is used chiefly when there are two or more adjectives of:",
-        hi: "संज्ञा से ठीक पहले (attributive) 'and' का प्रयोग मुख्य रूप से किन विशेषणों के बीच होता है?",
-        options: [
-          "Colour (e.g. a red, white and blue flag)",
-          "Size (e.g. a big and small room)",
-          "Age (e.g. an old and new car)",
-          "Material (e.g. a wooden and iron table)"
-        ],
-        ans: 0,
-        expl: "Attributive स्थिति में 'and' मुख्य रूप से रंगों के विशेषणों के बीच अंतिम रंग से पहले लगता है (a green and brown carpet; a red, white and blue flag)।"
-      },
-      {
-        id: 39,
-        cat: "shifts",
-        label: "Use of 'And'",
-        q: "'The day was cold, wet ___ windy.' Where is 'and' placed with predicative adjectives?",
-        hi: "'The day was cold, wet ___ windy.' Predicative विशेषणों में 'and' कहाँ लगाया जाता है?",
-        options: [
-          "Between the last two adjectives",
-          "Between every single adjective",
-          "At the very beginning of the sentence",
-          "No 'and' is allowed with predicative adjectives"
-        ],
-        ans: 0,
-        expl: "जब कई विशेषण क्रिया के बाद predicatively आते हैं, तो 'and' को अंतिम दो विशेषणों के बीच रखा जाता है: 'cold, wet and windy'।"
-      },
-      {
-        id: 40,
-        cat: "shifts",
-        label: "Meaning of 'Poor'",
-        q: "'He has poor sight' vs 'His sight is poor'. Which of the following is correct?",
-        hi: "'He has poor sight' बनाम 'His sight is poor'. इनमें से कौन सा सही है?",
-        options: [
-          "Only 'He has poor sight' is correct",
-          "Only 'His sight is poor' is correct",
-          "Both are correct because 'poor' meaning weak/inadequate can be in either position with inanimate nouns",
-          "Neither is correct English"
-        ],
-        ans: 2,
-        expl: "'poor' जब निर्जीव संज्ञाओं (sight, health) के साथ 'कमज़ोर/अपर्याप्त' का अर्थ देता है, तो यह दोनों स्थितियों में आ सकता है (poor sight / sight is poor)।"
-      },
+      // Pair 2B: Fixed Prepositions
+      { id:7, sub:'2b', q:"'She has always been exceptionally good ___ mathematics.' Select the correct preposition:", hi:"'good' के बाद निपुणता दर्शाने के लिए कौन सा Preposition आता है?", opts:["in","for","with","at (good at a subject/skill)"], ans:3, expl:"किसी विषय, खेल या कला में निपुणता के लिए 'good at' का प्रयोग होता है।" },
+      { id:8, sub:'2b', q:"'I am thoroughly tired ___ your repeated excuses.' Fill in the blank:", hi:"'tired' (ऊब या तंग आ जाना) के साथ कौन सा preposition लगता है?", opts:["from","with","of (tired of excuses)","by"], ans:2, expl:"किसी बात से ऊब जाने या तंग आने पर 'tired of' का प्रयोग किया जाता है।" },
 
-      // UNIT 5: Order of Adjectives (Q41 - Q50)
-      {
-        id: 41,
-        cat: "order",
-        label: "Order of Adjectives",
-        q: "What is the correct order of adjectives in: 'She bought a ___ knife.'?",
-        hi: "'She bought a ___ knife.' विशेषणों का सही क्रम चुनें:",
-        options: [
-          "sharp long",
-          "long sharp",
-          "sharpening long",
-          "long and sharp"
-        ],
-        ans: 1,
-        expl: "नियम के अनुसार Size (आकार: long) पहले आता है और General Description (गुण: sharp) उसके बाद आता है: 'a long sharp knife'।"
-      },
-      {
-        id: 42,
-        cat: "order",
-        label: "Order of Adjectives",
-        q: "Choose the correct order: 'They installed ___ curtains in the hall.'",
-        hi: "सही क्रम चुनें: 'They installed ___ curtains in the hall.'",
-        options: [
-          "velvet blue",
-          "blue velvet",
-          "blue and velvet",
-          "velvety blue"
-        ],
-        ans: 1,
-        expl: "Colour (रंग: blue) पदार्थ (Material: velvet) से पहले आता है: 'blue velvet curtains'।"
-      },
-      {
-        id: 43,
-        cat: "order",
-        label: "Personality Adjectives",
-        q: "Where do adjectives of personality or emotion (e.g. suspicious, patient, anxious) stand relative to physical description and colour?",
-        hi: "व्यक्तित्व या स्वभाव के विशेषण (suspicious, patient) शारीरिक रूप-रंग और रंगों के संदर्भ में कहाँ आते हैं?",
-        options: [
-          "After physical description (e.g. small, long, pale) but before colours",
-          "At the very end after the noun",
-          "Before size and shape",
-          "Always joined by 'and'"
-        ],
-        ans: 0,
-        expl: "Personality/emotion के विशेषण शारीरिक विवरण (small, long, pale) के बाद, लेकिन रंगों के पहले आते हैं (a small suspicious official, a kindly black doctor)।"
-      },
-      {
-        id: 44,
-        cat: "order",
-        label: "Little, Old and Young",
-        q: "Which combination is grammatically POSSIBLE in English?",
-        hi: "अंग्रेज़ी में कौन सा संयोजन व्याकरण के अनुसार संभव (POSSIBLE) है?",
-        options: [
-          "a little old lady",
-          "a little young lady",
-          "a little young boy",
-          "a young little girl"
-        ],
-        ans: 0,
-        expl: "नियम: 'little + old + noun' संभव है (a little old lady ✓); परंतु 'little + young' कभी संभव नहीं होता (a little young lady ✗)!"
-      },
-      {
-        id: 45,
-        cat: "order",
-        label: "Order of Adjectives",
-        q: "Choose the correct phrase describing the clock:",
-        hi: "घड़ी का वर्णन करने वाला सही क्रम चुनें:",
-        options: [
-          "a French elegant clock",
-          "an elegant French clock",
-          "a clock elegant French",
-          "an elegantly French clock"
-        ],
-        ans: 1,
-        expl: "General description / Opinion (elegant) उत्पत्ति/देश (Origin: French) से पहले आता है: 'an elegant French clock'।"
-      },
-      {
-        id: 46,
-        cat: "order",
-        label: "Approval with Fine, Lovely, Nice",
-        q: "What does the speaker imply when saying 'a lovely warm house' or 'a beautiful big room'?",
-        hi: "'a lovely warm house' या 'a beautiful big room' कहते समय वक्ता का क्या अभिप्राय होता है?",
-        options: [
-          "They dislike big rooms and warm houses",
-          "They express warm approval of the warm temperature and big size",
-          "They are complaining about high expenses",
-          "They think the house is small"
-        ],
-        ans: 1,
-        expl: "जब fine, lovely, nice, beautiful आकार या तापमान के विशेषणों के साथ आते हैं, तो वे उस आकार या तापमान के प्रति स्वीकृति और पसंद (approval) व्यक्त करते हैं।"
-      },
-      {
-        id: 47,
-        cat: "order",
-        label: "Pretty as an Adverb",
-        q: "In 'She's a pretty tall girl' (with NO comma between pretty and tall), what does 'pretty' mean?",
-        hi: "'She's a pretty tall girl' (बिना कॉमा के) में 'pretty' का क्या अर्थ है?",
-        options: [
-          "It is an adverb of degree meaning 'very / quite' (काफी/बहुत लंबी)",
-          "It is an adjective meaning attractive/beautiful",
-          "It means physically small",
-          "It means kind-hearted"
-        ],
-        ans: 0,
-        expl: "जब 'pretty' के बाद बिना कॉमा के कोई अन्य विशेषण आता है, तो वह Adverb of Degree बन जाता है जिसका अर्थ 'quite/very' (काफी/बहुत) होता है।"
-      },
-      {
-        id: 48,
-        cat: "order",
-        label: "Order of Adjectives",
-        q: "Choose the correct order: 'We saw an ___ dog in the park.'",
-        hi: "सही क्रम चुनें: 'We saw an ___ dog in the park.'",
-        options: [
-          "brown inquisitive",
-          "inquisitive brown",
-          "brown and inquisitive",
-          "inquisitively brown"
-        ],
-        ans: 1,
-        expl: "Personality / Emotion (inquisitive - जिज्ञासु) रंग (Colour: brown) से पहले आता है: 'an inquisitive brown dog'।"
-      },
-      {
-        id: 49,
-        cat: "order",
-        label: "Order of Adjectives",
-        q: "Choose the correct order: 'He threw the rubbish into an ___ bucket.'",
-        hi: "सही क्रम चुनें: 'He threw the rubbish into an ___ bucket.'",
-        options: [
-          "plastic old",
-          "old plastic",
-          "old and plastic",
-          "plastically old"
-        ],
-        ans: 1,
-        expl: "Age (old) पदार्थ (Material: plastic) से पहले आता है: 'an old plastic bucket'।"
-      },
-      {
-        id: 50,
-        cat: "order",
-        label: "Small vs Little",
-        q: "If we wish to strongly emphasise the physical size of an object, which word is usually preferred over 'little'?",
-        hi: "यदि हम किसी वस्तु के भौतिक आकार (size) पर विशेष बल देना चाहते हैं, तो 'little' की तुलना में कौन सा शब्द बेहतर माना जाता है?",
-        options: ["small", "fine", "young", "nice"],
-        ans: 0,
-        expl: "भौतिक आकार (physical size) पर जोर देने के लिए 'small' का प्रयोग 'little' से अधिक उपयुक्त माना जाता है (small room, small house)।"
-      }
+      // Pair 3A: Attributive vs Predicative
+      { id:9, sub:'3a', q:"In 'a rich merchant' vs 'The merchant became rich', what are the positions of 'rich'?", hi:"'a rich merchant' और 'The merchant became rich' में 'rich' की स्थितियाँ क्या हैं?", opts:["Attributive (before noun); Predicative (after link verb became)","Predicative; Attributive","Both are adverbs","Both are nouns"], ans:0, expl:"संज्ञा से ठीक पहले Attributive होता है; लिंकिंग क्रिया (became) के बाद Predicative होता है।" },
+      { id:10, sub:'3a', q:"Which of the following verbs is a Link Verb (Copula) taking an adjective complement?", hi:"इनमें से कौन सी लिंकिंग क्रिया (Link Verb) विशेषण पूरक लेती है?", opts:["Run","Throw","Seem (e.g. Ann seems happy)","Build"], ans:2, expl:"'Seem' एक प्रमुख copula/link verb है जो अपने बाद विशेषण (seem happy) लेता है।" },
+
+      // Pair 3B: Link Verb vs Action Verb Trap
+      { id:11, sub:'3b', q:"'He looked ___ at the noisy crowd.' (deliberate physical looking action). Choose the correct word:", hi:"'He looked ___ at the noisy crowd.' (सक्रिय शारीरिक क्रिया). सही शब्द चुनें:", opts:["calm","calmness","calmer","calmly (deliberate action takes an adverb)"], ans:3, expl:"जब 'look' सक्रिय रूप से देखने की क्रिया (deliberate physical action) हो, तो Adverb (calmly) आता है।" },
+      { id:12, sub:'3b', q:"'He looked ___ despite the immense pressure.' (He had a calm expression/state). Choose the correct word:", hi:"'He looked ___ despite the immense pressure.' (शांत दिख रहा था - Link Verb). सही शब्द चुनें:", opts:["calmly","calmness","calm (link verb takes an adjective complement)","calmingly"], ans:2, expl:"जब 'look' का अर्थ 'दिखना/प्रतीत होना' (link verb) हो, तो Adjective 'calm' आता है।" },
+
+      // Pair 4A: Meaning Shifts & Early/Late/Poor
+      { id:13, sub:'4a', q:"What does 'a small farmer' mean in contrast to 'The farmer is small'?", hi:"'a small farmer' और 'The farmer is small' में क्या अंतर है?", opts:["Both mean the farmer is poor","A small farmer is young","'A small farmer' has a small farm; 'The farmer is small' is physically short in stature","No difference in meaning"], ans:2, expl:"'a small farmer' का अर्थ है छोटे खेत वाला किसान; 'The farmer is small' का अर्थ है वह शारीरिक रूप से नाटा/छोटा है।" },
+      { id:14, sub:'4a', q:"In 'We must hurry to catch the early train', what does 'an early train' mean?", hi:"'an early train' का यहाँ क्या अर्थ है?", opts:["A bullet train","A train running before its scheduled time","A broken train","A train scheduled to run early in the morning/day"], ans:3, expl:"'an early/late train' समय सारिणी के अनुसार दिन के शुरुआती या देर रात चलने वाली ट्रेन को कहते हैं।" },
+
+      // Pair 4B: Attributive-only vs Predicative-only & 'And'
+      { id:15, sub:'4b', q:"Why is 'an afraid child' grammatically incorrect?", hi:"'an afraid child' व्याकरण की दृष्टि से अशुद्ध क्यों है?", opts:["'Afraid' is a predicative-only adjective (The child is afraid; use 'a frightened child')","Because children cannot be afraid","Because afraid is an adverb","Because afraid is a verb"], ans:0, expl:"'Afraid' केवल क्रिया के बाद predicatively आता है (The child is afraid)। संज्ञा के पहले 'a frightened child' कहना चाहिए।" },
+      { id:16, sub:'4b', q:"Which group of adjectives can ONLY be used attributively before a noun?", hi:"कौन से विशेषण केवल संज्ञा से पहले attributively ही प्रयुक्त होते हैं?", opts:["afraid, asleep, alone, alive","cold, wet, windy","chief, main, principal, sheer, utter","happy, rich, poor"], ans:2, expl:"Chief, main, principal, sheer, utter हमेशा संज्ञा से पहले आते हैं (the main reason, sheer luck)।" },
+
+      // Pair 5A: OSASCOMP Standard Order & Personality
+      { id:17, sub:'5a', q:"What is the correct order of adjectives in: 'She bought a ___ knife.'?", hi:"'She bought a ___ knife.' विशेषणों का सही क्रम चुनें:", opts:["sharp long","sharpening long","long and sharp","long sharp (Size + General Description)"], ans:3, expl:"नियम के अनुसार Size (आकार: long) पहले और General Description (गुण: sharp) उसके बाद आता है।" },
+      { id:18, sub:'5a', q:"Choose the correct order: 'We saw an ___ dog in the garden.'", hi:"सही क्रम चुनें: 'We saw an ___ dog in the garden.'", opts:["brown inquisitive","brown and inquisitive","inquisitive brown (Personality + Colour)","inquisitively brown"], ans:2, expl:"Personality/Emotion (inquisitive) रंग (Colour: brown) से पहले आता है: 'an inquisitive brown dog'।" },
+
+      // Pair 5B: Little/Old/Young & Pretty Adverb
+      { id:19, sub:'5b', q:"Which adjective combination is grammatically POSSIBLE in English?", hi:"अंग्रेज़ी में कौन सा संयोजन व्याकरण के अनुसार संभव (POSSIBLE) है?", opts:["a little young man","a little young lady","a young little boy","a little old lady (little + old + noun is valid)"], ans:3, expl:"'little + old + noun' संभव है (a little old lady ✓); परंतु 'little + young' कभी संभव नहीं होता!" },
+      { id:20, sub:'5b', q:"In 'She is a pretty tall girl' (with NO comma between pretty and tall), what is the function of 'pretty'?", hi:"'She is a pretty tall girl' (बिना कॉमा के) में 'pretty' का क्या कार्य है?", opts:["It is an adverb of degree meaning 'quite / very' (काफी लंबी)","It is an adjective meaning beautiful","It is a noun","It is a preposition"], ans:0, expl:"जब 'pretty' के बाद बिना कॉमा के कोई अन्य विशेषण आता है, तो वह Adverb of Degree बन जाता है जिसका अर्थ 'quite/very' होता है।" }
     ];
 
-    let userAnswers = {};
-    let checkedStatus = {};
-    let activeCategory = 'all';
-    let currentPage = 1;
-    const pageSize = 10;
+    // 30 Final Test Questions (Categorized across 5 Units)
+    // Distributed: C (43.3%), D (33.3%), A (16.7%), B (6.7% - least B)
+    const testQuestions = [
+      // UNIT 1: Kinds & Participles
+      { id:1, unit:'kinds', label:'Unit 01: Kinds of Adjectives', q:"Which kind of adjective are 'this', 'that', 'these', and 'those'?", hi:"'this', 'that', 'these' और 'those' किस प्रकार के विशेषण हैं?", opts:["Possessive Adjectives","Quantitative Adjectives","Demonstrative Adjectives (संकेतवाचक)","Distributive Adjectives"], ans:2, expl:"This, that, these, those किसी वस्तु या व्यक्ति की ओर प्रत्यक्ष संकेत करते हैं, इसलिए इन्हें Demonstrative विशेषण कहते हैं।" },
+      { id:2, unit:'kinds', label:'Unit 01: Participles', q:"In 'The play was boring', what does the present participle (-ing) adjective signify?", hi:"'The play was boring' में present participle (-ing) का क्या अर्थ है?", opts:["It is an adverb of manner","It means the audience felt bored","It is passive and describes the reaction","It is active and signifies having the effect of producing boredom"], ans:3, expl:"Present participle (-ing) विशेषण Active (सक्रिय) होता है और इसका अर्थ 'having this effect' होता है।" },
+      { id:3, unit:'kinds', label:'Unit 01: Participles', q:"Fill in the blank: 'The workers worked for ten hours without a break; they were soon ___.'", hi:"'The workers worked for ten hours without a break; they were soon ___.' सही शब्द चुनें:", opts:["tiredly","tiresome","tired (experiencing exhaustion - passive state)","tiring"], ans:2, expl:"मज़दूरों ने थकावट महसूस की (passive state), इसलिए Past Participle 'tired' आएगा।" },
+      { id:4, unit:'kinds', label:'Unit 01: Participles', q:"What is the difference between 'an infuriating woman' and 'an infuriated woman'?", hi:"'an infuriating woman' और 'an infuriated woman' में क्या अंतर है?", opts:["'Infuriating' means she causes fury in others; 'infuriated' means she is affected by fury","Both mean the woman is angry","There is no difference in modern English","'Infuriating' is a noun"], ans:0, expl:"Infuriating महिला दूसरों को क्रोधित करती है; जबकि Infuriated महिला स्वयं किसी बात से बहुत गुस्से में है।" },
+      { id:5, unit:'kinds', label:'Unit 01: Kinds', q:"In 'Whose dog is barking outside?', what kind of adjective is 'Whose'?", hi:"'Whose dog is barking outside?' में 'Whose' किस प्रकार का विशेषण है?", opts:["Demonstrative Adjective","Adjective of Quality","Distributive Adjective","Interrogative Adjective (प्रश्नवाचक)"], ans:3, expl:"Which, what, whose जब संज्ञा के साथ आकर प्रश्न पूछने का काम करते हैं, तो इन्हें Interrogative Adjectives कहते हैं।" },
+      { id:6, unit:'kinds', label:'Unit 01: Quality', q:"Which of the following contains an Adjective of Quality?", hi:"किस विकल्प में गुणवाचक विशेषण (Adjective of Quality) का प्रयोग हुआ है?", opts:["I want that pen.","Whose bag is this?","She bought a golden ring (material/quality).","Each child got a toy."], ans:2, expl:"'Golden' अंगूठी के गुण/सामग्री को व्यक्त करता है, जो Adjective of Quality है।" },
 
-    function getFilteredList() {
-      if (activeCategory === 'all') return questions;
-      return questions.filter(q => q.cat === activeCategory);
-    }
+      // UNIT 2: Agreement & Prepositions
+      { id:7, unit:'agreement', label:'Unit 02: Agreement', q:"How does the English adjective 'good' change when modifying plural nouns (e.g. good boys)?", hi:"बहुवचन संज्ञाओं की विशेषता बताते समय अंग्रेज़ी विशेषण 'good' में क्या बदलाव आता है?", opts:["It adds an '-s' (goods boys)","It takes an apostrophe","It remains unchanged: good boys (adjectives in English never pluralize)","It changes vowel sound"], ans:2, expl:"अंग्रेज़ी में विशेषण एकवचन/बहुवचन या स्त्रीलिंग/पुल्लिंग के लिए अपना रूप कभी नहीं बदलते।" },
+      { id:8, unit:'agreement', label:'Unit 02: Exceptions', q:"Which are the ONLY adjectives in English that change their form before plural nouns?", hi:"अंग्रेज़ी में वे एकमात्र विशेषण कौन से हैं जो बहुवचन संज्ञा के पहले अपना रूप बदलते हैं?", opts:["Possessive adjectives","Adjectives of quality","Distributive adjectives","Demonstrative adjectives 'this' and 'that' (to 'these' and 'those')"], ans:3, expl:"केवल Demonstratives 'this' और 'that' बहुवचन में 'these' और 'those' बनते हैं।" },
+      { id:9, unit:'agreement', label:'Unit 02: Prepositions', q:"'She has always been very good ___ mathematics.' Choose the correct preposition:", hi:"'She has always been very good ___ mathematics.' सही preposition चुनें:", opts:["at (good at a subject/skill)","in","for","with"], ans:0, expl:"किसी विषय या खेल में निपुण होने के लिए 'good at' का प्रयोग होता है।" },
+      { id:10, unit:'agreement', label:'Unit 02: Prepositions', q:"'I am thoroughly tired ___ hearing your excuses every single day.' Choose the preposition:", hi:"'tired' (ऊब जाना) के साथ सही preposition क्या है?", opts:["from","with","of (tired of - ऊब/तंग आ जाना)","by"], ans:2, expl:"किसी बात से ऊब या तंग आ जाने के लिए 'tired of' का प्रयोग किया जाता है।" },
+      { id:11, unit:'agreement', label:'Unit 02: Prepositions', q:"'The young child is afraid ___ stray dogs.' Choose the correct preposition:", hi:"'afraid' के साथ सही preposition क्या है?", opts:["to","from","with","of (afraid of - भयभीत होना)"], ans:3, expl:"'Afraid' के साथ हमेशा 'of' preposition आता है।" },
+      { id:12, unit:'agreement', label:'Unit 02: Prepositions', q:"'My grandfather is very fond ___ gardening.' What preposition follows 'fond'?", hi:"'fond' के बाद कौन सा preposition आता है?", opts:["for","about","of (fond of - शौकीन होना)","in"], ans:2, expl:"शौकीन होने के लिए 'fond of' का प्रयोग किया जाता है।" },
 
-    function updateProgress() {
-      let count = 0;
-      Object.keys(checkedStatus).forEach(id => {
-        if (checkedStatus[id].checked && checkedStatus[id].isCorrect) {
-          count++;
-        }
-      });
-      document.getElementById('lesson-progress').value = count;
-      document.getElementById('progress-label').textContent = `${count} of 50 answers correct (${Math.round((count/50)*100)}%)`;
-      renderJumpGrid();
-    }
+      // UNIT 3: Position & Link Verbs
+      { id:13, unit:'position', label:'Unit 03: Position', q:"In 'a rich man', 'rich' is used ___, whereas in 'Tom became rich', 'rich' is used ___:", hi:"'a rich man' में 'rich' का प्रयोग ___ है, जबकि 'Tom became rich' में ___ है:", opts:["as an adverb; as a noun","predicatively; attributively","comparatively; superlatively","attributively; predicatively"], ans:3, expl:"संज्ञा से पहले Attributive होता है; लिंकिंग क्रिया के बाद Predicative होता है।" },
+      { id:14, unit:'position', label:'Unit 03: Link Verbs', q:"'He looked ___ at the angry crowd.' (deliberate physical action). Choose the correct word:", hi:"'He looked ___ at the angry crowd.' (सक्रिय क्रिया). सही शब्द चुनें:", opts:["calm","calmness","calmly (action verb takes an adverb of manner)","calmer"], ans:2, expl:"जब 'look' का अर्थ जानबूझकर देखना (deliberate action) हो, तो Adverb (calmly) लेता है।" },
+      { id:15, unit:'position', label:'Unit 03: Link Verbs', q:"'He looked ___ despite the chaos around him.' (He had a calm expression / state). Choose the correct word:", hi:"'He looked ___ despite the chaos around him.' (शांत दिख रहा था - Link verb). सही शब्द चुनें:", opts:["calm (link verb takes an adjective complement)","calmly","calmness","calmingly"], ans:0, expl:"जब 'look' का अर्थ 'दिखना' (link verb) हो, तो Adjective (calm) आता है।" },
+      { id:16, unit:'position', label:'Unit 03: Link Verbs', q:"'When she heard the tragic news, she turned ___.' (She became pale). Choose the correct word:", hi:"'When she heard the tragic news, she turned ___.' सही शब्द चुनें:", opts:["paled","palely","pale (turn = become, taking an adjective)","paleness"], ans:2, expl:"यहाँ 'turn' का अर्थ 'become' (हो जाना) है, जो Link Verb है। इसलिए Adjective 'pale' आएगा।" },
+      { id:17, unit:'position', label:'Unit 03: Link Verbs', q:"'The detective tasted the mysterious liquid ___.' (deliberate sampling action). Choose the correct word:", hi:"'The detective tasted the mysterious liquid ___.' (सक्रिय चखना). सही शब्द:", opts:["suspicious","suspicion","suspiciousness","suspiciously (deliberate action takes adverb)"], ans:3, expl:"सक्रिय रूप से चखने की क्रिया (action of sampling) के लिए Adverb 'suspiciously' लगेगा।" },
+      { id:18, unit:'position', label:'Unit 03: Link Verbs', q:"'The freshly baked bread smells ___.' Choose the correct word:", hi:"'The freshly baked bread smells ___.' सही शब्द चुनें:", opts:["delicacy","deliciously","delicious (smell as link verb takes adjective)","delight"], ans:2, expl:"'smell' यहाँ Link Verb है, इसलिए Adjective 'delicious' लगेगा।" },
 
-    function renderJumpGrid() {
-      const grid = document.getElementById('jump-grid');
-      grid.innerHTML = '';
+      // UNIT 4: Meaning Shifts & Position Traps
+      { id:19, unit:'traps', label:'Unit 04: Meaning Shifts', q:"What is the difference between 'a small farmer' and 'The farmer is small'?", hi:"'a small farmer' और 'The farmer is small' के अर्थ में क्या अंतर है?", opts:["Both mean the farmer is poor","A small farmer is a child","'A small farmer' has a small farm; 'The farmer is small' means he is physically short in stature","There is no difference in meaning"], ans:2, expl:"'a small farmer' = छोटे खेत वाला किसान; 'The farmer is small' = शारीरिक कद में छोटा व्यक्ति।" },
+      { id:20, unit:'traps', label:'Unit 04: Meaning Shifts', q:"What does 'an old friend' mean compared to 'The friend is old'?", hi:"'an old friend' और 'The friend is old' में क्या अंतर है?", opts:["Both mean the friend is elderly","An old friend means former friend","Both mean childhood classmates","'An old friend' means a friendship of long standing; 'The friend is old' refers to advanced biological age"], ans:3, expl:"'an old friend' = पुराना मित्र; 'The friend is old' = उम्र में वृद्ध।" },
+      { id:21, unit:'traps', label:'Unit 04: Predicative Only', q:"Which of the following adjectives can NEVER be used attributively before a noun (e.g. an ___ child ✗)?", hi:"इनमें से कौन सा विशेषण कभी भी संज्ञा से पहले attributively प्रयोग नहीं हो सकता?", opts:["afraid (predicative-only: The child is afraid)","frightened","fearful","scared"], ans:0, expl:"'Afraid' केवल क्रिया के बाद predicatively आता है (The child is afraid ✓; an afraid child ✗)।" },
+      { id:22, unit:'traps', label:'Unit 04: Attributive Only', q:"Which group of adjectives must ALWAYS precede their nouns (attributive only)?", hi:"कौन से विशेषण हमेशा अपनी संज्ञा से पहले ही आते हैं (केवल attributive)?", opts:["afraid, asleep, alone, alive","cold, wet, windy, dry","chief, main, principal, sheer, utter","rich, poor, happy, sad"], ans:2, expl:"Chief, main, principal, sheer, utter हमेशा संज्ञा से पहले आते हैं।" },
+      { id:23, unit:'traps', label:'Unit 04: Nuances', q:"'We caught an early train.' What does 'an early train' mean here?", hi:"'We caught an early train.' यहाँ 'an early train' का क्या अर्थ है?", opts:["A train running before its scheduled time","A very fast bullet train","A broken train","A train scheduled to run early in the morning/day (सुबह के समय की ट्रेन)"], ans:3, expl:"'an early/late train' समय सारिणी के अनुसार दिन के शुरुआती या देर रात चलने वाली ट्रेन को कहते हैं।" },
+      { id:24, unit:'traps', label:'Unit 04: Use of And', q:"With attributive adjectives, 'and' is used chiefly when there are two or more adjectives of:", hi:"संज्ञा से ठीक पहले (attributive) 'and' का प्रयोग मुख्य रूप से किन विशेषणों के बीच होता है?", opts:["Size","Colour (e.g. a red, white and blue flag)","Material","Age"], ans:1, expl:"Attributive स्थिति में 'and' मुख्य रूप से रंगों के विशेषणों के बीच लगता है।" },
 
-      questions.forEach(q => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'jump-btn';
-        btn.textContent = q.id;
-        btn.title = `Question ${q.id} (${q.label})`;
+      // UNIT 5: Order of Adjectives
+      { id:25, unit:'order', label:'Unit 05: Order', q:"What is the correct order of adjectives in: 'She bought a ___ knife.'?", hi:"'She bought a ___ knife.' विशेषणों का सही क्रम चुनें:", opts:["sharp long","sharpening long","long sharp (Size + Description)","long and sharp"], ans:2, expl:"Size (long) पहले आता है और General Description (sharp) उसके बाद आता है।" },
+      { id:26, unit:'order', label:'Unit 05: Order', q:"Choose the correct order: 'They installed ___ curtains in the hall.'", hi:"सही क्रम चुनें: 'They installed ___ curtains in the hall.'", opts:["velvet blue","blue and velvet","velvety blue","blue velvet (Colour + Material)"], ans:3, expl:"Colour (blue) पदार्थ (Material: velvet) से पहले आता है।" },
+      { id:27, unit:'order', label:'Unit 05: Personality', q:"Where do adjectives of personality or emotion (e.g. suspicious, patient) stand relative to physical description and colour?", hi:"व्यक्तित्व या स्वभाव के विशेषण शारीरिक रूप-रंग और रंगों के संदर्भ में कहाँ आते हैं?", opts:["At the very end after the noun","Before size and shape","After physical description (small, pale) but before colours","Always joined by 'and'"], ans:2, expl:"Personality/emotion के विशेषण शारीरिक विवरण के बाद, लेकिन रंगों के पहले आते हैं।" },
+      { id:28, unit:'order', label:'Unit 05: Little Old Young', q:"Which combination is grammatically POSSIBLE in English?", hi:"अंग्रेज़ी में कौन सा संयोजन व्याकरण के अनुसार संभव (POSSIBLE) है?", opts:["a little old lady (little + old + noun is valid)","a little young lady","a little young boy","a young little girl"], ans:0, expl:"'little + old + noun' संभव है (a little old lady ✓); परंतु 'little + young' कभी संभव नहीं होता!" },
+      { id:29, unit:'order', label:'Unit 05: Order', q:"Choose the correct phrase describing the clock:", hi:"घड़ी का वर्णन करने वाला सही क्रम चुनें:", opts:["a French elegant clock","a clock elegant French","an elegant French clock (Description + Origin)","an elegantly French clock"], ans:2, expl:"General description / Opinion (elegant) उत्पत्ति/देश (Origin: French) से पहले आता है।" },
+      { id:30, unit:'order', label:'Unit 05: Pretty Adverb', q:"In 'She's a pretty tall girl' (with NO comma between pretty and tall), what does 'pretty' mean?", hi:"'She's a pretty tall girl' (बिना कॉमा के) में 'pretty' का क्या अर्थ है?", opts:["It is an adjective meaning attractive","It means physically small","It means kind-hearted","It is an adverb of degree meaning 'quite / very tall' (काफी लंबी)"], ans:3, expl:"जब 'pretty' के बाद बिना कॉमा के कोई अन्य विशेषण आता है, तो वह Adverb of Degree बन जाता है जिसका अर्थ 'quite/very' होता है।" }
+    ];
 
-        const st = checkedStatus[q.id];
-        if (st && st.checked) {
-          btn.classList.add(st.isCorrect ? 'correct' : 'retry');
-        } else if (userAnswers[q.id] !== undefined) {
-          btn.classList.add('selected');
-        }
+    // Render 2-Question Concept Pairs in Theory
+    const subPairs = [
+      { id: 'pair-1a', title: '1A. Six Kinds of Adjectives', start: 0 },
+      { id: 'pair-1b', title: '1B. Participles (-ing vs -ed)', start: 2 },
+      { id: 'pair-2a', title: '2A. Agreement & Demonstratives', start: 4 },
+      { id: 'pair-2b', title: '2B. Fixed Prepositions', start: 6 },
+      { id: 'pair-3a', title: '3A. Attributive vs Predicative', start: 8 },
+      { id: 'pair-3b', title: '3B. Link Verbs vs Action Verbs', start: 10 },
+      { id: 'pair-4a', title: '4A. Meaning Shifts & Early/Late/Poor', start: 12 },
+      { id: 'pair-4b', title: '4B. Attributive-Only & Predicative-Only', start: 14 },
+      { id: 'pair-5a', title: '5A. OSASCOMP Standard Order', start: 16 },
+      { id: 'pair-5b', title: '5B. Little/Old/Young & Pretty Adverb', start: 18 }
+    ];
 
-        btn.onclick = () => {
-          activeCategory = 'all';
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.toggle('active', b.dataset.filter === 'all');
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
+
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const box = document.getElementById(pair.id);
+        if (!box) return;
+
+        const pairQs = conceptQuestions.slice(pair.start, pair.start + 2);
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
+
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
+
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
           });
-          const filtered = getFilteredList();
-          const idx = filtered.findIndex(item => item.id === q.id);
-          currentPage = Math.floor(idx / pageSize) + 1;
-          renderQuestions();
 
-          setTimeout(() => {
-            const card = document.getElementById(`q-card-${q.id}`);
-            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 80);
-        };
-
-        grid.appendChild(btn);
-      });
-    }
-
-    function renderQuestions() {
-      const container = document.getElementById('task-container');
-      container.innerHTML = '';
-
-      const filtered = getFilteredList();
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-      if (currentPage < 1) currentPage = 1;
-
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-
-      document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
-      document.getElementById('page-summary-text').textContent = `Showing Page ${currentPage} of ${totalPages} (${filtered.length} Questions).`;
-      document.getElementById('btn-prev').disabled = currentPage === 1;
-      document.getElementById('btn-next').disabled = currentPage === totalPages;
-
-      pageItems.forEach(q => {
-        const card = document.createElement('article');
-        card.className = 'mint-card task-card';
-        card.id = `q-card-${q.id}`;
-
-        const st = checkedStatus[q.id];
-        const selected = userAnswers[q.id];
-
-        let statusText = 'Your turn';
-        let statusClass = '';
-        if (st && st.checked) {
-          statusText = st.isCorrect ? '✓ Correct' : 'Try again';
-          statusClass = st.isCorrect ? 'correct' : 'retry';
-        } else if (selected !== undefined) {
-          statusText = 'Selected';
-        }
-
-        let choicesHtml = '<div class="choices">';
-        q.options.forEach((opt, idx) => {
-          const isSelected = selected === idx;
-          let optClass = 'choice';
-          if (isSelected) optClass += ' selected';
-
-          if (st && st.checked) {
-            if (idx === q.ans) optClass += ' right-choice';
-            else if (isSelected && !st.isCorrect) optClass += ' wrong-choice';
+          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
           }
 
-          choicesHtml += `
-            <div class="${optClass}" onclick="selectChoice(${q.id}, ${idx})">
-              <span class="choice-badge">${String.fromCharCode(65 + idx)}</span>
-              <span>${opt}</span>
+          html += `
+            <div class="${cardClass}" id="card-concept-${q.id}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                  ${statusBadge}
+                  <span style="font-size:10px; color:#64748b;">Concept Test</span>
+                </div>
+                <div style="font-weight:700; margin-bottom:3px; line-height:1.35;">${q.q}</div>
+                <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:6px;">${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; gap:6px;">
+                  <button class="mint-btn" type="button" onclick="checkConceptQ(${q.id})" style="font-size:11px; padding:4px 10px; border-radius:8px;">
+                    Check ✓
+                  </button>
+                  <button class="quiet-btn" type="button" onclick="resetConceptQ(${q.id})" style="font-size:10.5px; padding:3px 8px; border-radius:6px; color:#64748b;">
+                    Reset ↺
+                  </button>
+                  <button type="button" class="speech-chip" onclick="speakWord('${q.q.replace(/'/g, "\\'")}')">Listen 🔊</button>
+                </div>
+                ${isChk ? `
+                  <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; font-size:11px; line-height:1.45; color:#78350f;">
+                    <strong>व्याख्या:</strong> ${q.expl}
+                  </div>
+                ` : ''}
+              </div>
             </div>
           `;
         });
-        choicesHtml += '</div>';
 
-        let feedbackHtml = '';
-        if (st && st.checked) {
-          feedbackHtml = `<p class="task-feedback" data-state="${st.isCorrect ? 'correct' : 'retry'}">
-            ${st.isCorrect ? '✓ Correct! Well done.' : 'Not quite yet. Read the solution below and try again.'}
-          </p>`;
-        }
-
-        const isSolOpen = st && st.checked && !st.isCorrect;
-
-        card.innerHTML = `
-          <div class="task-heading">
-            <span class="eyebrow">Question ${q.id < 10 ? '0' + q.id : q.id} · ${q.label}</span>
-            <span class="task-status ${statusClass}">${statusText}</span>
-          </div>
-          <h3>${q.q}</h3>
-          <p class="task-hindi">${q.hi}</p>
-          ${choicesHtml}
-          <div class="task-bottom">
-            <div class="task-actions">
-              <button class="mint-btn" style="font-size:13px; padding:10px 18px;" type="button" onclick="checkSingle(${q.id})">Check answer ✓</button>
-              <button class="quiet-btn" type="button" onclick="toggleSol(${q.id})">Short solution · समझें</button>
-            </div>
-            ${feedbackHtml}
-            <details id="sol-${q.id}" class="solution" ${isSolOpen ? 'open' : ''}>
-              <summary>Short solution · समझें</summary>
-              <p><strong>Correct:</strong> Option ${String.fromCharCode(65 + q.ans)} ("${q.options[q.ans]}")</p>
-              <p style="color:#78350f;"><strong>Explanation (सरल व्याख्या):</strong> ${q.expl}</p>
-            </details>
-          </div>
-        `;
-
-        container.appendChild(card);
+        html += `</div>`;
+        box.innerHTML = html;
       });
     }
 
-    function selectChoice(qId, idx) {
-      userAnswers[qId] = idx;
-      checkedStatus[qId] = { checked: false, isCorrect: false };
-      updateProgress();
-      renderQuestions();
+    function selectConceptOpt(qId, idx) {
+      if (conceptChecked[qId]) return;
+      conceptUserAnswers[qId] = idx;
+      renderConceptPairs();
     }
 
-    function checkSingle(qId) {
-      const q = questions.find(item => item.id === qId);
-      if (!q) return;
-      const sel = userAnswers[qId];
-      if (sel === undefined) {
-        alert('Please select an option first! (कृपया पहले कोई विकल्प चुनें)');
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert('कृपया पहले कोई एक विकल्प चुनें! (Please choose an option first)');
         return;
       }
-      const isCorrect = sel === q.ans;
-      checkedStatus[qId] = { checked: true, isCorrect };
-      updateProgress();
-      renderQuestions();
+      conceptChecked[qId] = true;
+      renderConceptPairs();
     }
 
-    function toggleSol(qId) {
-      const el = document.getElementById(`sol-${qId}`);
-      if (el) el.open = !el.open;
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
     }
 
-    function checkCurrentPage() {
-      const filtered = getFilteredList();
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-      pageItems.forEach(q => {
-        if (userAnswers[q.id] !== undefined) {
-          checkSingle(q.id);
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
         }
-      });
+      }, 1000);
     }
 
-    function changePage(delta) {
-      currentPage += delta;
-      renderQuestions();
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function filterCategory(cat) {
-      activeCategory = cat;
-      currentPage = 1;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.filter === cat);
-      });
-      renderQuestions();
-    }
-
-    function resetAll() {
-      if (confirm('Are you sure you want to reset all answers and progress? (क्या आप सभी उत्तर और स्कोर रीसेट करना चाहते हैं?)')) {
-        userAnswers = {};
-        checkedStatus = {};
-        currentPage = 1;
-        updateProgress();
-        renderQuestions();
+    function updateTimerDisplay() {
+      const m = Math.floor(secondsLeft / 60);
+      const s = secondsLeft % 60;
+      const pill = document.getElementById('timer-display');
+      if (!pill) return;
+      pill.textContent = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+      if (secondsLeft <= 120) {
+        pill.classList.add('urgent');
+      } else {
+        pill.classList.remove('urgent');
       }
     }
 
-    // Initial load
-    renderJumpGrid();
-    renderQuestions();
-  </script>
+    function renderPalette() {
+      const p = document.getElementById('palette-container');
+      if (!p) return;
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let cls = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) cls += ' attempted';
+        if (testReview[q.id]) cls += ' review';
+        if (idx === currentIdx) cls += ' active';
+        html += `<button class="${cls}" type="button" onclick="jumpToQ(${idx})">${idx + 1}</button>`;
+      });
+      p.innerHTML = html;
+
+      // Update counters
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').textContent = attempted;
+      document.getElementById('left-count').textContent = 30 - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').textContent = q.label;
+      document.getElementById('q-counter').textContent = `Q ${currentIdx + 1} of 30`;
+      document.getElementById('current-q-title').textContent = q.q;
+      document.getElementById('current-q-hindi').textContent = q.hi;
+
+      const reviewBtn = document.getElementById('review-btn');
+      if (testReview[q.id]) {
+        reviewBtn.textContent = '🚩 Marked for Review';
+        reviewBtn.style.background = '#fef3c7';
+        reviewBtn.style.borderColor = '#f59e0b';
+      } else {
+        reviewBtn.textContent = '🏳 Mark for Review';
+        reviewBtn.style.background = '#fff';
+        reviewBtn.style.borderColor = 'var(--line)';
+      }
+
+      const optsBox = document.getElementById('current-q-options');
+      let html = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = testAnswers[q.id] === idx;
+        html += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:22px; height:22px; font-size:11px; ${isSel ? 'background:var(--brand); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      optsBox.innerHTML = html;
+
+      document.getElementById('prev-btn').disabled = currentIdx === 0;
+      document.getElementById('next-btn').textContent = currentIdx === 29 ? 'Review & Submit →' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, idx) {
+      testAnswers[qId] = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderCurrentQ();
+        renderPalette();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < 29) {
+        currentIdx++;
+        renderCurrentQ();
+        renderPalette();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = 30 - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `
+          आपने 30 में से <strong>${attempted}</strong> प्रश्न हल किए हैं।<br>
+          अभी <strong>${left} प्रश्न शेष</strong> हैं। क्या आप अभी सबमिट करना चाहते हैं?
+        `;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(isTimeOut) {
+      if (testTimer) clearInterval(testTimer);
+      closeModal();
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsBox = document.getElementById('test-results-view');
+      resultsBox.style.display = 'block';
+
+      let correctCount = 0;
+      const mistakesByUnit = {
+        kinds: { title: 'Unit 01: Kinds & Participles', mistakes: [], total: 6, anchor: '#topic-1' },
+        agreement: { title: 'Unit 02: Agreement & Prepositions', mistakes: [], total: 6, anchor: '#topic-2' },
+        position: { title: 'Unit 03: Position & Link Verbs', mistakes: [], total: 6, anchor: '#topic-3' },
+        traps: { title: 'Unit 04: Meaning Shifts & Traps', mistakes: [], total: 6, anchor: '#topic-4' },
+        order: { title: 'Unit 05: Order of Adjectives', mistakes: [], total: 6, anchor: '#topic-5' }
+      };
+
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        if (isRight) {
+          correctCount++;
+        } else {
+          mistakesByUnit[q.unit].mistakes.push({ qNum: idx + 1, qTitle: q.q, correctOpt: String.fromCharCode(65 + q.ans) });
+        }
+      });
+
+      const percentage = Math.round((correctCount / 30) * 100);
+      let badge = 'Grammar Scholar ⭐';
+      let badgeColor = 'var(--brand)';
+      if (percentage < 50) { badge = 'Needs Practice 📖'; badgeColor = '#dc2626'; }
+      else if (percentage < 75) { badge = 'Good Effort 👍'; badgeColor = '#d97706'; }
+
+      let diagHtml = '';
+      for (const k in mistakesByUnit) {
+        const u = mistakesByUnit[k];
+        const hasMistake = u.mistakes.length > 0;
+        diagHtml += `
+          <div class="diag-card ${hasMistake ? 'mistake' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <strong>${u.title}</strong>
+              <span style="font-weight:bold; color:${hasMistake ? '#dc2626' : 'var(--brand)'};">
+                ${u.total - u.mistakes.length} / ${u.total}
+              </span>
+            </div>
+            ${hasMistake ? `
+              <p style="color:#991b1b; font-size:11.5px; margin:4px 0;">
+                गलतियाँ: प्रश्न सं. ${u.mistakes.map(m => `<strong>#${m.qNum}</strong>`).join(', ')}
+              </p>
+              <a href="${u.anchor}" style="color:var(--brand); font-weight:bold; font-size:11.5px; text-decoration:underline;">
+                Revise Rule in Theory →
+              </a>
+            ` : `
+              <p style="color:#15803d; font-size:11.5px;">✓ शत-प्रतिशत सही (No mistakes!)</p>
+            `}
+          </div>
+        `;
+      }
+
+      let reviewHtml = '';
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        const isSkipped = uChoice === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:4px;">
+              <span class="badge">${q.label} · Q ${idx + 1}</span>
+              <span style="font-weight:bold; font-size:12px; color:${isRight ? '#15803d' : '#dc2626'};">
+                ${isRight ? '✓ Correct (+1)' : (isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)')}
+              </span>
+            </div>
+            <div style="font-weight:800; font-size:13.5px; margin-bottom:2px;">${q.q}</div>
+            <div class="font-hi" style="font-size:12px; color:#475569; margin-bottom:8px;">${q.hi}</div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              <strong>Your Choice:</strong> ${isSkipped ? '<span style="color:#64748b;">Not Attempted</span>' : `Option (${String.fromCharCode(65 + uChoice)}) ${q.opts[uChoice]}`}<br>
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">Option (${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:7px 10px; font-size:12px; color:#166534;">
+              <strong>व्याख्या:</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsBox.innerHTML = `
+        <div class="results-card">
+          <div style="text-align:center; max-width:620px; margin:auto;">
+            ${isTimeOut ? '<div class="badge" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5; margin-bottom:8px;">⏱ Time Over! 15:00 Expired - Test Auto Submitted</div>' : ''}
+            <div class="badge" style="background:#f0fdf4; color:var(--brand); border-color:#86efac; margin-bottom:8px;">Exam Completed Successfully</div>
+            <h2 style="font-size:28px; font-weight:900; margin-bottom:4px;">Your Test Scorecard</h2>
+            <div class="score-circle">${correctCount} / 30</div>
+            <div style="font-family:var(--heading); font-size:18px; font-weight:800; color:${badgeColor}; margin-bottom:6px;">
+              ${percentage}% — ${badge}
+            </div>
+            <p style="font-size:13px; color:#475569; margin-bottom:18px;">
+              30 में से <strong>${correctCount} प्रश्न सही</strong>, <strong>${30 - correctCount} गलत/छूटे</strong>।
+            </p>
+
+            <button class="mint-btn" type="button" onclick="startExam()" style="font-size:13px; padding:9px 20px;">
+              Retake 30-Question Test ↺
+            </button>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">
+              🎯 Concept Mistake Diagnostics (गलतियों का विश्लेषण):
+            </h3>
+            <p style="font-size:12.5px; color:#475569; margin-bottom:12px;">
+              जिस यूनिट में आपकी गलतियाँ हुई हैं, उसके सामने दिए गए <strong>Revise Rule in Theory →</strong> पर क्लिक करके नियम को पुनः पढ़ें:
+            </p>
+            <div class="concept-diag-grid">${diagHtml}</div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">
+              📋 Question-by-Question Detailed Review (1 से 30 प्रश्न):
+            </h3>
+            <div>${reviewHtml}</div>
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize concept practice on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderConceptPairs();
+    });
+    renderConceptPairs();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </main>
 </body>
 </html>
