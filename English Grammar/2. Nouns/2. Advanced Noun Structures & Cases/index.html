@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chapter: Advanced Noun Structures & Cases (विशेष प्रयोग और संबंध) - Possessive ('s and of), Compound Nouns, and Pronunciation Stress with 50 interactive MCQs and simple explanations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Advanced Noun Structures & Cases (विशेष प्रयोग और संबंध) - Possessive ('s and of), Compound Nouns, and Pronunciation Stress with 20 embedded examples and a 30-question 15-minute exam.">
   <meta name="theme-color" content="#2dd4bf">
   <title>Advanced Noun Structures & Cases (विशेष प्रयोग और संबंध) | Econova English Grammar</title>
   
-  <!-- Google Fonts matching the reference design -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --body: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Quicksand', sans-serif;
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
       --heading: 'Outfit', 'Quicksand', sans-serif;
       --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
       --bg: #f0fdf4;
@@ -24,2645 +23,1120 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
+      --yt-red: #ff0000;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 18px; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 105px;
-    }
+    /* Header & Responsive Navigation */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 23px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 32px; height: 32px; border-radius: 9px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-8deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 6px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 12.5px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-    }
+    .header-actions { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: 0;
-      background: transparent;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    h1, h2, h3, .logo, .eyebrow, .number {
-      font-family: var(--heading);
-    }
-
-    a:focus-visible, button:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--ink);
-      outline-offset: 4px;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 28px;
-    }
-
-    .skip {
-      position: fixed;
-      left: 20px;
-      top: -80px;
-      background: white;
-      padding: 10px;
-      z-index: 100;
-      border-radius: 8px;
-      border: 2px solid var(--brand);
-      font-weight: bold;
-    }
-
-    .skip:focus {
-      top: 10px;
-    }
-
-    /* Header & Navigation matching reference */
-    header {
-      background: var(--teal);
-      border-bottom: 3px solid var(--button);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-    }
-
-    .nav {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -1.3px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: var(--yellow);
-      color: var(--brand);
-      display: grid;
-      place-items: center;
-      font-size: 26px;
-      transform: rotate(-9deg);
-      line-height: 1;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav a {
-      font-family: var(--heading);
-      font-weight: 700;
-      color: #fff;
-      font-size: 15px;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: background 0.15s;
-    }
-
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .mint-btn {
-      background: var(--button);
-      color: #fff;
-      border: 0;
-      border-radius: 16px;
-      padding: 13px 22px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-family: var(--heading);
-      box-shadow: 0 4px 0 var(--brand);
-      transition: transform .15s, background .15s;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .mint-btn:hover {
-      background: var(--brand);
-      transform: translateY(-2px);
-    }
-
-    .mint-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--brand);
-    }
-
-    .nav .mint-btn {
-      font-size: 14px;
-      padding: 10px 18px;
-    }
-
-    .quiet-btn {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 14px;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 10px 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-      white-space: nowrap;
-    }
-
-    .quiet-btn:hover {
-      background: #d1fae5;
-    }
-
-    .quiet-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    /* Pronunciation Audio Chip */
-    .speech-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #ecfdf5;
-      border: 1.5px solid #a7f3d0;
+    .yt-btn {
+      background: var(--yt-red);
+      color: #fff !important;
       border-radius: 12px;
-      padding: 3px 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #065f46;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .speech-chip:hover {
-      background: #d1fae5;
-      border-color: #34d399;
-      transform: scale(1.03);
-    }
-
-    /* Cards */
-    .mint-card {
-      background: #fff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .amber-card {
-      background: #fffbeb;
-      border: 3px solid #fcd34d;
-      border-radius: 24px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--brand);
-    }
-
-    /* Hero section */
-    .hero {
-      padding-top: 44px;
-      padding-bottom: 35px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid #34d399;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12px;
-      color: var(--brand);
-      font-weight: bold;
-    }
-
-    .pill span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--button);
-    }
-
-    h1 {
-      font-size: clamp(34px, 4.6vw, 62px);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin: 18px 0 14px;
-    }
-
-    h1 .green {
-      color: var(--brand);
-    }
-
-    .underline {
-      position: relative;
-      white-space: nowrap;
-      isolation: isolate;
-    }
-
-    .underline:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 4px;
-      height: 14px;
-      background: var(--yellow);
-      z-index: -1;
-      transform: rotate(-2deg);
-      border-radius: 8px;
-    }
-
-    .intro {
-      max-width: 530px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      margin: 24px 0 18px;
-      flex-wrap: wrap;
-    }
-
-    .text-link {
-      color: var(--brand);
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      display: flex;
-      gap: 16px;
-      color: var(--brand);
-      font-weight: bold;
-      flex-wrap: wrap;
-    }
-
-    /* Hero sample card */
-    .hero-sample {
-      padding: 26px;
-      text-align: center;
-      transform: rotate(1.5deg);
-      box-shadow: 7px 8px 0 #d1fae5;
-    }
-
-    .hero-sample .sample-number {
-      font-family: var(--heading);
-      font-size: 44px;
-      font-weight: 900;
-      color: var(--brand);
-      line-height: 1.2;
-      margin: 8px 0;
-    }
-
-    .hero-sample p {
-      font-size: 13.5px;
-      line-height: 1.7;
-    }
-
-    /* Lesson toolbar & jump bar */
-    .lesson-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-      margin: 15px 0 40px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps a {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 12px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: background 0.15s;
-    }
-
-    .lesson-jumps a:hover {
-      background: #d1fae5;
-    }
-
-    .progress-block {
-      min-width: 220px;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    progress {
-      display: block;
-      width: 100%;
-      height: 12px;
-      margin-top: 6px;
-      accent-color: var(--button);
-      border-radius: 6px;
-    }
-
-    /* Sections */
-    .section {
-      padding-top: 48px;
-      padding-bottom: 12px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      font-size: 32px;
-      letter-spacing: -0.8px;
-      line-height: 1.25;
-      margin-top: 6px;
-      font-weight: 900;
-    }
-
-    .section-heading > p {
-      font-size: 14px;
-      max-width: 380px;
-      color: #4b5563;
-    }
-
-    /* 4 Topic overview cards */
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .topic-card {
-      padding: 22px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .topic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 0 #a7f3d0;
-    }
-
-    .topic-icon {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .topic-card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-
-    .topic-card p {
-      font-size: 13px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-
-    .topic-tag {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 5px 10px;
-      background: var(--bg);
-      border-radius: 12px;
-      color: var(--brand);
-      border: 1px solid var(--line);
-    }
-
-    /* Rule Cards */
-    .rule-card {
-      padding: 22px 26px;
-      margin-bottom: 18px;
-      background: #fff;
-      border: 2px solid #a7f3d0;
-      border-radius: 20px;
-      max-width: 100%;
-      overflow: hidden;
-    }
-
-    .rule-card.highlight {
-      border-left: 6px solid var(--button);
-    }
-
-    .rule-card.warning {
-      border-left: 6px solid #f59e0b;
-      background: #fffdf5;
-    }
-
-    .rule-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .rule-header h3 {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 8px;
-      background: #ecfdf5;
-      color: var(--brand);
-      border: 1px solid #34d399;
-    }
-
-    .easy-hi {
-      font-family: var(--hi-font);
-      font-size: 14.5px;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 11px 15px;
-      margin: 10px 0;
-      line-height: 1.75;
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .example-box {
-      background: var(--bg);
-      border: 1.5px solid #a7f3d0;
-      border-radius: 14px;
-      padding: 10px 14px;
-    }
-
-    .example-box b {
-      font-size: 15px;
-      color: var(--brand);
-      display: block;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .example-box span {
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    /* Interactive Explorer Box */
-    .explorer-box {
-      background: #f0fdf4;
-      border: 2px dashed #10b981;
-      border-radius: 20px;
-      padding: 22px;
-      margin: 20px 0;
-    }
-
-    .explorer-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 14px 0;
-    }
-
-    .explorer-tab-btn {
-      padding: 8px 14px;
-      border-radius: 12px;
-      font-size: 12.5px;
-      font-weight: 700;
-      border: 1px solid #6ee7b7;
-      background: white;
-      color: #065f46;
-      transition: all 0.15s;
-    }
-
-    .explorer-tab-btn.active {
-      background: #10b981;
-      color: white;
-      box-shadow: 0 2px 0 #059669;
-    }
-
-    /* Table Wrapper for flawless mobile responsiveness */
-    .table-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 14px;
-      margin-top: 10px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .table-wrap::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-track {
-      background: #f1f5f9;
-      border-radius: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb {
-      background: #34d399;
-      border-radius: 6px;
-    }
-
-    .table-scroll-hint {
+      padding: 7px 13px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--brand);
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 20px;
-      padding: 4px 10px;
-      margin-top: 8px;
-    }
-
-    /* Comparison Table */
-    .compare-table {
-      width: 100%;
-      min-width: 520px;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      line-height: 1.5;
-    }
-
-    .compare-table th, .compare-table td {
-      padding: 10px 14px;
-      border: 1px solid #e2e8f0;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .compare-table th {
-      background: #e2e8f0;
-      font-family: var(--heading);
       font-weight: 800;
-      color: #1e293b;
-      white-space: nowrap;
-    }
-
-    .compare-table tr:nth-child(even) {
-      background: #f8fafc;
-    }
-
-    .wrong {
-      color: #dc2626;
-      font-weight: bold;
-    }
-
-    .right {
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    /* Practice Arena Section */
-    .practice-box {
-      margin-top: 35px;
-      padding: 26px 30px;
-    }
-
-    .filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 16px;
-    }
-
-    .filter-btn {
-      padding: 9px 15px;
-      border: 2px solid var(--line);
-      border-radius: 14px;
-      background: white;
-      color: var(--brand);
-      font-size: 13px;
-      font-weight: bold;
-      transition: all 0.15s;
-    }
-
-    .filter-btn:hover {
-      background: #d1fae5;
-    }
-
-    .filter-btn.active {
-      background: var(--button);
-      color: white;
-      box-shadow: 0 3px 0 var(--brand);
-    }
-
-    /* Jump Grid Map */
-    .jump-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .jump-btn {
-      height: 34px;
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      font-family: var(--heading);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--brand);
-      transition: all 0.15s;
-    }
-
-    .jump-btn:hover {
-      background: #d1fae5;
-    }
-
-    .jump-btn.correct {
-      background: #10b981;
-      color: white;
-      border-color: #059669;
-    }
-
-    .jump-btn.retry {
-      background: #ef4444;
-      color: white;
-      border-color: #b91c1c;
-    }
-
-    .jump-btn.selected {
-      background: #fde047;
-      color: #78350f;
-      border-color: #d97706;
-    }
-
-    /* Task / Question Cards */
-    .task-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .task-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      scroll-margin-top: 110px;
-    }
-
-    .task-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .task-status {
-      font-size: 11px;
-      font-weight: bold;
-      color: var(--brand);
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-
-    .task-status.correct {
-      background: #dcfce7;
-      border-color: #22c55e;
-      color: #15803d;
-    }
-
-    .task-status.retry {
-      background: #fee2e2;
-      border-color: #ef4444;
-      color: #b91c1c;
-    }
-
-    .task-card h3 {
-      font-size: 19.5px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .task-hindi {
-      font-family: var(--hi-font);
-      font-size: 13.5px;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    /* Choices list */
-    .choices {
-      display: grid;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
-
-    .choice {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 11px 14px;
-      background: var(--bg);
-      border: 2px solid #a7f3d0;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.15s;
-    }
-
-    .choice:hover {
-      border-color: var(--brand);
-      background: #ecfdf5;
-    }
-
-    .choice.selected {
-      background: #fffbeb;
-      border-color: #f59e0b;
-    }
-
-    .choice.right-choice {
-      background: #dcfce7 !important;
-      border-color: #22c55e !important;
-      color: #15803d !important;
-    }
-
-    .choice.wrong-choice {
-      background: #fee2e2 !important;
-      border-color: #ef4444 !important;
-      color: #b91c1c !important;
-    }
-
-    .choice-badge {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: white;
-      border: 1.5px solid var(--line);
-      display: grid;
-      place-items: center;
-      font-family: var(--heading);
       font-size: 12px;
-      font-weight: 800;
-      color: var(--brand);
+      font-family: var(--heading);
+      box-shadow: 0 3px 0 #b30000;
+      white-space: nowrap;
       flex-shrink: 0;
+      transition: all 0.15s;
     }
+    .yt-btn:hover { background: #e60000; transform: translateY(-1px); }
+    .yt-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #b30000; }
 
-    .task-bottom {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #d1fae5;
-    }
-
-    .task-actions {
-      display: flex;
-      gap: 10px;
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 13px;
+      display: inline-flex;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .task-feedback {
-      font-size: 13px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: var(--brand);
-    }
-
-    .task-feedback[data-state=retry] {
-      color: #b91c1c;
-    }
-
-    .solution {
-      margin-top: 14px;
-      padding: 12px 14px;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 14px;
-      font-size: 13px;
-    }
-
-    .solution summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #78350f;
-    }
-
-    .solution p {
-      margin-top: 6px;
-      line-height: 1.7;
-    }
-
-    .check-all-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 36px;
-      padding: 26px;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      background: #fff;
-      border-top: 2px solid #a7f3d0;
-      padding: 28px 0;
-      margin-top: 60px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-size: 12px;
-    }
-
-    .footer-brand {
+      gap: 6px;
+      font-weight: 800;
       font-family: var(--heading);
-      font-size: 24px;
-      color: var(--brand);
-      font-weight: 900;
+      font-size: 12px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all .15s;
+      cursor: pointer;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-1px); }
+    .nav-test-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--brand); }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
+
+    /* Hero */
+    .hero { padding: 30px 0 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 5px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(28px, 4.2vw, 50px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; font-family: var(--heading); }
+    h1 .green { color: var(--brand); }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+    .section { padding: 28px 0 10px; }
+    .rule-card { padding: 18px 20px; margin-bottom: 18px; background: #fff; border: 2px solid #a7f3d0; border-radius: 16px; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    
+    .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 10px 14px; margin: 10px 0; line-height: 1.65; }
+    .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #991b1b; }
+    .trap-box b { display: block; font-size: 13.5px; margin-bottom: 4px; color: #b91c1c; }
+
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
+    .compare-table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 12.5px; }
+    .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
+
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 10px; }
+    .pair-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12px; }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+    
+    .choices-sm { display: grid; gap: 5px; margin: 6px 0; }
+    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; flex-shrink: 0; }
+
+    /* Test Arena */
+    .test-section { margin-top: 36px; padding: 20px; scroll-margin-top: 80px; }
+    .test-timer-bar { position: sticky; top: 66px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 18px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 10px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 4px; margin: 8px 0; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); }
+
+    .test-card { padding: 18px; background: #fff; border: 2.5px solid var(--line); border-radius: 18px; }
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px; }
+    .score-circle { font-family: var(--heading); font-size: 38px; font-weight: 900; color: var(--brand); }
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 16px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px; font-size: 12px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #fff; font-size: 12.5px; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
+
+    /* Mobile Floating Quick Test Jump */
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 16px;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 20px 0; margin-top: 40px; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 58px; }
+      .mobile-float-btn { display: inline-flex; }
     }
 
-    .footer-brand em {
-      font-style: normal;
-      color: var(--yellow);
+    @media (max-width: 640px) {
+      .wrap { padding: 0 10px; }
+      .nav { min-height: 58px; gap: 6px; }
+      .logo { font-size: 16px; gap: 5px; }
+      .logo-mark { width: 28px; height: 28px; font-size: 14px; border-radius: 8px; }
+      
+      .header-actions { gap: 6px; display: flex; align-items: center; }
+      .yt-btn {
+        padding: 6px 10px;
+        font-size: 11.5px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 #b30000;
+      }
+      .nav-test-btn {
+        padding: 6px 11px;
+        font-size: 11.5px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 var(--brand);
+      }
+
+      .hero-actions { flex-direction: column; width: 100%; gap: 10px; }
+      .hero-actions .mint-btn, .hero-actions .hero-test-btn { width: 100%; justify-content: center; text-align: center; padding: 11px 16px; }
+
+      .test-section { padding: 14px 10px; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .pal-btn { height: 32px; font-size: 11.5px; }
+
+      .test-actions-bar { flex-direction: column-reverse; gap: 8px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+
+      .rule-card { padding: 15px 14px; border-radius: 15px; }
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .topics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .task-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .wrap {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-      .rule-card {
-        padding: 16px 14px;
-        border-radius: 16px;
-      }
-      .compare-table {
-        font-size: 12.5px;
-        min-width: 480px;
-      }
-      .compare-table th, .compare-table td {
-        padding: 8px 10px;
-      }
-      .nav {
-        min-height: 76px;
-      }
-      .logo {
-        font-size: 26px;
-      }
-      .logo-mark {
-        width: 34px;
-        height: 34px;
-        font-size: 22px;
-      }
-      nav a {
-        display: none;
-      }
-      .nav .mint-btn {
-        font-size: 12px;
-        padding: 8px 14px;
-      }
-      h1 {
-        font-size: 36px;
-      }
-      .topics-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .check-all-section {
-        flex-direction: column;
-        text-align: center;
-      }
+    @media (max-width: 380px) {
+      .wrap { padding: 0 8px; }
+      .logo { font-size: 15px; gap: 4px; }
+      .logo span span { display: none; }
+      .header-actions { gap: 4px; }
+      .yt-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
+      .nav-test-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
     }
   </style>
 </head>
 
 <body>
-  <a href="#main" class="skip">Skip to content</a>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
 
-  <!-- Header matching Econova theme (YouTube button removed) -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#main" aria-label="Econova Home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span>Econova<em>.vip</em></span>
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
       </a>
 
-      <nav aria-label="Main navigation">
+      <nav class="main-nav">
         <a href="#topic-1">1. Form ('s &amp; ')</a>
         <a href="#topic-2">2. 's vs of</a>
         <a href="#topic-3">3. Compounds</a>
         <a href="#topic-4">4. Stress Rules</a>
-        <a class="mint-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
       </nav>
+
+      <div class="header-actions">
+        <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer" title="YouTube Video Lesson">
+          <svg width="16" height="12" viewBox="0 0 20 14" fill="currentColor">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()" title="Start 30-Question Test">
+          <span style="font-size:12px; line-height:1;">⏱</span>
+          <span>30-Q Test (15m)</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <main id="main" class="wrap">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="lesson-title">
+    <!-- Hero -->
+    <section class="hero">
       <div>
         <div class="pill">
-          <span aria-hidden="true"></span>
-          Class 6–10 English · Advanced Noun Structures &amp; Cases (विशेष प्रयोग और संबंध)
+          <span></span>
+          Class 6–10 English Grammar · Chapter: Advanced Nouns &amp; Cases
         </div>
 
-        <h1 id="lesson-title">
+        <h1>
           Master <span class="green">Advanced Nouns</span><br>
-          <span class="underline">&amp; Possessive Cases.</span>
+          &amp; Possessive Cases.
         </h1>
 
-        <p class="intro">
-          Master the essential rules of the <strong>Possessive Case ('s and of)</strong>, <strong>Compound Nouns</strong>, and <strong>Pronunciation Stress</strong> in English grammar. Core concepts are explained with student-friendly Hindi notes, interactive audio pronunciation, and 50 comprehensive practice questions.
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;">
+          अंग्रेज़ी व्याकरण में <strong>Possessive Case ('s और of)</strong>, <strong>Compound Nouns</strong>, तथा <strong>Pronunciation Stress</strong> के नियम अति-महत्वपूर्ण हैं। इस अध्याय में सजीव बनाम निर्जीव के नियम, शास्त्रीय व आधुनिक नाम (<em>Pythagoras' vs Jones's</em>), संयुक्त संज्ञाओं में 's का स्थान, तथा प्रसिद्ध <em>'Oxford Street'</em> स्ट्रेस नियम को विस्तार से समझाया गया है। यहाँ प्रत्येक नियम के साथ <strong>2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong> दिया गया है।
         </p>
 
         <div class="hero-actions">
-          <a class="mint-btn" href="#topic-1">Start Chapter Rules →</a>
-          <a class="text-link" href="#practice">Direct Practise 50 MCQs ↘</a>
-        </div>
-
-        <div class="hero-note">
-          <span>✦ 4 Core Foundation Units</span>
-          <span>✦ 50 Comprehensive MCQs</span>
-          <span>✦ Clear Explanations &amp; Native Audio</span>
+          <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; 20 Examples →</a>
+          <button class="mint-btn hero-test-btn" style="background:#047857; box-shadow:0 3px 0 #064e3b;" type="button" onclick="scrollToTest()">
+            ⏱ 30-Question Test (15m)
+          </button>
         </div>
       </div>
 
-      <!-- Sample Concept Card -->
-      <div class="amber-card hero-sample">
-        <p class="eyebrow">The Master Noun Rules</p>
-        <div class="sample-number">Living vs Inanimate!</div>
-        <p>
-          <strong>Key differences at a glance:</strong><br>
-          • <strong>the politician's daughter</strong> (Living being: article 'the' disappears!)<br>
-          • <strong>the town walls / the walls of the town</strong> (Inanimate: first noun acts like an adjective!)<br>
-          • <strong>Pythagoras' Theorem</strong> (Classical names ending in 's' take only ')<br>
-          • <strong>'Oxford Street</strong> (The word 'Street' is unstressed; stress is on Oxford!)
+      <div class="amber-card" style="padding:18px; text-align:center;">
+        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The Master Noun Rules</p>
+        <div style="font-family:var(--heading); font-size:32px; font-weight:900; color:var(--brand); margin:4px 0;">Living vs Inanimate!</div>
+        <p style="text-align:left; font-size:12.5px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+          <strong>मुख्य अंतर एक नज़र में:</strong><br>
+          • <strong>the politician's daughter:</strong> सजीव में 'the' का लोप हो जाता है!<br>
+          • <strong>the town walls / the walls of the town:</strong> निर्जीव में पहला noun विशेषण का काम करता है!<br>
+          • <strong>Pythagoras' Theorem:</strong> शास्त्रीय नामों में केवल (') लगता है।<br>
+          • <strong>'Oxford Street:</strong> 'Street' शब्द हमेशा unstressed रहता है!
         </p>
       </div>
     </section>
 
-    <!-- Toolbar & Shortcuts -->
-    <div class="mint-card lesson-toolbar">
-      <nav class="lesson-jumps" aria-label="Lesson shortcuts">
-        <a href="#topic-1">01 · Form of 's &amp; '</a>
-        <a href="#topic-2">02 · 's vs of + noun</a>
-        <a href="#topic-3">03 · Compound Nouns</a>
-        <a href="#topic-4">04 · Advanced &amp; Stress</a>
-      </nav>
-
-      <div class="progress-block">
-        <span id="progress-label" role="status">0 of 50 questions solved (0%)</span>
-        <progress id="lesson-progress" max="50" value="0" aria-label="Questions solved out of 50"></progress>
-      </div>
-    </div>
-
-    <!-- 4 Topics Overview -->
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Chapter Structure</p>
-          <h2>The Four Foundation Units.</h2>
-        </div>
-        <p>These 4 units cover the complete syllabus of possessive forms, compound noun combinations, and stress patterns without confusion.</p>
-      </div>
-
-      <div class="topics-grid">
-        <article class="mint-card topic-card">
-          <div class="topic-icon">✍️</div>
-          <h3>1. Form of 's &amp; '</h3>
-          <p>Singular vs plural 's rules, classical names (Pythagoras'), compounds, initials, and article disappearance.</p>
-          <span class="topic-tag">Unit 01</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">🏛️</div>
-          <h3>2. 's vs of + noun</h3>
-          <p>Living beings vs inanimate objects, ships, vehicles, time expressions, money's worth, and 'for goodness' sake'.</p>
-          <span class="topic-tag">Unit 02</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🧩</div>
-          <h3>3. Compound Nouns</h3>
-          <p>Noun+Noun, Gerunds (-ing), material rules (wood/wooden, gold/golden), purpose, work areas, and quantity limits.</p>
-          <span class="topic-tag">Unit 03</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">🗣️</div>
-          <h3>4. Advanced &amp; Stress</h3>
-          <p>Omitted nouns (the chemist's / at Bill's), seasons personification, and the famous 'Oxford Street' stress rule.</p>
-          <span class="topic-tag">Unit 04</span>
-        </article>
-      </div>
-    </section>
-
     <!-- ========================================== -->
-    <!-- TOPIC 1: Form of 's and ' -->
+    <!-- UNIT 01: FORM OF 'S AND ' -->
     <!-- ========================================== -->
     <section id="topic-1" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 01 · Morphology</p>
-          <h2>1. The Form of Possessive / Genitive Case ('s and ')</h2>
-        </div>
-        <p>Understand which nouns take 's and which take only an apostrophe (') with simple explanations.</p>
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 01 · Morphology</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. The Form of Possessive / Genitive Case ('s and ')</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1A: Singular & Irregular Plurals + 's -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>Rule 1: Singular Nouns and Irregular Plurals not ending in 's' take "'s"</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Singular Nouns and Irregular Plurals not ending in 's' take "'s"</h3>
           <span class="badge">Basic Foundation</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>सरल नियम (Simple Rule):</strong> जब कोई noun एकवचन (singular) हो, या फिर ऐसा बहुवचन (irregular plural) हो जो 's' पर समाप्त नहीं होता (जैसे <em>men, women, children, people</em>), तो हमेशा <strong>'s</strong> लगाते हैं!
+          👉 <strong>सरल नियम (Simple Rule):</strong> जब कोई संज्ञा एकवचन (singular) हो, या फिर ऐसा बहुवचन (irregular plural) हो जो 's' पर समाप्त नहीं होता (जैसे <em>men, women, children, people</em>), तो हमेशा <strong>'s</strong> लगाते हैं!<br>
+          • <em>a man's job, a woman's intuition</em> (एकवचन कर्ता)<br>
+          • <em>men's work, women's clothes, the children's room, the people's choice</em> (अनियमित बहुवचन)<br>
+          • <em>the horse's mouth, the bull's horns, Russia's exports, India's culture</em>.
         </div>
 
-        <div class="example-grid">
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>a man's job, a woman's intuition</b>
-              <button type="button" onclick="speakText('a man\'s job, a woman\'s intuition')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Singular noun + 's (आदमी का काम, महिला की सहज बुद्धि)</span>
-          </div>
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>men's work, women's clothes</b>
-              <button type="button" onclick="speakText('men\'s work, women\'s clothes')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Irregular plural (men/women) without 's' + 's (पुरुषों का काम, महिलाओं के कपड़े)</span>
-          </div>
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>a child's voice, the children's room</b>
-              <button type="button" onclick="speakText('a child\'s voice, the children\'s room')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Child (singular) vs Children (irregular plural) (बच्चे की आवाज़, बच्चों का कमरा)</span>
-          </div>
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>the horse's mouth, the bull's horns</b>
-              <button type="button" onclick="speakText('the horse\'s mouth, the bull\'s horns')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Animals with 's (घोड़े का मुँह, साँड के सींग)</span>
-          </div>
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>the people's choice, the crew's quarters</b>
-              <button type="button" onclick="speakText('the people\'s choice, the crew\'s quarters')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Collective / Irregular plural + 's (जनता की पसंद, चालक दल का कमरा)</span>
-          </div>
-          <div class="example-box">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>Russia's exports, India's culture</b>
-              <button type="button" onclick="speakText('Russia\'s exports')" class="speech-chip">🔊 Listen</button>
-            </div>
-            <span>Countries with 's (रूस का निर्यात, भारत की संस्कृति)</span>
-          </div>
-        </div>
+        <!-- 2 Example Questions for 1A -->
+        <div class="concept-pair-box" id="pair-1a"></div>
       </article>
 
-      <article class="rule-card warning">
+      <!-- Sub-concept 1B: Plural ending in 's' & Classical Names -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>Rule 2: Plural Nouns ending in 's' add ONLY an apostrophe (')</h3>
-          <span class="badge" style="background:#fef3c7; color:#b45309;">High Yield</span>
+          <h3 style="font-size:16px; font-weight:800;">B. Plural Nouns ending in 's' take ONLY ('), &amp; Classical vs Modern Names</h3>
+          <span class="badge">High Yield Trap</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>सरल नियम (Rule):</strong> अगर कोई शब्द पहले से बहुवचन (plural) है और उसके अंत में 's' लगा है (जैसे <em>girls, students, eagles, Smiths</em>), तो दोबारा 's मत लगाएँ! सिर्फ शब्द के अंत में एक अपोस्ट्रॉफी <strong>' (apostrophe)</strong> लगा दें।
+          👉 <strong>1. 's' पर समाप्त होने वाले बहुवचन:</strong> केवल अपोस्ट्रॉफी <strong>' (apostrophe)</strong> लगता है:<br>
+          • <em>a girls' school</em> (लड़कियों का स्कूल — 'girls's' अशुद्ध है ❌)<br>
+          • <em>the students' hostel, the eagles' nest, the Smiths' car</em>.<br><br>
+          👉 <strong>2. शास्त्रीय बनाम आधुनिक नाम (Classical vs Modern Names):</strong><br>
+          • <strong>प्राचीन यूनानी/शास्त्रीय नाम:</strong> केवल अपोस्ट्रॉफी (') — <strong>Pythagoras' Theorem</strong>, <strong>Archimedes' Law</strong>, <strong>Sophocles' plays</strong>.<br>
+          • <strong>आधुनिक नाम:</strong> 's या केवल (') दोनों मान्य हैं — <strong>Mr Jones's house</strong> (or <em>Mr Jones' house</em>), <strong>Yeats's poems</strong> (or <em>Yeats' poems</em>).
         </div>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe table horizontally on mobile (मोबाइल पर पूरी टेबल देखने के लिए खिसकाएं)</span>
-        </div>
-        <div class="table-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>Plural Noun</th>
-                <th>Incorrect (✗)</th>
-                <th>Correct (✓)</th>
-                <th>Hindi Meaning / Explanation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Girls</strong></td>
-                <td><span class="wrong">a girls's school ✗</span></td>
-                <td><span class="right">a girls' school ✓</span></td>
-                <td>लड़कियों का स्कूल (केवल ' जुड़ेगा)</td>
-              </tr>
-              <tr>
-                <td><strong>Students</strong></td>
-                <td><span class="wrong">the students's hostel ✗</span></td>
-                <td><span class="right">the students' hostel ✓</span></td>
-                <td>छात्रों का छात्रावास (केवल ' जुड़ेगा)</td>
-              </tr>
-              <tr>
-                <td><strong>Eagles</strong></td>
-                <td><span class="wrong">the eagles's nest ✗</span></td>
-                <td><span class="right">the eagles' nest ✓</span></td>
-                <td>चीलों का घोंसला (केवल ' जुड़ेगा)</td>
-              </tr>
-              <tr>
-                <td><strong>The Smiths</strong></td>
-                <td><span class="wrong">the Smiths's car ✗</span></td>
-                <td><span class="right">the Smiths' car ✓</span></td>
-                <td>स्मिथ परिवार की कार (केवल ' जुड़ेगा)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- 2 Example Questions for 1B -->
+        <div class="concept-pair-box" id="pair-1b"></div>
       </article>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1C: Compounds, Titles, Initials & Disappearance of 'the' -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>Rule 3: Classical Names vs Modern Names ending in 's'</h3>
-          <span class="badge">Exam Special</span>
-        </div>
-        <div class="easy-hi">
-          👉 <strong>A. Classical / Historical Names (प्राचीन यूनानी व ऐतिहासिक नाम):</strong> Pythagoras, Archimedes, Sophocles जैसे प्राचीन शास्त्रीय नामों में केवल अपोस्ट्रॉफी (') जुड़ता है:
-          <br>
-          • <strong>Pythagoras' Theorem</strong> (पाइथागोरस का प्रमेय)
-          <br>
-          • <strong>Archimedes' Law</strong> (आर्किमिडीज का सिद्धांत)
-          <br>
-          • <strong>Sophocles' plays</strong> (सोफोक्लीज के नाटक)
-          <br><br>
-          👉 <strong>B. Modern Names ending in 's' (आधुनिक नाम):</strong> आधुनिक नामों में आप 's या केवल ' दोनों में से कोई भी लगा सकते हैं (दोनों रूप मान्य हैं):
-          <br>
-          • <strong>Mr Jones's house</strong> (or <em>Mr Jones' house</em>)
-          <br>
-          • <strong>Yeats's poems</strong> (or <em>Yeats' poems</em>)
-        </div>
-      </article>
-
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>Rule 4: Compound Nouns, Titles, Initials, and Disappearance of 'the'</h3>
+          <h3 style="font-size:16px; font-weight:800;">C. Compound Nouns, Titles, Initials &amp; Disappearance of 'the'</h3>
           <span class="badge">Master Rule</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>A. Compound Nouns &amp; Titles:</strong> 's हमेशा अंतिम शब्द (last word) पर लगता है:
-          <br>
-          • <strong>my brother-in-law's guitar</strong> (NOT brother's-in-law ✗)
-          <br>
-          • <strong>Henry the Eighth's wives</strong> / <strong>the Prince of Wales's helicopter</strong>
-          <br>
-          • Initials: <strong>the PM's secretary</strong>, <strong>the MP's briefcase</strong>, <strong>the VIP's escort</strong>.
-          <br><br>
-          👉 <strong>B. Disappearance of Article 'the' (अति-महत्वपूर्ण!):</strong> जब 'of' को हटाकर possessive 's लगाते हैं, तो अधिकार वाली वस्तु से पहले का 'the' हट जाता है:
-          <br>
-          • <em>the daughter of the politician</em> = <strong>the politician's daughter</strong> (NOT the politician's the daughter ✗)
-          <br>
-          • <em>the intervention of America</em> = <strong>America's intervention</strong>
-          <br>
-          • <em>the plays of Shakespeare</em> = <strong>Shakespeare's plays</strong>
+          👉 <strong>1. संयुक्त संज्ञाओं व शीर्षकों में अंतिम शब्द पर 's:</strong><br>
+          • <em>my brother-in-law's guitar</em> (NOT brother's-in-law ❌)<br>
+          • <em>Henry the Eighth's wives</em>, <em>the Prince of Wales's helicopter</em>.<br>
+          • <em>the PM's secretary, the MP's briefcase, the VIP's escort</em>.<br><br>
+          👉 <strong>2. आर्टिकल 'the' का लोप (Disappearance of 'the'):</strong><br>
+          जब 'of' हटाकर possessive 's लगाते हैं, तो अधिकार वाली वस्तु से पहले का 'the' हट जाता है:<br>
+          • <em>the daughter of the politician</em> = <strong>the politician's daughter</strong> (the politician's the daughter ❌)<br>
+          • <em>the plays of Shakespeare</em> = <strong>Shakespeare's plays</strong>.
         </div>
+
+        <!-- 2 Example Questions for 1C -->
+        <div class="concept-pair-box" id="pair-1c"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 2: Use of possessive vs of + noun -->
+    <!-- UNIT 02: USE OF POSSESSIVE VS OF + NOUN -->
     <!-- ========================================== -->
     <section id="topic-2" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 02 · Usage Patterns</p>
-          <h2>2. Use of Possessive ('s) vs "of + noun"</h2>
-        </div>
-        <p>Learn when to use possessive 's and when the 'of + noun' construction is preferred or safer.</p>
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 02 · Usage Patterns</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Use of Possessive ('s) vs "of + noun"</h2>
       </div>
 
-      <div class="rule-card highlight">
+      <!-- Sub-concept 2A: Living vs Inanimate -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Living Beings (People, Animals, Countries) vs Inanimate Objects</h3>
-        </div>
-        <p>Possessive 's is chiefly used of people, countries, or animals:</p>
-        <div class="easy-hi">
-          • <strong>सजीव संज्ञाएं (Living beings):</strong> the boy's dog, the doctor's car, India's economy.<br>
-          • <strong>निर्जीव वस्तुएं (Inanimate things):</strong> इनके साथ 'of + noun' का प्रयोग होता है — <em>the walls of the town</em>, <em>the roof of the church</em>, <em>the keys of the car</em>.<br>
-          • <strong>Noun + Noun विकल्प:</strong> इन्हें अक्सर दो nouns जोड़कर भी लिखा जाता है: <em>the town walls</em>, <em>the church roof</em>, <em>the car keys</em>! यहाँ पहला noun विशेषण का काम करता है और कभी plural नहीं बनता (the roofs of the churches = <strong>the church roofs</strong>).
-        </div>
-      </div>
-
-      <div class="rule-card warning">
-        <div class="rule-header">
-          <h3>B. When the possessor noun is followed by a phrase or clause → "of" is required!</h3>
-          <span class="badge" style="background:#fee2e2; color:#b91c1c;">Crucial Rule</span>
-        </div>
-        <p>When a descriptive phrase or clause follows the possessor, use 'of' instead of 's:</p>
-        <div class="easy-hi">
-          अगर संज्ञा के तुरंत बाद कोई लंबा वाक्यांश (phrase या clause) जुड़ा हो, तो 's नहीं लगाते, बल्कि 'of' लगाते हैं:
-          <br>
-          • The boys ran about, obeying <strong>the directions of a man with a whistle</strong>.<br>
-          (NOT: a man with a whistle's directions ✗ — सीटी के आगे 's लगाने से अर्थ बदल जाएगा!)<br>
-          • I took <strong>the advice of a couple I met in the train</strong> and hired a car.
-        </div>
-      </div>
-
-      <div class="rule-card highlight">
-        <div class="rule-header">
-          <h3>C. Ships, Vehicles, Time Expressions, and Idiomatic Phrases</h3>
-        </div>
-        <div class="example-grid">
-          <div class="example-box">
-            <b>Ships and Boats</b>
-            <span>the ship's bell, the yacht's mast (जहाज और नाव में 's पूरी तरह मानक है)</span>
-          </div>
-          <div class="example-box">
-            <b>Vehicles (Planes, Trains, Cars)</b>
-            <span>a glider's wings OR the wings of a glider; the train's heating OR heating system of the train ('of' अधिक सुरक्षित है)</span>
-          </div>
-          <div class="example-box">
-            <b>Time Expressions</b>
-            <span>a week's holiday, today's paper, tomorrow's weather, ten minutes' break (or a ten-minute break)</span>
-          </div>
-          <div class="example-box">
-            <b>Money + worth</b>
-            <span>£1's worth of stamps, ten dollars' worth of ice-cream</span>
-          </div>
-          <div class="example-box">
-            <b>For + noun + sake</b>
-            <span>for heaven's sake, for goodness' sake ('s' पर समाप्त होने के कारण केवल ' लगता है)</span>
-          </div>
-          <div class="example-box">
-            <b>Idiomatic Expressions</b>
-            <span>a stone's throw (बहुत नज़दीक / थोड़ी दूरी पर), journey's end (यात्रा का अंत), the water's edge (पानी का किनारा)</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-card">
-        <div class="rule-header">
-          <h3>D. Seasons Rule (Winter, Summer, Spring, Autumn)</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Living Beings vs Inanimate Objects &amp; Noun + Noun Shift</h3>
+          <span class="badge">Living vs Inanimate</span>
         </div>
         <div class="easy-hi">
-          • <strong>Winter / Summer:</strong> हम <em>a winter's day</em> या <em>a winter day</em>, और <em>a summer's day</em> या <em>a summer day</em> दोनों कह सकते हैं।<br>
-          • <strong>Spring / Autumn:</strong> इनके साथ 's नहीं लगता! केवल तब लगता है जब साहित्य में इनका मानवीकरण (personified) किया गया हो: <strong>Autumn's return</strong> (पतझड़ की वापसी)।
+          • <strong>सजीव (Living Beings):</strong> 's का प्रयोग मुख्य रूप से व्यक्तियों, पशुओं और देशों के लिए होता है — <em>the boy's dog, the doctor's car, India's economy</em>.<br>
+          • <strong>निर्जीव (Inanimate Things):</strong> इनके लिए 'of + noun' सुरक्षित रचना है — <em>the walls of the town, the roof of the church, the keys of the car</em>.<br>
+          • <strong>Noun + Noun विकल्प:</strong> इन्हें Noun+Noun में भी बदला जा सकता है जहाँ पहला noun विशेषण बन जाता है और कभी बहुवचन नहीं बनता — <em>the town walls, the church roofs, the car keys</em>!
         </div>
-      </div>
+
+        <!-- 2 Example Questions for 2A -->
+        <div class="concept-pair-box" id="pair-2a"></div>
+      </article>
+
+      <!-- Sub-concept 2B: Phrases/Clauses & Vehicles -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Possessor Followed by a Phrase/Clause ('of' Required) &amp; Vehicles</h3>
+          <span class="badge">Crucial Rule</span>
+        </div>
+        <div class="easy-hi">
+          👉 <strong>जब संज्ञा के बाद लंबा वाक्यांश जुड़ा हो:</strong> 's लगाने के बजाय 'of' लगाना अनिवार्य है:<br>
+          • <em>The boys obeyed <strong>the directions of a man with a whistle</strong>.</em> (a man with a whistle's directions ❌ घोर अशुद्धि!)<br>
+          • <em>I took <strong>the advice of a couple I met in the train</strong>.</em><br><br>
+          👉 <strong>जहाज व वाहन (Ships and Vehicles):</strong><br>
+          • समुद्री जहाजों में 's पूरी तरह मानक है: <em>the ship's bell, the yacht's mast</em>.<br>
+          • वाहनों (planes, trains, cars) में 'of' अधिक सुरक्षित है: <em>the wings of a glider, the heating system of the train</em>.
+        </div>
+
+        <!-- 2 Example Questions for 2B -->
+        <div class="concept-pair-box" id="pair-2b"></div>
+      </article>
+
+      <!-- Sub-concept 2C: Time, Money, Idioms & Seasons -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">C. Time Expressions, Money's Worth, Idioms &amp; Seasons Rule</h3>
+          <span class="badge">Idioms &amp; Time</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>Time Expressions:</strong> <em>a week's holiday, today's paper, tomorrow's weather, ten minutes' break</em> (or <em>a ten-minute break</em>).<br>
+          • <strong>Money + worth:</strong> <em>£1's worth of stamps, ten dollars' worth of ice-cream</em>.<br>
+          • <strong>For + noun + sake:</strong> <em>for heaven's sake, for goodness' sake</em> (goodness में अंत में 's होने से केवल ' लगेगा).<br>
+          • <strong>Idioms:</strong> <em>a stone's throw</em> (बहुत नज़दीक), <em>journey's end</em>, <em>the water's edge</em>.<br>
+          • <strong>Seasons Rule:</strong> <em>a winter's day / a summer's day</em> तो कह सकते हैं; परंतु <em>spring / autumn</em> में 's केवल मानवीकरण (personification) होने पर ही लगता है (जैसे <em>Autumn's return</em>).
+        </div>
+
+        <!-- 2 Example Questions for 2C -->
+        <div class="concept-pair-box" id="pair-2c"></div>
+      </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 3: Compound nouns -->
+    <!-- UNIT 03: COMPOUND NOUNS -->
     <!-- ========================================== -->
     <section id="topic-3" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 03 · Compound Nouns</p>
-          <h2>3. Compound Nouns (प्रकार और संयोजन)</h2>
-        </div>
-        <p>Combining two words to form a new noun — types, relationships, and important exceptions.</p>
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 03 · Compound Nouns</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Compound Nouns (प्रकार, संयोजन और अपवाद)</h2>
       </div>
 
-      <div class="rule-card highlight">
+      <!-- Sub-concept 3A: 3 Structural Types -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Three Structural Types of Compound Nouns</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Three Structural Patterns of Compound Nouns</h3>
           <span class="badge">3 Patterns</span>
         </div>
-        <div class="example-grid">
-          <div class="example-box">
-            <b>1. Noun + Noun</b>
-            <span>London Transport, kitchen table, petrol tank, river bank, hall door, traffic warden, winter clothes.</span>
-          </div>
-          <div class="example-box">
-            <b>2. Noun + Gerund (-ing)</b>
-            <span>fruit picking, lorry driving, coal-mining, weight-lifting, bird-watching, surf-riding.</span>
-          </div>
-          <div class="example-box">
-            <b>3. Gerund (-ing) + Noun</b>
-            <span>waiting list, diving-board, driving licence, landing card, dining-room, swimming pool.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Interactive Compound Builder Sandbox -->
-      <div class="explorer-box">
-        <h3 style="font-size:18px; font-weight:800; color:#065f46; margin-bottom:4px;">✦ Interactive Compound Noun Explorer</h3>
-        <p style="font-size:13.5px; color:#047857;">Click a category below to see how English combines two nouns to express purpose, materials, time, place, or work areas:</p>
-        
-        <div class="explorer-tabs" role="tablist">
-          <button type="button" class="explorer-tab-btn active" onclick="switchExplorer('purpose', this)">1. Purpose</button>
-          <button type="button" class="explorer-tab-btn" onclick="switchExplorer('material', this)">2. Material</button>
-          <button type="button" class="explorer-tab-btn" onclick="switchExplorer('time', this)">3. Time</button>
-          <button type="button" class="explorer-tab-btn" onclick="switchExplorer('place', this)">4. Place &amp; Part</button>
-          <button type="button" class="explorer-tab-btn" onclick="switchExplorer('work', this)">5. Work Area &amp; Topics</button>
+        <div class="easy-hi">
+          👉 <strong>1. Noun + Noun:</strong> <em>London Transport, kitchen table, petrol tank, river bank, hall door, traffic warden, winter clothes</em>.<br>
+          👉 <strong>2. Noun + Gerund (-ing):</strong> <em>fruit picking, lorry driving, coal-mining, weight-lifting, bird-watching</em>.<br>
+          👉 <strong>3. Gerund (-ing) + Noun:</strong> <em>waiting list, diving-board, driving licence, landing card, dining-room, swimming pool</em>.
         </div>
 
-        <div id="explorer-content" style="background:#fff; padding:16px; border-radius:14px; border:1px solid #a7f3d0; font-size:13.5px;">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </section>
+        <!-- 2 Example Questions for 3A -->
+        <div class="concept-pair-box" id="pair-3a"></div>
+      </article>
 
-    <!-- ========================================== -->
-    <!-- TOPIC 4: Advanced Rules & Pronunciation Stress -->
-    <!-- ========================================== -->
-    <section id="topic-4" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 04 · Advanced Nuances</p>
-          <h2>4. Advanced Possessive Uses &amp; Pronunciation Stress</h2>
-        </div>
-        <p>Omitted nouns for shops, clinics, homes, and where to place voice stress in English speech.</p>
-      </div>
-
-      <article class="rule-card highlight">
+      <!-- Sub-concept 3B: Purpose, Material & Quantity Limit -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Omitted Second Noun (Shops, Offices, Surgeries, Homes)</h3>
-          <span class="badge">Daily English</span>
+          <h3 style="font-size:16px; font-weight:800;">B. Purpose, Materials (Wool/Wood/Gold) &amp; Quantity Limitations</h3>
+          <span class="badge">Special Rules</span>
         </div>
         <div class="easy-hi">
-          अक्सर बोलचाल में दूसरा संज्ञा शब्द (shop, office, surgery या house) छोड़ दिया जाता है:
-          <br><br>
-          • <strong>the baker's / the butcher's / the chemist's / the florist's</strong> = bakery, butcher shop, chemist shop, florist shop.<br>
-          • <strong>the travel agent's / the house agent's</strong> = travel office, real estate office.<br>
-          • <strong>the dentist's / the doctor's / the vet's</strong> = dentist's surgery, doctor's clinic, vet's surgery.<br>
-          <em>Example:</em> "You can buy this medicine at <strong>the chemist's</strong>." / "He is going to <strong>the dentist's</strong>."<br>
-          • <strong>Homes:</strong> "We had lunch at <strong>Bill's</strong>" (= Bill's house). / "We met at <strong>Ann's</strong>" (= Ann's house).<br>
-          • <strong>Famous Shops:</strong> Sotheby's, Claridge's keep the 's; while Harrods, Foyles drop the apostrophe.
+          • <strong>Purpose (उद्देश्य):</strong> <em>coffee cup</em> (cup for coffee), <em>reading lamp</em> (lamp for reading), <em>tin opener</em>, <em>swimming pool</em>.<br>
+          • ⚠️ <strong>Material Rules:</strong> सामान्यतः <em>steel door, stone wall, silk shirt</em> बनते हैं। लेकिन <strong>wool</strong> और <strong>wood</strong> के वास्तविक विशेषण रूप होते हैं — <strong>woollen sweater</strong> और <strong>wooden chair</strong>!<br>
+          • ⚠️ <strong>Gold vs Golden:</strong> वास्तविक धातु के लिए <strong>gold medal, gold ring</strong>; जबकि लाक्षणिक (figurative) अर्थ में <strong>a golden handshake, a golden opportunity</strong>!<br>
+          • ⚠️ <strong>मात्रा की सीमा (Quantity Limit):</strong> <em>piece, slice, lump</em> को compound noun नहीं बनाया जा सकता — <strong>a piece of cake</strong> और <strong>a slice of bread</strong> ही कहा जाता है ('cake piece' या 'bread slice' अशुद्ध है ❌)!
         </div>
-      </article>
 
-      <article class="rule-card warning">
+        <!-- 2 Example Questions for 3B -->
+        <div class="concept-pair-box" id="pair-3b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 04: ADVANCED USES & STRESS RULES -->
+    <!-- ========================================== -->
+    <section id="topic-4" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 04 · Advanced &amp; Stress</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Advanced Possessive Uses &amp; Pronunciation Stress</h2>
+      </div>
+
+      <!-- Sub-concept 4A: Omitted Second Noun -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>B. Pronunciation Stress Rules</h3>
-          <span class="badge" style="background:#fef3c7; color:#b45309;">High Yield</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Omitted Second Noun (Shops, Clinics, Surgeries &amp; Homes)</h3>
+          <span class="badge">Ellipsis &amp; Idiom</span>
         </div>
-        <p>Where to place the voice stress when speaking English compound expressions:</p>
+        <div class="easy-hi">
+          अक्सर बोलचाल में दुकान, क्लिनिक या घर दर्शाने वाले दूसरे noun (shop/office/surgery/house) को छोड़ दिया जाता है:<br>
+          • <strong>the chemist's / the butcher's / the baker's</strong> = chemist shop, butcher shop, bakery.<br>
+          • <strong>the dentist's / the doctor's / the vet's</strong> = dentist surgery/clinic, doctor's clinic.<br>
+          • <em>"We had lunch at <strong>Bill's</strong>"</em> (= Bill's house). / <em>"We met at <strong>Ann's</strong>"</em> (= Ann's house).<br>
+          • प्रसिद्ध दुकानें: Claridge's, Sotheby's में 's रहता है; जबकि Harrods, Foyles अपोस्ट्रॉफी हटा देते हैं।
+        </div>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe table horizontally on mobile (मोबाइल पर पूरी टेबल देखने के लिए खिसकाएं)</span>
+        <!-- 2 Example Questions for 4A -->
+        <div class="concept-pair-box" id="pair-4a"></div>
+      </article>
+
+      <!-- Sub-concept 4B: Pronunciation Stress Rules -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Pronunciation Stress Rules &amp; The Famous 'Oxford Street' Exception</h3>
+          <span class="badge">Pronunciation</span>
         </div>
-        <div class="table-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Stress Rule</th>
-                <th>Examples &amp; Audio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Purpose / Gerund (-ing) / Sports / Topics</strong></td>
-                <td><span class="right font-bold">FIRST word is stressed</span></td>
-                <td>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span><strong>'coffee cup</strong>, <strong>'swimming pool</strong>, <strong>'fruit picking</strong>, <strong>'pop singer</strong>, <strong>'detective story</strong></span>
-                    <button type="button" onclick="speakText('coffee cup, swimming pool')" class="speech-chip">🔊 Listen</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Simple Noun + Noun</strong></td>
-                <td><span>Both words usually stressed</span></td>
-                <td>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span><strong>'stone 'wall</strong>, <strong>'kitchen 'table</strong>, <strong>'city 'street</strong></span>
-                    <button type="button" onclick="speakText('stone wall, kitchen table')" class="speech-chip">🔊 Listen</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Place Names (Normal)</strong></td>
-                <td><span>Both words have equal stress</span></td>
-                <td>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span><strong>'King's 'Road</strong>, <strong>'Waterloo 'Bridge</strong>, <strong>'Leicester 'Square</strong></span>
-                    <button type="button" onclick="speakText('King\'s Road, Waterloo Bridge')" class="speech-chip">🔊 Listen</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>THE GREAT STREET EXCEPTION!</strong></td>
-                <td><span class="wrong font-bold">Word 'Street' is UNSTRESSED!</span></td>
-                <td>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span><strong>'Bond Street</strong>, <strong>'Oxford Street</strong> (सारा ज़ोर 'Bond' व 'Oxford' पर, 'Street' बिना ज़ोर के!)</span>
-                    <button type="button" onclick="speakText('Oxford Street, Bond Street')" class="speech-chip">🔊 Listen</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="easy-hi">
+          👉 <strong>1. Purpose, Gerund &amp; Topics:</strong> हमेशा <strong>पहला शब्द (FIRST word)</strong> स्ट्रेस लेता है — <strong>'coffee cup</strong>, <strong>'swimming pool</strong>, <strong>'fruit picking</strong>, <strong>'detective story</strong>.<br>
+          👉 <strong>2. Simple Noun + Noun:</strong> दोनों शब्दों पर समान स्ट्रेस — <strong>'stone 'wall</strong>, <strong>'kitchen 'table</strong>.<br>
+          👉 <strong>3. Place Names:</strong> दोनों शब्दों पर समान स्ट्रेस — <strong>'King's 'Road</strong>, <strong>'Waterloo 'Bridge</strong>, <strong>'Leicester 'Square</strong>.<br>
+          🔥 <strong>4. THE GREAT STREET EXCEPTION (सबसे बड़ा अपवाद!):</strong> जब स्थान के नाम में अंतिम शब्द 'Street' होता है, तो <strong>'Street' UNSTRESSED (बिना ज़ोर के)</strong> बोला जाता है, सारा ज़ोर पहले शब्द पर होता है — <strong>'Bond Street</strong>, <strong>'Oxford Street</strong>!
         </div>
+
+        <!-- 2 Example Questions for 4B -->
+        <div class="concept-pair-box" id="pair-4b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- 50 MCQs PRACTICE ARENA -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
     <!-- ========================================== -->
-    <section id="practice" class="mint-card practice-box">
-      <div class="section-heading" style="margin-bottom:12px;">
-        <div>
-          <p class="eyebrow">Interactive Practice Arena</p>
-          <h2>50 Chapter MCQs: Test Your Knowledge.</h2>
-        </div>
-        <p>Solve each question, check your answer, and review the short solution explanation.</p>
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:28px; font-weight:900; margin:8px 0;">Final 30-Question Grammar Test</h2>
+        <p style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+          यह टेस्ट Possessive Case ('s और of), Compound Nouns तथा Pronunciation Stress की आपकी परीक्षा-स्तरीय तैयारी का मूल्यांकन करता है। जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> चालू हो जाएगा। समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
+          🚀 Start 30-Question Exam Now (15:00 Timer)
+        </button>
       </div>
 
-      <!-- Filter Buttons matching Econova style -->
-      <div class="filter-row" role="tablist">
-        <button type="button" class="filter-btn active" data-filter="all" onclick="filterCategory('all')">All 50 MCQs</button>
-        <button type="button" class="filter-btn" data-filter="form" onclick="filterCategory('form')">1. Form ('s &amp; ') (15)</button>
-        <button type="button" class="filter-btn" data-filter="use" onclick="filterCategory('use')">2. 's vs of + noun (15)</button>
-        <button type="button" class="filter-btn" data-filter="compound" onclick="filterCategory('compound')">3. Compound Nouns (10)</button>
-        <button type="button" class="filter-btn" data-filter="advanced" onclick="filterCategory('advanced')">4. Advanced &amp; Stress (10)</button>
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
+            Submit Test ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:8px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:12.5px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:7px 10px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div class="test-actions-bar">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Quick Question Jump Map -->
-      <details class="solution" style="margin-top:10px; background:#fff;" open>
-        <summary>✦ Question Navigation Grid: Click any number (1 to 50)</summary>
-        <div class="jump-grid" id="jump-grid">
-          <!-- 50 buttons generated by JS -->
-        </div>
-      </details>
-
-      <!-- Question Cards Grid -->
-      <div class="task-grid" id="task-container">
-        <!-- Rendered by JS: 10 per page -->
-      </div>
-
-      <!-- Check Page / All Section -->
-      <section class="amber-card check-all-section">
-        <div>
-          <h2 style="font-size:24px;">Check your answers</h2>
-          <p id="page-summary-text" style="font-size:13px; margin-top:4px;">Showing Page 1 of 5 (50 Questions).</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="mint-btn" type="button" onclick="checkCurrentPage()">Check this page <span aria-hidden="true">✓</span></button>
-          <button class="quiet-btn" type="button" onclick="resetAll()">Reset all</button>
-        </div>
-      </section>
-
-      <!-- Pagination -->
-      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:28px;">
-        <button id="btn-prev" class="quiet-btn" type="button" onclick="changePage(-1)">← Previous 10</button>
-        <span id="page-indicator" style="font-family:var(--heading); font-weight:800; color:var(--brand); font-size:14px;">Page 1 of 5</span>
-        <button id="btn-next" class="quiet-btn" type="button" onclick="changePage(1)">Next 10 →</button>
-      </div>
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
     </section>
-  </main>
 
-  <!-- Footer matching Econova theme -->
-  <footer>
-    <div class="wrap footer-inner">
-      <a class="footer-brand" href="#main">
-        Econova<em>.vip</em> ✦
-      </a>
-      <p>Class 6 to 10 English · Advanced Noun Structures &amp; Cases (विशेष प्रयोग और संबंध) · Learn with clarity.</p>
-      <div class="footer-links">
-        <a href="#topic-1">Form ('s &amp; ')</a>
-        <a href="#topic-2">'s vs of</a>
-        <a href="#topic-3">Compounds</a>
-        <a href="#topic-4">Stress Rules</a>
-        <a href="#main">Top ↑</a>
+    <!-- Submit Warning Modal -->
+    <div class="modal-overlay" id="submit-modal" style="display:none;">
+      <div class="modal-box">
+        <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
+        <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
+        <p style="font-size:13px; color:#475569; margin-bottom:12px;" id="modal-msg"></p>
+        <div style="display:flex; justify-content:center; gap:8px;">
+          <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Test (हल करते रहें)</button>
+          <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- 50 Complete Questions and Interactive Logic -->
-  <script>
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const clean = text.replace(/['’]/g, "'").replace(/[✓✗]/g, '').trim();
-        const utterance = new SpeechSynthesisUtterance(clean);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.9;
-        window.speechSynthesis.speak(utterance);
-      }
-    }
+    <!-- Footer -->
+    <footer>
+      <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:#64748b;">
+        <div>
+          <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+          Class 6–10 English Grammar · Advanced Noun Structures &amp; Cases (विशेष प्रयोग और संबंध).
+        </div>
+        <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand);">
+          <a href="#topic-1">Form ('s &amp; ')</a>
+          <a href="#topic-2">'s vs of</a>
+          <a href="#topic-3">Compounds</a>
+          <a href="#topic-4">Stress Rules</a>
+          <a href="#test-arena">30-Q Test</a>
+        </div>
+      </div>
+    </footer>
 
-    const explorerData = {
-      purpose: `<p style="font-weight:700; color:#065f46; margin-bottom:8px;">✦ Purpose (किसी कार्य या उपयोग के लिए बनाया गया):</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:8px;">
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">☕ coffee cup (cup for coffee)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">💡 reading lamp (lamp for reading)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">🥫 tin opener (opener for tins)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">🏊 swimming pool (pool for swimming)</div>
-        </div>`,
-      material: `<p style="font-weight:700; color:#065f46; margin-bottom:8px;">✦ Materials &amp; Special Adjective Rules (पदार्थ व विशेषण के नियम):</p>
-        <p style="color:#374151; line-height:1.7;">
-          • <strong>steel door, stone wall, silk shirt, rope ladder</strong> (पदार्थ या धातु दर्शाने वाली संज्ञाएं)<br>
-          • ⚠️ <strong>Wool (ऊन) और Wood (लकड़ी):</strong> इनके वास्तविक विशेषण रूप होते हैं — <strong>woollen sweater</strong> और <strong>wooden chair</strong>!<br>
-          • ⚠️ <strong>Gold vs Golden:</strong> वास्तविक धातु के लिए <strong>gold medal, gold ring</strong>; जबकि लाक्षणिक या मुहावरेदार अर्थ में <strong>a golden handshake</strong>, <strong>a golden opportunity</strong>!
-        </p>`,
-      time: `<p style="font-weight:700; color:#065f46; margin-bottom:8px;">✦ Time (समय दर्शाने वाली संयुक्त संज्ञाएं):</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:8px;">
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">☀️ summer holiday (गर्मी की छुट्टी)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">📰 Sunday paper (रविवार का अख़बार)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">🌫️ November fogs (नवंबर का कोहरा)</div>
-          <div style="background:#ecfdf5; padding:8px 12px; border-radius:8px; font-weight:600; color:#065f46;">🌸 spring flowers (बसंत के फूल)</div>
-        </div>`,
-      place: `<p style="font-weight:700; color:#065f46; margin-bottom:8px;">✦ Place &amp; Belonging (स्थान और भाग):</p>
-        <p style="color:#374151; line-height:1.7;">
-          • <strong>Belonging (भाग या हिस्सा):</strong> shop window (दुकान की खिड़की), church bell, college library, garden gate.<br>
-          • ⚠️ <strong>मात्रा की सीमा (Quantity Limitation):</strong> <em>piece, slice, lump</em> जैसे शब्दों को compound noun नहीं बनाया जाता — हम <strong>a piece of cake</strong> और <strong>a slice of bread</strong> कहते हैं (NOT: cake piece ✗)!<br>
-          • <strong>Place (स्थान):</strong> city street, corner shop, country lane, street market.
-        </p>`,
-      work: `<p style="font-weight:700; color:#065f46; margin-bottom:8px;">✦ Work Areas, Sports &amp; Topics (कार्यक्षेत्र, खेल और विषय):</p>
-        <p style="color:#374151; line-height:1.7;">
-          • <strong>उत्पादित वस्तु (Article produced):</strong> fish-farm (मछली पालन केंद्र), gold-mine, oil-rig.<br>
-          • <strong>व्यवसाय और खेल (Occupations &amp; Sports):</strong> sheep farmer, pop singer, disc jockey, football match, tennis tournament.<br>
-          • <strong>विषय और बिल (Topics &amp; Bills):</strong> detective story, ghost story, telephone bill, parking fine, income tax, peace talks.
-        </p>`
-    };
+    <!-- Target container for Vite -->
+    <div id="root" style="display:none;"></div>
 
-    function switchExplorer(type, btn) {
-      document.querySelectorAll('.explorer-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('explorer-content').innerHTML = explorerData[type];
-    }
-
-    const questions = [
-      // UNIT 1: Form of 's and ' (15 Questions: 1 to 15)
-      {
-        id: 1,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Select the correct possessive form: 'The room belonging to the children.'",
-        hi: "बच्चों का कमरा (The room belonging to the children) के लिए सही रूप चुनें:",
-        options: [
-          "The childrens' room",
-          "The children's room",
-          "The childrens's room",
-          "The children room"
-        ],
-        ans: 1,
-        expl: "'Children' एक irregular plural noun है जो 's' पर खत्म नहीं होता। इसलिए इसमें सामान्य singular की तरह 's लगाया जाता है: 'the children's room'."
-      },
-      {
-        id: 2,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Which is the correct possessive form for a school meant for girls?",
-        hi: "लड़कियों का स्कूल (Girls school) के लिए शुद्ध possessive रूप क्या होगा?",
-        options: [
-          "A girl's school",
-          "A girls's school",
-          "A girls' school",
-          "A girl school's"
-        ],
-        ans: 2,
-        expl: "जब plural noun 's' पर समाप्त होता है (जैसे girls, students), तो दोबारा 's नहीं लगाते; केवल अंत में apostrophe (') जोड़ते हैं: 'a girls' school'."
-      },
-      {
-        id: 3,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "For ancient classical names ending in 's', what is the standard grammar rule?",
-        hi: "प्राचीन यूनानी या शास्त्रीय नामों (जैसे Pythagoras, Archimedes) में क्या लगाया जाता है?",
-        options: [
-          "Add only apostrophe (') — Pythagoras' Theorem",
-          "Add 's — Pythagoras's Theorem",
-          "Add of only — The theorem of Pythagoras's",
-          "No apostrophe is needed"
-        ],
-        ans: 0,
-        expl: "Classical Greek/Roman names (जैसे Pythagoras, Archimedes, Sophocles) जो 's' पर खत्म होते हैं, उनमें केवल apostrophe (') जुड़ता है: 'Pythagoras' Theorem', 'Archimedes' Law'."
-      },
-      {
-        id: 4,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "How should the possessive form of 'my brother-in-law' (guitar) be written?",
-        hi: "'My brother-in-law' का गिटार — compound noun में 's कहाँ लगेगा?",
-        options: [
-          "My brother's-in-law guitar",
-          "My brother-in-law's guitar",
-          "My brothers'-in-law guitar",
-          "My brother's-in-law's guitar"
-        ],
-        ans: 1,
-        expl: "Compound nouns में possessive 's हमेशा सबसे अंतिम शब्द (last word) में लगाया जाता है: 'my brother-in-law's guitar'."
-      },
-      {
-        id: 5,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "What happens to the article 'the' when 'the daughter of the politician' is turned into possessive case?",
-        hi: "जब 'the daughter of the politician' को possessive में बदलते हैं, तो 'daughter' से पहले का 'the' कहाँ जाता है?",
-        options: [
-          "It remains: 'the politician's the daughter'",
-          "It disappears: 'the politician's daughter'",
-          "It changes to 'a': 'the politician's a daughter'",
-          "It moves to the end: 'the politician's daughter the'"
-        ],
-        ans: 1,
-        expl: "नियम: Possessive case लगाने पर जिस व्यक्ति या वस्तु पर अधिकार (possession) दर्शाया जा रहा हो, उसके पहले का article (a/an/the) गायब हो जाता है: 'the politician's daughter'."
-      },
-      {
-        id: 6,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Which expression correctly shows the helicopter of the Prince of Wales?",
-        hi: "वेल्स के राजकुमार का हेलीकॉप्टर — सही रूप पहचानें:",
-        options: [
-          "The Prince's of Wales helicopter",
-          "The Prince of Wales's helicopter",
-          "The Prince's of Wales's helicopter",
-          "The Prince of Wale's helicopter"
-        ],
-        ans: 1,
-        expl: "कई शब्दों से मिलकर बने नामों या शीर्षकों में possessive 's आखिरी शब्द पर लगता है: 'the Prince of Wales's helicopter' (या Wales')."
-      },
-      {
-        id: 7,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Which is the correct possessive form for modern titles and initials like MP or PM?",
-        hi: "सांसद (MP) का ब्रीफकेस या प्रधानमंत्री (PM) का सचिव लिखने का सही नियम क्या है?",
-        options: [
-          "The M.P' briefcase and P.M' secretary",
-          "The MP's briefcase and the PM's secretary",
-          "The MPs' briefcase and the PMs' secretary",
-          "The briefcase of MP's"
-        ],
-        ans: 1,
-        expl: "Initials और short forms (जैसे MP, PM, VIP) में 's जोड़ा जाता है: 'the MP's briefcase', 'the PM's secretary', 'the VIP's escort'."
-      },
-      {
-        id: 8,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Choose the correct possessive phrase for 'work done by men':",
-        hi: "पुरुषों का काम (work done by men) — सही विकल्प चुनें:",
-        options: [
-          "Mens' work",
-          "Men's work",
-          "Mens's work",
-          "Man's work"
-        ],
-        ans: 1,
-        expl: "'Men' एक irregular plural है जिसमें 's' नहीं है। ऐसे शब्दों में 's जुड़ता है: 'men's work' (जैसे women's clothes, people's choice)."
-      },
-      {
-        id: 9,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "For a modern surname ending in 's' like Mr Jones, which forms are acceptable?",
-        hi: "'Mr Jones' के घर के लिए कौन सा रूप मान्य है?",
-        options: [
-          "Only Mr Jones' house",
-          "Only Mr Jones's house",
-          "Both 'Mr Jones's house' and 'Mr Jones' house' are acceptable",
-          "Mr Jone's house"
-        ],
-        ans: 2,
-        expl: "आधुनिक नाम जो 's' पर खत्म होते हैं (जैसे Jones, Yeats, Charles), उनमें 's या केवल (') दोनों लगाए जा सकते हैं: 'Mr Jones's house' या 'Mr Jones' house'."
-      },
-      {
-        id: 10,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "The car belonging to the Smith family (the Smiths) is written as:",
-        hi: "स्मिथ परिवार (the Smiths) की कार — सही possessive क्या होगा?",
-        options: [
-          "The Smith's car",
-          "The Smiths' car",
-          "The Smiths's car",
-          "The car of Smiths's"
-        ],
-        ans: 1,
-        expl: "जब पूरे परिवार को plural उपनाम से संबोधित करते हैं ('the Smiths'), तो यह 's' पर खत्म होता है, इसलिए केवल apostrophe (') लगेगा: 'the Smiths' car'."
-      },
-      {
-        id: 11,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Select the correct phrase for 'the plays written by Shakespeare':",
-        hi: "शेक्सपियर के नाटक (The plays of Shakespeare) का संक्षिप्त possessive रूप:",
-        options: [
-          "The Shakespeare's plays",
-          "Shakespeare's the plays",
-          "Shakespeare's plays",
-          "Shakespeare plays'"
-        ],
-        ans: 2,
-        expl: "'The plays of Shakespeare' = 'Shakespeare's plays'. ध्यान रहे कि 'plays' से पहले का 'the' possessive आते ही हट जाता है।"
-      },
-      {
-        id: 12,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Which expression represents the nest of the eagles?",
-        hi: "चीलों का घोंसला (Plural eagles) — सही रूप पहचानें:",
-        options: [
-          "The eagle's nest",
-          "The eagles' nest",
-          "The eagles's nest",
-          "The eagle nest's"
-        ],
-        ans: 1,
-        expl: "Plural noun 'eagles' 's' पर खत्म होता है, इसलिए केवल apostrophe (') आएगा: 'the eagles' nest'."
-      },
-      {
-        id: 13,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "'A woman's intuition' and 'Women's clothes' — what is the grammatical difference?",
-        hi: "'A woman's intuition' और 'Women's clothes' में क्या व्याकरणिक अंतर है?",
-        options: [
-          "First is singular noun + 's, second is plural noun not ending in s + 's",
-          "Both are plural nouns",
-          "Both are singular nouns",
-          "Second is grammatically incorrect"
-        ],
-        ans: 0,
-        expl: "'Woman' एकवचन (singular) है और 'Women' बहुवचन (plural)। दोनों में 's जुड़ता है क्योंकि 'women' 's' पर खत्म नहीं होता।"
-      },
-      {
-        id: 14,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Henry the Eighth had six wives. His wives are referred to as:",
-        hi: "हेनरी अष्टम की पत्नियाँ — सही possessive क्या होगा?",
-        options: [
-          "Henry's the Eighth wives",
-          "Henry the Eighth's wives",
-          "Henry's the Eighth's wives",
-          "Henry the Eighth wives'"
-        ],
-        ans: 1,
-        expl: "शीर्षक में अंतिम शब्द 'Eighth' है, इसलिए 's इसी में जुड़ेगा: 'Henry the Eighth's wives'."
-      },
-      {
-        id: 15,
-        cat: "form",
-        label: "1. Form of 's and '",
-        q: "Which sentence uses the possessive apostrophe INCORRECTLY?",
-        hi: "किस वाक्य में apostrophe का अशुद्ध प्रयोग हुआ है?",
-        options: [
-          "The horse's mouth was examined by the vet.",
-          "The bull's horns were sharp and dangerous.",
-          "The students's hostel was newly renovated.",
-          "Russia's exports increased significantly this year."
-        ],
-        ans: 2,
-        expl: "विकल्प C अशुद्ध है! 'Students' पहले से plural 's' पर खत्म है, इसलिए 'students' hostel' होना चाहिए, 'students's' नहीं।"
-      },
-
-      // UNIT 2: Use of 's vs of + noun (15 Questions: 16 to 30)
-      {
-        id: 16,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Why is 'the walls of the town' preferred over 'the town's walls' in formal grammar?",
-        hi: "निर्जीव वस्तु (Inanimate object) के लिए possessive का कौन सा रूप मूल नियम है?",
-        options: [
-          "Because possessive 's is chiefly for living beings (people/animals), while 'of' is used for inanimate things",
-          "Because town is plural",
-          "Because walls are made of stone",
-          "Because 'of' cannot be used with town"
-        ],
-        ans: 0,
-        expl: "नियम: Possessive 's मुख्य रूप से सजीव (people, animals) और देशों के लिए होता है। निर्जीव वस्तुओं (inanimate things) के लिए 'of + noun' सुरक्षित माना जाता है ('the walls of the town')."
-      },
-      {
-        id: 17,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "When 'the roofs of the churches' is replaced by noun + noun, what is the correct form?",
-        hi: "जब 'the roofs of the churches' को noun + noun में बदलते हैं, तो सही रूप क्या होगा?",
-        options: [
-          "The churches roofs",
-          "The church roofs",
-          "The churches' roofs",
-          "The church's roofs"
-        ],
-        ans: 1,
-        expl: "जब 'noun X + of + noun Y' को 'noun Y + noun X' में बदलते हैं, तो पहला noun विशेषण (adjective) का काम करता है और कभी plural नहीं बनता: 'the church roofs' (NOT churches roofs)."
-      },
-      {
-        id: 18,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Select the sentence where 'of' MUST be used because the possessor is followed by a descriptive phrase:",
-        hi: "जब possessor के बाद लंबा वाक्यांश (phrase/clause) हो, तो 'of' का प्रयोग अनिवार्य क्यों है?",
-        options: [
-          "The boys obeyed the directions of a man with a whistle.",
-          "The boys obeyed a man with a whistle's directions.",
-          "The boys obeyed a man's with a whistle directions.",
-          "The boys obeyed directions of a man's with a whistle."
-        ],
-        ans: 0,
-        expl: "जब possessor संज्ञा के तुरंत बाद कोई phrase या clause जुड़ा हो ('a man with a whistle'), तो 'of' का प्रयोग किया जाता है: 'the directions of a man with a whistle'."
-      },
-      {
-        id: 19,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Which time expression is grammatically CORRECT?",
-        hi: "समय से जुड़े किस वाक्यांश का प्रयोग शुद्ध है?",
-        options: [
-          "A week holiday",
-          "A week's holiday",
-          "A weeks holiday",
-          "A weeks' holiday"
-        ],
-        ans: 1,
-        expl: "समय (Time expressions) के साथ 's का प्रयोग पूरी तरह मान्य है: 'a week's holiday', 'today's paper', 'tomorrow's weather'."
-      },
-      {
-        id: 20,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "How can 'ten minutes of break' be expressed in English?",
-        hi: "दस मिनट के ब्रेक को किन दो तरीकों से लिखा जा सकता है?",
-        options: [
-          "Only 'ten minute break'",
-          "Only 'ten minutes' break'",
-          "Both 'ten minutes' break' and 'a ten-minute break'",
-          "Only 'ten minute's break'"
-        ],
-        ans: 2,
-        expl: "दोनों रूप मान्य हैं: (1) Possessive: 'ten minutes' break' (plural 's के बाद apostrophe), या (2) Compound adjective: 'a ten-minute break' (singular hyphenated)."
-      },
-      {
-        id: 21,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Complete the sentence: 'Could you please give me £1___ worth of stamps?'",
-        hi: "मुझे एक पाउंड के टिकट दें — 'money + worth' में क्या आएगा?",
-        options: [
-          "s'",
-          "'s",
-          "s",
-          "of"
-        ],
-        ans: 1,
-        expl: "'Money + worth' की अभिव्यक्ति में: '£1's worth of stamps', 'ten dollars' worth of ice-cream' ('s या 's' के बाद ') लगता है।"
-      },
-      {
-        id: 22,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Choose the correct idiom meaning 'for the sake of goodness':",
-        hi: "'भगवान के लिए' या 'भलाई के लिए' — सही मुहावरा चुनें:",
-        options: [
-          "For good sake",
-          "For goodness' sake",
-          "For goodness's sake",
-          "For sake of goodness's"
-        ],
-        ans: 1,
-        expl: "मुहावरेदार प्रयोग: 'for heaven's sake', 'for goodness' sake' ('s पर समाप्त होने वाले 'goodness' में केवल apostrophe आता है)."
-      },
-      {
-        id: 23,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "What does the idiom 'a stone's throw' mean?",
-        hi: "'A stone's throw' मुहावरे का क्या अर्थ है?",
-        options: [
-          "Throwing stones at someone",
-          "A very short distance away (बहुत नजदीक)",
-          "A heavy geological rock",
-          "A very long journey"
-        ],
-        ans: 1,
-        expl: "'A stone's throw' एक प्रसिद्ध अंग्रेजी मुहावरा है जिसका अर्थ होता है 'बहुत ही नजदीक / थोड़ी सी दूरी पर' (very close distance)."
-      },
-      {
-        id: 24,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Can we use possessive 's with ships and boats?",
-        hi: "क्या जहाजों और नावों (ships and boats) के साथ 's का प्रयोग सही है?",
-        options: [
-          "No, only 'of' is allowed",
-          "Yes, expressions like 'the ship's bell' and 'the yacht's mast' are standard English",
-          "Only for military submarines",
-          "Only when the ship is sinking"
-        ],
-        ans: 1,
-        expl: "हाँ! जहाजों और नौकाओं के साथ possessive 's पूरी तरह मान्य और प्रचलित है: 'the ship's bell', 'the yacht's mast'."
-      },
-      {
-        id: 25,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Regarding vehicles (planes, trains, cars), what does standard grammar advise?",
-        hi: "गाड़ियों, ट्रेनों और हवाई जहाजों के लिए व्याकरण क्या सलाह देता है?",
-        options: [
-          "Both 'a glider's wings' and 'the wings of a glider' are used, though the 'of' construction is safer",
-          "'s is strictly banned for all vehicles",
-          "'of' cannot be used with trains",
-          "Only compound nouns are permitted"
-        ],
-        ans: 0,
-        expl: "किताब के अनुसार: 'a glider's wings' या 'the wings of a glider', 'the train's heating system' या 'the heating system of the train' दोनों चलते हैं, पर 'of' रचना अधिक सुरक्षित मानी जाती है।"
-      },
-      {
-        id: 26,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Regarding seasons (winter, summer, spring, autumn), which rule is TRUE?",
-        hi: "मौसमों (Seasons) के possessive नियम के बारे में क्या सत्य है?",
-        options: [
-          "We can say 'a winter's day' or 'a summer's day', but cannot make spring or autumn possessive unless personified",
-          "All four seasons take 's equally",
-          "No season can ever take 's",
-          "Only autumn can take 's"
-        ],
-        ans: 0,
-        expl: "'a winter's day' और 'a summer's day' तो बोल सकते हैं, लेकिन spring और autumn में 's नहीं लगता, जब तक उनका मानवीकरण (personification) न हो (जैसे 'Autumn's return')."
-      },
-      {
-        id: 27,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "'The keys of the car' can be safely replaced by which noun combination?",
-        hi: "'The keys of the car' को noun + noun में क्या कहेंगे?",
-        options: [
-          "The car's key",
-          "The cars key",
-          "The car keys",
-          "The keys car"
-        ],
-        ans: 2,
-        expl: "'The keys of the car' = 'the car keys'. यहाँ 'car' पहली संज्ञा होकर विशेषण की तरह काम करती है।"
-      },
-      {
-        id: 28,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Which sentence correctly expresses: 'I will return after a delay of two hours'?",
-        hi: "दो घंटे की देरी — सही possessive या compound रूप चुनें:",
-        options: [
-          "After two hour's delay",
-          "After two hours' delay (or a two-hour delay)",
-          "After two hours delay'",
-          "After two-hours's delay"
-        ],
-        ans: 1,
-        expl: "Two hours plural है, इसलिए 'two hours' delay' (apostrophe after s) अथवा 'a two-hour delay' सही है।"
-      },
-      {
-        id: 29,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "'The water's edge' and 'Journey's end' are examples of:",
-        hi: "'The water's edge' (पानी का किनारा) और 'Journey's end' (यात्रा का अंत) किसके उदाहरण हैं?",
-        options: [
-          "Fixed idiomatic expressions using possessive 's",
-          "Grammatical errors in English",
-          "Compound gerunds",
-          "Double genitives"
-        ],
-        ans: 0,
-        expl: "ये अंग्रेजी भाषा के कुछ प्रसिद्ध तयशुदा मुहावरेदार प्रयोग (fixed idiomatic expressions) हैं जिनमें 's का प्रयोग मान्य है।"
-      },
-      {
-        id: 30,
-        cat: "use",
-        label: "2. 's vs of + noun",
-        q: "Identify the INCORRECT sentence among the following:",
-        hi: "निम्नलिखित में से गलत वाक्य को पहचानें:",
-        options: [
-          "I need ten dollars' worth of ice-cream.",
-          "We will meet at the water's edge at sunset.",
-          "The car's door was locked from inside.",
-          "He took the advice of a man he met in the train."
-        ],
-        ans: 2,
-        expl: "विकल्प C में inanimate car के लिए 'the door of the car' या 'the car door' बेहतर और मानक प्रयोग है।"
-      },
-
-      // UNIT 3: Compound Nouns (10 Questions: 31 to 40)
-      {
-        id: 31,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'Waiting list', 'diving-board', and 'swimming pool' are examples of which compound structure?",
-        hi: "'Waiting list', 'diving-board' और 'swimming pool' किस संरचना के उदाहरण हैं?",
-        options: [
-          "Noun + Gerund",
-          "Gerund (-ing) + Noun",
-          "Noun + Adjective",
-          "Verb + Adverb"
-        ],
-        ans: 1,
-        expl: "इनमें पहला शब्द '-ing' (gerund) है और दूसरा शब्द noun है: Gerund + Noun ('waiting list', 'driving licence', 'swimming pool')."
-      },
-      {
-        id: 32,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'Fruit picking', 'bird-watching', and 'coal-mining' are examples of which compound pattern?",
-        hi: "'Fruit picking', 'bird-watching' और 'coal-mining' किस पैटर्न के compound nouns हैं?",
-        options: [
-          "Gerund + Noun",
-          "Noun + Gerund (-ing)",
-          "Adjective + Noun",
-          "Noun + Preposition"
-        ],
-        ans: 1,
-        expl: "इनमें पहला शब्द noun (फल, पक्षी, कोयला) है और दूसरा शब्द '-ing' क्रिया रूप (gerund) है: Noun + Gerund."
-      },
-      {
-        id: 33,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "Why can't we say 'a cake piece' or 'a bread slice' as compound nouns?",
-        hi: "'A piece of cake' और 'a slice of bread' को 'cake piece' या 'bread slice' क्यों नहीं कह सकते?",
-        options: [
-          "Because words denoting quantity (piece, slice, lump, part) cannot form noun + noun compounds in this way",
-          "Because cake and bread are liquids",
-          "Because piece is a French word",
-          "Because cake is always plural"
-        ],
-        ans: 0,
-        expl: "नियम: मात्रा या हिस्से दर्शाने वाले शब्द (piece, slice, lump, part) को 'noun + noun' के रूप में नहीं बदला जा सकता; इनके लिए 'a piece of cake', 'a slice of bread' ही कहना पड़ता है।"
-      },
-      {
-        id: 34,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "What are the proper adjective forms for 'wool' and 'wood' when describing materials?",
-        hi: "ऊन (wool) और लकड़ी (wood) से बनी चीजों के लिए कौन से विशेषण रूप प्रयुक्त होते हैं?",
-        options: [
-          "Woolly and woody",
-          "Woollen and wooden",
-          "Woolish and woodish",
-          "Wool-made and wood-made"
-        ],
-        ans: 1,
-        expl: "ऊन और लकड़ी के लिए उनके वास्तविक विशेषण रूप 'woollen' (woollen sweater) और 'wooden' (wooden table/chair) का प्रयोग होता है।"
-      },
-      {
-        id: 35,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "What is the difference between 'gold' and 'golden' in English grammar?",
-        hi: "'Gold' और 'Golden' के प्रयोग में क्या अंतर है?",
-        options: [
-          "'Gold' is used for the real metal (gold medal); 'Golden' is used figuratively (golden handshake, golden opportunity)",
-          "They mean exactly the same thing and can be swapped anywhere",
-          "'Golden' is used for Olympic medals",
-          "'Gold' is only an adjective"
-        ],
-        ans: 0,
-        expl: "'Gold' का प्रयोग वास्तविक धातु (material) के लिए होता है (gold ring, gold medal); जबकि 'golden' का प्रयोग केवल लाक्षणिक/अलंकारिक (figurative) अर्थ में होता है (a golden opportunity, golden hair)."
-      },
-      {
-        id: 36,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'A coffee cup' and 'a reading lamp' show which relation between the words?",
-        hi: "'A coffee cup' (कॉफी का कप) और 'a reading lamp' (पढ़ने का लैंप) में पहला शब्द क्या दर्शाता है?",
-        options: [
-          "Material",
-          "Purpose (उद्देश्य - किसके लिए बनाया गया है)",
-          "Place of origin",
-          "Time of manufacture"
-        ],
-        ans: 1,
-        expl: "यहाँ पहला शब्द उद्देश्य (purpose) दर्शाता है: coffee cup = a cup designed for holding coffee; reading lamp = a lamp designed for reading."
-      },
-      {
-        id: 37,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'Fish-farm', 'gold-mine', and 'oil-rig' illustrate compound nouns where the first word indicates:",
-        hi: "'Fish-farm', 'gold-mine' और 'oil-rig' में पहला शब्द क्या बताता है?",
-        options: [
-          "The article produced or extracted at that work area (उत्पादित वस्तु)",
-          "The owner of the company",
-          "The size of the building",
-          "The country where it is located"
-        ],
-        ans: 0,
-        expl: "कार्यक्षेत्र (work areas जैसे farm, mine, rig) से पहले उत्पादित या निकाली जाने वाली वस्तु का नाम जोड़कर compound noun बनता है: fish-farm, gold-mine, oil-rig."
-      },
-      {
-        id: 38,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "Which of the following is a compound noun indicating TIME?",
-        hi: "समय (Time) दर्शाने वाला compound noun कौन सा है?",
-        options: [
-          "Sunday paper / Summer holiday",
-          "Corner shop",
-          "Petrol engine",
-          "Steel door"
-        ],
-        ans: 0,
-        expl: "'Sunday paper', 'summer holiday', 'November fogs', 'spring flowers' समय (time) दर्शाने वाले compound nouns हैं।"
-      },
-      {
-        id: 39,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'Gas fire', 'petrol engine', and 'oil stove' show which relationship?",
-        hi: "'Gas fire', 'petrol engine' और 'oil stove' में पहला शब्द क्या दर्शाता है?",
-        options: [
-          "The power or fuel used to operate the second (ईंधन या ऊर्जा)",
-          "The weight of the engine",
-          "The color of the appliance",
-          "The price of the machine"
-        ],
-        ans: 0,
-        expl: "यहाँ पहला शब्द उस मशीन या उपकरण को चलाने वाले ईंधन या शक्ति (power/fuel used) को दर्शाता है।"
-      },
-      {
-        id: 40,
-        cat: "compound",
-        label: "3. Compound Nouns",
-        q: "'Detective story', 'telephone bill', and 'peace talks' show:",
-        hi: "'Detective story', 'telephone bill' और 'peace talks' क्या दर्शाते हैं?",
-        options: [
-          "What the second noun is about or concerned with (विषय या संदर्भ)",
-          "The physical weight of the paper",
-          "The date of writing",
-          "The author's salary"
-        ],
-        ans: 0,
-        expl: "पहला शब्द यह बताता है कि कहानी, बिल या वार्ता किस विषय से संबंधित (concerned with) है: detective story, telephone bill, peace talks."
-      },
-
-      // UNIT 4: Advanced Cases, Omitted Nouns & Stress (10 Questions: 41 to 50)
-      {
-        id: 41,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "In the sentence 'You can buy these medicines at the chemist's', what does 'the chemist's' mean?",
-        hi: "'You can buy these medicines at the chemist's' में 'the chemist's' का क्या अर्थ है?",
-        options: [
-          "The chemist's family",
-          "The chemist's shop (दुकान)",
-          "The chemist's degree",
-          "The chemist's medicine bottle"
-        ],
-        ans: 1,
-        expl: "नियम: कई बार दुकान, क्लिनिक या दफ्तर दर्शाने वाले दूसरे noun (shop/office/surgery) को हटा दिया जाता है: 'the chemist's' = the chemist's shop, 'the butcher's' = the butcher's shop."
-      },
-      {
-        id: 42,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "'He is going to the dentist's' — here 'the dentist's' refers to:",
-        hi: "'He is going to the dentist's' में 'the dentist's' का तात्पर्य किससे है?",
-        options: [
-          "The dentist's house only",
-          "The dentist's surgery / clinic (दंत चिकित्सक का क्लिनिक)",
-          "The dentist's equipment",
-          "The dentist's toothbrush"
-        ],
-        ans: 1,
-        expl: "Doctor, dentist या vet के साथ possessive लगाने पर उसका तात्पर्य उनके क्लिनिक या सर्जरी से होता है: 'going to the dentist's' (= surgery/clinic)."
-      },
-      {
-        id: 43,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "'We had lunch at Bill's' means:",
-        hi: "'We had lunch at Bill's' का वास्तविक अर्थ क्या है?",
-        options: [
-          "We ate lunch with Bill's cat",
-          "We had lunch at Bill's house (बिल के घर पर)",
-          "Bill paid for our bill",
-          "Bill cooked on the street"
-        ],
-        ans: 1,
-        expl: "व्यक्तियों के नाम के साथ अकेले 's लगाकर उनके घर (house/home) का बोध कराया जाता है: 'at Bill's' (= Bill's house), 'at Ann's' (= Ann's house)."
-      },
-      {
-        id: 44,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "Why do famous stores like Harrods or Foyles sometimes drop the apostrophe?",
-        hi: "हैरोड्स (Harrods) या फॉयल्स (Foyles) जैसी मशहूर दुकानें apostrophe क्यों छोड़ देती हैं?",
-        options: [
-          "Because they forgot how to spell",
-          "Because well-known business names often evolve into established brand names without apostrophes",
-          "Because English grammar made it illegal",
-          "Because they are located in France"
-        ],
-        ans: 1,
-        expl: "किताब के अनुसार: कुछ प्रसिद्ध व्यवसाय (जैसे Harrods, Foyles) अपने नाम में apostrophe छोड़ देते हैं, जबकि अन्य (जैसे Claridge's, Sotheby's) possessive रूप बनाए रखते हैं।"
-      },
-      {
-        id: 45,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "In compound nouns of PURPOSE (like 'coffee cup') or GERUND (like 'swimming pool'), where is the voice stress placed?",
-        hi: "उद्देश्य (Purpose) या Gerund वाले compound nouns ('coffee cup', 'swimming pool') में उच्चारण का जोर (Stress) कहाँ होता है?",
-        options: [
-          "On the FIRST word ('coffee cup, 'swimming pool)",
-          "On the second word (coffee 'cup)",
-          "Equally on both words",
-          "On neither word"
-        ],
-        ans: 0,
-        expl: "उच्चारण नियम: Noun + Gerund, Gerund + Noun और Purpose (उद्देश्य) दर्शाने वाले शब्दों में जोर हमेशा पहले शब्द पर होता है: 'coffee cup, 'swimming pool, 'tin opener."
-      },
-      {
-        id: 46,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "In place names like 'King's Road' or 'Waterloo Bridge', what is the normal stress pattern?",
-        hi: "स्थानों के नाम ('King's Road', 'Waterloo Bridge') में सामान्यतः स्ट्रेस कैसा होता है?",
-        options: [
-          "Both words usually have equal stress ('King's 'Road, 'Waterloo 'Bridge)",
-          "Only the first word is stressed",
-          "Only the second word is stressed",
-          "Place names have no stress"
-        ],
-        ans: 0,
-        expl: "सामान्यतः स्थान-नामों (place-name combinations) में दोनों शब्दों पर बराबर जोर (equal stress) होता है: 'King's 'Road, 'Waterloo 'Bridge, 'Leicester 'Square."
-      },
-      {
-        id: 47,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "WHAT IS THE FAMOUS EXCEPTION to the place-name stress rule?",
-        hi: "स्थान-नामों के स्ट्रेस नियम का सबसे महत्वपूर्ण अपवाद (Exception) क्या है?",
-        options: [
-          "When the word ends in Road",
-          "When the last word is 'Street', the word 'Street' is UNSTRESSED ('Bond Street, 'Oxford Street)",
-          "When the city is London",
-          "When the street has traffic"
-        ],
-        ans: 1,
-        expl: "अति-महत्वपूर्ण अपवाद! जब स्थान के नाम में अंतिम शब्द 'Street' होता है, तो 'Street' पर कोई जोर (unstressed) नहीं होता, सारा जोर पहले शब्द पर होता है: 'Bond Street, 'Oxford Street!"
-      },
-      {
-        id: 48,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "In a simple material noun like 'stone wall' or 'kitchen table', what is the typical stress?",
-        hi: "'Stone wall' या 'kitchen table' जैसे सामान्य Noun + Noun में आमतौर पर स्ट्रेस कहाँ होता है?",
-        options: [
-          "Both words are usually stressed ('stone 'wall, 'kitchen 'table)",
-          "Only 'wall' is stressed",
-          "Only 'stone' is stressed",
-          "Neither word is stressed"
-        ],
-        ans: 0,
-        expl: "किताब के अनुसार: सामान्य Noun + Noun युग्मों में प्रायः दोनों शब्दों पर जोर दिया जाता है ('stone 'wall, 'kitchen 'table)."
-      },
-      {
-        id: 49,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "Which of the following place names has the word 'Street' UNSTRESSED?",
-        hi: "निम्नलिखित में से किस नाम में 'Street' शब्द unstressed (बिना जोर के) बोला जाता है?",
-        options: [
-          "Oxford Street",
-          "King's Road",
-          "Waterloo Bridge",
-          "Leicester Square"
-        ],
-        ans: 0,
-        expl: "'Oxford Street' और 'Bond Street' में 'Street' unstressed रहता है (जोर केवल 'Oxford' पर होता है)। बाकी तीनों में दोनों शब्दों पर equal stress होता है।"
-      },
-      {
-        id: 50,
-        cat: "advanced",
-        label: "4. Advanced & Stress",
-        q: "Which sentence demonstrates personification allowing a season to take possessive 's?",
-        hi: "किस वाक्य में मौसम का मानवीकरण (Personification) होने के कारण 's का प्रयोग सही है?",
-        options: [
-          "We awaited Autumn's return with golden leaves.",
-          "The autumn's temperature is very cold.",
-          "I bought an autumn's jacket.",
-          "The spring's rain fell on the ground."
-        ],
-        ans: 0,
-        expl: "नियम: Spring या Autumn में सामान्यतः 's नहीं लगता, जब तक कि उनका कविताओं या साहित्य में मानवीकरण (personified) न किया गया हो: 'Autumn's return' (पतझड़ की वापसी)."
-      }
+    <script>
+    // 20 Embedded Concept Practice Questions (10 Pairs)
+    // Distributed: C (40%), D (35%), A (15%), B (10% - least B)
+    const conceptQuestions = [
+      { id:1, sub:'1a', q:"In 'a man's job' vs 'men's work', why is 's used with 'men'?", hi:"'men's work' में 's क्यों लगा है?", opts:["Because men is singular","Because men is a pronoun","Because men is an irregular plural not ending in 's'","Because men is inanimate"], ans:2, expl:"'men' एक irregular plural है जो 's' पर खत्म नहीं होता, अतः इसमें सामान्य संज्ञा की तरह 's लगता है।" },
+      { id:2, sub:'1a', q:"What is the correct possessive form for 'the room of the children'?", hi:"'बच्चों का कमरा' के लिए सही possessive रूप क्या होगा?", opts:["The childrens' room","The childrens's room","The children room","The children's room"], ans:3, expl:"'children' 's' पर समाप्त नहीं होता, इसलिए 's जुड़ेगा: 'the children's room'।" },
+      { id:3, sub:'1b', q:"How should the possessive form of classical name 'Pythagoras' (theorem) be written?", hi:"शास्त्रीय नाम 'Pythagoras' में क्या जुड़ता है?", opts:["Pythagoras' Theorem (only apostrophe)","Pythagoras's Theorem","Pythagoras theorem's","The theorem of Pythagoras's"], ans:0, expl:"प्राचीन यूनानी/शास्त्रीय नामों में केवल apostrophe (') लगता है: 'Pythagoras' Theorem'।" },
+      { id:4, sub:'1b', q:"What is the correct possessive form for a school meant for girls?", hi:"लड़कियों के स्कूल के लिए शुद्ध possessive रूप क्या है?", opts:["A girl's school","A girls's school","A girls' school","A girl school's"], ans:2, expl:"'girls' पहले से 's' पर समाप्त plural है, अतः केवल apostrophe (') लगेगा: 'a girls' school'।" },
+      { id:5, sub:'1c', q:"When 'the daughter of the politician' is converted to possessive 's, what happens to 'the' before daughter?", hi:"Possessive 's लगाने पर अधिकार वाली वस्तु से पहले का 'the' कहाँ जाता है?", opts:["It stays unchanged","It turns into 'a'","It moves to the end","It disappears: the politician's daughter"], ans:3, expl:"Possessive 's आते ही अधिकार वाली वस्तु से पहले का article हट जाता है: 'the politician's daughter'।" },
+      { id:6, sub:'1c', q:"Where is possessive 's placed in compound nouns like 'brother-in-law'?", hi:"'brother-in-law' में possessive 's कहाँ लगाया जाता है?", opts:["On the first word: brother's-in-law","On all words: brother's-in-law's","On the last word: brother-in-law's","Before the word: 's brother-in-law"], ans:2, expl:"Compound nouns में possessive 's हमेशा अंतिम शब्द पर लगता है: 'my brother-in-law's guitar'।" },
+      { id:7, sub:'2a', q:"When referring to inanimate objects like 'the walls of the town', what is the standard Noun + Noun equivalent?", hi:"'the walls of the town' का Noun+Noun रूप क्या होगा?", opts:["The towns walls","The town's walls","The town walls (first noun acts as adjective)","The walls town"], ans:2, expl:"'the town walls' में पहला noun विशेषण का कार्य करता है और एकवचन रहता है।" },
+      { id:8, sub:'2a', q:"Which of the following correctly describes 'the roofs of the churches' as Noun + Noun?", hi:"'the roofs of the churches' का Noun+Noun रूप क्या होगा?", opts:["The churches roofs","The church's roofs","The churches's roofs","The church roofs (first noun never pluralizes)"], ans:3, expl:"पहला noun विशेषण बनने के कारण कभी plural नहीं बनता: 'the church roofs' (NOT churches roofs)!" },
+      { id:9, sub:'2b', q:"In 'The boys obeyed the directions of a man with a whistle', why is 'of' required?", hi:"यहाँ 'of' का प्रयोग क्यों अनिवार्य है?", opts:["Because the possessor is followed by a descriptive phrase ('with a whistle')","Because man is plural","Because whistle is an animal","Because directions is negative"], ans:0, expl:"जब संज्ञा के बाद वर्णनात्मक वाक्यांश (phrase) हो तो 'of' लगता है ('a man with a whistle's directions' ❌ अशुद्ध है)!" },
+      { id:10, sub:'2b', q:"Can possessive 's be used with ships and boats?", hi:"क्या जहाजों और नावों के साथ possessive 's मान्य है?", opts:["No, completely forbidden","Only for submarines","Yes, expressions like 'the ship's bell' are standard","Only when sinking"], ans:2, expl:"जहाजों और नौकाओं के साथ 's पूरी तरह मानक है: 'the ship's bell', 'the yacht's mast'।" },
+      { id:11, sub:'2c', q:"Which time expression correctly uses the possessive form?", hi:"समय से जुड़ा कौन सा possessive रूप सही है?", opts:["A week holiday","A weeks holiday","A weeks's holiday","A week's holiday"], ans:3, expl:"समय के साथ 's मान्य है: 'a week's holiday', 'today's paper', 'tomorrow's weather'।" },
+      { id:12, sub:'2c', q:"In the idiom 'for goodness' sake', why is there only an apostrophe after goodness?", hi:"'for goodness' sake' में केवल apostrophe क्यों लगता है?", opts:["Because goodness is plural","Because goodness ends in 's', avoiding excessive hissing sound","Because sake is a verb","Because goodness is French"], ans:1, expl:"'goodness' 's' पर खत्म होता है, अत्यधिक फुफकार से बचने के लिए केवल apostrophe (') लगता है।" },
+      { id:13, sub:'3a', q:"'Waiting list', 'diving-board', and 'swimming pool' represent which compound pattern?", hi:"'Waiting list', 'diving-board' किस पैटर्न के compound nouns हैं?", opts:["Noun + Gerund","Noun + Adjective","Gerund (-ing) + Noun","Adverb + Noun"], ans:2, expl:"इनमें पहला शब्द gerund (-ing) और दूसरा noun है: Gerund + Noun।" },
+      { id:14, sub:'3a', q:"'Fruit picking', 'bird-watching', and 'coal-mining' represent which pattern?", hi:"'Fruit picking', 'bird-watching' किस पैटर्न के हैं?", opts:["Gerund + Noun","Adjective + Gerund","Preposition + Noun","Noun + Gerund (-ing)"], ans:3, expl:"पहला शब्द noun और दूसरा '-ing' रूप है: Noun + Gerund।" },
+      { id:15, sub:'3b', q:"Why can't we say 'a cake piece' or 'a bread slice' as compound nouns?", hi:"'cake piece' या 'bread slice' कहना गलत क्यों है?", opts:["Because quantity words (piece, slice, lump) cannot form Noun+Noun in this way","Because cake is liquid","Because piece is an adjective","Because bread is French"], ans:0, expl:"मात्रा दर्शाने वाले शब्द (piece, slice, lump) compound noun नहीं बनते; 'a piece of cake' ही कहना पड़ता है।" },
+      { id:16, sub:'3b', q:"What is the difference between 'gold' and 'golden' in English grammar?", hi:"'Gold' और 'Golden' में क्या अंतर है?", opts:["No difference at all","'Golden' is for real metal","'Gold' is for real metal; 'Golden' is figurative (golden opportunity)","'Gold' is only an adverb"], ans:2, expl:"'Gold' वास्तविक धातु के लिए (gold medal), जबकि 'golden' लाक्षणिक/अलंकारिक अर्थ में (golden opportunity)।" },
+      { id:17, sub:'4a', q:"In 'You can buy these medicines at the chemist's', what does 'the chemist's' mean?", hi:"'the chemist's' का क्या अर्थ है?", opts:["The chemist's degree","The chemist's family","The chemist's car","The chemist's shop"], ans:3, expl:"दुकान, क्लिनिक या दफ्तर दर्शाने वाले दूसरे noun को छोड़ दिया जाता है: 'the chemist's' = chemist shop।" },
+      { id:18, sub:'4a', q:"'We had lunch at Bill's' means:", hi:"'We had lunch at Bill's' का वास्तविक अर्थ क्या है?", opts:["Bill cooked outside","We had lunch at Bill's house","Bill paid our bill","Bill had no lunch"], ans:1, expl:"व्यक्तियों के नाम के साथ 's लगाकर उनके घर (house) का बोध कराया जाता है: 'at Bill's' (= Bill's house)।" },
+      { id:19, sub:'4b', q:"In compound nouns expressing PURPOSE (like 'coffee cup') or GERUND ('swimming pool'), where is voice stress placed?", hi:"Purpose या Gerund वाले compound nouns में स्ट्रेस कहाँ होता है?", opts:["On both words equally","On the second word","On the FIRST word ('coffee cup, 'swimming pool)","On neither word"], ans:2, expl:"Purpose और Gerund वाले यौगिकों में हमेशा पहले शब्द पर स्ट्रेस होता है: 'coffee cup, 'swimming pool।" },
+      { id:20, sub:'4b', q:"What is the famous exception to the place-name stress rule?", hi:"स्थान-नामों के स्ट्रेस का सबसे बड़ा अपवाद क्या है?", opts:["When the place is in London","When the road has trees","When the name is long","When the last word is 'Street', 'Street' is UNSTRESSED ('Oxford Street)"], ans:3, expl:"जब स्थान के नाम में अंतिम शब्द 'Street' होता है, तो 'Street' unstressed रहता है: 'Bond Street, 'Oxford Street!" }
     ];
 
-    let userAnswers = {};
-    let checkedStatus = {};
-    let activeCategory = 'all';
-    let currentPage = 1;
-    const pageSize = 10;
+    // 30 Final Test Questions (Categorized across 4 Units)
+    // Distributed: C (43.3%), D (33.3%), A (16.7%), B (6.7% - least B)
+    const testQuestions = [
+      { id:1, unit:'topic-1', label:'Unit 01: Irregular Plurals', q:"Which is the correct possessive form for clothes meant for women?", hi:"महिलाओं के कपड़ों के लिए सही possessive रूप चुनें:", opts:["Womens' clothes","Womens's clothes","Women's clothes","Woman clothes'"], ans:2, expl:"'Women' irregular plural है जो 's' पर खत्म नहीं होता, अतः 's लगेगा: 'women's clothes'।" },
+      { id:2, unit:'topic-1', label:'Unit 01: Plural in -s', q:"Select the grammatically CORRECT phrase for the hostel of the students:", hi:"छात्रों का छात्रावास — शुद्ध रूप पहचानें:", opts:["The student's hostel","The students's hostel","The student hostel's","The students' hostel"], ans:3, expl:"Plural 'students' 's' पर खत्म होता है, अतः केवल apostrophe (') लगेगा: 'the students' hostel'।" },
+      { id:3, unit:'topic-1', label:'Unit 01: Classical Names', q:"Which expression correctly names the scientific law discovered by Archimedes?", hi:"आर्किमिडीज का सिद्धांत — सही शास्त्रीय possessive रूप:", opts:["Archimedes's Law","Archimede's Law","Archimedes' Law","The law of Archimedes's"], ans:2, expl:"शास्त्रीय प्राचीन नामों में केवल apostrophe (') जुड़ता है: 'Archimedes' Law'।" },
+      { id:4, unit:'topic-1', label:'Unit 01: Modern Surnames in -s', q:"Regarding modern names ending in 's' like Mr Jones, what is the grammar rule?", hi:"'Mr Jones' के घर के संबंध में व्याकरण क्या कहता है?", opts:["Both 'Mr Jones's house' and 'Mr Jones' house' are acceptable","Only Mr Jones' house is valid","Only Mr Jones's house is valid","Mr Jone's house"], ans:0, expl:"आधुनिक नामों में 's या केवल (') दोनों रूप व्याकरण में पूरी तरह मान्य हैं।" },
+      { id:5, unit:'topic-1', label:'Unit 01: Family Plural Surnames', q:"The car belonging to the Smith family (the Smiths) is written as:", hi:"स्मिथ परिवार की कार — सही रूप क्या होगा?", opts:["The Smith's car","The Smiths's car","The Smiths' car","The car of Smiths's"], ans:2, expl:"परिवार के नाम 'the Smiths' में अंत में 's होने से केवल apostrophe (') लगेगा: 'the Smiths' car'।" },
+      { id:6, unit:'topic-1', label:'Unit 01: Title with Last Word', q:"How do you write the wives of Henry the Eighth?", hi:"हेनरी अष्टम की पत्नियाँ — सही possessive क्या होगा?", opts:["Henry's the Eighth wives","Henry's the Eighth's wives","Henry the Eighth wives'","Henry the Eighth's wives"], ans:3, expl:"शीर्षक में अंतिम शब्द 'Eighth' है, अतः 's उसी में जुड़ेगा: 'Henry the Eighth's wives'।" },
+      { id:7, unit:'topic-1', label:'Unit 01: Initials Possessive', q:"What is the correct possessive form for the secretary of the Prime Minister (PM)?", hi:"प्रधानमंत्री (PM) का सचिव — सही रूप पहचानें:", opts:["The P.M' secretary","The PMs' secretary","The PM's secretary","The secretary PM's"], ans:2, expl:"Initials (PM, MP, VIP) में 's जोड़ा जाता है: 'the PM's secretary', 'the MP's briefcase'।" },
+      { id:8, unit:'topic-2', label:'Unit 02: Inanimate Objects', q:"Why do we say 'the keys of the car' instead of 'the car's keys' in formal style?", hi:"निर्जीव वस्तुओं के साथ 'of' का प्रयोग क्यों प्राथमिक है?", opts:["Because car is plural","Because keys are metallic","Because car has wheels","Because possessive 's is chiefly for living beings; inanimate things use 'of'"], ans:3, expl:"Possessive 's मुख्य रूप से सजीव (living beings) के लिए होता है; निर्जीव में 'of' सुरक्षित है।" },
+      { id:9, unit:'topic-2', label:'Unit 02: Noun+Noun Adjective', q:"When 'the roofs of the churches' is converted to Noun+Noun, what happens?", hi:"'the roofs of the churches' को Noun+Noun में बदलने पर क्या होगा?", opts:["The church roofs (first noun acts as adjective and is singular)","The churches roofs","The churches' roofs","The church's roofs"], ans:0, expl:"पहला noun विशेषण बन जाता है और कभी plural नहीं बनता: 'the church roofs'।" },
+      { id:10, unit:'topic-2', label:'Unit 02: Descriptive Phrase', q:"'He took the advice of a couple he met on the train.' Why is 'of' used here?", hi:"यहाँ 'of' का प्रयोग क्यों अनिवार्य है?", opts:["Because train is fast","Because couple is plural","Because the possessor is followed by a clause ('he met on the train')","Because advice is countable"], ans:2, expl:"जब संज्ञा के बाद कोई clause या phrase हो, तो 'of' लगाना अनिवार्य होता है।" },
+      { id:11, unit:'topic-2', label:'Unit 02: Ships and Boats', q:"Which expression showing a ship's part is standard English?", hi:"जहाज का घंटा — कौन सा रूप मानक अंग्रेज़ी है?", opts:["The bell of the ship's","The ship bell's","The ships bell","The ship's bell"], ans:3, expl:"जहाजों और नौकाओं के साथ possessive 's पूरी तरह मानक है: 'the ship's bell'।" },
+      { id:12, unit:'topic-2', label:'Unit 02: Vehicle Wings', q:"Regarding airplanes and gliders, which construction is considered safer in formal style?", hi:"ग्लाइडर के पंखों के लिए औपचारिक रूप से कौन सी रचना अधिक सुरक्षित है?", opts:["The wings glider","A glider wings'","The wings of a glider (or a glider's wings)","Glider's the wings"], ans:2, expl:"वाहनों में 'the wings of a glider' रचना अधिक सुरक्षित मानी जाती है।" },
+      { id:13, unit:'topic-2', label:'Unit 02: Time Holiday', q:"How do you correctly write a holiday lasting for two weeks?", hi:"दो सप्ताह की छुट्टी — सही possessive रूप क्या होगा?", opts:["A two week's holiday","A two-weeks's holiday","Two week holiday","Two weeks' holiday (or a two-week holiday)"], ans:3, expl:"Plural 'two weeks' के अंत में केवल apostrophe आएगा: 'two weeks' holiday'।" },
+      { id:14, unit:'topic-2', label:'Unit 02: Idiom Stone Throw', q:"What does the idiom 'a stone's throw' signify?", hi:"'A stone's throw' मुहावरे का क्या अर्थ है?", opts:["Throwing pebbles in water","A very dangerous rock","A very short distance away (बहुत नज़दीक)","A mountain path"], ans:2, expl:"'A stone's throw' का अर्थ है बहुत ही पास / थोड़ी दूरी पर (very short distance)।" },
+      { id:15, unit:'topic-2', label:'Unit 02: Seasons Rule', q:"Which statement about seasons taking possessive 's is TRUE?", hi:"मौसमों के possessive नियम के बारे में क्या सत्य है?", opts:["Winter and summer can take 's (a winter's day); spring and autumn only when personified","All seasons take 's always","No season can ever take 's","Only autumn takes 's"], ans:0, expl:"Winter और summer में 's लगता है; spring व autumn में केवल मानवीकरण पर लगता है।" },
+      { id:16, unit:'topic-3', label:'Unit 03: Gerund + Noun', q:"'Diving-board', 'driving licence', and 'landing card' are examples of:", hi:"'Diving-board', 'driving licence' किस संरचना के उदाहरण हैं?", opts:["Noun + Gerund","Adjective + Noun","Gerund (-ing) + Noun","Noun + Preposition"], ans:2, expl:"इनमें पहला शब्द '-ing' (gerund) है और दूसरा noun है: Gerund + Noun।" },
+      { id:17, unit:'topic-3', label:'Unit 03: Noun + Gerund', q:"'Coal-mining', 'surf-riding', and 'weight-lifting' are examples of:", hi:"'Coal-mining', 'weight-lifting' किस संरचना के उदाहरण हैं?", opts:["Gerund + Noun","Verb + Adverb","Preposition + Gerund","Noun + Gerund (-ing)"], ans:3, expl:"पहला शब्द noun और दूसरा gerund है: Noun + Gerund।" },
+      { id:18, unit:'topic-3', label:'Unit 03: Quantity Constraint', q:"Why is 'cake piece' or 'bread slice' considered incorrect in English?", hi:"'cake piece' या 'bread slice' अशुद्ध क्यों है?", opts:["Because cake is sweet","Because quantity words (piece, slice, lump) cannot form compounds in this way","Because bread is solid","Because piece is countable"], ans:1, expl:"मात्रा दर्शाने वाले शब्द (piece, slice, lump) compound noun नहीं बनते; 'a slice of bread' ही सही है।" },
+      { id:19, unit:'topic-3', label:'Unit 03: Wool and Wood', q:"What are the correct adjective forms for materials 'wool' and 'wood'?", hi:"ऊन और लकड़ी से बनी वस्तुओं के लिए सही विशेषण रूप क्या हैं?", opts:["Wooly and woody","Wool-like and wood-like","Woollen and wooden (woollen sweater, wooden table)","Wooled and wooded"], ans:2, expl:"ऊन और लकड़ी के लिए उनके वास्तविक विशेषण 'woollen' और 'wooden' प्रयुक्त होते हैं।" },
+      { id:20, unit:'topic-3', label:'Unit 03: Gold vs Golden', q:"'He was given a ___ opportunity to study abroad.' Which word fits figuratively?", hi:"लाक्षणिक अर्थ में कौन सा शब्द सही है?", opts:["gold","gilded","gold-made","golden (figurative use)"], ans:3, expl:"लाक्षणिक (figurative) अर्थ में 'golden opportunity' का प्रयोग होता है (धातु के लिए 'gold medal')।" },
+      { id:21, unit:'topic-3', label:'Unit 03: Purpose Relation', q:"In 'coffee cup' and 'reading lamp', what relationship does the first noun express?", hi:"'coffee cup' और 'reading lamp' में पहला शब्द क्या व्यक्त करता है?", opts:["Purpose (किस उपयोग/कार्य के लिए बनाया गया है)","Material","Time of day","Price"], ans:0, expl:"पहला शब्द उद्देश्य (purpose) बताता है: cup for coffee, lamp for reading।" },
+      { id:22, unit:'topic-3', label:'Unit 03: Fuel Power', q:"In 'petrol engine', 'gas fire', and 'oil stove', the first noun denotes:", hi:"'petrol engine' और 'gas fire' में पहला noun क्या दर्शाता है?", opts:["The inventor","The country","The fuel or power used to operate it","The sound it makes"], ans:2, expl:"पहला noun उपकरण को चलाने वाले ईंधन या शक्ति (fuel/power used) को दर्शाता है।" },
+      { id:23, unit:'topic-3', label:'Unit 03: Work Area Output', q:"'Fish-farm', 'gold-mine', and 'oil-rig' show compound nouns where the first word is:", hi:"'Fish-farm' और 'gold-mine' में पहला शब्द क्या है?", opts:["The manager's name","The government tax","The location","The article produced or extracted at that work area"], ans:3, expl:"कार्यक्षेत्र में उत्पादित या निकाली जाने वाली वस्तु (article produced) को पहले जोड़ते हैं।" },
+      { id:24, unit:'topic-4', label:'Unit 04: Chemist Shop Ellipsis', q:"In 'You can buy these tablets at the chemist's', what noun has been omitted?", hi:"'at the chemist's' में कौन सा संज्ञा शब्द छिपा हुआ (omitted) है?", opts:["laboratory","shop (chemist's shop)","medicine","hospital"], ans:1, expl:"'the chemist's' का अर्थ 'the chemist's shop' होता है; बोलचाल में 'shop' छोड़ दिया जाता है।" },
+      { id:25, unit:'topic-4', label:'Unit 04: Dentist Surgery', q:"'He is visiting the dentist's' refers to:", hi:"'the dentist's' का संदर्भ किससे है?", opts:["The dentist's family","The dentist's chair","The dentist's clinic / surgery","The dentist's home only"], ans:2, expl:"Doctor, dentist या vet के साथ possessive उनके क्लिनिक/सर्जरी (surgery/clinic) को दर्शाता है।" },
+      { id:26, unit:'topic-4', label:'Unit 04: At Someone House', q:"'We spent the weekend at Bill's' means:", hi:"'at Bill's' का वास्तविक अर्थ क्या है?", opts:["Bill's office","Bill's car","Bill's bank account","Bill's house (बिल के घर पर)"], ans:3, expl:"व्यक्तियों के नाम के साथ अकेले 's लगाकर उनके घर (house) का बोध कराया जाता है।" },
+      { id:27, unit:'topic-4', label:'Unit 04: Purpose Stress', q:"In compound nouns denoting PURPOSE (like 'coffee cup' or 'tin opener'), the stress is on:", hi:"Purpose दर्शाने वाले compound nouns में स्ट्रेस कहाँ होता है?", opts:["The second word","Both words equally","The FIRST word ('coffee cup, 'tin opener)","Neither word"], ans:2, expl:"उद्देश्य (purpose) और gerund वाले यौगिकों में हमेशा पहले शब्द पर स्ट्रेस होता है।" },
+      { id:28, unit:'topic-4', label:'Unit 04: Place Name Equal Stress', q:"In place names like 'King's Road' and 'Waterloo Bridge', what is the normal stress?", hi:"स्थानों के नाम में सामान्यतः स्ट्रेस कैसा होता है?", opts:["Both words have equal stress ('King's 'Road, 'Waterloo 'Bridge)","Only the first word is stressed","Only the second word is stressed","Place names have no stress"], ans:0, expl:"स्थान-नामों में सामान्यतः दोनों शब्दों पर बराबर ज़ोर (equal stress) होता है।" },
+      { id:29, unit:'topic-4', label:'Unit 04: Oxford Street Rule', q:"What is the pronunciation stress rule for place names ending in the word 'Street'?", hi:"'Street' पर समाप्त होने वाले स्थान-नामों का उच्चारण नियम क्या है?", opts:["Street is heavily stressed","Both words have equal stress","The word 'Street' is UNSTRESSED; stress falls on the first word ('Oxford Street)","Street is pronounced silently"], ans:2, expl:"सबसे बड़ा अपवाद: 'Street' हमेशा unstressed रहता है; ज़ोर केवल पहले शब्द पर होता है ('Oxford Street)!" },
+      { id:30, unit:'topic-4', label:'Unit 04: Season Personification', q:"Select the sentence where an apostrophe with a season is justified by personification:", hi:"किस वाक्य में मौसम का मानवीकरण होने से 's का प्रयोग सही है?", opts:["The summer's heat was unbearable.","The winter's ice broke.","The spring's flower opened.","We celebrated Autumn's return with golden music."], ans:3, expl:"साहित्य में जब मौसम का मानवीकरण (personified) किया जाए, तभी 's लगता है: 'Autumn's return'।" }
+    ];
 
-    function getFilteredList() {
-      if (activeCategory === 'all') return questions;
-      return questions.filter(q => q.cat === activeCategory);
-    }
+    // Render 2-Question Concept Pairs in Theory
+    const subPairs = [
+      { id: 'pair-1a', title: "1A. Singular & Irregular Plurals + 's", start: 0 },
+      { id: 'pair-1b', title: "1B. Plural in -s (') & Classical Names", start: 2 },
+      { id: 'pair-1c', title: "1C. Compounds, Titles & Article 'the'", start: 4 },
+      { id: 'pair-2a', title: "2A. Living vs Inanimate & Noun+Noun", start: 6 },
+      { id: 'pair-2b', title: "2B. Phrase/Clause After Noun & Vehicles", start: 8 },
+      { id: 'pair-2c', title: "2C. Time, Money, Idioms & Seasons", start: 10 },
+      { id: 'pair-3a', title: "3A. Three Compound Noun Patterns", start: 12 },
+      { id: 'pair-3b', title: "3B. Purpose, Materials & Quantity Limit", start: 14 },
+      { id: 'pair-4a', title: "4A. Omitted Second Noun (Shops & Homes)", start: 16 },
+      { id: 'pair-4b', title: "4B. Stress Rules & 'Oxford Street' Exception", start: 18 }
+    ];
 
-    function updateProgress() {
-      let count = 0;
-      Object.keys(checkedStatus).forEach(id => {
-        if (checkedStatus[id].checked && checkedStatus[id].isCorrect) {
-          count++;
-        }
-      });
-      document.getElementById('lesson-progress').value = count;
-      document.getElementById('progress-label').textContent = `${count} of 50 questions solved (${Math.round((count/50)*100)}%)`;
-      renderJumpGrid();
-    }
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
 
-    function renderJumpGrid() {
-      const grid = document.getElementById('jump-grid');
-      grid.innerHTML = '';
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const box = document.getElementById(pair.id);
+        if (!box) return;
 
-      questions.forEach(q => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'jump-btn';
-        btn.textContent = q.id;
-        btn.title = `Question ${q.id} (${q.label})`;
+        const pairQs = conceptQuestions.slice(pair.start, pair.start + 2);
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
 
-        const st = checkedStatus[q.id];
-        if (st && st.checked) {
-          btn.classList.add(st.isCorrect ? 'correct' : 'retry');
-        } else if (userAnswers[q.id] !== undefined) {
-          btn.classList.add('selected');
-        }
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
 
-        btn.onclick = () => {
-          activeCategory = 'all';
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.toggle('active', b.dataset.filter === 'all');
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
           });
-          const filtered = getFilteredList();
-          const idx = filtered.findIndex(item => item.id === q.id);
-          currentPage = Math.floor(idx / pageSize) + 1;
-          renderQuestions();
 
-          setTimeout(() => {
-            const card = document.getElementById(`q-card-${q.id}`);
-            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 80);
-        };
-
-        grid.appendChild(btn);
-      });
-    }
-
-    function renderQuestions() {
-      const container = document.getElementById('task-container');
-      container.innerHTML = '';
-
-      const filtered = getFilteredList();
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-      if (currentPage < 1) currentPage = 1;
-
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-
-      document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
-      document.getElementById('page-summary-text').textContent = `Showing Page ${currentPage} of ${totalPages} (${filtered.length} Questions).`;
-      document.getElementById('btn-prev').disabled = currentPage === 1;
-      document.getElementById('btn-next').disabled = currentPage === totalPages;
-
-      pageItems.forEach(q => {
-        const card = document.createElement('article');
-        card.className = 'mint-card task-card';
-        card.id = `q-card-${q.id}`;
-
-        const st = checkedStatus[q.id];
-        const selected = userAnswers[q.id];
-
-        let statusText = 'Your turn';
-        let statusClass = '';
-        if (st && st.checked) {
-          statusText = st.isCorrect ? '✓ Correct' : 'Try again';
-          statusClass = st.isCorrect ? 'correct' : 'retry';
-        } else if (selected !== undefined) {
-          statusText = 'Selected';
-        }
-
-        let choicesHtml = '<div class="choices">';
-        q.options.forEach((opt, idx) => {
-          const isSelected = selected === idx;
-          let optClass = 'choice';
-          if (isSelected) optClass += ' selected';
-
-          if (st && st.checked) {
-            if (idx === q.ans) optClass += ' right-choice';
-            else if (isSelected && !st.isCorrect) optClass += ' wrong-choice';
+          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
           }
 
-          choicesHtml += `
-            <div class="${optClass}" onclick="selectChoice(${q.id}, ${idx})">
-              <span class="choice-badge">${String.fromCharCode(65 + idx)}</span>
-              <span>${opt}</span>
+          html += `
+            <div class="${cardClass}" id="card-concept-${q.id}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                  ${statusBadge}
+                  <span style="font-size:10px; color:#64748b;">Concept Test</span>
+                </div>
+                <div style="font-weight:700; margin-bottom:3px; line-height:1.35;">${q.q}</div>
+                <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:6px;">${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; gap:6px;">
+                  <button class="mint-btn" type="button" onclick="checkConceptQ(${q.id})" style="font-size:11px; padding:4px 10px; border-radius:8px;">
+                    Check ✓
+                  </button>
+                  <button class="quiet-btn" type="button" onclick="resetConceptQ(${q.id})" style="font-size:10.5px; padding:3px 8px; border-radius:6px; color:#64748b;">
+                    Reset ↺
+                  </button>
+                </div>
+                ${isChk ? `
+                  <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; font-size:11px; line-height:1.45; color:#78350f;">
+                    <strong>व्याख्या:</strong> ${q.expl}
+                  </div>
+                ` : ''}
+              </div>
             </div>
           `;
         });
-        choicesHtml += '</div>';
 
-        let feedbackHtml = '';
-        if (st && st.checked) {
-          feedbackHtml = `<p class="task-feedback" data-state="${st.isCorrect ? 'correct' : 'retry'}">
-            ${st.isCorrect ? '✓ Correct! Shabaash, well done.' : 'Not quite yet. Read the short solution and try again.'}
-          </p>`;
-        }
-
-        const isSolOpen = st && st.checked && !st.isCorrect;
-
-        card.innerHTML = `
-          <div class="task-heading">
-            <span class="eyebrow">Question ${q.id < 10 ? '0' + q.id : q.id} · ${q.label}</span>
-            <span class="task-status ${statusClass}">${statusText}</span>
-          </div>
-          <h3>${q.q}</h3>
-          <p class="task-hindi">${q.hi}</p>
-          ${choicesHtml}
-          <div class="task-bottom">
-            <div class="task-actions">
-              <button class="mint-btn" style="font-size:13px; padding:10px 18px;" type="button" onclick="checkSingle(${q.id})">Check answer ✓</button>
-              <button class="quiet-btn" type="button" onclick="toggleSol(${q.id})">Short solution · Understand</button>
-            </div>
-            ${feedbackHtml}
-            <details id="sol-${q.id}" class="solution" ${isSolOpen ? 'open' : ''}>
-              <summary>Short solution · Understand</summary>
-              <p><strong>Correct:</strong> Option ${String.fromCharCode(65 + q.ans)} ("${q.options[q.ans]}")</p>
-              <p style="color:#78350f;"><strong>Explanation:</strong> ${q.expl}</p>
-            </details>
-          </div>
-        `;
-
-        container.appendChild(card);
+        html += `</div>`;
+        box.innerHTML = html;
       });
     }
 
-    function selectChoice(qId, idx) {
-      userAnswers[qId] = idx;
-      checkedStatus[qId] = { checked: false, isCorrect: false };
-      updateProgress();
-      renderQuestions();
+    function selectConceptOpt(qId, idx) {
+      if (conceptChecked[qId]) return;
+      conceptUserAnswers[qId] = idx;
+      renderConceptPairs();
     }
 
-    function checkSingle(qId) {
-      const q = questions.find(item => item.id === qId);
-      if (!q) return;
-      const sel = userAnswers[qId];
-      if (sel === undefined) {
-        alert('Please select an option first! (कृपया पहले कोई विकल्प चुनें)');
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert('कृपया पहले कोई एक विकल्प चुनें! (Please choose an option first)');
         return;
       }
-      const isCorrect = sel === q.ans;
-      checkedStatus[qId] = { checked: true, isCorrect };
-      updateProgress();
-      renderQuestions();
+      conceptChecked[qId] = true;
+      renderConceptPairs();
     }
 
-    function toggleSol(qId) {
-      const el = document.getElementById(`sol-${qId}`);
-      if (el) el.open = !el.open;
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
     }
 
-    function checkCurrentPage() {
-      const filtered = getFilteredList();
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-      pageItems.forEach(q => {
-        if (userAnswers[q.id] !== undefined) {
-          checkSingle(q.id);
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
         }
-      });
+      }, 1000);
     }
 
-    function changePage(delta) {
-      currentPage += delta;
-      renderQuestions();
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function filterCategory(cat) {
-      activeCategory = cat;
-      currentPage = 1;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.filter === cat);
-      });
-      renderQuestions();
-    }
-
-    function resetAll() {
-      if (confirm('Do you want to reset all answers and progress? (क्या आप रीसेट करना चाहते हैं?)')) {
-        userAnswers = {};
-        checkedStatus = {};
-        currentPage = 1;
-        updateProgress();
-        renderQuestions();
+    function updateTimerDisplay() {
+      const m = Math.floor(secondsLeft / 60);
+      const s = secondsLeft % 60;
+      const pill = document.getElementById('timer-display');
+      if (!pill) return;
+      pill.textContent = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+      if (secondsLeft <= 120) {
+        pill.classList.add('urgent');
+      } else {
+        pill.classList.remove('urgent');
       }
     }
 
-    // Initial load
-    document.getElementById('explorer-content').innerHTML = explorerData.purpose;
-    renderJumpGrid();
-    renderQuestions();
-  </script>
+    function renderPalette() {
+      const p = document.getElementById('palette-container');
+      if (!p) return;
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let cls = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) cls += ' attempted';
+        if (testReview[q.id]) cls += ' review';
+        if (idx === currentIdx) cls += ' active';
+        html += `<button class="${cls}" type="button" onclick="jumpToQ(${idx})">${idx + 1}</button>`;
+      });
+      p.innerHTML = html;
+
+      // Update counters
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').textContent = attempted;
+      document.getElementById('left-count').textContent = 30 - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').textContent = q.label;
+      document.getElementById('q-counter').textContent = `Q ${currentIdx + 1} of 30`;
+      document.getElementById('current-q-title').textContent = q.q;
+      document.getElementById('current-q-hindi').textContent = q.hi;
+
+      const reviewBtn = document.getElementById('review-btn');
+      if (testReview[q.id]) {
+        reviewBtn.textContent = '🚩 Marked for Review';
+        reviewBtn.style.background = '#fef3c7';
+        reviewBtn.style.borderColor = '#f59e0b';
+      } else {
+        reviewBtn.textContent = '🏳 Mark for Review';
+        reviewBtn.style.background = '#fff';
+        reviewBtn.style.borderColor = 'var(--line)';
+      }
+
+      const optsBox = document.getElementById('current-q-options');
+      let html = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = testAnswers[q.id] === idx;
+        html += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:22px; height:22px; font-size:11px; ${isSel ? 'background:var(--brand); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      optsBox.innerHTML = html;
+
+      document.getElementById('prev-btn').disabled = currentIdx === 0;
+      document.getElementById('next-btn').textContent = currentIdx === 29 ? 'Review & Submit →' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, idx) {
+      testAnswers[qId] = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderCurrentQ();
+        renderPalette();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < 29) {
+        currentIdx++;
+        renderCurrentQ();
+        renderPalette();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = 30 - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `
+          आपने 30 में से <strong>${attempted}</strong> प्रश्न हल किए हैं।<br>
+          अभी <strong>${left} प्रश्न शेष</strong> हैं। क्या आप अभी सबमिट करना चाहते हैं?
+        `;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(isTimeOut) {
+      if (testTimer) clearInterval(testTimer);
+      closeModal();
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsBox = document.getElementById('test-results-view');
+      resultsBox.style.display = 'block';
+
+      let correctCount = 0;
+      const mistakesByUnit = {
+        'topic-1': { title: "Unit 01: Form of 's and '", mistakes: [], total: 7, anchor: '#topic-1' },
+        'topic-2': { title: "Unit 02: 's vs of + noun", mistakes: [], total: 8, anchor: '#topic-2' },
+        'topic-3': { title: "Unit 03: Compound Nouns", mistakes: [], total: 8, anchor: '#topic-3' },
+        'topic-4': { title: "Unit 04: Advanced Uses & Stress", mistakes: [], total: 7, anchor: '#topic-4' }
+      };
+
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        if (isRight) {
+          correctCount++;
+        } else {
+          mistakesByUnit[q.unit].mistakes.push({ qNum: idx + 1, qTitle: q.q, correctOpt: String.fromCharCode(65 + q.ans) });
+        }
+      });
+
+      const percentage = Math.round((correctCount / 30) * 100);
+      let badge = 'Grammar Scholar ⭐';
+      let badgeColor = 'var(--brand)';
+      if (percentage < 50) { badge = 'Needs Practice 📖'; badgeColor = '#dc2626'; }
+      else if (percentage < 75) { badge = 'Good Effort 👍'; badgeColor = '#d97706'; }
+
+      let diagHtml = '';
+      for (const k in mistakesByUnit) {
+        const u = mistakesByUnit[k];
+        const hasMistake = u.mistakes.length > 0;
+        diagHtml += `
+          <div class="diag-card ${hasMistake ? 'mistake' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <strong>${u.title}</strong>
+              <span style="font-weight:bold; color:${hasMistake ? '#dc2626' : 'var(--brand)'};">
+                ${u.total - u.mistakes.length} / ${u.total}
+              </span>
+            </div>
+            ${hasMistake ? `
+              <p style="color:#991b1b; font-size:11.5px; margin:4px 0;">
+                गलतियाँ: प्रश्न सं. ${u.mistakes.map(m => `<strong>#${m.qNum}</strong>`).join(', ')}
+              </p>
+              <a href="${u.anchor}" style="color:var(--brand); font-weight:bold; font-size:11.5px; text-decoration:underline;">
+                Revise Rule in Theory →
+              </a>
+            ` : `
+              <p style="color:#15803d; font-size:11.5px;">✓ शत-प्रतिशत सही (No mistakes!)</p>
+            `}
+          </div>
+        `;
+      }
+
+      let reviewHtml = '';
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        const isSkipped = uChoice === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:4px;">
+              <span class="badge">${q.label} · Q ${idx + 1}</span>
+              <span style="font-weight:bold; font-size:12px; color:${isRight ? '#15803d' : '#dc2626'};">
+                ${isRight ? '✓ Correct (+1)' : (isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)')}
+              </span>
+            </div>
+            <div style="font-weight:800; font-size:13.5px; margin-bottom:2px;">${q.q}</div>
+            <div class="font-hi" style="font-size:12px; color:#475569; margin-bottom:8px;">${q.hi}</div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              <strong>Your Choice:</strong> ${isSkipped ? '<span style="color:#64748b;">Not Attempted</span>' : `Option (${String.fromCharCode(65 + uChoice)}) ${q.opts[uChoice]}`}<br>
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">Option (${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:7px 10px; font-size:12px; color:#166534;">
+              <strong>व्याख्या:</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsBox.innerHTML = `
+        <div class="results-card">
+          <div style="text-align:center; max-width:620px; margin:auto;">
+            ${isTimeOut ? '<div class="badge" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5; margin-bottom:8px;">⏱ Time Over! 15:00 Expired - Test Auto Submitted</div>' : ''}
+            <div class="badge" style="background:#f0fdf4; color:var(--brand); border-color:#86efac; margin-bottom:8px;">Exam Completed Successfully</div>
+            <h2 style="font-size:28px; font-weight:900; margin-bottom:4px;">Your Test Scorecard</h2>
+            <div class="score-circle">${correctCount} / 30</div>
+            <div style="font-family:var(--heading); font-size:18px; font-weight:800; color:${badgeColor}; margin-bottom:6px;">
+              ${percentage}% — ${badge}
+            </div>
+            <p style="font-size:13px; color:#475569; margin-bottom:18px;">
+              30 में से <strong>${correctCount} प्रश्न सही</strong>, <strong>${30 - correctCount} गलत/छूटे</strong>।
+            </p>
+
+            <button class="mint-btn" type="button" onclick="startExam()" style="font-size:13px; padding:9px 20px;">
+              Retake 30-Question Test ↺
+            </button>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">
+              🎯 Concept Mistake Diagnostics (गलतियों का विश्लेषण):
+            </h3>
+            <p style="font-size:12.5px; color:#475569; margin-bottom:12px;">
+              जिस यूनिट में आपकी गलतियाँ हुई हैं, उसके सामने दिए गए <strong>Revise Rule in Theory →</strong> पर क्लिक करके नियम को पुनः पढ़ें:
+            </p>
+            <div class="concept-diag-grid">${diagHtml}</div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">
+              📋 Question-by-Question Detailed Review (1 से 30 प्रश्न):
+            </h3>
+            <div>${reviewHtml}</div>
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize concept practice on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderConceptPairs();
+    });
+    renderConceptPairs();
+    </script>
+  </main>
 </body>
 </html>
