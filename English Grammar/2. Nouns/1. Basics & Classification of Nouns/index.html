@@ -1,163 +1,19 @@
-<!-- HTML & CSS FOR LOCK SCREEN -->
-<style>
-  #econova-lock-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: #0f172a !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    z-index: 999999999 !important;
-    font-family: Arial, sans-serif !important;
-  }
-  .econova-lock-box {
-    background: #ffffff !important;
-    padding: 30px 20px !important;
-    border-radius: 16px !important;
-    text-align: center !important;
-    max-width: 350px !important;
-    width: 85% !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
-  }
-  .econova-sub-btn {
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 0 !important;
-    background: #dc2626 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    margin-bottom: 15px !important;
-    box-sizing: border-box !important;
-  }
-  .econova-input-container {
-    position: relative !important;
-    width: 100% !important;
-    margin-bottom: 12px !important;
-  }
-  .econova-input-container input {
-    width: 100% !important;
-    padding: 12px 40px 12px 12px !important;
-    border: 1px solid #cbd5e1 !important;
-    border-radius: 8px !important;
-    text-align: center !important;
-    font-size: 16px !important;
-    box-sizing: border-box !important;
-    outline: none !important;
-  }
-  .econova-eye-toggle {
-    position: absolute !important;
-    right: 12px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    cursor: pointer !important;
-    font-size: 18px !important;
-    user-select: none !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-  }
-  .econova-lock-box button.econova-submit-btn {
-    width: 100% !important;
-    padding: 12px !important;
-    background: #2563eb !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-  }
-</style>
-
-<!-- LOCK SCREEN OVERLAY -->
-<div id="econova-lock-overlay">
-  <div class="econova-lock-box">
-    <h2 style="color:#0f172a; margin-top:0;">🔒 Access Locked</h2>
-    <p style="color:#64748b; font-size:14px; margin-bottom:15px;">Subscribe to get the access code.</p>
-    
-    <!-- SUBSCRIBE FORM LINK -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU4Er-NPFKouoG5nF3e7r1lAqE0htxi34OimT9b-cjOAdCZw/viewform" target="_blank" rel="noopener" class="econova-sub-btn">Subscribe Channel</a>
-    
-    <!-- INPUT WITH EYE TOGGLE -->
-    <div class="econova-input-container">
-      <input type="password" id="econova-pass-field" placeholder="Enter Access Code" autocomplete="off">
-      <button type="button" id="econova-toggle-eye" class="econova-eye-toggle" aria-label="Toggle Password Visibility">👁️️</button>
-    </div>
-    
-    <button type="button" id="econova-unlock-btn" class="econova-submit-btn">Unlock Content</button>
-    <p id="econova-err-msg" style="color:#ef4444; font-size:13px; display:none; margin-top:10px;">❌ Galat Code! Sahi Code Daalein.</p>
-  </div>
-</div>
-
-<!-- JAVASCRIPT FOR LOCK SCREEN -->
-<script>
-  (function() {
-    var SECRET_CODE = "econova123";
-
-    function doUnlock() {
-      var inputVal = document.getElementById("econova-pass-field").value.trim();
-      var errorMsg = document.getElementById("econova-err-msg");
-      var overlay = document.getElementById("econova-lock-overlay");
-
-      if (inputVal.toLowerCase() === SECRET_CODE.toLowerCase()) {
-        overlay.style.setProperty("display", "none", "important");
-        errorMsg.style.display = "none";
-      } else {
-        errorMsg.style.display = "block";
-      }
-    }
-
-    // Eye button toggle functionality
-    var toggleBtn = document.getElementById("econova-toggle-eye");
-    var passInput = document.getElementById("econova-pass-field");
-
-    toggleBtn.addEventListener("click", function() {
-      if (passInput.type === "password") {
-        passInput.type = "text";
-        toggleBtn.textContent = "🙈";
-      } else {
-        passInput.type = "password";
-        toggleBtn.textContent = "👁️";
-      }
-    });
-
-    document.getElementById("econova-unlock-btn").onclick = doUnlock;
-
-    document.getElementById("econova-pass-field").onkeydown = function(e) {
-      if (e.key === "Enter" || e.keyCode === 13) {
-        e.preventDefault();
-        doUnlock();
-      }
-    };
-  })();
-</script>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Basics & Classification of Nouns (संज्ञा के प्रकार और वर्गीकरण) - Kinds, Functions, Gender, Plurals, and Uncountable Nouns with 50 interactive MCQs and easy Hindi explanations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Basics & Classification of Nouns (संज्ञा के प्रकार और वर्गीकरण) - Kinds, Functions, Gender, Plural Rules & Traps, Uncountables with 20 embedded examples and a 30-question 15-minute exam.">
   <meta name="theme-color" content="#2dd4bf">
-  <meta property="og:title" content="Basics & Classification of Nouns (संज्ञा के प्रकार और वर्गीकरण)">
-  <meta property="og:description" content="Master Nouns in English Grammar with 5 Foundation Units and 50 Interactive MCQs.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
   <title>Basics & Classification of Nouns (संज्ञा के प्रकार और वर्गीकरण) | Econova English Grammar</title>
-
-  <!-- Google Fonts matching reference design -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --body: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Quicksand', sans-serif;
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
       --heading: 'Outfit', 'Quicksand', sans-serif;
       --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
       --bg: #f0fdf4;
@@ -167,2677 +23,1263 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
+      --yt-red: #ff0000;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 18px; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-    }
+    /* Header & Responsive Navigation */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 23px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 32px; height: 32px; border-radius: 9px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-8deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 6px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 12.5px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-    }
+    .header-actions { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: 0;
-      background: transparent;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    h1, h2, h3, h4, .logo, .eyebrow, .number {
-      font-family: var(--heading);
-    }
-
-    a:focus-visible, button:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--ink);
-      outline-offset: 4px;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 28px;
-    }
-
-    .skip {
-      position: fixed;
-      left: 20px;
-      top: -80px;
-      background: white;
-      padding: 10px;
-      z-index: 100;
-      border-radius: 8px;
-      border: 2px solid var(--brand);
-      font-weight: bold;
-      transition: top 0.2s;
-    }
-
-    .skip:focus {
-      top: 10px;
-    }
-
-    /* Header & Navigation matching Econova style */
-    header {
-      background: var(--teal);
-      border-bottom: 2.5px solid var(--button);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
-    }
-
-    .nav {
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.8px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .logo em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-      background: var(--yellow);
-      color: var(--brand);
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      transform: rotate(-9deg);
-      line-height: 1;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    nav a {
-      font-family: var(--heading);
-      font-weight: 700;
-      color: #fff;
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 9999px;
-      white-space: nowrap;
-      transition: background 0.15s, transform 0.1s;
-    }
-
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-
-    .mint-btn {
-      background: var(--button);
-      color: #fff;
-      border: 0;
-      border-radius: 16px;
-      padding: 13px 22px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-family: var(--heading);
-      box-shadow: 0 4px 0 var(--brand);
-      transition: transform .15s, background .15s, box-shadow .15s;
-      cursor: pointer;
-    }
-
-    .mint-btn:hover {
-      background: var(--brand);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 #047857;
-    }
-
-    .mint-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--brand);
-    }
-
-    .nav .mint-btn {
-      font-size: 12.5px;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      white-space: nowrap;
-      box-shadow: 0 3px 0 var(--brand);
-    }
-
-    .quiet-btn {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 14px;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 9px 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .quiet-btn:hover {
-      background: #d1fae5;
-    }
-
-    /* Cards */
-    .mint-card {
-      background: #fff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .amber-card {
-      background: #fffbeb;
-      border: 3px solid #fcd34d;
-      border-radius: 24px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--brand);
-    }
-
-    /* Hero section */
-    .hero {
-      padding-top: 44px;
-      padding-bottom: 35px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid #34d399;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12px;
-      color: var(--brand);
-      font-weight: bold;
-    }
-
-    .pill span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--button);
-    }
-
-    h1 {
-      font-size: clamp(34px, 4.8vw, 60px);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -1.8px;
-      margin: 18px 0 14px;
-    }
-
-    h1 .green {
-      color: var(--brand);
-    }
-
-    .underline {
-      position: relative;
-      white-space: normal;
-      isolation: isolate;
-    }
-
-    .underline:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 4px;
-      height: 14px;
-      background: var(--yellow);
-      z-index: -1;
-      transform: rotate(-1.5deg);
-      border-radius: 8px;
-    }
-
-    .intro {
-      max-width: 540px;
-      font-size: 15.5px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin: 24px 0 18px;
-      flex-wrap: wrap;
-    }
-
-    .text-link {
-      color: var(--brand);
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      display: flex;
-      gap: 16px;
-      color: var(--brand);
-      font-weight: bold;
-      flex-wrap: wrap;
-    }
-
-    /* Hero sample card */
-    .hero-sample {
-      padding: 26px;
-      text-align: left;
-      transform: rotate(1deg);
-      box-shadow: 7px 8px 0 #d1fae5;
-    }
-
-    .hero-sample .sample-number {
-      font-family: var(--heading);
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--brand);
-      line-height: 1.2;
-      margin: 8px 0;
-    }
-
-    .hero-sample p {
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* Lesson toolbar & jump bar */
-    .lesson-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-      margin: 15px 0 40px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps a {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
+    .yt-btn {
+      background: var(--yt-red);
+      color: #fff !important;
       border-radius: 12px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: background 0.15s, transform 0.1s;
-    }
-
-    .lesson-jumps a:hover {
-      background: #d1fae5;
-      transform: translateY(-1px);
-    }
-
-    .progress-block {
-      min-width: 220px;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    progress {
-      display: block;
-      width: 100%;
-      height: 12px;
-      margin-top: 6px;
-      accent-color: var(--button);
-      border-radius: 6px;
-    }
-
-    /* Sections */
-    .section {
-      padding-top: 48px;
-      padding-bottom: 12px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      font-size: 30px;
-      letter-spacing: -0.8px;
-      line-height: 1.25;
-      margin-top: 6px;
-      font-weight: 900;
-    }
-
-    .section-heading > p {
-      font-size: 14px;
-      max-width: 400px;
-      color: #4b5563;
-    }
-
-    /* 5 Topic overview cards */
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .topic-card {
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .topic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 0 #a7f3d0;
-    }
-
-    .topic-icon {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    .topic-card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-
-    .topic-card p {
-      font-size: 12.5px;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .topic-tag {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 4px 10px;
-      background: var(--bg);
-      border-radius: 12px;
-      color: var(--brand);
-      border: 1px solid var(--line);
-    }
-
-    /* Rule Cards */
-    .rule-card {
-      padding: 22px 26px;
-      margin-bottom: 18px;
-      background: #fff;
-      border: 2px solid #a7f3d0;
-      border-radius: 20px;
-      max-width: 100%;
-      overflow: hidden;
-    }
-
-    .rule-card.highlight {
-      border-left: 6px solid var(--button);
-    }
-
-    .rule-card.warning {
-      border-left: 6px solid #f59e0b;
-      background: #fffdf5;
-    }
-
-    .rule-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-    }
-
-    .rule-header h3 {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 8px;
-      background: #ecfdf5;
-      color: var(--brand);
-      border: 1px solid #34d399;
-    }
-
-    .badge-amber {
-      background: #fef3c7;
-      color: #b45309;
-      border: 1px solid #fcd34d;
-    }
-
-    .badge-red {
-      background: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #fca5a5;
-    }
-
-    .easy-hi {
-      font-family: var(--hi-font);
-      font-size: 14.5px;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 12px 16px;
-      margin: 12px 0;
-      line-height: 1.75;
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .example-box {
-      background: var(--bg);
-      border: 1.5px solid #a7f3d0;
-      border-radius: 14px;
-      padding: 10px 14px;
-    }
-
-    .example-box b {
-      font-size: 14.5px;
-      color: var(--brand);
-      display: block;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .example-box span {
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    /* Speech Chip */
-    .speech-chip {
+      padding: 7px 13px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #e0f2fe;
-      border: 1px solid #7dd3fc;
-      color: #0369a1;
-      padding: 3px 8px;
-      border-radius: 10px;
+      font-weight: 800;
       font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .speech-chip:hover {
-      background: #bae6fd;
-      transform: scale(1.03);
-    }
-
-    /* Table Wrapper */
-    .table-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 14px;
-      margin-top: 10px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .table-wrap::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-track {
-      background: #f1f5f9;
-      border-radius: 6px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb {
-      background: #34d399;
-      border-radius: 6px;
-    }
-
-    .table-scroll-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--brand);
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 20px;
-      padding: 4px 10px;
-      margin-top: 8px;
-    }
-
-    /* Comparison Table */
-    .compare-table {
-      width: 100%;
-      min-width: 520px;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      line-height: 1.5;
-    }
-
-    .compare-table th, .compare-table td {
-      padding: 10px 14px;
-      border: 1px solid #e2e8f0;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .compare-table th {
-      background: #e2e8f0;
       font-family: var(--heading);
-      font-weight: 800;
-      color: #1e293b;
+      box-shadow: 0 3px 0 #b30000;
       white-space: nowrap;
-    }
-
-    .compare-table tr:nth-child(even) {
-      background: #f8fafc;
-    }
-
-    .wrong {
-      color: #dc2626;
-      font-weight: bold;
-    }
-
-    .right {
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    /* Practice Arena Section */
-    .practice-box {
-      margin-top: 35px;
-      padding: 26px 30px;
-    }
-
-    .filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 16px;
-    }
-
-    .filter-btn {
-      padding: 9px 15px;
-      border: 2px solid var(--line);
-      border-radius: 14px;
-      background: white;
-      color: var(--brand);
-      font-size: 13px;
-      font-weight: bold;
-      transition: all 0.15s;
-    }
-
-    .filter-btn:hover {
-      background: #d1fae5;
-    }
-
-    .filter-btn.active {
-      background: var(--button);
-      color: white;
-      box-shadow: 0 3px 0 var(--brand);
-    }
-
-    /* Jump Grid Map */
-    .jump-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .jump-btn {
-      height: 34px;
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      font-family: var(--heading);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--brand);
-      transition: all 0.15s;
-    }
-
-    .jump-btn:hover {
-      background: #d1fae5;
-    }
-
-    .jump-btn.correct {
-      background: #10b981;
-      color: white;
-      border-color: #059669;
-    }
-
-    .jump-btn.retry {
-      background: #ef4444;
-      color: white;
-      border-color: #b91c1c;
-    }
-
-    .jump-btn.selected {
-      background: #fde047;
-      color: #78350f;
-      border-color: #d97706;
-    }
-
-    /* Task / Question Cards */
-    .task-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .task-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      scroll-margin-top: 110px;
-    }
-
-    .task-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .task-status {
-      font-size: 11px;
-      font-weight: bold;
-      color: var(--brand);
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-
-    .task-status.correct {
-      background: #dcfce7;
-      border-color: #22c55e;
-      color: #15803d;
-    }
-
-    .task-status.retry {
-      background: #fee2e2;
-      border-color: #ef4444;
-      color: #b91c1c;
-    }
-
-    .task-card h3 {
-      font-size: 18px;
-      line-height: 1.45;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .task-hindi {
-      font-family: var(--hi-font);
-      font-size: 13.5px;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    /* Choices list */
-    .choices {
-      display: grid;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
-
-    .choice {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 11px 14px;
-      background: var(--bg);
-      border: 2px solid #a7f3d0;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.15s;
-    }
-
-    .choice:hover {
-      border-color: var(--brand);
-      background: #ecfdf5;
-    }
-
-    .choice.selected {
-      background: #fffbeb;
-      border-color: #f59e0b;
-    }
-
-    .choice.right-choice {
-      background: #dcfce7 !important;
-      border-color: #22c55e !important;
-      color: #15803d !important;
-    }
-
-    .choice.wrong-choice {
-      background: #fee2e2 !important;
-      border-color: #ef4444 !important;
-      color: #b91c1c !important;
-    }
-
-    .choice-badge {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: white;
-      border: 1.5px solid var(--line);
-      display: grid;
-      place-items: center;
-      font-family: var(--heading);
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--brand);
       flex-shrink: 0;
+      transition: all 0.15s;
     }
+    .yt-btn:hover { background: #e60000; transform: translateY(-1px); }
+    .yt-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #b30000; }
 
-    .task-bottom {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #d1fae5;
-    }
-
-    .task-actions {
-      display: flex;
-      gap: 10px;
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 13px;
+      display: inline-flex;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .task-feedback {
-      font-size: 13px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: var(--brand);
-    }
-
-    .task-feedback[data-state=retry] {
-      color: #b91c1c;
-    }
-
-    .solution {
-      margin-top: 14px;
-      padding: 12px 14px;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 14px;
-      font-size: 13px;
-    }
-
-    .solution summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #78350f;
-    }
-
-    .solution p {
-      margin-top: 6px;
-      line-height: 1.7;
-    }
-
-    .check-all-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 36px;
-      padding: 26px;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      background: #fff;
-      border-top: 2px solid #a7f3d0;
-      padding: 28px 0;
-      margin-top: 60px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-size: 12px;
-    }
-
-    .footer-brand {
+      gap: 6px;
+      font-weight: 800;
       font-family: var(--heading);
-      font-size: 24px;
-      color: var(--brand);
-      font-weight: 900;
+      font-size: 12px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all .15s;
+      cursor: pointer;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-1px); }
+    .nav-test-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--brand); }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
+
+    /* Hero */
+    .hero { padding: 30px 0 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 5px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(28px, 4.2vw, 50px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; font-family: var(--heading); }
+    h1 .green { color: var(--brand); }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+    .section { padding: 28px 0 10px; }
+    .rule-card { padding: 18px 20px; margin-bottom: 18px; background: #fff; border: 2px solid #a7f3d0; border-radius: 16px; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    
+    .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 10px 14px; margin: 10px 0; line-height: 1.65; }
+    .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #991b1b; }
+    .trap-box b { display: block; font-size: 13.5px; margin-bottom: 4px; color: #b91c1c; }
+
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
+    .compare-table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 12.5px; }
+    .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
+
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 10px; }
+    .pair-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12px; }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+    
+    .choices-sm { display: grid; gap: 5px; margin: 6px 0; }
+    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; flex-shrink: 0; }
+
+    /* Test Arena */
+    .test-section { margin-top: 36px; padding: 20px; scroll-margin-top: 80px; }
+    .test-timer-bar { position: sticky; top: 66px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 18px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 10px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 4px; margin: 8px 0; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); }
+
+    .test-card { padding: 18px; background: #fff; border: 2.5px solid var(--line); border-radius: 18px; }
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px; }
+    .score-circle { font-family: var(--heading); font-size: 38px; font-weight: 900; color: var(--brand); }
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 16px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px; font-size: 12px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #fff; font-size: 12.5px; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
+
+    /* Mobile Floating Quick Test Jump */
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 16px;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 20px 0; margin-top: 40px; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 58px; }
+      .mobile-float-btn { display: inline-flex; }
     }
 
-    .footer-brand em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-weight: bold;
-      color: var(--brand);
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1024px) {
-      .topics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .task-grid {
-        grid-template-columns: 1fr;
-      }
-      .topics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .wrap {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-      .rule-card {
-        padding: 16px 14px;
-        border-radius: 16px;
-      }
-      .compare-table {
-        font-size: 12.5px;
-        min-width: 480px;
-      }
-      .compare-table th, .compare-table td {
-        padding: 8px 10px;
-      }
-      .nav {
-        min-height: 56px;
-      }
-      .logo {
-        font-size: 20px;
-      }
-      .logo-mark {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-      }
-      nav a {
-        display: none;
-      }
-      .nav .mint-btn {
+    @media (max-width: 640px) {
+      .wrap { padding: 0 10px; }
+      .nav { min-height: 58px; gap: 6px; }
+      .logo { font-size: 16px; gap: 5px; }
+      .logo-mark { width: 28px; height: 28px; font-size: 14px; border-radius: 8px; }
+      
+      .header-actions { gap: 6px; display: flex; align-items: center; }
+      .yt-btn {
+        padding: 6px 10px;
         font-size: 11.5px;
-        padding: 7px 12px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 #b30000;
       }
-      h1 {
-        font-size: 34px;
+      .nav-test-btn {
+        padding: 6px 11px;
+        font-size: 11.5px;
+        font-weight: 800;
+        border-radius: 10px;
+        gap: 5px;
+        box-shadow: 0 2.5px 0 var(--brand);
       }
-      .topics-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .check-all-section {
-        flex-direction: column;
-        text-align: center;
-      }
+
+      .hero-actions { flex-direction: column; width: 100%; gap: 10px; }
+      .hero-actions .mint-btn, .hero-actions .hero-test-btn { width: 100%; justify-content: center; text-align: center; padding: 11px 16px; }
+
+      .test-section { padding: 14px 10px; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .pal-btn { height: 32px; font-size: 11.5px; }
+
+      .test-actions-bar { flex-direction: column-reverse; gap: 8px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+
+      .rule-card { padding: 15px 14px; border-radius: 15px; }
+    }
+
+    @media (max-width: 380px) {
+      .wrap { padding: 0 8px; }
+      .logo { font-size: 15px; gap: 4px; }
+      .logo span span { display: none; }
+      .header-actions { gap: 4px; }
+      .yt-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
+      .nav-test-btn { padding: 5.5px 8px; font-size: 11px; gap: 4px; border-radius: 8px; }
     }
   </style>
 </head>
 
 <body>
-  <a href="#main" class="skip">Skip to content</a>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
 
-  <!-- Header matching Econova theme -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#main" aria-label="Econova Home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span>Econova<em>.vip</em></span>
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#unit-1">1. Kinds &amp; Functions</a>
-        <a href="#unit-2">2. Gender</a>
-        <a href="#unit-3">3. Plurals</a>
-        <a href="#unit-4">4. Traps &amp; Agreement</a>
-        <a href="#unit-5">5. Uncountable Nouns</a>
-        <a class="mint-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
+      <nav class="main-nav">
+        <a href="#topic-1">1. Kinds &amp; Roles</a>
+        <a href="#topic-2">2. Gender</a>
+        <a href="#topic-3">3. Plural Formations</a>
+        <a href="#topic-4">4. Plural Traps</a>
+        <a href="#topic-5">5. Uncountables</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer" title="YouTube Video Lesson">
+          <svg width="16" height="12" viewBox="0 0 20 14" fill="currentColor">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()" title="Start 30-Question Test">
+          <span style="font-size:12px; line-height:1;">⏱</span>
+          <span>30-Q Test (15m)</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <main id="main" class="wrap">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="lesson-title">
+    <!-- Hero -->
+    <section class="hero">
       <div>
         <div class="pill">
-          <span aria-hidden="true"></span>
-          Class 4–10 English · Chapter 2: Nouns
+          <span></span>
+          Class 4–10 English Grammar · Chapter 2: Nouns
         </div>
 
-        <h1 id="lesson-title">
-          Basics &amp; Classification of <span class="green">Nouns</span><br>
-          <span class="underline">संज्ञा के प्रकार और वर्गीकरण.</span>
+        <h1>
+          Master <span class="green">Nouns &amp; Classification</span><br>
+          संज्ञा के प्रकार और वर्गीकरण.
         </h1>
 
-        <p class="intro">
-          In English grammar, a <strong>Noun (संज्ञा)</strong> is a naming word for any person, place, animal, thing, quality, or idea. Master the <strong>4 Kinds</strong> (Common, Proper, Abstract, Collective), <strong>5 Grammatical Functions</strong> (Subject, Object, Complement), <strong>Gender Categories</strong>, <strong>Plural Formations &amp; Traps</strong>, and <strong>Uncountable Mass Nouns</strong> — with simple, clear Hindi explanations for quick and easy understanding!
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;">
+          In English grammar, a <strong>Noun (संज्ञा)</strong> is a naming word for any person, place, animal, thing, quality, or idea. Noun के संपूर्ण व्याकरण को समझने के लिए इसके <strong>4 Kinds</strong> (Common, Proper, Abstract, Collective), <strong>5 Grammatical Functions</strong> (Subject, Complement, Object of verb/preposition, Possessive), <strong>Gender Rules</strong>, <strong>Plural Formations &amp; Traps</strong>, तथा <strong>Uncountable Mass Nouns</strong> को जानना आवश्यक है। यहाँ प्रत्येक नियम के साथ <strong>2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong> दिया गया है।
         </p>
 
         <div class="hero-actions">
-          <a class="mint-btn" href="#unit-1">Start Chapter Rules →</a>
-          <a class="text-link" href="#practice">Direct Practise 50 MCQs ↘</a>
-        </div>
-
-        <div class="hero-note">
-          <span>✦ 5 Core Foundation Units</span>
-          <span>✦ 50 Comprehensive MCQs</span>
-          <span>✦ Hindi Concept Clarity (सरल हिंदी समझ)</span>
-          <span>✦ Audio Pronunciation 🔊</span>
+          <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; 20 Examples →</a>
+          <button class="mint-btn hero-test-btn" style="background:#047857; box-shadow:0 3px 0 #064e3b;" type="button" onclick="scrollToTest()">
+            ⏱ 30-Question Test (15m)
+          </button>
         </div>
       </div>
 
-      <!-- Golden Rule Card on Right -->
-      <div class="amber-card hero-sample">
-        <p class="eyebrow">The Golden Rule</p>
-        <div class="sample-number">Name &amp; Role!</div>
-        <p>
-          <strong>Every noun has a specific name and a grammatical role in a sentence:</strong><br>
-          • <strong>Proper Noun:</strong> Always starts with a Capital Letter (<em>Tom, France, Madrid</em>).<br>
-          • <strong>Abstract Noun:</strong> Cannot be touched or seen, only felt or understood (<em>beauty, courage, joy</em>).<br>
+      <div class="amber-card" style="padding:18px; text-align:center;">
+        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The Golden Rule</p>
+        <div style="font-family:var(--heading); font-size:32px; font-weight:900; color:var(--brand); margin:4px 0;">Name &amp; Role!</div>
+        <p style="text-align:left; font-size:12.5px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+          <strong>वाक्य में संज्ञा का नाम और उसकी भूमिका दोनों विशिष्ट होती हैं:</strong><br>
+          • <strong>Proper Noun:</strong> हमेशा बड़े अक्षर (Capital Letter) से शुरू होता है (<em>Tom, France, Madrid</em>)।<br>
+          • <strong>Abstract Noun:</strong> जिसे छू या देख नहीं सकते, केवल समझ या महसूस कर सकते हैं (<em>courage, beauty, joy</em>)।<br>
           • <strong>Plural Traps:</strong> <em>Calf → Calves</em>, <em>Piano → Pianos</em>, <em>Sheep → Sheep</em>.<br>
-          • <strong>Uncountables:</strong> Never say <em>furnitures</em> or <em>an advice</em>!
+          • <strong>Uncountables:</strong> कभी <em>furnitures</em> या <em>an advice</em> न कहें!
         </p>
       </div>
     </section>
 
-    <!-- Toolbar & Shortcuts -->
-    <div class="mint-card lesson-toolbar">
-      <nav class="lesson-jumps" aria-label="Lesson shortcuts">
-        <a href="#unit-1">01 · Kinds &amp; Functions</a>
-        <a href="#unit-2">02 · Gender (लिंग)</a>
-        <a href="#unit-3">03 · Plural Rules</a>
-        <a href="#unit-4">04 · Plural Traps</a>
-        <a href="#unit-5">05 · Uncountable Nouns</a>
-      </nav>
-
-      <div class="progress-block">
-        <span id="progress-label" role="status">0 of 50 questions solved</span>
-        <progress id="lesson-progress" max="50" value="0" aria-label="Questions solved out of 50"></progress>
-      </div>
-    </div>
-
-    <!-- 5 Topics Overview Grid -->
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Chapter Structure</p>
-          <h2>The Five Foundation Units.</h2>
-        </div>
-        <p>These 5 units comprehensively cover the syllabus for Nouns with engaging examples and Hindi concept explanations.</p>
-      </div>
-
-      <div class="topics-grid">
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🏷️</div>
-          <h3>1. Kinds &amp; Functions</h3>
-          <p>Common, Proper, Abstract, Collective nouns and their 5 sentence functions.</p>
-          <span class="topic-tag">Unit 01</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">⚧️</div>
-          <h3>2. Gender Rules</h3>
-          <p>Masculine, Feminine, Neuter, Common Gender, and Ships/Countries exceptions.</p>
-          <span class="topic-tag">Unit 02</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🔢</div>
-          <h3>3. Plural Formations</h3>
-          <p>-s, -es, -ies, 12 -ves words, vowel changes, and unchanged creatures.</p>
-          <span class="topic-tag">Unit 03</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">⚠️</div>
-          <h3>4. Plural Traps</h3>
-          <p>Police, scissors, mathematics is/are, news is, and compound nouns.</p>
-          <span class="topic-tag">Unit 04</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🥛</div>
-          <h3>5. Uncountable Nouns</h3>
-          <p>Substances, abstract concepts, partitive counters (a piece of), and dual senses.</p>
-          <span class="topic-tag">Unit 05</span>
-        </article>
-      </div>
-    </section>
-
     <!-- ========================================== -->
-    <!-- UNIT 1: Kinds and Functions of Nouns -->
+    <!-- UNIT 01: KINDS & FUNCTIONS OF NOUNS -->
     <!-- ========================================== -->
-    <section id="unit-1" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 01 · Fundamentals</p>
-          <h2>1. Kinds &amp; Functions of Nouns (संज्ञा के प्रकार और कार्य)</h2>
-        </div>
-        <p>A noun is the name of a person, place, animal, thing, quality, or group. Learn the 4 kinds and 5 sentence functions.</p>
+    <section id="topic-1" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 01 · Fundamentals</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. Kinds &amp; Functions of Nouns (संज्ञा के प्रकार और कार्य)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1A: 4 Kinds -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Four Kinds of Nouns in English</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Four Kinds of Nouns in English (संज्ञा के चार भेद)</h3>
           <span class="badge">Core Concept</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>सरल समझ (Hindi Explanation):</strong><br>
-          1. <strong>Common Noun (जातिवाचक संज्ञा):</strong> किसी भी साधारण वस्तु, व्यक्ति, प्राणी या स्थान का आम नाम — <em>dog, man, table, boy, school, city</em>.<br>
-          2. <strong>Proper Noun (व्यक्तिवाचक संज्ञा):</strong> किसी विशेष व्यक्ति, स्थान, दिन या महीने का निजी नाम। यह <strong>हमेशा बड़े अक्षर (Capital Letter)</strong> से शुरू होता है — <em>France, Madrid, Mrs Smith, Tom, India, Monday</em>.<br>
-          3. <strong>Abstract Noun (भाववाचक संज्ञा):</strong> ऐसा गुण, भाव, विचार या अवस्था जिसे हम छू या देख नहीं सकते, केवल समझ और महसूस कर सकते हैं — <em>beauty, charity, courage, fear, joy, honesty</em>.<br>
-          4. <strong>Collective Noun (समूहवाचक संज्ञा):</strong> व्यक्तियों, प्राणियों या वस्तुओं के पूरे समूह या झुंड को एक इकाई मानने वाला नाम — <em>crowd, flock, group, swarm, team, herd, fleet</em>.
+          👉 <strong>विस्तृत अवधारणा (Detailed Breakdown):</strong><br>
+          1. <strong>Common Noun (जातिवाचक संज्ञा):</strong> किसी साधारण वस्तु, व्यक्ति, प्राणी या स्थान का आम वर्ग नाम — <em>dog, man, table, boy, school, city</em>.<br>
+          2. <strong>Proper Noun (व्यक्तिवाचक संज्ञा):</strong> किसी विशेष व्यक्ति, स्थान, दिन या देश का निजी नाम। यह <strong>हमेशा Capital Letter</strong> से शुरू होता है — <em>France, Madrid, Mrs Smith, Tom, India, Monday</em>.<br>
+          3. <strong>Abstract Noun (भाववाचक संज्ञा):</strong> गुण, भाव, विचार या अवस्था जिसे छू या देख नहीं सकते, केवल महसूस या समझ सकते हैं — <em>beauty, charity, courage, fear, joy, honesty</em>.<br>
+          4. <strong>Collective Noun (समूहवाचक संज्ञा):</strong> प्राणियों, व्यक्तियों या वस्तुओं के पूरे झुंड को एक इकाई मानने वाला नाम — <em>crowd, flock, group, swarm, team, herd, fleet</em>.
         </div>
 
-        <div class="example-grid">
-          <div class="example-box">
-            <b>Common: dog, man, table</b>
-            <span>आम जातिगत प्राणी या वस्तु का नाम।</span>
-          </div>
-          <div class="example-box">
-            <b>Proper: Tom, France, Madrid</b>
-            <span>विशेष नाम, हमेशा Capital Letter से शुरू।</span>
-          </div>
-          <div class="example-box">
-            <b>Abstract: beauty, courage, joy</b>
-            <span>गुण, भाव या अवस्था, जिसे छू नहीं सकते।</span>
-          </div>
-          <div class="example-box">
-            <b>Collective: crowd, flock, swarm, team</b>
-            <span>व्यक्तियों या प्राणियों का पूरा समूह।</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="rule-card">
-        <div class="rule-header">
-          <h3>B. Five Grammatical Functions of a Noun</h3>
-          <span class="badge">High Yield</span>
-        </div>
-        <p>In a sentence, a noun can perform five distinct grammatical functions:</p>
-
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Grammatical Function</th>
-                <th>Sentence Example</th>
-                <th>Hindi Explanation (सरल अर्थ)</th>
-                <th>Pronounce 🔊</th>
-              </tr>
+              <tr><th>Noun Type</th><th>परिभाषा</th><th>Textbook Examples</th><th>पहचान नियम</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>1. The Subject of a verb</strong></td>
-                <td><em>Tom arrived.</em></td>
-                <td>क्रिया का कर्ता: यहाँ आने का कार्य टॉम ने किया।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('Tom arrived')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>2. The Complement of 'be', 'become', 'seem'</strong></td>
-                <td><em>Tom is an actor.</em></td>
-                <td>लिंकिंग क्रिया के बाद आकर कर्ता की पहचान बताने वाला पूरक (Subject Complement)।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('Tom is an actor')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>3. The Object of a verb</strong></td>
-                <td><em>I saw Tom.</em></td>
-                <td>क्रिया का कर्म: क्रिया 'saw' का सीधा प्रभाव टॉम पर पड़ रहा है (Direct Object)।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('I saw Tom')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>4. The Object of a preposition</strong></td>
-                <td><em>I spoke to Tom.</em></td>
-                <td>संबंधबोधक अव्यय 'to' (preposition) के ठीक बाद आकर उसका कर्म बनता है।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('I spoke to Tom')">Listen 🔊</button></td>
-              </tr>
-              <tr>
-                <td><strong>5. In the Possessive case</strong></td>
-                <td><em>Tom's books.</em></td>
-                <td>अपॉस्ट्रॉफी 's' लगाकर स्वामित्व या संबंध दर्शाता है कि पुस्तकें टॉम की हैं।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord(&quot;Tom's books&quot;)">Listen 🔊</button></td>
-              </tr>
+              <tr><td><strong>Common Noun</strong></td><td>आम जातिगत प्राणी या वस्तु</td><td>dog, man, table, school</td><td>Countable singular/plural (dogs, men)</td></tr>
+              <tr><td><strong>Proper Noun</strong></td><td>विशिष्ट व्यक्तिगत नाम</td><td>Tom, France, Madrid</td><td>हमेशा Capital letter से आरंभ</td></tr>
+              <tr><td><strong>Abstract Noun</strong></td><td>गुण, भाव या अवस्था</td><td>beauty, courage, joy, fear</td><td>अमूर्त विचार, सामान्यतः uncountable</td></tr>
+              <tr><td><strong>Collective Noun</strong></td><td>व्यक्तियों या वस्तुओं का समूह</td><td>flock, crowd, swarm, team</td><td>पूरे समूह को एक यूनिट मानना</td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 1A -->
+        <div class="concept-pair-box" id="pair-1a"></div>
+      </article>
+
+      <!-- Sub-concept 1B: 5 Functions -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Five Grammatical Functions of a Noun (वाक्य में 5 कार्य)</h3>
+          <span class="badge">Syntactic Roles</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          वाक्य में संज्ञा मुख्य रूप से पाँच व्याकरणिक भूमिकाएँ निभाती है:
+        </p>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr><th>Function</th><th>Sentence Example</th><th>व्याकरणिक स्पष्टीकरण (Grammar Role)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1. Subject of a verb</strong></td><td><em>Tom arrived.</em></td><td>क्रिया 'arrived' का कर्ता (आने का कार्य टॉम ने किया)।</td></tr>
+              <tr><td><strong>2. Complement of linking verb</strong></td><td><em>Tom is an actor.</em></td><td>'be' (is/am/are), become, seem के बाद कर्ता की पहचान बताने वाला पूरक।</td></tr>
+              <tr><td><strong>3. Object of a verb</strong></td><td><em>I saw Tom.</em></td><td>सकर्मक क्रिया 'saw' का सीधा कर्म (Direct Object: किसे देखा? टॉम को)।</td></tr>
+              <tr><td><strong>4. Object of a preposition</strong></td><td><em>I spoke to Tom.</em></td><td>संबोधक अव्यय 'to' (preposition) के बाद आने वाला उसका कर्म।</td></tr>
+              <tr><td><strong>5. In the Possessive case</strong></td><td><em>Tom's books.</em></td><td>अपॉस्ट्रॉफी 's लगाकर स्वामित्व/अधिकार दर्शाना (टॉम की पुस्तकें)।</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="trap-box">
+          <b>⚠️ परीक्षा में होने वाली सामान्य गलतियाँ (Function Traps):</b>
+          1. <strong>Object vs Complement:</strong> <em>"He became a doctor."</em> यहाँ 'a doctor' कर्म (Object) नहीं है! 'Became' लिंकिंग क्रिया है, अतः 'a doctor' <strong>Subject Complement</strong> है!<br>
+          2. <strong>Prepositional Object:</strong> <em>"We looked at the painting."</em> यहाँ 'the painting' क्रिया का प्रत्यक्ष कर्म नहीं बल्कि Preposition 'at' का Object है।
+        </div>
+
+        <!-- 2 Example Questions for 1B -->
+        <div class="concept-pair-box" id="pair-1b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 2: Gender of Nouns -->
+    <!-- UNIT 02: GENDER OF NOUNS -->
     <!-- ========================================== -->
-    <section id="unit-2" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 02 · Gender Rules</p>
-          <h2>2. Gender of Nouns (लिंग)</h2>
-        </div>
-        <p>Gender indicates whether a noun is male, female, inanimate (non-living), or common to both sexes.</p>
+    <section id="topic-2" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 02 · Gender Rules</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Gender of Nouns (संज्ञा का लिंग)</h2>
       </div>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>A. Four Main Gender Categories</h3>
-        </div>
-        <div class="easy-hi">
-          • <strong>Masculine (पुल्लिंग):</strong> Men, boys, and male animals (Pronoun: <em>he / they</em>).<br>
-          • <strong>Feminine (स्त्रीलिंग):</strong> Women, girls, and female animals (Pronoun: <em>she / they</em>).<br>
-          • <strong>Neuter (नपुंसकलिंग):</strong> Inanimate objects (निर्जीव वस्तुएँ जैसे table, book), and animals or infants whose sex is unknown (Pronoun: <em>it / they</em>).<br>
-          • <strong>Common Gender (उभयलिंग):</strong> Nouns that can refer to either male or female (<em>baby, child, cousin, infant, parent, doctor, artist</em>).
-        </div>
-      </article>
-
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>Special Exceptions: Affectionate Feminine (Ships &amp; Countries)</h3>
-          <span class="badge badge-amber">Exam Favorite</span>
-        </div>
-        <p>In English, inanimate things or geographical entities are treated as <strong>Feminine (she / her)</strong> in two special situations:</p>
-        <div class="easy-hi" style="background:#fef3c7; border-color:#fcd34d; color:#78350f;">
-          1. <strong>Ships (and sometimes cars):</strong> When spoken of with affection or respect, ships take feminine pronouns:<br>
-          <em>“The ship struck an iceberg, which tore a huge hole in <strong>her</strong> side.”</em> (जहाज हिमखंड से टकराया जिससे उसकी बगल में बड़ा छेद हो गया।)<br><br>
-          2. <strong>Countries by Name:</strong> When a country's courage, history, or people are referred to:<br>
-          <em>“Scotland lost many of <strong>her</strong> bravest men in two great rebellions.”</em> (स्कॉटलैंड ने अपने कई बहादुर सपूत खो दिए।)
-        </div>
-      </article>
-
+      <!-- Sub-concept 2A: Gender Categories & Ships/Countries -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>B. People Pairs &amp; Royal Titles</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Four Main Gender Categories &amp; Affectionate Feminine</h3>
+          <span class="badge">Core Categories</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>Masculine (पुल्लिंग):</strong> पुरुष, लड़के और नर प्राणी (Pronoun: <em>he / they</em>).<br>
+          • <strong>Feminine (स्त्रीलिंग):</strong> महिलाएँ, लड़कियाँ और मादा प्राणी (Pronoun: <em>she / they</em>).<br>
+          • <strong>Neuter (नपुंसकलिंग):</strong> निर्जीव वस्तुएँ (table, book), तथा अज्ञात लिंग वाले नवजात शिशु या पशु (Pronoun: <em>it / they</em>).<br>
+          • <strong>Common Gender (उभयलिंग):</strong> जो पुरुष व स्त्री दोनों के लिए प्रयुक्त होते हैं (<em>baby, child, cousin, parent, doctor, artist, teacher</em>).
         </div>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
+        <div class="trap-box" style="background:#fffbeb; border-color:#fcd34d; color:#92400e;">
+          <b>⭐ परीक्षा की विशेष स्थिति (Affectionate Feminine: Ships &amp; Countries):</b>
+          अंग्रेज़ी में दो विशेष परिस्थितियों में निर्जीव या भौगोलिक नामों को <strong>स्त्रीलिंग (she / her)</strong> माना जाता है:<br>
+          1. <strong>Ships (समुद्री जहाज):</strong> जब आदर या स्नेह से वर्णन हो — <em>“The ship struck an iceberg, which tore a hole in <strong>her</strong> side.”</em><br>
+          2. <strong>Countries by Name:</strong> जब किसी देश के साहस, इतिहास या लोगों का उल्लेख हो — <em>“Scotland lost many of <strong>her</strong> bravest men in two great rebellions.”</em>
         </div>
+
+        <!-- 2 Example Questions for 2A -->
+        <div class="concept-pair-box" id="pair-2a"></div>
+      </article>
+
+      <!-- Sub-concept 2B: People, Titles & Animal Genders -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. People Pairs, Royal Titles &amp; Animal Genders</h3>
+          <span class="badge">Vocabulary &amp; Suffixes</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          पारिवारिक व सामाजिक रिश्तों, राजसी उपाधियों और पशु-पक्षियों के लिंग भेद परीक्षा में बार-बार पूछे जाते हैं:
+        </p>
+
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Masculine (पुल्लिंग)</th>
-                <th>Feminine (स्त्रीलिंग)</th>
-                <th>Masculine (पुल्लिंग)</th>
-                <th>Feminine (स्त्रीलिंग)</th>
-              </tr>
+              <tr><th>Masculine (पुल्लिंग)</th><th>Feminine (स्त्रीलिंग)</th><th>Masculine (पुल्लिंग)</th><th>Feminine (स्त्रीलिंग)</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>boy (लड़का)</td><td>girl (लड़की)</td>
-                <td>gentleman (सज्जन)</td><td>lady (महिला)</td>
-              </tr>
-              <tr>
-                <td>bachelor (कुँवारा पुरुष)</td><td>spinster (कुँवारी स्त्री)</td>
-                <td>husband (पति)</td><td>wife (पत्नी)</td>
-              </tr>
-              <tr>
-                <td>bridegroom (दूल्हा)</td><td>bride (दुल्हन)</td>
-                <td>man (पुरुष)</td><td>woman (स्त्री)</td>
-              </tr>
-              <tr>
-                <td>father (पिता)</td><td>mother (माता)</td>
-                <td>nephew (भतीजा/भांजा)</td><td>niece (भतीजी/भांजी)</td>
-              </tr>
-              <tr>
-                <td>son (पुत्र)</td><td>daughter (पुत्री)</td>
-                <td>widower (विधुर)</td><td>widow (विधवा)</td>
-              </tr>
-              <tr>
-                <td>uncle (चाचा/मामा)</td><td>aunt (चाची/मामी)</td>
-                <td>duke (सामंत)</td><td>duchess</td>
-              </tr>
-              <tr>
-                <td>king (राजा)</td><td>queen (रानी)</td>
-                <td>earl (सामंत)</td><td>countess</td>
-              </tr>
-              <tr>
-                <td>prince (राजकुमार)</td><td>princess (राजकुमारी)</td>
-                <td>lord (स्वामी)</td><td>lady</td>
-              </tr>
+              <tr><td><strong>Bachelor</strong> (कुँवारा पुरुष)</td><td><strong>Spinster</strong> (कुँवारी स्त्री)</td><td><strong>Duke</strong> (सामंत)</td><td><strong>Duchess</strong></td></tr>
+              <tr><td><strong>Widower</strong> (विधुर)</td><td><strong>Widow</strong> (विधवा)</td><td><strong>Earl</strong> (सामंत)</td><td><strong>Countess</strong></td></tr>
+              <tr><td><strong>Bridegroom</strong> (दूल्हा)</td><td><strong>Bride</strong> (दुल्हन)</td><td><strong>Lord</strong> (स्वामी)</td><td><strong>Lady</strong></td></tr>
+              <tr><td><strong>Nephew</strong> (भतीजा/भांजा)</td><td><strong>Niece</strong> (भतीजी/भांजी)</td><td><strong>Heir</strong> (उत्तराधिकारी)</td><td><strong>Heiress</strong></td></tr>
             </tbody>
           </table>
         </div>
-      </article>
 
-      <article class="rule-card">
-        <div class="rule-header">
-          <h3>C. Occupations &amp; Animal Genders</h3>
-        </div>
-        <div class="easy-hi">
-          👉 <strong>Majority of Occupations:</strong> Most job titles have the same form for both males and females: <em>artist, assistant, cook, dancer, driver, doctor, guide, teacher</em>.<br>
-          👉 <strong>Suffix Exceptions (-ess / -ine):</strong><br>
-          • actor / actress • host / hostess • waiter / waitress • manager / manageress<br>
-          • steward / stewardess • heir / heiress (उत्तराधिकारी/उत्तराधिकारिणी) • hero / heroine • conductor / conductress<br>
-          • salesman / saleswoman (Modern gender-neutral: <em>salesperson, spokesperson</em>).
-        </div>
-
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view animal pairs</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Animal Type</th>
-                <th>Male (Masculine)</th>
-                <th>Female (Feminine)</th>
-                <th>Notes for Students (सरल समझ)</th>
-              </tr>
+              <tr><th>Animal Type</th><th>Male (Masculine)</th><th>Female (Feminine)</th><th>महत्वपूर्ण परीक्षा बिंदु</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Cattle (गाय-बैल)</td>
-                <td><strong>bull</strong></td>
-                <td><strong>cow</strong></td>
-                <td>Bull = सांड/बैल, Cow = गाय</td>
-              </tr>
-              <tr>
-                <td>Fowl (मुर्गा-मुर्गी)</td>
-                <td><strong>cock</strong> (rooster)</td>
-                <td><strong>hen</strong></td>
-                <td>Cock = मुर्गा, Hen = मुर्गी</td>
-              </tr>
-              <tr>
-                <td>Dog (कुत्ता-कुतिया)</td>
-                <td><strong>dog</strong></td>
-                <td><strong>bitch</strong></td>
-                <td>Dog = कुत्ता, Bitch = कुतिया</td>
-              </tr>
-              <tr>
-                <td>Duck (बतख)</td>
-                <td><strong>drake</strong></td>
-                <td><strong>duck</strong></td>
-                <td>Drake = नर बतख, Duck = मादा बतख</td>
-              </tr>
-              <tr>
-                <td>Goose (कलहंस)</td>
-                <td><strong>gander</strong></td>
-                <td><strong>goose</strong></td>
-                <td>Gander = नर कलहंस, Goose = मादा कलहंस</td>
-              </tr>
-              <tr>
-                <td>Sheep (भेड़)</td>
-                <td><strong>ram</strong></td>
-                <td><strong>ewe</strong></td>
-                <td>Ram (/ræm/) = नर भेड़, Ewe (/juː/) = मादा भेड़</td>
-              </tr>
-              <tr>
-                <td>Deer (हिरण)</td>
-                <td><strong>stag</strong> (or buck)</td>
-                <td><strong>doe</strong></td>
-                <td>Stag = नर हिरण, Doe = मादा हिरण</td>
-              </tr>
-              <tr>
-                <td>Horse (घोड़ा-घोड़ी)</td>
-                <td><strong>stallion</strong></td>
-                <td><strong>mare</strong></td>
-                <td>Stallion = घोड़ा, Mare = घोड़ी</td>
-              </tr>
-              <tr>
-                <td>Big Cats (सिंह व बाघ)</td>
-                <td><strong>lion, tiger</strong></td>
-                <td><strong>lioness, tigress</strong></td>
-                <td>मादा रूप में '-ess' जोड़ा जाता है</td>
-              </tr>
+              <tr><td><strong>Sheep (भेड़)</strong></td><td><strong>ram</strong> (/ræm/)</td><td><strong>ewe</strong> (/juː/)</td><td>उच्चारण 'यू' होता है; बहुवचन sheep ही रहता है।</td></tr>
+              <tr><td><strong>Duck (बतख)</strong></td><td><strong>drake</strong></td><td><strong>duck</strong></td><td>Drake = नर बतख, Duck = मादा बतख।</td></tr>
+              <tr><td><strong>Goose (कलहंस)</strong></td><td><strong>gander</strong></td><td><strong>goose</strong></td><td>Gander = नर, बहुवचन geese होता है।</td></tr>
+              <tr><td><strong>Deer (हिरण)</strong></td><td><strong>stag</strong> (या buck)</td><td><strong>doe</strong></td><td>Stag = नर हिरण, Doe = मादा हिरण।</td></tr>
+              <tr><td><strong>Horse (घोड़ा)</strong></td><td><strong>stallion</strong></td><td><strong>mare</strong></td><td>Stallion = घोड़ा, Mare = घोड़ी।</td></tr>
+              <tr><td><strong>Cattle (गाय-बैल)</strong></td><td><strong>bull</strong></td><td><strong>cow</strong></td><td>Bull = सांड/बैल, Cow = गाय।</td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 2B -->
+        <div class="concept-pair-box" id="pair-2b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 3: Plural Formations -->
+    <!-- UNIT 03: PLURAL FORMATIONS -->
     <!-- ========================================== -->
-    <section id="unit-3" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 03 · Plural Formations</p>
-          <h2>3. Plural Formations (एकवचन से बहुवचन)</h2>
-        </div>
-        <p>Rules for forming plurals, pronunciation sound patterns, and creatures that never change.</p>
+    <section id="topic-3" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 03 · Plural Formations</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Plural Formations (एकवचन से बहुवचन निर्माण के नियम)</h2>
       </div>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>Rule 1: General Rule — Adding '-s' &amp; Sound Rules</h3>
-          <span class="badge">Pronunciation</span>
-        </div>
-        <div class="easy-hi">
-          • The plural of a noun is usually made by adding <strong>-s</strong> to the singular: <em>day → days, dog → dogs, house → houses</em>.<br>
-          • <strong>ध्वनि का नियम:</strong> यदि शब्द <strong>p, k, f</strong> ध्वनि पर समाप्त हो, तो '-s' का उच्चारण <strong>/s/</strong> निकलता है (<em>caps, books, cliffs</em>)। अन्य ध्वनियों के बाद <strong>/z/</strong> निकलता है (<em>dogs, days</em>)।<br>
-          • जब '-s' को <strong>ce, ge, se, ze</strong> के बाद लगाते हैं, तो उच्चारण में एक नया शब्दांश <strong>/ɪz/</strong> (इज़) जुड़ जाता है (<em>houses, places, roses, pages</em>).
-        </div>
-      </article>
-
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>Rule 2: Nouns ending in -o, -ch, -sh, -ss, -x (+es vs +s)</h3>
-          <span class="badge badge-amber">Trap Alert</span>
-        </div>
-        <div class="easy-hi">
-          👉 <strong>Add '-es':</strong> सीटी या फुफकार जैसी ध्वनि (hissing sound) वाले शब्दों में <strong>-es</strong> लगता है:<br>
-          • <em>tomato → tomatoes</em> • <em>church → churches</em> • <em>brush → brushes</em> • <em>kiss → kisses</em> • <em>box → boxes</em>.<br><br>
-          ⚠️ <strong>Foreign Origin &amp; Abbreviation Exception:</strong> विदेशी या संक्षिप्त शब्दों के अंत में '-o' होने पर केवल <strong>'-s'</strong> जुड़ता है, '-es' नहीं:<br>
-          • <strong>dynamo → dynamos</strong> • <strong>kilo → kilos</strong> • <strong>kimono → kimonos</strong><br>
-          • <strong>photo → photos</strong> • <strong>piano → pianos</strong> • <strong>soprano → sopranos</strong>
-        </div>
-      </article>
-
+      <!-- Sub-concept 3A: Regular, -es, Foreign -o, and -y rules -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>Rule 3: Words ending in '-y' (Consonant+y vs Vowel+y)</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Regular Plural -s, -es Hissing Rule, Foreign -o &amp; Words ending in -y</h3>
+          <span class="badge">Sound &amp; Spelling</span>
         </div>
-        <div class="example-grid">
-          <div class="example-box">
-            <b>Consonant + y → drop 'y' and add '-ies'</b>
-            <span>baby → babies, country → countries, fly → flies, lady → ladies. ('y' से ठीक पहले व्यंजन r, d, l, b है!)</span>
-          </div>
-          <div class="example-box">
-            <b>Vowel + y → keep 'y' and add '-s'</b>
-            <span>boy → boys, day → days, donkey → donkeys, guy → guys, monkey → monkeys. ('y' से ठीक पहले स्वर है!)</span>
-          </div>
+        <div class="easy-hi">
+          👉 <strong>1. सामान्य नियम (-s) व ध्वनि नियम:</strong><br>
+          • <strong>/s/ ध्वनि:</strong> यदि शब्द <strong>p, k, f</strong> ध्वनि पर समाप्त हो, तो '-s' का उच्चारण /s/ निकलता है (<em>caps, books, cliffs</em>)। अन्य ध्वनियों के बाद /z/ निकलता है (<em>dogs, days</em>)।<br>
+          • <strong>/ɪz/ (इज़) अतिरिक्त शब्दांश:</strong> जब '-s' को <strong>ce, ge, se, ze</strong> के बाद लगाते हैं, तो उच्चारण में नया शब्दांश जुड़ जाता है (<em>houses, places, roses, pages</em>).<br><br>
+          👉 <strong>2. Hissing Sounds (-ch, -sh, -ss, -x, -o) में '-es':</strong><br>
+          • <em>tomato → tomatoes, church → churches, brush → brushes, kiss → kisses, box → boxes</em>.<br>
+          ⚠️ <strong>विदेशी व संक्षिप्त शब्दों का अपवाद (Foreign / Abbreviated -o Words):</strong> इनमें केवल <strong>'-s'</strong> जुड़ता है:<br>
+          • <strong>piano → pianos</strong> • <strong>photo → photos</strong> • <strong>kilo → kilos</strong> • <strong>dynamo → dynamos</strong> • <strong>soprano → sopranos</strong>.<br><br>
+          👉 <strong>3. '-y' पर समाप्त होने वाले शब्द:</strong><br>
+          • <strong>व्यंजन + y:</strong> 'y' हटाकर <strong>-ies</strong> (<em>baby → babies, country → countries, fly → flies</em>).<br>
+          • <strong>स्वर + y:</strong> केवल <strong>-s</strong> (<em>boy → boys, donkey → donkeys, monkey → monkeys</em>).
         </div>
+
+        <!-- 2 Example Questions for 3A -->
+        <div class="concept-pair-box" id="pair-3a"></div>
       </article>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 3B: 12 -ves words, Vowels & Unchanged Creatures -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>Rule 4: Nouns ending in '-f' or '-fe' (The Twelve Words &amp; Exceptions)</h3>
-          <span class="badge badge-red">High Yield</span>
+          <h3 style="font-size:16px; font-weight:800;">B. The Twelve -ves Words, Vowel Mutation &amp; Invariant Creatures</h3>
+          <span class="badge">Irregular &amp; Invariant</span>
         </div>
-        <p>English has <strong>Twelve Nouns</strong> that drop 'f' or 'fe' and take <strong>'-ves'</strong> in the plural:</p>
+        <p style="font-size:13px; color:#4b5563;">
+          अंग्रेज़ी में 12 ऐसी विशेष संज्ञाएँ हैं जो 'f' या 'fe' को हटाकर <strong>'-ves'</strong> बनाती हैं:
+        </p>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view 12 -ves words</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Category</th>
-                <th>Singular Form</th>
-                <th>Plural Form</th>
-                <th>Hindi Meaning / Note (सरल अर्थ)</th>
-              </tr>
+              <tr><th>वर्ग</th><th>एकवचन (Singular)</th><th>बहुवचन (Plural)</th><th>नियम व अर्थ</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>The 12 -ves words</strong></td>
-                <td>calf, half, knife, leaf</td>
-                <td><span class="right">calves, halves, knives, leaves ✓</span></td>
-                <td>बछड़ा, आधा, चाकू, पत्ती</td>
-              </tr>
-              <tr>
-                <td><strong>The 12 -ves words</strong></td>
-                <td>life, loaf, self, sheaf</td>
-                <td><span class="right">lives, loaves, selves, sheaves ✓</span></td>
-                <td>जीवन, पावरोटी, स्वयं, पूला/गट्ठा</td>
-              </tr>
-              <tr>
-                <td><strong>The 12 -ves words</strong></td>
-                <td>shelf, thief, wife, wolf</td>
-                <td><span class="right">shelves, thieves, wives, wolves ✓</span></td>
-                <td>अलमारी, चोर, पत्नी, भेड़िया</td>
-              </tr>
-              <tr>
-                <td><strong>Take BOTH -s or -ves</strong></td>
-                <td>hoof, scarf, wharf</td>
-                <td><span class="right">hoofs / hooves, scarfs / scarves, wharfs / wharves ✓</span></td>
-                <td>दोनों ही रूप व्याकरण के अनुसार शुद्ध माने जाते हैं!</td>
-              </tr>
-              <tr>
-                <td><strong>Ordinary +s ONLY</strong></td>
-                <td>cliff, handkerchief, safe, roof</td>
-                <td><span class="right">cliffs, handkerchiefs, safes, roofs ✓</span></td>
-                <td>इनमें 'ves' नहीं लगता (safes, cliffs)!</td>
-              </tr>
+              <tr><td><strong>12 -ves Words</strong></td><td>calf, half, knife, leaf</td><td><strong>calves, halves, knives, leaves</strong></td><td>बछड़ा, आधा, चाकू, पत्ती</td></tr>
+              <tr><td><strong>12 -ves Words</strong></td><td>life, loaf, self, sheaf</td><td><strong>lives, loaves, selves, sheaves</strong></td><td>जीवन, पावरोटी, स्वयं, पूला</td></tr>
+              <tr><td><strong>12 -ves Words</strong></td><td>shelf, thief, wife, wolf</td><td><strong>shelves, thieves, wives, wolves</strong></td><td>अलमारी, चोर, पत्नी, भेड़िया</td></tr>
+              <tr><td><strong>Both -s or -ves</strong></td><td>hoof, scarf, wharf</td><td><strong>hoofs/hooves, scarfs/scarves, wharfs/wharves</strong></td><td>दोनों रूप व्याकरण में मान्य हैं।</td></tr>
+              <tr><td><strong>Ordinary +s Only</strong></td><td>cliff, safe, handkerchief, roof</td><td><strong>cliffs, safes, handkerchiefs, roofs</strong></td><td>इनमें 'ves' नहीं लगता!</td></tr>
             </tbody>
           </table>
         </div>
-      </article>
 
-      <article class="rule-card">
-        <div class="rule-header">
-          <h3>Rule 5: Irregular Vowel Changes &amp; Unchanged Creatures</h3>
-        </div>
         <div class="easy-hi">
-          👉 <strong>आंतरिक स्वर बदलकर बहुवचन:</strong><br>
-          • <em>foot → feet</em> • <em>goose → geese</em> • <em>louse → lice</em> • <em>man → men</em><br>
-          • <em>mouse → mice</em> • <em>tooth → teeth</em> • <em>woman → women</em><br>
-          • Special additions: <strong>child → children</strong>, <strong>ox → oxen</strong>.<br><br>
-          👉 <strong>Creatures that DO NOT CHANGE (Singular = Plural):</strong><br>
-          • <strong>sheep (भेड़):</strong> <em>one sheep, two sheep</em> (कभी 'sheeps' न लिखें ✗)<br>
-          • <strong>deer (हिरण):</strong> <em>one deer, five deer</em> (कभी 'deers' न लिखें ✗)<br>
-          • <strong>fish (मछली):</strong> सामान्यतः <em>fish</em> ही रहता है। न बदलने वाली मछलियाँ: <em>carp, pike, salmon, trout, cod, plaice, squid, turbot, mackerel</em>.<br>
-          • Marine creatures taking '-s': <em>crabs, herrings, sardines, eels, lobsters, sharks</em>.<br>
-          • Game birds (hunters): <em>duck, partridge, pheasant</em> (शिकार के संदर्भ में रूप नहीं बदलता)। 'game' शब्द हमेशा एकवचन क्रिया लेता है।<br>
-          • Other unchanged words: <strong>aircraft</strong>, <strong>craft</strong>, <strong>quid</strong>, <strong>counsel</strong>.
+          👉 <strong>आंतरिक स्वर बदलकर बनने वाले बहुवचन (Vowel Mutation):</strong><br>
+          • <em>foot → feet</em> • <em>goose → geese</em> • <em>louse → lice</em> • <em>man → men</em> • <em>mouse → mice</em> • <em>tooth → teeth</em> • <em>woman → women</em> • <em>child → children</em> • <em>ox → oxen</em>.<br><br>
+          👉 <strong>अपरिवर्तित रहने वाले प्राणी (Singular = Plural):</strong><br>
+          • <strong>sheep (भेड़):</strong> <em>one sheep, two sheep</em> ('sheeps' कभी नहीं!)<br>
+          • <strong>deer (हिरण):</strong> <em>one deer, five deer</em> ('deers' अशुद्ध है)<br>
+          • <strong>मछलियाँ (Fish):</strong> सामान्यतः <em>fish</em> ही रहता है। अपरिवर्तित मछलियाँ: <em>salmon, trout, cod, carp, pike, squid, mackerel</em>. ('-s' लेने वाले: sharks, eels, sardines).<br>
+          • अन्य शब्द: <strong>aircraft</strong>, <strong>craft</strong>, <strong>quid</strong>, <strong>counsel</strong>.
         </div>
+
+        <!-- 2 Example Questions for 3B -->
+        <div class="concept-pair-box" id="pair-3b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 4: Plural Traps, Agreement & Compounds -->
+    <!-- UNIT 04: PLURAL TRAPS, AGREEMENT & COMPOUNDS -->
     <!-- ========================================== -->
-    <section id="unit-4" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 04 · Traps &amp; Agreement</p>
-          <h2>4. Plural Traps, Agreement &amp; Compounds</h2>
-        </div>
-        <p>Nouns that are always plural, plural-looking singular nouns, and compound noun pluralization.</p>
+    <section id="topic-4" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 04 · Traps &amp; Agreement</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Plural Traps, Agreement &amp; Compounds</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 4A: Always Plural & -ics/News -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Words that are ALWAYS PLURAL (Take a Plural Verb)</h3>
+          <h3 style="font-size:16px; font-weight:800;">A. Nouns Always Plural (Police, 2-Part Garments &amp; Tools) vs -ics / News</h3>
           <span class="badge">Plural Verb Required</span>
         </div>
         <div class="easy-hi">
-          • <strong>Clothes and Police:</strong> <em>The police <strong>are</strong> investigating.</em> (Never 'police is'!)<br>
-          • <strong>Garments of two parts (दो टांगों वाले वस्त्र):</strong> <em>breeches, pants, pyjamas, trousers, shorts, jeans</em>.<br>
-          • <strong>Tools of two parts (दो फलक/ब्लेड वाले औज़ार):</strong> <em>binoculars (दूरबीन), glasses/spectacles (चश्मा), pliers (पिलास), scales (तराजू), scissors (कैंची), shears (कतरनी)</em>.<br>
-          • इन्हें गिनने के लिए <strong>'a pair of'</strong> लगाते हैं: <em>a pair of scissors, two pairs of trousers</em>.<br>
-          • <strong>Other Plural Nouns:</strong> <em>arms (हथियार), damages (हर्जाना), earnings (कमाई), goods (सामान), greens (सब्जियाँ), grounds, outskirts (बाहरी इलाका), pains (कठिन प्रयास), particulars, premises (परिसर), riches (दौलत), savings (बचत), stairs (सीढ़ियाँ), surroundings, valuables (कीमती वस्तुएँ)</em>.
+          • <strong>Police &amp; Clothes:</strong> <em>The police <strong>are</strong> investigating.</em> ('police is' घोर अशुद्धि है!)<br>
+          • <strong>दो टांगों वाले वस्त्र:</strong> <em>trousers, pants, pyjamas, shorts, jeans, breeches</em>.<br>
+          • <strong>दो फलक/ब्लेड वाले औज़ार:</strong> <em>binoculars (दूरबीन), glasses/spectacles (चश्मा), pliers (पिलास), scales (तराजू), scissors (कैंची), shears (कतरनी)</em>.<br>
+          • इन्हें गिनने के लिए <strong>'a pair of'</strong> लगाते हैं (<em>a pair of scissors, two pairs of trousers</em>).<br>
+          • अन्य सदैव बहुवचन शब्द: <em>arms (हथियार), damages (हर्जाना), earnings (कमाई), goods (सामान), outskirts, premises (परिसर), riches (दौलत), savings (बचत), stairs, valuables</em>.
         </div>
-      </article>
 
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>B. Words ending in -ics &amp; Plural-looking Singulars</h3>
-          <span class="badge badge-amber">Must Learn</span>
-        </div>
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Noun Category</th>
-                <th>Grammar Rule</th>
-                <th>Sentence Example</th>
-              </tr>
+              <tr><th>Noun Category</th><th>व्याकरणिक नियम</th><th>Sentence Example</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>-ics as an Academic Discipline</strong><br>(Mathematics, Physics, Politics, Ethics)</td>
-                <td>अध्ययन या विज्ञान के नाम के रूप में <strong>एकवचन (SINGULAR)</strong> क्रिया लगती है।</td>
-                <td><em>Mathematics <strong>is</strong> an exact science.</em></td>
-              </tr>
-              <tr>
-                <td><strong>-ics as Personal Ability</strong></td>
-                <td>व्यक्ति की व्यक्तिगत योग्यता के रूप में <strong>बहुवचन (PLURAL)</strong> क्रिया लगती है।</td>
-                <td><em>His mathematics <strong>are</strong> weak.</em></td>
-              </tr>
-              <tr>
-                <td><strong>News (समाचार)</strong></td>
-                <td>हमेशा <strong>एकवचन (SINGULAR)</strong> क्रिया लेता है।</td>
-                <td><em>The news <strong>is</strong> good.</em> (NOT are ✗)</td>
-              </tr>
-              <tr>
-                <td><strong>Diseases (बीमारियाँ)</strong><br>(mumps, rickets, shingles, measles)</td>
-                <td>अंत में 's' होने पर भी अर्थ में <strong>एकवचन</strong> होती हैं।</td>
-                <td><em>Mumps <strong>is</strong> an infectious disease.</em></td>
-              </tr>
-              <tr>
-                <td><strong>Games (खेलों के नाम)</strong><br>(billiards, darts, draughts, bowls, dominoes)</td>
-                <td>खेल का नाम हमेशा <strong>एकवचन</strong> माना जाता है।</td>
-                <td><em>Billiards <strong>is</strong> played on a green table.</em></td>
-              </tr>
+              <tr><td><strong>-ics as an Academic Discipline</strong><br>(Mathematics, Physics, Politics, Ethics)</td><td>विषय/विज्ञान के नाम के रूप में <strong>एकवचन (SINGULAR)</strong> क्रिया लगती है।</td><td><em>Mathematics <strong>is</strong> an exact science.</em></td></tr>
+              <tr><td><strong>-ics as Personal Ability</strong></td><td>व्यक्तिगत योग्यता के रूप में <strong>बहुवचन (PLURAL)</strong> क्रिया लगती है।</td><td><em>His mathematics <strong>are</strong> weak.</em></td></tr>
+              <tr><td><strong>News (समाचार)</strong></td><td>अंत में 's' होने पर भी हमेशा <strong>एकवचन (SINGULAR)</strong> होता है।</td><td><em>The news <strong>is</strong> good.</em> (are नहीं!)</td></tr>
+              <tr><td><strong>Diseases &amp; Games</strong><br>(Mumps, measles, rickets, billiards, darts)</td><td>बीमारियों और खेलों के नाम अर्थ में <strong>एकवचन</strong> होते हैं।</td><td><em>Mumps <strong>is</strong> infectious. / Billiards <strong>is</strong> played.</em></td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 4A -->
+        <div class="concept-pair-box" id="pair-4a"></div>
       </article>
 
+      <!-- Sub-concept 4B: Foreign Plurals, Compounds & Collective Agreement -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>C. Foreign Plurals &amp; Compound Nouns Rules</h3>
+          <h3 style="font-size:16px; font-weight:800;">B. Greek/Latin Foreign Plurals, Compound Nouns &amp; Collective Agreement</h3>
+          <span class="badge">Compound &amp; Foreign</span>
         </div>
         <div class="easy-hi">
-          👉 <strong>Greek &amp; Latin Plurals:</strong><br>
-          • <em>crisis → crises</em> • <em>erratum → errata</em> • <em>memorandum → memoranda</em><br>
-          • <em>oasis → oases</em> • <em>phenomenon → phenomena</em> • <em>radius → radii</em> • <em>terminus → termini</em>.<br>
-          • English rules: <em>dogma → dogmas, gymnasium → gymnasiums, formula → formulas</em>.<br>
-          • <strong>Two Plurals with Different Meanings:</strong><br>
-          - <em>appendix</em>: <strong>appendixes</strong> (चिकित्सा संबंधी) अथवा <strong>appendices</strong> (पुस्तक का परिशिष्ट)।<br>
-          - <em>index</em>: <strong>indexes</strong> (पुस्तक की अनुक्रमणिका) अथवा <strong>indices</strong> (गणितीय सूचकांक)।<br><br>
-          👉 <strong>Compound Nouns Pluralization:</strong><br>
-          1. <em>Normally the last word is plural:</em> <strong>boy-friends</strong>, <strong>break-ins</strong>, <strong>travel agents</strong>.<br>
-          2. <em>When prefixed by 'man' or 'woman', <strong>both parts</strong> are made plural:</em> <strong>men drivers</strong>, <strong>women drivers</strong>, <strong>men teachers</strong>!<br>
-          3. <em>Prepositions or adverbs: <strong>first word</strong> is plural:</em> <strong>runners-up</strong>, <strong>hangers-on</strong>, <strong>sisters-in-law</strong>, <strong>ladies-in-waiting</strong>.<br>
-          4. <em>Abbreviations / Initials:</em> <strong>MPs</strong>, <strong>VIPs</strong>, <strong>UFOs</strong>.
+          👉 <strong>1. विदेशी मूल के बहुवचन (Greek &amp; Latin Plurals):</strong><br>
+          • <em>crisis → crises</em> • <em>phenomenon → phenomena</em> • <em>oasis → oases</em> • <em>criterion → criteria</em> • <em>radius → radii</em> • <em>memorandum → memoranda</em>.<br>
+          • दो भिन्न अर्थों वाले बहुवचन: <em>appendix</em> → <strong>appendixes</strong> (चिकित्सीय) / <strong>appendices</strong> (पुस्तक का परिशिष्ट)। <em>index</em> → <strong>indexes</strong> (पुस्तक अनुक्रमणिका) / <strong>indices</strong> (गणितीय सूचकांक)।<br><br>
+          👉 <strong>2. संयुक्त संज्ञा (Compound Nouns) का बहुवचन:</strong><br>
+          • सामान्यतः अंतिम शब्द बहुवचन बनता है: <strong>boy-friends</strong>, <strong>travel agents</strong>.<br>
+          • 'man' या 'woman' उपसर्ग होने पर <strong>दोनों भाग</strong> बहुवचन बनते हैं: <strong>men drivers</strong>, <strong>women drivers</strong>, <strong>men teachers</strong>!<br>
+          • Preposition से जुड़े शब्दों में <strong>पहला शब्द</strong> बहुवचन बनता है: <strong>sisters-in-law</strong>, <strong>passers-by</strong>, <strong>runners-up</strong>.<br><br>
+          👉 <strong>3. Collective Noun Agreement (Team is vs Team are):</strong><br>
+          • पूरी टीम एक इकाई के रूप में: <em>“Our team <strong>is</strong> the best.”</em> (Singular Verb)<br>
+          • अलग-अलग सदस्य अपनी-अपनी क्रिया करते हुए: <em>“Our team <strong>are wearing</strong> their new jerseys.”</em> (Plural Verb)
         </div>
-      </article>
 
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>D. Collective Nouns Agreement (Team is vs Team are)</h3>
-        </div>
-        <div class="easy-hi">
-          Collective nouns like <em>crew, family, team, jury, government</em> can take either verb:<br>
-          • <strong>Singular Verb:</strong> When thought of as a single united body — <em>“Our team <strong>is</strong> the best.”</em> (पूरी टीम एक इकाई के रूप में।)<br>
-          • <strong>Plural Verb:</strong> When thought of as individual members — <em>“Our team <strong>are wearing</strong> their new jerseys.”</em> (खिलाड़ी अपनी-अपनी जर्सी पहन रहे हैं।)<br>
-          • Possessive pronoun: <strong>their</strong> is more common than <em>its</em>: <em>“The jury are considering <strong>their</strong> verdict.”</em>
-        </div>
+        <!-- 2 Example Questions for 4B -->
+        <div class="concept-pair-box" id="pair-4b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 5: Uncountable (Mass) Nouns & Partitives -->
+    <!-- UNIT 05: UNCOUNTABLE NOUNS & PARTITIVES -->
     <!-- ========================================== -->
-    <section id="unit-5" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 05 · Mass Nouns</p>
-          <h2>5. Uncountable Nouns &amp; Partitives (अगणनीय संज्ञा)</h2>
-        </div>
-        <p>Nouns that cannot be counted directly, their rules, and partitive counters used to quantify them.</p>
+    <section id="topic-5" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 05 · Mass Nouns &amp; Partitives</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">5. Uncountable Nouns &amp; Partitives (अगणनीय संज्ञा)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 5A: Substances, Concepts & Partitive Counters -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Common Uncountable Nouns in English</h3>
-          <span class="badge">Never with a/an</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Substances, Abstract Concepts &amp; Partitive Counters</h3>
+          <span class="badge">Partitive Quantifiers</span>
         </div>
         <div class="easy-hi">
-          1. <strong>Substances (पदार्थ व धातु):</strong> <em>bread, cream, gold, paper, tea, beer, dust, ice, sand, wafer, cloth, gin, jam, soap, wine, coffee, glass, oil, stone, wood</em>.<br>
-          2. <strong>Abstract Concepts (भाववाचक संज्ञाएँ):</strong> <em>advice, beauty, courage, death, experience, fear, help, hope, horror, information, knowledge, mercy, pity, relief, suspicion, work</em>.<br>
-          3. <strong>Strictly Uncountable in English:</strong> <em>baggage, camping, damage, furniture, luggage, parking, shopping, weather, hair, rubbish, news</em>.
+          • <strong>Substances:</strong> <em>bread, cream, gold, paper, tea, beer, dust, ice, sand, soap, wood</em>.<br>
+          • <strong>Abstract Concepts:</strong> <em>advice, beauty, courage, help, hope, information, knowledge, work</em>.<br>
+          • <strong>Strictly Uncountable:</strong> <em>baggage, luggage, furniture, weather, hair, rubbish, news</em>.<br>
+          ⚠️ इन शब्दों के साथ कभी सीधे 'a/an' या बहुवचन '-s' न लगाएँ (furnitures ❌, an advice ❌)!
         </div>
-      </article>
 
-      <article class="rule-card warning">
-        <div class="rule-header">
-          <h3>B. Partitive Counters: How to Count Uncountables</h3>
-          <span class="badge badge-amber">Must Learn</span>
-        </div>
-        <p>Never place 'a/an' or plural '-s' directly with uncountable nouns. Use these standard partitive counters:</p>
-
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe horizontally to view full table</span>
-        </div>
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr>
-                <th>Uncountable Noun</th>
-                <th>Incorrect (गलत)</th>
-                <th>Correct Partitive Counter (शुद्ध)</th>
-                <th>Hindi Meaning (सरल अर्थ)</th>
-              </tr>
+              <tr><th>Uncountable Noun</th><th>Incorrect (गलत)</th><th>Correct Partitive Counter (शुद्ध)</th><th>सरल हिंदी अर्थ</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Advice</strong></td>
-                <td><span class="wrong">an advice ✗, advices ✗</span></td>
-                <td><span class="right">a piece of advice ✓</span></td>
-                <td>एक सलाह</td>
-              </tr>
-              <tr>
-                <td><strong>Bread</strong></td>
-                <td><span class="wrong">a bread ✗, breads ✗</span></td>
-                <td><span class="right">a loaf of bread / a slice of bread ✓</span></td>
-                <td>एक पावरोटी / ब्रेड का टुकड़ा</td>
-              </tr>
-              <tr>
-                <td><strong>Soap</strong></td>
-                <td><span class="wrong">a soap ✗, soaps ✗</span></td>
-                <td><span class="right">a cake of soap / a bar of soap ✓</span></td>
-                <td>साबुन की एक टिकिया/बट्टी</td>
-              </tr>
-              <tr>
-                <td><strong>Furniture</strong></td>
-                <td><span class="wrong">a furniture ✗, furnitures ✗</span></td>
-                <td><span class="right">an item of furniture / a piece of furniture ✓</span></td>
-                <td>फर्नीचर का एक सामान</td>
-              </tr>
-              <tr>
-                <td><strong>News</strong></td>
-                <td><span class="wrong">a news ✗</span></td>
-                <td><span class="right">a bit of news / a piece of news ✓</span></td>
-                <td>एक समाचार</td>
-              </tr>
-              <tr>
-                <td><strong>Paper</strong></td>
-                <td><span class="wrong">a paper ✗ (as material)</span></td>
-                <td><span class="right">a sheet of paper ✓</span></td>
-                <td>कागज का एक पन्ना</td>
-              </tr>
-              <tr>
-                <td><strong>Oil / Sand / Jam / Glass</strong></td>
-                <td><span class="wrong">an oil, a sand</span></td>
-                <td><span class="right">a drop of oil, a grain of sand, a pot of jam, a pane of glass ✓</span></td>
-                <td>तेल की बूँद, रेत का कण, जैम का जार, शीशे का तख्ता</td>
-              </tr>
+              <tr><td><strong>Advice</strong></td><td>an advice ✗, advices ✗</td><td><strong>a piece of advice</strong></td><td>एक सलाह</td></tr>
+              <tr><td><strong>Bread</strong></td><td>a bread ✗, breads ✗</td><td><strong>a loaf of bread / a slice of bread</strong></td><td>एक पावरोटी / ब्रेड का टुकड़ा</td></tr>
+              <tr><td><strong>Soap</strong></td><td>a soap ✗, soaps ✗</td><td><strong>a cake of soap / a bar of soap</strong></td><td>साबुन की एक बट्टी/टिकिया</td></tr>
+              <tr><td><strong>Furniture</strong></td><td>a furniture ✗, furnitures ✗</td><td><strong>a piece of furniture / an item of furniture</strong></td><td>फर्नीचर का एक सामान</td></tr>
+              <tr><td><strong>News</strong></td><td>a news ✗</td><td><strong>a bit of news / a piece of news</strong></td><td>एक समाचार</td></tr>
+              <tr><td><strong>Paper</strong></td><td>a paper ✗ (as material)</td><td><strong>a sheet of paper</strong></td><td>कागज का एक पन्ना</td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 2 Example Questions for 5A -->
+        <div class="concept-pair-box" id="pair-5a"></div>
       </article>
 
+      <!-- Sub-concept 5B: Dual Senses & a/an with Abstract Nouns -->
       <article class="rule-card">
         <div class="rule-header">
-          <h3>C. Dual Countable &amp; Uncountable Senses</h3>
+          <h3 style="font-size:16px; font-weight:800;">B. Dual Countable/Uncountable Senses &amp; Abstract Nouns with 'a/an'</h3>
+          <span class="badge">Context Shifts</span>
         </div>
         <div class="easy-hi">
-          • <strong>Hair (बाल):</strong> सिर के पूरे बाल सामूहिक रूप से अगणनीय हैं (<em>Her hair is black</em>)। परंतु अलग-अलग संख्या में गिनने पर गणनीय हैं (<em>She has two grey hairs</em>)।<br>
-          • <strong>Drinks (Coffee, Tea, Beer):</strong> तरल रूप में अगणनीय हैं। परंतु कप या ग्लास के आर्डर के रूप में गणनीय बन जाते हैं (<em>Can I have a coffee and two teas, please?</em>)।<br>
-          • <strong>Glass:</strong> सामग्री (शीशा) के रूप में अगणनीय है। पानी पीने के बर्तन के रूप में गणनीय (<em>a glass of water</em>) तथा चश्मे के लिए <em>glasses</em>.<br>
-          • <strong>Wood:</strong> लकड़ी के रूप में अगणनीय है। जंगल के अर्थ में <em>woods</em> कहा जाता है (<em>a walk in the woods</em>)।<br>
-          • <strong>Experience:</strong> संचित अनुभव के रूप में अगणनीय (<em>5 years of experience</em>)। परंतु रोमांचक घटना के लिए गणनीय (<em>an exciting experience</em>)।<br>
-          • <strong>Work:</strong> रोज़गार/कार्य के रूप में अगणनीय (<em>looking for work</em>)। सड़क मरम्मत को <em>roadworks</em> और साहित्यिक कृतियों को <em>Shakespeare's complete works</em> कहते हैं।
-        </div>
-      </article>
-
-      <article class="rule-card highlight">
-        <div class="rule-header">
-          <h3>D. Abstract Nouns with 'a/an' in Particular Senses</h3>
-        </div>
-        <div class="easy-hi">
-          कुछ भाववाचक संज्ञाएँ किसी विशिष्ट सहायता, घटना या स्थिति को दर्शाने पर एकवचन में 'a/an' ले सकती हैं:<br>
-          • <strong>a help:</strong> <em>“My children are <strong>a great help</strong> to me.”</em> / <em>“A good map would be <strong>a help</strong>.”</em><br>
-          • <strong>a relief:</strong> <em>“It was <strong>a relief</strong> to sit down.”</em> (बैठना एक बड़ा सुकून था।)<br>
+          👉 <strong>संदर्भ के अनुसार गणनीय व अगणनीय रूप (Dual Senses):</strong><br>
+          • <strong>Hair (बाल):</strong> पूरे सिर के बाल सामूहिक रूप से अगणनीय (<em>Her hair is black</em>)। अलग-अलग गिने जा सकने वाले बाल गणनीय (<em>two grey hairs</em>)।<br>
+          • <strong>Drinks (Coffee, Tea):</strong> पदार्थ रूप में अगणनीय। कप या ऑर्डर के रूप में गणनीय (<em>a coffee and two teas, please</em>)।<br>
+          • <strong>Glass:</strong> सामग्री (शीशा) अगणनीय है। बर्तन (<em>a glass of water</em>) और चश्मा (<em>glasses</em>) गणनीय हैं।<br>
+          • <strong>Work:</strong> रोज़गार/कार्य अगणनीय है। साहित्यिक कृतियों को <em>Shakespeare's complete works</em> और सड़क मरम्मत को <em>roadworks</em> कहते हैं।<br><br>
+          👉 <strong>विशिष्ट अर्थ में Abstract Nouns के साथ 'a/an':</strong><br>
+          • <strong>a help:</strong> <em>“My children are <strong>a great help</strong> to me.”</em><br>
+          • <strong>a relief:</strong> <em>“It was <strong>a relief</strong> to sit down.”</em><br>
           • <strong>a knowledge of:</strong> <em>“He has <strong>a good knowledge of</strong> mathematics.”</em><br>
-          • <strong>a love / hatred / horror of:</strong> <em>“a love of music”</em>, <em>“a hatred of violence”</em>.<br>
-          • <strong>a pity / shame:</strong> <em>“It's <strong>a pity</strong> you couldn't come.”</em><br>
-          • <strong>a fear / hope / suspicion:</strong> <em>“There is <strong>a fear</strong> that he was injured.”</em>
+          • <strong>a pity / a shame:</strong> <em>“It's <strong>a pity</strong> you couldn't come.”</em>
         </div>
+
+        <!-- 2 Example Questions for 5B -->
+        <div class="concept-pair-box" id="pair-5b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- 50 MCQs PRACTICE ARENA -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
     <!-- ========================================== -->
-    <section id="practice" class="mint-card practice-box">
-      <div class="section-heading" style="margin-bottom:12px;">
-        <div>
-          <p class="eyebrow">Interactive Practice Arena</p>
-          <h2>50 Chapter MCQs: Test Your Knowledge.</h2>
-        </div>
-        <p>Solve each question, check your answer, and view the short solution below.</p>
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:28px; font-weight:900; margin:8px 0;">Final 30-Question Nouns Test</h2>
+        <p style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+          यह टेस्ट संज्ञा के सभी 5 इकाइयों (Kinds, Functions, Gender, Plurals, Traps, Uncountables) की परीक्षा-स्तरीय समझ का मूल्यांकन करता है। जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> चालू हो जाएगा। समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
+          🚀 Start 30-Question Exam Now (15:00 Timer)
+        </button>
       </div>
 
-      <!-- Filter Buttons matching Econova style -->
-      <div class="filter-row" role="tablist">
-        <button type="button" class="filter-btn active" data-filter="all" onclick="filterCategory('all')">All 50 MCQs</button>
-        <button type="button" class="filter-btn" data-filter="kinds" onclick="filterCategory('kinds')">1. Kinds &amp; Functions (10)</button>
-        <button type="button" class="filter-btn" data-filter="gender" onclick="filterCategory('gender')">2. Gender Rules (10)</button>
-        <button type="button" class="filter-btn" data-filter="plurals" onclick="filterCategory('plurals')">3. Plural Formations (15)</button>
-        <button type="button" class="filter-btn" data-filter="traps" onclick="filterCategory('traps')">4. Plural Traps (8)</button>
-        <button type="button" class="filter-btn" data-filter="uncountable" onclick="filterCategory('uncountable')">5. Uncountable Nouns (7)</button>
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
+            Submit Test ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:8px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:12.5px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:7px 10px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div class="test-actions-bar">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Quick Question Jump Map -->
-      <details class="solution" style="margin-top:10px; background:#fff;" open>
-        <summary>✦ Question Navigation Grid: Click any number (1 to 50)</summary>
-        <div class="jump-grid" id="jump-grid">
-          <!-- 50 buttons generated by JS -->
-        </div>
-      </details>
-
-      <!-- Question Cards Grid -->
-      <div class="task-grid" id="task-container">
-        <!-- Rendered by JS: 10 per page -->
-      </div>
-
-      <!-- Check Page / All Section -->
-      <section class="amber-card check-all-section">
-        <div>
-          <h2 style="font-size:24px;">Check your answers</h2>
-          <p id="page-summary-text" style="font-size:13px; margin-top:4px;">Showing Page 1 of 5.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="mint-btn" type="button" onclick="checkCurrentPage()">Check this page <span aria-hidden="true">✓</span></button>
-          <button class="quiet-btn" type="button" onclick="resetAll()">Reset all</button>
-        </div>
-      </section>
-
-      <!-- Pagination -->
-      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:28px;">
-        <button id="btn-prev" class="quiet-btn" type="button" onclick="changePage(-1)">← Previous 10</button>
-        <span id="page-indicator" style="font-family:var(--heading); font-weight:800; color:var(--brand); font-size:14px;">Page 1 of 5</span>
-        <button id="btn-next" class="quiet-btn" type="button" onclick="changePage(1)">Next 10 →</button>
-      </div>
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
     </section>
-  </main>
 
-  <!-- Footer matching Econova theme -->
-  <footer>
-    <div class="wrap footer-inner">
-      <a class="footer-brand" href="#main">
-        Econova<em>.vip</em> ✦
-      </a>
-      <p>Class 4 to 10 English · Basics &amp; Classification of Nouns · Learn with clarity.</p>
-      <div class="footer-links">
-        <a href="#unit-1">Kinds</a>
-        <a href="#unit-2">Gender</a>
-        <a href="#unit-3">Plurals</a>
-        <a href="#unit-4">Traps</a>
-        <a href="#unit-5">Uncountables</a>
-        <a href="#main">Top ↑</a>
+    <!-- Submit Warning Modal -->
+    <div class="modal-overlay" id="submit-modal" style="display:none;">
+      <div class="modal-box">
+        <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
+        <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
+        <p style="font-size:13px; color:#475569; margin-bottom:12px;" id="modal-msg"></p>
+        <div style="display:flex; justify-content:center; gap:8px;">
+          <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Test (हल करते रहें)</button>
+          <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Safe target for React Vite root -->
-  <div id="root" style="display:none"></div>
-  <script type="module" src="/src/main.tsx"></script>
+    <!-- Footer -->
+    <footer>
+      <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:#64748b;">
+        <div>
+          <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+          Class 4–10 English Grammar · Chapter 2: Basics &amp; Classification of Nouns.
+        </div>
+        <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand);">
+          <a href="#topic-1">Kinds</a>
+          <a href="#topic-2">Gender</a>
+          <a href="#topic-3">Plurals</a>
+          <a href="#topic-4">Traps</a>
+          <a href="#topic-5">Uncountables</a>
+          <a href="#test-arena">30-Q Test</a>
+        </div>
+      </div>
+    </footer>
 
-  <!-- Audio Helper -->
-  <script>
-    function speakWord(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-GB';
-        utterance.rate = 0.9;
-        window.speechSynthesis.speak(utterance);
-      }
-    }
-  </script>
+    <!-- Target container for Vite -->
+    <div id="root" style="display:none;"></div>
 
-  <!-- Complete 50 MCQs & Interactive Engine -->
-  <script>
-    const questions = [
-      // UNIT 1: Kinds & Functions (Q1 - Q10)
-      {
-        id: 1,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "In the sentence 'Tom arrived at the airport early', what grammatical function does the noun 'Tom' perform?",
-        hi: "'Tom arrived at the airport early' वाक्य में 'Tom' संज्ञा क्या कार्य (function) कर रही है?",
-        options: [
-          "Subject of the verb 'arrived'",
-          "Object of the verb 'arrived'",
-          "Complement of the verb",
-          "Object of a preposition"
-        ],
-        ans: 0,
-        expl: "टॉम यहाँ आने का कार्य (action) कर रहा है, इसलिए टॉम क्रिया 'arrived' का कर्ता (Subject of the verb) है।"
-      },
-      {
-        id: 2,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "Which of the following is an example of an Abstract Noun (भाववाचक संज्ञा)?",
-        hi: "निम्नलिखित में से कौन सा शब्द भाववाचक संज्ञा (Abstract Noun) का उदाहरण है?",
-        options: ["Table", "Courage", "Tom", "Swarm"],
-        ans: 1,
-        expl: "'Courage' (साहस) एक गुण या भावना है जिसे हम छू या देख नहीं सकते, केवल समझ और महसूस कर सकते हैं। इसलिए यह भाववाचक संज्ञा (Abstract Noun) है।"
-      },
-      {
-        id: 3,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "Identify the Collective Noun in: 'A flock of birds flew over the river.'",
-        hi: "'A flock of birds flew over the river' वाक्य में समूहवाचक संज्ञा (Collective Noun) कौन सी है?",
-        options: ["birds", "flew", "flock", "river"],
-        ans: 2,
-        expl: "'Flock' पक्षियों के पूरे झुंड (group) को एक इकाई के रूप में दर्शाता है, इसलिए यह Collective Noun है।"
-      },
-      {
-        id: 4,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "In the sentence 'Tom is an actor', the noun 'actor' functions as:",
-        hi: "'Tom is an actor' वाक्य में 'actor' संज्ञा का व्याकरणिक कार्य क्या है?",
-        options: [
-          "Object of a transitive verb",
-          "Complement of the linking verb 'is'",
-          "Possessive noun",
-          "Subject of the sentence"
-        ],
-        ans: 1,
-        expl: "'be' (is/am/are/was/were), 'become', 'seem' जैसी लिंकिंग क्रियाओं के बाद आकर कर्ता (Subject) की पहचान बताने वाले संज्ञा को Subject Complement कहते हैं।"
-      },
-      {
-        id: 5,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "Why are 'France', 'Madrid', and 'Mrs Smith' classified as Proper Nouns?",
-        hi: "'France', 'Madrid' और 'Mrs Smith' को Proper Noun (व्यक्तिवाचक संज्ञा) क्यों कहा जाता है?",
-        options: [
-          "Because they are feelings",
-          "Because they represent groups of things",
-          "Because they are specific, unique names and always start with a capital letter",
-          "Because they are non-living objects"
-        ],
-        ans: 2,
-        expl: "किसी विशेष व्यक्ति, शहर या देश के व्यक्तिगत नाम को Proper Noun कहते हैं और अंग्रेज़ी में ये हमेशा बड़े अक्षर (Capital Letter) से शुरू होते हैं।"
-      },
-      {
-        id: 6,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "In 'I spoke to Tom on Monday', the noun 'Tom' functions as:",
-        hi: "'I spoke to Tom on Monday' वाक्य में 'Tom' का क्या कार्य (function) है?",
-        options: [
-          "Subject of 'spoke'",
-          "Object of the preposition 'to'",
-          "Complement of 'spoke'",
-          "Possessive case"
-        ],
-        ans: 1,
-        expl: "संबोधक अव्यय 'to' (preposition) के ठीक बाद आने के कारण 'Tom' यहाँ Object of a Preposition है।"
-      },
-      {
-        id: 7,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "Which word represents a group of bees or insects?",
-        hi: "मधुमक्खियों या कीड़ों के समूह (group) के लिए कौन सा Collective Noun प्रयुक्त होता है?",
-        options: ["Flock", "Swarm", "Fleet", "Crowd"],
-        ans: 1,
-        expl: "मधुमक्खियों या कीड़ों के झुंड को 'a swarm' कहते हैं। पक्षियों या भेड़ों के झुंड को 'flock' और समुद्री जहाजों के समूह को 'fleet' कहा जाता है।"
-      },
-      {
-        id: 8,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "In 'Tom's books are on the desk', 'Tom's' is in which case?",
-        hi: "'Tom's books are on the desk' में 'Tom's' किस कारक (case) में है?",
-        options: ["Objective case", "Nominative case", "Possessive case", "Vocative case"],
-        ans: 2,
-        expl: "अपॉस्ट्रॉफी 's' ('s) किसी वस्तु पर अधिकार या स्वामित्व (ownership) दर्शाता है, इसलिए इसे Possessive case (संबंध कारक) कहते हैं।"
-      },
-      {
-        id: 9,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "Which of the following is a Common Noun (जातिवाचक संज्ञा)?",
-        hi: "निम्नलिखित में से कौन सा शब्द Common Noun है?",
-        options: ["London", "Joy", "Table", "January"],
-        ans: 2,
-        expl: "'Table' किसी भी सामान्य मेज़ का जातिगत नाम है। जबकि London और January व्यक्तिवाचक (Proper Noun) हैं और Joy भाववाचक (Abstract Noun) है।"
-      },
-      {
-        id: 10,
-        cat: "kinds",
-        label: "Kinds of Nouns",
-        q: "In 'I saw Tom yesterday', what role does 'Tom' play?",
-        hi: "'I saw Tom yesterday' में 'Tom' संज्ञा की क्या भूमिका है?",
-        options: [
-          "The direct object of the verb 'saw'",
-          "The subject of the sentence",
-          "The complement of the verb",
-          "An adjective"
-        ],
-        ans: 0,
-        expl: "क्रिया 'saw' (देखा) का सीधा प्रभाव टॉम पर पड़ रहा है (किसे देखा? टॉम को), इसलिए टॉम यहाँ सकर्मक क्रिया का कर्म (Direct Object of a verb) है।"
-      },
-
-      // UNIT 2: Gender Rules (Q11 - Q20)
-      {
-        id: 11,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "Which pronoun is traditionally used when a ship or country is personified with affection or respect?",
-        hi: "जब किसी समुद्री जहाज या देश का नाम आदर या स्नेह के साथ लिया जाता है, तो कौन सा सर्वनाम प्रयुक्त होता है?",
-        options: ["He / him", "She / her", "It / its", "They / them"],
-        ans: 1,
-        expl: "अंग्रेज़ी व्याकरण में समुद्री जहाजों ('The ship tore a hole in her side') और देशों ('Scotland lost many of her men') को स्नेह और सम्मान के साथ स्त्रीलिंग (Feminine: she/her) माना जाता है।"
-      },
-      {
-        id: 12,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the feminine counterpart of 'Bachelor' (अविवाहित पुरुष)?",
-        hi: "'Bachelor' का स्त्रीलिंग (feminine) शब्द क्या है?",
-        options: ["Widow", "Spinster", "Bride", "Lady"],
-        ans: 1,
-        expl: "कुँवारे पुरुष (Bachelor) का स्त्रीलिंग 'Spinster' (अविवाहित स्त्री) होता है। Widower का Widow और Bridegroom का Bride होता है।"
-      },
-      {
-        id: 13,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the feminine of 'Duke'?",
-        hi: "'Duke' (शाही सामंत) का स्त्रीलिंग रूप क्या है?",
-        options: ["Countess", "Duchess", "Princess", "Empress"],
-        ans: 1,
-        expl: "Duke का स्त्रीलिंग 'Duchess' होता है। Earl का Countess और Prince का Princess होता है।"
-      },
-      {
-        id: 14,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "Which of the following nouns belongs to Common Gender (used for both males and females)?",
-        hi: "इनमें से कौन सा शब्द उभयलिंग (Common Gender) का है, जो स्त्री और पुरुष दोनों के लिए प्रयुक्त होता है?",
-        options: ["Nephew", "Uncle", "Cousin", "Hostess"],
-        ans: 2,
-        expl: "'Cousin' भाई या बहन दोनों के लिए प्रयोग होता है। इसी प्रकार baby, child, parent, doctor, artist भी Common Gender के अंतर्गत आते हैं।"
-      },
-      {
-        id: 15,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the male term corresponding to the female sheep 'Ewe'?",
-        hi: "मादा भेड़ (Ewe) के नर (male) रूप को क्या कहते हैं?",
-        options: ["Stallion", "Ram", "Stag", "Drake"],
-        ans: 1,
-        expl: "भेड़ के नर को 'Ram' और मादा को 'Ewe' कहते हैं। घोड़े के नर को Stallion, हिरण के नर को Stag, और बतख के नर को Drake कहते हैं।"
-      },
-      {
-        id: 16,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the male counterpart of 'Duck'?",
-        hi: "मादा बतख (Duck) के नर रूप को क्या कहते हैं?",
-        options: ["Gander", "Drake", "Cock", "Bull"],
-        ans: 1,
-        expl: "नर बतख को 'Drake' कहा जाता है। कलहंस (Goose) के नर को 'Gander' कहा जाता है।"
-      },
-      {
-        id: 17,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the feminine counterpart of 'Widower' (विधुर)?",
-        hi: "'Widower' (विधुर: वह पुरुष जिसकी पत्नी का निधन हो चुका हो) का स्त्रीलिंग क्या है?",
-        options: ["Spinster", "Widow", "Niece", "Bride"],
-        ans: 1,
-        expl: "Widower (विधुर) का स्त्रीलिंग 'Widow' (विधवा) होता है।"
-      },
-      {
-        id: 18,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "Which of the following occupation nouns traditionally takes a distinct feminine suffix (-ess)?",
-        hi: "किस पेशे में स्त्रीलिंग बनाने के लिए '-ess' प्रत्यय का प्रयोग होता है?",
-        options: ["Doctor", "Teacher", "Waiter (Waitress)", "Driver"],
-        ans: 2,
-        expl: "Waiter का स्त्रीलिंग 'Waitress' होता है। डॉक्टर, शिक्षक, और चालक दोनों लिंगों के लिए समान रूप से प्रयोग होते हैं।"
-      },
-      {
-        id: 19,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the male counterpart of a female deer ('Doe')?",
-        hi: "मादा हिरण ('Doe') के नर रूप को क्या कहा जाता है?",
-        options: ["Stag", "Ram", "Gander", "Bull"],
-        ans: 0,
-        expl: "नर हिरण को 'Stag' (या Buck) कहा जाता है, और मादा हिरण को 'Doe' कहा जाता है।"
-      },
-      {
-        id: 20,
-        cat: "gender",
-        label: "Gender of Nouns",
-        q: "What is the female horse called?",
-        hi: "घोड़ी (Female Horse) को अंग्रेज़ी में क्या कहते हैं?",
-        options: ["Mare", "Doe", "Bitch", "Ewe"],
-        ans: 0,
-        expl: "नर घोड़ा = Stallion, और मादा घोड़ी = Mare।"
-      },
-
-      // UNIT 3: Plural Formations (Q21 - Q35)
-      {
-        id: 21,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "Which of the following words of foreign or abbreviated origin takes only '-s' in the plural, NOT '-es'?",
-        hi: "विदेशी या संक्षिप्त रूप वाले शब्दों में से कौन सा शब्द बहुवचन में केवल '-s' लेता है, '-es' नहीं?",
-        options: ["Tomato", "Potato", "Piano", "Hero"],
-        ans: 2,
-        expl: "Piano, photo, kilo, dynamo, kimono, soprano आदि विदेशी या संक्षिप्त शब्द बहुवचन में केवल '-s' लेते हैं (pianos, photos, kilos)। जबकि tomato → tomatoes होता है।"
-      },
-      {
-        id: 22,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural of 'Calf' (बछड़ा)?",
-        hi: "'Calf' (बछड़ा) का सही बहुवचन रूप क्या है?",
-        options: ["Calfs", "Calves", "Calfies", "Calve"],
-        ans: 1,
-        expl: "उन 12 विशेष संज्ञाओं में से एक जिनमें 'f' को हटाकर '-ves' जोड़ा जाता है: calf → calves (halves, knives, leaves, loaves, wolves)।"
-      },
-      {
-        id: 23,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "Which word can take BOTH '-s' or '-ves' in its plural form?",
-        hi: "कौन सा शब्द बहुवचन में '-s' और '-ves' दोनों रूप स्वीकार करता है?",
-        options: ["Safe", "Scarf", "Cliff", "Life"],
-        ans: 1,
-        expl: "'Scarf' के दोनों बहुवचन मान्य हैं: 'scarfs' या 'scarves'। इसी प्रकार 'hoof' (hoofs/hooves) और 'wharf' (wharfs/wharves)।"
-      },
-      {
-        id: 24,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the correct plural of 'Cliff' (चट्टान)?",
-        hi: "'Cliff' का सही बहुवचन क्या है?",
-        options: ["Clives", "Cliffs", "Cliffes", "Cliff"],
-        ans: 1,
-        expl: "Cliff, safe, handkerchief, roof आदि में 'f' को 'ves' में नहीं बदला जाता; केवल सामान्य '-s' जुड़ता है: 'cliffs'।"
-      },
-      {
-        id: 25,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural form of 'Goose' (हंस)?",
-        hi: "'Goose' का बहुवचन क्या होता है?",
-        options: ["Gooses", "Geese", "Geeses", "Gander"],
-        ans: 1,
-        expl: "आंतरिक स्वर बदलकर बनने वाले बहुवचन: goose → geese, foot → feet, tooth → teeth, mouse → mice।"
-      },
-      {
-        id: 26,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural form of 'Ox' (बैल)?",
-        hi: "'Ox' का सही बहुवचन क्या है?",
-        options: ["Oxes", "Oxen", "Oxies", "Oxs"],
-        ans: 1,
-        expl: "Ox का बहुवचन 'oxen' होता है (जैसे child का 'children')।"
-      },
-      {
-        id: 27,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "Which animal has the SAME form in both singular and plural?",
-        hi: "किस जानवर का एकवचन और बहुवचन रूप बिल्कुल एक समान (same) रहता है?",
-        options: ["Dog", "Sheep", "Horse", "Cow"],
-        ans: 1,
-        expl: "'Sheep' का बहुवचन हमेशा 'sheep' ही रहता है (one sheep, two sheep)। इसी प्रकार 'deer' और 'aircraft' भी नहीं बदलते।"
-      },
-      {
-        id: 28,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural of 'Country'?",
-        hi: "'Country' (व्यंजन + y) का बहुवचन क्या बनेगा?",
-        options: ["Countrys", "Countries", "Countryes", "Countres"],
-        ans: 1,
-        expl: "जब 'y' से पहले कोई व्यंजन (consonant) हो, तो 'y' को हटाकर '-ies' लगाते हैं: baby → babies, country → countries।"
-      },
-      {
-        id: 29,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural of 'Donkey'?",
-        hi: "'Donkey' (स्वर + y) का बहुवचन क्या बनेगा?",
-        options: ["Donkies", "Donkeys", "Donkeyes", "Donks"],
-        ans: 1,
-        expl: "जब 'y' से पहले स्वर (vowel: a, e, o) हो, तो 'y' नहीं हटता, केवल '-s' जुड़ता है: donkey → donkeys, boy → boys।"
-      },
-      {
-        id: 30,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "Which type of fish does NOT change its form in the plural?",
-        hi: "किस प्रकार की मछली बहुवचन में अपना रूप नहीं बदलती?",
-        options: ["Shark (sharks)", "Salmon (salmon)", "Eel (eels)", "Sardine (sardines)"],
-        ans: 1,
-        expl: "Salmon, trout, cod, carp, pike, squid, mackerel का बहुवचन रूप अपरिवर्तित रहता है। जबकि sharks, eels, sardines में '-s' जुड़ता है।"
-      },
-      {
-        id: 31,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural form of 'Louse' (जूँ)?",
-        hi: "'Louse' का सही बहुवचन क्या होता है?",
-        options: ["Louses", "Lice", "Lices", "Louse"],
-        ans: 1,
-        expl: "जैसे mouse का बहुवचन 'mice' होता है, वैसे ही louse का बहुवचन 'lice' होता है।"
-      },
-      {
-        id: 32,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "How many loaves did you buy? Singular form of 'Loaves' is:",
-        hi: "'Loaves' (पावरोटियाँ) का एकवचन (singular) क्या है?",
-        options: ["Loaf", "Loafe", "Loave", "Loof"],
-        ans: 0,
-        expl: "'Loaf' का बहुवचन 'loaves' बनता है ('f' को हटाकर '-ves')।"
-      },
-      {
-        id: 33,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural of 'Aircraft'?",
-        hi: "'Aircraft' (विमान) का बहुवचन क्या होगा?",
-        options: ["Aircrafts", "Aircraft", "Aircraftes", "Aircraves"],
-        ans: 1,
-        expl: "'Aircraft' और 'craft' एकवचन और बहुवचन दोनों में 'aircraft' ही रहते हैं; इनमें 's' नहीं जुड़ता।"
-      },
-      {
-        id: 34,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "When '-s' is added after words ending in 'ce', 'ge', 'se', 'ze' (e.g. house -> houses), what sound is added?",
-        hi: "'ce', 'ge', 'se', 'ze' के बाद '-s' जोड़ने पर उच्चारण में क्या ध्वनि जुड़ती है?",
-        options: [
-          "A silent letter",
-          "An extra syllable /ɪz/ (इज़)",
-          "Only the soft /p/ sound",
-          "No sound change at all"
-        ],
-        ans: 1,
-        expl: "Houses (/haʊzɪz/), roses (/rəʊzɪz/), pages (/peɪdʒɪz/) में उच्चारण में एक पूरा अतिरिक्त शब्दांश (syllable) /ɪz/ (इज़) जुड़ जाता है।"
-      },
-      {
-        id: 35,
-        cat: "plurals",
-        label: "Plural Formations",
-        q: "What is the plural of 'Thief' (चोर)?",
-        hi: "'Thief' का सही बहुवचन क्या है?",
-        options: ["Thiefs", "Thieves", "Thiefes", "Thiefies"],
-        ans: 1,
-        expl: "Thief उन 12 f/fe शब्दों में से है जो बहुवचन में '-ves' लेते हैं: thief → thieves।"
-      },
-
-      // UNIT 4: Plural Traps (Q36 - Q43)
-      {
-        id: 36,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "'The police ___ investigating the robbery.' Choose the correct verb:",
-        hi: "'The police ___ investigating the robbery.' सही क्रिया चुनें:",
-        options: ["is", "are", "was", "has"],
-        ans: 1,
-        expl: "'Police' अंग्रेज़ी में हमेशा बहुवचन संज्ञा (Plural Noun) मानी जाती है और इसके साथ हमेशा बहुवचन क्रिया (are/were/have) आती है।"
-      },
-      {
-        id: 37,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "'No news ___ good news.' Which verb fills the blank correctly?",
-        hi: "'No news ___ good news.' रिक्त स्थान में कौन सी क्रिया आएगी?",
-        options: ["are", "is", "were", "have"],
-        ans: 1,
-        expl: "'News' देखने में बहुवचन लगता है परंतु इसका अर्थ एकवचन (SINGULAR) होता है। इसलिए इसके साथ एकवचन क्रिया 'is' लगेगी।"
-      },
-      {
-        id: 38,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "Garments and tools made of two connected parts (trousers, scissors, binoculars) are:",
-        hi: "दो जुड़े हुए भागों वाले वस्त्र और औज़ार (trousers, scissors, binoculars) व्याकरण में क्या माने जाते हैं?",
-        options: [
-          "Always singular and take a singular verb",
-          "Always plural and take a plural verb",
-          "Uncountable and take no verb",
-          "Adjectives"
-        ],
-        ans: 1,
-        expl: "कैंची (scissors), चश्मा (spectacles/glasses), पतलून (trousers) हमेशा बहुवचन होते हैं और बहुवचन क्रिया लेते हैं। इन्हें गिनने के लिए 'a pair of' का प्रयोग किया जाता है।"
-      },
-      {
-        id: 39,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "What is the plural of the compound noun 'Sister-in-law'?",
-        hi: "'Sister-in-law' (भाभी/ननद/साली) का सही बहुवचन क्या होगा?",
-        options: [
-          "Sister-in-laws",
-          "Sisters-in-law",
-          "Sisters-in-laws",
-          "Sister-ins-law"
-        ],
-        ans: 1,
-        expl: "संज्ञा + संबंधबोधक + संज्ञा (Noun + Preposition + Noun) वाले शब्दों में मुख्य (पहले) संज्ञा को बहुवचन बनाया जाता है: 'Sisters-in-law', 'Passers-by'।"
-      },
-      {
-        id: 40,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "What is the plural of 'Woman driver'?",
-        hi: "'Woman driver' का सही बहुवचन क्या होगा?",
-        options: [
-          "Woman drivers",
-          "Women driver",
-          "Women drivers",
-          "Womans drivers"
-        ],
-        ans: 2,
-        expl: "नियम: जब संयुक्त संज्ञा (compound noun) 'man' या 'woman' से शुरू हो, तो दोनों भागों को बहुवचन बनाया जाता है: 'women drivers', 'men doctors'।"
-      },
-      {
-        id: 41,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "'Mathematics ___ an exact science.' Choose the correct verb:",
-        hi: "'Mathematics ___ an exact science.' विषय के रूप में सही क्रिया चुनें:",
-        options: ["are", "is", "were", "have been"],
-        ans: 1,
-        expl: "जब -ics वाले शब्द (Mathematics, Physics) किसी शैक्षणिक विषय या विज्ञान के नाम हों, तो ये एकवचन (SINGULAR) माने जाते हैं ('Mathematics is an exact science')।"
-      },
-      {
-        id: 42,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "What is the plural form of the Greek-origin word 'Crisis' (संकट)?",
-        hi: "ग्रीक मूल के शब्द 'Crisis' का बहुवचन क्या होता है?",
-        options: ["Crisises", "Crises", "Crisi", "Crisum"],
-        ans: 1,
-        expl: "ग्रीक मूल के शब्दों में '-is' बदलकर '-es' हो जाता है: crisis → crises, oasis → oases, basis → bases।"
-      },
-      {
-        id: 43,
-        cat: "traps",
-        label: "Plural Traps",
-        q: "What is the plural form of 'Phenomenon' (घटना/तथ्य)?",
-        hi: "'Phenomenon' का सही बहुवचन क्या है?",
-        options: ["Phenomenons", "Phenomena", "Phenomeni", "Phenomenes"],
-        ans: 1,
-        expl: "ग्रीक मूल के शब्दों में '-on' बदलकर '-a' हो जाता है: phenomenon → phenomena, criterion → criteria।"
-      },
-
-      // UNIT 5: Uncountable Nouns (Q44 - Q50)
-      {
-        id: 44,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "Which of the following is an Uncountable Noun in English that cannot take 'a' or plural '-s'?",
-        hi: "इनमें से कौन सा शब्द Uncountable (अगणनीय) है जिसमें 'a' या 's' नहीं लगाया जा सकता?",
-        options: ["Chair", "Furniture", "Table", "Bench"],
-        ans: 1,
-        expl: "'Furniture' अंग्रेज़ी में हमेशा अगणनीय (Uncountable) होता है। 'A furniture' या 'furnitures' कहना अशुद्ध है; इसे गिनने के लिए 'a piece of furniture' कहते हैं।"
-      },
-      {
-        id: 45,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "How do you correctly express a single unit of advice?",
-        hi: "सलाह की एक इकाई (single unit) को व्यक्त करने के लिए क्या कहना सही है?",
-        options: [
-          "An advice",
-          "A piece of advice",
-          "An advise",
-          "Advices"
-        ],
-        ans: 1,
-        expl: "'Advice' अगणनीय संज्ञा है, इसलिए एक सलाह को व्यक्त करने के लिए 'a piece of advice' कहा जाता है।"
-      },
-      {
-        id: 46,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "Which phrase is correct for counting bread?",
-        hi: "ब्रेड को गिनने के लिए कौन सा वाक्यांश सही है?",
-        options: [
-          "A bread",
-          "A loaf of bread",
-          "Two breads",
-          "A bread piece"
-        ],
-        ans: 1,
-        expl: "ब्रेड अगणनीय द्रव्यवाचक संज्ञा है, इसलिए पूरी पावरोटी के लिए 'a loaf of bread' और कटे हुए टुकड़े के लिए 'a slice of bread' कहा जाता है।"
-      },
-      {
-        id: 47,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "'She found two grey ___ on her pillow.' Choose the correct word:",
-        hi: "'She found two grey ___ on her pillow.' सही शब्द चुनें:",
-        options: ["hair", "hairs", "piece of hairs", "hairen"],
-        ans: 1,
-        expl: "सिर के पूरे बाल सामूहिक रूप से अगणनीय होते हैं ('Her hair is black'), परंतु अलग-अलग संख्या में गिनने पर 'hairs' गणनीय (countable) बन जाता है ('two grey hairs')।"
-      },
-      {
-        id: 48,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "What does 'works' mean in 'Shakespeare's complete works'?",
-        hi: "'Shakespeare's complete works' में 'works' का क्या अर्थ है?",
-        options: [
-          "Physical labor / hard work",
-          "Literary or artistic compositions (साहित्यिक रचनाएँ)",
-          "Road repair",
-          "A machine factory"
-        ],
-        ans: 1,
-        expl: "सामान्य 'work' (कार्य/रोज़गार) अगणनीय है, परंतु 'works' का अर्थ साहित्यिक या कलात्मक रचनाएँ (literary works) अथवा कारखाना (factory) होता है।"
-      },
-      {
-        id: 49,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "Choose the correct expression for soap:",
-        hi: "साबुन की एक बट्टी के लिए सही अंग्रेज़ी शब्द क्या है?",
-        options: [
-          "A soap",
-          "A cake of soap (or bar of soap)",
-          "Soaps",
-          "One soap"
-        ],
-        ans: 1,
-        expl: "साबुन (Soap) एक अगणनीय पदार्थ है। साबुन की एक टिकिया या बट्टी के लिए 'a cake of soap' या 'a bar of soap' कहा जाता है।"
-      },
-      {
-        id: 50,
-        cat: "uncountable",
-        label: "Uncountable Nouns",
-        q: "In 'My children are a great help to me', why is 'a help' used with an abstract noun?",
-        hi: "'My children are a great help to me' में भाववाचक संज्ञा 'help' के आगे 'a' क्यों लगा है?",
-        options: [
-          "Because it is a grammatical mistake",
-          "Because 'help' here refers to a specific source of assistance in a particular sense",
-          "Because children is plural",
-          "Because help is a verb here"
-        ],
-        ans: 1,
-        expl: "जब भाववाचक संज्ञा (help, relief, pity, shame) किसी विशेष सहायता या स्थिति के विशिष्ट स्रोत को दर्शाती है, तो एकवचन में 'a/an' का प्रयोग किया जा सकता है ('a great help', 'a relief')।"
-      }
+    <script>
+    // 20 Embedded Concept Practice Questions (10 Pairs)
+    // Distributed: C (40%), D (35%), A (20%), B (5% - least B)
+    const conceptQuestions = [
+      { id:1, sub:'1a', q:"In 'Tom arrived at the airport early', what grammatical kind of noun is 'Tom'?", hi:"'Tom' किस प्रकार की संज्ञा (Kind of Noun) है?", opts:["Common Noun","Abstract Noun","Proper Noun (starts with a capital letter)","Collective Noun"], ans:2, expl:"'Tom' किसी विशिष्ट व्यक्ति का नाम है और हमेशा Capital letter से शुरू होता है, अतः यह Proper Noun है।" },
+      { id:2, sub:'1a', q:"Which of the following is an Abstract Noun (भाववाचक संज्ञा)?", hi:"भाववाचक संज्ञा (Abstract Noun) का उदाहरण कौन सा है?", opts:["Table (मेज)","Tom (टॉम)","Flock (झुंड)","Courage (साहस)"], ans:3, expl:"'Courage' (साहस) एक गुण या भावना है जिसे छू या देख नहीं सकते, केवल समझ सकते हैं।" },
+      { id:3, sub:'1b', q:"In 'Tom is an actor', what grammatical function does 'actor' perform?", hi:"'Tom is an actor' में 'actor' संज्ञा का क्या कार्य है?", opts:["Subject of the verb","Direct Object of an action","Complement of the linking verb 'is'","Possessive case"], ans:2, expl:"'be' (is/am/are) के बाद आकर कर्ता (Subject) की पहचान बताने वाले संज्ञा को Subject Complement कहते हैं।" },
+      { id:4, sub:'1b', q:"In 'I spoke to Tom on Monday', what is the role of 'Tom'?", hi:"'I spoke to Tom on Monday' में 'Tom' की क्या भूमिका है?", opts:["Subject of spoke","Subject Complement","Direct Object of spoke","Object of the preposition 'to'"], ans:3, expl:"Preposition 'to' के ठीक बाद आकर उसका कर्म बनने के कारण 'Tom' Object of a Preposition है।" },
+      { id:5, sub:'2a', q:"Which pronoun is traditionally used when a ship or country is spoken of with affection or respect?", hi:"जहाज या देश का नाम स्नेह या आदर से लेने पर कौन सा सर्वनाम प्रयुक्त होता है?", opts:["She / her","He / him","It / its","They / them"], ans:0, expl:"समुद्री जहाजों (The ship... in her side) और देशों (Scotland lost her bravest men) को आदर से स्त्रीलिंग (she/her) माना जाता है।" },
+      { id:6, sub:'2a', q:"Which noun belongs to Common Gender (used for both males and females)?", hi:"उभयलिंग (Common Gender) की संज्ञा कौन सी है?", opts:["Nephew","Uncle","Cousin","Hostess"], ans:2, expl:"'Cousin' भाई या बहन दोनों के लिए प्रयोग होता है, अतः यह Common Gender है।" },
+      { id:7, sub:'2b', q:"What is the feminine counterpart of 'Bachelor' (कुँवारा पुरुष)?", hi:"'Bachelor' का सही स्त्रीलिंग शब्द क्या है?", opts:["Widow","Bride","Duchess","Spinster"], ans:3, expl:"Bachelor का स्त्रीलिंग 'Spinster' (अविवाहित महिला) होता है।" },
+      { id:8, sub:'2b', q:"What is the male counterpart of female sheep 'Ewe' (/juː/)?", hi:"मादा भेड़ (Ewe) के नर (male) रूप को क्या कहते हैं?", opts:["Stallion","Drake","Ram","Stag"], ans:2, expl:"भेड़ के नर को 'Ram' और मादा को 'Ewe' कहते हैं।" },
+      { id:9, sub:'3a', q:"Which of the following foreign-origin words takes ONLY '-s' in the plural, NOT '-es'?", hi:"विदेशी मूल का कौन सा शब्द बहुवचन में केवल '-s' लेता है?", opts:["Tomato","Potato","Hero","Piano"], ans:3, expl:"Piano, photo, kilo, dynamo, kimono आदि बहुवचन में केवल '-s' लेते हैं (pianos, photos)।" },
+      { id:10, sub:'3a', q:"What is the plural of 'Country' (consonant + y)?", hi:"'Country' (व्यंजन + y) का बहुवचन क्या बनेगा?", opts:["Countrys","Countryes","Countries","Countres"], ans:2, expl:"व्यंजन + y होने पर 'y' हटाकर '-ies' लगाते हैं (baby → babies, country → countries)।" },
+      { id:11, sub:'3b', q:"Which word drops 'f' or 'fe' to take '-ves' in the plural according to the 12-words rule?", hi:"12 विशेष शब्दों के नियम अनुसार 'f' हटाकर '-ves' कौन सा शब्द लेता है?", opts:["Cliff","Safe","Roof","Calf"], ans:3, expl:"Calf → calves उन 12 विशेष शब्दों में है। Cliff, safe, roof केवल '-s' लेते हैं (cliffs, safes, roofs)।" },
+      { id:12, sub:'3b', q:"Which animal noun has the EXACT SAME form in both singular and plural?", hi:"किस जानवर का एकवचन और बहुवचन रूप बिल्कुल एक समान रहता है?", opts:["Sheep","Dog","Horse","Cow"], ans:0, expl:"'Sheep' का बहुवचन हमेशा 'sheep' ही रहता है (one sheep, two sheep)। 'sheeps' अशुद्ध है।" },
+      { id:13, sub:'4a', q:"'The police ___ investigating the incident.' Select the correct verb:", hi:"'The police ___ investigating the incident.' में सही क्रिया चुनें:", opts:["is","was","are","has"], ans:2, expl:"'Police' अंग्रेज़ी में हमेशा बहुवचन (Plural Noun) है और हमेशा बहुवचन क्रिया 'are' लेता है।" },
+      { id:14, sub:'4a', q:"'Mathematics ___ an exact science.' Choose the correct verb form:", hi:"शैक्षणिक विषय के रूप में 'Mathematics' के साथ कौन सी क्रिया आएगी?", opts:["are","were","have been","is"], ans:3, expl:"शैक्षणिक विषय या विज्ञान के नाम के रूप में -ics वाले शब्द एकवचन (is) होते हैं।" },
+      { id:15, sub:'4b', q:"What is the plural form of the Greek-origin word 'Crisis' (संकट)?", hi:"ग्रीक मूल के शब्द 'Crisis' का बहुवचन क्या होता है?", opts:["Crisises","Crisi","Crises","Crisum"], ans:2, expl:"ग्रीक मूल के शब्दों में '-is' बदलकर '-es' हो जाता है: crisis → crises, oasis → oases।" },
+      { id:16, sub:'4b', q:"What is the correct plural of the compound noun 'Woman driver'?", hi:"'Woman driver' का सही बहुवचन क्या होगा?", opts:["Woman drivers","Women drivers","Women driver","Womans drivers"], ans:1, expl:"जब संयुक्त संज्ञा 'man' या 'woman' से शुरू हो, तो दोनों भाग बहुवचन बनते हैं: 'women drivers'।" },
+      { id:17, sub:'5a', q:"Which of the following is strictly an Uncountable Noun in English?", hi:"इनमें से कौन सा शब्द अंग्रेज़ी में पूर्णतः अगणनीय (Uncountable) है?", opts:["Chair","Table","Furniture","Bench"], ans:2, expl:"'Furniture' अगणनीय है; कभी 'furnitures' या 'a furniture' नहीं कहते (a piece of furniture कहते हैं)।" },
+      { id:18, sub:'5a', q:"How do you correctly quantify a single unit of advice?", hi:"सलाह की एक इकाई व्यक्त करने के लिए क्या कहना शुद्ध है?", opts:["An advice","Advices","An advise","A piece of advice"], ans:3, expl:"'Advice' uncountable है, अतः एक सलाह के लिए 'a piece of advice' कहा जाता है।" },
+      { id:19, sub:'5b', q:"'She found two grey ___ on her black coat.' Choose the correct form:", hi:"'She found two grey ___ on her black coat.' में सही शब्द चुनें:", opts:["hair","piece of hairs","hairs","hairen"], ans:2, expl:"सिर के पूरे बाल अगणनीय हैं, परंतु अलग-अलग गिने जा सकने वाले बालों के लिए 'hairs' गणनीय होता है।" },
+      { id:20, sub:'5b', q:"In 'My children are a great help to me', why is 'a' used before the abstract noun 'help'?", hi:"यहाँ 'help' के आगे 'a' क्यों लगा है?", opts:["It expresses a particular source of assistance in a specific sense","Grammatical error","Children is plural","Help is an adjective"], ans:0, expl:"जब Abstract Noun किसी विशिष्ट सहायता या राहत के स्रोत को दर्शाता है तो 'a/an' लग सकता है ('a great help')।" }
     ];
 
-    let userAnswers = {};
-    let checkedStatus = {};
-    let activeCategory = 'all';
-    let currentPage = 1;
-    const pageSize = 10;
+    // 30 Final Test Questions (Categorized across 5 Units)
+    // Distributed: C (43.3%), D (33.3%), A (16.7%), B (6.7% - least B)
+    const testQuestions = [
+      { id:1, unit:'kinds', label:'Unit 01: Kinds of Nouns', q:"In 'London is the capital of England', what kind of nouns are 'London' and 'England'?", hi:"'London' और 'England' किस प्रकार की संज्ञाएँ हैं?", opts:["Common Nouns","Abstract Nouns","Proper Nouns (unique names capitalized)","Collective Nouns"], ans:2, expl:"विशिष्ट नगर और देश के व्यक्तिगत नाम होने के कारण ये Proper Nouns हैं।" },
+      { id:2, unit:'kinds', label:'Unit 01: Abstract Noun', q:"Which of the following nouns expresses a state or quality that cannot be touched?", hi:"वह संज्ञा पहचानिए जो ऐसे गुण या भाव को दर्शाती है जिसे छुआ नहीं जा सकता:", opts:["Gold","Flock","Madrid","Charity"], ans:3, expl:"'Charity' (दानशीलता/उदारता) एक अमूर्त भाव (Abstract Noun) है।" },
+      { id:3, unit:'kinds', label:'Unit 01: Collective Noun', q:"What collective noun is used for a group of ships or warships?", hi:"समुद्री जहाजों के बेड़े या समूह के लिए कौन सा समूहवाचक शब्द प्रयुक्त होता है?", opts:["Flock","Swarm","Fleet","Herd"], ans:2, expl:"जहाजों के समूह को 'a fleet of ships' कहा जाता है।" },
+      { id:4, unit:'kinds', label:'Unit 01: Object Function', q:"In 'The gardener pruned the roses', what grammatical role does 'the roses' play?", hi:"'The gardener pruned the roses' में 'the roses' की क्या भूमिका है?", opts:["Direct Object of the transitive verb 'pruned'","Subject of the verb","Subject Complement","Prepositional Object"], ans:0, expl:"Pruned what? → 'the roses'। यह क्रिया का प्रत्यक्ष कर्म (Direct Object) है।" },
+      { id:5, unit:'kinds', label:'Unit 01: Complement Role', q:"In 'Mr. Sharma became our principal', 'our principal' functions as:", hi:"'Mr. Sharma became our principal' में 'our principal' क्या है?", opts:["Direct Object","Possessive case","Subject Complement following the linking verb 'became'","Adverb of time"], ans:2, expl:"'became' लिंकिंग क्रिया है, अतः 'our principal' कर्ता का पूरक (Subject Complement) है।" },
+      { id:6, unit:'kinds', label:'Unit 01: Possessive Role', q:"In 'The girl's voice was melodious', 'girl's' is in which case?", hi:"'girl's' किस कारक (case) में है?", opts:["Nominative case","Objective case","Vocative case","Possessive case (showing ownership/attribute)"], ans:3, expl:"अपॉस्ट्रॉफी 's अधिकार या संबंध दर्शाता है, अतः यह Possessive case है।" },
+      { id:7, unit:'gender', label:'Unit 02: Affectionate Feminine', q:"'The Titanic sank on ___ maiden voyage.' Which pronoun traditionally personifies the ship with affection?", hi:"जहाज के लिए आदरपूर्वक कौन सा सर्वनाम प्रयुक्त होता है?", opts:["his","its","her","their"], ans:2, expl:"जहाजों को सम्मान और स्नेह के साथ स्त्रीलिंग (her maiden voyage) माना जाता है।" },
+      { id:8, unit:'gender', label:'Unit 02: Royal Titles', q:"What is the feminine counterpart of the royal title 'Earl'?", hi:"'Earl' (सामंत) का सही स्त्रीलिंग रूप क्या है?", opts:["Duchess","Princess","Baroness","Countess"], ans:3, expl:"Earl का स्त्रीलिंग 'Countess' होता है (Duke का Duchess होता है)।" },
+      { id:9, unit:'gender', label:'Unit 02: People Gender', q:"What is the feminine of 'Widower' (विधुर)?", hi:"'Widower' का सही स्त्रीलिंग शब्द क्या है?", opts:["Widow","Spinster","Niece","Bride"], ans:0, expl:"Widower (विधुर) का स्त्रीलिंग 'Widow' (विधवा) होता है।" },
+      { id:10, unit:'gender', label:'Unit 02: Animal Gender', q:"What is the male counterpart of female duck ('Duck')?", hi:"मादा बतख के नर रूप को क्या कहते हैं?", opts:["Gander","Rooster","Drake","Stallion"], ans:2, expl:"बतख के नर को 'Drake' और कलहंस (Goose) के नर को 'Gander' कहते हैं।" },
+      { id:11, unit:'gender', label:'Unit 02: Female Deer', q:"What is a female deer called in English?", hi:"मादा हिरण को अंग्रेज़ी में क्या कहते हैं?", opts:["Ewe","Mare","Bitch","Doe"], ans:3, expl:"नर हिरण = Stag / Buck, और मादा हिरण = Doe।" },
+      { id:12, unit:'gender', label:'Unit 02: Common Gender', q:"Which of the following nouns refers to Common Gender?", hi:"कौन सा शब्द उभयलिंग (Common Gender) का है?", opts:["Hostess","Heir","Infant","Stallion"], ans:2, expl:"'Infant' (शिशु) बालक या बालिका दोनों के लिए प्रयोग होता है, अतः Common Gender है।" },
+      { id:13, unit:'plurals', label:'Unit 03: Foreign -o Exception', q:"Select the word that forms plural by adding ONLY '-s', NOT '-es':", hi:"कौन सा शब्द बहुवचन में केवल '-s' लेता है, '-es' नहीं?", opts:["Hero","Potato","Echo","Photo"], ans:3, expl:"Photo संक्षिप्त रूप है, अतः केवल '-s' लेता है (photos)। Hero, potato, echo '-es' लेते हैं।" },
+      { id:14, unit:'plurals', label:'Unit 03: 12 -ves Nouns', q:"What is the correct plural form of 'Leaf' (पत्ती)?", hi:"'Leaf' का सही बहुवचन क्या है?", opts:["Leafs","Leafes","Leaves","Leavs"], ans:2, expl:"Leaf उन 12 शब्दों में है जो 'f' हटाकर '-ves' लेते हैं: leaves।" },
+      { id:15, unit:'plurals', label:'Unit 03: Cliff Exception', q:"What is the correct plural of 'Cliff' (चट्टान)?", hi:"'Cliff' का सही बहुवचन क्या है?", opts:["Cliffs","Clives","Cliffes","Cliff"], ans:0, expl:"Cliff, safe, handkerchief में 'ves' नहीं लगता; सामान्य '-s' जुड़ता है: 'cliffs'।" },
+      { id:16, unit:'plurals', label:'Unit 03: Both -s and -ves', q:"Which noun accepts BOTH '-s' and '-ves' in its plural form?", hi:"कौन सा शब्द बहुवचन में '-s' और '-ves' दोनों रूप स्वीकार करता है?", opts:["Wife","Wolf","Scarf","Knife"], ans:2, expl:"'Scarf' के दोनों बहुवचन मान्य हैं: 'scarfs' या 'scarves'। (hoof, wharf भी)।" },
+      { id:17, unit:'plurals', label:'Unit 03: Vowel Mutation', q:"What are the plural forms of 'Foot' and 'Tooth'?", hi:"'Foot' और 'Tooth' के सही बहुवचन रूप क्या हैं?", opts:["Foots / Tooths","Feets / Teeths","Footen / Toothen","Feet / Teeth"], ans:3, expl:"आंतरिक स्वर बदलकर: foot → feet, tooth → teeth।" },
+      { id:18, unit:'plurals', label:'Unit 03: Invariant Deer', q:"'The hunter saw three ___ grazing in the meadow.' Fill in the blank:", hi:"रिक्त स्थान के लिए सही रूप चुनें:", opts:["deers","deer","deeres","deer's"], ans:1, expl:"'Deer' का एकवचन और बहुवचन रूप समान (deer) रहता है; 'deers' अशुद्ध है।" },
+      { id:19, unit:'traps', label:'Unit 04: Always Plural Police', q:"'The police ___ deployed at the polling booths.' Choose the correct verb:", hi:"'The police ___ deployed...' में सही क्रिया चुनें:", opts:["was","is","are","has been"], ans:2, expl:"'Police' हमेशा बहुवचन क्रिया (are/were) लेता है।" },
+      { id:20, unit:'traps', label:'Unit 04: Two-Part Tools', q:"'These scissors ___ very sharp.' Choose the correct verb:", hi:"'These scissors ___ very sharp.' में सही क्रिया क्या होगी?", opts:["is","was","has","are"], ans:3, expl:"दो फलकों वाले औज़ार (scissors, pliers) हमेशा बहुवचन होते हैं और 'are' लेते हैं।" },
+      { id:21, unit:'traps', label:'Unit 04: News Agreement', q:"'No news ___ good news.' Which verb fills the blank correctly?", hi:"'News' के साथ कौन सी क्रिया आएगी?", opts:["is","are","were","have been"], ans:0, expl:"'News' देखने में बहुवचन लगता है किंतु अर्थ में एकवचन (is) होता है।" },
+      { id:22, unit:'traps', label:'Unit 04: Compound Plural', q:"What is the plural of 'Sister-in-law'?", hi:"'Sister-in-law' का सही बहुवचन क्या है?", opts:["Sister-in-laws","Sisters-in-laws","Sisters-in-law","Sister-ins-law"], ans:2, expl:"Preposition से जुड़े संयुक्त संज्ञाओं में पहले मुख्य शब्द को बहुवचन बनाते हैं: 'Sisters-in-law'।" },
+      { id:23, unit:'traps', label:'Unit 04: Foreign Greek Plural', q:"What is the plural form of 'Phenomenon' (घटना)?", hi:"'Phenomenon' का सही बहुवचन क्या है?", opts:["Phenomenons","Phenomeni","Phenomenes","Phenomena"], ans:3, expl:"ग्रीक मूल के शब्दों में '-on' बदलकर '-a' हो जाता है: phenomenon → phenomena।" },
+      { id:24, unit:'traps', label:'Unit 04: Collective Team', q:"'Our cricket team ___ wearing their new match jerseys.' Why is 'are' correct here?", hi:"यहाँ 'are' क्यों सही है?", opts:["Because team is always plural","Because the sentence refers to the individual members acting individually","Grammar mistake","Cricket is plural"], ans:1, expl:"जब समूह संज्ञा के सदस्य अपने-अपने व्यक्तिगत कार्य कर रहे हों, तो बहुवचन क्रिया 'are' आती है।" },
+      { id:25, unit:'uncountable', label:'Unit 05: Uncountable Furniture', q:"Identify the grammatically INCORRECT sentence:", hi:"व्याकरणिक दृष्टि से अशुद्ध वाक्य पहचानिए:", opts:["He bought some furniture.","He bought two items of furniture.","He bought a new furniture yesterday.","The furniture looks elegant."], ans:2, expl:"'Furniture' अगणनीय है; इसके आगे सीधे 'a' या 'furnitures' लगाना अशुद्ध है।" },
+      { id:26, unit:'uncountable', label:'Unit 05: Bread Quantifier', q:"What is the standard partitive counter for whole uncut bread?", hi:"पूरी साबुत पावरोटी के लिए सही पार्टिटिव काउंटर क्या है?", opts:["A bread","A piece of breads","Two breads","A loaf of bread"], ans:3, expl:"पूरी पावरोटी के लिए 'a loaf of bread' और कटे हुए टुकड़े के लिए 'a slice of bread' कहते हैं।" },
+      { id:27, unit:'uncountable', label:'Unit 05: Soap Quantifier', q:"Which expression correctly quantifies soap?", hi:"साबुन की एक टिकिया के लिए सही अंग्रेज़ी क्या है?", opts:["A soap","Soaps","A cake of soap (or a bar of soap)","A soap piece"], ans:2, expl:"साबुन अगणनीय पदार्थ है; एक टिकिया के लिए 'a cake of soap' या 'a bar of soap' कहते हैं।" },
+      { id:28, unit:'uncountable', label:'Unit 05: Dual Sense Hair', q:"Compare: (1) 'Her hair is silky.' vs (2) 'He found three hairs in his soup.'", hi:"(1) और (2) में 'hair' का क्या व्याकरणिक रूप है?", opts:["In (1) hair is uncountable; in (2) hairs is countable","Both are countable","Both are uncountable","Both are incorrect"], ans:0, expl:"पूरे सिर के बाल अगणनीय (hair is) हैं, जबकि अलग-अलग संख्या में गिनने पर गणनीय (three hairs) हैं।" },
+      { id:29, unit:'uncountable', label:'Unit 05: Shakespeare Works', q:"In 'We studied Shakespeare's dramatic works', what does 'works' mean?", hi:"यहाँ 'works' का क्या अर्थ है?", opts:["Manual labor","Road repair","Literary compositions / plays (साहित्यिक रचनाएँ)","A machine factory"], ans:2, expl:"'Works' का अर्थ यहाँ नाटक व साहित्यिक कृतियाँ (literary compositions) है।" },
+      { id:30, unit:'uncountable', label:'Unit 05: a/an with Abstract Nouns', q:"Select the sentence where an abstract noun correctly takes 'a':", hi:"किस वाक्य में भाववाचक संज्ञा के साथ 'a' का प्रयोग सर्वथा शुद्ध है?", opts:["He gave me an advice.","She has a beauty.","Gold is a valuable metal.","It was a relief to sit down after the long walk."], ans:3, expl:"विशिष्ट राहत की स्थिति के लिए 'a relief' कहना पूर्णतः प्रामाणिक व शुद्ध है।" }
+    ];
 
-    function getFilteredList() {
-      if (activeCategory === 'all') return questions;
-      return questions.filter(q => q.cat === activeCategory);
-    }
+    // Render 2-Question Concept Pairs in Theory
+    const subPairs = [
+      { id: 'pair-1a', title: '1A. 4 Kinds of Nouns', start: 0 },
+      { id: 'pair-1b', title: '1B. 5 Grammatical Functions', start: 2 },
+      { id: 'pair-2a', title: '2A. Gender Categories & Ships/Countries', start: 4 },
+      { id: 'pair-2b', title: '2B. People Pairs & Animal Genders', start: 6 },
+      { id: 'pair-3a', title: '3A. Regular -s, -es, Foreign -o & -y', start: 8 },
+      { id: 'pair-3b', title: '3B. The 12 -ves Words & Vowel Changes', start: 10 },
+      { id: 'pair-4a', title: '4A. Always Plural & -ics/News Traps', start: 12 },
+      { id: 'pair-4b', title: '4B. Foreign Plurals & Compound Nouns', start: 14 },
+      { id: 'pair-5a', title: '5A. Substances & Partitive Counters', start: 16 },
+      { id: 'pair-5b', title: '5B. Dual Senses & Abstract a/an', start: 18 }
+    ];
 
-    function updateProgress() {
-      let count = 0;
-      Object.keys(checkedStatus).forEach(id => {
-        if (checkedStatus[id].checked && checkedStatus[id].isCorrect) {
-          count++;
-        }
-      });
-      document.getElementById('lesson-progress').value = count;
-      document.getElementById('progress-label').textContent = `${count} of 50 answers correct (${Math.round((count/50)*100)}%)`;
-      renderJumpGrid();
-    }
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
 
-    function renderJumpGrid() {
-      const grid = document.getElementById('jump-grid');
-      grid.innerHTML = '';
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const box = document.getElementById(pair.id);
+        if (!box) return;
 
-      questions.forEach(q => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'jump-btn';
-        btn.textContent = q.id;
-        btn.title = `Question ${q.id} (${q.label})`;
+        const pairQs = conceptQuestions.slice(pair.start, pair.start + 2);
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
 
-        const st = checkedStatus[q.id];
-        if (st && st.checked) {
-          btn.classList.add(st.isCorrect ? 'correct' : 'retry');
-        } else if (userAnswers[q.id] !== undefined) {
-          btn.classList.add('selected');
-        }
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
 
-        btn.onclick = () => {
-          activeCategory = 'all';
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.toggle('active', b.dataset.filter === 'all');
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
           });
-          const filtered = getFilteredList();
-          const idx = filtered.findIndex(item => item.id === q.id);
-          currentPage = Math.floor(idx / pageSize) + 1;
-          renderQuestions();
 
-          setTimeout(() => {
-            const card = document.getElementById(`q-card-${q.id}`);
-            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 80);
-        };
-
-        grid.appendChild(btn);
-      });
-    }
-
-    function renderQuestions() {
-      const container = document.getElementById('task-container');
-      container.innerHTML = '';
-
-      const filtered = getFilteredList();
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-      if (currentPage < 1) currentPage = 1;
-
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-
-      document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
-      document.getElementById('page-summary-text').textContent = `Showing Page ${currentPage} of ${totalPages} (${filtered.length} Questions).`;
-      document.getElementById('btn-prev').disabled = currentPage === 1;
-      document.getElementById('btn-next').disabled = currentPage === totalPages;
-
-      pageItems.forEach(q => {
-        const card = document.createElement('article');
-        card.className = 'mint-card task-card';
-        card.id = `q-card-${q.id}`;
-
-        const st = checkedStatus[q.id];
-        const selected = userAnswers[q.id];
-
-        let statusText = 'Your turn';
-        let statusClass = '';
-        if (st && st.checked) {
-          statusText = st.isCorrect ? '✓ Correct' : 'Try again';
-          statusClass = st.isCorrect ? 'correct' : 'retry';
-        } else if (selected !== undefined) {
-          statusText = 'Selected';
-        }
-
-        let choicesHtml = '<div class="choices">';
-        q.options.forEach((opt, idx) => {
-          const isSelected = selected === idx;
-          let optClass = 'choice';
-          if (isSelected) optClass += ' selected';
-
-          if (st && st.checked) {
-            if (idx === q.ans) optClass += ' right-choice';
-            else if (isSelected && !st.isCorrect) optClass += ' wrong-choice';
+          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
           }
 
-          choicesHtml += `
-            <div class="${optClass}" onclick="selectChoice(${q.id}, ${idx})">
-              <span class="choice-badge">${String.fromCharCode(65 + idx)}</span>
-              <span>${opt}</span>
+          html += `
+            <div class="${cardClass}" id="card-concept-${q.id}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                  ${statusBadge}
+                  <span style="font-size:10px; color:#64748b;">Concept Test</span>
+                </div>
+                <div style="font-weight:700; margin-bottom:3px; line-height:1.35;">${q.q}</div>
+                <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:6px;">${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; gap:6px;">
+                  <button class="mint-btn" type="button" onclick="checkConceptQ(${q.id})" style="font-size:11px; padding:4px 10px; border-radius:8px;">
+                    Check ✓
+                  </button>
+                  <button class="quiet-btn" type="button" onclick="resetConceptQ(${q.id})" style="font-size:10.5px; padding:3px 8px; border-radius:6px; color:#64748b;">
+                    Reset ↺
+                  </button>
+                </div>
+                ${isChk ? `
+                  <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; font-size:11px; line-height:1.45; color:#78350f;">
+                    <strong>व्याख्या:</strong> ${q.expl}
+                  </div>
+                ` : ''}
+              </div>
             </div>
           `;
         });
-        choicesHtml += '</div>';
 
-        let feedbackHtml = '';
-        if (st && st.checked) {
-          feedbackHtml = `<p class="task-feedback" data-state="${st.isCorrect ? 'correct' : 'retry'}">
-            ${st.isCorrect ? '✓ Correct! Well done.' : 'Not quite yet. Read the solution below and try again.'}
-          </p>`;
-        }
-
-        const isSolOpen = st && st.checked && !st.isCorrect;
-
-        card.innerHTML = `
-          <div class="task-heading">
-            <span class="eyebrow">Question ${q.id < 10 ? '0' + q.id : q.id} · ${q.label}</span>
-            <span class="task-status ${statusClass}">${statusText}</span>
-          </div>
-          <h3>${q.q}</h3>
-          <p class="task-hindi">${q.hi}</p>
-          ${choicesHtml}
-          <div class="task-bottom">
-            <div class="task-actions">
-              <button class="mint-btn" style="font-size:13px; padding:10px 18px;" type="button" onclick="checkSingle(${q.id})">Check answer ✓</button>
-              <button class="quiet-btn" type="button" onclick="toggleSol(${q.id})">Short solution · समझें</button>
-            </div>
-            ${feedbackHtml}
-            <details id="sol-${q.id}" class="solution" ${isSolOpen ? 'open' : ''}>
-              <summary>Short solution · समझें</summary>
-              <p><strong>Correct:</strong> Option ${String.fromCharCode(65 + q.ans)} ("${q.options[q.ans]}")</p>
-              <p style="color:#78350f;"><strong>Explanation (सरल व्याख्या):</strong> ${q.expl}</p>
-            </details>
-          </div>
-        `;
-
-        container.appendChild(card);
+        html += `</div>`;
+        box.innerHTML = html;
       });
     }
 
-    function selectChoice(qId, idx) {
-      userAnswers[qId] = idx;
-      checkedStatus[qId] = { checked: false, isCorrect: false };
-      updateProgress();
-      renderQuestions();
+    function selectConceptOpt(qId, idx) {
+      if (conceptChecked[qId]) return;
+      conceptUserAnswers[qId] = idx;
+      renderConceptPairs();
     }
 
-    function checkSingle(qId) {
-      const q = questions.find(item => item.id === qId);
-      if (!q) return;
-      const sel = userAnswers[qId];
-      if (sel === undefined) {
-        alert('Please select an option first! (कृपया पहले कोई विकल्प चुनें)');
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert('कृपया पहले कोई एक विकल्प चुनें! (Please choose an option first)');
         return;
       }
-      const isCorrect = sel === q.ans;
-      checkedStatus[qId] = { checked: true, isCorrect };
-      updateProgress();
-      renderQuestions();
+      conceptChecked[qId] = true;
+      renderConceptPairs();
     }
 
-    function toggleSol(qId) {
-      const el = document.getElementById(`sol-${qId}`);
-      if (el) el.open = !el.open;
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
     }
 
-    function checkCurrentPage() {
-      const filtered = getFilteredList();
-      const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
-      pageItems.forEach(q => {
-        if (userAnswers[q.id] !== undefined) {
-          checkSingle(q.id);
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
         }
-      });
+      }, 1000);
     }
 
-    function changePage(delta) {
-      currentPage += delta;
-      renderQuestions();
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function filterCategory(cat) {
-      activeCategory = cat;
-      currentPage = 1;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.filter === cat);
-      });
-      renderQuestions();
-    }
-
-    function resetAll() {
-      if (confirm('Are you sure you want to reset all answers and progress? (क्या आप सभी उत्तर और स्कोर रीसेट करना चाहते हैं?)')) {
-        userAnswers = {};
-        checkedStatus = {};
-        currentPage = 1;
-        updateProgress();
-        renderQuestions();
+    function updateTimerDisplay() {
+      const m = Math.floor(secondsLeft / 60);
+      const s = secondsLeft % 60;
+      const pill = document.getElementById('timer-display');
+      if (!pill) return;
+      pill.textContent = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+      if (secondsLeft <= 120) {
+        pill.classList.add('urgent');
+      } else {
+        pill.classList.remove('urgent');
       }
     }
 
-    // Initial load
-    renderJumpGrid();
-    renderQuestions();
-  </script>
+    function renderPalette() {
+      const p = document.getElementById('palette-container');
+      if (!p) return;
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let cls = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) cls += ' attempted';
+        if (testReview[q.id]) cls += ' review';
+        if (idx === currentIdx) cls += ' active';
+        html += `<button class="${cls}" type="button" onclick="jumpToQ(${idx})">${idx + 1}</button>`;
+      });
+      p.innerHTML = html;
+
+      // Update counters
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').textContent = attempted;
+      document.getElementById('left-count').textContent = 30 - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').textContent = q.label;
+      document.getElementById('q-counter').textContent = `Q ${currentIdx + 1} of 30`;
+      document.getElementById('current-q-title').textContent = q.q;
+      document.getElementById('current-q-hindi').textContent = q.hi;
+
+      const reviewBtn = document.getElementById('review-btn');
+      if (testReview[q.id]) {
+        reviewBtn.textContent = '🚩 Marked for Review';
+        reviewBtn.style.background = '#fef3c7';
+        reviewBtn.style.borderColor = '#f59e0b';
+      } else {
+        reviewBtn.textContent = '🏳 Mark for Review';
+        reviewBtn.style.background = '#fff';
+        reviewBtn.style.borderColor = 'var(--line)';
+      }
+
+      const optsBox = document.getElementById('current-q-options');
+      let html = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = testAnswers[q.id] === idx;
+        html += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:22px; height:22px; font-size:11px; ${isSel ? 'background:var(--brand); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      optsBox.innerHTML = html;
+
+      document.getElementById('prev-btn').disabled = currentIdx === 0;
+      document.getElementById('next-btn').textContent = currentIdx === 29 ? 'Review & Submit →' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, idx) {
+      testAnswers[qId] = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderCurrentQ();
+        renderPalette();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < 29) {
+        currentIdx++;
+        renderCurrentQ();
+        renderPalette();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = 30 - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `
+          आपने 30 में से <strong>${attempted}</strong> प्रश्न हल किए हैं।<br>
+          अभी <strong>${left} प्रश्न शेष</strong> हैं। क्या आप अभी सबमिट करना चाहते हैं?
+        `;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(isTimeOut) {
+      if (testTimer) clearInterval(testTimer);
+      closeModal();
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsBox = document.getElementById('test-results-view');
+      resultsBox.style.display = 'block';
+
+      let correctCount = 0;
+      const mistakesByUnit = {
+        kinds: { title: 'Unit 01: Kinds & Functions', mistakes: [], total: 6, anchor: '#topic-1' },
+        gender: { title: 'Unit 02: Gender Rules & Pairs', mistakes: [], total: 6, anchor: '#topic-2' },
+        plurals: { title: 'Unit 03: Plural Formations & -ves', mistakes: [], total: 6, anchor: '#topic-3' },
+        traps: { title: 'Unit 04: Plural Traps & Agreement', mistakes: [], total: 6, anchor: '#topic-4' },
+        uncountable: { title: 'Unit 05: Uncountables & Partitives', mistakes: [], total: 6, anchor: '#topic-5' }
+      };
+
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        if (isRight) {
+          correctCount++;
+        } else {
+          mistakesByUnit[q.unit].mistakes.push({ qNum: idx + 1, qTitle: q.q, correctOpt: String.fromCharCode(65 + q.ans) });
+        }
+      });
+
+      const percentage = Math.round((correctCount / 30) * 100);
+      let badge = 'Grammar Scholar ⭐';
+      let badgeColor = 'var(--brand)';
+      if (percentage < 50) { badge = 'Needs Practice 📖'; badgeColor = '#dc2626'; }
+      else if (percentage < 75) { badge = 'Good Effort 👍'; badgeColor = '#d97706'; }
+
+      let diagHtml = '';
+      for (const k in mistakesByUnit) {
+        const u = mistakesByUnit[k];
+        const hasMistake = u.mistakes.length > 0;
+        diagHtml += `
+          <div class="diag-card ${hasMistake ? 'mistake' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <strong>${u.title}</strong>
+              <span style="font-weight:bold; color:${hasMistake ? '#dc2626' : 'var(--brand)'};">
+                ${u.total - u.mistakes.length} / ${u.total}
+              </span>
+            </div>
+            ${hasMistake ? `
+              <p style="color:#991b1b; font-size:11.5px; margin:4px 0;">
+                गलतियाँ: प्रश्न सं. ${u.mistakes.map(m => `<strong>#${m.qNum}</strong>`).join(', ')}
+              </p>
+              <a href="${u.anchor}" style="color:var(--brand); font-weight:bold; font-size:11.5px; text-decoration:underline;">
+                Revise Rule in Theory →
+              </a>
+            ` : `
+              <p style="color:#15803d; font-size:11.5px;">✓ शत-प्रतिशत सही (No mistakes!)</p>
+            `}
+          </div>
+        `;
+      }
+
+      let reviewHtml = '';
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        const isSkipped = uChoice === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:4px;">
+              <span class="badge">${q.label} · Q ${idx + 1}</span>
+              <span style="font-weight:bold; font-size:12px; color:${isRight ? '#15803d' : '#dc2626'};">
+                ${isRight ? '✓ Correct (+1)' : (isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)')}
+              </span>
+            </div>
+            <div style="font-weight:800; font-size:13.5px; margin-bottom:2px;">${q.q}</div>
+            <div class="font-hi" style="font-size:12px; color:#475569; margin-bottom:8px;">${q.hi}</div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              <strong>Your Choice:</strong> ${isSkipped ? '<span style="color:#64748b;">Not Attempted</span>' : `Option (${String.fromCharCode(65 + uChoice)}) ${q.opts[uChoice]}`}<br>
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">Option (${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:7px 10px; font-size:12px; color:#166534;">
+              <strong>व्याख्या:</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsBox.innerHTML = `
+        <div class="results-card">
+          <div style="text-align:center; max-width:620px; margin:auto;">
+            ${isTimeOut ? '<div class="badge" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5; margin-bottom:8px;">⏱ Time Over! 15:00 Expired - Test Auto Submitted</div>' : ''}
+            <div class="badge" style="background:#f0fdf4; color:var(--brand); border-color:#86efac; margin-bottom:8px;">Exam Completed Successfully</div>
+            <h2 style="font-size:28px; font-weight:900; margin-bottom:4px;">Your Test Scorecard</h2>
+            <div class="score-circle">${correctCount} / 30</div>
+            <div style="font-family:var(--heading); font-size:18px; font-weight:800; color:${badgeColor}; margin-bottom:6px;">
+              ${percentage}% — ${badge}
+            </div>
+            <p style="font-size:13px; color:#475569; margin-bottom:18px;">
+              30 में से <strong>${correctCount} प्रश्न सही</strong>, <strong>${30 - correctCount} गलत/छूटे</strong>।
+            </p>
+
+            <button class="mint-btn" type="button" onclick="startExam()" style="font-size:13px; padding:9px 20px;">
+              Retake 30-Question Test ↺
+            </button>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">
+              🎯 Concept Mistake Diagnostics (गलतियों का विश्लेषण):
+            </h3>
+            <p style="font-size:12.5px; color:#475569; margin-bottom:12px;">
+              जिस यूनिट में आपकी गलतियाँ हुई हैं, उसके सामने दिए गए <strong>Revise Rule in Theory →</strong> पर क्लिक करके नियम को पुनः पढ़ें:
+            </p>
+            <div class="concept-diag-grid">${diagHtml}</div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">
+              📋 Question-by-Question Detailed Review (1 से 30 प्रश्न):
+            </h3>
+            <div>${reviewHtml}</div>
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize concept practice on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderConceptPairs();
+    });
+    renderConceptPairs();
+    </script>
+  </main>
 </body>
 </html>
