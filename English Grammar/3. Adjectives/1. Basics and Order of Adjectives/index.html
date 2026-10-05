@@ -120,23 +120,6 @@
     .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
     .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
 
-    /* Speech Chip */
-    .speech-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #e0f2fe;
-      border: 1px solid #7dd3fc;
-      color: #0369a1;
-      padding: 2px 7px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .speech-chip:hover { background: #bae6fd; transform: scale(1.02); }
-
     /* Concept 2-Question Pair Box */
     .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
     .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
@@ -407,32 +390,28 @@
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr><th>Present Participle (-ing) [Active: प्रभावक]</th><th>Past Participle (-ed) [Passive: प्रभावित]</th><th>हिंदी व्याख्या व संदर्भ</th><th>Listen 🔊</th></tr>
+              <tr><th>Present Participle (-ing) [Active: प्रभावक]</th><th>Past Participle (-ed) [Passive: प्रभावित]</th><th>हिंदी व्याख्या व संदर्भ</th></tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>The play was boring.</strong><br>(नाटक उबाऊ था - नाटक ने ऊब पैदा की)</td>
                 <td><strong>The audience was bored.</strong><br>(दर्शक ऊब गए - दर्शकों ने ऊब महसूस की)</td>
                 <td>-ing कारक है, -ed वह अवस्था है जो दर्शक ने महसूस की।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('The play was boring. The audience was bored.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>The work was tiring.</strong><br>(काम थका देने वाला था)</td>
                 <td><strong>The workers were soon tired.</strong><br>(मज़दूर जल्द ही थक गए)</td>
                 <td>काम में थका देने का गुण था (-ing); मज़दूर थके हुए थे (-ed)।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('The work was tiring. The workers were tired.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>The scene was horrifying.</strong><br>(दृश्य भयावह/डरावना था)</td>
                 <td><strong>The spectators were horrified.</strong><br>(दर्शक भयभीत/स्तब्ध हो गए)</td>
                 <td>दृश्य ने डर पैदा किया (-ing); दर्शकों पर डर का असर हुआ (-ed)।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('The scene was horrifying. The spectators were horrified.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>An infuriating woman</strong><br>(गुस्सा दिला देने वाली महिला)</td>
                 <td><strong>An infuriated woman</strong><br>(क्रोधित/गुस्से में भरी हुई महिला)</td>
                 <td><em>Infuriating:</em> उसने हमें क्रोधित किया।<br><em>Infuriated:</em> वह स्वयं किसी बात से बहुत गुस्से में है।</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('An infuriating woman. An infuriated woman.')">Listen 🔊</button></td>
               </tr>
             </tbody>
           </table>
@@ -486,15 +465,15 @@
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr><th>Adjective + Preposition</th><th>Hindi Meaning (सरल अर्थ)</th><th>Example Sentence</th><th>Listen 🔊</th></tr>
+              <tr><th>Adjective + Preposition</th><th>Hindi Meaning (सरल अर्थ)</th><th>Example Sentence</th></tr>
             </thead>
             <tbody>
-              <tr><td><strong>good at</strong></td><td>किसी काम या विषय में निपुण होना</td><td><em>She is <strong>good at</strong> mathematics and chess.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('She is good at mathematics')">Listen 🔊</button></td></tr>
-              <tr><td><strong>tired of</strong></td><td>किसी बात से ऊब या तंग आ जाना</td><td><em>I am <strong>tired of</strong> your endless excuses.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('I am tired of your endless excuses')">Listen 🔊</button></td></tr>
-              <tr><td><strong>afraid of</strong></td><td>किसी चीज़ से डरना / भयभीत होना</td><td><em>The little boy is <strong>afraid of</strong> the dark.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('The little boy is afraid of the dark')">Listen 🔊</button></td></tr>
-              <tr><td><strong>fond of</strong></td><td>किसी चीज़ का शौकीन होना / पसंद करना</td><td><em>She is very <strong>fond of</strong> classical music.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('She is very fond of classical music')">Listen 🔊</button></td></tr>
-              <tr><td><strong>interested in</strong></td><td>किसी विषय में रुचि रखना</td><td><em>Are you <strong>interested in</strong> modern art?</em></td><td><button type="button" class="speech-chip" onclick="speakWord('Are you interested in modern art')">Listen 🔊</button></td></tr>
-              <tr><td><strong>proud of</strong></td><td>गर्व महसूस करना</td><td><em>They are extremely <strong>proud of</strong> their daughter.</em></td><td><button type="button" class="speech-chip" onclick="speakWord('They are extremely proud of their daughter')">Listen 🔊</button></td></tr>
+              <tr><td><strong>good at</strong></td><td>किसी काम या विषय में निपुण होना</td><td><em>She is <strong>good at</strong> mathematics and chess.</em></td></tr>
+              <tr><td><strong>tired of</strong></td><td>किसी बात से ऊब या तंग आ जाना</td><td><em>I am <strong>tired of</strong> your endless excuses.</em></td></tr>
+              <tr><td><strong>afraid of</strong></td><td>किसी चीज़ से डरना / भयभीत होना</td><td><em>The little boy is <strong>afraid of</strong> the dark.</em></td></tr>
+              <tr><td><strong>fond of</strong></td><td>किसी चीज़ का शौकीन होना / पसंद करना</td><td><em>She is very <strong>fond of</strong> classical music.</em></td></tr>
+              <tr><td><strong>interested in</strong></td><td>किसी विषय में रुचि रखना</td><td><em>Are you <strong>interested in</strong> modern art?</em></td></tr>
+              <tr><td><strong>proud of</strong></td><td>गर्व महसूस करना</td><td><em>They are extremely <strong>proud of</strong> their daughter.</em></td></tr>
             </tbody>
           </table>
         </div>
@@ -550,32 +529,28 @@
         <div class="table-wrap">
           <table class="compare-table">
             <thead>
-              <tr><th>Verb</th><th>Link Verb + Adjective (अवस्था / रूप)</th><th>Action Verb + Adverb (सक्रिय क्रिया / ढंग)</th><th>Listen 🔊</th></tr>
+              <tr><th>Verb</th><th>Link Verb + Adjective (अवस्था / रूप)</th><th>Action Verb + Adverb (सक्रिय क्रिया / ढंग)</th></tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>look</strong></td>
                 <td><em>He looked <strong>calm</strong>.</em><br>(= He had a calm expression. वह शांत दिख रहा था)</td>
                 <td><em>He looked <strong>calmly</strong> at the angry crowd.</em><br>(= Looked deliberate action. उसने शांतिपूर्वक भीड़ की ओर देखा)</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('He looked calm. He looked calmly at the crowd.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>turn</strong></td>
                 <td><em>She turned <strong>pale</strong>.</em><br>(= She became pale. उसका रंग पीला पड़ गया)</td>
                 <td><em>He turned <strong>angrily</strong> to the man behind him.</em><br>(= Turned physical turn. वह गुस्से से पीछे मुड़ा)</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('She turned pale. He turned angrily.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>taste</strong></td>
                 <td><em>The soup tasted <strong>horrible</strong>.</em><br>(= It had a horrible taste. सूप का स्वाद घटिया था)</td>
                 <td><em>He tasted the soup <strong>suspiciously</strong>.</em><br>(= Tasted active sampling. उसने शक के साथ सूप चखा)</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('The soup tasted horrible. He tasted the soup suspiciously.')">Listen 🔊</button></td>
               </tr>
               <tr>
                 <td><strong>feel</strong></td>
                 <td><em>Tom felt <strong>cold</strong>.</em><br>(= Tom experienced coldness. टॉम को ठंड लगी)</td>
                 <td><em>The doctor felt the pulse <strong>carefully</strong>.</em><br>(= Felt physical exam. डॉक्टर ने सावधानी से नब्ज़ जाँची)</td>
-                <td><button type="button" class="speech-chip" onclick="speakWord('Tom felt cold. The doctor felt the pulse carefully.')">Listen 🔊</button></td>
               </tr>
             </tbody>
           </table>
@@ -822,19 +797,6 @@
     <!-- Target container for Vite -->
     <div id="root" style="display:none;"></div>
 
-    <!-- Audio Helper -->
-    <script>
-      function speakWord(text) {
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'en-GB';
-          utterance.rate = 0.9;
-          window.speechSynthesis.speak(utterance);
-        }
-      }
-    </script>
-
     <script>
     // 20 Embedded Concept Practice Questions (10 Pairs)
     // Distributed: C (40%), D (35%), A (20%), B (5% - least B)
@@ -1005,7 +967,6 @@
                   <button class="quiet-btn" type="button" onclick="resetConceptQ(${q.id})" style="font-size:10.5px; padding:3px 8px; border-radius:6px; color:#64748b;">
                     Reset ↺
                   </button>
-                  <button type="button" class="speech-chip" onclick="speakWord('${q.q.replace(/'/g, "\\'")}')">Listen 🔊</button>
                 </div>
                 ${isChk ? `
                   <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; font-size:11px; line-height:1.45; color:#78350f;">
