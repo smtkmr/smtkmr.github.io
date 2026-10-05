@@ -1,159 +1,19 @@
-<!-- HTML & CSS FOR LOCK SCREEN -->
-<style>
-  #econova-lock-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: #0f172a !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    z-index: 999999999 !important;
-    font-family: Arial, sans-serif !important;
-  }
-  .econova-lock-box {
-    background: #ffffff !important;
-    padding: 30px 20px !important;
-    border-radius: 16px !important;
-    text-align: center !important;
-    max-width: 350px !important;
-    width: 85% !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
-  }
-  .econova-sub-btn {
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 0 !important;
-    background: #dc2626 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    margin-bottom: 15px !important;
-    box-sizing: border-box !important;
-  }
-  .econova-input-container {
-    position: relative !important;
-    width: 100% !important;
-    margin-bottom: 12px !important;
-  }
-  .econova-input-container input {
-    width: 100% !important;
-    padding: 12px 40px 12px 12px !important;
-    border: 1px solid #cbd5e1 !important;
-    border-radius: 8px !important;
-    text-align: center !important;
-    font-size: 16px !important;
-    box-sizing: border-box !important;
-    outline: none !important;
-  }
-  .econova-eye-toggle {
-    position: absolute !important;
-    right: 12px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    cursor: pointer !important;
-    font-size: 18px !important;
-    user-select: none !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-  }
-  .econova-lock-box button.econova-submit-btn {
-    width: 100% !important;
-    padding: 12px !important;
-    background: #2563eb !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-  }
-</style>
-
-<!-- LOCK SCREEN OVERLAY -->
-<div id="econova-lock-overlay">
-  <div class="econova-lock-box">
-    <h2 style="color:#0f172a; margin-top:0;">🔒 Access Locked</h2>
-    <p style="color:#64748b; font-size:14px; margin-bottom:15px;">Subscribe to get the access code.</p>
-    
-    <!-- SUBSCRIBE FORM LINK -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU4Er-NPFKouoG5nF3e7r1lAqE0htxi34OimT9b-cjOAdCZw/viewform" target="_blank" rel="noopener" class="econova-sub-btn">Subscribe Channel</a>
-    
-    <!-- INPUT WITH EYE TOGGLE -->
-    <div class="econova-input-container">
-      <input type="password" id="econova-pass-field" placeholder="Enter Access Code" autocomplete="off">
-      <button type="button" id="econova-toggle-eye" class="econova-eye-toggle" aria-label="Toggle Password Visibility">👁️️</button>
-    </div>
-    
-    <button type="button" id="econova-unlock-btn" class="econova-submit-btn">Unlock Content</button>
-    <p id="econova-err-msg" style="color:#ef4444; font-size:13px; display:none; margin-top:10px;">❌ Galat Code! Sahi Code Daalein.</p>
-  </div>
-</div>
-
-<!-- JAVASCRIPT FOR LOCK SCREEN -->
-<script>
-  (function() {
-    var SECRET_CODE = "1991";
-
-    function doUnlock() {
-      var inputVal = document.getElementById("econova-pass-field").value.trim();
-      var errorMsg = document.getElementById("econova-err-msg");
-      var overlay = document.getElementById("econova-lock-overlay");
-
-      if (inputVal.toLowerCase() === SECRET_CODE.toLowerCase()) {
-        overlay.style.setProperty("display", "none", "important");
-        errorMsg.style.display = "none";
-      } else {
-        errorMsg.style.display = "block";
-      }
-    }
-
-    // Eye button toggle functionality
-    var toggleBtn = document.getElementById("econova-toggle-eye");
-    var passInput = document.getElementById("econova-pass-field");
-
-    toggleBtn.addEventListener("click", function() {
-      if (passInput.type === "password") {
-        passInput.type = "text";
-        toggleBtn.textContent = "🙈";
-      } else {
-        passInput.type = "password";
-        toggleBtn.textContent = "👁️";
-      }
-    });
-
-    document.getElementById("econova-unlock-btn").onclick = doUnlock;
-
-    document.getElementById("econova-pass-field").onkeydown = function(e) {
-      if (e.key === "Enter" || e.keyCode === 13) {
-        e.preventDefault();
-        doUnlock();
-      }
-    };
-  })();
-</script>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Class 9 General English Chapter 1 - Tenses, Model Sentence Structure (SVC), Kinds of Verbs (Transitive/Intransitive, Strong/Weak), Tense vs Time with 50 interactive MCQs and Hindi explanations.">
+  <meta name="description" content="Class 9 General English Chapter 1 - Tenses, Model Sentence Structure (SVC), Kinds of Verbs, Strong/Weak Verbs, and Tense vs Time with 20 embedded examples and a 30-question 15-minute exam.">
   <meta name="theme-color" content="#2dd4bf">
   <title>Chapter 1: Tenses &amp; Kinds of Verbs | Class 9 English Grammar</title>
   
-  <!-- Google Fonts matching reference design -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --body: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Quicksand', sans-serif;
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
       --heading: 'Outfit', 'Quicksand', sans-serif;
       --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
       --bg: #f0fdf4;
@@ -163,2686 +23,959 @@
       --yellow: #fde047;
       --line: #34d399;
       --button: #10b981;
-      --youtube-red: #ff0000;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: 0;
-      background: transparent;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    h1, h2, h3, .logo, .eyebrow, .number {
-      font-family: var(--heading);
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 28px;
-    }
-
-    .skip {
-      position: fixed;
-      left: 20px;
-      top: -80px;
-      background: white;
-      padding: 10px;
-      z-index: 100;
-      border-radius: 8px;
-      border: 2px solid var(--brand);
-      font-weight: bold;
-    }
-
-    .skip:focus {
-      top: 10px;
-    }
-
-    /* Header & Navigation */
-    header {
-      background: var(--teal);
-      border-bottom: 3px solid var(--button);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-    }
-
-    .nav {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -1.3px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--heading);
-    }
-
-    .logo .vip-text, .logo em {
-      font-style: normal !important;
-      color: var(--yellow);
-    }
-
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: var(--yellow);
-      color: var(--brand);
-      display: grid;
-      place-items: center;
-      font-size: 26px;
-      transform: rotate(-9deg);
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    nav a {
-      font-family: var(--heading);
-      font-weight: 700;
-      color: #fff;
-      font-size: 14.5px;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: background 0.15s;
-    }
-
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .mint-btn {
-      background: var(--button);
-      color: #fff;
-      border: 0;
-      border-radius: 16px;
-      padding: 12px 22px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      font-family: var(--heading);
-      box-shadow: 0 4px 0 var(--brand);
-      transition: transform .15s, background .15s;
-      cursor: pointer;
-    }
-
-    .mint-btn:hover {
-      background: var(--brand);
-      transform: translateY(-2px);
-    }
-
-    .mint-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--brand);
-    }
-
-    .yt-btn {
-      background: var(--youtube-red);
-      color: #fff;
-      border-radius: 16px;
-      padding: 10px 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      font-size: 14px;
-      font-family: var(--heading);
-      box-shadow: 0 4px 0 #b30000;
-      transition: transform .15s, background .15s;
-    }
-
-    .yt-btn:hover {
-      background: #cc0000;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .yt-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 #b30000;
-    }
-
-    .nav .mint-btn {
-      font-size: 14px;
-      padding: 10px 18px;
-    }
-
-    .quiet-btn {
-      border: 1.5px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 14px;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 8px 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.15s;
-    }
-
-    .quiet-btn:hover {
-      background: #d1fae5;
-      transform: translateY(-1px);
-    }
-
-    /* Cards */
-    .mint-card {
-      background: #fff;
-      border: 3px solid #34d399;
-      border-radius: 24px;
-    }
-
-    .amber-card {
-      background: #fffbeb;
-      border: 3px solid #fcd34d;
-      border-radius: 24px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--brand);
-      font-family: var(--heading);
-    }
-
-    /* Hero section */
-    .hero {
-      padding-top: 44px;
-      padding-bottom: 35px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid #34d399;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12px;
-      color: var(--brand);
-      font-weight: bold;
-    }
-
-    .pill span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--button);
-    }
-
-    h1 {
-      font-size: clamp(34px, 5vw, 62px);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin: 18px 0 14px;
-    }
-
-    h1 .green {
-      color: var(--brand);
-    }
-
-    .underline-sketch {
-      position: relative;
-      white-space: nowrap;
-      isolation: isolate;
-    }
-
-    .underline-sketch:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 4px;
-      height: 14px;
-      background: var(--yellow);
-      z-index: -1;
-      transform: rotate(-1.5deg);
-      border-radius: 8px;
-    }
-
-    .intro {
-      max-width: 540px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      margin: 24px 0 18px;
-      flex-wrap: wrap;
-    }
-
-    .text-link {
-      color: var(--brand);
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      display: flex;
-      gap: 16px;
-      color: var(--brand);
-      font-weight: bold;
-      flex-wrap: wrap;
-    }
-
-    /* Hero sample card */
-    .hero-sample {
-      padding: 28px;
-      text-align: center;
-      transform: rotate(1.5deg);
-      box-shadow: 7px 8px 0 #d1fae5;
-    }
-
-    .hero-sample .sample-number {
-      font-family: var(--heading);
-      font-size: 46px;
-      font-weight: 900;
-      color: var(--brand);
-      line-height: 1.2;
-      margin: 8px 0;
-    }
-
-    .hero-sample p {
-      font-size: 13.5px;
-      line-height: 1.7;
-      text-align: left;
-    }
-
-    /* Lesson toolbar & jump bar */
-    .lesson-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-      margin: 15px 0 40px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .lesson-jumps a {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--brand);
-      border-radius: 12px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: background 0.15s;
-    }
-
-    .lesson-jumps a:hover {
-      background: #d1fae5;
-    }
-
-    .progress-block {
-      min-width: 230px;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    progress {
-      display: block;
-      width: 100%;
-      height: 12px;
-      margin-top: 6px;
-      accent-color: var(--button);
-      border-radius: 6px;
-    }
-
-    /* Sections */
-    .section {
-      padding-top: 48px;
-      padding-bottom: 12px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      font-size: 30px;
-      letter-spacing: -0.8px;
-      line-height: 1.25;
-      margin-top: 6px;
-      font-weight: 900;
-    }
-
-    .section-heading > p {
-      font-size: 14px;
-      max-width: 380px;
-      color: #4b5563;
-    }
-
-    /* 4 Topic overview cards */
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .topic-card {
-      padding: 22px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .topic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 0 #a7f3d0;
-    }
-
-    .topic-icon {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .topic-card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-
-    .topic-card p {
-      font-size: 13px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-
-    .topic-tag {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 5px 10px;
-      background: var(--bg);
-      border-radius: 12px;
-      color: var(--brand);
-      border: 1px solid var(--line);
-    }
-
-    /* Rule Cards */
-    .rule-card {
-      padding: 22px 26px;
-      margin-bottom: 20px;
-      background: #fff;
-      border: 2px solid #a7f3d0;
-      border-radius: 20px;
-      max-width: 100%;
-    }
-
-    .rule-card.highlight {
-      border-left: 6px solid var(--button);
-    }
-
-    .rule-card.warning {
-      border-left: 6px solid #f59e0b;
-      background: #fffdf5;
-    }
-
-    .rule-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .rule-header h3 {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 8px;
-      background: #ecfdf5;
-      color: var(--brand);
-      border: 1px solid #34d399;
-    }
-
-    .easy-hi {
-      font-family: var(--hi-font);
-      font-size: 14.5px;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1.5px solid #bfdbfe;
-      border-radius: 14px;
-      padding: 12px 16px;
-      margin: 10px 0;
-      line-height: 1.7;
-    }
-
-    .easy-hi.amber {
-      background: #fffbeb;
-      border-color: #fde68a;
-      color: #92400e;
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .example-box {
-      background: var(--bg);
-      border: 1.5px solid #a7f3d0;
-      border-radius: 14px;
-      padding: 12px 14px;
-    }
-
-    .example-box b {
-      font-size: 15px;
-      color: var(--brand);
-      display: block;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .example-box span {
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    /* Table Wrapper for mobile responsiveness */
-    .table-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 14px;
-      margin-top: 10px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .table-scroll-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--brand);
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 20px;
-      padding: 4px 10px;
-      margin-top: 8px;
-    }
-
-    .compare-table {
-      width: 100%;
-      min-width: 540px;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      line-height: 1.5;
-    }
-
-    .compare-table th, .compare-table td {
-      padding: 10px 14px;
-      border: 1px solid #e2e8f0;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .compare-table th {
-      background: #e2e8f0;
-      font-family: var(--heading);
-      font-weight: 800;
-      color: #1e293b;
-      white-space: nowrap;
-    }
-
-    .compare-table tr:nth-child(even) {
-      background: #f8fafc;
-    }
-
-    .wrong {
-      color: #dc2626;
-      font-weight: bold;
-    }
-
-    .right {
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    /* Practice Arena Section */
-    .practice-box {
-      margin-top: 35px;
-      padding: 26px 30px;
-    }
-
-    .filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 16px;
-    }
-
-    .filter-btn {
-      padding: 9px 15px;
-      border: 2px solid var(--line);
-      border-radius: 14px;
-      background: white;
-      color: var(--brand);
-      font-size: 13px;
-      font-weight: bold;
-      transition: all 0.15s;
-    }
-
-    .filter-btn:hover {
-      background: #d1fae5;
-    }
-
-    .filter-btn.active {
-      background: var(--button);
-      color: white;
-      box-shadow: 0 3px 0 var(--brand);
-    }
-
-    /* Jump Grid Map */
-    .jump-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .jump-btn {
-      height: 36px;
-      border: 1.5px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      font-family: var(--heading);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--brand);
-      transition: all 0.15s;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .jump-btn:hover {
-      background: #d1fae5;
-    }
-
-    .jump-btn.correct {
-      background: #10b981;
-      color: white;
-      border-color: #059669;
-    }
-
-    .jump-btn.retry {
-      background: #ef4444;
-      color: white;
-      border-color: #b91c1c;
-    }
-
-    .jump-btn.selected {
-      background: #fde047;
-      color: #78350f;
-      border-color: #d97706;
-    }
-
-    /* Task / Question Cards */
-    .task-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .task-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      scroll-margin-top: 110px;
-    }
-
-    .task-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .task-status {
-      font-size: 11px;
-      font-weight: bold;
-      color: var(--brand);
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-
-    .task-status.correct {
-      background: #dcfce7;
-      border-color: #22c55e;
-      color: #15803d;
-    }
-
-    .task-status.retry {
-      background: #fee2e2;
-      border-color: #ef4444;
-      color: #b91c1c;
-    }
-
-    .task-card h3 {
-      font-size: 19px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .task-hindi {
-      font-family: var(--hi-font);
-      font-size: 13.5px;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    .choices {
-      display: grid;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
-
-    .choice {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 11px 14px;
-      background: var(--bg);
-      border: 2px solid #a7f3d0;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.15s;
-    }
-
-    .choice:hover {
-      border-color: var(--brand);
-      background: #ecfdf5;
-    }
-
-    .choice.selected {
-      background: #fffbeb;
-      border-color: #f59e0b;
-    }
-
-    .choice.right-choice {
-      background: #dcfce7 !important;
-      border-color: #22c55e !important;
-      color: #15803d !important;
-    }
-
-    .choice.wrong-choice {
-      background: #fee2e2 !important;
-      border-color: #ef4444 !important;
-      color: #b91c1c !important;
-    }
-
-    .choice-badge {
-      width: 25px;
-      height: 25px;
-      border-radius: 8px;
-      background: white;
-      border: 1.5px solid var(--line);
-      display: grid;
-      place-items: center;
-      font-family: var(--heading);
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--brand);
-      flex-shrink: 0;
-    }
-
-    .task-bottom {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #d1fae5;
-    }
-
-    .task-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .task-feedback {
-      font-size: 13px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: var(--brand);
-    }
-
-    .task-feedback[data-state=retry] {
-      color: #b91c1c;
-    }
-
-    .solution {
-      margin-top: 14px;
-      padding: 12px 14px;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 14px;
-      font-size: 13px;
-    }
-
-    .solution summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #78350f;
-    }
-
-    .solution p {
-      margin-top: 6px;
-      line-height: 1.7;
-    }
-
-    .check-all-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 36px;
-      padding: 26px;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      background: #fff;
-      border-top: 2px solid #a7f3d0;
-      padding: 28px 0;
-      margin-top: 60px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-size: 12px;
-    }
-
-    .footer-brand {
-      font-family: var(--heading);
-      font-size: 24px;
-      color: var(--brand);
-      font-weight: 900;
-    }
-
-    .footer-brand .vip-text, .footer-brand em {
-      font-style: normal !important;
-      color: var(--yellow);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-weight: bold;
-      color: var(--brand);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .topics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .task-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .wrap {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-      .rule-card {
-        padding: 16px 14px;
-        border-radius: 16px;
-      }
-      .compare-table {
-        font-size: 12.5px;
-        min-width: 480px;
-      }
-      .nav {
-        min-height: 76px;
-      }
-      .logo {
-        font-size: 26px;
-      }
-      .logo-mark {
-        width: 34px;
-        height: 34px;
-        font-size: 22px;
-      }
-      nav a {
-        display: none;
-      }
-      .nav .mint-btn {
-        font-size: 12px;
-        padding: 8px 14px;
-      }
-      .yt-btn {
-        font-size: 12px;
-        padding: 8px 14px;
-      }
-      h1 {
-        font-size: 36px;
-      }
-      .topics-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .check-all-section {
-        flex-direction: column;
-        text-align: center;
-      }
+      --yt-red: #ff0000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 15px; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 20px; }
+
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { font-size: 28px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 38px; height: 38px; border-radius: 12px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 22px; transform: rotate(-8deg); }
+    nav { display: flex; align-items: center; gap: 12px; }
+    nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 13.5px; padding: 6px 10px; border-radius: 8px; transition: background 0.15s; }
+    nav a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 16px; padding: 10px 20px; display: inline-flex; justify-content: center; align-items: center; gap: 8px; font-weight: 800; font-family: var(--heading); box-shadow: 0 4px 0 var(--brand); transition: all .15s; cursor: pointer; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .mint-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 12px; font-size: 12.5px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; transition: all 0.15s; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+    .yt-btn { background: var(--yt-red); color: #fff; border-radius: 14px; padding: 8px 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13px; font-family: var(--heading); box-shadow: 0 3px 0 #b30000; }
+
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 22px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 22px; }
+
+    .hero { padding: 36px 0 30px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 6px 12px; font-size: 11.5px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(30px, 4.5vw, 56px); font-weight: 900; line-height: 1.1; margin: 14px 0 12px; }
+    h1 .green { color: var(--brand); }
+
+    .section { padding: 36px 0 10px; }
+    .rule-card { padding: 20px 22px; margin-bottom: 20px; background: #fff; border: 2px solid #a7f3d0; border-radius: 18px; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    .easy-hi { font-family: var(--hi-font); font-size: 14px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 14px; padding: 10px 14px; margin: 10px 0; line-height: 1.7; }
+
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin-top: 10px; background: #fff; }
+    .compare-table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; }
+
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box { margin-top: 16px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 16px; padding: 14px 16px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+    .pair-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12.5px; }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+    
+    .choices-sm { display: grid; gap: 6px; margin: 8px 0; }
+    .choice-sm { display: flex; gap: 8px; align-items: flex-start; padding: 7px 10px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 18px; height: 18px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 10px; font-weight: 800; shrink: 0; }
+
+    /* Test Arena */
+    .test-section { margin-top: 40px; padding: 24px; }
+    .test-timer-bar { position: sticky; top: 80px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 16px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 20px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 10px; padding: 4px 12px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); gap: 5px; margin: 10px 0; }
+    .pal-btn { height: 32px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 12px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); }
+
+    .test-card { padding: 22px; background: #fff; border: 2.5px solid var(--line); border-radius: 20px; }
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 12px 14px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 600; margin-bottom: 8px; transition: all 0.15s; }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 24px; padding: 24px; }
+    .score-banner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .score-circle { font-family: var(--heading); font-size: 44px; font-weight: 900; color: var(--brand); }
+
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 18px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 14px; padding: 14px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 14px; margin-bottom: 12px; background: #fff; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    /* Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 20px; max-width: 440px; width: 100%; padding: 22px; text-align: center; }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 24px 0; margin-top: 50px; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav a { display: none; }
+      .test-timer-bar { top: 70px; }
+      .pair-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <a href="#main" class="skip">Skip to content</a>
-
-  <!-- Header with YouTube Link and Button -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#main" aria-label="Econova Home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span>Econova<span class="vip-text">.vip</span></span>
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#topic-1">1. Sentence Structure</a>
-        <a href="#topic-2">2. Kinds of Verbs</a>
-        <a href="#topic-3">3. Strong vs Weak</a>
+      <nav>
+        <a href="#topic-1">1. Structure</a>
+        <a href="#topic-2">2. Kinds</a>
+        <a href="#topic-3">3. Strong/Weak</a>
         <a href="#topic-4">4. Tense vs Time</a>
+      </nav>
+
+      <div style="display:flex; gap:10px; align-items:center;">
         <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor" aria-hidden="true">
-            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
-          </svg>
+          <svg width="18" height="13" viewBox="0 0 20 14" fill="currentColor"><path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/></svg>
           YouTube
         </a>
-        <a class="mint-btn" href="#practice">Practise 50 MCQs <span aria-hidden="true">↘</span></a>
-      </nav>
+        <button class="mint-btn" type="button" onclick="scrollToTest()">
+          30-Q Test (15m) →
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <main id="main" class="wrap">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="lesson-title">
+    <!-- Hero -->
+    <section class="hero">
       <div>
         <div class="pill">
-          <span aria-hidden="true"></span>
+          <span></span>
           Class 9 General English · Chapter 1: Tenses &amp; Kinds of Verbs
         </div>
 
-        <h1 id="lesson-title">
+        <h1>
           Master <span class="green">Tenses &amp; Verbs</span><br>
-          <span class="underline-sketch">Sentence to Time.</span>
+          Sentence to Time.
         </h1>
 
-        <p class="intro">
-          Tense को सही प्रकार से समझने के लिए वाक्य का ढाँचा (<strong>SVC: Subject + Verb + Complement</strong>), क्रियाओं के भेद (<strong>Transitive, Intransitive, Strong, Weak</strong>) और <strong>Tense vs Time</strong> का अंतर जानना अनिवार्य है। यहाँ प्रस्तुत है Class 9th का संपूर्ण पाठ्यक्रम सबसे सरल और प्रमाणित रूप में।
+        <p style="color:#4b5563; font-size:15px; line-height:1.75; margin-bottom:18px;">
+          Tense को सही प्रकार से समझने के लिए वाक्य का ढाँचा (<strong>SVC: Subject + Verb + Complement</strong>), क्रियाओं के भेद (<strong>Transitive, Intransitive, Strong, Weak</strong>) और <strong>Tense vs Time</strong> का अंतर जानना अनिवार्य है। यहाँ प्रस्तुत है संपूर्ण पाठ्यक्रम के आवश्यक नियम, <strong>हर नियम के साथ 2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong>।
         </p>
 
-        <div class="hero-actions">
-          <a class="mint-btn" href="#topic-1">Start Chapter Rules →</a>
-          <a class="text-link" href="#practice">Direct Practise 50 MCQs ↘</a>
-        </div>
-
-        <div class="hero-note">
-          <span>✦ 4 Foundational Units</span>
-          <span>✦ 50 Comprehensive Class 9 MCQs</span>
-          <span>✦ NCERT &amp; State Board Aligned Explanations</span>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="mint-btn" href="#topic-1">Read Rules &amp; 20 Examples →</a>
+          <button class="quiet-btn" type="button" onclick="scrollToTest()" style="font-size:13px; padding:10px 16px;">
+            ⏱ Launch 30-Question Test
+          </button>
         </div>
       </div>
 
-      <!-- Sample Concept Card -->
-      <div class="amber-card hero-sample">
-        <p class="eyebrow">The Golden Concept</p>
-        <div class="sample-number">Tense ≠ Time!</div>
-        <p>
+      <div class="amber-card" style="padding:22px; text-align:center;">
+        <p style="font-size:12px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The Golden Concept</p>
+        <div style="font-family:var(--heading); font-size:38px; font-weight:900; color:var(--brand); margin:6px 0;">Tense ≠ Time!</div>
+        <p style="text-align:left; font-size:13px; line-height:1.6; background:#fff; padding:12px; border-radius:12px; border:1px solid #fde68a;">
           <strong>Time (समय) और Tense (काल) दोनों एक नहीं होते:</strong><br>
-          • <strong>Time</strong> एक प्राकृतिक, सार्वभौमिक (universal) अवधारणा है जिसे घड़ी और कैलेंडर से नापते हैं।<br>
-          • <strong>Tense</strong> क्रिया का व्याकरणिक रूप (verb form) है।<br>
-          • <em>"The PM visits tomorrow"</em> — यहाँ Verb form <strong>Present Tense</strong> है पर व्यक्त समय <strong>Future Time</strong> है!
+          • <strong>Time:</strong> एक प्राकृतिक, सार्वभौमिक (universal) अवधारणा है जिसे घड़ी और कैलेंडर (seconds, hours, days, years) से नापते हैं।<br>
+          • <strong>Tense:</strong> क्रिया का व्याकरणिक रूप (verb inflection form) है।<br>
+          • <em>"The PM visits tomorrow"</em> — यहाँ Verb form <strong>Present Simple Tense</strong> है पर व्यक्त समय <strong>Future Time</strong> है!
         </p>
-      </div>
-    </section>
-
-    <!-- Toolbar & Shortcuts -->
-    <div class="mint-card lesson-toolbar">
-      <nav class="lesson-jumps" aria-label="Lesson shortcuts">
-        <a href="#topic-1">01 · Model Structure (SVC)</a>
-        <a href="#topic-2">02 · Kinds of Verbs</a>
-        <a href="#topic-3">03 · Strong vs Weak</a>
-        <a href="#topic-4">04 · Tense and Time</a>
-      </nav>
-
-      <div class="progress-block">
-        <span id="progress-label" role="status">0 of 50 questions solved</span>
-        <progress id="lesson-progress" max="50" value="0" aria-label="Questions solved out of 50"></progress>
-      </div>
-    </div>
-
-    <!-- 4 Topics Overview -->
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Chapter Structure</p>
-          <h2>The Four Foundational Units.</h2>
-        </div>
-        <p>Class 9th General English Chapter 1 का सम्पूर्ण सिलेबस इन 4 इकाइयों में पूर्णतः समाहित है।</p>
-      </div>
-
-      <div class="topics-grid">
-        <article class="mint-card topic-card">
-          <div class="topic-icon">📐</div>
-          <h3>1. Model Structure</h3>
-          <p>Sentence structure (SVC/SVO), Subject की परिभाषा (Head of family/Train engine), और Verb की केंद्रीय भूमिका।</p>
-          <span class="topic-tag">Unit 01</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">⚡</div>
-          <h3>2. Kinds of Verbs</h3>
-          <p>Main Verbs vs Helping Verbs, Transitive (सकर्मक) vs Intransitive (अकर्मक) क्रिया के सटीक नियम।</p>
-          <span class="topic-tag">Unit 02</span>
-        </article>
-
-        <article class="mint-card topic-card">
-          <div class="topic-icon">🔄</div>
-          <h3>3. Strong vs Weak</h3>
-          <p>V1, V2, V3 रूप बनाने की विधि। Vowel बदलने वाली Strong Verbs और -ed/-d/-t या समान रहने वाली Weak Verbs।</p>
-          <span class="topic-tag">Unit 03</span>
-        </article>
-
-        <article class="amber-card topic-card">
-          <div class="topic-icon">⏳</div>
-          <h3>4. Tense vs Time</h3>
-          <p>Time (Universal concept) बनाम Tense (Grammatical form)। Universal Truths, Immediate Present, और Future Activity।</p>
-          <span class="topic-tag">Unit 04</span>
-        </article>
       </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 1: MODEL SENTENCE STRUCTURE (SVC) -->
+    <!-- UNIT 01: MODEL STRUCTURE (SVC) -->
     <!-- ========================================== -->
     <section id="topic-1" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 01 · Basic Foundations</p>
-          <h2>1. Model Sentence Structure (SVC) &amp; Subject / Verb</h2>
-        </div>
-        <p>Tenses का अध्ययन शुरू करने से पूर्व वाक्य की आंतरिक संरचना समझना आवश्यक है।</p>
+      <div style="margin-bottom:14px;">
+        <span class="badge">Unit 01 · Basic Foundations</span>
+        <h2 style="font-size:26px; font-weight:900; margin-top:4px;">1. Model Sentence Structure (SVC) &amp; Subject / Verb</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1A -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>A. Model Sentence Formula: Subject + Verb + Complement (SVC)</h3>
-          <span class="badge">Standard Model</span>
+          <h3 style="font-size:17px; font-weight:800;">A. Model Sentence Formula: Subject + Verb + Complement (SVC)</h3>
+          <span class="badge">Formula</span>
         </div>
-        <p>पाठ्यपुस्तक के अनुसार अंग्रेजी में किसी भी मूल वाक्य की आदर्श बनावट निम्न प्रकार होती है:</p>
-
-        <div style="background:#f0fdf4; border:2px solid #34d399; border-radius:14px; padding:16px; margin:14px 0; text-align:center;">
-          <div style="font-size:22px; font-weight:900; color:#059669; font-family:var(--heading);">
-            Subject (S) + Verb (V) + Complement / Object (C / O)
-          </div>
-          <div style="font-size:14px; font-weight:700; color:#4b5563; margin-top:6px;">
-            Textbook Example: <strong>They</strong> (Subject) + <strong>go</strong> (Verb) + <strong>to school</strong> (Complement).
-          </div>
+        <div style="background:#f0fdf4; border:1.5px solid #34d399; border-radius:10px; padding:10px; text-align:center; font-weight:bold; font-size:15px; color:#059669;">
+          Subject (S) + Verb (V) + Complement / Object (C / O)<br>
+          <span style="font-size:13px; color:#475569;">Textbook Example: <strong>They</strong> (S) + <strong>go</strong> (V) + <strong>to school</strong> (Complement).</span>
         </div>
-
         <div class="easy-hi">
-          👉 <strong>सरल समझ (Hindi Breakdown):</strong><br>
           • <strong>Subject (कर्ता):</strong> जो कार्य करता है या जिसके विषय में कुछ कहा जाता है।<br>
           • <strong>Verb (क्रिया):</strong> जो कार्य (action) या अवस्था (state) का बोध कराती है।<br>
-          • <strong>Complement / Object (पूरक/कर्म):</strong> जो वाक्य के भाव को पूर्ण करता है।
+          • <strong>Complement (पूरक):</strong> जो वाक्य के भाव (predication) को पूर्ण करता है।
         </div>
+
+        <!-- 2 Example Questions for 1A -->
+        <div class="concept-pair-box" id="pair-1a"></div>
       </article>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1B -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>B. Subject (कर्ता) — परिभाषा एवं विशेषताएँ</h3>
-          <span class="badge">Core Element</span>
+          <h3 style="font-size:17px; font-weight:800;">B. Subject — परिवार का मुखिया एवं ट्रेन का इंजन (Engine of Train)</h3>
+          <span class="badge">Metaphor</span>
         </div>
-        <p style="background:#fff; border:1px solid #e2e8f0; padding:12px; border-radius:10px; font-style:italic;">
-          "A noun, noun phrase or pronoun representing the person or thing that performs the action of the verb, about which something is stated or, in a passive sentence, that is affected by the action of the verb is called subject."
-        </p>
-
-        <div class="easy-hi amber">
-          🚂 <strong>परिवार के मुखिया और रेलगाड़ी के इंजन का रूपक (Book Metaphor):</strong><br>
-          पाठ्यपुस्तक में स्पष्ट लिखा है कि वाक्य में Subject की तुलना <strong>परिवार के मुखिया (head of family)</strong> या <strong>ट्रेन के इंजन (engine of train)</strong> से की जा सकती है। ऐसा इसलिए क्योंकि Subject का Number (Singular या Plural) ही यह तय करता है कि क्रिया (Verb) या सहायक क्रिया (Helping Verb) का कौन सा रूप प्रयुक्त होगा!
+        <div class="easy-hi" style="background:#fffdf5; border-color:#fde68a; color:#92400e;">
+          🚂 <strong>ट्रेन के इंजन का रूपक:</strong> वाक्य में Subject की तुलना परिवार के मुखिया या ट्रेन के इंजन से की जाती है क्योंकि Subject का वचन (Singular/Plural) ही क्रिया या सहायक क्रिया का रूप तय करता है (He <strong>goes</strong> vs They <strong>go</strong>)।
         </div>
 
-        <div class="example-grid">
-          <div class="example-box">
-            <b>Subject के विभिन्न रूप</b>
-            <span>• Noun: <em>Rohan</em> runs fast.<br>• Pronoun: <em>They</em> play chess.<br>• Adjective as Noun: <em>The poor</em> need help.<br>• Gerund: <em>Swimming</em> is good.</span>
-          </div>
-          <div class="example-box">
-            <b>Active vs Passive Subject</b>
-            <span>• Active: <em>The police caught the thief.</em> (पुलिस ने पकड़ा)<br>• Passive: <em>The thief was caught.</em> (यहाँ 'thief' कर्ता स्थान पर क्रिया से प्रभावित हुआ है).</span>
-          </div>
-        </div>
+        <!-- 2 Example Questions for 1B -->
+        <div class="concept-pair-box" id="pair-1b"></div>
       </article>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 1C -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>C. Verb (क्रिया) — सर्वाधिक अनिवार्य तत्व</h3>
-          <span class="badge">Pivotal Role</span>
+          <h3 style="font-size:17px; font-weight:800;">C. Subject के विविध रूप (Noun, Pronoun, Gerund, Passive)</h3>
+          <span class="badge">Subject Forms</span>
         </div>
-        <p style="background:#fff; border:1px solid #e2e8f0; padding:12px; border-radius:10px; font-style:italic;">
-          "Words used for predicating (that is, saying something about some person or thing) are called verbs."
+        <p style="font-size:13px; color:#4b5563;">
+          • <strong>Gerund:</strong> <em>Swimming</em> is a healthy exercise (verb+ing संज्ञा रूप में कर्ता बना)।<br>
+          • <strong>Passive Subject:</strong> <em>The thief was caught</em> (क्रिया से प्रभावित होने वाला कर्ता स्थान पर)।
         </p>
-        <p style="margin-top:10px;">
-          क्रिया वाक्य का <strong>सर्वाधिक महत्वपूर्ण अंग</strong> है। क्रिया के बिना किसी भी वाक्य का अस्तित्व संभव नहीं है। क्रिया में <strong>Changeability (रूप परिवर्तनशीलता)</strong> का विशिष्ट गुण होता है, जिसके माध्यम से विभिन्न काल (Tenses) और वाक्य रचे जाते हैं।
+
+        <!-- 2 Example Questions for 1C -->
+        <div class="concept-pair-box" id="pair-1c"></div>
+      </article>
+
+      <!-- Sub-concept 1D -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:17px; font-weight:800;">D. Verb (क्रिया) — सर्वाधिक अनिवार्य तत्व व रूप परिवर्तनशीलता (Changeability)</h3>
+          <span class="badge">Changeability</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563;">
+          <em>"Words used for predicating are called verbs."</em> क्रिया के बिना कोई वाक्य नहीं बन सकता। क्रिया में <strong>Changeability (रूप परिवर्तनशीलता)</strong> का विशिष्ट गुण होता है जिससे अलग-अलग Tense बनते हैं।
         </p>
+
+        <!-- 2 Example Questions for 1D -->
+        <div class="concept-pair-box" id="pair-1d"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 2: KINDS OF VERBS -->
+    <!-- UNIT 02: KINDS OF VERBS -->
     <!-- ========================================== -->
     <section id="topic-2" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 02 · Classification</p>
-          <h2>2. Kinds of Verbs (उपयोगिता एवं कर्म के आधार पर)</h2>
-        </div>
-        <p>Class 9 पाठ्यक्रम के अनुसार क्रियाओं को दो मुख्य दृष्टिकोणों से वर्गीकृत किया गया है।</p>
+      <div style="margin-bottom:14px;">
+        <span class="badge">Unit 02 · Classification</span>
+        <h2 style="font-size:26px; font-weight:900; margin-top:4px;">2. Kinds of Verbs (उपयोगिता एवं कर्म के आधार पर)</h2>
       </div>
 
-      <!-- (1) Utility Basis -->
-      <article class="rule-card highlight">
+      <!-- Sub-concept 2A -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>(1) उपयोगिता के आधार पर (On the basis of Utility)</h3>
-          <span class="badge">Utility Basis</span>
+          <h3 style="font-size:17px; font-weight:800;">(1) उपयोगिता के आधार पर: Main Verb बनाम Helping Verb</h3>
+          <span class="badge">Utility</span>
         </div>
+        <p style="font-size:13px; color:#4b5563;">
+          • <strong>Main Verb:</strong> जिनका अपना स्वतंत्र अर्थ होता है (जैसे <em>I appreciate your work</em> में 'appreciate')।<br>
+          • <strong>Helping Verb (Auxiliary):</strong> जो मुख्य क्रिया के साथ Tense बनाती हैं (जैसे <em>She is reading</em> में 'is')।
+        </p>
 
-        <div class="example-grid">
-          <div class="example-box" style="background:#f0fdf4; border-color:#34d399;">
-            <b>(a) Main Verb (मुख्य क्रिया / Principal Verb)</b>
-            <span>वे शब्द जिनका अपना स्वतंत्र अर्थ और पहचान होती है (action words having individual meaning &amp; identity)।<br>
-            • e.g. <em>I appreciate your performance.</em> ('appreciate' का अपना स्वतंत्र अर्थ है)<br>
-            • Other: <em>run, write, eat, speak, learn</em>.</span>
-          </div>
-          <div class="example-box" style="background:#fffdf5; border-color:#fcd34d;">
-            <b>(b) Helping Verb or Auxiliary (सहायक क्रिया)</b>
-            <span>वे शब्द जो मुख्य क्रिया के साथ मिलकर वाक्य को निश्चित अर्थ, काल (tense) और पहचान प्रदान करते हैं。<br>
-            • e.g. <em>She is reading a book.</em> (यहाँ 'is' helping verb है जो 'reading' के साथ Present Continuous Tense बनाती है)<br>
-            • Examples: <em>is, am, are, was, were, have, has, had, do, does, did, will, can</em>.</span>
-          </div>
-        </div>
+        <!-- 2 Example Questions for 2A -->
+        <div class="concept-pair-box" id="pair-2a"></div>
       </article>
 
-      <!-- (2) Object Basis -->
-      <article class="rule-card warning">
+      <!-- Sub-concept 2B -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>(2) कर्म के आधार पर (On the basis of Object)</h3>
-          <span class="badge" style="background:#fef3c7; color:#b45309;">Exam Favorite</span>
+          <h3 style="font-size:17px; font-weight:800;">(2) कर्म के आधार पर: Transitive (सकर्मक) vs Intransitive (अकर्मक)</h3>
+          <span class="badge">What/Whom Test</span>
         </div>
-
         <div class="easy-hi">
-          🎯 <strong>सटीक पहचान ट्रिक (Golden Rule):</strong><br>
-          Verb से <strong>"What?" (क्या)</strong> या <strong>"Whom?" (किसे/किसको)</strong> का प्रश्न पूछिए:<br>
-          • यदि उत्तर मिले → <strong>Transitive Verb (सकर्मक क्रिया)</strong><br>
-          • यदि उत्तर न मिले और प्रभाव कर्ता तक सीमित रहे → <strong>Intransitive Verb (अकर्मक क्रिया)</strong>
+          🎯 <strong>पहचान ट्रिक:</strong> Verb से <strong>"What?" (क्या)</strong> या <strong>"Whom?" (किसे)</strong> पूछें:<br>
+          • उत्तर मिले → <strong>Transitive (S + V + O)</strong>, जैसे <em>A lecturer delivers lectures</em> (Delivers what? → lectures).<br>
+          • उत्तर न मिले और फल कर्ता तक सीमित रहे → <strong>Intransitive (S + V)</strong>, जैसे <em>Smita laughs</em>।
         </div>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe table horizontally on mobile (मोबाइल पर पूरी टेबल देखने के लिए खिसकाएं)</span>
-        </div>
-        <div class="table-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>प्रकार (Type)</th>
-                <th>परिभाषा (Definition)</th>
-                <th>संरचना (Formula)</th>
-                <th>Textbook Example</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Transitive Verb (सकर्मक)</strong></td>
-                <td>जिस क्रिया के साथ direct या indirect कर्म (Object) जुड़ा हो और प्रभाव कर्म पर पड़े।</td>
-                <td><span class="right">Subject + Verb + Object (S + V + O)</span></td>
-                <td>
-                  <em>"A lecturer delivers lectures."</em><br>
-                  <span style="font-size:11.5px; color:#6b7280;">S: A lecturer | V: delivers | O: lectures</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Intransitive Verb (अकर्मक)</strong></td>
-                <td>जिस क्रिया के साथ कोई कर्म नहीं होता और प्रभाव केवल कर्ता (Subject) तक सीमित रहता है।</td>
-                <td><span class="right">Subject + Verb (S + V)</span></td>
-                <td>
-                  <em>"Smita laughs." / "Birds fly."</em><br>
-                  <span style="font-size:11.5px; color:#6b7280;">'laughs' का फल कर्ता स्मिता तक ही सीमित है।</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- 2 Example Questions for 2B -->
+        <div class="concept-pair-box" id="pair-2b"></div>
+      </article>
 
-        <div style="margin-top:14px; padding:12px; background:#fef3c7; border:1px solid #fde68a; border-radius:12px; font-size:13px; color:#92400e;">
-          ⚠️ <strong>सावधानी (Contrast Example):</strong> एक ही क्रिया संदर्भ के अनुसार बदल सकती है:<br>
-          • <em>The driver stopped the bus.</em> → यहाँ <strong>the bus</strong> Object है, अतः 'stopped' <strong>Transitive</strong> है।<br>
-          • <em>The bus stopped suddenly.</em> → यहाँ कोई Object नहीं है ('suddenly' Adverb है), अतः 'stopped' <strong>Intransitive</strong> है。
+      <!-- Sub-concept 2C -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:17px; font-weight:800;">(3) संदर्भ के अनुसार रूप बदलना (Dual Transitive/Intransitive Shift)</h3>
+          <span class="badge">Context Shift</span>
         </div>
+        <p style="font-size:13px; color:#4b5563;">
+          • <em>The driver stopped the bus.</em> (Transitive — bus कर्म है)<br>
+          • <em>The bus stopped suddenly.</em> (Intransitive — suddenly Adverb है, कोई कर्म नहीं)<br>
+          • <em>The peon rang the bell.</em> (Transitive) vs <em>The bell rang loudly.</em> (Intransitive)
+        </p>
+
+        <!-- 2 Example Questions for 2C -->
+        <div class="concept-pair-box" id="pair-2c"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 3: STRONG VERBS VS WEAK VERBS -->
+    <!-- UNIT 03: STRONG VS WEAK VERBS -->
     <!-- ========================================== -->
     <section id="topic-3" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 03 · Verb Conjugation</p>
-          <h2>3. Strong Verbs vs Weak Verbs (भूतकाल निर्माण के आधार पर)</h2>
-        </div>
-        <p>Past Tense (V2) और Past Participle (V3) बनाने के तरीके पर क्रियाओं का वर्गीकरण।</p>
+      <div style="margin-bottom:14px;">
+        <span class="badge">Unit 03 · Verb Conjugation</span>
+        <h2 style="font-size:26px; font-weight:900; margin-top:4px;">3. Strong Verbs vs Weak Verbs (भूतकाल निर्माण के आधार पर)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 3A -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>(a) Strong Verbs (अनियमित क्रियाएँ / Irregular Verbs)</h3>
-          <span class="badge">Internal Vowel Change</span>
+          <h3 style="font-size:17px; font-weight:800;">(a) Strong Verbs (अनियमित क्रियाएँ / Root Vowel Mutation)</h3>
+          <span class="badge">Vowel Change</span>
         </div>
-        <p>
-          <strong>Textbook Definition:</strong> <em>"Such verbs whose three forms are quite different from each other, are called strong verbs."</em> ये क्रियाएँ बिना -ed जोड़े, अपने मूल स्वर (internal vowel) को बदलकर Past और Past Participle बनाती हैं:
+        <p style="font-size:13px; color:#4b5563;">
+          जो क्रियाएँ बिना -ed जोड़े अंदर का स्वर बदलकर Past बनाती हैं: <strong>go-went-gone, write-wrote-written, sing-sang-sung, ride-rode-ridden, break-broke-broken</strong>।
         </p>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe table horizontally on mobile (उच्चारण एवं अर्थ सहित)</span>
-        </div>
-        <div class="table-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>Present form (V1)</th>
-                <th>Past form (V2)</th>
-                <th>Past Participle form (V3)</th>
-                <th>Hindi Meaning</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>go</strong></td>
-                <td>went</td>
-                <td>gone</td>
-                <td>जाना</td>
-              </tr>
-              <tr>
-                <td><strong>write</strong></td>
-                <td>wrote</td>
-                <td>written</td>
-                <td>लिखना</td>
-              </tr>
-              <tr>
-                <td><strong>ride</strong></td>
-                <td>rode</td>
-                <td>ridden</td>
-                <td>सवारी करना</td>
-              </tr>
-              <tr>
-                <td><strong>break</strong></td>
-                <td>broke</td>
-                <td>broken</td>
-                <td>तोड़ना</td>
-              </tr>
-              <tr>
-                <td><strong>sing</strong></td>
-                <td>sang</td>
-                <td>sung</td>
-                <td>गाना</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- 2 Example Questions for 3A -->
+        <div class="concept-pair-box" id="pair-3a"></div>
       </article>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 3B -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>(b) Weak Verbs (नियमित क्रियाएँ / Regular Verbs)</h3>
-          <span class="badge">At least 2 Forms Same</span>
+          <h3 style="font-size:17px; font-weight:800;">(b) Weak Verbs (समान रूप या -d/-ed/-t जोड़ने वाली)</h3>
+          <span class="badge">Identical Forms</span>
         </div>
-        <p>
-          <strong>Textbook Definition:</strong> <em>"These verbs have at least two forms same in spelling"</em> अथवा ये क्रियाएँ Present रूप के अंत में <strong>-d, -ed, या -t</strong> जोड़कर Past और Past Participle बनाती हैं:
+        <p style="font-size:13px; color:#4b5563;">
+          जिनके कम से कम दो रूप समान हों या जो -ed जोड़ें: <strong>cut-cut-cut, shut-shut-shut, cast-cast-cast, read (/red/), clean-cleaned, wish-wished</strong>। ('casted' अशुद्ध है!)
         </p>
 
-        <div class="table-scroll-hint">
-          <span>⇄ Swipe table horizontally on mobile</span>
-        </div>
-        <div class="table-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>Present form (V1)</th>
-                <th>Past form (V2)</th>
-                <th>Past Participle form (V3)</th>
-                <th>नियम प्रकार (Rule Type)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>cut</strong></td>
-                <td>cut</td>
-                <td>cut</td>
-                <td><span class="right">तीनों रूप बिल्कुल समान (All 3 identical)</span></td>
-              </tr>
-              <tr>
-                <td><strong>shut</strong></td>
-                <td>shut</td>
-                <td>shut</td>
-                <td><span class="right">तीनों रूप बिल्कुल समान</span></td>
-              </tr>
-              <tr>
-                <td><strong>cast</strong></td>
-                <td>cast</td>
-                <td>cast</td>
-                <td><span class="right">तीनों रूप बिल्कुल समान</span></td>
-              </tr>
-              <tr>
-                <td><strong>read</strong> (/riːd/)</td>
-                <td>read (/red/)</td>
-                <td>read (/red/)</td>
-                <td><span class="right">स्पेलिंग समान, केवल उच्चारण 'रेड' होता है</span></td>
-              </tr>
-              <tr>
-                <td><strong>wish</strong></td>
-                <td>wished</td>
-                <td>wished</td>
-                <td><span class="right">-ed जोड़कर (V2 = V3)</span></td>
-              </tr>
-              <tr>
-                <td><strong>clean</strong></td>
-                <td>cleaned</td>
-                <td>cleaned</td>
-                <td><span class="right">-ed जोड़कर (V2 = V3)</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- 2 Example Questions for 3B -->
+        <div class="concept-pair-box" id="pair-3b"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- TOPIC 4: TENSE AND TIME -->
+    <!-- UNIT 04: TENSE AND TIME -->
     <!-- ========================================== -->
     <section id="topic-4" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Unit 04 · Conceptual Mastery</p>
-          <h2>4. Tense and Time (काल एवं समय का अन्तर)</h2>
-        </div>
-        <p>परीक्षा का सबसे महत्वपूर्ण वैचारिक सिद्धांत: Time और Tense एक नहीं होते!</p>
+      <div style="margin-bottom:14px;">
+        <span class="badge">Unit 04 · Conceptual Mastery</span>
+        <h2 style="font-size:26px; font-weight:900; margin-top:4px;">4. Tense and Time (काल एवं समय का अन्तर)</h2>
       </div>
 
-      <article class="rule-card highlight">
+      <!-- Sub-concept 4A -->
+      <article class="rule-card">
         <div class="rule-header">
-          <h3>The Fundamental Distinction: Time vs Tense</h3>
+          <h3 style="font-size:17px; font-weight:800;">The Fundamental Distinction: Time ≠ Tense</h3>
+          <span class="badge">Time vs Tense</span>
         </div>
         <div class="easy-hi">
-          📖 <strong>पाठ्यपुस्तक का मूल सिद्धांत (Textbook Statement):</strong><br>
-          <em>"Time is a universal, non-linguistic concept with three divisions—present, past and future, by these we understand the correspondence between the form of the verb and our concept of time. Time and tense do not go altogether same."</em><br>
-          समय को सेकंड, मिनट, घंटे, दिन, माह, वर्ष, शताब्दी में मापा जाता है। एक ही Tense रूप भूत, वर्तमान और भविष्य तीनों समयों को व्यक्त कर सकता है!
+          • <em>"The PM visits our city tomorrow"</em> → Verb form = <strong>Present Simple Tense</strong>, Time = <strong>Future Time</strong>!<br>
+          • <em>"The sun rises in the east"</em> → <strong>Universal Truth</strong> (भूत, वर्तमान, भविष्य तीनों समयों से संबंधित है)।<br>
+          • <em>"Abhishek has finished his work"</em> → Present Perfect रूप, पर कार्य समाप्त (Past Time)।
         </div>
 
-        <h4 style="margin:18px 0 10px; font-size:16px; font-family:var(--heading);">
-          पाठ्यपुस्तक के 5 प्रमुख उदाहरण (Classic Textbook Proofs):
-        </h4>
-
-        <div style="display:grid; gap:10px;">
-          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <b>1. The Prime Minister visited our city last week.</b>
-              <p style="font-size:12px; color:#6b7280;">यहाँ 'visited' क्रिया है और 'last week' समय है。</p>
-            </div>
-            <span class="badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">Past Tense, Past Time (दोनों समान)</span>
-          </div>
-
-          <div style="background:#fffdf5; border:1.5px solid #fcd34d; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <b>2. The Prime Minister visits our city tomorrow.</b>
-              <p style="font-size:12px; color:#6b7280;">Or: The Prime Minister is visiting our city tomorrow.</p>
-            </div>
-            <span class="badge" style="background:#fef3c7; color:#b45309; border-color:#fcd34d;">Present Tense, Future Time! (अंतर स्पष्ट है)</span>
-          </div>
-
-          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <b>3. Abhishek has finished his work.</b>
-              <p style="font-size:12px; color:#6b7280;">कार्य पूर्ण हो चुका है, परंतु रूप Present Perfect है。</p>
-            </div>
-            <span class="badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">Present Tense, Past Time</span>
-          </div>
-
-          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <b>4. Anurag is practising tennis these days.</b>
-              <p style="font-size:12px; color:#6b7280;">वर्तमान में जारी रहने वाला अस्थायी अभ्यास।</p>
-            </div>
-            <span class="badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">Present Tense, Present Time</span>
-          </div>
-
-          <div style="background:#f0fdf4; border:1.5px solid #34d399; border-radius:12px; padding:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <b>5. The sun rises in the east.</b>
-              <p style="font-size:12px; color:#6b7280;">सार्वभौमिक सत्य जो कभी नहीं बदलता।</p>
-            </div>
-            <span class="badge" style="background:#dcfce7; color:#15803d; border-color:#86efac;">Universal Truth (Belongs to all times)</span>
-          </div>
-        </div>
-
-        <div style="margin-top:16px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:14px; font-size:13px; line-height:1.7;">
-          <b style="color:#0f172a; display:block; margin-bottom:4px;">अन्य विशिष्ट प्रयोग (Other Textbook Nuances):</b>
-          • <strong>Immediate Present:</strong> <em>"I want a glass of water."</em> (बोलते समय की तात्कालिक इच्छा)<br>
-          • <strong>Future Activity:</strong> <em>"He leaves for Delhi next week."</em> (पूर्व-निर्धारित भविष्य कार्यक्रम)<br>
-          • <strong>Scientific Law:</strong> <em>"Water boils at 100° centigrade."</em> (वैज्ञानिक सत्य जो सदैव के लिए सत्य है)<br>
-          • <strong>Habitual Present:</strong> <em>"She goes to school everyday."</em> (Present, Past and Future time)
-        </div>
-      </article>
-
-      <!-- Interactive Inspector -->
-      <article class="amber-card" style="padding:22px; margin-top:20px;">
-        <h3 style="font-size:18px; font-weight:800; color:#1f2937; margin-bottom:6px;">
-          ✦ Interactive Tense vs Time Inspector
-        </h3>
-        <p style="font-size:13px; color:#4b5563; margin-bottom:12px;">
-          नीचे दिए गए बटनों पर क्लिक करके देखें कि कैसे एक ही Present Tense अलग-अलग समय व्यक्त करता है:
-        </p>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;" id="live-btns">
-          <!-- buttons inserted by js -->
-        </div>
-        <div style="background:#fff; border:2px solid #fcd34d; border-radius:14px; padding:16px;" id="live-display">
-          <!-- sentence details updated by js -->
-        </div>
+        <!-- 2 Example Questions for 4A -->
+        <div class="concept-pair-box" id="pair-4a"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- 50 MCQs PRACTICE ARENA -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
     <!-- ========================================== -->
-    <section id="practice" class="mint-card practice-box">
-      <div class="section-heading" style="margin-bottom:12px;">
-        <div>
-          <p class="eyebrow">Interactive Practice Arena</p>
-          <h2>50 Chapter MCQs: Test Your Knowledge.</h2>
-        </div>
-        <p>प्रत्येक प्रश्न को हल करें, Check answer दबाएँ और समाधान पढ़कर समझें।</p>
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:13px; padding:5px 12px; margin-bottom:10px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:32px; font-weight:900; margin:10px 0;">Final 30-Question Grammar Test</h2>
+        <p style="font-size:14px; color:#4b5563; line-height:1.7; margin-bottom:20px;">
+          यह टेस्ट आपकी व्याकरणिक समझ का सटीक मूल्यांकन करेगा। जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का टाइमर (15:00)</strong> चालू हो जाएगा। समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:16px; padding:14px 28px;">
+          🚀 Start 30-Question Exam Now (15:00 Timer)
+        </button>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="filter-row" role="tablist">
-        <button type="button" class="filter-btn active" data-filter="all" onclick="filterCategory('all')">All 50 MCQs</button>
-        <button type="button" class="filter-btn" data-filter="structure" onclick="filterCategory('structure')">1. Structure (12)</button>
-        <button type="button" class="filter-btn" data-filter="kinds" onclick="filterCategory('kinds')">2. Kinds of Verbs (14)</button>
-        <button type="button" class="filter-btn" data-filter="strongweak" onclick="filterCategory('strongweak')">3. Strong vs Weak (12)</button>
-        <button type="button" class="filter-btn" data-filter="tensetime" onclick="filterCategory('tensetime')">4. Tense vs Time (12)</button>
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:13px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:12px; padding:8px 16px;">
+            Submit Test ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:14px; padding:12px; margin-bottom:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11.5px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:8px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:10px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Unattempted</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:12px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:17px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:13px; color:#475569; margin-bottom:16px; background:#f0fdf4; padding:8px 12px; border-radius:10px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:18px; pt-2; border-top:1px solid #e2e8f0; flex-wrap:wrap; gap:10px;">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:8px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12.5px; padding:8px 16px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Quick Question Jump Map -->
-      <details class="solution" style="margin-top:10px; background:#fff;" open>
-        <summary>✦ Question Navigation Grid: Click any number (1 to 50)</summary>
-        <div class="jump-grid" id="jump-grid">
-          <!-- 50 buttons generated by JS -->
-        </div>
-      </details>
-
-      <!-- Question Cards Grid -->
-      <div class="task-grid" id="task-container">
-        <!-- Rendered by JS: 10 per page -->
-      </div>
-
-      <!-- Check Page / All -->
-      <section class="amber-card check-all-section">
-        <div>
-          <h2 style="font-size:24px;">Check your answers</h2>
-          <p id="page-summary-text" style="font-size:13px; margin-top:4px;">Showing Page 1 of 5.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="mint-btn" type="button" onclick="checkCurrentPage()">Check this page <span aria-hidden="true">✓</span></button>
-          <button class="quiet-btn" type="button" onclick="resetAll()">Reset all</button>
-        </div>
-      </section>
-
-      <!-- Pagination -->
-      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-top:28px;">
-        <button id="btn-prev" class="quiet-btn" type="button" onclick="changePage(-1)">← Previous 10</button>
-        <span id="page-indicator" style="font-family:var(--heading); font-weight:800; color:var(--brand); font-size:14px;">Page 1 of 5</span>
-        <button id="btn-next" class="quiet-btn" type="button" onclick="changePage(1)">Next 10 →</button>
-      </div>
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
     </section>
   </main>
 
+  <!-- Submit Warning Modal -->
+  <div class="modal-overlay" id="submit-modal" style="display:none;">
+    <div class="modal-box">
+      <div style="font-size:32px; margin-bottom:6px;">⚠️</div>
+      <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">Unattempted Questions Warning</h3>
+      <p style="font-size:13.5px; color:#475569; margin-bottom:14px;" id="modal-msg"></p>
+      <div style="display:flex; justify-content:center; gap:10px;">
+        <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12.5px;">Continue Test (हल करते रहें)</button>
+        <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12.5px; color:#64748b;">Submit Anyway</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <div class="wrap footer-inner">
-      <a class="footer-brand" href="#main">
-        Econova<span class="vip-text">.vip</span> ✦
-      </a>
-      <p>Class 9 English Grammar · Chapter 1: Tenses &amp; Verbs · Prepared as per standard textbook specifications.</p>
-      <div class="footer-links">
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:12px; color:#64748b;">
+      <div>
+        <strong style="color:var(--brand); font-size:16px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+        Class 9 English Grammar · Chapter 1: Tenses &amp; Kinds of Verbs.
+      </div>
+      <div style="display:flex; gap:12px; font-weight:bold; color:var(--brand);">
         <a href="#topic-1">Structure</a>
         <a href="#topic-2">Kinds</a>
         <a href="#topic-3">Conjugation</a>
         <a href="#topic-4">Tense vs Time</a>
-        <a href="#main">Top ↑</a>
+        <a href="#test-arena">30-Q Test</a>
       </div>
     </div>
   </footer>
 
-  <!-- Safe target for Vite if mounted -->
-  <div id="root" style="display:none"></div>
+  <!-- Target container for Vite -->
+  <div id="root" style="display:none;"></div>
 
-  <!-- 50 Complete Questions and Interactive Logic -->
+  <!-- Full Embedded JavaScript Code -->
   <script>
-    const questions = [
-      // UNIT 1: Sentence Structure, Subject & Verb (12 Questions: 1 to 12)
-      {
-        id: 1,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "According to Class 9 grammar, a basic model sentence is structured as:",
-        hi: "कक्षा 9 के व्याकरण के अनुसार, एक बुनियादी आदर्श वाक्य की संरचना क्या होती है?",
-        options: [
-          "Verb + Subject + Object (VSO)",
-          "Subject + Verb + Complement / Object (SVC / SVO)",
-          "Complement + Subject + Verb (CSV)",
-          "Object + Complement + Verb (OCV)"
-        ],
-        ans: 1,
-        expl: "Basic model sentence ka structure 'Subject + Verb + Complement' (SVC) ya 'Subject + Verb + Object' (SVO) hota hai, jaise 'They (S) go (V) to school (C)'."
-      },
-      {
-        id: 2,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "Why is the Subject word in a sentence compared to the 'head of a family' or 'engine of a train'?",
-        hi: "वाक्य में कर्ता (Subject) की तुलना 'परिवार के मुखिया' या 'ट्रेन के इंजन' से क्यों की जाती है?",
-        options: [
-          "Because it is always the longest word in the sentence",
-          "Because the subject decides the form of the verb and auxiliary in the sentence",
-          "Because it always comes at the end of the sentence",
-          "Because it cannot be changed into plural"
-        ],
-        ans: 1,
-        expl: "Subject hi yeh decide karta hai ki verb singular aayegi ya plural (e.g. He goes vs They go). Isliye ise family ka head ya train ka engine kaha gaya hai."
-      },
-      {
-        id: 3,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "Identify the Subject in the sentence: 'The brave soldier fought fiercely on the battlefield.'",
-        hi: "'The brave soldier fought fiercely on the battlefield' वाक्य में कर्ता (Subject) पहचानिए:",
-        options: [
-          "fought",
-          "on the battlefield",
-          "The brave soldier",
-          "fiercely"
-        ],
-        ans: 2,
-        expl: "'The brave soldier' pura noun phrase hai jo action (fought) ko perform kar raha hai, isliye yeh Subject hai."
-      },
-      {
-        id: 4,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "Which element is considered the 'most essential element' without which no sentence can exist?",
-        hi: "किस तत्व को वाक्य का सबसे अनिवार्य अंग माना गया है जिसके बिना कोई वाक्य नहीं बन सकता?",
-        options: [
-          "Adjective",
-          "Adverb",
-          "Verb",
-          "Preposition"
-        ],
-        ans: 2,
-        expl: "Verb (क्रिया) ke bina kisi bhi sentence ka astitva nahi ho sakta. Yeh predication karti hai aur forms badal sakti hai."
-      },
-      {
-        id: 5,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "In 'Swimming is a healthy exercise', what role does the word 'Swimming' perform?",
-        hi: "'Swimming is a healthy exercise' में 'Swimming' शब्द क्या भूमिका निभा रहा है?",
-        options: [
-          "Main Verb in past tense",
-          "Gerund acting as the Subject of the sentence",
-          "Object of the verb",
-          "Adverb of manner"
-        ],
-        ans: 1,
-        expl: "Jab verb+ing Noun ki tarah kaam kare to use Gerund kehte hain, aur yahan 'Swimming' sentence ka Subject hai."
-      },
-      {
-        id: 6,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "In the sentence 'The poor need our kindness', the subject 'The poor' is:",
-        hi: "'The poor need our kindness' वाक्य में 'The poor' कर्ता किस प्रकार का है?",
-        options: [
-          "Singular Proper Noun",
-          "Plural Subject formed by putting article before an Adjective",
-          "Abstract Uncountable Noun",
-          "Transitive Verb"
-        ],
-        ans: 1,
-        expl: "Jab Adjective ke aage 'The' lagta hai (The poor = garib log), to yeh plural noun ban jata hai aur plural verb (need) leta hai."
-      },
-      {
-        id: 7,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "What is meant by the grammatical term 'Predicating' in the definition of a verb?",
-        hi: "क्रिया की परिभाषा में व्याकरणिक शब्द 'Predicating' का क्या अर्थ है?",
-        options: [
-          "Translating a sentence into Hindi",
-          "Saying or stating something about some person or thing",
-          "Deleting words from a sentence",
-          "Counting the number of syllables"
-        ],
-        ans: 1,
-        expl: "Book ke anusar: 'Words used for predicating (that is, saying something about some person or thing) are called verbs.'"
-      },
-      {
-        id: 8,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "In the model sentence 'They go to school', what is 'to school' called in SVC pattern?",
-        hi: "'They go to school' वाक्य में SVC पैटर्न के अनुसार 'to school' क्या कहलाता है?",
-        options: [
-          "Direct Object",
-          "Complement",
-          "Auxiliary Verb",
-          "Indirect Object"
-        ],
-        ans: 1,
-        expl: "Model pattern Subject + Verb + Complement (SVC) me 'to school' predicate ke meaning ko pura karne wala Complement hai."
-      },
-      {
-        id: 9,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "Which word in the sentence determines the singular or plural form of the auxiliary verb?",
-        hi: "वाक्य में सहायक क्रिया (helping verb) के एकवचन या बहुवचन रूप को कौन तय करता है?",
-        options: [
-          "The Subject",
-          "The Object",
-          "The Adverb",
-          "The Punctuation"
-        ],
-        ans: 0,
-        expl: "Subject ke number (singular ya plural) aur person ke hisaab se hi helping verb (is/are, was/were, has/have) chuni jaati hai."
-      },
-      {
-        id: 10,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "In passive voice sentences, what does the grammatical Subject represent?",
-        hi: "कर्मवाच्य (Passive voice) के वाक्यों में व्याकरणिक कर्ता (Subject) क्या दर्शाता है?",
-        options: [
-          "The person performing the action only",
-          "The person or thing affected by the action of the verb",
-          "The place where action occurred",
-          "The tense of the verb only"
-        ],
-        ans: 1,
-        expl: "Book definition: 'in a passive sentence, that is affected by the action of the verb is called subject' (jaise: 'The thief was caught')."
-      },
-      {
-        id: 11,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "Find the sentence where an Infinitive (to + verb) acts as the Subject:",
-        hi: "वह वाक्य पहचानिए जहाँ Infinitive (to + verb) कर्ता के रूप में कार्य कर रहा है:",
-        options: [
-          "He went to school by bus.",
-          "To err is human; to forgive is divine.",
-          "She loves to paint landscapes.",
-          "They decided to build a bridge."
-        ],
-        ans: 1,
-        expl: "'To err' (गलती करना) yahan sentence ka Subject hai jo verb 'is' se pehle आया है."
-      },
-      {
-        id: 12,
-        cat: "structure",
-        label: "Sentence Structure",
-        q: "The property of verbs to change form to express different tenses and moods is known as:",
-        hi: "विभिन्न काल और भाव व्यक्त करने के लिए क्रिया के रूप बदलने के गुण को क्या कहा जाता है?",
-        options: [
-          "Stability",
-          "Changeability / Inflection",
-          "Passive transformation",
-          "Compounding"
-        ],
-        ans: 1,
-        expl: "Textbook note: 'Due to its pivotal importance the verb has a quality of changeability, using which can generate various kinds of sentences.'"
-      },
-
-      // UNIT 2: Kinds of Verbs (14 Questions: 13 to 26)
-      {
-        id: 13,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Verbs that possess their own independent meaning and identity are called:",
-        hi: "वे क्रियाएँ जिनका अपना स्वतंत्र अर्थ और पहचान होती है, क्या कहलाती हैं?",
-        options: [
-          "Helping Verbs",
-          "Main Verbs (Principal Verbs)",
-          "Modal Auxiliaries",
-          "Dummy Verbs"
-        ],
-        ans: 1,
-        expl: "Book definition: 'Those action words which have both the individual meanings and identity are called main verbs' (e.g. appreciate, run, write)."
-      },
-      {
-        id: 14,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In the sentence 'She is reading a book', what is the role of 'is'?",
-        hi: "'She is reading a book' वाक्य में 'is' शब्द क्या है?",
-        options: [
-          "Main Verb showing action",
-          "Helping Verb (Auxiliary) showing present continuous tense",
-          "Direct Object",
-          "Complement"
-        ],
-        ans: 1,
-        expl: "'is' helping verb hai jo main verb 'reading' ke saath milkar action ki continuity aur Present Continuous Tense batata hai."
-      },
-      {
-        id: 15,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "On the basis of object, verbs are divided into which two main categories?",
-        hi: "कर्म (object) के आधार पर क्रियाओं को किन दो प्रमुख भेदों में बाँटा गया है?",
-        options: [
-          "Strong and Weak",
-          "Transitive and Intransitive",
-          "Finite and Non-finite",
-          "Regular and Irregular"
-        ],
-        ans: 1,
-        expl: "Object ke aadhar par verbs do tarah ki hoti hain: Transitive (सकर्मक - with object) aur Intransitive (अकर्मक - without object)."
-      },
-      {
-        id: 16,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In 'A lecturer delivers lectures', the verb 'delivers' is:",
-        hi: "'A lecturer delivers lectures' वाक्य में 'delivers' क्रिया किस प्रकार की है?",
-        options: [
-          "Intransitive Verb",
-          "Transitive Verb taking the object 'lectures'",
-          "Auxiliary Verb",
-          "Modal Verb"
-        ],
-        ans: 1,
-        expl: "'delivers' ke baad 'lectures' direct object ke roop me aaya hai (Delivers what? -> lectures). Isliye yeh Transitive Verb hai."
-      },
-      {
-        id: 17,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In the sentence 'Smita laughs', why is 'laughs' an Intransitive verb?",
-        hi: "'Smita laughs' वाक्य में 'laughs' अकर्मक (Intransitive) क्रिया क्यों है?",
-        options: [
-          "Because it has two objects",
-          "Because the action does not pass over to any object and is confined to the subject",
-          "Because it is in past tense",
-          "Because it is a helping verb"
-        ],
-        ans: 1,
-        expl: "'laughs' ka effect kisi object par nahi jaata, balki subject (Smita) tak hi seemit rehta hai. Isliye yeh Intransitive hai."
-      },
-      {
-        id: 18,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Which test question can you ask the verb to easily identify a Transitive verb's direct object?",
-        hi: "सकर्मक क्रिया के कर्म (Object) को आसानी से पहचानने के लिए क्रिया से कौन सा प्रश्न पूछना चाहिए?",
-        options: [
-          "When? or Where?",
-          "Why? or How?",
-          "What? or Whom?",
-          "How long? or How far?"
-        ],
-        ans: 2,
-        expl: "Verb se 'What?' (क्या) ya 'Whom?' (किसे/किसको) poochne par jo answer mile wahi Object hota hai."
-      },
-      {
-        id: 19,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Identify the sentence that contains an Intransitive Verb:",
-        hi: "अकर्मक क्रिया (Intransitive Verb) वाला वाक्य चुनिए:",
-        options: [
-          "The boy kicked the football.",
-          "Birds fly in the sky.",
-          "The teacher punished the student.",
-          "She solved the difficult puzzle."
-        ],
-        ans: 1,
-        expl: "'fly' ke baad 'in the sky' jagah (place) bata raha hai, koi object nahi hai. Action 'Birds' tak hi hai, isliye 'fly' Intransitive hai."
-      },
-      {
-        id: 20,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In 'He gave me a valuable watch', what kind of objects are 'me' and 'a valuable watch'?",
-        hi: "'He gave me a valuable watch' में 'me' और 'a valuable watch' किस प्रकार के कर्म हैं?",
-        options: [
-          "Both are Direct Objects",
-          "'me' is Indirect Object (person), and 'a valuable watch' is Direct Object (thing)",
-          "'me' is Direct Object, and 'a valuable watch' is Indirect Object",
-          "Neither is an object"
-        ],
-        ans: 1,
-        expl: "Gave what? -> 'a valuable watch' (Direct Object, vastu). Gave to whom? -> 'me' (Indirect Object, vyakti)."
-      },
-      {
-        id: 21,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Compare: (A) 'The driver stopped the bus.' vs (B) 'The bus stopped suddenly.' In sentence (B), 'stopped' is:",
-        hi: "(A) 'चालक ने बस रोकी' बनाम (B) 'बस अचानक रुक गई'। वाक्य (B) में 'stopped' क्रिया क्या है?",
-        options: [
-          "Transitive Verb",
-          "Intransitive Verb used without object",
-          "Helping Verb",
-          "Strong Verb only"
-        ],
-        ans: 1,
-        expl: "Sentence B me 'stopped' ke baad koi Object nahi hai ('suddenly' Adverb hai), isliye yahan 'stopped' Intransitive ke roop me kaam kar rahi hai."
-      },
-      {
-        id: 22,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Which of the following contains a Transitive Verb?",
-        hi: "निम्नलिखित में से किस वाक्य में सकर्मक क्रिया (Transitive Verb) है?",
-        options: [
-          "The baby slept peacefully.",
-          "The sun shines brightly.",
-          "Rohan wrote a long story.",
-          "The dog barked loudly."
-        ],
-        ans: 2,
-        expl: "Rohan wrote what? -> 'a long story'. Yahan 'a long story' object hai, isliye 'wrote' Transitive Verb hai."
-      },
-      {
-        id: 23,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In 'I appreciate your hard work', the verb 'appreciate' is used as:",
-        hi: "'I appreciate your hard work' वाक्य में 'appreciate' किस प्रकार की क्रिया है?",
-        options: [
-          "Helping Verb",
-          "Main Verb with independent meaning",
-          "Modal Auxiliary",
-          "Infinitive"
-        ],
-        ans: 1,
-        expl: "'appreciate' (सराहना करना) ka swatantra artha hai, isliye yeh Main Verb (Principal Verb) hai."
-      },
-      {
-        id: 24,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In 'The bell rang loudly', the verb 'rang' is:",
-        hi: "'The bell rang loudly' वाक्य में 'rang' क्रिया किस प्रकार की है?",
-        options: [
-          "Transitive Verb",
-          "Intransitive Verb",
-          "Auxiliary Verb",
-          "Defective Verb"
-        ],
-        ans: 1,
-        expl: "'rang' ke baad 'loudly' Adverb hai (kaise baji). Koi Object nahi hai, isliye 'rang' Intransitive hai."
-      },
-      {
-        id: 25,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "In 'The peon rang the bell', the verb 'rang' is:",
-        hi: "'The peon rang the bell' वाक्य में 'rang' क्रिया किस प्रकार की है?",
-        options: [
-          "Transitive Verb taking 'the bell' as object",
-          "Intransitive Verb",
-          "Helping Verb",
-          "Participle"
-        ],
-        ans: 0,
-        expl: "Yahan 'rang' ke baad 'the bell' Object ke roop me aaya hai (Rang what? -> the bell). Isliye yeh Transitive hai."
-      },
-      {
-        id: 26,
-        cat: "kinds",
-        label: "Kinds of Verbs",
-        q: "Which pair of words represents Helping Verbs (Auxiliaries)?",
-        hi: "निम्नलिखित में से कौन सा जोड़ा सहायक क्रियाओं (Helping Verbs) का प्रतिनिधित्व करता है?",
-        options: [
-          "run, jump",
-          "is, have",
-          "write, read",
-          "sing, dance"
-        ],
-        ans: 1,
-        expl: "'is' aur 'have' Helping Verbs hain jo Tense nirmit karne me Main Verbs ki sahayata karti hain."
-      },
-
-      // UNIT 3: Strong vs Weak Verbs (12 Questions: 27 to 38)
-      {
-        id: 27,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "What defines a 'Strong Verb' according to Class 9 grammar rules?",
-        hi: "कक्षा 9 के व्याकरण के नियमों के अनुसार 'Strong Verb' (अनियमित क्रिया) की क्या परिभाषा है?",
-        options: [
-          "Verbs that end with -ed in all forms",
-          "Verbs whose three forms are quite different and form past tense by changing internal vowel without adding -ed",
-          "Verbs that never change spelling in any tense",
-          "Verbs that only act as helping verbs"
-        ],
-        ans: 1,
-        expl: "Strong Verbs apne bina -ed jode internal vowel badalkar past tense banati hain (jaise: go-went-gone, write-wrote-written)."
-      },
-      {
-        id: 28,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "What is the Past (V2) and Past Participle (V3) form of the Strong Verb 'sing'?",
-        hi: "Strong Verb 'sing' के Past (V2) और Past Participle (V3) रूप कौन से हैं?",
-        options: [
-          "singed, singed",
-          "sang, sung",
-          "song, sung",
-          "singing, sang"
-        ],
-        ans: 1,
-        expl: "'sing' ka V2 'sang' aur V3 'sung' hota hai (Internal vowel i -> a -> u badalta hai)."
-      },
-      {
-        id: 29,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "According to the textbook definition, 'Weak Verbs' are those which:",
-        hi: "पाठ्यपुस्तक की परिभाषा के अनुसार, 'Weak Verbs' (नियमित क्रियाएँ) वे हैं जो:",
-        options: [
-          "Have at least two forms same in spelling, or form past by adding -d, -ed, or -t",
-          "Change all internal vowels completely in V1, V2, and V3",
-          "Can never be used in past tense",
-          "Do not have a present participle form"
-        ],
-        ans: 0,
-        expl: "Weak Verbs ke kam se kam do forms ki spelling same hoti hai (e.g. cut-cut-cut, wish-wished-wished) ya -d/-ed/-t jodkar banti hain."
-      },
-      {
-        id: 30,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "Identify the Weak Verb whose all three forms (V1, V2, V3) remain identical in spelling:",
-        hi: "वह Weak Verb पहचानिए जिसके तीनों रूप (V1, V2, V3) स्पेलिंग में बिल्कुल समान रहते हैं:",
-        options: [
-          "break",
-          "cut",
-          "write",
-          "drive"
-        ],
-        ans: 1,
-        expl: "'cut - cut - cut' teeno forms spelling me bilkul same rehti hain. Yeh Weak Verb ki category me aati hai."
-      },
-      {
-        id: 31,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "The verb 'read' has forms read - read - read. Why is it classified as a Weak Verb?",
-        hi: "'read' क्रिया के रूप read - read - read होते हैं। इसे Weak Verb क्यों माना जाता है?",
-        options: [
-          "Because its pronunciation changes in V2 and V3 while spellings stay same",
-          "Because all forms have identical spellings (at least two forms same rule)",
-          "Because it takes -ed at the end",
-          "Both A and B are correct"
-        ],
-        ans: 3,
-        expl: "'read' ki teeno forms ki spelling same rehti hai ('read'), jabki V2/V3 ka uchcharan 'red' hota hai. Isliye yeh Weak Verb hai."
-      },
-      {
-        id: 32,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "Which set contains ONLY Strong Verbs?",
-        hi: "किस समूह में केवल Strong Verbs (अनियमित क्रियाएँ) शामिल हैं?",
-        options: [
-          "wish, clean, shut",
-          "go, write, break, ride",
-          "cut, cast, shut, put",
-          "walk, talk, play, help"
-        ],
-        ans: 1,
-        expl: "go-went-gone, write-wrote-written, break-broke-broken, ride-rode-ridden sabhi internal vowel badalne wali Strong Verbs hain."
-      },
-      {
-        id: 33,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "Which set contains ONLY Weak Verbs?",
-        hi: "किस समूह में केवल Weak Verbs (नियमित क्रियाएँ) शामिल हैं?",
-        options: [
-          "sing, sang, sung",
-          "cut, shut, cast, wished",
-          "drive, drove, driven",
-          "eat, ate, eaten"
-        ],
-        ans: 1,
-        expl: "cut (same), shut (same), cast (same), wish (wished) - yeh sabhi Weak Verbs ki definition ko satisfy karti hain."
-      },
-      {
-        id: 34,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "What are the V2 and V3 forms of the Strong Verb 'write'?",
-        hi: "Strong Verb 'write' के V2 और V3 रूप क्या हैं?",
-        options: [
-          "writed, writed",
-          "wrote, written",
-          "writing, wrote",
-          "writes, written"
-        ],
-        ans: 1,
-        expl: "'write' ka Past (V2) 'wrote' aur Past Participle (V3) 'written' hota hai."
-      },
-      {
-        id: 35,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "What are the V2 and V3 forms of the Weak Verb 'clean'?",
-        hi: "Weak Verb 'clean' के V2 और V3 रूप क्या हैं?",
-        options: [
-          "clans, clansen",
-          "cleaned, cleaned",
-          "cloned, clonen",
-          "cleaning, cleaned"
-        ],
-        ans: 1,
-        expl: "'clean' me -ed jodkar 'cleaned - cleaned' V2 aur V3 roop banaye jaate hain."
-      },
-      {
-        id: 36,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "What are the V2 and V3 forms of 'cast'?",
-        hi: "'cast' क्रिया के V2 और V3 रूप क्या होते हैं?",
-        options: [
-          "casted, casted",
-          "cast, cast",
-          "cost, cost",
-          "casting, casted"
-        ],
-        ans: 1,
-        expl: "'cast - cast - cast' teeno forms same rehti hain ('casted' kehna ashuddh hai)."
-      },
-      {
-        id: 37,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "The past participle form (V3) of the Strong Verb 'ride' is:",
-        hi: "Strong Verb 'ride' का Past Participle (V3) रूप क्या है?",
-        options: [
-          "rided",
-          "rode",
-          "ridden",
-          "riding"
-        ],
-        ans: 2,
-        expl: "'ride' (V1) -> 'rode' (V2) -> 'ridden' (V3)."
-      },
-      {
-        id: 38,
-        cat: "strongweak",
-        label: "Strong vs Weak",
-        q: "Why is 'shut' categorized as a Weak Verb in English grammar?",
-        hi: "'shut' को अंग्रेजी व्याकरण में Weak Verb क्यों माना जाता है?",
-        options: [
-          "Because it forms past tense by internal vowel change",
-          "Because its three forms (shut - shut - shut) are identical in spelling",
-          "Because it cannot take an object",
-          "Because it is an auxiliary verb"
-        ],
-        ans: 1,
-        expl: "Jis verb ke kam se kam do roop (yahan teeno) spelling me same hon, use Weak Verb kehte hain."
-      },
-
-      // UNIT 4: Tense vs Time (12 Questions: 39 to 50)
-      {
-        id: 39,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Which statement accurately expresses the relation between Time and Tense?",
-        hi: "Time (समय) और Tense (काल) के संबंध में कौन सा कथन पूरी तरह सत्य है?",
-        options: [
-          "Time and Tense are exactly the same concept and always match",
-          "Time is a universal non-linguistic concept, whereas Tense is a grammatical form of the verb; they do NOT always go together",
-          "Tense is measured in minutes and hours, whereas Time is measured in verb forms",
-          "Future Time can never be expressed by Present Tense"
-        ],
-        ans: 1,
-        expl: "Book statement: 'Time is a universal, non-linguistic concept... Time and tense do not go altogether same.' Verb form (Tense) aur vyakt time alag ho sakte hain."
-      },
-      {
-        id: 40,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Analyze: 'The Prime Minister visits our city tomorrow.' What is the Tense and Time here?",
-        hi: "'The Prime Minister visits our city tomorrow' में Tense और Time का सही संयोजन क्या है?",
-        options: [
-          "Future Tense, Future Time",
-          "Present Tense, Future Time",
-          "Past Tense, Present Time",
-          "Present Tense, Past Time"
-        ],
-        ans: 1,
-        expl: "Verb form 'visits' (Present Simple Tense) hai, par 'tomorrow' word bata raha hai ki samay Future Time hai."
-      },
-      {
-        id: 41,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Analyze: 'The Prime Minister visited our city last week.' What is the Tense and Time?",
-        hi: "'The Prime Minister visited our city last week' में Tense और Time क्या हैं?",
-        options: [
-          "Past Tense, Past Time",
-          "Present Tense, Past Time",
-          "Past Tense, Future Time",
-          "Future Tense, Past Time"
-        ],
-        ans: 0,
-        expl: "Yahan 'visited' Past Tense hai aur 'last week' Past Time batata hai. Dono ek saath mel khate hain."
-      },
-      {
-        id: 42,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Analyze: 'Abhishek has finished his work.' What is the Tense and Time?",
-        hi: "'Abhishek has finished his work' में Tense और Time का संयोजन क्या है?",
-        options: [
-          "Present Tense (Present Perfect form), Past Time (action is finished)",
-          "Past Tense, Future Time",
-          "Future Tense, Present Time",
-          "Past Tense, Past Time"
-        ],
-        ans: 0,
-        expl: "Verb form 'has finished' Present Perfect Tense hai, par karya pehle hi poora ho chuka hai, isliye Time Past hai."
-      },
-      {
-        id: 43,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "In 'The sun rises in the east', what time concept does the Universal Truth belong to?",
-        hi: "'The sun rises in the east' जैसे सार्वभौमिक सत्य (Universal Truth) किस समय काल से संबंधित होते हैं?",
-        options: [
-          "Only Present Time",
-          "Belongs to all times (Past, Present and Future)",
-          "Only Future Time",
-          "Only Past Time"
-        ],
-        ans: 1,
-        expl: "Universal Truths hamesha satya rehte hain — it belongs to all times (Past, Present, Future)."
-      },
-      {
-        id: 44,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "In 'I want a glass of water', the Present Tense expresses:",
-        hi: "'I want a glass of water' वाक्य में Present Tense क्या व्यक्त कर रहा है?",
-        options: [
-          "Future plan",
-          "Immediate Present desire at the moment of speaking",
-          "Past habit",
-          "Universal scientific law"
-        ],
-        ans: 1,
-        expl: "Textbook example: Yeh bolte samay ki tatkalik ichha (Immediate Present) ko darsa raha hai."
-      },
-      {
-        id: 45,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "In 'He leaves for Delhi next week', the Simple Present Tense is used to express:",
-        hi: "'He leaves for Delhi next week' में Simple Present Tense का प्रयोग किस लिए हुआ है?",
-        options: [
-          "A past action",
-          "A fixed future planned program / activity",
-          "A continuous process in past",
-          "An imaginary past event"
-        ],
-        ans: 1,
-        expl: "Poorv-nirdharit bhavishya karyakram (fixed future program) ko vyakt karne ke liye Simple Present Tense ka prayog hota hai."
-      },
-      {
-        id: 46,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "In 'Water boils at 100° centigrade', the Present Tense expresses a:",
-        hi: "'Water boils at 100° centigrade' में Present Tense क्या व्यक्त करता है?",
-        options: [
-          "Temporary action happening right now",
-          "Permanent scientific law / Universal fact",
-          "Future activity",
-          "Past habitual action"
-        ],
-        ans: 1,
-        expl: "Yeh sthayi vaigyanik satya (Scientific law/fact) hai, jiske liye hamesha Simple Present Tense ka prayog hota hai."
-      },
-      {
-        id: 47,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Analyze: 'Anurag is practising tennis these days.' What is the Tense and Time?",
-        hi: "'Anurag is practising tennis these days' में Tense और Time क्या दर्शाते हैं?",
-        options: [
-          "Present Tense, Present Time",
-          "Past Tense, Future Time",
-          "Future Tense, Present Time",
-          "Present Tense, Future Time"
-        ],
-        ans: 0,
-        expl: "Verb form 'is practising' Present Tense hai aur vartaman me jari abhyas (Present Time) ko darsata hai."
-      },
-      {
-        id: 48,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "How is 'Time' measured in real life compared to 'Tense'?",
-        hi: "वास्तविक जीवन में 'Time' की माप कैसे की जाती है?",
-        options: [
-          "By verb conjugations V1, V2, V3",
-          "By seconds, minutes, hours, days, months, years and centuries",
-          "By using prepositions only",
-          "By active and passive transformations"
-        ],
-        ans: 1,
-        expl: "Time ko ghadi aur calendar se (seconds, minutes, hours, days, years) mapa jata hai, jabki Tense vyakaranik verb form hai."
-      },
-      {
-        id: 49,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "In 'She goes to school everyday', the Simple Present Tense indicates:",
-        hi: "'She goes to school everyday' में Simple Present Tense क्या दर्शाता है?",
-        options: [
-          "Habitual action extending over Past, Present and Future time",
-          "Action strictly happening only tomorrow",
-          "Completed past action",
-          "Conditional future event"
-        ],
-        ans: 0,
-        expl: "Habitual actions (aadat) vartaman, bhoot aur bhavishya sabhi samay me lagu hoti hain."
-      },
-      {
-        id: 50,
-        cat: "tensetime",
-        label: "Tense vs Time",
-        q: "Why can't we say that 'Present Tense always means Present Time'?",
-        hi: "हम यह क्यों नहीं कह सकते कि 'Present Tense का अर्थ हमेशा Present Time ही होता है'?",
-        options: [
-          "Because Present Tense verbs can express Future planned events and Past completed facts with present relevance",
-          "Because Tenses do not exist in English",
-          "Because Time is a grammatical unit",
-          "Because all verbs are weak verbs"
-        ],
-        ans: 0,
-        expl: "Jaisa ki humne dekha: 'PM visits tomorrow' (Future Time) aur 'Abhishek has finished' (Past Time) - dono me Present Tense forms hain!"
-      }
+    // 20 Embedded Concept Questions
+    const conceptQuestions = [
+      { id:1, sub:'1a', q:"According to the textbook, what is the standard model sentence structure in English?", hi:"पाठ्यपुस्तक के अनुसार अंग्रेजी में किसी भी मूल वाक्य की आदर्श बनावट क्या होती है?", opts:["Verb + Subject + Complement (VSC)","Subject + Verb + Complement / Object (SVC / SVO)","Complement + Subject + Verb (CSV)","Object + Complement + Verb (OCV)"], ans:1, expl:"मानक सूत्र: Subject (S) + Verb (V) + Complement/Object (C/O) होता है।" },
+      { id:2, sub:'1a', q:"In 'They go to school', what is the grammatical role of 'to school'?", hi:"'They go to school' में 'to school' की क्या भूमिका है?", opts:["Direct Object","Complement completing the predication of the verb","Main helping verb","Subject"], ans:1, expl:"'to school' Prepositional Complement है जो अकर्मक क्रिया 'go' के भाव को पूर्ण करता है।" },
+      { id:3, sub:'1b', q:"Why is the Subject compared to the 'head of a family' or 'engine of a train'?", hi:"कर्ता की तुलना 'परिवार के मुखिया' या 'ट्रेन के इंजन' से क्यों की गई है?", opts:["Because it is the longest word","Because its singular or plural number decides the form of the verb/auxiliary","Because it only comes in negative sentences","Because it cannot be plural"], ans:1, expl:"कर्ता का वचन ही तय करता है कि क्रिया या सहायक क्रिया एकवचन होगी या बहुवचन।" },
+      { id:4, sub:'1b', q:"Choose the correct verb: 'He ______ to school every day, but they ______ by bus.'", hi:"सही क्रिया रूप चुनिए: 'He ______ to school every day, but they ______ by bus.'", opts:["go, goes","goes, go","going, goes","gone, go"], ans:1, expl:"He (एकवचन) के साथ 'goes' और They (बहुवचन) के साथ 'go' आता है।" },
+      { id:5, sub:'1c', q:"In 'Swimming is a healthy exercise', what grammatical form acts as the Subject?", hi:"'Swimming is a healthy exercise' में कर्ता के रूप में क्या प्रयुक्त हुआ है?", opts:["Main verb in past tense","Gerund (verb + ing acting as a noun)","Adverb of place","Preposition"], ans:1, expl:"जब verb+ing संज्ञा की तरह कार्य करता है तो उसे Gerund कहते हैं।" },
+      { id:6, sub:'1c', q:"In passive voice: 'The thief was caught', what does the subject 'The thief' represent?", hi:"'The thief was caught' में कर्ता 'The thief' क्या दर्शाता है?", opts:["The person performing catching","The person affected by the action of the verb","Adverb of manner","Helping verb"], ans:1, expl:"पैसिव वाक्य में कर्ता क्रिया के प्रभाव को ग्रहण करने वाला (affected by action) होता है।" },
+      { id:7, sub:'1d', q:"What is meant by the grammatical term 'Predicating' in the definition of a Verb?", hi:"क्रिया की परिभाषा में 'Predicating' का क्या आशय है?", opts:["Saying or stating something about some person or thing","Translating words","Removing words","Counting words"], ans:0, expl:"Predicating का अर्थ है किसी व्यक्ति या वस्तु के बारे में कुछ कथन या विधान करना।" },
+      { id:8, sub:'1d', q:"Why is 'Changeability' considered the most pivotal property of verbs?", hi:"क्रिया में 'Changeability' का गुण सर्वाधिक महत्वपूर्ण क्यों माना गया है?", opts:["Because it allows the verb to change forms to construct different tenses and sentences","Because it prevents spelling mistakes","Because it makes poems","Because verbs never change"], ans:0, expl:"क्रिया अपने रूप बदलकर अलग-अलग Tense बनाती है, यही इसकी रूप परिवर्तनशीलता है।" },
+      { id:9, sub:'2a', q:"In 'I appreciate your performance', what kind of verb is 'appreciate' on utility basis?", hi:"'I appreciate your performance' में 'appreciate' किस प्रकार की क्रिया है?", opts:["Helping Verb","Main Verb (having independent meaning and identity)","Passive particle","Adjective"], ans:1, expl:"'appreciate' का अपना स्वतंत्र अर्थ (सराहना करना) है, अतः यह Main Verb है।" },
+      { id:10, sub:'2a', q:"In 'She is reading a book', what is the exact function of the word 'is'?", hi:"'She is reading a book' में 'is' शब्द का क्या कार्य है?", opts:["Main Verb denoting reading","Helping Verb (Auxiliary) helping to form Present Continuous Tense","Direct Object","Adverb"], ans:1, expl:"'is' सहायक क्रिया है जो 'reading' के साथ मिलकर Present Continuous Tense बनाती है।" },
+      { id:11, sub:'2b', q:"In 'A lecturer delivers lectures', why is 'delivers' a Transitive Verb?", hi:"'A lecturer delivers lectures' में 'delivers' सकर्मक क्रिया क्यों है?", opts:["Because it takes the direct object 'lectures' answering 'Delivers what?'","Because it is in past tense","Because lecturer is human","Because it has no auxiliary"], ans:0, expl:"Delivers what? → 'lectures'। क्रिया से 'क्या' या 'किसे' पूछने पर उत्तर मिले तो वह Transitive होती है।" },
+      { id:12, sub:'2b', q:"In 'Smita laughs', why is 'laughs' an Intransitive Verb?", hi:"'Smita laughs' में 'laughs' अकर्मक क्रिया क्यों है?", opts:["Because the action does not pass to an object and remains confined to the subject","Because Smita is laughing loudly","Because it is irregular","Because it has two objects"], ans:0, expl:"क्रिया का प्रभाव किसी कर्म पर नहीं जाता, केवल कर्ता स्मिता तक सीमित रहता है।" },
+      { id:13, sub:'2c', q:"Compare: (A) 'The driver stopped the bus.' vs (B) 'The bus stopped suddenly.'", hi:"(A) 'चालक ने बस रोकी' बनाम (B) 'बस अचानक रुक गई' में 'stopped' क्रिया क्या है?", opts:["In (A) Intransitive; In (B) Transitive","In (A) Transitive (object: 'the bus'); In (B) Intransitive (no object)","Both are Transitive","Both are Intransitive"], ans:1, expl:"(A) में 'the bus' कर्म है अतः Transitive। (B) में 'suddenly' Adverb है अतः Intransitive।" },
+      { id:14, sub:'2c', q:"In 'The peon rang the bell' vs 'The bell rang loudly', which contains an INTRANSITIVE verb?", hi:"'The peon rang the bell' बनाम 'The bell rang loudly' में अकर्मक क्रिया किसमें है?", opts:["'The peon rang the bell'","'The bell rang loudly'","Both sentences","Neither sentence"], ans:1, expl:"'The bell rang loudly' में 'loudly' Adverb of manner है, कोई कर्म नहीं है।" },
+      { id:15, sub:'3a', q:"What is the defining rule of Strong Verbs according to the textbook?", hi:"Strong Verbs (अनियमित क्रियाओं) का मूल नियम क्या है?", opts:["They always end with -ed","Their forms are quite different, forming past by changing internal root vowel without -ed","They are only future tense","They cannot be main verbs"], ans:1, expl:"Strong Verbs बिना -ed जोड़े मूल स्वर बदलती हैं (go-went-gone)।" },
+      { id:16, sub:'3a', q:"Which of the following contains ONLY Strong Verbs?", hi:"किस विकल्प में केवल Strong Verbs हैं?", opts:["go, write, ride, break, sing","cut, shut, cast, put","wish, clean, talk, walk","played, wished, cleaned"], ans:0, expl:"go-went-gone, write-wrote-written, ride-rode-ridden, break-broke-broken, sing-sang-sung सभी Strong Verbs हैं।" },
+      { id:17, sub:'3b', q:"Why are invariant verbs like 'cut – cut – cut' and 'cast – cast – cast' classified as Weak Verbs?", hi:"'cut – cut – cut' और 'cast – cast – cast' को Weak Verbs क्यों माना जाता है?", opts:["Because they have at least two forms same in spelling","Because they change vowels irregularly","Because they denote weak actions","Because they are auxiliaries"], ans:0, expl:"Weak verbs के कम से कम दो रूप (यहाँ तीनों) स्पेलिंग में समान होते हैं।" },
+      { id:18, sub:'3b', q:"In 'read – read – read' and 'clean – cleaned – cleaned', what makes both of them Weak Verbs?", hi:"'read' और 'clean' दोनों Weak Verbs क्यों हैं?", opts:["Because 'read' has identical spellings and 'clean' adds -ed (both satisfy Weak verb rules)","Because both completely change vowels","Because neither takes a subject","Because they are intransitive"], ans:0, expl:"'read' की स्पेलिंग समान रहती है और 'clean' में -ed जुड़ता है, दोनों Weak Verb की परिभाषा में हैं।" },
+      { id:19, sub:'4a', q:"Analyze: 'The Prime Minister visits our city tomorrow.' What is the Tense and Time?", hi:"'The Prime Minister visits our city tomorrow' में Tense और Time क्या है?", opts:["Future Tense, Future Time","Present Simple Tense form, but expressing Future Time","Past Tense, Past Time","Present Tense, Past Time"], ans:1, expl:"क्रिया 'visits' Present Simple Tense है, परंतु 'tomorrow' बताता है कि समय Future Time है।" },
+      { id:20, sub:'4a', q:"In 'The sun rises in the east', to what time does this Universal Truth belong?", hi:"'The sun rises in the east' जैसे सार्वभौमिक सत्य किस समय से जुड़े हैं?", opts:["Only today's present time","Belongs to all times (Past, Present, and Future)","Only future time","Only past time"], ans:1, expl:"सार्वभौमिक सत्य (Universal Truth) तीनों कालों—भूत, वर्तमान और भविष्य—में सदैव सत्य रहता है।" }
     ];
 
-    // State Variables
-    let userAnswers = Array(questions.length).fill(null);
-    let currentFilter = 'all';
-    let currentPage = 1;
-    const pageSize = 10;
-
-    // Interactive Inspector Data
-    const liveExamples = [
-      {
-        title: "1. Future Planned Event",
-        sentence: "The Prime Minister visits our city tomorrow.",
-        tense: "Present Simple Tense (visits)",
-        time: "Future Time (tomorrow)",
-        note: "पूर्व-निर्धारित भविष्य कार्यक्रम के लिए Present Tense का प्रयोग।"
-      },
-      {
-        title: "2. Completed Past Action",
-        sentence: "Abhishek has finished his work.",
-        tense: "Present Perfect Tense (has finished)",
-        time: "Past Time (कार्य पूर्ण हो चुका है)",
-        note: "कार्य भूतकाल में पूरा हुआ, परंतु उसका प्रभाव वर्तमान में है।"
-      },
-      {
-        title: "3. Universal Fact",
-        sentence: "The sun rises in the east.",
-        tense: "Present Simple Tense (rises)",
-        time: "All Time (Past, Present, Future)",
-        note: "सार्वभौमिक सत्य जो भूत, वर्तमान और भविष्य तीनों में समान रहता है।"
-      },
-      {
-        title: "4. Immediate Present",
-        sentence: "I want a glass of water.",
-        tense: "Present Simple Tense (want)",
-        time: "Present Time (Immediate desire)",
-        note: "बोलते समय की तात्कालिक आवश्यकता या इच्छा।"
-      }
+    // 30 Final Test Questions (Strictly Grounded in Theory)
+    const testQuestions = [
+      { id:1, unit:'structure', label:'Unit 01: SVC Structure', q:"In the basic sentence formula Subject + Verb + Complement (SVC), what is the function of the Complement?", hi:"मूल वाक्य सूत्र SVC में पूरक (Complement) का क्या कार्य होता है?", opts:["To perform the physical action","To complete the sense or predication of the sentence","To change noun to pronoun","To remove the verb"], ans:1, expl:"Complement वाक्य के अर्थ (predication) को पूरा करता है।" },
+      { id:2, unit:'structure', label:'Unit 01: Train Engine Metaphor', q:"Why does the textbook state that the Subject acts like the 'engine of a train'?", hi:"कर्ता (Subject) को 'ट्रेन का इंजन' क्यों कहा गया है?", opts:["Because it moves faster","Because its singular or plural number governs the form of the verb/auxiliary","Because it is made of iron","Because it comes at the end"], ans:1, expl:"Subject का एकवचन या बहुवचन होना ही क्रिया या सहायक क्रिया के रूप को तय करता है।" },
+      { id:3, unit:'structure', label:'Unit 01: Subject Agreement', q:"Select the sentence where the Verb correctly agrees with the Subject according to the textbook rule:", hi:"कर्ता-क्रिया सहमति का शुद्ध वाक्य चुनिए:", opts:["The students goes to school every day.","The student go to school every day.","The student goes to school, but the students go by bus.","They is going to school."], ans:2, expl:"Singular subject (The student) के साथ 'goes' और Plural (students) के साथ 'go' प्रयुक्त होता है।" },
+      { id:4, unit:'structure', label:'Unit 01: Adjective as Subject', q:"In 'The poor ______ our support and empathy', which verb form maintains correct agreement?", hi:"'The poor ______ our support and empathy' में कौन सी क्रिया सही है?", opts:["needs","need","is needing","has needed"], ans:1, expl:"'The poor' का अर्थ 'गरीब लोग' (बहुवचन) होता है, अतः बहुवचन क्रिया 'need' आएगी।" },
+      { id:5, unit:'structure', label:'Unit 01: Passive Voice Subject', q:"In 'The thief was caught by the police', what does 'The thief' represent according to the definition of Subject?", hi:"'The thief was caught by the police' में 'The thief' क्या दर्शाता है?", opts:["The person who caught","The person affected by the action of the verb in passive structure","Complement of place","Auxiliary verb"], ans:1, expl:"पैसिव वाक्य में कर्ता क्रिया के प्रभाव को ग्रहण करने वाला (affected by the action) होता है।" },
+      { id:6, unit:'structure', label:'Unit 01: Gerund as Subject', q:"Identify the sentence where a Gerund serves as the Subject:", hi:"वह वाक्य पहचानिए जिसमें Gerund कर्ता के रूप में प्रयुक्त हुआ है:", opts:["Rohan is swimming in the pool.","Swimming is a good exercise for health.","They like to swim in summer.","She swam across the river."], ans:1, expl:"'Swimming is a good exercise' में 'Swimming' वाक्य का कर्ता (Gerund Noun) है।" },
+      { id:7, unit:'structure', label:'Unit 01: Verbal Changeability', q:"Why is the Verb called the 'most pivotal element' in a sentence?", hi:"क्रिया (Verb) को 'सर्वाधिक महत्वपूर्ण अंग' क्यों माना गया है?", opts:["Because no sentence can exist without it, and it possesses the quality of changeability","Because it always precedes the subject","Because verbs never change form","Because all verbs are identical"], ans:0, expl:"क्रिया के बिना वाक्य संभव नहीं है, और क्रिया में रूप बदलने (Changeability) का विशिष्ट गुण होता है।" },
+      { id:8, unit:'structure', label:'Unit 01: Predicating Meaning', q:"What does the textbook mean by 'Words used for predicating are called verbs'?", hi:"'Words used for predicating are called verbs' का क्या आशय है?", opts:["Words that say or state something about a person or thing","Words that join two clauses","Punctuation marks","Names of places"], ans:0, expl:"Predicating का अर्थ है किसी व्यक्ति या वस्तु के बारे में कुछ कथन या विधान करना।" },
+      { id:9, unit:'kinds', label:'Unit 02: Main Verb', q:"In 'I appreciate your performance', the verb 'appreciate' is classified as:", hi:"'I appreciate your performance' में 'appreciate' किस प्रकार की क्रिया है?", opts:["Helping Verb","Main Verb (having independent meaning and identity)","Dummy Verb","Conjunction"], ans:1, expl:"'appreciate' का अपना स्वतंत्र अर्थ (सराहना करना) है, अतः यह Main Verb है।" },
+      { id:10, unit:'kinds', label:'Unit 02: Helping Verb', q:"In 'The students are reading their textbooks', what is the role of 'are'?", hi:"'The students are reading their textbooks' में 'are' क्या है?", opts:["Main Verb showing physical action","Helping Verb (Auxiliary) helping to form Present Continuous Tense","Direct Object","Complement"], ans:1, expl:"'are' सहायक क्रिया है जो 'reading' के साथ मिलकर Present Continuous Tense बनाती है।" },
+      { id:11, unit:'kinds', label:'Unit 02: Transitive Object Test', q:"What question test proves that 'A lecturer delivers lectures' contains a Transitive verb?", hi:"कौन सा प्रश्न सिद्ध करता है कि 'A lecturer delivers lectures' में क्रिया सकर्मक है?", opts:["Delivers when?","Delivers what? → 'lectures' (Direct Object answered)","Delivers where?","Delivers why?"], ans:1, expl:"Delivers what? → 'lectures'। क्रिया से 'क्या' या 'किसे' पूछने पर Object मिलता है।" },
+      { id:12, unit:'kinds', label:'Unit 02: Intransitive Verb', q:"In 'Birds fly in the sky', why is 'fly' an Intransitive Verb?", hi:"'Birds fly in the sky' में 'fly' अकर्मक क्रिया क्यों है?", opts:["Because 'in the sky' is an adverbial phrase of place, and there is no direct object","Because birds fly high","Because fly is past tense","Because it takes two objects"], ans:0, expl:"'in the sky' स्थान बता रहा है, कोई कर्म (What/Whom) नहीं है। अतः 'fly' Intransitive है।" },
+      { id:13, unit:'kinds', label:'Unit 02: Stopped Bus Shift', q:"Compare: (1) 'The driver stopped the bus.' vs (2) 'The bus stopped suddenly.'", hi:"(1) 'The driver stopped the bus.' vs (2) 'The bus stopped suddenly.' में 'stopped' क्रिया क्या है?", opts:["In (1) 'stopped' is Transitive; in (2) 'stopped' is Intransitive","In both sentences it is Transitive","In both sentences it is Intransitive","In (2) 'suddenly' is object"], ans:0, expl:"(1) में 'the bus' कर्म है अतः Transitive। (2) में 'suddenly' Adverb है अतः Intransitive।" },
+      { id:14, unit:'kinds', label:'Unit 02: Rang Bell Contrast', q:"In 'The peon rang the bell', what is the role of 'the bell'?", hi:"'The peon rang the bell' में 'the bell' क्या है?", opts:["Subject","Direct Object of the transitive verb 'rang'","Adverb of manner","Auxiliary verb"], ans:1, expl:"Rang what? → 'the bell'। यह 'rang' क्रिया का Direct Object है।" },
+      { id:15, unit:'kinds', label:'Unit 02: Smita Laughs', q:"In the textbook example 'Smita laughs', the action of laughing:", hi:"'Smita laughs' में हँसने की क्रिया का प्रभाव:", opts:["Passes over to an object","Remains confined to the subject Smita (Intransitive Verb)","Requires a helping verb","Is future tense"], ans:1, expl:"हँसने का प्रभाव कर्ता स्मिता तक सीमित रहता है, अतः यह Intransitive क्रिया है।" },
+      { id:16, unit:'kinds', label:'Unit 02: Auxiliary Word Pair', q:"Which pair consists strictly of Helping Verbs (Auxiliaries)?", hi:"कौन सा युग्म पूर्णतः सहायक क्रियाओं का है?", opts:["is, have","write, run","laugh, fly","stop, deliver"], ans:0, expl:"'is' और 'have' Helping Verbs हैं, जबकि अन्य मुख्य क्रियाएँ हैं।" },
+      { id:17, unit:'strongweak', label:'Unit 03: Strong Verb Vowel', q:"Strong Verbs form their Past and Past Participle by:", hi:"Strong Verbs अपना भूतकाल कैसे बनाती हैं?", opts:["Adding -ed in all cases","Changing internal root vowel without adding -ed","Keeping all three forms identical","Adding -ing"], ans:1, expl:"Strong Verbs बिना -ed जोड़े मूल स्वर बदलती हैं (go-went-gone)।" },
+      { id:18, unit:'strongweak', label:'Unit 03: Strong Conjugation', q:"What are the correct Past (V2) and Past Participle (V3) forms of 'write' and 'ride'?", hi:"'write' और 'ride' के सही V2 और V3 रूप क्या हैं?", opts:["writed / written, rided / ridden","wrote / written, rode / ridden","wrote / wrote, rode / rode","writing / written, riding / ridden"], ans:1, expl:"write → wrote → written; ride → rode → ridden (Strong Verbs)।" },
+      { id:19, unit:'strongweak', label:'Unit 03: Weak Verb Rule', q:"According to the textbook, Weak Verbs are those that:", hi:"Weak Verbs वे होती हैं जो:", opts:["Have at least two forms same in spelling, or form past by adding -d, -ed, or -t","Have three completely different vowel sounds","Are only negative","Never take a subject"], ans:0, expl:"Weak verbs के कम से कम दो रूप समान होते हैं या वे -d/-ed/-t जोड़कर बनती हैं।" },
+      { id:20, unit:'strongweak', label:'Unit 03: Invariant Cast Trap', q:"Select the sentence with the CORRECT past tense form of 'cast':", hi:"'cast' क्रिया के भूतकाल का शुद्ध प्रयोग किस वाक्य में हुआ है?", opts:["The fisherman casted the net into the river.","The fisherman cast the net into the river yesterday.","The fisherman was casted by the current.","The fisherman has casted three times."], ans:1, expl:"'cast' के तीनों रूप समान होते हैं: cast – cast – cast ('casted' अशुद्ध है)।" },
+      { id:21, unit:'strongweak', label:'Unit 03: Read Pronunciation', q:"Why is 'read – read – read' classified as a Weak Verb even though its pronunciation changes?", hi:"'read' का उच्चारण बदलने पर भी इसे Weak Verb क्यों माना जाता है?", opts:["Because all three forms have identical spelling (satisfying 2+ forms same rule)","Because it ends in -ed","Because it is auxiliary","Because it cannot be plural"], ans:0, expl:"'read' की तीनों स्पेलिंग समान रहती हैं, अतः यह Weak Verb के नियम में आती है।" },
+      { id:22, unit:'strongweak', label:'Unit 03: Regular -ed Verbs', q:"What are the Past (V2) and Past Participle (V3) forms of 'wish' and 'clean'?", hi:"'wish' और 'clean' के V2 और V3 रूप क्या हैं?", opts:["wished / wished, cleaned / cleaned","woshed / woshen, claned / clanen","wishing / wished, cleaning / cleaned","wish / wish, clean / clean"], ans:0, expl:"wish → wished → wished; clean → cleaned → cleaned (-ed जोड़ने वाली Weak Verbs)।" },
+      { id:23, unit:'strongweak', label:'Unit 03: Shut Invariant Forms', q:"What are the three forms of the Weak Verb 'shut'?", hi:"Weak Verb 'shut' के तीनों रूप क्या होते हैं?", opts:["shut – shutted – shutted","shut – shot – shot","shut – shut – shut","shut – shuting – shutted"], ans:2, expl:"shut – shut – shut (तीनों रूप समान रहते हैं)।" },
+      { id:24, unit:'tensetime', label:'Unit 04: Tense vs Time Relation', q:"Which statement accurately states the relationship between Time and Tense?", hi:"Time और Tense के संबंध में कौन सा कथन पूरी तरह सत्य है?", opts:["Time and Tense are identical and always mean the exact same thing","Time is a universal non-linguistic concept, whereas Tense is a verb form; they do NOT always go together","Tense is measured in minutes and hours","Present Tense can never express Future Time"], ans:1, expl:"Time घड़ी से नापा जाता है, जबकि Tense क्रिया का व्याकरणिक रूप है।" },
+      { id:25, unit:'tensetime', label:'Unit 04: PM Visits Tomorrow', q:"Analyze: 'The Prime Minister visits our city tomorrow.' What is the Tense and Time?", hi:"'The Prime Minister visits our city tomorrow' में Tense और Time क्या है?", opts:["Future Tense, Future Time","Present Simple Tense form, but expressing Future Time","Past Tense, Past Time","Present Tense, Past Time"], ans:1, expl:"क्रिया का रूप 'visits' Present Simple Tense है, परंतु व्यक्त समय Future Time है।" },
+      { id:26, unit:'tensetime', label:'Unit 04: PM Visited Last Week', q:"In 'The Prime Minister visited our city last week', what is the Tense and Time?", hi:"'The Prime Minister visited our city last week' में Tense और Time क्या हैं?", opts:["Past Tense, Past Time (both coincide)","Present Tense, Future Time","Past Tense, Future Time","Future Tense, Past Time"], ans:0, expl:"यहाँ 'visited' Past Tense है और 'last week' Past Time है।" },
+      { id:27, unit:'tensetime', label:'Unit 04: Abhishek Finished Work', q:"In 'Abhishek has finished his work', what is the Tense and Time?", hi:"'Abhishek has finished his work' में Tense और Time का क्या स्वरूप है?", opts:["Present Perfect Tense form, Past Time (work is already finished)","Past Indefinite, Future Time","Future Tense, Present Time","Past Tense, Future Time"], ans:0, expl:"क्रिया 'has finished' Present Perfect Tense है, किंतु कार्य समाप्त हो चुका है (Past Time)।" },
+      { id:28, unit:'tensetime', label:'Unit 04: Universal Truths', q:"In 'The sun rises in the east', what time concept does this Universal Truth belong to?", hi:"'The sun rises in the east' जैसे सार्वभौमिक सत्य किस समय से जुड़े हैं?", opts:["Only today's present time","Belongs to all times (Past, Present, and Future)","Only future time","Only past time"], ans:1, expl:"सार्वभौमिक सत्य (Universal Truth) तीनों कालों—भूत, वर्तमान और भविष्य—में सदैव सत्य रहता है।" },
+      { id:29, unit:'tensetime', label:'Unit 04: Immediate Present', q:"In 'I want a glass of water', the Present Tense expresses:", hi:"'I want a glass of water' में Present Tense क्या व्यक्त करता है?", opts:["A future planned journey","Immediate Present desire at the moment of speaking","A past completed habit","A scientific law"], ans:1, expl:"यह बोलते समय की तात्कालिक इच्छा (Immediate Present) को दर्शाता है।" },
+      { id:30, unit:'tensetime', label:'Unit 04: Scheduled Future Activity', q:"In 'He leaves for Delhi next week', why is Simple Present Tense used?", hi:"'He leaves for Delhi next week' में Simple Present Tense का प्रयोग क्यों हुआ है?", opts:["To express a fixed planned future program / activity","Because Delhi is present","Because it happened yesterday","Because leaves is weak verb"], ans:0, expl:"पूर्व-निर्धारित भविष्य कार्यक्रम (fixed planned future activity) के लिए Simple Present प्रयुक्त होता है।" }
     ];
 
-    function initInspector() {
-      const container = document.getElementById('live-btns');
-      if (!container) return;
-      container.innerHTML = '';
-      liveExamples.forEach((item, idx) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = idx === 0 ? 'mint-btn' : 'quiet-btn';
-        btn.style.fontSize = '12px';
-        btn.style.padding = '6px 12px';
-        btn.innerText = item.title;
-        btn.onclick = () => selectInspector(idx);
-        container.appendChild(btn);
-      });
-      selectInspector(0);
-    }
+    // Render 2-Question Concept Pairs in Theory
+    const subPairs = [
+      { id: 'pair-1a', title: '1A. Sentence Formula (SVC)', start: 0 },
+      { id: 'pair-1b', title: '1B. Subject as Engine & Agreement', start: 2 },
+      { id: 'pair-1c', title: '1C. Gerund & Passive Subject Forms', start: 4 },
+      { id: 'pair-1d', title: '1D. Verb & Changeability', start: 6 },
+      { id: 'pair-2a', title: '2A. Main vs Helping Verb', start: 8 },
+      { id: 'pair-2b', title: '2B. Transitive vs Intransitive (What/Whom Test)', start: 10 },
+      { id: 'pair-2c', title: '2C. Contextual Transitive/Intransitive Shift', start: 12 },
+      { id: 'pair-3a', title: '3A. Strong Verbs & Vowel Mutation', start: 14 },
+      { id: 'pair-3b', title: '3B. Weak Verbs (Identical Forms & -ed)', start: 16 },
+      { id: 'pair-4a', title: '4A. Tense vs Time Paradox', start: 18 }
+    ];
 
-    function selectInspector(index) {
-      const btns = document.querySelectorAll('#live-btns button');
-      btns.forEach((btn, i) => {
-        btn.className = i === index ? 'mint-btn' : 'quiet-btn';
-      });
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
 
-      const data = liveExamples[index];
-      const display = document.getElementById('live-display');
-      display.innerHTML = `
-        <div style="font-size:16px; font-weight:800; color:var(--brand); margin-bottom:8px;">
-          "${data.sentence}"
-        </div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap; font-size:13px; margin-bottom:8px;">
-          <span style="background:#eff6ff; color:#1e40af; padding:4px 10px; border-radius:8px; border:1px solid #bfdbfe;">
-            <b>Tense:</b> ${data.tense}
-          </span>
-          <span style="background:#fef3c7; color:#92400e; padding:4px 10px; border-radius:8px; border:1px solid #fde68a;">
-            <b>Time:</b> ${data.time}
-          </span>
-        </div>
-        <p style="font-size:13px; color:#4b5563;">👉 <strong>व्याख्या:</strong> ${data.note}</p>
-      `;
-    }
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const container = document.getElementById(pair.id);
+        if (!container) return;
 
-    // Filter Logic
-    function getFilteredQuestions() {
-      if (currentFilter === 'all') return questions;
-      return questions.filter(q => q.cat === currentFilter);
-    }
+        const q1 = conceptQuestions[pair.start];
+        const q2 = conceptQuestions[pair.start + 1];
+        const pairQs = [q1, q2];
 
-    function filterCategory(cat) {
-      currentFilter = cat;
-      currentPage = 1;
-      
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.getAttribute('data-filter') === cat) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
 
-      renderNavigationGrid();
-      renderPage();
-    }
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
 
-    // Navigation Grid
-    function renderNavigationGrid() {
-      const grid = document.getElementById('jump-grid');
-      if (!grid) return;
-      grid.innerHTML = '';
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
+          });
 
-      const filtered = getFilteredQuestions();
-
-      filtered.forEach((q) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'jump-btn';
-        btn.innerText = q.id;
-        
-        const qIndex = q.id - 1;
-        const state = userAnswers[qIndex];
-        
-        if (state !== null) {
-          if (state.checked) {
-            btn.classList.add(state.isCorrect ? 'correct' : 'retry');
-          } else {
-            btn.classList.add('selected');
-          }
-        }
-
-        btn.onclick = () => jumpToQuestion(q.id);
-        grid.appendChild(btn);
-      });
-    }
-
-    function jumpToQuestion(qId) {
-      const filtered = getFilteredQuestions();
-      const itemIndex = filtered.findIndex(q => q.id === qId);
-      if (itemIndex === -1) return;
-
-      currentPage = Math.floor(itemIndex / pageSize) + 1;
-      renderPage();
-
-      setTimeout(() => {
-        const target = document.getElementById(`card-q-${qId}`);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    }
-
-    // Render Page Tasks
-    function renderPage() {
-      const container = document.getElementById('task-container');
-      if (!container) return;
-      container.innerHTML = '';
-
-      const filtered = getFilteredQuestions();
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-      
-      if (currentPage > totalPages) currentPage = totalPages;
-      if (currentPage < 1) currentPage = 1;
-
-      const start = (currentPage - 1) * pageSize;
-      const end = start + pageSize;
-      const pageItems = filtered.slice(start, end);
-
-      pageItems.forEach((q) => {
-        const qIndex = q.id - 1;
-        const savedState = userAnswers[qIndex];
-        const isChecked = savedState && savedState.checked;
-        const selectedOpt = savedState ? savedState.selected : null;
-
-        const card = document.createElement('article');
-        card.id = `card-q-${q.id}`;
-        card.className = 'mint-card task-card';
-
-        let statusText = `Question ${q.id} of 50 · ${q.label}`;
-        let statusClass = 'task-status';
-
-        if (isChecked) {
-          if (savedState.isCorrect) {
-            statusText = `✓ Correct · Q${q.id}`;
-            statusClass = 'task-status correct';
-          } else {
-            statusText = `✕ Retry · Q${q.id}`;
-            statusClass = 'task-status retry';
-          }
-        } else if (selectedOpt !== null) {
-          statusText = `Selected · Q${q.id}`;
-        }
-
-        let choicesHtml = '';
-        q.options.forEach((opt, optIdx) => {
-          let choiceClass = 'choice';
-          if (selectedOpt === optIdx) choiceClass += ' selected';
-          
-          if (isChecked) {
-            if (optIdx === q.ans) choiceClass += ' right-choice';
-            else if (selectedOpt === optIdx && optIdx !== q.ans) choiceClass += ' wrong-choice';
+          let statusBadge = `<span style="font-size:11px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:11px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:11px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
           }
 
-          const badgeChar = String.fromCharCode(65 + optIdx);
-          choicesHtml += `
-            <div class="${choiceClass}" onclick="selectChoice(${qIndex}, ${optIdx})">
-              <span class="choice-badge">${badgeChar}</span>
-              <span>${opt}</span>
+          html += `
+            <div class="${cardClass}" id="card-concept-${q.id}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <strong style="color:var(--brand); font-size:12px;">Q${q.id}.</strong>
+                  ${statusBadge}
+                </div>
+                <div style="font-weight:bold; margin-bottom:4px; line-height:1.4;">${q.q}</div>
+                <div class="font-hi" style="font-size:11.5px; color:#4b5563; margin-bottom:6px;">👉 ${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+              <div style="margin-top:8px; pt-2; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:6px;">
+                  <button class="mint-btn" type="button" style="font-size:11px; padding:4px 10px;" onclick="checkConceptQ(${q.id})">Check</button>
+                  <button class="quiet-btn" type="button" style="font-size:11px; padding:4px 8px;" onclick="resetConceptQ(${q.id})">Reset</button>
+                </div>
+                <details style="font-size:11px;">
+                  <summary style="cursor:pointer; font-weight:bold; color:var(--brand);">व्याख्या</summary>
+                  <p style="margin-top:4px; color:#1e293b;">${q.expl}</p>
+                </details>
+              </div>
             </div>
           `;
         });
 
-        let feedbackHtml = '';
-        if (isChecked) {
-          if (savedState.isCorrect) {
-            feedbackHtml = `<div class="task-feedback">✓ Sahi uttar! Shabash!</div>`;
-          } else {
-            feedbackHtml = `<div class="task-feedback" data-state="retry">✕ Galat uttar. Sahi uttar option (${String.fromCharCode(65 + q.ans)}) hai.</div>`;
-          }
-        }
-
-        card.innerHTML = `
-          <div class="task-heading">
-            <span class="eyebrow">${q.label}</span>
-            <span class="${statusClass}">${statusText}</span>
-          </div>
-          <h3>Q${q.id}. ${q.q}</h3>
-          <p class="task-hindi">👉 ${q.hi}</p>
-          
-          <div class="choices">
-            ${choicesHtml}
-          </div>
-
-          <div class="task-bottom">
-            <div class="task-actions">
-              <button class="mint-btn" type="button" style="font-size:12px; padding:8px 14px;" onclick="checkSingle(${qIndex})">Check answer</button>
-              <button class="quiet-btn" type="button" onclick="resetSingle(${qIndex})">Clear</button>
-            </div>
-            ${feedbackHtml}
-            <details class="solution">
-              <summary>View Explanation (व्याख्या पढ़ें)</summary>
-              <p>${q.expl}</p>
-            </details>
-          </div>
-        `;
-
-        container.appendChild(card);
+        html += `</div>`;
+        container.innerHTML = html;
       });
-
-      // Update Pagination Controls
-      document.getElementById('page-indicator').innerText = `Page ${currentPage} of ${totalPages}`;
-      document.getElementById('btn-prev').disabled = (currentPage === 1);
-      document.getElementById('btn-next').disabled = (currentPage === totalPages);
-      
-      document.getElementById('page-summary-text').innerText = 
-        `Showing questions ${start + 1} to ${Math.min(end, filtered.length)} of ${filtered.length} (${currentFilter.toUpperCase()} view).`;
-
-      updateProgressBar();
     }
 
-    function selectChoice(qIndex, optIdx) {
-      if (!userAnswers[qIndex]) {
-        userAnswers[qIndex] = { selected: optIdx, checked: false, isCorrect: false };
-      } else {
-        userAnswers[qIndex].selected = optIdx;
-        userAnswers[qIndex].checked = false; // Reset check on re-selection
-      }
-      renderNavigationGrid();
-      renderPage();
+    function selectConceptOpt(qId, optIdx) {
+      conceptUserAnswers[qId] = optIdx;
+      conceptChecked[qId] = false;
+      renderConceptPairs();
     }
 
-    function checkSingle(qIndex) {
-      const state = userAnswers[qIndex];
-      if (!state || state.selected === null) {
-        alert("Kripya pehle kisi ek vikalp (option) ko chunein!");
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert("कृपया पहले किसी एक विकल्प को चुनें!");
         return;
       }
-      const q = questions[qIndex];
-      state.checked = true;
-      state.isCorrect = (state.selected === q.ans);
-
-      renderNavigationGrid();
-      renderPage();
+      conceptChecked[qId] = true;
+      renderConceptPairs();
     }
 
-    function resetSingle(qIndex) {
-      userAnswers[qIndex] = null;
-      renderNavigationGrid();
-      renderPage();
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
     }
 
-    function checkCurrentPage() {
-      const filtered = getFilteredQuestions();
-      const start = (currentPage - 1) * pageSize;
-      const end = start + pageSize;
-      const pageItems = filtered.slice(start, end);
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
 
-      pageItems.forEach(q => {
-        const qIndex = q.id - 1;
-        const state = userAnswers[qIndex];
-        if (state && state.selected !== null) {
-          state.checked = true;
-          state.isCorrect = (state.selected === q.ans);
+    function scrollToTest() {
+      document.getElementById('test-arena').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
         }
-      });
-
-      renderNavigationGrid();
-      renderPage();
+      }, 1000);
     }
 
-    function resetAll() {
-      if (confirm("Kya aap sabhi uttar reset karna chahte hain?")) {
-        userAnswers = Array(questions.length).fill(null);
-        currentPage = 1;
-        renderNavigationGrid();
-        renderPage();
+    function updateTimerDisplay() {
+      const mins = Math.floor(secondsLeft / 60);
+      const secs = secondsLeft % 60;
+      const el = document.getElementById('timer-display');
+      el.innerText = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      if (secondsLeft <= 120) el.classList.add('urgent');
+      else el.classList.remove('urgent');
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('palette-container');
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let pClass = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) pClass += ' attempted';
+        if (testReview[q.id]) pClass += ' review';
+        if (currentIdx === idx) pClass += ' active';
+        html += `<div class="${pClass}" onclick="jumpToQ(${idx})">${q.id}</div>`;
+      });
+      container.innerHTML = html;
+
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').innerText = attempted;
+      document.getElementById('left-count').innerText = testQuestions.length - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').innerText = q.label;
+      document.getElementById('q-counter').innerText = `Q ${q.id} of ${testQuestions.length}`;
+      document.getElementById('current-q-title').innerText = `Q${q.id}. ${q.q}`;
+      document.getElementById('current-q-hindi').innerText = `👉 ${q.hi}`;
+
+      const revBtn = document.getElementById('review-btn');
+      revBtn.innerText = testReview[q.id] ? '🚩 Marked for Review' : '🚩 Mark for Review';
+      revBtn.style.background = testReview[q.id] ? '#fef3c7' : '#fff';
+
+      const userSel = testAnswers[q.id];
+      let optsHtml = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = userSel === idx;
+        optsHtml += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:24px; height:24px; font-size:12px; ${isSel ? 'background:var(--button); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      document.getElementById('current-q-options').innerHTML = optsHtml;
+
+      document.getElementById('prev-btn').disabled = (currentIdx === 0);
+      document.getElementById('next-btn').innerText = (currentIdx === testQuestions.length - 1) ? 'Finish / Review' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, optIdx) {
+      testAnswers[qId] = optIdx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function nextQuestion() {
+      if (currentIdx < testQuestions.length - 1) {
+        currentIdx++;
+        renderPalette();
+        renderCurrentQ();
+      } else {
+        confirmSubmit();
       }
     }
 
-    function changePage(delta) {
-      const filtered = getFilteredQuestions();
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
-      currentPage += delta;
-      if (currentPage < 1) currentPage = 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-      
-      renderPage();
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderPalette();
+        renderCurrentQ();
+      }
     }
 
-    function updateProgressBar() {
-      const solvedCount = userAnswers.filter(a => a && a.checked && a.isCorrect).length;
-      const progressEl = document.getElementById('lesson-progress');
-      const labelEl = document.getElementById('progress-label');
-      
-      if (progressEl) progressEl.value = solvedCount;
-      if (labelEl) labelEl.innerText = `${solvedCount} of 50 questions solved correctly`;
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = testQuestions.length - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `आपने 30 में से केवल <strong>${attempted} प्रश्न हल किए हैं</strong> (${left} प्रश्न अभी शेष हैं)। क्या आप सचमुच सबमिट करना चाहते हैं?`;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
     }
 
-    // Initialize on Load
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(autoSubmitted) {
+      closeModal();
+      if (testTimer) clearInterval(testTimer);
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsEl = document.getElementById('test-results-view');
+      resultsEl.style.display = 'block';
+
+      // Calculate Scores
+      let score = 0;
+      let correct = 0;
+      let wrong = 0;
+      const conceptStats = {
+        structure: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-1', name: 'Unit 01: Sentence Structure (SVC)' },
+        kinds: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-2', name: 'Unit 02: Kinds of Verbs (Transitive/Intransitive)' },
+        strongweak: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-3', name: 'Unit 03: Strong vs Weak Verbs' },
+        tensetime: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-4', name: 'Unit 04: Tense vs Time Distinction' }
+      };
+
+      testQuestions.forEach(q => {
+        const u = testAnswers[q.id];
+        const unit = conceptStats[q.unit];
+        unit.total++;
+        if (u !== undefined) {
+          if (u === q.ans) {
+            score++;
+            correct++;
+            unit.correct++;
+          } else {
+            wrong++;
+            unit.wrong++;
+            unit.mistakes.push(q.id);
+          }
+        } else {
+          unit.wrong++;
+          unit.mistakes.push(q.id);
+        }
+      });
+
+      const accuracy = Math.round((correct / (correct + wrong || 1)) * 100);
+      const timeTakenSec = (15 * 60) - secondsLeft;
+      const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
+
+      let diagCardsHtml = '';
+      for (const key in conceptStats) {
+        const cs = conceptStats[key];
+        const hasMistakes = cs.mistakes.length > 0;
+        diagCardsHtml += `
+          <div class="diag-card ${hasMistakes ? 'mistake' : ''}">
+            <div style="font-weight:bold; font-size:13px; margin-bottom:4px; color:${hasMistakes ? '#b91c1c' : '#059669'};">
+              ${cs.name}
+            </div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              ${cs.correct} / ${cs.total} Correct (${Math.round((cs.correct / cs.total) * 100)}%)
+            </div>
+            ${hasMistakes ? `
+              <div style="font-size:11.5px; color:#991b1b; margin-bottom:8px;">
+                ⚠️ Mistakes in Q: <strong>${cs.mistakes.join(', ')}</strong>
+              </div>
+            ` : `
+              <div style="font-size:11.5px; color:#15803d; font-weight:bold; margin-bottom:8px;">
+                ✓ All concepts mastered!
+              </div>
+            `}
+            <a href="#${cs.anchor}" style="font-size:11.5px; font-weight:bold; color:var(--brand); text-decoration:underline;">
+              Revise Rule in Theory →
+            </a>
+          </div>
+        `;
+      }
+
+      // Review Questions List
+      let reviewHtml = '';
+      testQuestions.forEach(q => {
+        const u = testAnswers[q.id];
+        const isRight = u === q.ans;
+        const isSkipped = u === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:12px;">
+              <span class="badge">${q.label}</span>
+              <span style="font-weight:bold; color:${isRight ? '#15803d' : '#b91c1c'};">
+                ${isRight ? '✓ Correct (+1)' : isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)'}
+              </span>
+            </div>
+            <div style="font-weight:bold; font-size:13.5px; margin-bottom:3px;">Q${q.id}. ${q.q}</div>
+            <div class="font-hi" style="font-size:12px; color:#475569; margin-bottom:8px;">👉 ${q.hi}</div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">(${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+              ${!isRight && !isSkipped ? `<br><strong>Your Choice:</strong> <span style="color:#b91c1c;">(${String.fromCharCode(65 + u)}) ${q.opts[u]}</span>` : ''}
+            </div>
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 10px; font-size:12px; color:#334155;">
+              <strong>📖 व्याख्या (Explanation):</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsEl.innerHTML = `
+        <div class="results-card">
+          <div class="score-banner">
+            <div>
+              <span class="badge" style="font-size:12px;">30-Question Examination Results</span>
+              <h2 style="font-size:28px; font-weight:900; margin:6px 0;">
+                Your Score: <span class="score-circle">${score}</span> / 30
+              </h2>
+              <p style="font-size:13px; color:#475569;">
+                Accuracy: <strong>${accuracy}%</strong> · Time Taken: <strong>${timeTakenStr}</strong>
+                ${autoSubmitted ? ' · <span style="color:#dc2626; font-weight:bold;">(Auto Submitted on 15:00 Time Limit)</span>' : ''}
+              </p>
+            </div>
+            <button class="mint-btn" type="button" onclick="startExam()">
+              🔄 Retake 30-Q Test
+            </button>
+          </div>
+
+          <!-- Concept Mistake Diagnostics -->
+          <div style="background:#fffbeb; border:2px solid #fcd34d; border-radius:18px; padding:18px; margin-bottom:24px;">
+            <h3 style="font-size:18px; font-weight:900; color:#92400e; margin-bottom:4px;">
+              🔍 गलतियों का कॉन्सेप्ट आधारित विश्लेषण (Concept Mistake Diagnostics)
+            </h3>
+            <p style="font-size:12.5px; color:#78350f; margin-bottom:12px;">
+              जिस इकाई (Unit) में गलती हुई हो, उसके लिंक पर क्लिक करके सीधे उस नियम को दोबारा पढ़ें:
+            </p>
+            <div class="concept-diag-grid">
+              ${diagCardsHtml}
+            </div>
+          </div>
+
+          <!-- Question-by-Question Review -->
+          <h3 style="font-size:20px; font-weight:900; margin-bottom:12px;">
+            Detailed Question Review (1 to 30)
+          </h3>
+          <div>
+            ${reviewHtml}
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize on load
     window.addEventListener('DOMContentLoaded', () => {
-      initInspector();
-      renderNavigationGrid();
-      renderPage();
+      renderConceptPairs();
     });
   </script>
 </body>
