@@ -140,7 +140,7 @@
 </head>
 
 <body>
-  <!-- Sticky Header with Copy Code (No YouTube link) -->
+  <!-- Sticky Header (No YouTube link) -->
   <header>
     <div class="wrap nav">
       <a class="logo" href="#top">
@@ -155,14 +155,9 @@
         <a href="#rhyme-activity">Rhyme Game</a>
       </nav>
 
-      <div style="display:flex; align-items:center; gap:8px;">
-        <button class="quiet-btn" type="button" onclick="copyFullCode(this)" style="background:#fff; border-color:#34d399; font-weight:800; padding:7px 12px;">
-          📋 Copy Code
-        </button>
-        <button class="nav-test-btn" type="button" onclick="scrollToTest()">
-          ⏱ 20-Q Exam (15m) →
-        </button>
-      </div>
+      <button class="nav-test-btn" type="button" onclick="scrollToTest()">
+        ⏱ 20-Q Exam (15m) →
+      </button>
     </div>
   </header>
 
@@ -349,7 +344,6 @@
         Class 2 / Primary English · Chapter 7: A New Beginning (एक नई शुरुआत)
       </div>
       <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand); align-items:center;">
-        <button class="quiet-btn" type="button" onclick="copyFullCode(this)">📋 Copy Full HTML Code</button>
         <a href="#stanza-1">Poem</a>
         <a href="#test-arena">20-Q Exam</a>
       </div>
@@ -947,23 +941,6 @@
       `;
 
       scrollToTest();
-    }
-
-    function copyFullCode(btn) {
-      const fullDoc = "<!doctype html>\n" + document.documentElement.outerHTML;
-      navigator.clipboard.writeText(fullDoc).then(() => {
-        const oldText = btn.innerText;
-        btn.innerText = "✓ Copied Successfully!";
-        btn.style.background = "#dcfce7";
-        btn.style.color = "#15803d";
-        setTimeout(() => {
-          btn.innerText = oldText;
-          btn.style.background = "";
-          btn.style.color = "";
-        }, 2500);
-      }).catch(() => {
-        alert("कृपया फ़ाइल को index.html से सीधा कॉपी कर लें!");
-      });
     }
 
     // Initialize immediately without waiting
