@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="Class 9 General English Chapter 1 - Tenses, Model Sentence Structure (SVC), Kinds of Verbs, Strong/Weak Verbs, Exam Omissions and Tense vs Time with 20 embedded examples and a 30-question 15-minute exam.">
   <meta name="theme-color" content="#2dd4bf">
   <title>Chapter 1: Tenses &amp; Kinds of Verbs | Class 9 English Grammar</title>
@@ -27,38 +27,88 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; cursor: pointer; border: 0; background: transparent; }
     h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
     .font-hi { font-family: var(--hi-font); }
     .wrap { max-width: 1180px; margin: auto; padding: 0 18px; }
 
+    /* Header & Responsive Navigation */
     header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-    .logo { font-size: 26px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 24px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
     .logo span span { color: var(--yellow); }
-    .logo-mark { width: 36px; height: 36px; border-radius: 12px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 20px; transform: rotate(-8deg); }
-    nav { display: flex; align-items: center; gap: 10px; }
-    nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 13px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
-    nav a:hover { background: rgba(255, 255, 255, 0.2); }
+    .logo-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-8deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 8px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 13px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
 
-    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; }
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    .yt-btn {
+      background: var(--yt-red);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      font-size: 12.5px;
+      font-family: var(--heading);
+      box-shadow: 0 3px 0 #b30000;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .yt-btn:hover { background: #e60000; transform: translateY(-1px); }
+
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 14px;
+      padding: 8px 16px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      font-family: var(--heading);
+      font-size: 13px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all .15s;
+      cursor: pointer;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .nav-test-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+
+    .nav-test-btn .btn-mobile-text { display: none; }
+    .nav-test-btn .btn-full-text { display: inline; }
+    .yt-btn .yt-mobile-text { display: none; }
+    .yt-btn .yt-full-text { display: inline; }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; }
     .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
     .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
-    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
     .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
-    .yt-btn { background: var(--yt-red); color: #fff; border-radius: 12px; padding: 7px 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 12.5px; font-family: var(--heading); box-shadow: 0 3px 0 #b30000; }
 
     .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
     .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
 
+    /* Hero */
     .hero { padding: 32px 0 24px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
     .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 5px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
     .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
-    h1 { font-size: clamp(28px, 4.2vw, 52px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; }
+    h1 { font-size: clamp(28px, 4.2vw, 52px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; font-family: var(--heading); }
     h1 .green { color: var(--brand); }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
 
     .section { padding: 30px 0 10px; }
     .rule-card { padding: 20px 22px; margin-bottom: 20px; background: #fff; border: 2px solid #a7f3d0; border-radius: 18px; }
@@ -72,7 +122,7 @@
     .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
     .compare-table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 12.5px; }
     .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
-    .compare-table th { background: #f1f5f9; font-weight: 800; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
 
     /* Concept 2-Question Pair Box */
     .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
@@ -83,28 +133,33 @@
     .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
     
     .choices-sm { display: grid; gap: 5px; margin: 6px 0; }
-    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; }
+    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
     .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
     .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
     .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
-    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; shrink: 0; }
+    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; flex-shrink: 0; }
 
     /* Test Arena */
-    .test-section { margin-top: 36px; padding: 20px; }
-    .test-timer-bar { position: sticky; top: 76px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .test-section { margin-top: 36px; padding: 20px; scroll-margin-top: 86px; }
+    .test-timer-bar { position: sticky; top: 72px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
     .timer-pill { font-family: var(--heading); font-size: 18px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 10px; }
     .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
     .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 4px; margin: 8px 0; }
-    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
     .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
     .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
     .pal-btn.active { outline: 2px solid var(--brand); }
 
     .test-card { padding: 18px; background: #fff; border: 2.5px solid var(--line); border-radius: 18px; }
     .choice-lg { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
     .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
 
     /* Results */
     .results-card { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px; }
@@ -119,17 +174,83 @@
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
     .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
 
+    /* Mobile Quick Action Pill */
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 16px;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
     footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 20px 0; margin-top: 40px; }
 
+    /* Responsive Breakpoints */
     @media (max-width: 850px) {
       .hero { grid-template-columns: 1fr; }
-      nav a { display: none; }
-      .test-timer-bar { top: 68px; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 64px; }
+      .mobile-float-btn { display: inline-flex; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 0 12px; }
+      .nav { min-height: 62px; gap: 6px; }
+      .logo { font-size: 19px; gap: 6px; }
+      .logo-mark { width: 30px; height: 30px; font-size: 15px; border-radius: 8px; }
+      
+      .header-actions { gap: 6px; }
+      .yt-btn { padding: 6px 9px; font-size: 11px; border-radius: 10px; box-shadow: 0 2px 0 #b30000; }
+      .yt-btn .yt-full-text { display: none; }
+      .yt-btn .yt-mobile-text { display: inline; }
+      
+      .nav-test-btn { padding: 6px 11px; font-size: 11.5px; border-radius: 10px; box-shadow: 0 2px 0 var(--brand); }
+      .nav-test-btn .btn-full-text { display: none; }
+      .nav-test-btn .btn-mobile-text { display: inline; }
+
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .mint-btn, .hero-actions .quiet-btn { width: 100%; justify-content: center; text-align: center; padding: 11px 16px; }
+
+      .test-section { padding: 14px 12px; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .pal-btn { height: 32px; font-size: 11.5px; }
+
+      .test-actions-bar { flex-direction: column-reverse; gap: 8px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+
+      .rule-card { padding: 15px 14px; border-radius: 15px; }
+    }
+
+    @media (max-width: 380px) {
+      .logo { font-size: 17px; }
+      .logo span span { display: none; }
+      .yt-btn { padding: 5px 7px; font-size: 10.5px; }
+      .nav-test-btn { padding: 5px 9px; font-size: 11px; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
+
   <!-- Header -->
   <header>
     <div class="wrap nav">
@@ -138,20 +259,24 @@
         <span>Econova<span>.vip</span></span>
       </a>
 
-      <nav>
+      <nav class="main-nav">
         <a href="#topic-1">1. Structure</a>
         <a href="#topic-2">2. Kinds</a>
         <a href="#topic-3">3. Strong/Weak</a>
         <a href="#topic-4">4. Tense vs Time</a>
       </nav>
 
-      <div style="display:flex; gap:8px; align-items:center;">
+      <div class="header-actions">
         <a class="yt-btn" href="https://youtu.be/A4ht2cEjwIY" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="12" viewBox="0 0 20 14" fill="currentColor"><path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/></svg>
-          YouTube
+          <svg width="15" height="11" viewBox="0 0 20 14" fill="currentColor">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          <span class="yt-full-text">YouTube</span>
+          <span class="yt-mobile-text">YT</span>
         </a>
-        <button class="mint-btn" type="button" onclick="scrollToTest()">
-          30-Q Test (15m) →
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()">
+          <span class="btn-full-text">30-Q Test (15m) →</span>
+          <span class="btn-mobile-text">30-Q Test ↗</span>
         </button>
       </div>
     </div>
@@ -172,11 +297,11 @@
           Sentence to Time.
         </h1>
 
-        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:16px;">
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;">
           Tense को सही प्रकार से समझने के लिए वाक्य का ढाँचा (<strong>SVC: Subject + Verb + Complement</strong>), क्रियाओं के भेद (<strong>Transitive, Intransitive, Strong, Weak</strong>) और <strong>Tense vs Time</strong> का अंतर जानना अनिवार्य है। यहाँ प्रस्तुत है संपूर्ण पाठ्यक्रम के आवश्यक नियम, परीक्षा में होने वाली गलतियों (Exam Omissions &amp; Traps) का संपूर्ण विश्लेषण, <strong>हर नियम के साथ 2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong>।
         </p>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <div class="hero-actions">
           <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; 20 Examples →</a>
           <button class="quiet-btn" type="button" onclick="scrollToTest()">
             ⏱ 30-Question Test (15m)
@@ -547,12 +672,12 @@
       <!-- IDLE VIEW -->
       <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
         <span class="badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">30 Questions · Strict 15-Minute Exam</span>
-        <h2 style="font-size:30px; font-weight:900; margin:8px 0;">Final 30-Question Grammar Test</h2>
+        <h2 style="font-size:28px; font-weight:900; margin:8px 0;">Final 30-Question Grammar Test</h2>
         <p style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
           यह टेस्ट आपकी व्याकरणिक समझ और परीक्षा ट्रैप्स की पकड़ का सटीक मूल्यांकन करेगा। जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> चालू हो जाएगा। समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
         </p>
 
-        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:15px; padding:12px 26px;">
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
           🚀 Start 30-Question Exam Now (15:00 Timer)
         </button>
       </div>
@@ -561,7 +686,7 @@
       <div id="test-running-view" style="display:none;">
         <div class="test-timer-bar">
           <div class="timer-pill" id="timer-display">15:00</div>
-          <div style="font-size:13px; font-weight:bold; color:var(--brand);">
+          <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
             Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
           </div>
           <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
@@ -576,7 +701,7 @@
             <div style="display:flex; gap:8px;">
               <span>🟢 Attempted</span>
               <span>🟡 Review</span>
-              <span>⚪ Unattempted</span>
+              <span>⚪ Left</span>
             </div>
           </div>
           <div class="palette-grid" id="palette-container"></div>
@@ -584,7 +709,7 @@
 
         <!-- Single Question Card -->
         <div class="test-card">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
             <span class="badge" id="current-q-concept">Unit</span>
             <div style="display:flex; gap:6px; align-items:center;">
               <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
@@ -599,7 +724,7 @@
 
           <div id="current-q-options"></div>
 
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; pt-2; border-top:1px solid #e2e8f0; flex-wrap:wrap; gap:8px;">
+          <div class="test-actions-bar">
             <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
             <div style="display:flex; gap:6px;">
               <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
@@ -686,7 +811,7 @@
       { id:9, unit:'kinds', label:'Unit 02: Main Verb', q:"In 'I appreciate your performance', the verb 'appreciate' is classified as:", hi:"'I appreciate your performance' में 'appreciate' किस प्रकार की क्रिया है?", opts:["Helping Verb","Main Verb (having independent meaning and identity)","Dummy Verb","Conjunction"], ans:1, expl:"'appreciate' का अपना स्वतंत्र अर्थ (सराहना करना) है, अतः यह Main Verb है।" },
       { id:10, unit:'kinds', label:'Unit 02: Helping Verb', q:"In 'The students are reading their textbooks', what is the role of 'are'?", hi:"'The students are reading their textbooks' में 'are' क्या है?", opts:["Main Verb showing physical action","Helping Verb (Auxiliary) helping to form Present Continuous Tense","Direct Object","Complement"], ans:1, expl:"'are' सहायक क्रिया है जो 'reading' के साथ मिलकर Present Continuous Tense बनाती है।" },
       { id:11, unit:'kinds', label:'Unit 02: Transitive Object Test', q:"What question test proves that 'A lecturer delivers lectures' contains a Transitive verb?", hi:"कौन सा प्रश्न सिद्ध करता है कि 'A lecturer delivers lectures' में क्रिया सकर्मक है?", opts:["Delivers when?","Delivers what? → 'lectures' (Direct Object answered)","Delivers where?","Delivers why?"], ans:1, expl:"Delivers what? → 'lectures'। क्रिया से 'क्या' या 'किसे' पूछने पर Object मिलता है।" },
-      { id:12, unit:'kinds', label:'Unit 02: Intransitive Verb', q:"In 'Birds fly swiftly in the sky', why is 'fly' an Intransitive Verb?", hi:"'Birds fly swiftly in the sky' में 'fly' अकर्मक क्रिया क्यों है?", opts:["Because 'in the sky' is an adverbial phrase of place, and there is no direct object","Because birds fly high","Because fly is past tense","Because it takes two objects"], ans:0, expl:"'in the sky' स्थान बता रहा है, कोई कर्म (What/Whom) नहीं है। अतः 'fly' Intransitive है।" },
+      { id:12, unit:'kinds', label:'Unit 02: Intransitive Verb', q:"In 'Birds fly swiftly in the sky', why is 'fly' an Intransitive Verb?", hi:"'Birds fly swiftly in the sky' में 'fly' अकर्मक क्रिया क्यों है?", opts:["Because 'swiftly' is adverb of manner and 'in the sky' is adverbial of place (no object)","Because birds fly high","Because fly is irregular","Because it has two objects"], ans:0, expl:"'in the sky' स्थान बता रहा है, कोई कर्म (What/Whom) नहीं है। अतः 'fly' Intransitive है।" },
       { id:13, unit:'kinds', label:'Unit 02: Stopped Bus Shift', q:"Compare: (1) 'The driver stopped the bus.' vs (2) 'The bus stopped suddenly.'", hi:"(1) 'The driver stopped the bus.' vs (2) 'The bus stopped suddenly.' में 'stopped' क्रिया क्या है?", opts:["In (1) 'stopped' is Transitive; in (2) 'stopped' is Intransitive","In both sentences it is Transitive","In both sentences it is Intransitive","In (2) 'suddenly' is object"], ans:0, expl:"(1) में 'the bus' कर्म है अतः Transitive। (2) में 'suddenly' Adverb है अतः Intransitive।" },
       { id:14, unit:'kinds', label:'Unit 02: Rang Bell Contrast', q:"In 'The peon rang the bell', what is the role of 'the bell'?", hi:"'The peon rang the bell' में 'the bell' क्या है?", opts:["Subject","Direct Object of the transitive verb 'rang'","Adverb of manner","Auxiliary verb"], ans:1, expl:"Rang what? → 'the bell'। यह 'rang' क्रिया का Direct Object है।" },
       { id:15, unit:'kinds', label:'Unit 02: Smita Laughs', q:"In the textbook example 'Smita laughs', the action of laughing:", hi:"'Smita laughs' में हँसने की क्रिया का प्रभाव:", opts:["Passes over to an object","Remains confined to the subject Smita (Intransitive Verb)","Requires a helping verb","Is future tense"], ans:1, expl:"हँसने का प्रभाव कर्ता स्मिता तक सीमित रहता है, अतः यह Intransitive क्रिया है।" },
@@ -782,7 +907,7 @@
                 <div class="font-hi" style="font-size:11px; color:#4b5563; margin-bottom:6px;">👉 ${q.hi}</div>
                 <div class="choices-sm">${optsHtml}</div>
               </div>
-              <div style="margin-top:6px; pt-2; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+              <div style="margin-top:6px; padding-top:6px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
                 <div style="display:flex; gap:5px;">
                   <button class="mint-btn" type="button" style="font-size:10.5px; padding:3px 8px;" onclick="checkConceptQ(${q.id})">Check</button>
                   <button class="quiet-btn" type="button" style="font-size:10.5px; padding:3px 6px;" onclick="resetConceptQ(${q.id})">Reset</button>
@@ -832,7 +957,8 @@
     let secondsLeft = 15 * 60; // 900 seconds
 
     function scrollToTest() {
-      document.getElementById('test-arena').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function startExam() {
@@ -1080,7 +1206,7 @@
 
       resultsEl.innerHTML = `
         <div class="results-card">
-          <div class="score-banner">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; border-bottom:2px solid #a7f3d0; padding-bottom:14px; margin-bottom:18px;">
             <div>
               <span class="badge" style="font-size:11.5px;">30-Question Examination Results</span>
               <h2 style="font-size:26px; font-weight:900; margin:4px 0;">
