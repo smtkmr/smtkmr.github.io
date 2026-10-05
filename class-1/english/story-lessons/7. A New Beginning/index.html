@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Chapter 7: A New Beginning | Bilingual English-Hindi Kids Reader</title>
+  <meta name="description" content="Class 2 / Primary English Chapter 7: A New Beginning with sentence-by-sentence Hindi translation, simple explanations, vocabulary lists, audio, and 20-question 15-minute exam.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
+      --heading: 'Outfit', 'Quicksand', sans-serif;
+      --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
+      --bg: #f0fdf4;
+      --ink: #1f2937;
+      --brand: #059669;
+      --teal: #2dd4bf;
+      --yellow: #fde047;
+      --line: #34d399;
+      --button: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1120px; margin: auto; padding: 0 16px; }
+
+    /* Sticky Header */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 22px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-6deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 6px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 13px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      font-family: var(--heading);
+      font-size: 13px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      transition: all .15s;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-2px); }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 12px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
+
+    /* Hero */
+    .hero { padding: 28px 0 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 4px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(26px, 3.8vw, 46px); font-weight: 900; line-height: 1.15; margin: 10px 0 8px; font-family: var(--heading); }
+    h1 .green { color: var(--brand); }
+
+    /* Stanza / Paragraph Card */
+    .para-card { background: #fff; border: 2.5px solid #a7f3d0; border-radius: 20px; padding: 20px 22px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(16,185,129,0.06); }
+    .para-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    
+    .orig-text { background: #f8fafc; border-left: 4px solid var(--button); padding: 12px 16px; border-radius: 0 12px 12px 0; font-size: 15px; font-weight: 600; line-height: 1.7; margin-bottom: 16px; color: #1e293b; font-family: 'Comic Neue', sans-serif; }
+    
+    /* Sentences Breakdown */
+    .sentence-row { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .sentence-row:hover { border-color: var(--line); }
+    .sentence-num { background: #ecfdf5; color: var(--brand); font-weight: 900; font-size: 11px; padding: 2px 6px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; }
+    .audio-btn { background: #d1fae5; color: var(--brand); border-radius: 8px; width: 30px; height: 30px; display: grid; place-items: center; font-size: 13px; flex-shrink: 0; transition: transform 0.15s; }
+    .audio-btn:hover { background: var(--button); color: #fff; transform: scale(1.08); }
+
+    /* Explanation & Vocab */
+    .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 14px; padding: 12px 16px; margin: 16px 0; line-height: 1.7; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; margin: 14px 0; }
+    .vocab-card { background: #f0fdf4; border: 1px solid #a7f3d0; border-radius: 10px; padding: 10px 12px; font-size: 12px; }
+    .vocab-word { font-weight: 800; font-size: 13.5px; color: var(--brand); display: flex; justify-content: space-between; align-items: center; }
+
+    /* Concept 2-Question Pair Box (Strictly Non-overlapping) */
+    .concept-pair-box { margin-top: 18px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 16px; padding: 14px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; }
+    .pair-card { background: #fff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12.5px; }
+    
+    .choices-sm { display: grid; gap: 6px; margin: 8px 0; }
+    .choice-sm { display: flex; gap: 8px; align-items: center; padding: 7px 10px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; color: #78350f; font-weight: bold; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    
+    .q-actions-bar { margin-top: 10px; padding-top: 10px; border-top: 1.5px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .bilingual-expl-box { margin-top: 10px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 10px 12px; font-size: 12px; color: #1e3a8a; line-height: 1.6; }
+
+    /* Test Arena */
+    .test-section { margin-top: 36px; padding: 22px; }
+    .test-timer-bar { position: sticky; top: 68px; z-index: 35; background: rgba(255,255,255,0.98); border: 2.5px solid var(--line); border-radius: 14px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 19px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 12px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); gap: 5px; margin: 8px 0; }
+    .pal-btn { height: 32px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 8px; font-family: var(--heading); font-size: 11.5px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2.5px solid var(--brand); }
+
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 12px 14px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 8px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 22px; text-align: center; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header with Copy Code (No YouTube link) -->
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#stanza-1">1. School Things</a>
+        <a href="#stanza-2">2. Mixed Feelings</a>
+        <a href="#stanza-3">3. Teacher's Smile</a>
+        <a href="#rhyme-activity">Rhyme Game</a>
+      </nav>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="quiet-btn" type="button" onclick="copyFullCode(this)" style="background:#fff; border-color:#34d399; font-weight:800; padding:7px 12px;">
+          📋 Copy Code
+        </button>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()">
+          ⏱ 20-Q Exam (15m) →
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="top" class="wrap" style="padding-top:10px;">
+    
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div>
+        <div class="pill">
+          <span></span>
+          Class 2 / Primary English · Chapter 7: A New Beginning (Page 40)
+        </div>
+
+        <h1>
+          A New <span class="green">Beginning</span><br>
+          <span style="font-size:0.65em; font-weight:700; color:#374151;" class="font-hi">एक नई शुरुआत (स्कूल का पहला दिन)</span>
+        </h1>
+
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;" class="font-hi">
+          पाठ 7 की इस प्यारी कविता का <strong>प्रत्येक पंक्ति का सरल हिंदी अनुवाद</strong>, 
+          प्रत्येक पद (Stanza) का <strong>सरल भावार्थ</strong>, <strong>कठिन शब्दार्थ (Vocabulary List)</strong>, 
+          <strong>2-प्रश्नों का त्वरित अभ्यास (Bilingual Explanation)</strong> और अंत में <strong>15 मिनट का 20-प्रश्नों वाला टेस्ट</strong> उपलब्ध है।
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="mint-btn" href="#stanza-1">📖 Start Reading Poem →</a>
+          <button class="quiet-btn" type="button" onclick="scrollToTest()">
+            ⏱ Jump to 20-Question Exam
+          </button>
+        </div>
+      </div>
+
+      <!-- Before You Read Card (Textbook Page 40) -->
+      <div class="amber-card" style="padding:20px;">
+        <span class="badge" style="background:#fef3c7; color:#b45309; border-color:#fcd34d;">Before You Read · पढ़ने से पहले</span>
+        <div style="font-family:var(--heading); font-size:16px; font-weight:800; color:#92400e; margin:10px 0 6px;">
+          “It's the first day of school. With new things and mixed feelings, the child bravely steps into a classroom full of surprises.”
+        </div>
+        <p class="font-hi" style="font-size:13px; color:#78350f; background:#fff; padding:10px 12px; border-radius:10px; border:1px solid #fde68a; line-height:1.65;">
+          👉 <strong>सरल हिंदी भावार्थ:</strong> यह स्कूल का पहला दिन है। नई-नई चीज़ों और मिले-जुले अहसासों (उत्साह और थोड़ी झिझक) के साथ, बच्चा हिम्मत से एक ऐसी कक्षा में कदम रखता है जो आश्चर्यों और नए अनुभवों से भरी है।
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:10px; text-align:center; font-size:11px; font-weight:bold;">
+          <div style="background:#fff; padding:6px; border-radius:8px; border:1px solid #fde68a;">🎒 नया बस्ता</div>
+          <div style="background:#fff; padding:6px; border-radius:8px; border:1px solid #fde68a;">👟 चमकते जूते</div>
+          <div style="background:#fff; padding:6px; border-radius:8px; border:1px solid #fde68a;">✏️ हरा बॉक्स</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stanzas 1 to 3 Container -->
+    <div id="stanzas-container"></div>
+
+    <!-- Rhyming & Emotions Fun Activity -->
+    <section id="rhyme-activity" class="mint-card" style="padding:20px; margin-bottom:24px; background:#f0fdf4;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+        <div>
+          <span class="badge" style="background:#dcfce7; color:#15803d; border-color:#86efac;">Poem Activity</span>
+          <h2 style="font-size:20px; font-weight:900; margin-top:2px;">Rhyming Words &amp; Footnote Glossary</h2>
+          <div class="font-hi" style="font-size:12.5px; color:#475569;">तुकबंदी वाले शब्द (Rhymes) और किताब के आधिकारिक शब्दार्थ</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;">
+        <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px;">
+          <strong style="color:var(--brand); display:block; margin-bottom:4px;">🎵 Rhyme Pair 1:</strong>
+          <span style="font-size:15px; font-weight:800;">clean ⟷ green</span>
+          <p style="font-size:11.5px; color:#64748b; margin-top:2px;">(shoes shiny clean / pencil box green)</p>
+        </div>
+        <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px;">
+          <strong style="color:var(--brand); display:block; margin-bottom:4px;">🎵 Rhyme Pair 2:</strong>
+          <span style="font-size:15px; font-weight:800;">be ⟷ me</span>
+          <p style="font-size:11.5px; color:#64748b; margin-top:2px;">(desk will be / play with me)</p>
+        </div>
+        <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px;">
+          <strong style="color:var(--brand); display:block; margin-bottom:4px;">🎵 Rhyme Pair 3:</strong>
+          <span style="font-size:15px; font-weight:800;">while ⟷ smile</span>
+          <p style="font-size:11.5px; color:#64748b; margin-top:2px;">(stand for a while / great big smile)</p>
+        </div>
+        <div style="background:#fff; border:1.5px solid #fde68a; border-radius:12px; padding:12px;">
+          <strong style="color:#b45309; display:block; margin-bottom:4px;">📖 Book Footnotes (Page 40):</strong>
+          <div style="font-size:12px; line-height:1.6;">
+            • <strong>peek</strong> : see (झाँकना)<br>
+            • <strong>kind</strong> : type (तरह/प्रकार)<br>
+            • <strong>great</strong> : big (बहुत बड़ा)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final 20-Question 15-Minute Test Arena -->
+    <section id="test-arena" class="mint-card test-section">
+      
+      <!-- Test Idle Screen -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:12px; padding:4px 12px;">20 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:28px; font-weight:900; margin:10px 0;">Final 20-Question Comprehension Exam</h2>
+        <p class="font-hi" style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+          यह टेस्ट कविता की समझ, वस्तुओं के रंग, बच्चे की भावनाओं, तुकबंदी (Rhymes) और शब्दार्थ का मूल्यांकन करेगा। 
+          जैसे ही आप टेस्ट शुरू करेंगे, <strong>15 मिनट का टाइमर (15:00)</strong> चालू हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:15px; padding:12px 28px;">
+          🚀 Start 20-Question Exam Now (15:00 Timer)
+        </button>
+      </div>
+
+      <!-- Test Running Screen -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:13px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 20 · Left: <span id="left-count">20</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:12px; padding:6px 14px;">
+            Submit Exam ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px;">
+            <span>Question Palette (1 to 20):</span>
+            <div style="display:flex; gap:8px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="mint-card" style="padding:18px; border-width:2px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span class="badge" id="current-q-category">Comprehension</span>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 20</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:13px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:8px 12px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:1px solid #e2e8f0; flex-wrap:wrap; gap:8px;">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Results Screen -->
+      <div id="test-results-view" style="display:none;"></div>
+    </section>
+
+  </main>
+
+  <!-- Submit Warning Modal -->
+  <div class="modal-overlay" id="submit-modal" style="display:none;">
+    <div class="modal-box">
+      <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
+      <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
+      <p class="font-hi" style="font-size:13px; color:#475569; margin-bottom:14px;" id="modal-msg"></p>
+      <div style="display:flex; justify-content:center; gap:8px;">
+        <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Exam</button>
+        <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (No YouTube link) -->
+  <footer style="background:#fff; border-top:2px solid #a7f3d0; padding:24px 0; margin-top:40px;">
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12.5px; color:#64748b;">
+      <div>
+        <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+        Class 2 / Primary English · Chapter 7: A New Beginning (एक नई शुरुआत)
+      </div>
+      <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand); align-items:center;">
+        <button class="quiet-btn" type="button" onclick="copyFullCode(this)">📋 Copy Full HTML Code</button>
+        <a href="#stanza-1">Poem</a>
+        <a href="#test-arena">20-Q Exam</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="root" style="display:none;"></div>
+
+  <!-- JavaScript Logic for Chapter 7 -->
+  <script>
+    // Chapter 7: A New Beginning (Exact Textbook Content)
+    const poemStanzas = [
+      {
+        id: 1,
+        titleEn: "Stanza 1: New School Things & Excitement",
+        titleHi: "पद 1: स्कूल की नई वस्तुएँ और बच्चे का उत्साह",
+        badge: "तैयारी व खुशी (Excitement)",
+        textbookEn: "I've got a brand-new lunchbox.\nMy shoes are shiny clean.\nI've got a cool, new bookbag\nAnd a pencil box that's green.",
+        sentences: [
+          { en: "I've got a brand-new lunchbox.", hi: "मेरे पास बिल्कुल नया टिफ़िन बॉक्स (लंचबॉक्स) है।" },
+          { en: "My shoes are shiny clean.", hi: "मेरे जूते एकदम साफ़ और चमकदार हैं।" },
+          { en: "I've got a cool, new bookbag", hi: "मेरे पास एक बहुत बढ़िया (कूल) और नया बस्ता (स्कूल बैग) है।" },
+          { en: "And a pencil box that's green.", hi: "और एक हरे रंग का पेंसिल बॉक्स भी है।" }
+        ],
+        explHi: "स्कूल के पहले दिन बच्चा अपनी नई-नई चीज़ों को लेकर बेहद खुश और उत्साहित है। उसके पास एक नया टिफिन बॉक्स है, उसके स्कूल के जूते बिल्कुल साफ़ और चमकदार हैं, एक फैशनेबल और नया बस्ता है और हरे रंग का सुंदर पेंसिल बॉक्स है। यह सभी नई चीज़ें बच्चे को स्कूल जाने के लिए प्रेरित करती हैं।",
+        vocab: [
+          { word: "brand-new", pos: "Adjective", hi: "बिल्कुल नया", en: "Completely new, unused" },
+          { word: "shiny clean", pos: "Adjective", hi: "चमकदार और साफ़", en: "Bright, polished, and spotless" },
+          { word: "cool", pos: "Adjective", hi: "शानदार / आकर्षक", en: "Fashionable, attractive, great" },
+          { word: "bookbag", pos: "Noun", hi: "बस्ता / स्कूल बैग", en: "A bag used by students for books" },
+          { word: "pencil box", pos: "Noun", hi: "पेंसिल बॉक्स / डिब्बा", en: "A container for pencils and pens" }
+        ],
+        questions: [
+          {
+            id: 101,
+            qEn: "What color is the child's pencil box in Stanza 1?",
+            qHi: "पहले पद में बच्चे के पेंसिल बॉक्स का रंग कौन सा है?",
+            opts: ["Blue", "Green", "Yellow", "Red"],
+            ans: 1,
+            explEn: "The poem explicitly states in line 4: 'And a pencil box that's green.'",
+            explHi: "कविता की चौथी पंक्ति में साफ़ लिखा है: 'And a pencil box that's green' (पेंसिल बॉक्स हरे रंग का है)।"
+          },
+          {
+            id: 102,
+            qEn: "How are the child's shoes described on the first day of school?",
+            qHi: "स्कूल के पहले दिन बच्चे के जूतों का वर्णन कैसे किया गया है?",
+            opts: ["Muddy and dusty", "Old and torn", "Shiny clean", "Too tight to wear"],
+            ans: 2,
+            explEn: "Line 2 describes the shoes: 'My shoes are shiny clean.'",
+            explHi: "दूसरी पंक्ति में लिखा है: 'My shoes are shiny clean' (जूते एकदम साफ़ और चमकदार हैं)।"
+          }
+        ]
+      },
+      {
+        id: 2,
+        titleEn: "Stanza 2: The Child's Doubts & Mixed Feelings",
+        titleHi: "पद 2: बच्चे के मन की झिझक व चिंताएँ",
+        badge: "मिले-जुले अहसास (Mixed Feelings)",
+        textbookEn: "But I don't know my teacher,\nOr where my desk will be.\nI don't know if I'll like the kids,\nOr if they'll play with me.",
+        sentences: [
+          { en: "But I don't know my teacher,", hi: "लेकिन मैं अपने नए शिक्षक (टीचर) को नहीं जानता," },
+          { en: "Or where my desk will be.", hi: "या फिर कक्षा में मेरी मेज़ (डेस्क) कहाँ होगी।" },
+          { en: "I don't know if I'll like the kids,", hi: "मुझे नहीं पता कि मुझे बाकी बच्चे पसंद आएँगे या नहीं," },
+          { en: "Or if they'll play with me.", hi: "या फिर वे मेरे साथ खेलेंगे भी या नहीं।" }
+        ],
+        explHi: "नई चीज़ों की खुशी के साथ-साथ बच्चे के मन में नए माहौल को लेकर हल्की सी घबराहट और चिंता भी है। वह अभी तक अपने नए शिक्षक से नहीं मिला है, उसे नहीं पता कि कमरे में उसे किस बेंच पर बैठना होगा। उसे यह भी फिक्र है कि क्लास के अन्य सहपाठी कैसे होंगे—क्या वे उससे दोस्ती करेंगे और खेलेंगे? स्कूल के पहले दिन यह स्वाभाविक है।",
+        vocab: [
+          { word: "teacher", pos: "Noun", hi: "शिक्षक / अध्यापिका", en: "A person who teaches students" },
+          { word: "desk", pos: "Noun", hi: "मेज़ / डेस्क", en: "A piece of furniture used for study" },
+          { word: "kids", pos: "Noun", hi: "बच्चे / सहपाठी", en: "Children or schoolmates" },
+          { word: "play", pos: "Verb", hi: "खेलना", en: "Engage in fun games and activities" }
+        ],
+        questions: [
+          {
+            id: 201,
+            qEn: "What doubts does the child have about the other children in class?",
+            qHi: "कक्षा के अन्य बच्चों के बारे में बच्चे के मन में क्या संशय है?",
+            opts: [
+              "Whether he'll like them and if they'll play with him",
+              "Whether they have brought heavy bookbags",
+              "Whether they speak a foreign language",
+              "Whether they know his home address"
+            ],
+            ans: 0,
+            explEn: "The child wonders: 'I don't know if I'll like the kids, Or if they'll play with me.'",
+            explHi: "बच्चा सोचता है कि क्या वह बच्चों को पसंद करेगा और क्या वे उसके साथ खेलेंगे।"
+          },
+          {
+            id: 202,
+            qEn: "Which two words rhyme at the end of lines 2 and 4 in Stanza 2?",
+            qHi: "दूसरे पद की दूसरी और चौथी पंक्ति के अंत में कौन से दो तुकबंदी (Rhyming) वाले शब्द आते हैं?",
+            opts: ["clean and green", "while and smile", "desk and kids", "be and me"],
+            ans: 3,
+            explEn: "Line 2 ends with 'be' and Line 4 ends with 'me' (be / me rhyme).",
+            explHi: "पंक्ति 2 'be' और पंक्ति 4 'me' पर समाप्त होती है, जो आपस में तुकबंदी (Rhyme) बनाते हैं।"
+          }
+        ]
+      },
+      {
+        id: 3,
+        titleEn: "Stanza 3: Peeking Inside & The Teacher's Big Smile",
+        titleHi: "पद 3: कक्षा में झाँकना और शिक्षिका का मुस्कान भरा स्वागत",
+        badge: "मुस्कान भरा स्वागत (Warm Welcome)",
+        textbookEn: "I peek inside my classroom.\nI stand there for a while.\nMy teacher is tall and kind of loud,\nBut has a great big smile.",
+        sentences: [
+          { en: "I peek inside my classroom.", hi: "मैं अपनी कक्षा (क्लासरूम) के अंदर धीरे से झाँकता हूँ।" },
+          { en: "I stand there for a while.", hi: "मैं थोड़ी देर के लिए वहीं चौखट पर खड़ा रहता हूँ।" },
+          { en: "My teacher is tall and kind of loud,", hi: "मेरी शिक्षिका लंबी हैं और उनकी आवाज़ थोड़ी तेज़ (बुलंद) है," },
+          { en: "But has a great big smile.", hi: "लेकिन उनके चेहरे पर एक बहुत बड़ी, प्यारी और आत्मीय मुस्कान है।" }
+        ],
+        explHi: "कक्षा के दरवाजे पर पहुँचकर बच्चा झिझकते हुए अंदर झाँकता है और थोड़ी देर वहीं रुकता है। वह देखता है कि उसकी शिक्षिका काफी लंबी हैं और उनकी आवाज़ थोड़ी बुलंद (loud) है। लेकिन जैसे ही शिक्षिका बच्चे को देखती हैं, उनके चेहरे पर एक बेहद स्नेहिल और बड़ी सी मुस्कान खिल उठती है। उस प्यारी मुस्कान को देखकर बच्चे का सारा डर मिट जाता है।",
+        vocab: [
+          { word: "peek", pos: "Verb", hi: "झाँकना / देखना", en: "To look quickly or cautiously; see (as per footnote)" },
+          { word: "for a while", pos: "Phrase", hi: "थोड़ी देर के लिए", en: "For a short time" },
+          { word: "tall", pos: "Adjective", hi: "लंबा / ऊँचा", en: "Of great height" },
+          { word: "kind of", pos: "Phrase", hi: "थोड़ा सा / तरह का", en: "Somewhat; type (as per footnote)" },
+          { word: "loud", pos: "Adjective", hi: "बुलंद / तेज़ आवाज़ वाला", en: "Easily heard, powerful voice" },
+          { word: "great", pos: "Adjective", hi: "बहुत बड़ा / शानदार", en: "Big, wonderful (as per footnote)" },
+          { word: "smile", pos: "Noun", hi: "मुस्कान", en: "A friendly facial expression" }
+        ],
+        questions: [
+          {
+            id: 301,
+            qEn: "What action does the child take before entering the classroom?",
+            qHi: "कक्षा में प्रवेश करने से ठीक पहले बच्चा क्या करता है?",
+            opts: [
+              "He runs back home immediately",
+              "He peeks inside and stands for a while",
+              "He knocks on the door three times",
+              "He cries loudly outside the gate"
+            ],
+            ans: 1,
+            explEn: "The child says: 'I peek inside my classroom. I stand there for a while.'",
+            explHi: "बच्चा कहता है कि वह कमरे के अंदर झाँकता है (peeks inside) और थोड़ी देर वहीं रुकता है।"
+          },
+          {
+            id: 302,
+            qEn: "According to the textbook footnote, what does the word 'peek' mean?",
+            qHi: "पाठ्यपुस्तक के फुटनोट के अनुसार 'peek' शब्द का क्या अर्थ है?",
+            opts: ["hear", "jump", "see", "run"],
+            ans: 2,
+            explEn: "The footnote on page 40 explicitly defines: 'peek : see'.",
+            explHi: "पेज 40 के फुटनोट में स्पष्ट दिया गया है: 'peek : see' (देखना)।"
+          }
+        ]
+      }
+    ];
+
+    // Final 20-Question Exam on Chapter 7: A New Beginning (Evenly distributed A, B, C, D)
+    const testQuestions = [
+      { id:1, cat:"Comprehension", q:"What is the title of Chapter 7 on page 40 of the textbook?", hi:"पाठ्यपुस्तक के पृष्ठ 40 पर अध्याय 7 का शीर्षक क्या है?", opts:["The Bond of Friendship","My Classroom Desk","A New Beginning","The Green Pencil Box"], ans:2, explEn:"The title at the top of page 40 is 'A New Beginning'.", explHi:"पृष्ठ 40 पर पाठ का शीर्षक 'A New Beginning' (एक नई शुरुआत) है।" },
+      { id:2, cat:"Comprehension", q:"What special occasion in a child's life is described in this poem?", hi:"इस कविता में बच्चे के जीवन के किस विशेष दिन का वर्णन किया गया है?", opts:["The first day of school","Annual sports day","Summer holiday trip","Birthday party celebration"], ans:0, explEn:"The Before You Read section states: 'It's the first day of school.'", explHi:"'Before You Read' में स्पष्ट लिखा है: यह स्कूल का पहला दिन है।" },
+      { id:3, cat:"Comprehension", q:"What kind of lunchbox does the child carry?", hi:"बच्चे के पास किस प्रकार का लंचबॉक्स है?", opts:["A heavy steel tiffin","An old painted box","A wooden lunchbox","A brand-new lunchbox"], ans:3, explEn:"Line 1 states: 'I've got a brand-new lunchbox.'", explHi:"पहली पंक्ति में लिखा है: 'I've got a brand-new lunchbox' (बिल्कुल नया लंचबॉक्स)।" },
+      { id:4, cat:"Comprehension", q:"What color is the child's pencil box?", hi:"बच्चे के पेंसिल बॉक्स का रंग क्या है?", opts:["Bright yellow","Green","Dark blue","Sparkling silver"], ans:1, explEn:"Line 4 mentions: 'And a pencil box that's green.'", explHi:"चौथी पंक्ति में उल्लेख है: 'And a pencil box that's green' (हरे रंग का पेंसिल बॉक्स)।" },
+      { id:5, cat:"Vocabulary", q:"What does 'brand-new' mean?", hi:"'brand-new' का क्या अर्थ है?", opts:["Painted red","Second-hand","Completely new and unused","Very expensive"], ans:2, explEn:"'Brand-new' means entirely new and unused.", explHi:"'brand-new' का अर्थ बिल्कुल नया होता है।" },
+      { id:6, cat:"Comprehension", q:"How are the child's shoes described in Stanza 1?", hi:"पहले पद में बच्चे के जूतों का वर्णन कैसे किया गया है?", opts:["Shiny clean","Dusty and wet","Old and loose","Tight and uncomfortable"], ans:0, explEn:"Line 2 says: 'My shoes are shiny clean.'", explHi:"दूसरी पंक्ति में कहा गया है: 'My shoes are shiny clean' (जूते चमकदार और साफ़ हैं)।" },
+      { id:7, cat:"Comprehension", q:"What adjective is used to describe the child's new bookbag?", hi:"बच्चे के नए बस्ते (bookbag) के लिए किस विशेषण का प्रयोग हुआ है?", opts:["heavy","tiny","colorful","cool"], ans:3, explEn:"Line 3 reads: 'I've got a cool, new bookbag'.", explHi:"तीसरी पंक्ति में लिखा है: 'I've got a cool, new bookbag' (शानदार और नया बस्ता)।" },
+      { id:8, cat:"Poetic Rhyme", q:"Which word rhymes with 'clean' in Stanza 1?", hi:"पहले पद में 'clean' शब्द के साथ कौन सा शब्द तुकबंदी (Rhyme) बनाता है?", opts:["loud","green","desk","smile"], ans:1, explEn:"'clean' and 'green' rhyme at the ends of lines 2 and 4.", explHi:"'clean' और 'green' दोनों में समान ध्वनि (rhyme) है।" },
+      { id:9, cat:"Emotions & Theme", q:"What is the child unsure about regarding the teacher in Stanza 2?", hi:"कक्षा में जाने से पहले बच्चे को शिक्षक के बारे में क्या संशय है?", opts:["The teacher's subject","The teacher's age","He doesn't know his teacher yet","The teacher's car"], ans:2, explEn:"Stanza 2 starts with: 'But I don't know my teacher'.", explHi:"पद 2 की शुरुआत है: 'But I don't know my teacher' (मैं शिक्षक को नहीं जानता)।" },
+      { id:10, cat:"Emotions & Theme", q:"What question does the child have about the classroom setup?", hi:"कक्षा में बैठने के स्थान को लेकर बच्चा किस बात को लेकर असमंजस में है?", opts:["If blackboard is painted","Where his desk will be","How high the windows are","If chairs are cushioned"], ans:1, explEn:"Line 6 states: 'Or where my desk will be.'", explHi:"पंक्ति 6 में लिखा है: 'Or where my desk will be' (कक्षा में मेरी डेस्क कहाँ होगी)।" },
+      { id:11, cat:"Emotions & Theme", q:"What does the child wonder about his new classmates?", hi:"अपने नए सहपाठियों के बारे में बच्चा क्या सोचता है?", opts:["If they will take his pencil box","If they brought heavy books","If they live near his home","If he will like them and if they will play with him"], ans:3, explEn:"The child wonders if he'll like the kids and if they'll play with him.", explHi:"बच्चा सोचता है कि क्या वह उन्हें पसंद करेगा और क्या वे उसके साथ खेलेंगे।" },
+      { id:12, cat:"Poetic Rhyme", q:"Which word rhymes with 'be' in Stanza 2?", hi:"दूसरे पद में 'be' के साथ कौन सा शब्द तुकबंदी बनाता है?", opts:["me","while","clean","loud"], ans:0, explEn:"Lines 6 and 8 rhyme with 'be' and 'me'.", explHi:"पंक्ति 6 ('be') और पंक्ति 8 ('me') तुकबंदी वाले शब्द हैं।" },
+      { id:13, cat:"Vocabulary", q:"According to the textbook footnote, what is the meaning of 'peek'?", hi:"पाठ्यपुस्तक के फुटनोट के अनुसार 'peek' का क्या अर्थ है?", opts:["type","big","see","smile"], ans:2, explEn:"The textbook footnote clearly gives: 'peek : see'.", explHi:"किताब के नीचे फुटनोट में साफ़ दिया है: 'peek : see' (देखना)।" },
+      { id:14, cat:"Comprehension", q:"What does the child do when he reaches the classroom door in Stanza 3?", hi:"पद 3 में कक्षा के दरवाजे पर बच्चा क्या करता है?", opts:["Runs away in fear","Peeks inside and stands for a while","Shouts aloud for help","Knocks five times"], ans:1, explEn:"The poem says: 'I peek inside my classroom. I stand there for a while.'", explHi:"कविता कहती है: 'I peek inside my classroom. I stand there for a while.'" },
+      { id:15, cat:"Vocabulary", q:"According to the textbook footnote, what does 'kind' mean in 'kind of loud'?", hi:"'kind of loud' में फुटनोट के अनुसार 'kind' का क्या अर्थ है?", opts:["gentle","friendly","polite","type"], ans:3, explEn:"The footnote defines: 'kind : type'.", explHi:"फुटनोट में 'kind : type' (तरह/प्रकार) दिया गया है।" },
+      { id:16, cat:"Comprehension", q:"How is the teacher's physical appearance and voice described?", hi:"शिक्षिका के कद और आवाज़ का वर्णन कैसे किया गया है?", opts:["Tall and kind of loud","Short and quiet","Angry and fierce","Weak and whispery"], ans:0, explEn:"Line 11 describes: 'My teacher is tall and kind of loud'.", explHi:"पंक्ति 11 में कहा गया है: 'My teacher is tall and kind of loud'।" },
+      { id:17, cat:"Vocabulary", q:"According to the textbook footnote, what does 'great' mean in 'great big smile'?", hi:"'great big smile' में फुटनोट के अनुसार 'great' का क्या अर्थ है?", opts:["loud","green","big","gentle"], ans:2, explEn:"The footnote on page 40 notes: 'great : big'.", explHi:"पेज 40 के फुटनोट में लिखा है: 'great : big' (बड़ा)।" },
+      { id:18, cat:"Emotions & Theme", q:"What reassuring feature of the teacher takes away the child's fear?", hi:"कविता के अंत में बच्चे को क्या चीज़ ढाढ़स और खुशी देती है?", opts:["Her tall height","Her great big smile","Her loud voice","Her school bell"], ans:1, explEn:"The teacher's 'great big smile' reassures the child and takes away his fear.", explHi:"शिक्षिका की बड़ी और स्नेहिल मुस्कान बच्चे के डर को दूर कर देती है।" },
+      { id:19, cat:"Poetic Rhyme", q:"Which word rhymes with 'while' in Stanza 3?", hi:"तीसरे पद में 'while' के साथ कौन सा शब्द तुकबंदी बनाता है?", opts:["clean","green","desk","smile"], ans:3, explEn:"Line 10 'while' rhymes with Line 12 'smile'.", explHi:"'while' और 'smile' तुकबंदी वाले शब्द हैं।" },
+      { id:20, cat:"Moral & Values", q:"What is the primary moral or central theme of 'A New Beginning'?", hi:"'A New Beginning' कविता छोटे बच्चों को क्या संदेश देती है?", opts:[
+        "New beginnings can feel scary at first, but stepping forward with courage leads to friendly smiles and happy surprises",
+        "School bags should always be green in color",
+        "Never talk to new classmates on the first day",
+        "One should only go to school if shoes are shiny clean"
+      ], ans:0, explEn:"The poem teaches that initial hesitation turns into joy through bravery and welcoming warmth.", explHi:"कविता सिखाती है कि नई शुरुआत में थोड़ी घबराहट स्वाभाविक है, पर साहस से कदम बढ़ाने पर सुंदर अनुभव मिलते हैं।" }
+    ];
+
+    // Text to Speech
+    function speakText(txt, lang = 'en-US') {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const clean = txt.replace(/[“”"']/g, '');
+        const u = new SpeechSynthesisUtterance(clean);
+        u.lang = lang;
+        u.rate = 0.85;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    // State for Quick Check Questions
+    const qUserAnswers = {};
+    const qChecked = {};
+    const qExplVisible = {};
+
+    function renderStanzas() {
+      const container = document.getElementById('stanzas-container');
+      let html = '';
+
+      poemStanzas.forEach(p => {
+        let sentHtml = '';
+        p.sentences.forEach((s, idx) => {
+          sentHtml += `
+            <div class="sentence-row">
+              <div style="display:flex; gap:8px; align-items:flex-start;">
+                <span class="sentence-num">${p.id}.${idx+1}</span>
+                <div>
+                  <div style="font-weight:700; color:#0f172a; font-size:14.5px;">${s.en}</div>
+                  <div class="font-hi" style="color:#065f46; font-weight:600; font-size:13.5px; margin-top:2px;">👉 ${s.hi}</div>
+                </div>
+              </div>
+              <button class="audio-btn" type="button" title="Listen" onclick="speakText('${s.en.replace(/'/g, "\\'")}')">🔊</button>
+            </div>
+          `;
+        });
+
+        let vocabHtml = '';
+        p.vocab.forEach(v => {
+          vocabHtml += `
+            <div class="vocab-card">
+              <div class="vocab-word">
+                <span>${v.word}</span>
+                <span style="font-size:10px; color:#059669; background:#fff; padding:1px 5px; border-radius:4px; border:1px solid #a7f3d0;">${v.pos}</span>
+              </div>
+              <div class="font-hi" style="font-weight:700; color:#1e293b; margin-top:3px;">अर्थ: <span style="color:#059669;">${v.hi}</span></div>
+              <div style="color:#64748b; font-size:11px;">Meaning: ${v.en}</div>
+            </div>
+          `;
+        });
+
+        let qsHtml = '';
+        p.questions.forEach(q => {
+          const userSel = qUserAnswers[q.id];
+          const isChk = qChecked[q.id];
+          const isRight = userSel === q.ans;
+          const showExpl = qExplVisible[q.id];
+
+          let optsHtml = '';
+          q.opts.forEach((opt, oIdx) => {
+            let oCls = 'choice-sm';
+            if (userSel === oIdx) oCls += ' selected';
+            if (isChk) {
+              if (oIdx === q.ans) oCls += ' right-choice';
+              else if (userSel === oIdx) oCls += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oCls}" onclick="selectQuickOpt(${q.id}, ${oIdx})">
+                <span style="width:20px; height:20px; border-radius:5px; background:#fff; border:1px solid #94a3b8; display:grid; place-items:center; font-size:10px; font-weight:800; flex-shrink:0;">${String.fromCharCode(65+oIdx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
+          });
+
+          let statusTag = '';
+          if (isChk) {
+            statusTag = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:11.5px;">✓ सही उत्तर!</span>` 
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:11.5px;">✕ सही उत्तर: (${String.fromCharCode(65+q.ans)})</span>`;
+          }
+
+          qsHtml += `
+            <div class="pair-card">
+              <div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <strong style="color:var(--brand); font-size:11.5px;">प्रश्न Q${q.id % 100}</strong>
+                  ${statusTag}
+                </div>
+                <div style="font-weight:700; line-height:1.35; margin-bottom:3px;">${q.qEn}</div>
+                <div class="font-hi" style="font-size:12px; color:#4b5563; margin-bottom:6px;">👉 ${q.qHi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+
+              <!-- Fixed non-overlapping action controls -->
+              <div class="q-actions-bar">
+                <div style="display:flex; gap:6px;">
+                  <button class="mint-btn" type="button" style="font-size:11px; padding:4px 10px;" onclick="checkQuickQ(${q.id})">Check Answer</button>
+                  <button class="quiet-btn" type="button" style="font-size:11px; padding:4px 8px;" onclick="resetQuickQ(${q.id})">Reset</button>
+                </div>
+                <button class="quiet-btn" type="button" style="font-size:11px; padding:4px 8px;" onclick="toggleQuickExpl(${q.id})">
+                  ${showExpl ? '▲ Hide' : '📖 व्याख्या (Explanation)'}
+                </button>
+              </div>
+
+              <!-- Full Width Bilingual Explanation Box -->
+              ${showExpl ? `
+                <div class="bilingual-expl-box">
+                  <div style="font-weight:bold; margin-bottom:3px;">📖 हिंदी व्याख्या:</div>
+                  <div class="font-hi" style="margin-bottom:6px; color:#1e3a8a;">${q.explHi}</div>
+                  <div style="font-weight:bold; margin-bottom:2px; border-top:1px solid #bfdbfe; padding-top:4px;">🇬🇧 English Explanation:</div>
+                  <div style="color:#334155;">${q.explEn}</div>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+
+        html += `
+          <article id="stanza-${p.id}" class="para-card">
+            <div class="para-header">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="width:32px; height:32px; border-radius:8px; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:900; font-size:14px;">${p.id}</span>
+                <div>
+                  <span class="badge">${p.badge}</span>
+                  <h2 style="font-size:18px; font-weight:900; margin-top:2px;">${p.titleEn}</h2>
+                  <div class="font-hi" style="font-size:12.5px; color:#4b5563; font-weight:bold;">${p.titleHi}</div>
+                </div>
+              </div>
+              <button class="quiet-btn" type="button" onclick="speakText('${p.textbookEn.replace(/\n/g, ' ').replace(/'/g, "\\'")}')">🔊 Listen Stanza</button>
+            </div>
+
+            <div class="orig-text">
+              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:#059669; display:block; margin-bottom:4px;">Textbook Stanza (मूल कविता):</span>
+              <pre style="font-family:inherit; white-space:pre-wrap; margin:0;">${p.textbookEn}</pre>
+            </div>
+
+            <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:var(--brand); margin-bottom:8px;">
+              📝 Line-by-Line Bilingual Translation (पंक्ति-दर-पंक्ति अनुवाद):
+            </div>
+            ${sentHtml}
+
+            <div class="easy-hi">
+              <strong>💡 सरल हिंदी भावार्थ (Poem Meaning for Kids):</strong><br>
+              ${p.explHi}
+            </div>
+
+            <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:var(--brand); margin:12px 0 6px;">
+              📚 शब्दावली सूची (Vocabulary List):
+            </div>
+            <div class="vocab-grid">${vocabHtml}</div>
+
+            <div class="concept-pair-box">
+              <div class="pair-header">
+                <span>✦ पद अभ्यास: 2 त्वरित प्रश्न (Stanza ${p.id} Quick Check)</span>
+                <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Bilingual Explanation</span>
+              </div>
+              <div class="pair-grid">${qsHtml}</div>
+            </div>
+          </article>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function selectQuickOpt(qId, idx) {
+      qUserAnswers[qId] = idx;
+      qChecked[qId] = false;
+      renderStanzas();
+    }
+
+    function checkQuickQ(qId) {
+      if (qUserAnswers[qId] === undefined) {
+        alert("कृपया पहले किसी एक विकल्प को चुनें!");
+        return;
+      }
+      qChecked[qId] = true;
+      qExplVisible[qId] = true;
+      renderStanzas();
+    }
+
+    function resetQuickQ(qId) {
+      delete qUserAnswers[qId];
+      delete qChecked[qId];
+      delete qExplVisible[qId];
+      renderStanzas();
+    }
+
+    function toggleQuickExpl(qId) {
+      qExplVisible[qId] = !qExplVisible[qId];
+      renderStanzas();
+    }
+
+    // ==========================================
+    // 20-QUESTION 15-MINUTE TEST LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60;
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true);
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(secondsLeft / 60);
+      const secs = secondsLeft % 60;
+      const el = document.getElementById('timer-display');
+      el.innerText = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      if (secondsLeft <= 120) el.classList.add('urgent');
+      else el.classList.remove('urgent');
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('palette-container');
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let pClass = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) pClass += ' attempted';
+        if (testReview[q.id]) pClass += ' review';
+        if (currentIdx === idx) pClass += ' active';
+        html += `<div class="${pClass}" onclick="jumpToQ(${idx})">${q.id}</div>`;
+      });
+      container.innerHTML = html;
+
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').innerText = attempted;
+      document.getElementById('left-count').innerText = testQuestions.length - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-category').innerText = q.cat;
+      document.getElementById('q-counter').innerText = `Q ${q.id} of ${testQuestions.length}`;
+      document.getElementById('current-q-title').innerText = `Q${q.id}. ${q.q}`;
+      document.getElementById('current-q-hindi').innerText = `👉 ${q.hi}`;
+
+      const revBtn = document.getElementById('review-btn');
+      revBtn.innerText = testReview[q.id] ? '🚩 Marked for Review' : '🚩 Mark for Review';
+      revBtn.style.background = testReview[q.id] ? '#fef3c7' : '#fff';
+
+      const userSel = testAnswers[q.id];
+      let optsHtml = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = userSel === idx;
+        optsHtml += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span style="width:24px; height:24px; border-radius:6px; font-size:11px; font-weight:800; border:1px solid #94a3b8; display:grid; place-items:center; ${isSel ? 'background:var(--button); color:#fff; border-color:var(--brand);' : 'background:#fff;'}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      document.getElementById('current-q-options').innerHTML = optsHtml;
+      document.getElementById('prev-btn').disabled = (currentIdx === 0);
+      document.getElementById('next-btn').innerText = (currentIdx === testQuestions.length - 1) ? 'Finish / Submit' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, optIdx) {
+      testAnswers[qId] = optIdx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function nextQuestion() {
+      if (currentIdx < testQuestions.length - 1) {
+        currentIdx++;
+        renderPalette();
+        renderCurrentQ();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderPalette();
+        renderCurrentQ();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = testQuestions.length - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `आपने 20 में से केवल <strong>${attempted} प्रश्न हल किए हैं</strong> (${left} प्रश्न अभी शेष हैं)। क्या आप सचमुच सबमिट करना चाहते हैं?`;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(autoSubmitted) {
+      closeModal();
+      if (testTimer) clearInterval(testTimer);
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsEl = document.getElementById('test-results-view');
+      resultsEl.style.display = 'block';
+
+      let score = 0;
+      testQuestions.forEach(q => {
+        if (testAnswers[q.id] === q.ans) score++;
+      });
+
+      const accuracy = Math.round((score / testQuestions.length) * 100);
+      const timeSpentSecs = (15 * 60) - secondsLeft;
+      const timeStr = `${Math.floor(timeSpentSecs / 60)}m ${timeSpentSecs % 60}s`;
+
+      let reviewHtml = '';
+      testQuestions.forEach(q => {
+        const u = testAnswers[q.id];
+        const isRight = u === q.ans;
+        const isSkipped = u === undefined;
+
+        reviewHtml += `
+          <div style="border:1.5px solid ${isRight ? '#a7f3d0' : '#fca5a5'}; border-radius:12px; padding:12px; margin-bottom:10px; background:${isRight ? '#f0fdf4' : '#fff5f5'}; font-size:12.5px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:11.5px;">
+              <span class="badge">${q.cat}</span>
+              <span style="font-weight:bold; color:${isRight ? '#15803d' : '#b91c1c'};">
+                ${isRight ? '✓ Correct (+1)' : isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)'}
+              </span>
+            </div>
+            <div style="font-weight:bold; font-size:13px;">Q${q.id}. ${q.q}</div>
+            <div class="font-hi" style="font-size:12px; color:#475569; margin:2px 0 6px;">👉 ${q.hi}</div>
+            <div style="font-size:12px; margin-bottom:6px;">
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">(${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+              ${!isRight && !isSkipped ? `<br><strong>Your Choice:</strong> <span style="color:#b91c1c;">(${String.fromCharCode(65 + u)}) ${q.opts[u]}</span>` : ''}
+            </div>
+            
+            <!-- Bilingual Explanation in Result Review -->
+            <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px 10px; font-size:12px; line-height:1.6;">
+              <div class="font-hi" style="color:#065f46; font-weight:bold; margin-bottom:2px;">📖 हिंदी व्याख्या: ${q.explHi}</div>
+              <div style="color:#334155; font-size:11.5px;">🇬🇧 English: ${q.explEn}</div>
+            </div>
+          </div>
+        `;
+      });
+
+      resultsEl.innerHTML = `
+        <div style="background:#fff; border-radius:16px; padding:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:2px solid #a7f3d0; padding-bottom:12px; margin-bottom:16px;">
+            <div>
+              <span class="badge">20-Question Exam Results</span>
+              <h2 style="font-size:26px; font-weight:900; margin:4px 0; color:var(--brand);">
+                Your Score: ${score} / 20
+              </h2>
+              <p style="font-size:12.5px; color:#475569;">
+                Accuracy: <strong>${accuracy}%</strong> · Time Taken: <strong>${timeStr}</strong>
+                ${autoSubmitted ? ' · <span style="color:#dc2626; font-weight:bold;">(Auto Submitted)</span>' : ''}
+              </p>
+            </div>
+            <button class="mint-btn" type="button" onclick="startExam()">🔄 Retake Exam</button>
+          </div>
+
+          <h3 style="font-size:16px; font-weight:900; margin-bottom:12px;">Detailed Question Review with Bilingual Explanations:</h3>
+          <div>${reviewHtml}</div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    function copyFullCode(btn) {
+      const fullDoc = "<!doctype html>\n" + document.documentElement.outerHTML;
+      navigator.clipboard.writeText(fullDoc).then(() => {
+        const oldText = btn.innerText;
+        btn.innerText = "✓ Copied Successfully!";
+        btn.style.background = "#dcfce7";
+        btn.style.color = "#15803d";
+        setTimeout(() => {
+          btn.innerText = oldText;
+          btn.style.background = "";
+          btn.style.color = "";
+        }, 2500);
+      }).catch(() => {
+        alert("कृपया फ़ाइल को index.html से सीधा कॉपी कर लें!");
+      });
+    }
+
+    // Initialize immediately without waiting
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderStanzas);
+    } else {
+      renderStanzas();
+    }
+  </script>
+</body>
+</html>
