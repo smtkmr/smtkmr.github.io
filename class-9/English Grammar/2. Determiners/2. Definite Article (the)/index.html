@@ -1,0 +1,1911 @@
+<!-- HTML & CSS FOR LOCK SCREEN -->
+<style>
+  #econova-lock-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #0f172a !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 999999999 !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .econova-lock-box {
+    background: #ffffff !important;
+    padding: 30px 20px !important;
+    border-radius: 16px !important;
+    text-align: center !important;
+    max-width: 350px !important;
+    width: 85% !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+  }
+  .econova-sub-btn {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 0 !important;
+    background: #dc2626 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+    box-sizing: border-box !important;
+  }
+  .econova-input-container {
+    position: relative !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+  .econova-input-container input {
+    width: 100% !important;
+    padding: 12px 40px 12px 12px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+  }
+  .econova-eye-toggle {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    cursor: pointer !important;
+    font-size: 18px !important;
+    user-select: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .econova-lock-box button.econova-submit-btn {
+    width: 100% !important;
+    padding: 12px !important;
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+  }
+</style>
+
+<!-- LOCK SCREEN OVERLAY -->
+<div id="econova-lock-overlay">
+  <div class="econova-lock-box">
+    <h2 style="color:#0f172a; margin-top:0;">🔒 Access Locked</h2>
+    <p style="color:#64748b; font-size:14px; margin-bottom:15px;">Subscribe to get the access code.</p>
+    
+    <!-- SUBSCRIBE FORM LINK -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU4Er-NPFKouoG5nF3e7r1lAqE0htxi34OimT9b-cjOAdCZw/viewform" target="_blank" rel="noopener" class="econova-sub-btn">Subscribe Channel</a>
+    
+    <!-- INPUT WITH EYE TOGGLE -->
+    <div class="econova-input-container">
+      <input type="password" id="econova-pass-field" placeholder="Enter Access Code" autocomplete="off">
+      <button type="button" id="econova-toggle-eye" class="econova-eye-toggle" aria-label="Toggle Password Visibility">👁️️</button>
+    </div>
+    
+    <button type="button" id="econova-unlock-btn" class="econova-submit-btn">Unlock Content</button>
+    <p id="econova-err-msg" style="color:#ef4444; font-size:13px; display:none; margin-top:10px;">❌ Galat Code! Sahi Code Daalein.</p>
+  </div>
+</div>
+
+<!-- JAVASCRIPT FOR LOCK SCREEN -->
+<script>
+  (function() {
+    var SECRET_CODE = "econova123";
+
+    function doUnlock() {
+      var inputVal = document.getElementById("econova-pass-field").value.trim();
+      var errorMsg = document.getElementById("econova-err-msg");
+      var overlay = document.getElementById("econova-lock-overlay");
+
+      if (inputVal.toLowerCase() === SECRET_CODE.toLowerCase()) {
+        overlay.style.setProperty("display", "none", "important");
+        errorMsg.style.display = "none";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+
+    // Eye button toggle functionality
+    var toggleBtn = document.getElementById("econova-toggle-eye");
+    var passInput = document.getElementById("econova-pass-field");
+
+    toggleBtn.addEventListener("click", function() {
+      if (passInput.type === "password") {
+        passInput.type = "text";
+        toggleBtn.textContent = "🙈";
+      } else {
+        passInput.type = "password";
+        toggleBtn.textContent = "👁️";
+      }
+    });
+
+    document.getElementById("econova-unlock-btn").onclick = doUnlock;
+
+    document.getElementById("econova-pass-field").onkeydown = function(e) {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        e.preventDefault();
+        doUnlock();
+      }
+    };
+  })();
+</script>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Chapter 2: Definite Article (the), General Omission rules, Institutions & Places (home, school, hospital, prison, church, sea, work), and Demonstratives with 20 embedded examples and a 30-question 15-minute exam.">
+  <meta property="og:title" content="Chapter 2: Definite Article (the) & Demonstratives | Class 9-10 English Grammar | Econova.vip">
+  <meta property="og:description" content="Chapter 2: Definite Article (the), Omission rules, Institutions, and Demonstratives with 20 embedded concept questions and a 30-question 15-minute exam.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2dd4bf">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Chapter 2: Definite Article (the) &amp; Demonstratives | Class 9-10 English Grammar | Econova.vip</title>
+  
+  <!-- Google Fonts matching the reference design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
+      --heading: 'Outfit', 'Quicksand', sans-serif;
+      --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
+      --bg: #f0fdf4;
+      --ink: #1f2937;
+      --brand: #059669;
+      --teal: #2dd4bf;
+      --yellow: #fde047;
+      --line: #34d399;
+      --button: #10b981;
+      --yt-red: #ff0000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14.5px; -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 18px; }
+
+    /* Header & Responsive Navigation */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 24px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 18px; transform: rotate(-8deg); flex-shrink: 0; }
+    
+    nav.main-nav { display: flex; align-items: center; gap: 8px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 13px; padding: 5px 9px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    
+    .yt-btn {
+      background: var(--yt-red);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 7px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      font-size: 12.5px;
+      font-family: var(--heading);
+      box-shadow: 0 3px 0 #b30000;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .yt-btn:hover { background: #e60000; transform: translateY(-1px); }
+
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 14px;
+      padding: 8px 16px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      font-family: var(--heading);
+      font-size: 13px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all .15s;
+      cursor: pointer;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .nav-test-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+
+    .nav-test-btn .btn-mobile-text { display: none; }
+    .nav-test-btn .btn-full-text { display: inline; }
+    .yt-btn .yt-mobile-text { display: none; }
+    .yt-btn .yt-full-text { display: inline; }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
+    .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+
+    .mint-card { background: #fff; border: 3px solid #34d399; border-radius: 20px; }
+    .amber-card { background: #fffbeb; border: 3px solid #fcd34d; border-radius: 20px; }
+
+    /* Hero */
+    .hero { padding: 32px 0 24px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 5px 12px; font-size: 11px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(28px, 4.2vw, 52px); font-weight: 900; line-height: 1.12; margin: 12px 0 10px; font-family: var(--heading); }
+    h1 .green { color: var(--brand); }
+    .underline { position: relative; white-space: nowrap; isolation: isolate; }
+    .underline:after { content: ''; position: absolute; left: 0; right: 0; bottom: 4px; height: 12px; background: var(--yellow); z-index: -1; transform: rotate(-1.5deg); border-radius: 6px; }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+    .section { padding: 30px 0 10px; }
+    .rule-card { padding: 20px 22px; margin-bottom: 20px; background: #fff; border: 2px solid #a7f3d0; border-radius: 18px; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 8px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; }
+    
+    .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 10px 14px; margin: 10px 0; line-height: 1.65; }
+    .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #991b1b; }
+    .trap-box b { display: block; font-size: 13.5px; margin-bottom: 4px; color: #b91c1c; }
+
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
+    .table-scroll-hint { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--brand); background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 20px; padding: 3px 9px; margin-bottom: 6px; }
+    .compare-table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 12.5px; }
+    .compare-table th, .compare-table td { padding: 8px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
+    .wrong { color: #dc2626; font-weight: bold; }
+    .right { color: #16a34a; font-weight: bold; }
+
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; }
+    .pair-header { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 800; color: var(--brand); font-family: var(--heading); margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+    .pair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+    .pair-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 12px; }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+    
+    .choices-sm { display: grid; gap: 5px; margin: 6px 0; }
+    .choice-sm { display: flex; gap: 6px; align-items: flex-start; padding: 6px 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 11.5px; font-weight: 600; transition: all 0.15s; }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 17px; height: 17px; border-radius: 4px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; flex-shrink: 0; }
+
+    /* Test Arena */
+    .test-section { margin-top: 36px; padding: 20px; scroll-margin-top: 86px; }
+    .test-timer-bar { position: sticky; top: 72px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 18px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 10px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 4px; margin: 8px 0; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); }
+
+    .test-card { padding: 18px; background: #fff; border: 2.5px solid var(--line); border-radius: 18px; }
+    .choice-lg { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px; }
+    .score-circle { font-family: var(--heading); font-size: 38px; font-weight: 900; color: var(--brand); }
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin: 16px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px; font-size: 12px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #fff; font-size: 12.5px; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
+
+    /* Mobile Quick Action Pill */
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 16px;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 20px 0; margin-top: 40px; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 64px; }
+      .mobile-float-btn { display: inline-flex; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 0 12px; }
+      .nav { min-height: 62px; gap: 6px; }
+      .logo { font-size: 19px; gap: 6px; }
+      .logo-mark { width: 30px; height: 30px; font-size: 15px; border-radius: 8px; }
+      
+      .header-actions { gap: 6px; }
+      .yt-btn { padding: 6px 9px; font-size: 11px; border-radius: 10px; box-shadow: 0 2px 0 #b30000; }
+      .yt-btn .yt-full-text { display: none; }
+      .yt-btn .yt-mobile-text { display: inline; }
+      
+      .nav-test-btn { padding: 6px 11px; font-size: 11.5px; border-radius: 10px; box-shadow: 0 2px 0 var(--brand); }
+      .nav-test-btn .btn-full-text { display: none; }
+      .nav-test-btn .btn-mobile-text { display: inline; }
+
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .mint-btn, .hero-actions .quiet-btn { width: 100%; justify-content: center; text-align: center; padding: 11px 16px; }
+
+      .test-section { padding: 14px 12px; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .pal-btn { height: 32px; font-size: 11.5px; }
+
+      .test-actions-bar { flex-direction: column-reverse; gap: 8px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+
+      .rule-card { padding: 15px 14px; border-radius: 15px; }
+    }
+
+    @media (max-width: 380px) {
+      .logo { font-size: 17px; }
+      .logo span span { display: none; }
+      .yt-btn { padding: 5px 7px; font-size: 10.5px; }
+      .nav-test-btn { padding: 5px 9px; font-size: 11px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#topic-1">6. The Definite Article</a>
+        <a href="#topic-2">7. Omission of "the"</a>
+        <a href="#topic-3">8. Institutions &amp; Places</a>
+        <a href="#topic-4">9. Demonstratives</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="yt-btn" href="https://youtu.be/FkKoei0AjBo" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="11" viewBox="0 0 20 14" fill="currentColor">
+            <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+          </svg>
+          <span class="yt-full-text">YouTube</span>
+          <span class="yt-mobile-text">YT</span>
+        </a>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()">
+          <span class="btn-full-text">30-Q Test (15m) →</span>
+          <span class="btn-mobile-text">30-Q Test ↗</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="main" class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="pill">
+          <span></span>
+          Class 9 General English · Chapter 2: Definite Article &amp; Demonstratives
+        </div>
+
+        <h1>
+          Master <span class="green">the</span> &amp;<br>
+          <span class="underline">Demonstratives.</span>
+        </h1>
+
+        <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:14px;">
+          जब बात किसी विशिष्ट, अद्वितीय या पूर्व-परिचित वस्तु की हो, तो <strong>the</strong> का प्रयोग होता है! यहाँ प्रस्तुत है संपूर्ण अध्याय का समृद्ध अध्ययन: <strong>6. The Definite Article (Unique objects, Second mention, Geographical names, Mountains vs Peaks)</strong>, <strong>7. General Omission (Abstract nouns, Meals, Sports, Physical contact preposition rule)</strong>, <strong>8. Institutions &amp; Places (Primary Purpose vs Visitor Visit: hospital, prison, school, church, home, sea, work vs office)</strong> और <strong>9. Demonstratives (this, that, these, those, 'that car of Ann's', telephone calls)</strong> — साथ ही प्रत्येक नियम के अंतर्गत <strong>2 अभ्यास उदाहरण (कुल 20 प्रश्न)</strong> और अंत में <strong>15 मिनट का 30-प्रश्नों का टाइमर टेस्ट</strong>।
+        </p>
+
+        <div class="hero-actions">
+          <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; 20 Examples →</a>
+          <button class="quiet-btn" type="button" onclick="scrollToTest()">
+            ⏱ 30-Question Test (15m)
+          </button>
+        </div>
+      </div>
+
+      <div class="amber-card" style="padding:18px; text-align:center;">
+        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The Golden Concept</p>
+        <div style="font-family:var(--heading); font-size:30px; font-weight:900; color:var(--brand); margin:4px 0;">Purpose Decides!</div>
+        <div style="text-align:left; font-size:12.5px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+          <strong>मुख्य उद्देश्य (Primary Purpose) के लिए जाने पर 'the' नहीं लगता:</strong><br>
+          • <strong>go to hospital</strong> (as patient: इलाज करवाने) vs <strong>to the hospital</strong> (visitor: मिलने)।<br>
+          • <strong>sent to prison</strong> (as prisoner: कैदी बनकर) vs <strong>to the prison</strong> (visitor / lecture)।<br>
+          • <strong>go to school</strong> (as student: पढ़ने) vs <strong>to the school</strong> (parent meeting)।<br>
+          • <strong>at sea</strong> (as sailor: नाविक बनकर यात्रा) vs <strong>at the sea</strong> (beach holiday)।<br>
+          • <strong>at work</strong> (कार्यस्थल पर) vs <strong>in the office</strong> (कार्यालय कक्ष में)।
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 01: 6. THE DEFINITE ARTICLE -->
+    <!-- ========================================== -->
+    <section id="topic-1" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 01 · 6. The Definite Article</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">6. the (The Definite Article) — Nature, Core Uses &amp; Proper Names</h2>
+      </div>
+
+      <!-- Sub-concept 1A -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">A. Form &amp; Core Uses (Unique Objects, Second Mention, Superlatives)</h3>
+          <span class="badge">Core Foundation</span>
+        </div>
+        <div style="background:#f0fdf4; border:1.5px solid #34d399; border-radius:10px; padding:10px; text-align:center; font-weight:bold; font-size:13.5px; color:#059669;">
+          'the' का रूप लिंग (Gender) और वचन (Number) से कभी नहीं बदलता:<br>
+          <span style="font-size:12px; color:#475569;">the boy / the boys &nbsp;|&nbsp; the girl / the girls &nbsp;|&nbsp; the day / the days</span>
+        </div>
+        <div class="easy-hi">
+          👉 <strong>Definite Article 'the' के 5 मूल आधार:</strong><br>
+          1. <strong>Unique Objects (संसार में अद्वितीय वस्तुएँ):</strong> <em>the earth, the sun, the moon, the sky, the equator, the stars</em>।<br>
+          2. <strong>Second Mention (द्वितीय उल्लेख):</strong> <em>His car struck <strong>a tree</strong>... You can still see the dent on <strong>the tree</strong>.</em> (अब पेड़ विशिष्ट हो गया है)।<br>
+          3. <strong>Qualifying Clause/Phrase द्वारा विशिष्ट बनना:</strong> <em><strong>the girl in blue</strong></em>, <em><strong>the boy that I met</strong></em>, <em><strong>the man with the banner</strong></em>।<br>
+          4. <strong>Immediate Context / Locality:</strong> <em>Ann is in <strong>the garden</strong>.</em> (इसी घर का बगीचा) / <em>Please pass <strong>the wine</strong>.</em> (मेज पर रखी वाइन)।<br>
+          5. <strong>Superlatives, Ordinals (first, second) और 'only':</strong> <em><strong>the highest</strong> peak, <strong>the first</strong> week, <strong>the only</strong> way</em>।
+        </div>
+
+        <div class="concept-pair-box" id="pair-1a"></div>
+      </article>
+
+      <!-- Sub-concept 1B -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. 'the + singular noun' Representing a Whole Class vs Fatal Trap 'MAN'</h3>
+          <span class="badge" style="background:#fef3c7; color:#b45309; border-color:#fcd34d;">High Yield Rule</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>जाति/वर्ग का प्रतिनिधित्व:</strong> <em><strong>The whale</strong> is in danger of becoming extinct.</em> (= पूरी व्हेल प्रजाति) | <em><strong>The deep-freeze</strong> has made life easier.</em><br>
+          • <strong>the + Adjective = Class of persons:</strong> <em><strong>the poor</strong></em> (= गरीब लोग), <em><strong>the rich</strong></em> (= अमीर लोग), <em><strong>the unemployed</strong></em>, <em><strong>the blind</strong></em> (ये बहुवचन क्रिया लेते हैं: <em>The poor <strong>are</strong> suffering</em>)।
+        </div>
+
+        <div class="trap-box">
+          <b>⚠️ परीक्षा का सबसे घातक जाल — 'MAN' का अपवाद (The Fatal 'Man' Exception):</b>
+          जब <strong>'man'</strong> का प्रयोग पूरी मानव जाति (human race / mankind) के लिए हो, तो उसके आगे <strong>कभी 'the' नहीं लगता</strong>:<br>
+          • <em>If oil supplies run out, <strong>man</strong> may have to fall back on the horse.</em> (NOT: the man ❌)<br>
+          • <em><strong>Man</strong> is mortal.</em> (NOT: The man is mortal ❌)
+        </div>
+
+        <div class="concept-pair-box" id="pair-1b"></div>
+      </article>
+
+      <!-- Sub-concept 1C -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">C. Proper Names: Geographical Rules (Oceans, Mountain Ranges vs Single Peaks)</h3>
+          <span class="badge">Geographical Mastery</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          भौगोलिक नामों में 'the' का प्रयोग अत्यंत संवेदनशील होता है। नीचे दी गई तालिका से परीक्षा के सभी नियमों को कंठस्थ करें:
+        </p>
+
+        <div class="table-scroll-hint">
+          <span>⇄ Swipe table horizontally on mobile (मोबाइल पर पूरी टेबल देखने के लिए खिसकाएं)</span>
+        </div>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>'the' के साथ (Correct ✓)</th>
+                <th>बिना 'the' के (No Article ✗)</th>
+                <th>नियम / परीक्षा ट्रिक (Explanation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Oceans, Seas &amp; Rivers</strong></td>
+                <td><span class="right">the Atlantic, the Thames, the Ganges, the Pacific</span></td>
+                <td>Lake Victoria, Lake Superior</td>
+                <td>नदी, समुद्र, महासागर में 'the' लगता है; पर अकेली झील (Lake) में नहीं।</td>
+              </tr>
+              <tr>
+                <td><strong>Mountain Chains vs Single Peaks</strong></td>
+                <td><span class="right">the Alps, the Himalayas, the Rockies</span></td>
+                <td><span class="wrong">Mount Everest ✗, Mont Blanc, K2</span></td>
+                <td>पर्वत श्रृंखला (Ranges) में 'the' लगेगा; अकेले पर्वत शिखर (Single Peak) में कभी नहीं!</td>
+              </tr>
+              <tr>
+                <td><strong>Islands (द्वीप समूह vs अकेला)</strong></td>
+                <td><span class="right">the Bahamas, the Andamans, the West Indies</span></td>
+                <td>Sicily, Sri Lanka, Java</td>
+                <td>द्वीप समूह (Group of islands) में 'the' लगता है; अकेले द्वीप में नहीं।</td>
+              </tr>
+              <tr>
+                <td><strong>Deserts &amp; Regions</strong></td>
+                <td><span class="right">the Sahara, the Crimea, the Riviera, the Kalahari</span></td>
+                <td>Central Asia, Siberia</td>
+                <td>मरुस्थल और विशेष क्षेत्रों के आगे 'the' आता है।</td>
+              </tr>
+              <tr>
+                <td><strong>Plural / Republic Countries</strong></td>
+                <td><span class="right">the Netherlands, the United States, the Philippines</span></td>
+                <td>India, France, Germany, Japan</td>
+                <td>बहुवचन नाम या 'Republic/Kingdom/States' वाले देशों में 'the' लगता है।</td>
+              </tr>
+              <tr>
+                <td><strong>Noun + of + Noun</strong></td>
+                <td><span class="right">the Bay of Biscay, the Gulf of Mexico, the Cape of Good Hope</span></td>
+                <td>Hudson Bay</td>
+                <td>'Noun + of + Noun' प्रारूप में 'the' अनिवार्य है।</td>
+              </tr>
+              <tr>
+                <td><strong>Compass Directions</strong></td>
+                <td><span class="right">the North Pole, the north of Spain, in the north</span></td>
+                <td>South Africa, North America, Go north</td>
+                <td>संज्ञा रूप में 'the north of Spain'; परंतु क्रिया के बाद क्रियाविशेषण (Adverb) में 'Go north' (no the)।</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="concept-pair-box" id="pair-1c"></div>
+      </article>
+
+      <!-- Sub-concept 1D -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">D. Monuments, Newspapers, Bands &amp; Family Surnames ("the Smiths")</h3>
+          <span class="badge">Titles &amp; Surnames</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>इमारतें एवं स्मारक:</strong> <em>the Tower of London, the National Gallery, the British Museum</em>।<br>
+          • <strong>अखबार, बैंड एवं जहाज:</strong> <em>The Times, The Hindu, the Beatles, the Titanic</em>।<br>
+          • <strong>the + Plural Surname = संपूर्ण परिवार:</strong> <em>the Smiths</em> (= श्री और श्रीमती स्मिथ और उनके बच्चे)।<br>
+          • <strong>उपाधियाँ (Titles):</strong> <em>the Duke of York, the Queen of England</em> (of वाले titles)। परंतु नाम साथ आने पर: <em>Captain Cook, Lord Olivier</em> (No article); और अकेले पद पर: <em><strong>The captain</strong> ordered silence.</em>
+        </div>
+
+        <div class="concept-pair-box" id="pair-1d"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 02: 7. GENERAL OMISSION OF "THE" -->
+    <!-- ========================================== -->
+    <section id="topic-2" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 02 · 7. Omission Rules</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">7. Omission of "the" — Abstract Nouns, Meals, Sports &amp; Physical Contact</h2>
+      </div>
+
+      <!-- Sub-concept 2A -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">A. Abstract Nouns: General Sense vs Specific Sense &amp; Possessives</h3>
+          <span class="badge">Abstract Contrast</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>सामान्य अर्थ (General Sense - NO article):</strong><br>
+          &nbsp;&nbsp;<em>Men fear <strong>death</strong>.</em> (मृत्यु एक अटल सत्य है) / <em><strong>Courage</strong> is admired everywhere.</em><br>
+          • <strong>विशिष्ट संदर्भ (Specific Sense - 'the' अनिवार्य):</strong><br>
+          &nbsp;&nbsp;<em><strong>The death of</strong> the Prime Minister shocked the nation.</em><br>
+          &nbsp;&nbsp;<em><strong>The courage of</strong> the wounded soldier was praised by all.</em><br>
+          • <strong>संबंधवाचक (Possessives):</strong> <em>my book</em> (NOT: the my book ❌); <em>the boy's uncle</em> (NOT: the boy's the uncle ❌)।
+        </div>
+
+        <div class="concept-pair-box" id="pair-2a"></div>
+      </article>
+
+      <!-- Sub-concept 2B -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Meals, Games/Sports &amp; Physical Contact Preposition Rule</h3>
+          <span class="badge" style="background:#fee2e2; color:#b91c1c; border-color:#fca5a5;">The Contact Rule Trap</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>दैनिक भोजन (Meals):</strong> <em>eat porridge for <strong>breakfast</strong></em>, <em>have <strong>dinner</strong> together</em> (No article)। अपवाद: औपचारिक दावत में — <em><strong>The wedding breakfast</strong> was magnificent.</em><br>
+          • <strong>खेल-कूद (Games/Sports):</strong> <em>He plays <strong>golf</strong> / <strong>cricket</strong> / <strong>chess</strong>.</em> (कभी 'the golf' नहीं बोलते)।<br>
+          • <strong>सामान्य शरीर के अंग:</strong> Possessive adjective लगता है — <em>Raise <strong>your</strong> right hand.</em> / <em>He took off <strong>his</strong> coat.</em>
+        </div>
+
+        <div class="trap-box">
+          <b>⚠️ शारीरिक संपर्क का विशेष प्रीपोजिशन नियम (The Physical Contact Rule):</b>
+          जब किसी पर प्रहार या शारीरिक पकड़ (prepositions of physical contact) की बात हो, तो Possessive की जगह <strong>'the'</strong> आता है:<br>
+          • <em>She seized the child by <strong>the</strong> collar.</em> (NOT: by his collar)<br>
+          • <em>I patted him on <strong>the</strong> shoulder.</em><br>
+          • <em>The flying stone hit John in <strong>the</strong> face.</em><br>
+          • <em>He was struck on <strong>the</strong> head.</em>
+        </div>
+
+        <div class="easy-hi" style="background:#f8fafc; border-color:#cbd5e1; color:#334155;">
+          • <strong>बहुवचन संज्ञा सामान्य रूप में:</strong> <em><strong>Women</strong> are expected to like babies.</em> (सामान्य स्त्रियाँ; 'the women' का अर्थ किसी खास समूह से होगा)।<br>
+          • <strong>Nature (प्रकृति):</strong> जब अर्थ सृष्टि या प्राकृतिक सत्ता हो — <em>If you interfere with <strong>nature</strong>, you will suffer.</em> (No the)।
+        </div>
+
+        <div class="concept-pair-box" id="pair-2b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 03: 8. INSTITUTIONS & PLACES -->
+    <!-- ========================================== -->
+    <section id="topic-3" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 03 · 8. Institutions &amp; Places</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">8. Institutions &amp; Places — Primary Purpose vs Visitor Visit, Home, Sea &amp; Work</h2>
+      </div>
+
+      <!-- Sub-concept 3A -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">A. "Home" Rules: Used Alone vs Descriptive Modifier</h3>
+          <span class="badge">Home Dynamics</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>'Home' जब अकेला प्रयुक्त हो (Used Alone):</strong> कोई article नहीं लगता और गति क्रिया के साथ प्रायः preposition भी नहीं लगता:<br>
+          &nbsp;&nbsp;<em>He is <strong>at home</strong>.</em> / <em>He went <strong>home</strong>.</em> / <em>I arrived <strong>home</strong> after dark.</em><br>
+          • <strong>'Home' जब किसी वर्णनात्मक वाक्यांश (Descriptive phrase) के साथ हो:</strong> यह सामान्य संज्ञा की तरह <strong>'the'</strong> लेता है:<br>
+          &nbsp;&nbsp;<em>We arrived at <strong>the bride's home</strong>.</em><br>
+          &nbsp;&nbsp;<em>This cottage was <strong>the home of your queen</strong>.</em><br>
+          &nbsp;&nbsp;<em>A mud hut was <strong>the only home</strong> he had ever known.</em>
+        </div>
+
+        <div class="concept-pair-box" id="pair-3a"></div>
+      </article>
+
+      <!-- Sub-concept 3B -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Primary Purpose (No Article) vs Secondary / Visitor Purpose ('THE' Compulsory)</h3>
+          <span class="badge" style="background:#fee2e2; color:#b91c1c; border-color:#fca5a5;">The Core Chapter Pillar</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          School, Hospital, Prison, Church, Bed, Court जैसे संस्थानों में यदि कोई व्यक्ति वहाँ के <strong>मूल उद्देश्य</strong> से जाए तो <strong>NO ARTICLE</strong>; परंतु किसी अन्य कार्य या मुलाक़ाती (visitor) बनकर जाए तो <strong>'the'</strong> अनिवार्य है:
+        </p>
+
+        <div class="table-scroll-hint">
+          <span>⇄ Swipe table horizontally on mobile (मोबाइल पर पूरी टेबल देखने के लिए खिसकाएं)</span>
+        </div>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Institution</th>
+                <th>Primary Purpose (NO 'the' ✓)</th>
+                <th>Secondary / Visitor Purpose ('THE' compulsory ✓)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>School / College / University</strong></td>
+                <td><em>go to <strong>school</strong> / at school</em> (छात्र बनकर पढ़ने जाना)</td>
+                <td><em>I went to <strong>the school</strong> to meet the headmaster.</em> (अभिभावक/विज़िटर बनकर)</td>
+              </tr>
+              <tr>
+                <td><strong>Hospital</strong></td>
+                <td><em>in <strong>hospital</strong> / rushed to hospital</em> (मरीज बनकर इलाज करवाने)</td>
+                <td><em>I went to <strong>the hospital</strong> to visit a sick friend.</em> (दोस्त से मिलने)</td>
+              </tr>
+              <tr>
+                <td><strong>Prison</strong></td>
+                <td><em>sent to <strong>prison</strong> / in prison</em> (दोषी कैदी बनकर सजा काटने)</td>
+                <td><em>He visits <strong>the prison</strong> to give motivational lectures.</em> (भाषण देने)</td>
+              </tr>
+              <tr>
+                <td><strong>Church</strong></td>
+                <td><em>go to <strong>church</strong> / at church</em> (श्रद्धालु बनकर प्रार्थना करने)</td>
+                <td><em>We entered <strong>the church</strong> to admire the stained glass.</em> (कांच देखने)</td>
+              </tr>
+              <tr>
+                <td><strong>Bed</strong></td>
+                <td><em>go to <strong>bed</strong> / in bed</em> (सोने या आराम करने के लिए)</td>
+                <td><em>He sat on <strong>the bed</strong> to tie his shoelaces.</em> (फीते बाँधने बैठा)</td>
+              </tr>
+              <tr>
+                <td><strong>Court</strong></td>
+                <td><em>go to <strong>court</strong> / in court</em> (मुकदमेबाज या गवाह बनकर)</td>
+                <td><em>Tourists visited <strong>the court</strong> building.</em> (इमारत देखने)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="concept-pair-box" id="pair-3b"></div>
+      </article>
+
+      <!-- Sub-concept 3C -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">C. Sea, Work vs Office, and Town</h3>
+          <span class="badge">Sea &amp; Workplace</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>Sea (नाविक vs समुद्र तट):</strong><br>
+          &nbsp;&nbsp;<em>go to <strong>sea</strong> / at <strong>sea</strong></em> = नाविक (sailor) बनकर समुद्री यात्रा पर होना (NO the)।<br>
+          &nbsp;&nbsp;<em>go to / be at <strong>the sea</strong></em> = समुद्र तट (beach / seaside resort) पर छुट्टियां बिताना।<br>
+          • <strong>Work बनाम Office:</strong><br>
+          &nbsp;&nbsp;<em>at <strong>work</strong></em> = काम पर होना (NO the) | <em>in <strong>the office</strong></em> = कार्यालय कक्ष में होना ('the' अनिवार्य)।<br>
+          &nbsp;&nbsp;मुहावरा: <em>to be <strong>in office</strong></em> = राजनीतिक सत्ता या पद पर होना।<br>
+          • <strong>Town (अपना शहर):</strong> वक्ता के अपने शहर के लिए 'the' छोड़ देते हैं — <em>We went to <strong>town</strong> to shop.</em>
+        </div>
+
+        <div class="concept-pair-box" id="pair-3c"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 04: 9. DEMONSTRATIVES -->
+    <!-- ========================================== -->
+    <section id="topic-4" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 04 · 9. Demonstratives</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">9. this / these, that / those (Adjectives &amp; Pronouns)</h2>
+      </div>
+
+      <!-- Sub-concept 4A -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">A. Demonstrative Adjectives: Number Agreement &amp; Emphatic Construction</h3>
+          <span class="badge">Adjective Forms</span>
+        </div>
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          Demonstratives ही अंग्रेजी के एकमात्र ऐसे विशेषण हैं जो संज्ञा के वचन (Singular/Plural) के अनुसार रूप बदलते हैं:
+        </p>
+        <div class="easy-hi">
+          • <strong>निकट (Near):</strong> <em><strong>This</strong> beach was empty.</em> (Singular) / <em><strong>These</strong> people came yesterday.</em> (Plural)<br>
+          • <strong>दूर या अतीत (Far / Past):</strong> <em>What does <strong>that</strong> notice say?</em> (Singular) / <em>Do you see <strong>those</strong> birds?</em> (Plural)<br>
+          • <em>He was dismissed on the 13th. <strong>That night</strong> the factory caught fire.</em>
+        </div>
+
+        <div class="trap-box">
+          <b>✦ Emphatic Construction (अक्सर असंतोष, शिकायत या स्नेह दर्शाने के लिए):</b>
+          संरचना: <em>this/that + noun + of + possessive pronoun/noun's</em>:<br>
+          • <em><strong>This diet of mine</strong> isn't having much effect.</em> (= My diet)<br>
+          • <em><strong>That car of Ann's</strong> is always breaking down.</em> (= Ann's car)
+        </div>
+
+        <div class="concept-pair-box" id="pair-4a"></div>
+      </article>
+
+      <!-- Sub-concept 4B -->
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:16px; font-weight:800;">B. Demonstratives as Pronouns, Phone Calls, 'Those Who' &amp; 'one/ones'</h3>
+          <span class="badge">Pronouns &amp; Idioms</span>
+        </div>
+        <div class="easy-hi">
+          • <strong>मूल सर्वनाम:</strong> <em><strong>This</strong> is my umbrella. <strong>That</strong>'s yours.</em><br>
+          • <strong>रेडियो/संगीत कार्यक्रम की समाप्ति:</strong> <em><strong>That</strong> was the concerto in C minor by Vivaldi.</em><br>
+          • <strong>परिचय करवाते समय (Introductions):</strong> <em>"Tom, <strong>this is</strong> my brother Hugh."</em><br>
+          • <strong>टेलीफोन पर परिचय:</strong> <em>"Good morning. <strong>This is</strong> Tom Jones speaking..."</em> (अपरिचित के लिए 'I am Tom Jones' थोड़ा अस्वाभाविक लगता है)।<br>
+          • <strong>Relative clauses में लोगों के लिए:</strong> <em><strong>Those who</strong> could not walk were carried on stretchers.</em><br>
+          • <strong>पूर्व कथन या संपूर्ण विचार का संदर्भ:</strong> <em>They are digging up my road. They do <strong>this</strong> every summer.</em> / <em>Wasn't <strong>that</strong> a horrible thing to say?</em>
+        </div>
+
+        <div class="easy-hi" style="background:#fffdf5; border-color:#fde68a; color:#92400e;">
+          ⚠️ <strong>'one / ones' का अनिवार्य नियम:</strong><br>
+          तुलना में अकेले demonstrative के बाद 'one' वैकल्पिक हो सकता है (<em>I'll sit in that (one)</em>);<br>
+          <strong>परंतु यदि demonstrative के बाद कोई विशेषण (ADJECTIVE) आ जाए, तो 'one/ones' लगाना अनिवार्य है:</strong><br>
+          • <em>I like <strong>this blue one</strong>.</em> (NOT: I like this blue ❌)<br>
+          • <em>I like <strong>these blue ones</strong>.</em> (NOT: I like these blue ❌)
+        </div>
+
+        <div class="concept-pair-box" id="pair-4b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
+    <!-- ========================================== -->
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+        <span class="badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:28px; font-weight:900; margin:8px 0;">Final 30-Question Definite Article &amp; Demonstratives Test</h2>
+        <p style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+          यह टेस्ट डेफिनिट आर्टिकल (the), ओमिशन, संस्थानों के प्राथमिक उद्देश्य (Primary Purpose Rule) तथा डेमोंस्ट्रेटिव्स (this/that/these/those) की पकड़ का मूल्यांकन करेगा। <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> चालू रहेगा और समय समाप्त होते ही <strong>टेस्ट स्वतः सबमिट</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
+          🚀 Start 30-Question Exam Now (15:00 Timer)
+        </button>
+      </div>
+
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
+            Submit Test ✓
+          </button>
+        </div>
+
+        <!-- Palette (1 to 30) -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:8px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+                🚩 Mark for Review
+              </button>
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:12.5px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:7px 10px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div class="test-actions-bar">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
+    </section>
+  </main>
+
+  <!-- Submit Warning Modal -->
+  <div class="modal-overlay" id="submit-modal" style="display:none;">
+    <div class="modal-box">
+      <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
+      <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
+      <p style="font-size:13px; color:#475569; margin-bottom:12px;" id="modal-msg"></p>
+      <div style="display:flex; justify-content:center; gap:8px;">
+        <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Test (हल करते रहें)</button>
+        <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:#64748b;">
+      <div>
+        <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+        Class 9-10 English Grammar · Chapter 2: Definite Article (the) &amp; Demonstratives.
+      </div>
+      <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand);">
+        <a href="#topic-1">6. The Definite Article</a>
+        <a href="#topic-2">7. Omission</a>
+        <a href="#topic-3">8. Institutions</a>
+        <a href="#topic-4">9. Demonstratives</a>
+        <a href="#test-arena">30-Q Test</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Target container for Vite -->
+  <div id="root" style="display:none;"></div>
+
+  <!-- ========================================================= -->
+  <!-- COMPLETE JAVASCRIPT CODE EMBEDDED IN INDEX.HTML -->
+  <!-- ========================================================= -->
+  <script>
+    // 20 Embedded Concept Practice Questions for Chapter 2 (2 per sub-concept pair)
+    const conceptQuestions = [
+      // 1A. Core uses of 'the' (Unique, 2nd mention, qualifying clause)
+      {
+        id: 1,
+        sub: '1a',
+        pairTitle: '1A. Unique Objects & Second Mention',
+        q: "___ earth revolves around ___ sun in our solar system.",
+        hi: "हमारे सौरमंडल में पृथ्वी सूर्य के चारों ओर घूमती है।",
+        opts: ["An / a", "The / the", "A / the", "No article / the"],
+        ans: 1,
+        expl: "संसार में जो वस्तुएँ अपने आप में अद्वितीय (unique) हैं जैसे 'earth' और 'sun', उनके साथ हमेशा 'the' लगता है।"
+      },
+      {
+        id: 2,
+        sub: '1a',
+        pairTitle: '1A. Unique Objects & Second Mention',
+        q: "His car struck a tree yesterday; you can still see the deep dent on ___ tree.",
+        hi: "कल उसकी कार एक पेड़ से टकरा गई; आप अभी भी उस पेड़ पर गहरा निशान देख सकते हैं।",
+        opts: ["a", "an", "the", "that one"],
+        ans: 2,
+        expl: "जब किसी संज्ञा का दूसरी बार उल्लेख हो (Second mention) और वह श्रोता के लिए निश्चित बन जाए, तो 'the' लगता है।"
+      },
+
+      // 1B. 'the + singular noun' as class vs MAN exception & the + adjective
+      {
+        id: 3,
+        sub: '1b',
+        pairTitle: '1B. Whole Class & The Fatal \'MAN\' Exception',
+        q: "___ whale is in grave danger of becoming extinct across all oceans.",
+        hi: "व्हेल मछली सभी महासागरों में विलुप्त होने के गंभीर खतरे में है।",
+        opts: ["A", "An", "The", "No article"],
+        ans: 2,
+        expl: "'The + singular noun' (The whale) पूरी जाति या पशु प्रजाति का प्रतिनिधित्व करता है।"
+      },
+      {
+        id: 4,
+        sub: '1b',
+        pairTitle: '1B. Whole Class & The Fatal \'MAN\' Exception',
+        q: "If fossil fuel reserves run out completely, ___ may have to rely again on beasts of burden.",
+        hi: "यदि जीवाश्म ईंधन पूरी तरह समाप्त हो जाए, तो मानव जाति को फिर से भारवाही पशुओं पर निर्भर होना पड़ सकता है।",
+        opts: ["a man", "the man", "man", "the men"],
+        ans: 2,
+        expl: "महत्वपूर्ण अपवाद: जब 'man' का प्रयोग पूरी मानव जाति (human race) के लिए हो, तो कोई article नहीं लगता ('man', not 'the man')।"
+      },
+
+      // 1C. Geographical proper names (oceans, mountains, single peaks, countries)
+      {
+        id: 5,
+        sub: '1c',
+        pairTitle: '1C. Mountain Ranges vs Single Peaks & Rivers',
+        q: "They went skiing in ___ Alps, but their guide once climbed ___ Mount Everest.",
+        hi: "वे आल्प्स पर्वतमाला में स्कीइंग करने गए, लेकिन उनके गाइड ने एक बार माउंट एवरेस्ट की चढ़ाई की थी।",
+        opts: ["the / the", "the / no article", "no article / the", "the / a"],
+        ans: 1,
+        expl: "पर्वत श्रृंखलाओं (Mountain chains: the Alps, the Himalayas) में 'the' लगता है; परंतु अकेले पर्वत शिखर (Single Peak: Mount Everest, K2) में कोई article नहीं लगता!"
+      },
+      {
+        id: 6,
+        sub: '1c',
+        pairTitle: '1C. Mountain Ranges vs Single Peaks & Rivers',
+        q: "The cargo liner traversed ___ Atlantic Ocean before berthing in ___ Netherlands.",
+        hi: "मालवाहक जहाज ने नीदरलैंड में लंगर डालने से पहले अटलांटिक महासागर को पार किया।",
+        opts: ["the / the", "an / the", "the / no article", "no article / the"],
+        ans: 0,
+        expl: "महासागरों (the Atlantic) और बहुवचन रूप वाले देशों के नामों (the Netherlands, the Philippines) में 'the' लगता है।"
+      },
+
+      // 1D. Monuments, bands, newspapers & family surnames (the Smiths)
+      {
+        id: 7,
+        sub: '1d',
+        pairTitle: '1D. Monuments, Newspapers & Pop Groups',
+        q: "Grandfather reads ___ Times every morning and listens to classical concerts by ___ Bach Choir.",
+        hi: "दादाजी रोज सुबह 'द टाइम्स' पढ़ते हैं और 'बाख क्वायर' के शास्त्रीय संगीत कार्यक्रम सुनते हैं।",
+        opts: ["the / the", "a / the", "the / no article", "no article / the"],
+        ans: 0,
+        expl: "समाचार पत्रों (The Times) और प्रसिद्ध संगीत मंडलियों/क्वायर (the Bach Choir, the Beatles) के आगे 'the' लगता है।"
+      },
+      {
+        id: 8,
+        sub: '1d',
+        pairTitle: '1D. Monuments, Newspapers & Pop Groups',
+        q: "We were invited to Sunday brunch by ___ Smiths. (= Mr and Mrs Smith and their family)",
+        hi: "हमें स्मिथ परिवार (श्री और श्रीमती स्मिथ और बच्चे) द्वारा रविवार के नाश्ते पर आमंत्रित किया गया था।",
+        opts: ["a", "an", "the", "no article"],
+        ans: 2,
+        expl: "'The + plural surname' (the Smiths) का अर्थ होता है संपूर्ण परिवार (Smith family)।"
+      },
+
+      // 2A. Abstract nouns in general vs specific sense & possessives
+      {
+        id: 9,
+        sub: '2a',
+        pairTitle: '2A. Abstract Nouns: General vs Specific Sense',
+        q: "Wise philosophers say that ordinary men fear ___ death, but ___ death of the Prime Minister stunned all.",
+        hi: "विद्वान दार्शनिक कहते हैं कि सामान्य मनुष्य मृत्यु से डरता है, लेकिन प्रधानमंत्री के निधन ने सभी को स्तब्ध कर दिया।",
+        opts: ["the / the", "no article / the", "the / no article", "a / the"],
+        ans: 1,
+        expl: "सामान्य रूप से प्रयुक्त भाववाचक संज्ञा में कोई article नहीं लगता ('fear death'); परंतु जब विशिष्ट व्यक्ति से जुड़े तो 'the death of...' अनिवार्य है।"
+      },
+      {
+        id: 10,
+        sub: '2a',
+        pairTitle: '2A. Abstract Nouns: General vs Specific Sense',
+        q: "Select the sentence that correctly observes the possessive case rule:",
+        hi: "संबंधवाचक नियम का सही पालन करने वाला वाक्य चुनिए:",
+        opts: ["It is the my textbook.", "It is my textbook.", "The my textbook is on the table.", "It is a my textbook."],
+        ans: 1,
+        expl: "Possessive adjective (my, your, his) या possessive case के बाद 'the' का प्रयोग वर्जित है ('my textbook')।"
+      },
+
+      // 2B. Meals, sports, and body parts physical contact rule (seized by the collar)
+      {
+        id: 11,
+        sub: '2b',
+        pairTitle: '2B. The Physical Contact Preposition Rule',
+        q: "The alert constable seized the fleeing pickpocket by ___ collar.",
+        hi: "सतर्क सिपाही ने भागते हुए जेबकतरे को कॉलर से पकड़ लिया।",
+        opts: ["his", "the", "a", "no article"],
+        ans: 1,
+        expl: "शारीरिक संपर्क या पकड़ के प्रीपोजिशन वाले मुहावरों में Possessive के स्थान पर 'the' आता है ('by the collar', 'on the shoulder')।"
+      },
+      {
+        id: 12,
+        sub: '2b',
+        pairTitle: '2B. The Physical Contact Preposition Rule',
+        q: "He regularly plays ___ golf, but during the tournament a stray ball struck him in ___ eye.",
+        hi: "वह नियमित रूप से गोल्फ खेलता है, लेकिन टूर्नामेंट में एक भटकी हुई गेंद उसकी आँख में लगी।",
+        opts: ["the / his", "no article / the", "the / the", "no article / his"],
+        ans: 1,
+        expl: "खेलों के नाम (golf) में article नहीं लगता; परंतु प्रहार/चोट के संपर्क में 'in the eye' ('the') आता है।"
+      },
+
+      // 3A. "Home" rules (used alone vs descriptive modifier)
+      {
+        id: 13,
+        sub: '3a',
+        pairTitle: '3A. \'Home\' Alone vs Descriptive Phrase',
+        q: "After a grueling shift, the doctor arrived ___ home without any delay.",
+        hi: "थका देने वाली ड्यूटी के बाद डॉक्टर बिना किसी देरी के घर पहुंच गए।",
+        opts: ["at the", "to the", "no article / preposition", "in the"],
+        ans: 2,
+        expl: "जब 'home' अकेला प्रयुक्त हो तो गति क्रिया के बाद यह Adverb होता है: 'arrived home' (no article/preposition)।"
+      },
+      {
+        id: 14,
+        sub: '3a',
+        pairTitle: '3A. \'Home\' Alone vs Descriptive Phrase',
+        q: "For several centuries, this stately castle was ___ home of the dukes of Normandy.",
+        hi: "कई शताब्दियों तक यह भव्य महल नॉर्मंडी के ड्यूक का निवास स्थान (घर) था।",
+        opts: ["a", "the", "no article", "an"],
+        ans: 1,
+        expl: "जब 'home' के आगे विवरणात्मक वाक्यांश हो ('the home of the dukes...'), तो यह सामान्य संज्ञा की तरह 'the' लेता है।"
+      },
+
+      // 3B. Primary purpose vs visitor visit (school, hospital, prison, church, bed, court)
+      {
+        id: 15,
+        sub: '3b',
+        pairTitle: '3B. Primary Purpose vs Visitor Visit (Hospital, Prison)',
+        q: "The injured victim was taken to ___ hospital, while his brother went to ___ hospital to visit him.",
+        hi: "घायल पीड़ित को अस्पताल ले जाया गया, जबकि उसका भाई उससे मिलने अस्पताल गया।",
+        opts: ["the / the", "no article / the", "the / no article", "no article / no article"],
+        ans: 1,
+        expl: "मरीज बनकर इलाज करवाना Primary Purpose है ('to hospital'); मुलाक़ाती बनकर मिलने जाना Visitor visit है ('to the hospital')।"
+      },
+      {
+        id: 16,
+        sub: '3b',
+        pairTitle: '3B. Primary Purpose vs Visitor Visit (Hospital, Prison)',
+        q: "The burglar was sentenced and sent to ___ prison, but the priest visits ___ prison to counsel inmates.",
+        hi: "चोर को सजा सुनाकर जेल भेज दिया गया, लेकिन पादरी कैदियों को परामर्श देने जेल जाते हैं।",
+        opts: ["the / the", "no article / the", "the / no article", "no article / no article"],
+        ans: 1,
+        expl: "कैदी बनकर सजा काटना Primary Purpose है ('to prison'); परामर्श देने विज़िटर बनकर जाना Secondary है ('to the prison')।"
+      },
+
+      // 3C. Sea (sailors vs beach), work vs office, and town
+      {
+        id: 17,
+        sub: '3c',
+        pairTitle: '3C. Sea as Sailors vs Beach Holiday & Work',
+        q: "Uncle David spent forty years at ___ sea as a merchant navy officer, but now relaxes at ___ sea in Brighton.",
+        hi: "अंकल डेविड ने मर्चेंट नेवी में नाविक के रूप में चालीस वर्ष समुद्र में बिताए, पर अब ब्राइटन के समुद्र तट पर आराम करते हैं।",
+        opts: ["the / the", "no article / the", "the / no article", "no article / no article"],
+        ans: 1,
+        expl: "नाविक बनकर यात्रा पर होना 'at sea' (no the); समुद्र तट/बीच पर छुट्टियां बिताना 'at the sea' कहलाता है।"
+      },
+      {
+        id: 18,
+        sub: '3c',
+        pairTitle: '3C. Sea as Sailors vs Beach Holiday & Work',
+        q: "The mechanic is currently busy at ___ work, while the director is seated in ___ office.",
+        hi: "मैकेनिक वर्तमान में काम में व्यस्त है, जबकि निदेशक कार्यालय में बैठे हैं।",
+        opts: ["the / the", "no article / the", "the / no article", "no article / no article"],
+        ans: 1,
+        expl: "कार्यस्थल के लिए 'at work' (no article); कार्यालय कक्ष के लिए 'in the office' ('the' अनिवार्य) आता है।"
+      },
+
+      // 4A. Demonstratives as adjectives & emphatic constructions ("that car of Ann's")
+      {
+        id: 19,
+        sub: '4a',
+        pairTitle: '4A. Demonstrative Number Agreement & Emphatic Forms',
+        q: "That sputtering motorcycle of ___ is always breaking down on the expressway.",
+        hi: "रोहन की वह खटारा मोटरसाइकिल हमेशा एक्सप्रेसवे पर खराब होती रहती है।",
+        opts: ["Rohan", "Rohan's", "to Rohan", "of Rohan"],
+        ans: 1,
+        expl: "Emphatic construction की संरचना होती है: 'that + noun + of + possessive noun/pronoun' ('That motorcycle of Rohan's')।"
+      },
+      {
+        id: 20,
+        sub: '4a',
+        pairTitle: '4A. Demonstrative Number Agreement & Emphatic Forms',
+        q: "This new exercise routine of ___ is finally yielding noticeable health results.",
+        hi: "मेरा यह नया व्यायाम रूटीन आखिरकार ध्यान देने योग्य स्वास्थ्य परिणाम दे रहा है।",
+        opts: ["me", "my", "mine", "myself"],
+        ans: 2,
+        expl: "Emphatic construction में संबंधवाचक सर्वनाम आता है: 'This routine of mine' (= My routine)।"
+      }
+    ];
+
+    // 30 Final Comprehensive Examination Questions for Chapter 2
+    const testQuestions = [
+      // UNIT 01: 6. USE OF "THE" (Q1 to Q8)
+      {
+        id: 1,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "Spain is a sunny European nation situated in ___ south of Europe.",
+        hi: "स्पेन यूरोप के दक्षिणी हिस्से में स्थित एक धूपदार यूरोपीय देश है।",
+        opts: ["a", "an", "the", "no article"],
+        ans: 2,
+        expl: "जब दिशा संज्ञा (Noun phrase: the south of Europe) के रूप में प्रयुक्त हो, तो 'the' लगाना अनिवार्य है।"
+      },
+      {
+        id: 2,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "Scientists warn that ___ whale is in immediate peril of becoming extinct.",
+        hi: "वैज्ञानिक चेतावनी देते हैं कि व्हेल मछली विलुप्त होने के तात्कालिक खतरे में है।",
+        opts: ["a", "an", "the", "no article"],
+        ans: 2,
+        expl: "'The + singular noun' (The whale) संपूर्ण प्रजाति या पशु वर्ग का प्रतिनिधित्व करता है।"
+      },
+      {
+        id: 3,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "History proves that ___ may build civilizations, but ___ is also mortal.",
+        hi: "इतिहास गवाह है कि मानव सभ्यताएँ बना सकता है, परंतु मनुष्य नश्वर भी है।",
+        opts: ["the man / the man", "a man / a man", "man / man", "the man / man"],
+        ans: 2,
+        expl: "घातक अपवाद: जब 'man' संपूर्ण मानव जाति का बोध कराए, तो उसके आगे कोई article नहीं लगता ('man is mortal')।"
+      },
+      {
+        id: 4,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "The welfare society organized shelter and healthcare for ___ homeless and ___ elderly.",
+        hi: "कल्याणकारी समिति ने बेघरों और बुजुर्गों के लिए आश्रय और स्वास्थ्य सेवा की व्यवस्था की।",
+        opts: ["a / an", "the / the", "the / an", "no article / no article"],
+        ans: 1,
+        expl: "'The + adjective' (the homeless, the elderly) उस वर्ग के सभी व्यक्तियों का बोध कराता है और बहुवचन संज्ञा बनता है।"
+      },
+      {
+        id: 5,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "The luxury liner embarked on a journey across ___ Atlantic and entered ___ River Thames.",
+        hi: "विलासितापूर्ण जहाज ने अटलांटिक महासागर को पार किया और टेम्स नदी में प्रवेश किया।",
+        opts: ["the / the", "an / the", "the / a", "no article / the"],
+        ans: 0,
+        expl: "महासागरों (the Atlantic) और नदियों (the Thames) के नामों से पहले हमेशा 'the' लगता है।"
+      },
+      {
+        id: 6,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "Mountaineers admire ___ Himalayas, but scaling ___ Mount Everest requires elite training.",
+        hi: "पर्वतारोही हिमालय पर्वतमाला की प्रशंसा करते हैं, पर माउंट एवरेस्ट पर चढ़ने के लिए विशेष प्रशिक्षण चाहिए।",
+        opts: ["the / the", "the / no article", "no article / the", "the / a"],
+        ans: 1,
+        expl: "पर्वत श्रृंखला में 'the Himalayas' लगता है, परंतु अकेले पर्वत शिखर 'Mount Everest' के आगे कोई article नहीं लगता।"
+      },
+      {
+        id: 7,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "The treaty was ratified by ambassadors representing ___ United States and ___ Philippines.",
+        hi: "संयुक्त राज्य अमेरिका और फिलीपींस का प्रतिनिधित्व करने वाले राजदूतों द्वारा संधि की पुष्टि की गई।",
+        opts: ["the / the", "the / no article", "no article / the", "a / the"],
+        ans: 0,
+        expl: "'States' वाले और बहुवचन नाम वाले देशों (the United States, the Philippines) के साथ 'the' लगता है।"
+      },
+      {
+        id: 8,
+        unit: 'use',
+        label: 'Unit 01: Use of the',
+        q: "We were invited to a grand family gathering by ___ Smiths at their countryside manor.",
+        hi: "हमें स्मिथ परिवार द्वारा उनकी देहाती हवेली में एक भव्य पारिवारिक समारोह में आमंत्रित किया गया था।",
+        opts: ["a", "an", "the", "no article"],
+        ans: 2,
+        expl: "'The + plural surname' (the Smiths) पूरे परिवार (Smith family) का बोध कराता है।"
+      },
+
+      // UNIT 02: 7. GENERAL OMISSION (Q9 to Q16)
+      {
+        id: 9,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "Ancient poets wrote that ___ death spares neither the king nor the pauper.",
+        hi: "प्राचीन कवियों ने लिखा कि मृत्यु न राजा को छोड़ती है और न ही रंक को।",
+        opts: ["a", "the", "no article", "an"],
+        ans: 2,
+        expl: "सामान्य रूप से प्रयुक्त भाववाचक संज्ञा (Abstract noun: death) के आगे कोई article नहीं लगता।"
+      },
+      {
+        id: 10,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "___ sudden death of the renowned scientist created an irreplaceable void in research.",
+        hi: "प्रसिद्ध वैज्ञानिक के आकस्मिक निधन ने शोध के क्षेत्र में एक अपूरणीय शून्यता उत्पन्न कर दी।",
+        opts: ["A", "The", "No article", "An"],
+        ans: 1,
+        expl: "जब भाववाचक संज्ञा किसी विशेष घटना या व्यक्ति से जुड़कर विशिष्ट हो जाए, तो 'The death of...' आता है।"
+      },
+      {
+        id: 11,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "The traditional Scottish family sat down together for ___ breakfast at sunrise.",
+        hi: "पारंपरिक स्कॉटिश परिवार सूर्योदय के समय नाश्ते के लिए एक साथ बैठा।",
+        opts: ["a", "the", "no article", "one"],
+        ans: 2,
+        expl: "दैनिक सामान्य भोजन (breakfast, lunch, dinner) के आगे article का प्रयोग नहीं होता।"
+      },
+      {
+        id: 12,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "___ wedding breakfast hosted by the bride's father was attended by three hundred guests.",
+        hi: "दुल्हन के पिता द्वारा आयोजित विवाह का प्रीतिभोज तीन सौ मेहमानों द्वारा उपस्थित था।",
+        opts: ["A", "The", "No article", "Any"],
+        ans: 1,
+        expl: "औपचारिक प्रीतिभोज या विशेष दावत (Banquet/Feast) के लिए 'The wedding breakfast' आता है।"
+      },
+      {
+        id: 13,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "My cousin plays ___ cricket brilliantly, but never watches ___ golf on television.",
+        hi: "मेरा चचेरा भाई शानदार क्रिकेट खेलता है, लेकिन टेलीविजन पर कभी गोल्फ नहीं देखता।",
+        opts: ["the / the", "no article / no article", "a / the", "no article / the"],
+        ans: 1,
+        expl: "खेलों और स्पोर्ट्स (cricket, golf, football, chess) के नामों से पहले कोई article नहीं लगता।"
+      },
+      {
+        id: 14,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "Before taking the legal oath in the witness box, please raise ___ right hand.",
+        hi: "गवाह के कटघरे में कानूनी शपथ लेने से पहले, कृपया अपना दाहिना हाथ उठाएं।",
+        opts: ["the", "your", "a", "no word"],
+        ans: 1,
+        expl: "शरीर के अंगों के साथ सामान्यतः संबंधवाचक विशेषण (your, his, her) लगता है ('raise your right hand')।"
+      },
+      {
+        id: 15,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "The security officer swiftly seized the trespassing intruder by ___ collar.",
+        hi: "सुरक्षा अधिकारी ने अनधिकृत रूप से घुसे व्यक्ति को कॉलर से तेजी से पकड़ लिया।",
+        opts: ["his", "the", "a", "no article"],
+        ans: 1,
+        expl: "शारीरिक संपर्क के प्रीपोजिशन वाले मुहावरे में 'the' का प्रयोग होता है ('seized by the collar')।"
+      },
+      {
+        id: 16,
+        unit: 'omission',
+        label: 'Unit 02: Omission Rules',
+        q: "Ecologists warn that civilization will crumble if we persistently interfere with ___ nature.",
+        hi: "पारिस्थितिकीविद् चेतावनी देते हैं कि यदि हम लगातार प्रकृति के साथ छेड़छाड़ करेंगे तो सभ्यता ढह जाएगी।",
+        opts: ["a", "the", "no article", "any"],
+        ans: 2,
+        expl: "जब 'nature' का अर्थ प्राकृतिक जगत (spirit of nature) हो, तो 'the' नहीं लगता ('interfere with nature')।"
+      },
+
+      // UNIT 03: 8. INSTITUTIONS & PLACES (Q17 to Q24)
+      {
+        id: 17,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "Weary from travel, the wanderer finally returned ___ home before midnight.",
+        hi: "यात्रा से थका हुआ मुसाफिर आखिरकार आधी रात से पहले घर लौट आया।",
+        opts: ["at the", "to the", "no article / preposition", "in the"],
+        ans: 2,
+        expl: "गति क्रिया के बाद अकेला 'home' Adverb की तरह प्रयुक्त होता है: 'returned home' (no article/preposition)।"
+      },
+      {
+        id: 18,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "This historic manor was once ___ home of the royal queen of Scots.",
+        hi: "यह ऐतिहासिक हवेली कभी स्कॉट्स की शाही रानी का निवास स्थान (घर) थी।",
+        opts: ["a", "the", "no article", "an"],
+        ans: 1,
+        expl: "जब 'home' के आगे वर्णनात्मक संबंध हो ('the home of the royal queen'), तो 'the' लगता है।"
+      },
+      {
+        id: 19,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "Devout villagers walk to ___ church every Sunday morning to participate in prayers.",
+        hi: "श्रद्धालु ग्रामीण प्रार्थना में भाग लेने के लिए हर रविवार सुबह चर्च जाते हैं।",
+        opts: ["a", "the", "no article", "some"],
+        ans: 2,
+        expl: "प्रार्थना करने जाना चर्च का मूल उद्देश्य (Primary purpose) है, अतः 'go to church' (no article)।"
+      },
+      {
+        id: 20,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "Architecture students visited ___ church to examine its medieval flying buttresses.",
+        hi: "वास्तुकला के छात्र चर्च की मध्ययुगीन संरचना का अध्ययन करने गए।",
+        opts: ["a", "the", "no article", "any"],
+        ans: 1,
+        expl: "यहाँ छात्र प्रार्थना करने नहीं बल्कि विज़िटर बनकर गए (Secondary purpose), अतः 'the church' आएगा।"
+      },
+      {
+        id: 21,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "The critically ill patient was rushed to ___ hospital for emergency surgery.",
+        hi: "गंभीर रूप से बीमार मरीज को आपातकालीन सर्जरी के लिए अस्पताल ले जाया गया।",
+        opts: ["a", "the", "no article", "an"],
+        ans: 2,
+        expl: "मरीज बनकर इलाज करवाने जाना अस्पताल का मूल उद्देश्य है, अतः 'to hospital' (no article)।"
+      },
+      {
+        id: 22,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "Rohan carried a fruit basket and walked into ___ hospital to see his injured friend.",
+        hi: "रोहन फलों की टोकरी लेकर अपने घायल दोस्त से मिलने अस्पताल गया।",
+        opts: ["a", "the", "no article", "one"],
+        ans: 1,
+        expl: "मरीज से मिलने जाना विज़िटर विजिट (Secondary purpose) है, अतः 'the hospital' आएगा।"
+      },
+      {
+        id: 23,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "The convicted felon was sentenced to ten years in ___ prison.",
+        hi: "दोषी अपराधी को जेल में दस साल की सजा सुनाई गई।",
+        opts: ["a", "the", "no article", "that"],
+        ans: 2,
+        expl: "कैदी बनकर सजा काटना जेल का प्राथमिक उद्देश्य है, अतः 'in prison' (no article)।"
+      },
+      {
+        id: 24,
+        unit: 'institution',
+        label: 'Unit 03: Institutions & Places',
+        q: "The senior engineer is diligently at ___ work, while his assistant is in ___ office.",
+        hi: "वरिष्ठ इंजीनियर लगन से काम में व्यस्त हैं, जबकि उनका सहायक कार्यालय में है।",
+        opts: ["the / the", "no article / the", "the / no article", "no article / no article"],
+        ans: 1,
+        expl: "कार्यस्थल के लिए 'at work' (no article) और कार्यालय कक्ष के लिए 'in the office' ('the' अनिवार्य) आता है।"
+      },
+
+      // UNIT 04: 9. DEMONSTRATIVES (Q25 to Q30)
+      {
+        id: 25,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "___ old vehicle of Sharma's is always breaking down on remote highway stretches.",
+        hi: "शर्माजी का वह पुराना वाहन हमेशा सुनसान हाईवे पर खराब होता रहता है।",
+        opts: ["This", "That", "These", "Those"],
+        ans: 1,
+        expl: "असंतोष या शिकायत के भाव में Emphatic construction: 'That old vehicle of Sharma's'।"
+      },
+      {
+        id: 26,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "This eccentric hobby of ___ often baffles my colleagues and relatives.",
+        hi: "मेरा यह विचित्र शौक अक्सर मेरे सहकर्मियों और रिश्तेदारों को हैरान कर देता है।",
+        opts: ["me", "my", "mine", "myself"],
+        ans: 2,
+        expl: "Emphatic construction की संरचना में संबंधवाचक सर्वनाम आता है: 'This hobby of mine'।"
+      },
+      {
+        id: 27,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "Concert Announcer at broadcast end: '___ was the Brandenburg Concerto No. 3 by J.S. Bach.'",
+        hi: "प्रसारण समाप्ति पर उद्घोषक: 'यह जे.एस. बाख द्वारा प्रस्तुत ब्रैंडेनबर्ग कॉन्सर्टो नंबर 3 था।'",
+        opts: ["This", "That", "These", "Those"],
+        ans: 1,
+        expl: "रेडियो या संगीत प्रसारण के अंत में बीते हुए कार्यक्रम का उल्लेख करने के लिए 'That was...' बोला जाता है।"
+      },
+      {
+        id: 28,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "Introducing her colleague: 'Anita, ___ is Dr Verma, our chief medical researcher.'",
+        hi: "अपने सहकर्मी का परिचय कराते हुए: 'अनीता, ये हमारे मुख्य चिकित्सा शोधकर्ता डॉ वर्मा हैं।'",
+        opts: ["he", "this", "that", "it"],
+        ans: 1,
+        expl: "व्यक्तिगत परिचय (Introductions) करवाते समय मानक अंग्रेजी अभिव्यक्ति है: 'This is [Name]'।"
+      },
+      {
+        id: 29,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "___ who had registered prior to Monday were admitted into the seminar hall.",
+        hi: "जिन लोगों ने सोमवार से पहले पंजीकरण कराया था उन्हें सेमिनार हॉल में प्रवेश दिया गया।",
+        opts: ["Those", "These", "That", "This"],
+        ans: 0,
+        expl: "Defining relative clause से पहले लोगों के समूह को संदर्भित करने के लिए 'Those who...' प्रयुक्त होता है।"
+      },
+      {
+        id: 30,
+        unit: 'demonstrative',
+        label: 'Unit 04: Demonstratives',
+        q: "I don't fancy the brown briefcase; I would rather buy this ___ one.",
+        hi: "मुझे भूरा ब्रीफकेस पसंद नहीं है; मैं इसके बजाय यह चमड़े वाला खरीदना पसंद करूंगा।",
+        opts: ["leather", "leather ones", "a leather", "the leather"],
+        ans: 0,
+        expl: "जब demonstrative (this) के बाद कोई विशेषण (leather) आए, तो 'one' लगाना अनिवार्य होता है ('this leather one')।"
+      }
+    ];
+
+    // ==========================================
+    // RENDER 20 EMBEDDED CONCEPT PAIRS
+    // ==========================================
+    const subPairs = [
+      { id: 'pair-1a', title: '1A. Unique Objects & Second Mention', start: 0 },
+      { id: 'pair-1b', title: '1B. Whole Class & The Fatal \'MAN\' Exception', start: 2 },
+      { id: 'pair-1c', title: '1C. Mountain Ranges vs Single Peaks & Rivers', start: 4 },
+      { id: 'pair-1d', title: '1D. Monuments, Newspapers & Pop Groups', start: 6 },
+      { id: 'pair-2a', title: '2A. Abstract Nouns: General vs Specific Sense', start: 8 },
+      { id: 'pair-2b', title: '2B. The Physical Contact Preposition Rule', start: 10 },
+      { id: 'pair-3a', title: '3A. \'Home\' Alone vs Descriptive Phrase', start: 12 },
+      { id: 'pair-3b', title: '3B. Primary Purpose vs Visitor Visit (Hospital, Prison)', start: 14 },
+      { id: 'pair-3c', title: '3C. Sea as Sailors vs Beach Holiday & Work', start: 16 },
+      { id: 'pair-4a', title: '4A. Demonstrative Number Agreement & Emphatic Forms', start: 18 }
+    ];
+
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
+
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const container = document.getElementById(pair.id);
+        if (!container) return;
+
+        const q1 = conceptQuestions[pair.start];
+        const q2 = conceptQuestions[pair.start + 1];
+        const pairQs = [q1, q2];
+
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
+
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
+
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
+          });
+
+          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight 
+              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
+          }
+
+          html += `
+            <div class="${cardClass}" id="card-concept-${q.id}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                  <strong style="color:var(--brand); font-size:11.5px;">Q${q.id}.</strong>
+                  ${statusBadge}
+                </div>
+                <div style="font-weight:bold; margin-bottom:3px; line-height:1.35;">${q.q}</div>
+                <div class="font-hi" style="font-size:11px; color:#4b5563; margin-bottom:6px;">👉 ${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+              <div style="margin-top:6px; padding-top:6px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:5px;">
+                  <button class="mint-btn" type="button" style="font-size:10.5px; padding:3px 8px;" onclick="checkConceptQ(${q.id})">Check</button>
+                  <button class="quiet-btn" type="button" style="font-size:10.5px; padding:3px 6px;" onclick="resetConceptQ(${q.id})">Reset</button>
+                </div>
+                <details style="font-size:10.5px;">
+                  <summary style="cursor:pointer; font-weight:bold; color:var(--brand);">व्याख्या</summary>
+                  <p style="margin-top:3px; color:#1e293b;">${q.expl}</p>
+                </details>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        container.innerHTML = html;
+      });
+    }
+
+    function selectConceptOpt(qId, optIdx) {
+      conceptUserAnswers[qId] = optIdx;
+      conceptChecked[qId] = false;
+      renderConceptPairs();
+    }
+
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert("कृपया पहले किसी एक विकल्प को चुनें!");
+        return;
+      }
+      conceptChecked[qId] = true;
+      renderConceptPairs();
+    }
+
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
+    }
+
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST ARENA LOGIC
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(secondsLeft / 60);
+      const secs = secondsLeft % 60;
+      const el = document.getElementById('timer-display');
+      el.innerText = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      if (secondsLeft <= 120) el.classList.add('urgent');
+      else el.classList.remove('urgent');
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('palette-container');
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let pClass = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) pClass += ' attempted';
+        if (testReview[q.id]) pClass += ' review';
+        if (currentIdx === idx) pClass += ' active';
+        html += `<div class="${pClass}" onclick="jumpToQ(${idx})">${q.id}</div>`;
+      });
+      container.innerHTML = html;
+
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').innerText = attempted;
+      document.getElementById('left-count').innerText = testQuestions.length - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').innerText = q.label;
+      document.getElementById('q-counter').innerText = `Q ${q.id} of ${testQuestions.length}`;
+      document.getElementById('current-q-title').innerText = `Q${q.id}. ${q.q}`;
+      document.getElementById('current-q-hindi').innerText = `👉 ${q.hi}`;
+
+      const revBtn = document.getElementById('review-btn');
+      revBtn.innerText = testReview[q.id] ? '🚩 Marked for Review' : '🚩 Mark for Review';
+      revBtn.style.background = testReview[q.id] ? '#fef3c7' : '#fff';
+
+      const userSel = testAnswers[q.id];
+      let optsHtml = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = userSel === idx;
+        optsHtml += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:22px; height:22px; font-size:11px; ${isSel ? 'background:var(--button); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      document.getElementById('current-q-options').innerHTML = optsHtml;
+
+      document.getElementById('prev-btn').disabled = (currentIdx === 0);
+      document.getElementById('next-btn').innerText = (currentIdx === testQuestions.length - 1) ? 'Finish / Review' : 'Next Question →';
+    }
+
+    function selectTestOpt(qId, optIdx) {
+      testAnswers[qId] = optIdx;
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderPalette();
+      renderCurrentQ();
+    }
+
+    function nextQuestion() {
+      if (currentIdx < testQuestions.length - 1) {
+        currentIdx++;
+        renderPalette();
+        renderCurrentQ();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderPalette();
+        renderCurrentQ();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = testQuestions.length - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `आपने 30 में से केवल <strong>${attempted} प्रश्न हल किए हैं</strong> (${left} प्रश्न अभी शेष हैं)। क्या आप सचमुच सबमिट करना चाहते हैं?`;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(autoSubmitted) {
+      closeModal();
+      if (testTimer) clearInterval(testTimer);
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsEl = document.getElementById('test-results-view');
+      resultsEl.style.display = 'block';
+
+      // Calculate Scores
+      let score = 0;
+      let correct = 0;
+      let wrong = 0;
+      const conceptStats = {
+        use: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-1', name: 'Unit 01: 6. The Definite Article (the)' },
+        omission: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-2', name: 'Unit 02: 7. General Omission of the' },
+        institution: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-3', name: 'Unit 03: 8. Institutions & Primary Purpose' },
+        demonstrative: { total: 0, correct: 0, wrong: 0, mistakes: [], anchor: 'topic-4', name: 'Unit 04: 9. Demonstratives (this/that/these/those)' }
+      };
+
+      testQuestions.forEach(q => {
+        const u = testAnswers[q.id];
+        const unit = conceptStats[q.unit];
+        unit.total++;
+        if (u !== undefined) {
+          if (u === q.ans) {
+            score++;
+            correct++;
+            unit.correct++;
+          } else {
+            wrong++;
+            unit.wrong++;
+            unit.mistakes.push(q.id);
+          }
+        } else {
+          unit.wrong++;
+          unit.mistakes.push(q.id);
+        }
+      });
+
+      const accuracy = Math.round((correct / (correct + wrong || 1)) * 100);
+      const timeTakenSec = (15 * 60) - secondsLeft;
+      const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
+
+      let diagCardsHtml = '';
+      for (const key in conceptStats) {
+        const cs = conceptStats[key];
+        const hasMistakes = cs.mistakes.length > 0;
+        diagCardsHtml += `
+          <div class="diag-card ${hasMistakes ? 'mistake' : ''}">
+            <div style="font-weight:bold; font-size:12.5px; margin-bottom:4px; color:${hasMistakes ? '#b91c1c' : '#059669'};">
+              ${cs.name}
+            </div>
+            <div style="font-size:11.5px; margin-bottom:5px;">
+              ${cs.correct} / ${cs.total} Correct (${Math.round((cs.correct / cs.total) * 100)}%)
+            </div>
+            ${hasMistakes ? `
+              <div style="font-size:11px; color:#991b1b; margin-bottom:6px;">
+                ⚠️ Mistakes in Q: <strong>${cs.mistakes.join(', ')}</strong>
+              </div>
+            ` : `
+              <div style="font-size:11px; color:#15803d; font-weight:bold; margin-bottom:6px;">
+                ✓ All concepts mastered!
+              </div>
+            `}
+            <a href="#${cs.anchor}" style="font-size:11px; font-weight:bold; color:var(--brand); text-decoration:underline;">
+              Revise Rule in Theory →
+            </a>
+          </div>
+        `;
+      }
+
+      // Review Questions List
+      let reviewHtml = '';
+      testQuestions.forEach(q => {
+        const u = testAnswers[q.id];
+        const isRight = u === q.ans;
+        const isSkipped = u === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:11.5px;">
+              <span class="badge">${q.label}</span>
+              <span style="font-weight:bold; color:${isRight ? '#15803d' : '#b91c1c'};">
+                ${isRight ? '✓ Correct (+1)' : isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)'}
+              </span>
+            </div>
+            <div style="font-weight:bold; font-size:13px; margin-bottom:2px;">Q${q.id}. ${q.q}</div>
+            <div class="font-hi" style="font-size:11.5px; color:#475569; margin-bottom:6px;">👉 ${q.hi}</div>
+            <div style="font-size:11.5px; margin-bottom:5px;">
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">(${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+              ${!isRight && !isSkipped ? `<br><strong>Your Choice:</strong> <span style="color:#b91c1c;">(${String.fromCharCode(65 + u)}) ${q.opts[u]}</span>` : ''}
+            </div>
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:6px 8px; font-size:11.5px; color:#334155;">
+              <strong>📖 व्याख्या (Explanation):</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsEl.innerHTML = `
+        <div class="results-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; border-bottom:2px solid #a7f3d0; padding-bottom:14px; margin-bottom:18px;">
+            <div>
+              <span class="badge" style="font-size:11.5px;">30-Question Examination Results</span>
+              <h2 style="font-size:26px; font-weight:900; margin:4px 0;">
+                Your Score: <span class="score-circle">${score}</span> / 30
+              </h2>
+              <p style="font-size:12px; color:#475569;">
+                Accuracy: <strong>${accuracy}%</strong> · Time Taken: <strong>${timeTakenStr}</strong>
+                ${autoSubmitted ? ' · <span style="color:#dc2626; font-weight:bold;">(Auto Submitted on 15:00 Time Limit)</span>' : ''}
+              </p>
+            </div>
+            <button class="mint-btn" type="button" onclick="startExam()">
+              🔄 Retake 30-Q Test
+            </button>
+          </div>
+
+          <!-- Concept Mistake Diagnostics -->
+          <div style="background:#fffbeb; border:2px solid #fcd34d; border-radius:14px; padding:14px; margin-bottom:20px;">
+            <h3 style="font-size:16px; font-weight:900; color:#92400e; margin-bottom:4px;">
+              🔍 गलतियों का कॉन्सेप्ट आधारित विश्लेषण (Concept Mistake Diagnostics)
+            </h3>
+            <p style="font-size:11.5px; color:#78350f; margin-bottom:10px;">
+              जिस इकाई (Unit) में गलती हुई हो, उसके लिंक पर क्लिक करके सीधे उस नियम को दोबारा पढ़ें:
+            </p>
+            <div class="concept-diag-grid">
+              ${diagCardsHtml}
+            </div>
+          </div>
+
+          <!-- Question-by-Question Review -->
+          <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">
+            Detailed Question Review (1 to 30)
+          </h3>
+          <div>
+            ${reviewHtml}
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderConceptPairs();
+    });
+  </script>
+</body>
+</html>
