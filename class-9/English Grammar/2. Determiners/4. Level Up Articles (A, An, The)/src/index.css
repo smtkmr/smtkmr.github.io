@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --body: 'Comic Neue', 'Quicksand', sans-serif;
+  --heading: 'Outfit', 'Quicksand', sans-serif;
+  --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
+  --bg: #f0fdf4;
+  --ink: #1f2937;
+  --brand: #059669;
+  --teal: #2dd4bf;
+  --yellow: #fde047;
+  --line: #34d399;
+  --button: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, input, button, select, textarea {
+  font-family: 'Comic Neue', 'Quicksand', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', 'Quicksand', sans-serif !important;
+}
+
+.font-hi {
+  font-family: 'Noto Sans Devanagari', 'Comic Neue', sans-serif !important;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 14.5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 14px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 0 8px;
+  }
+}
