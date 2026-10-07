@@ -1,6 +1,0 @@
-{
-  "name": "The M.C.C. - Bilingual English-Hindi Reader & Exam",
-  "description": "Comprehensive Class English Chapter 1: The M.C.C. by R.K. Narayan featuring complete line-by-line Hindi translation, textbook footnotes, margin questions, audio, and timed exam.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
