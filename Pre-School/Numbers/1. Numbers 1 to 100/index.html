@@ -5,19 +5,1931 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google" content="notranslate" />
     <meta name="theme-color" content="#2dd4bf" />
-    <title>Number 1 Overwriting - Pre-School Maths</title>
-    <meta name="description" content="Premium interactive pre-school maths lesson for Number 1 (One) with vibrant 3D illustrations, counting lab, 5-frame, and overwriting practice." />
-    <meta property="og:title" content="Number 1 Overwriting - Pre-School Maths" />
-    <meta property="og:description" content="Premium interactive pre-school maths lesson for Number 1 (One) with vibrant 3D illustrations, counting lab, 5-frame, and overwriting practice." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <title>Numbers 1 to 100 Overwriting & Counting - Pre-School Maths</title>
+    <meta name="description" content="Interactive pre-school maths curriculum for Numbers 1 to 100 with 3D vector illustrations, exact counting lab, and handwriting overwriting practice." />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;700;800&family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN for Standalone Single-File Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- React 18, ReactDOM, and Babel Standalone for Single-File Execution -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      :root {
+        --body: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+        --heading: 'Outfit', 'Quicksand', sans-serif;
+        --hindi: 'Noto Sans Devanagari', 'Comic Sans MS', sans-serif;
+      }
+      body {
+        font-family: var(--body);
+        background-color: #f0fdf4;
+        color: #1f2937;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2, h3, h4, .font-heading {
+        font-family: var(--heading);
+      }
+      .font-hindi {
+        font-family: var(--hindi);
+      }
+      .scrollbar-none::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-none {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
   </head>
-  <body>
+  <body class="min-h-screen bg-[#f0fdf4] text-[#1f2937]">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- COMPLETE ALL-IN-ONE APPLICATION SCRIPT -->
+    <script type="text/babel">
+      const { useState, useEffect, useRef, useCallback, useMemo } = React;
+
+      /* ========================================================================
+       * 1. SOUND & AUDIO ENGINE (Web Audio API & Web Speech)
+       * ======================================================================== */
+      let audioCtx = null;
+      function getAudioContext() {
+        try {
+          if (!audioCtx && typeof window !== 'undefined') {
+            const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtxClass) audioCtx = new AudioCtxClass();
+          }
+          if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+          return audioCtx;
+        } catch { return null; }
+      }
+
+      function playDotPopSound() {
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(840, now + 0.08);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        } catch {}
+      }
+
+      function playSuccessChime() {
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          const notes = [523.25, 659.25, 783.99, 1046.5];
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            const start = now + idx * 0.09;
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, start);
+            gain.gain.setValueAtTime(0, start);
+            gain.gain.linearRampToValueAtTime(0.25, start + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(start);
+            osc.stop(start + 0.35);
+          });
+        } catch {}
+      }
+
+      function speakText(text, lang = 'en-US') {
+        try {
+          if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(text);
+          u.lang = lang;
+          u.rate = 0.9;
+          u.pitch = 1.1;
+          window.speechSynthesis.speak(u);
+        } catch {}
+      }
+
+      /* ========================================================================
+       * 2. NUMBER ENGINE (1 to 100, Hindi Words, Devanagari, Objects)
+       * ======================================================================== */
+      const ALL_HINDI_WORDS = [
+        '',
+        'एक', 'दो', 'तीन', 'चार', 'पाँच', 'छह', 'सात', 'आठ', 'नौ', 'दस',
+        'ग्यारह', 'बारह', 'तेरह', 'चौदह', 'पंद्रह', 'सोलह', 'सत्रह', 'अठारह', 'उन्नीस', 'बीस',
+        'इक्कीस', 'बाईस', 'तेईस', 'चौबीस', 'पच्चीस', 'छब्बीस', 'सत्ताईस', 'अट्ठाईस', 'उनतीस', 'तीस',
+        'इकत्तीस', 'बत्तीस', 'तैंतीस', 'चौंतीस', 'पैंतीस', 'छत्तीस', 'सैंतीस', 'अड़तीस', 'उनतालीस', 'चालीस',
+        'इकतालीस', 'बयालीस', 'तैंतालीस', 'चवालीस', 'पैंतालीस', 'छियालीस', 'सैंतालीस', 'अड़तालीस', 'उनचास', 'पचास',
+        'इक्यावन', 'बावन', 'तिरपन', 'चौवन', 'पचपन', 'छप्पन', 'सत्तावन', 'अट्ठावन', 'उनसठ', 'साठ',
+        'इकसठ', 'बासठ', 'तिरसठ', 'चौंसठ', 'पैंसठ', 'छियासठ', 'सरसठ', 'अड़सठ', 'उनहत्तर', 'सत्तर',
+        'इकहत्तर', 'बहत्तर', 'तिहत्तर', 'चौहत्तर', 'पचहत्तर', 'छिहत्तर', 'सतहत्तर', 'अठहत्तर', 'उन्यासी', 'अस्सी',
+        'इक्यासी', 'बयासी', 'तिरासी', 'चौरासी', 'पचासी', 'छियासी', 'सत्तासी', 'अट्ठासी', 'नवासी', 'नब्बे',
+        'इक्यानवे', 'बानवे', 'तिरानवे', 'चौरानवे', 'पचानवे', 'छियानवे', 'सत्तानवे', 'अट्ठानवे', 'निन्यानवे', 'सौ',
+      ];
+
+      const ONES_WORDS = [
+        '', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
+        'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen',
+        'Seventeen', 'Eighteen', 'Nineteen',
+      ];
+
+      const TENS_WORDS = [
+        '', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety',
+      ];
+
+      function numberToWords(n) {
+        if (n === 100) return 'One Hundred';
+        if (n < 20) return ONES_WORDS[n] || String(n);
+        const tens = Math.floor(n / 10);
+        const rem = n % 10;
+        if (rem === 0) return TENS_WORDS[tens];
+        return `${TENS_WORDS[tens]}-${ONES_WORDS[rem]}`;
+      }
+
+      function numberToDevanagari(n) {
+        const digits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+        return String(n).split('').map((d) => digits[Number(d)] || d).join('');
+      }
+
+      const SELECTABLE_OBJECTS = [
+        { id: 'apple', nameEn: 'Apple', namePluralEn: 'Apples', nameHi: 'सेब', color: '#ef4444' },
+        { id: 'banana', nameEn: 'Banana', namePluralEn: 'Bananas', nameHi: 'केले', color: '#eab308' },
+        { id: 'carrot', nameEn: 'Carrot', namePluralEn: 'Carrots', nameHi: 'गाजरें', color: '#f97316' },
+        { id: 'orange', nameEn: 'Orange', namePluralEn: 'Oranges', nameHi: 'संतरे', color: '#ea580c' },
+        { id: 'heart', nameEn: 'Heart', namePluralEn: 'Hearts', nameHi: 'दिल', color: '#f43f5e' },
+        { id: 'sun', nameEn: 'Sun', namePluralEn: 'Suns', nameHi: 'सूरज', color: '#f59e0b' },
+        { id: 'milk', nameEn: 'Milk Glass', namePluralEn: 'Milk Glasses', nameHi: 'दूध गिलास', color: '#38bdf8' },
+        { id: 'toothbrush', nameEn: 'Toothbrush', namePluralEn: 'Toothbrushes', nameHi: 'टूथब्रश', color: '#06b6d4' },
+        { id: 'salad', nameEn: 'Salad Bowl', namePluralEn: 'Salad Bowls', nameHi: 'सलाद कटोरे', color: '#22c55e' },
+        { id: 'moon', nameEn: 'Moon', namePluralEn: 'Moons', nameHi: 'चाँद', color: '#a855f7' },
+        { id: 'earth', nameEn: 'Earth', namePluralEn: 'Earths', nameHi: 'धरती', color: '#0284c7' },
+        { id: 'trophy', nameEn: 'Trophy', namePluralEn: 'Trophies', nameHi: 'ट्रॉफियां', color: '#ca8a04' },
+      ];
+
+      function getNumberContext(n) {
+        const wordEn = numberToWords(n);
+        const wordEnUpper = wordEn.toUpperCase();
+        const wordHi = ALL_HINDI_WORDS[n] || `संख्या ${n}`;
+        const deva = numberToDevanagari(n);
+        const tens = Math.floor(n / 10);
+        const ones = n % 10;
+        return { number: n, wordEn, wordEnUpper, wordHi, deva, tens, ones };
+      }
+
+      /* ========================================================================
+       * 3. GEOMETRY ENGINE (4 Handwriting Lines, Wide 28px Letter Gap)
+       * ======================================================================== */
+      const Y_TOP_1 = 38;
+      const Y_MID_1 = 84;
+      const Y_BASE_1 = 134;
+      const Y_BOT_1 = 158;
+
+      const Y_TOP_2 = 186;
+      const Y_MID_2 = 232;
+      const Y_BASE_2 = 282;
+      const Y_BOT_2 = 306;
+
+      function linePoints(x1, y1, x2, y2, steps, g) {
+        const pts = [];
+        for (let i = 0; i <= steps; i++) {
+          const t = i / steps;
+          pts.push({
+            x: Math.round((x1 + (x2 - x1) * t) * 10) / 10,
+            y: Math.round((y1 + (y2 - y1) * t) * 10) / 10,
+            g,
+          });
+        }
+        return pts;
+      }
+
+      function ellipsePoints(cx, cy, rx, ry, steps, g) {
+        const pts = [];
+        for (let i = 0; i < steps; i++) {
+          const angle = (i / steps) * Math.PI * 2 - Math.PI / 2;
+          pts.push({
+            x: Math.round((cx + Math.cos(angle) * rx) * 10) / 10,
+            y: Math.round((cy + Math.sin(angle) * ry) * 10) / 10,
+            g,
+          });
+        }
+        return pts;
+      }
+
+      function getDigitData(digit, cx, w = 56, groupOffset = 1, yTop = Y_TOP_1, yBase = Y_BASE_1) {
+        const left = cx - w / 2;
+        const right = cx + w / 2;
+        const pts = [];
+        const mid = (yTop + yBase) / 2;
+
+        switch (digit) {
+          case '1': {
+            const p = `M ${cx - 16} ${yTop + 26} L ${cx} ${yTop} L ${cx} ${yBase} M ${cx - 20} ${yBase} L ${cx + 20} ${yBase}`;
+            pts.push(...linePoints(cx - 16, yTop + 26, cx, yTop, 2, groupOffset));
+            pts.push(...linePoints(cx, yTop, cx, yBase, 7, groupOffset));
+            pts.push(...linePoints(cx - 20, yBase, cx + 20, yBase, 3, groupOffset + 1));
+            return { path: p, points: pts };
+          }
+          case '2': {
+            const p = `M ${left} ${yTop + 26} C ${left} ${yTop}, ${right} ${yTop}, ${right} ${yTop + 34} C ${right} ${yTop + 60}, ${left + 4} ${yBase - 18}, ${left} ${yBase} L ${right} ${yBase}`;
+            pts.push({ x: left, y: yTop + 26, g: groupOffset });
+            pts.push({ x: cx - 12, y: yTop + 8, g: groupOffset });
+            pts.push({ x: cx, y: yTop, g: groupOffset });
+            pts.push({ x: right - 6, y: yTop + 12, g: groupOffset });
+            pts.push({ x: right, y: yTop + 34, g: groupOffset });
+            pts.push({ x: right - 8, y: yTop + 56, g: groupOffset });
+            pts.push({ x: cx, y: yTop + 76, g: groupOffset });
+            pts.push({ x: left + 8, y: yBase - 10, g: groupOffset });
+            pts.push({ x: left, y: yBase, g: groupOffset });
+            pts.push(...linePoints(left, yBase, right, yBase, 5, groupOffset + 1));
+            return { path: p, points: pts };
+          }
+          case '3': {
+            const p = `M ${left} ${yTop + 16} C ${left} ${yTop}, ${right} ${yTop}, ${right} ${yTop + 30} C ${right} ${mid - 4}, ${cx + 6} ${mid}, ${cx} ${mid} C ${right} ${mid}, ${right} ${yBase - 18}, ${right} ${yBase - 12} C ${right} ${yBase}, ${left} ${yBase}, ${left} ${yBase - 12}`;
+            pts.push({ x: left, y: yTop + 16, g: groupOffset });
+            pts.push({ x: cx, y: yTop, g: groupOffset });
+            pts.push({ x: right, y: yTop + 30, g: groupOffset });
+            pts.push({ x: cx, y: mid, g: groupOffset });
+            pts.push({ x: right, y: yBase - 26, g: groupOffset + 1 });
+            pts.push({ x: cx, y: yBase, g: groupOffset + 1 });
+            pts.push({ x: left, y: yBase - 12, g: groupOffset + 1 });
+            return { path: p, points: pts };
+          }
+          case '4': {
+            const stemX = right - 12;
+            const barY = yTop + 68;
+            const p = `M ${cx} ${yTop} L ${left} ${barY} L ${right} ${barY} M ${stemX} ${yTop + 8} L ${stemX} ${yBase}`;
+            pts.push(...linePoints(cx, yTop, left, barY, 5, groupOffset));
+            pts.push(...linePoints(left, barY, right, barY, 4, groupOffset));
+            pts.push(...linePoints(stemX, yTop + 8, stemX, yBase, 6, groupOffset + 1));
+            return { path: p, points: pts };
+          }
+          case '5': {
+            const p = `M ${right} ${yTop} L ${left + 6} ${yTop} L ${left + 4} ${yTop + 46} C ${left + 10} ${yTop + 42}, ${right} ${yTop + 42}, ${right} ${yTop + 70} C ${right} ${yBase - 2}, ${left + 6} ${yBase}, ${left} ${yBase - 10}`;
+            pts.push(...linePoints(right, yTop, left + 6, yTop, 3, groupOffset));
+            pts.push(...linePoints(left + 6, yTop, left + 4, yTop + 46, 3, groupOffset));
+            pts.push({ x: cx, y: yTop + 44, g: groupOffset + 1 });
+            pts.push({ x: right, y: yTop + 68, g: groupOffset + 1 });
+            pts.push({ x: cx, y: yBase, g: groupOffset + 1 });
+            pts.push({ x: left, y: yBase - 10, g: groupOffset + 1 });
+            return { path: p, points: pts };
+          }
+          case '6': {
+            const p = `M ${right - 4} ${yTop + 12} C ${left} ${yTop + 14}, ${left} ${yTop + 72}, ${left} ${yTop + 80} C ${left} ${yBase}, ${right} ${yBase}, ${right} ${yTop + 74} C ${right} ${yTop + 50}, ${left} ${yTop + 50}, ${left} ${yTop + 74}`;
+            pts.push({ x: right - 4, y: yTop + 12, g: groupOffset });
+            pts.push({ x: left + 6, y: yTop + 32, g: groupOffset });
+            pts.push({ x: left, y: yTop + 58, g: groupOffset });
+            pts.push({ x: left, y: yTop + 80, g: groupOffset });
+            pts.push({ x: cx, y: yBase, g: groupOffset + 1 });
+            pts.push({ x: right, y: yTop + 74, g: groupOffset + 1 });
+            pts.push({ x: cx, y: yTop + 52, g: groupOffset + 1 });
+            pts.push({ x: left, y: yTop + 74, g: groupOffset + 1 });
+            return { path: p, points: pts };
+          }
+          case '7': {
+            const p = `M ${left} ${yTop} L ${right} ${yTop} L ${left + 10} ${yBase}`;
+            pts.push(...linePoints(left, yTop, right, yTop, 4, groupOffset));
+            pts.push(...linePoints(right, yTop, left + 10, yBase, 7, groupOffset + 1));
+            return { path: p, points: pts };
+          }
+          case '8': {
+            const p = `M ${cx} ${mid} C ${left} ${mid}, ${left} ${yTop}, ${cx} ${yTop} C ${right} ${yTop}, ${right} ${mid}, ${cx} ${mid} C ${left} ${mid}, ${left} ${yBase}, ${cx} ${yBase} C ${right} ${yBase}, ${right} ${mid}, ${cx} ${mid}`;
+            pts.push({ x: cx, y: mid, g: groupOffset });
+            pts.push({ x: left + 4, y: yTop + 24, g: groupOffset });
+            pts.push({ x: cx, y: yTop, g: groupOffset });
+            pts.push({ x: right - 4, y: yTop + 24, g: groupOffset });
+            pts.push({ x: cx, y: mid, g: groupOffset });
+            pts.push({ x: left + 2, y: yBase - 24, g: groupOffset + 1 });
+            pts.push({ x: cx, y: yBase, g: groupOffset + 1 });
+            pts.push({ x: right - 2, y: yBase - 24, g: groupOffset + 1 });
+            return { path: p, points: pts };
+          }
+          case '9': {
+            const p = `M ${right} ${yTop + 30} C ${right} ${yTop + 6}, ${left} ${yTop + 6}, ${left} ${yTop + 30} C ${left} ${yTop + 56}, ${right} ${yTop + 56}, ${right} ${yTop + 30} L ${right} ${yBase - 12} C ${right} ${yBase}, ${left + 4} ${yBase}, ${left} ${yBase - 12}`;
+            pts.push({ x: right, y: yTop + 30, g: groupOffset });
+            pts.push({ x: cx, y: yTop + 6, g: groupOffset });
+            pts.push({ x: left, y: yTop + 30, g: groupOffset });
+            pts.push({ x: cx, y: yTop + 54, g: groupOffset });
+            pts.push({ x: right, y: yTop + 30, g: groupOffset });
+            pts.push(...linePoints(right, yTop + 36, right, yBase - 12, 4, groupOffset + 1));
+            pts.push({ x: cx, y: yBase, g: groupOffset + 1 });
+            pts.push({ x: left, y: yBase - 12, g: groupOffset + 1 });
+            return { path: p, points: pts };
+          }
+          case '0':
+          default: {
+            const rx = w / 2;
+            const ry = (yBase - yTop) / 2;
+            const cy = (yBase + yTop) / 2;
+            const p = `M ${cx} ${yTop} C ${left} ${yTop}, ${left} ${yBase}, ${cx} ${yBase} C ${right} ${yBase}, ${right} ${yTop}, ${cx} ${yTop} Z`;
+            pts.push(...ellipsePoints(cx, cy, rx, ry, 9, groupOffset));
+            return { path: p, points: pts };
+          }
+        }
+      }
+
+      function getCapitalLetterData(char, cx, w, group, yTop = Y_TOP_1, yBase = Y_BASE_1) {
+        const c = char.toUpperCase();
+        const left = cx - w / 2;
+        const right = cx + w / 2;
+        const mid = (yTop + yBase) / 2;
+        const pts = [];
+        let path = '';
+
+        switch (c) {
+          case '-':
+            path = `M ${left + 4} ${mid} L ${right - 4} ${mid}`;
+            pts.push(...linePoints(left + 4, mid, right - 4, mid, 3, group));
+            break;
+          case 'A':
+            path = `M ${left} ${yBase} L ${cx} ${yTop} L ${right} ${yBase} M ${left + w * 0.22} ${mid + 8} L ${right - w * 0.22} ${mid + 8}`;
+            pts.push(...linePoints(left, yBase, cx, yTop, 5, group));
+            pts.push(...linePoints(cx, yTop, right, yBase, 5, group));
+            pts.push(...linePoints(left + w * 0.22, mid + 8, right - w * 0.22, mid + 8, 3, group + 1));
+            break;
+          case 'B':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} C ${right} ${yTop}, ${right} ${mid}, ${left} ${mid} C ${right + 2} ${mid}, ${right + 2} ${yBase}, ${left} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...ellipsePoints(cx, (yTop + mid) / 2, w / 2, (mid - yTop) / 2, 4, group + 1));
+            pts.push(...ellipsePoints(cx, (mid + yBase) / 2, w / 2, (yBase - mid) / 2, 4, group + 1));
+            break;
+          case 'C':
+            path = `M ${right} ${yTop + 18} C ${right} ${yTop}, ${left} ${yTop}, ${left} ${mid} C ${left} ${yBase}, ${right} ${yBase}, ${right} ${yBase - 16}`;
+            pts.push({ x: right, y: yTop + 18, g: group });
+            pts.push({ x: cx, y: yTop, g: group });
+            pts.push({ x: left, y: mid, g: group });
+            pts.push({ x: cx, y: yBase, g: group });
+            pts.push({ x: right, y: yBase - 16, g: group });
+            break;
+          case 'D':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} C ${right + 3} ${yTop}, ${right + 3} ${yBase}, ${left} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...ellipsePoints(cx, mid, w / 2, (yBase - yTop) / 2, 6, group + 1));
+            break;
+          case 'E':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} L ${right} ${yTop} M ${left} ${mid} L ${right - 6} ${mid} M ${left} ${yBase} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...linePoints(left, yTop, right, yTop, 3, group));
+            pts.push(...linePoints(left, mid, right - 6, mid, 2, group));
+            pts.push(...linePoints(left, yBase, right, yBase, 3, group));
+            break;
+          case 'F':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} L ${right} ${yTop} M ${left} ${mid} L ${right - 6} ${mid}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...linePoints(left, yTop, right, yTop, 3, group));
+            pts.push(...linePoints(left, mid, right - 6, mid, 2, group));
+            break;
+          case 'G':
+            path = `M ${right} ${yTop + 18} C ${right} ${yTop}, ${left} ${yTop}, ${left} ${mid} C ${left} ${yBase}, ${right} ${yBase}, ${right} ${mid} L ${cx} ${mid}`;
+            pts.push({ x: right, y: yTop + 18, g: group });
+            pts.push({ x: cx, y: yTop, g: group });
+            pts.push({ x: left, y: mid, g: group });
+            pts.push({ x: cx, y: yBase, g: group });
+            pts.push(...linePoints(right, yBase, right, mid, 3, group + 1));
+            pts.push(...linePoints(right, mid, cx, mid, 2, group + 1));
+            break;
+          case 'H':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${right} ${yTop} L ${right} ${yBase} M ${left} ${mid} L ${right} ${mid}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...linePoints(right, yTop, right, yBase, 5, group));
+            pts.push(...linePoints(left, mid, right, mid, 3, group + 1));
+            break;
+          case 'I':
+            path = `M ${cx} ${yTop} L ${cx} ${yBase} M ${left + 4} ${yTop} L ${right - 4} ${yTop} M ${left + 4} ${yBase} L ${right - 4} ${yBase}`;
+            pts.push(...linePoints(cx, yTop, cx, yBase, 6, group));
+            pts.push(...linePoints(left + 4, yTop, right - 4, yTop, 2, group));
+            pts.push(...linePoints(left + 4, yBase, right - 4, yBase, 2, group));
+            break;
+          case 'J':
+            path = `M ${right} ${yTop} L ${right} ${yBase - 18} C ${right} ${yBase}, ${left} ${yBase}, ${left} ${yBase - 18}`;
+            pts.push(...linePoints(right, yTop, right, yBase - 18, 5, group));
+            pts.push({ x: cx, y: yBase, g: group });
+            pts.push({ x: left, y: yBase - 18, g: group });
+            break;
+          case 'K':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${right} ${yTop} L ${left} ${mid} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...linePoints(right, yTop, left, mid, 4, group + 1));
+            pts.push(...linePoints(left, mid, right, yBase, 4, group + 1));
+            break;
+          case 'L':
+            path = `M ${left} ${yTop} L ${left} ${yBase} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...linePoints(left, yBase, right, yBase, 4, group + 1));
+            break;
+          case 'M':
+            path = `M ${left} ${yBase} L ${left} ${yTop} L ${cx} ${mid + 8} L ${right} ${yTop} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yBase, left, yTop, 5, group));
+            pts.push(...linePoints(left, yTop, cx, mid + 8, 4, group));
+            pts.push(...linePoints(cx, mid + 8, right, yTop, 4, group));
+            pts.push(...linePoints(right, yTop, right, yBase, 5, group));
+            break;
+          case 'N':
+            path = `M ${left} ${yBase} L ${left} ${yTop} L ${right} ${yBase} L ${right} ${yTop}`;
+            pts.push(...linePoints(left, yBase, left, yTop, 5, group));
+            pts.push(...linePoints(left, yTop, right, yBase, 5, group));
+            pts.push(...linePoints(right, yBase, right, yTop, 5, group));
+            break;
+          case 'O':
+            path = `M ${cx} ${yTop} C ${left} ${yTop}, ${left} ${yBase}, ${cx} ${yBase} C ${right} ${yBase}, ${right} ${yTop}, ${cx} ${yTop} Z`;
+            pts.push(...ellipsePoints(cx, mid, w / 2, (yBase - yTop) / 2, 8, group));
+            break;
+          case 'P':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} C ${right + 2} ${yTop}, ${right + 2} ${mid}, ${left} ${mid}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...ellipsePoints(cx, (yTop + mid) / 2, w / 2, (mid - yTop) / 2, 5, group + 1));
+            break;
+          case 'Q':
+            path = `M ${cx} ${yTop} C ${left} ${yTop}, ${left} ${yBase}, ${cx} ${yBase} C ${right} ${yBase}, ${right} ${yTop}, ${cx} ${yTop} Z M ${cx} ${yBase - 18} L ${right + 4} ${yBase}`;
+            pts.push(...ellipsePoints(cx, mid, w / 2, (yBase - yTop) / 2, 8, group));
+            pts.push(...linePoints(cx, yBase - 18, right + 4, yBase, 3, group + 1));
+            break;
+          case 'R':
+            path = `M ${left} ${yTop} L ${left} ${yBase} M ${left} ${yTop} C ${right + 3} ${yTop}, ${right + 3} ${mid}, ${left} ${mid} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yTop, left, yBase, 5, group));
+            pts.push(...ellipsePoints(cx, (yTop + mid) / 2, w / 2, (mid - yTop) / 2, 4, group + 1));
+            pts.push(...linePoints(left, mid, right, yBase, 4, group + 1));
+            break;
+          case 'S':
+            path = `M ${right} ${yTop + 18} C ${right} ${yTop}, ${left} ${yTop}, ${left} ${yTop + 30} C ${left} ${mid}, ${right} ${mid}, ${right} ${yBase - 28} C ${right} ${yBase}, ${left} ${yBase}, ${left} ${yBase - 16}`;
+            pts.push({ x: right, y: yTop + 18, g: group });
+            pts.push({ x: cx, y: yTop, g: group });
+            pts.push({ x: left, y: yTop + 30, g: group });
+            pts.push({ x: cx, y: mid, g: group });
+            pts.push({ x: right, y: yBase - 28, g: group });
+            pts.push({ x: cx, y: yBase, g: group });
+            pts.push({ x: left, y: yBase - 16, g: group });
+            break;
+          case 'T':
+            path = `M ${left} ${yTop} L ${right} ${yTop} M ${cx} ${yTop} L ${cx} ${yBase}`;
+            pts.push(...linePoints(left, yTop, right, yTop, 4, group));
+            pts.push(...linePoints(cx, yTop, cx, yBase, 6, group));
+            break;
+          case 'U':
+            path = `M ${left} ${yTop} L ${left} ${yBase - 18} C ${left} ${yBase}, ${right} ${yBase}, ${right} ${yBase - 18} L ${right} ${yTop}`;
+            pts.push(...linePoints(left, yTop, left, yBase - 18, 4, group));
+            pts.push({ x: cx, y: yBase, g: group });
+            pts.push(...linePoints(right, yBase - 18, right, yTop, 4, group));
+            break;
+          case 'V':
+            path = `M ${left} ${yTop} L ${cx} ${yBase} L ${right} ${yTop}`;
+            pts.push(...linePoints(left, yTop, cx, yBase, 5, group));
+            pts.push(...linePoints(cx, yBase, right, yTop, 5, group));
+            break;
+          case 'W':
+            path = `M ${left} ${yTop} L ${left + w * 0.28} ${yBase} L ${cx} ${yTop + 24} L ${right - w * 0.28} ${yBase} L ${right} ${yTop}`;
+            pts.push(...linePoints(left, yTop, left + w * 0.28, yBase, 4, group));
+            pts.push(...linePoints(left + w * 0.28, yBase, cx, yTop + 24, 3, group));
+            pts.push(...linePoints(cx, yTop + 24, right - w * 0.28, yBase, 3, group));
+            pts.push(...linePoints(right - w * 0.28, yBase, right, yTop, 4, group));
+            break;
+          case 'X':
+            path = `M ${left} ${yTop} L ${right} ${yBase} M ${right} ${yTop} L ${left} ${yBase}`;
+            pts.push(...linePoints(left, yTop, right, yBase, 5, group));
+            pts.push(...linePoints(right, yTop, left, yBase, 5, group + 1));
+            break;
+          case 'Y':
+            path = `M ${left} ${yTop} L ${cx} ${mid} L ${right} ${yTop} M ${cx} ${mid} L ${cx} ${yBase}`;
+            pts.push(...linePoints(left, yTop, cx, mid, 4, group));
+            pts.push(...linePoints(right, yTop, cx, mid, 4, group));
+            pts.push(...linePoints(cx, mid, cx, yBase, 5, group + 1));
+            break;
+          case 'Z':
+            path = `M ${left} ${yTop} L ${right} ${yTop} L ${left} ${yBase} L ${right} ${yBase}`;
+            pts.push(...linePoints(left, yTop, right, yTop, 4, group));
+            pts.push(...linePoints(right, yTop, left, yBase, 5, group + 1));
+            pts.push(...linePoints(left, yBase, right, yBase, 4, group + 1));
+            break;
+          default:
+            path = `M ${left} ${yTop} L ${left} ${yBase} L ${right} ${yBase} L ${right} ${yTop} Z`;
+            pts.push(...linePoints(left, yTop, left, yBase, 4, group));
+            pts.push(...linePoints(right, yBase, right, yTop, 4, group));
+        }
+
+        return { path, points: pts };
+      }
+
+      function getWordGeometry(word, minWidth = 360) {
+        const cleanWord = word.toUpperCase().replace(/\s+/g, '-');
+        const parts = cleanWord.split('-').filter(Boolean);
+        const charWidth = 46;
+        const gap = 28;
+
+        if (parts.length <= 1) {
+          const chars = cleanWord.split('');
+          const count = chars.length;
+          const blockWidth = count * charWidth + (count - 1) * gap;
+          const widthNeeded = Math.max(minWidth, blockWidth + 60);
+          const startX = (widthNeeded - blockWidth) / 2 + charWidth / 2;
+          let combinedPath = '';
+          const combinedPoints = [];
+
+          chars.forEach((char, i) => {
+            const cx = startX + i * (charWidth + gap);
+            const { path, points } = getCapitalLetterData(char, cx, char === '-' ? 20 : charWidth, (i + 1) * 2, Y_TOP_1, Y_BASE_1);
+            combinedPath += (combinedPath ? ' ' : '') + path;
+            combinedPoints.push(...points);
+          });
+
+          return { path: combinedPath, points: combinedPoints, widthNeeded, heightNeeded: 190 };
+        }
+
+        const word1 = parts[0];
+        const word2 = parts.slice(1).join('-');
+        const chars1 = word1.split('');
+        const chars2 = word2.split('');
+        const w1Block = chars1.length * charWidth + (chars1.length - 1) * gap;
+        const w2Block = chars2.length * charWidth + (chars2.length - 1) * gap;
+        const widthNeeded = Math.max(minWidth, Math.max(w1Block, w2Block) + 70);
+        const startX1 = (widthNeeded - w1Block) / 2 + charWidth / 2;
+        const startX2 = (widthNeeded - w2Block) / 2 + charWidth / 2;
+
+        let combinedPath = '';
+        const combinedPoints = [];
+
+        chars1.forEach((char, i) => {
+          const cx = startX1 + i * (charWidth + gap);
+          const { path, points } = getCapitalLetterData(char, cx, charWidth, (i + 1) * 2, Y_TOP_1, Y_BASE_1);
+          combinedPath += (combinedPath ? ' ' : '') + path;
+          combinedPoints.push(...points);
+        });
+
+        chars2.forEach((char, i) => {
+          const cx = startX2 + i * (charWidth + gap);
+          const { path, points } = getCapitalLetterData(char, cx, charWidth, (chars1.length + i + 1) * 2, Y_TOP_2, Y_BASE_2);
+          combinedPath += (combinedPath ? ' ' : '') + path;
+          combinedPoints.push(...points);
+        });
+
+        return { path: combinedPath, points: combinedPoints, widthNeeded, heightNeeded: 330 };
+      }
+
+      function getNumberSequenceData(numStr, totalWidth = 300) {
+        const digits = numStr.split('');
+        const count = digits.length;
+        let digitWidth = 56;
+        let gap = 26;
+
+        if (count === 3) { digitWidth = 48; gap = 20; }
+        else if (count === 2) { digitWidth = 56; gap = 26; }
+        else { digitWidth = 64; }
+
+        const blockWidth = count * digitWidth + (count - 1) * gap;
+        const widthNeeded = Math.max(totalWidth, blockWidth + 60);
+        const startX = (widthNeeded - blockWidth) / 2 + digitWidth / 2;
+
+        let combinedPath = '';
+        const combinedPoints = [];
+
+        digits.forEach((d, i) => {
+          const cx = startX + i * (digitWidth + gap);
+          const { path, points } = getDigitData(d, cx, digitWidth, (i + 1) * 3);
+          combinedPath += (combinedPath ? ' ' : '') + path;
+          combinedPoints.push(...points);
+        });
+
+        return { path: combinedPath, points: combinedPoints };
+      }
+
+      /* ========================================================================
+       * 4. COLOR THEMES
+       * ======================================================================== */
+      const COLOR_THEMES = [
+        { id: 'apple-red', name: 'Apple Red', frontStart: '#ff5f6d', frontEnd: '#e11d48', side3d: '#881337' },
+        { id: 'econova-mint', name: 'Emerald Mint', frontStart: '#34d399', frontEnd: '#059669', side3d: '#064e3b' },
+        { id: 'sunshine-gold', name: 'Sunshine Gold', frontStart: '#fde047', frontEnd: '#eab308', side3d: '#854d0e' },
+        { id: 'sky-blue', name: 'Sky Blue', frontStart: '#38bdf8', frontEnd: '#0284c7', side3d: '#0c4a6e' },
+        { id: 'royal-purple', name: 'Royal Berry', frontStart: '#c084fc', frontEnd: '#7e22ce', side3d: '#3b0764' },
+      ];
+
+      /* ========================================================================
+       * 5. 3D VECTOR ILLUSTRATIONS COMPONENT (12 Objects)
+       * ======================================================================== */
+      const IllustrationObject = ({ type, size = 40, className = '', animate = false }) => {
+        const animClass = animate ? 'animate-bounce' : '';
+        switch (type) {
+          case 'banana':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <defs>
+                  <linearGradient id="banGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fef08a" />
+                    <stop offset="60%" stopColor="#eab308" />
+                    <stop offset="100%" stopColor="#ca8a04" />
+                  </linearGradient>
+                </defs>
+                <path d="M 22 25 C 26 23 32 28 34 35 C 38 49 46 72 74 72 C 78 72 82 70 86 66 C 88 74 78 82 66 82 C 40 82 25 56 22 36 Z" fill="url(#banGradH)" />
+                <path d="M 20 28 L 16 22 C 15 20 18 18 20 20 L 25 24 Z" fill="#65a30d" />
+              </svg>
+            );
+          case 'carrot':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <defs>
+                  <linearGradient id="carGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fb923c" />
+                    <stop offset="100%" stopColor="#ea580c" />
+                  </linearGradient>
+                </defs>
+                <path d="M 40 22 C 46 12 54 12 60 22 C 58 45 54 75 50 88 C 46 75 42 45 40 22 Z" fill="url(#carGradH)" />
+                <path d="M 50 20 C 45 8 36 6 34 8 C 38 14 44 18 50 20 Z" fill="#22c55e" />
+                <path d="M 50 20 C 55 8 64 6 66 8 C 62 14 56 18 50 20 Z" fill="#16a34a" />
+              </svg>
+            );
+          case 'orange':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <circle cx="50" cy="54" r="34" fill="#f97316" />
+                <circle cx="44" cy="48" r="26" fill="#fb923c" />
+                <path d="M 50 20 C 50 14 54 12 56 14 C 54 18 52 22 50 24 Z" fill="#15803d" />
+              </svg>
+            );
+          case 'heart':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <defs>
+                  <linearGradient id="hrtGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fb7185" />
+                    <stop offset="100%" stopColor="#e11d48" />
+                  </linearGradient>
+                </defs>
+                <path d="M 50 82 C 32 68 18 52 18 36 C 18 24 28 16 40 16 C 46 16 50 20 50 22 C 50 20 54 16 60 16 C 72 16 82 24 82 36 C 82 52 68 68 50 82 Z" fill="url(#hrtGradH)" />
+                <ellipse cx="36" cy="30" rx="6" ry="3" fill="#ffffff" opacity="0.6" transform="rotate(-30 36 30)" />
+              </svg>
+            );
+          case 'sun':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <circle cx="50" cy="50" r="24" fill="#f59e0b" />
+                <circle cx="48" cy="46" r="20" fill="#fde047" />
+                <g stroke="#f59e0b" strokeWidth="5" strokeLinecap="round">
+                  <line x1="50" y1="12" x2="50" y2="18" />
+                  <line x1="50" y1="82" x2="50" y2="88" />
+                  <line x1="12" y1="50" x2="18" y2="50" />
+                  <line x1="82" y1="50" x2="88" y2="50" />
+                  <line x1="24" y1="24" x2="28" y2="28" />
+                  <line x1="72" y1="72" x2="76" y2="76" />
+                  <line x1="24" y1="76" x2="28" y2="72" />
+                  <line x1="72" y1="28" x2="76" y2="24" />
+                </g>
+              </svg>
+            );
+          case 'milk':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <rect x="30" y="24" width="40" height="58" rx="8" fill="#e0f2fe" stroke="#38bdf8" strokeWidth="4" />
+                <rect x="34" y="44" width="32" height="34" rx="4" fill="#ffffff" />
+                <circle cx="50" cy="60" r="6" fill="#38bdf8" />
+              </svg>
+            );
+          case 'toothbrush':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <rect x="44" y="32" width="12" height="54" rx="6" fill="#06b6d4" />
+                <rect x="42" y="14" width="16" height="20" rx="3" fill="#ffffff" stroke="#0891b2" strokeWidth="2" />
+                <line x1="46" y1="18" x2="46" y2="30" stroke="#06b6d4" strokeWidth="2" />
+                <line x1="50" y1="18" x2="50" y2="30" stroke="#06b6d4" strokeWidth="2" />
+                <line x1="54" y1="18" x2="54" y2="30" stroke="#06b6d4" strokeWidth="2" />
+              </svg>
+            );
+          case 'salad':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <path d="M 20 50 Q 50 90 80 50 Z" fill="#b45309" />
+                <circle cx="38" cy="46" r="10" fill="#22c55e" />
+                <circle cx="54" cy="42" r="12" fill="#16a34a" />
+                <circle cx="68" cy="46" r="8" fill="#ef4444" />
+                <circle cx="48" cy="48" r="6" fill="#eab308" />
+              </svg>
+            );
+          case 'moon':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <path d="M 64 20 C 44 24 32 42 34 62 C 36 78 50 88 64 88 C 48 88 28 72 26 52 C 24 34 40 20 64 20 Z" fill="#a855f7" />
+                <circle cx="74" cy="36" r="4" fill="#fde047" />
+                <circle cx="68" cy="62" r="3" fill="#fde047" />
+              </svg>
+            );
+          case 'earth':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <circle cx="50" cy="50" r="34" fill="#0284c7" />
+                <path d="M 38 34 Q 44 26 54 32 Q 58 44 48 48 Q 36 50 38 34 Z" fill="#22c55e" />
+                <path d="M 44 64 Q 56 60 62 66 Q 66 74 54 78 Q 42 76 44 64 Z" fill="#16a34a" />
+              </svg>
+            );
+          case 'trophy':
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <path d="M 32 24 L 68 24 L 64 56 C 64 66 56 70 50 70 C 44 70 36 66 36 56 Z" fill="#eab308" />
+                <path d="M 32 30 C 20 30 20 46 32 46" stroke="#ca8a04" strokeWidth="4" fill="none" />
+                <path d="M 68 30 C 80 30 80 46 68 46" stroke="#ca8a04" strokeWidth="4" fill="none" />
+                <rect x="46" y="70" width="8" height="12" fill="#ca8a04" />
+                <rect x="34" y="82" width="32" height="8" rx="2" fill="#854d0e" />
+              </svg>
+            );
+          case 'apple':
+          default:
+            return (
+              <svg width={size} height={size} viewBox="0 0 100 100" className={`${animClass} ${className}`}>
+                <defs>
+                  <radialGradient id="aplGradH" cx="35%" cy="35%" r="70%">
+                    <stop offset="0%" stopColor="#ff7b89" />
+                    <stop offset="45%" stopColor="#ef4444" />
+                    <stop offset="100%" stopColor="#991b1b" />
+                  </radialGradient>
+                </defs>
+                <path d="M 50 30 C 44 26 36 28 28 36 C 18 46 16 66 30 80 C 38 88 46 88 50 84 C 54 88 62 88 70 80 C 84 66 82 46 72 36 C 64 28 56 26 50 30 Z" fill="url(#aplGradH)" />
+                <path d="M 50 30 C 50 20 54 14 56 12" stroke="#78350f" strokeWidth="4" strokeLinecap="round" fill="none" />
+                <path d="M 54 16 C 60 12 68 14 70 18 C 66 22 58 20 54 16 Z" fill="#22c55e" />
+                <ellipse cx="38" cy="42" rx="7" ry="4" fill="#ffffff" opacity="0.65" transform="rotate(-30 38 42)" />
+              </svg>
+            );
+        }
+      };
+
+      /* ========================================================================
+       * 6. NAVIGATION HEADER
+       * ======================================================================== */
+      const EconovaHeader = () => (
+        <header className="sticky top-0 z-50 w-full bg-[#2dd4bf] border-b-4 border-[#10b981] shadow-xs">
+          <div className="w-full max-w-[1200px] min-h-[70px] md:min-h-[80px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white border-2 border-[#10b981] shadow-xs grid place-items-center">
+                <span className="text-xl md:text-2xl">🌱</span>
+              </div>
+              <div>
+                <div className="font-['Outfit',sans-serif] font-[900] text-lg md:text-2xl tracking-tight text-[#064e3b]">
+                  ECONOVA
+                </div>
+                <div className="text-[11px] md:text-xs font-[800] text-[#065f46] -mt-1 font-['Noto_Sans_Devanagari',sans-serif]">
+                  Pre-School Maths Curriculum · 1 to 100
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline-block bg-white/90 text-[#065f46] font-[800] text-xs px-3 py-1.5 rounded-xl border border-emerald-300">
+                अंक 1 से 100 Overwriting &amp; Counting
+              </span>
+              <span className="bg-[#fde047] text-[#065f46] font-[900] text-xs px-3 py-1.5 rounded-xl border-2 border-[#059669] shadow-xs">
+                🌟 Kids Edition
+              </span>
+            </div>
+          </div>
+        </header>
+      );
+
+      /* ========================================================================
+       * 7. NUMBER SELECTOR BAR
+       * ======================================================================== */
+      const POPULAR_NUMBERS = [1, 2, 3, 5, 10, 20, 46, 50, 99, 100];
+
+      const NumberSelectorBar = ({ currentNumber, onSelectNumber }) => {
+        const [showAllModal, setShowAllModal] = useState(false);
+        const [customInput, setCustomInput] = useState('');
+        const context = getNumberContext(currentNumber);
+
+        const handleSelect = (n) => {
+          if (n < 1 || n > 100) return;
+          onSelectNumber(n);
+          setShowAllModal(false);
+          playSuccessChime();
+          const info = getNumberContext(n);
+          speakText(`Number ${n}! ${info.wordEn}! ${info.wordHi}!`, 'en-US');
+        };
+
+        const handleCustomSubmit = (e) => {
+          e.preventDefault();
+          const val = parseInt(customInput, 10);
+          if (!isNaN(val) && val >= 1 && val <= 100) {
+            handleSelect(val);
+            setCustomInput('');
+          }
+        };
+
+        return (
+          <section className="w-full bg-white border-b-2 border-[#a7f3d0] py-3 px-3 sm:px-6 shadow-xs sticky top-[70px] md:top-[80px] z-40">
+            <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3 flex-wrap">
+              <div className="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    disabled={currentNumber <= 1}
+                    onClick={() => handleSelect(currentNumber - 1)}
+                    className="w-9 h-9 rounded-xl border-2 border-[#34d399] bg-[#ecfdf5] hover:bg-[#d1fae5] disabled:opacity-40 disabled:cursor-not-allowed text-[#059669] font-[900] text-sm flex items-center justify-center transition-all active:scale-95 shadow-xs"
+                    title="Previous Number"
+                  >
+                    ←
+                  </button>
+
+                  <div className="flex items-center gap-2 bg-[#f0fdf4] border-2 border-[#10b981] px-3.5 py-1.5 rounded-2xl shadow-xs">
+                    <span className="w-8 h-8 rounded-full bg-[#fde047] text-[#065f46] font-['Outfit',sans-serif] font-[900] text-lg grid place-items-center border border-[#059669]">
+                      {currentNumber}
+                    </span>
+                    <div className="leading-tight">
+                      <div className="font-['Outfit',sans-serif] font-[900] text-sm sm:text-base text-[#111827]">
+                        Number {currentNumber} ({context.wordEn})
+                      </div>
+                      <div className="text-xs font-[800] text-[#059669] font-['Noto_Sans_Devanagari',sans-serif]">
+                        {context.wordHi} ({context.deva})
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    disabled={currentNumber >= 100}
+                    onClick={() => handleSelect(currentNumber + 1)}
+                    className="w-9 h-9 rounded-xl border-2 border-[#34d399] bg-[#ecfdf5] hover:bg-[#d1fae5] disabled:opacity-40 disabled:cursor-not-allowed text-[#059669] font-[900] text-sm flex items-center justify-center transition-all active:scale-95 shadow-xs"
+                    title="Next Number"
+                  >
+                    →
+                  </button>
+                </div>
+
+                <form onSubmit={handleCustomSubmit} className="flex items-center gap-1">
+                  <input
+                    type="number"
+                    min={1}
+                    max={100}
+                    value={customInput}
+                    onChange={(e) => setCustomInput(e.target.value)}
+                    placeholder="1-100"
+                    className="w-16 px-2 py-1.5 rounded-xl border-2 border-[#34d399] bg-white text-xs font-[900] text-[#065f46] text-center focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  />
+                  <button type="submit" className="bg-[#10b981] hover:bg-[#059669] text-white px-2.5 py-1.5 rounded-xl font-[800] text-xs transition-colors shadow-xs">
+                    Go
+                  </button>
+                </form>
+
+                <button
+                  type="button"
+                  onClick={() => { playDotPopSound(); setShowAllModal(true); }}
+                  className="bg-[#fde047] hover:bg-[#facc15] text-[#065f46] px-3.5 py-1.5 rounded-xl font-['Outfit',sans-serif] font-[900] text-xs sm:text-sm border-2 border-[#059669] shadow-xs transition-transform active:scale-95 flex items-center gap-1.5"
+                >
+                  <span>🔢 Choose 1 – 100</span>
+                  <span className="text-[10px] bg-white px-1.5 py-0.5 rounded-md font-bold">Grid</span>
+                </button>
+              </div>
+
+              <div className="flex items-center gap-1.5 overflow-x-auto max-w-full pb-1 md:pb-0 scrollbar-none">
+                <span className="text-[11px] font-[800] text-[#047857] uppercase tracking-wider font-['Outfit',sans-serif] hidden lg:inline-block mr-1">
+                  Quick:
+                </span>
+                {POPULAR_NUMBERS.map((n) => {
+                  const isCurrent = n === currentNumber;
+                  return (
+                    <button
+                      key={n}
+                      type="button"
+                      onClick={() => handleSelect(n)}
+                      className={`px-2.5 py-1 rounded-xl text-xs font-[800] font-['Outfit',sans-serif] transition-all flex-shrink-0 ${
+                        isCurrent
+                          ? 'bg-[#10b981] text-white shadow-xs ring-2 ring-emerald-300 scale-105'
+                          : 'bg-white text-[#065f46] border border-[#a7f3d0] hover:bg-emerald-50'
+                      }`}
+                    >
+                      {n}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {showAllModal && (
+              <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-in fade-in">
+                <div className="bg-white rounded-3xl border-[3px] border-[#34d399] max-w-[680px] w-full max-h-[85vh] flex flex-col p-4 sm:p-6 shadow-2xl">
+                  <div className="flex justify-between items-center mb-3 pb-2 border-b border-emerald-100">
+                    <div>
+                      <h3 className="font-['Outfit',sans-serif] font-[900] text-xl text-[#065f46]">Choose Any Number (1 to 100)</h3>
+                      <p className="text-xs text-[#059669] font-[700] font-['Noto_Sans_Devanagari',sans-serif]">
+                        1 से 100 तक कोई भी संख्या चुनें — ठीक उतनी वस्तुएं और पूरी स्पेलिंग आ जाएगी!
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowAllModal(false)}
+                      className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-[#475569] font-[900] text-sm grid place-items-center"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="flex-1 overflow-y-auto grid grid-cols-5 sm:grid-cols-10 gap-2 p-1">
+                    {Array.from({ length: 100 }, (_, i) => i + 1).map((n) => (
+                      <button
+                        key={n}
+                        type="button"
+                        onClick={() => handleSelect(n)}
+                        className={`aspect-square rounded-xl font-['Outfit',sans-serif] font-[900] text-sm sm:text-base flex flex-col items-center justify-center transition-all ${
+                          n === currentNumber
+                            ? 'bg-[#10b981] text-white shadow-md scale-105 ring-2 ring-emerald-300'
+                            : 'bg-[#f0fdf4] hover:bg-[#dcfce7] text-[#065f46] border border-[#a7f3d0]'
+                        }`}
+                      >
+                        <span>{n}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </section>
+        );
+      };
+
+      /* ========================================================================
+       * 8. 3D HERO SHOWCASE (Zero Overlap, Clean Layout)
+       * ======================================================================== */
+      const HeroSection = ({ currentNumber, selectedObject }) => {
+        const [heroMode, setHeroMode] = useState('BOTH');
+        const [activeTheme, setActiveTheme] = useState(COLOR_THEMES[0]);
+        const ctx = getNumberContext(currentNumber);
+
+        const numData = getNumberSequenceData(String(currentNumber), 260);
+        const wordData = getWordGeometry(ctx.wordEnUpper, 360);
+
+        const canvasW = 400;
+        const canvasH = 240;
+
+        const numScale = Math.min(300 / 260, 180 / 180);
+        const numOffsetX = (canvasW - 260 * numScale) / 2;
+        const numOffsetY = (canvasH - 180 * numScale) / 2;
+
+        const wordScale = Math.min(360 / wordData.widthNeeded, 200 / wordData.heightNeeded);
+        const wordOffsetX = (canvasW - wordData.widthNeeded * wordScale) / 2;
+        const wordOffsetY = (canvasH - wordData.heightNeeded * wordScale) / 2;
+
+        const bothNumScale = 0.58;
+        const bothNumX = 10;
+        const bothNumY = (canvasH - 180 * bothNumScale) / 2;
+
+        const bothWordScale = Math.min(230 / wordData.widthNeeded, 190 / wordData.heightNeeded);
+        const bothWordX = 155;
+        const bothWordY = (canvasH - wordData.heightNeeded * bothWordScale) / 2;
+
+        return (
+          <section className="py-6 md:py-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-9 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border-2 border-[#34d399] bg-white text-[#059669] font-[800] text-xs max-w-full">
+                <span className="w-2 h-2 rounded-full bg-[#10b981] inline-block animate-pulse"></span>
+                <span>Pre-School Maths · Counting &amp; Overwriting · Number {currentNumber} ({ctx.wordEn})</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] tracking-[-1px] font-[900] text-[#1f2937] mt-3.5 mb-2.5 font-['Outfit',sans-serif]">
+                Count &amp; Overwrite<br />
+                <span className="text-[#059669] relative inline-block">
+                  <span className="relative z-10">Number {currentNumber} ({ctx.wordEn})</span>
+                  <span className="absolute bottom-1.5 left-0 right-0 h-3 bg-[#fde047] -rotate-1 rounded-sm -z-0"></span>
+                </span>
+              </h1>
+
+              <p className="text-base sm:text-xl text-[#059669] font-[800] mb-2.5 leading-relaxed font-['Noto_Sans_Devanagari',sans-serif]">
+                अंक {currentNumber} और पूरी स्पेलिंग {ctx.wordEnUpper} ({ctx.wordHi}) के ऊपर उंगली चलाएं, ठीक {currentNumber} वस्तुएं गिनें और 3D रंग भरें!
+              </p>
+
+              <p className="max-w-[560px] text-sm sm:text-base leading-relaxed text-[#374151]">
+                Look at the big <strong>3D Number {currentNumber} and full word {ctx.wordEnUpper}</strong>, count{' '}
+                <strong>exactly {currentNumber} {currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn}</strong> in the Counting Lab, and trace the full letters below!
+              </p>
+
+              <div className="flex items-center flex-wrap gap-3.5 my-4">
+                <a
+                  href="#exact-objects-lab"
+                  className="inline-flex items-center justify-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white border-0 rounded-2xl px-5 py-3 font-[800] text-sm sm:text-base shadow-[0_4px_0_#059669] hover:-translate-y-0.5 transition-all font-['Outfit',sans-serif]"
+                >
+                  Count Exactly {currentNumber} Objects →
+                </a>
+                <a
+                  href="#overwrite-studio"
+                  className="text-sm sm:text-base font-[800] text-[#059669] hover:underline inline-flex items-center gap-1 font-['Outfit',sans-serif]"
+                >
+                  Full Spelling Overwriting ↘
+                </a>
+              </div>
+            </div>
+
+            <div className="w-full p-4 sm:p-5 bg-[#fffbeb] border-[3px] border-[#fcd34d] rounded-3xl shadow-[0_6px_0_#d1fae5]">
+              <div className="flex justify-between items-center mb-3 flex-wrap gap-2">
+                <span className="bg-[#fde047] text-[#065f46] font-[900] text-xs px-3 py-1 rounded-xl border-2 border-[#059669] font-['Outfit',sans-serif] shadow-xs">
+                  ✨ 3D FULL COLOR · {currentNumber} = {ctx.wordEnUpper}
+                </span>
+                <span className="text-[11px] font-[800] text-[#059669] uppercase font-['Outfit',sans-serif]">
+                  अंक {currentNumber} &amp; {ctx.wordHi}
+                </span>
+              </div>
+
+              <div className="flex justify-center gap-2 mb-3 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => { setHeroMode('NUM'); playSuccessChime(); }}
+                  className={`px-3.5 py-1.5 border-2 rounded-xl text-xs font-[800] transition-colors ${
+                    heroMode === 'NUM' ? 'bg-[#10b981] text-white border-[#10b981]' : 'bg-white text-[#059669] border-[#34d399] hover:bg-emerald-50'
+                  }`}
+                >
+                  Number {currentNumber}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setHeroMode('WORD'); playSuccessChime(); }}
+                  className={`px-3.5 py-1.5 border-2 rounded-xl text-xs font-[800] transition-colors ${
+                    heroMode === 'WORD' ? 'bg-[#10b981] text-white border-[#10b981]' : 'bg-white text-[#059669] border-[#34d399] hover:bg-emerald-50'
+                  }`}
+                >
+                  Full Word: {ctx.wordEnUpper}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setHeroMode('BOTH'); playSuccessChime(); }}
+                  className={`px-3.5 py-1.5 border-2 rounded-xl text-xs font-[800] transition-colors ${
+                    heroMode === 'BOTH' ? 'bg-[#10b981] text-white border-[#10b981]' : 'bg-white text-[#059669] border-[#34d399] hover:bg-emerald-50'
+                  }`}
+                >
+                  Both ({currentNumber} &amp; {ctx.wordEnUpper})
+                </button>
+              </div>
+
+              <div className="relative w-full max-w-[440px] mx-auto h-[230px] sm:h-[250px] bg-[radial-gradient(circle_at_50%_45%,#ffffff_0%,#f0fdf4_75%,#dcfce7_100%)] border-[3px] border-[#34d399] rounded-3xl shadow-[0_8px_0_#10b981] overflow-hidden p-1">
+                <svg viewBox={`0 0 ${canvasW} ${canvasH}`} preserveAspectRatio="xMidYMid meet" className="w-full h-full block">
+                  <defs>
+                    <linearGradient id="heroGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor={activeTheme.frontStart} />
+                      <stop offset="100%" stopColor={activeTheme.frontEnd} />
+                    </linearGradient>
+                  </defs>
+
+                  <line x1="12" y1="36" x2="388" y2="36" stroke="#fca5a5" strokeWidth="1.8" />
+                  <line x1="12" y1="96" x2="388" y2="96" stroke="#93c5fd" strokeWidth="1.6" strokeDasharray="6 4" />
+                  <line x1="12" y1="172" x2="388" y2="172" stroke="#60a5fa" strokeWidth="2.2" />
+                  <line x1="12" y1="210" x2="388" y2="210" stroke="#fca5a5" strokeWidth="1.8" strokeDasharray="6 4" />
+
+                  {heroMode === 'NUM' && (
+                    <g transform={`translate(${numOffsetX}, ${numOffsetY}) scale(${numScale})`}>
+                      <path d={numData.path} transform="translate(6, 6)" stroke={activeTheme.side3d} strokeWidth="24" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d={numData.path} stroke="url(#heroGradH)" strokeWidth="24" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d={numData.path} transform="translate(-3, -3)" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity={0.65} fill="none" />
+                    </g>
+                  )}
+
+                  {heroMode === 'WORD' && (
+                    <g transform={`translate(${wordOffsetX}, ${wordOffsetY}) scale(${wordScale})`}>
+                      <path d={wordData.path} transform="translate(5, 5)" stroke={activeTheme.side3d} strokeWidth="15" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d={wordData.path} stroke="url(#heroGradH)" strokeWidth="15" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d={wordData.path} transform="translate(-2, -2)" stroke="#ffffff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity={0.65} fill="none" />
+                    </g>
+                  )}
+
+                  {heroMode === 'BOTH' && (
+                    <g>
+                      <g transform={`translate(${bothNumX}, ${bothNumY}) scale(${bothNumScale})`}>
+                        <path d={numData.path} transform="translate(6, 6)" stroke={activeTheme.side3d} strokeWidth="24" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d={numData.path} stroke="url(#heroGradH)" strokeWidth="24" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d={numData.path} transform="translate(-3, -3)" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity={0.65} fill="none" />
+                      </g>
+                      <g transform={`translate(${bothWordX}, ${bothWordY}) scale(${bothWordScale})`}>
+                        <path d={wordData.path} transform="translate(5, 5)" stroke={activeTheme.side3d} strokeWidth="15" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d={wordData.path} stroke="url(#heroGradH)" strokeWidth="15" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        <path d={wordData.path} transform="translate(-2, -2)" stroke="#ffffff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity={0.65} fill="none" />
+                      </g>
+                    </g>
+                  )}
+                </svg>
+              </div>
+
+              <div className="mt-3 bg-white border-2 border-[#34d399] rounded-2xl p-2.5 shadow-xs flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#ecfdf5] border border-[#a7f3d0] grid place-items-center flex-shrink-0">
+                    <IllustrationObject type={selectedObject.id} size={32} animate />
+                  </div>
+                  <div className="min-w-0 leading-tight">
+                    <div className="text-xs sm:text-sm font-[900] text-[#065f46] font-['Outfit',sans-serif] truncate">
+                      COUNT = Exactly {currentNumber} {currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn}
+                    </div>
+                    <div className="text-[11px] font-[800] text-[#059669] font-['Noto_Sans_Devanagari',sans-serif] truncate">
+                      {currentNumber} {selectedObject.nameHi} ({ctx.wordHi})
+                    </div>
+                  </div>
+                </div>
+                <span className="bg-[#dcfce7] text-[#065f46] border border-[#86efac] text-xs font-[900] px-2.5 py-1 rounded-xl flex-shrink-0 font-['Outfit',sans-serif]">
+                  #{currentNumber}
+                </span>
+              </div>
+
+              <div className="flex justify-center items-center gap-2.5 mt-3 flex-wrap">
+                <span className="text-[11px] font-[800] text-[#065f46] font-['Outfit',sans-serif]">3D Color:</span>
+                {COLOR_THEMES.map((theme) => (
+                  <button
+                    key={theme.id}
+                    type="button"
+                    onClick={() => setActiveTheme(theme)}
+                    style={{ background: `linear-gradient(135deg, ${theme.frontStart}, ${theme.frontEnd})` }}
+                    className={`w-7 h-7 rounded-full shadow-xs transition-transform ${
+                      theme.id === activeTheme.id ? 'scale-125 border-[3px] border-[#111827] ring-2 ring-emerald-300' : 'border-2 border-white hover:scale-110'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <div className="bg-white p-3 rounded-2xl border-2 border-[#34d399] text-center mt-3 shadow-xs">
+                <div className="flex justify-center gap-2.5 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => speakText(`Number ${currentNumber}! ${ctx.wordEn}! Count ${currentNumber} ${currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn}!`, 'en-US')}
+                    className="border border-[#34d399] bg-[#ecfdf5] hover:bg-[#d1fae5] rounded-xl px-3 py-1.5 text-xs text-[#059669] font-[800] inline-flex items-center gap-1.5 transition-colors"
+                  >
+                    🔊 Listen English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => speakText(`नंबर ${currentNumber}! ${ctx.wordHi}! गिनें: ${currentNumber} ${selectedObject.nameHi}!`, 'hi-IN')}
+                    className="border border-[#fcd34d] bg-[#fef3c7] hover:bg-[#fde68a] rounded-xl px-3 py-1.5 text-xs text-[#92400e] font-[800] inline-flex items-center gap-1.5 transition-colors"
+                  >
+                    🗣️ हिन्दी में सुनें
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      /* ========================================================================
+       * 9. EXACT QUANTITY COUNTING LAB
+       * ======================================================================== */
+      const ExactObjectsLab = ({ currentNumber, selectedObject, onSelectObject }) => {
+        const [countedSet, setCountedSet] = useState(new Set());
+        const ctx = getNumberContext(currentNumber);
+
+        useEffect(() => {
+          setCountedSet(new Set());
+        }, [currentNumber, selectedObject.id]);
+
+        const handleTapItem = (idx) => {
+          const num = idx + 1;
+          setCountedSet((prev) => {
+            const next = new Set(prev);
+            if (next.has(num)) next.delete(num);
+            else {
+              next.add(num);
+              playDotPopSound();
+              if (num === currentNumber) {
+                playSuccessChime();
+                speakText(`All ${currentNumber} counted! Great job!`, 'en-US');
+              } else {
+                speakText(String(num), 'en-US');
+              }
+            }
+            return next;
+          });
+        };
+
+        const totalRows = Math.ceil(currentNumber / 10);
+        const rows = [];
+        for (let r = 0; r < totalRows; r++) {
+          const start = r * 10;
+          const end = Math.min(start + 10, currentNumber);
+          const row = [];
+          for (let i = start; i < end; i++) row.push(i);
+          rows.push(row);
+        }
+
+        return (
+          <section className="pt-7 md:pt-11" id="exact-objects-lab">
+            <div className="flex justify-between items-end flex-wrap gap-3 mb-4">
+              <div>
+                <p className="text-[11px] tracking-[1.4px] font-[800] text-[#059669] uppercase font-['Outfit',sans-serif]">
+                  Exact Quantity Counting Lab · ठीक {currentNumber} वस्तुएं गिनें
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-[900] text-[#111827] mt-1 tracking-[-0.5px] font-['Outfit',sans-serif]">
+                  Count Exactly {currentNumber} {currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn} ({ctx.wordEnUpper})
+                </h2>
+              </div>
+              <p className="text-[#047857] font-[700] text-sm md:text-base">
+                Screen par poori <strong>{currentNumber} {selectedObject.nameHi}</strong> hain. Har object par tap karke ginein!
+              </p>
+            </div>
+
+            <div className="bg-white border-[3px] border-[#34d399] rounded-[24px] p-4.5 sm:p-6 shadow-[0_6px_0_#d1fae5] flex flex-col gap-5">
+              <div className="bg-[#fffbeb] border-[2.5px] border-[#fcd34d] rounded-2xl p-3.5 sm:p-4">
+                <div className="flex justify-between items-center flex-wrap gap-2 mb-2.5">
+                  <span className="text-xs font-[900] text-[#065f46] font-['Outfit',sans-serif] uppercase tracking-wider">
+                    ✦ Choose Object ({currentNumber} {selectedObject.namePluralEn}):
+                  </span>
+                  <span className="text-xs text-[#92400e] font-[800] font-['Noto_Sans_Devanagari',sans-serif]">
+                    पसंदीदा वस्तु चुनें (स्क्रीन पर ठीक {currentNumber} वस्तुएं दिखेंगी)
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+                  {SELECTABLE_OBJECTS.map((obj) => (
+                    <button
+                      key={obj.id}
+                      type="button"
+                      onClick={() => onSelectObject(obj)}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-[800] transition-all flex-shrink-0 font-['Outfit',sans-serif] ${
+                        obj.id === selectedObject.id
+                          ? 'bg-[#10b981] text-white shadow-md ring-2 ring-emerald-300 scale-105'
+                          : 'bg-white text-[#1f2937] border border-[#a7f3d0] hover:bg-emerald-50'
+                      }`}
+                    >
+                      <IllustrationObject type={obj.id} size={24} />
+                      <span>{obj.nameEn}</span>
+                      <span className="opacity-80 text-[11px]">({obj.nameHi})</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#f0fdf4] border-2 border-[#10b981] rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <span className="w-12 h-12 rounded-2xl bg-[#dcfce7] border-2 border-[#059669] grid place-items-center text-xl font-[900] text-[#065f46] font-['Outfit',sans-serif]">
+                    {currentNumber}
+                  </span>
+                  <div>
+                    <div className="font-['Outfit',sans-serif] font-[900] text-base sm:text-lg text-[#111827]">
+                      Total: Exactly {currentNumber} {currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn}
+                      {currentNumber > 10 && (
+                        <span className="text-[#059669] ml-2 text-sm font-[800]">
+                          ({ctx.tens} Tens + {ctx.ones} Ones)
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-xs sm:text-sm font-[800] text-[#059669] font-['Noto_Sans_Devanagari',sans-serif]">
+                      पूरी संख्या: {ctx.wordHi} ({ctx.deva})
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="bg-white border border-[#a7f3d0] px-3 py-1.5 rounded-xl text-xs font-[800] text-[#065f46]">
+                    Counted: {countedSet.size} / {currentNumber}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const all = new Set();
+                      for (let i = 1; i <= currentNumber; i++) all.add(i);
+                      setCountedSet(all);
+                      playSuccessChime();
+                      speakText(`Exactly ${currentNumber} ${currentNumber === 1 ? selectedObject.nameEn : selectedObject.namePluralEn}! ${ctx.wordEn}!`, 'en-US');
+                    }}
+                    className="bg-[#10b981] hover:bg-[#059669] text-white px-3.5 py-1.5 rounded-xl text-xs font-[800] shadow-xs transition-transform active:scale-95"
+                  >
+                    ✓ Count All
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setCountedSet(new Set()); playDotPopSound(); }}
+                    className="border border-[#cbd5e1] bg-white hover:bg-slate-50 text-[#475569] px-2.5 py-1.5 rounded-xl text-xs font-[700]"
+                  >
+                    ↺ Reset
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4 max-h-[550px] overflow-y-auto pr-1">
+                {rows.map((row, rIdx) => (
+                  <div key={rIdx} className="bg-[#fafaf9] border-2 border-dashed border-[#e7e5e4] rounded-2xl p-3 sm:p-4 flex flex-col gap-2">
+                    {currentNumber > 10 && (
+                      <div className="flex justify-between items-center text-[11px] font-[800] text-[#78716c] uppercase font-['Outfit',sans-serif]">
+                        <span>{`Group ${rIdx + 1} (${rIdx * 10 + 1} to ${Math.min((rIdx + 1) * 10, currentNumber)})`}</span>
+                        <span>{row.length} {selectedObject.namePluralEn}</span>
+                      </div>
+                    )}
+                    <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 sm:gap-2.5">
+                      {row.map((itemIdx) => {
+                        const itemNum = itemIdx + 1;
+                        const isCounted = countedSet.has(itemNum);
+                        return (
+                          <button
+                            key={itemNum}
+                            type="button"
+                            onClick={() => handleTapItem(itemIdx)}
+                            className={`aspect-square rounded-2xl p-1.5 flex flex-col items-center justify-center transition-all relative ${
+                              isCounted
+                                ? 'bg-[#dcfce7] border-[2.5px] border-[#10b981] shadow-md scale-105'
+                                : 'bg-white border-2 border-[#cbd5e1] hover:border-[#10b981] hover:scale-102'
+                            }`}
+                            title={`Item #${itemNum}`}
+                          >
+                            <IllustrationObject type={selectedObject.id} size={38} />
+                            <span className={`text-[10px] font-[900] font-['Outfit',sans-serif] px-1 rounded-md mt-0.5 leading-none ${
+                              isCounted ? 'bg-[#059669] text-white' : 'bg-slate-100 text-[#475569]'
+                            }`}>
+                              #{itemNum}
+                            </span>
+                            {isCounted && (
+                              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#10b981] text-white text-[10px] grid place-items-center font-bold">
+                                ✓
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      /* ========================================================================
+       * 10. STRICT OVERWRITING BOARD COMPONENT (>= 88% overall & 72% per part)
+       * ======================================================================== */
+      const OverwritingBox = ({
+        id,
+        pattern,
+        targetNumber = 1,
+        label,
+        labelHi,
+        theme,
+        speakStr,
+        isCompleted: externalCompleted,
+        onComplete,
+        onReset,
+      }) => {
+        const svgRef = useRef(null);
+        const [covered, setCovered] = useState(new Set());
+        const [userPath, setUserPath] = useState('');
+        const [isDrawing, setIsDrawing] = useState(false);
+        const [internalCompleted, setInternalCompleted] = useState(false);
+        const lastPtRef = useRef(null);
+
+        const numStr = String(targetNumber);
+        const fullWordEn = numberToWords(targetNumber).toUpperCase().replace(/\s+/g, '-');
+
+        const { path: patternPath, points: rawCheckpoints, widthNeeded, heightNeeded } = useMemo(() => {
+          if (pattern === 'number-single' || pattern.includes('single') || pattern.includes('num')) {
+            const data = getNumberSequenceData(numStr, 320);
+            return { path: data.path, points: data.points, widthNeeded: Math.max(320, numStr.length * 70 + 80), heightNeeded: 190 };
+          }
+          return getWordGeometry(fullWordEn, 360);
+        }, [pattern, targetNumber, numStr, fullWordEn]);
+
+        const checkpoints = useMemo(() => {
+          const filtered = [];
+          rawCheckpoints.forEach((pt) => {
+            if (!filtered.some((e) => Math.hypot(e.x - pt.x, e.y - pt.y) < 9)) {
+              filtered.push(pt);
+            }
+          });
+          return filtered.length > 0 ? filtered : [{ x: widthNeeded / 2, y: Y_MID_1, g: 1 }];
+        }, [rawCheckpoints, widthNeeded]);
+
+        useEffect(() => {
+          setCovered(new Set());
+          setUserPath('');
+          setInternalCompleted(false);
+          setIsDrawing(false);
+          lastPtRef.current = null;
+        }, [pattern, targetNumber]);
+
+        const strokeWidth = 14;
+        const isDone = externalCompleted || internalCompleted;
+        const gradId = `grad_${id}_${targetNumber}`.replace(/[^a-zA-Z0-9_-]/g, '_');
+        const isMultiLine = heightNeeded > 220;
+
+        const triggerCompletion = useCallback(() => {
+          setInternalCompleted(true);
+          playSuccessChime();
+          if (speakStr) speakText(speakStr, 'en-US');
+          if (onComplete) onComplete();
+        }, [speakStr, onComplete]);
+
+        // STRICT COMPLETION: >= 88% overall AND all digit/letter parts >= 72%
+        useEffect(() => {
+          if (isDone || checkpoints.length === 0) return;
+          const groupTotal = {};
+          const groupCovered = {};
+
+          checkpoints.forEach((pt, idx) => {
+            groupTotal[pt.g] = (groupTotal[pt.g] || 0) + 1;
+            if (covered.has(idx)) {
+              groupCovered[pt.g] = (groupCovered[pt.g] || 0) + 1;
+            }
+          });
+
+          const allPartsTraced = Object.keys(groupTotal).every((g) => {
+            const gNum = Number(g);
+            return (groupCovered[gNum] || 0) / groupTotal[gNum] >= 0.72;
+          });
+
+          const overallRatio = covered.size / checkpoints.length;
+
+          if (overallRatio >= 0.88 && allPartsTraced) {
+            triggerCompletion();
+          }
+        }, [covered, isDone, checkpoints, triggerCompletion]);
+
+        const getSvgCoords = useCallback(
+          (clientX, clientY) => {
+            const svg = svgRef.current;
+            if (!svg) return { x: 0, y: 0 };
+
+            try {
+              const pt = svg.createSVGPoint();
+              pt.x = clientX;
+              pt.y = clientY;
+              const ctm = svg.getScreenCTM();
+              if (ctm) {
+                const trans = pt.matrixTransform(ctm.inverse());
+                if (Number.isFinite(trans.x) && Number.isFinite(trans.y)) {
+                  return { x: Math.round(trans.x * 10) / 10, y: Math.round(trans.y * 10) / 10 };
+                }
+              }
+            } catch {}
+
+            const rect = svg.getBoundingClientRect();
+            const vbW = widthNeeded;
+            const vbH = heightNeeded;
+            const boxAspect = rect.width / rect.height;
+            const vbAspect = vbW / vbH;
+
+            let actualW = rect.width;
+            let actualH = rect.height;
+            let offX = 0;
+            let offY = 0;
+
+            if (boxAspect > vbAspect) {
+              actualW = rect.height * vbAspect;
+              offX = (rect.width - actualW) / 2;
+            } else {
+              actualH = rect.width / vbAspect;
+              offY = (rect.height - actualH) / 2;
+            }
+
+            const clampedX = Math.max(rect.left + offX, Math.min(rect.left + offX + actualW, clientX));
+            const clampedY = Math.max(rect.top + offY, Math.min(rect.top + offY + actualH, clientY));
+
+            const x = ((clampedX - (rect.left + offX)) / actualW) * vbW;
+            const y = ((clampedY - (rect.top + offY)) / actualH) * vbH;
+
+            return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+          },
+          [widthNeeded, heightNeeded]
+        );
+
+        const markHits = useCallback(
+          (from, to) => {
+            const rad = 15;
+            const dist = Math.hypot(to.x - from.x, to.y - from.y);
+            const steps = Math.max(1, Math.ceil(dist / 3.5));
+
+            setCovered((prev) => {
+              const next = new Set(prev);
+              let hitNew = false;
+              for (let s = 0; s <= steps; s++) {
+                const t = s / steps;
+                const px = from.x + (to.x - from.x) * t;
+                const py = from.y + (to.y - from.y) * t;
+                checkpoints.forEach((pt, idx) => {
+                  if (!next.has(idx) && Math.hypot(pt.x - px, pt.y - py) <= rad) {
+                    next.add(idx);
+                    hitNew = true;
+                  }
+                });
+              }
+              if (hitNew) playDotPopSound();
+              return next;
+            });
+          },
+          [checkpoints]
+        );
+
+        const handlePointerDown = (e) => {
+          if (isDone) return;
+          e.preventDefault();
+          try { e.currentTarget.setPointerCapture(e.pointerId); } catch {}
+          const pt = getSvgCoords(e.clientX, e.clientY);
+          setIsDrawing(true);
+          lastPtRef.current = pt;
+          setUserPath((prev) => prev + ` M ${pt.x} ${pt.y} L ${pt.x + 0.1} ${pt.y + 0.1}`);
+          markHits(pt, pt);
+        };
+
+        const handlePointerMove = (e) => {
+          if (!isDrawing || isDone) return;
+          e.preventDefault();
+          const pt = getSvgCoords(e.clientX, e.clientY);
+          const prev = lastPtRef.current || pt;
+          setUserPath((p) => p + ` L ${pt.x} ${pt.y}`);
+          markHits(prev, pt);
+          lastPtRef.current = pt;
+        };
+
+        const handlePointerUp = (e) => {
+          if (!isDrawing) return;
+          setIsDrawing(false);
+          lastPtRef.current = null;
+          try { e.currentTarget.releasePointerCapture(e.pointerId); } catch {}
+        };
+
+        const totalPts = checkpoints.length || 1;
+        const percent = isDone ? 100 : Math.min(99, Math.round((covered.size / totalPts) * 100));
+
+        return (
+          <div className={`w-full bg-white rounded-2xl p-4 sm:p-5 flex flex-col items-center min-w-0 transition-all ${
+            isDone ? 'border-[3px] border-[#10b981] bg-[#f0fdf4] shadow-[0_6px_0_#a7f3d0]' : 'border-[3px] border-dashed border-[#6ee7b7] shadow-xs'
+          }`}>
+            <div className="flex justify-between items-center w-full mb-2 gap-2 flex-wrap">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="font-['Outfit',sans-serif] font-[900] text-base sm:text-lg text-[#065f46] truncate">
+                  {label}
+                </span>
+                <span className="text-xs sm:text-sm text-[#059669] font-[800] font-['Noto_Sans_Devanagari',sans-serif] truncate">
+                  ({labelHi})
+                </span>
+              </div>
+
+              <span className={`text-xs font-[900] px-3.5 py-1 rounded-full border transition-colors ${
+                isDone
+                  ? 'bg-[#dcfce7] text-[#065f46] border-[#34d399]'
+                  : percent >= 80
+                  ? 'bg-[#ecfdf5] text-[#059669] border-[#6ee7b7]'
+                  : 'bg-[#fef9c3] text-[#854d0e] border-[#fde047]'
+              }`}>
+                {isDone ? '★ 100% 3D Filled!' : `${percent}% Traced (Poora trace karein)`}
+              </span>
+            </div>
+
+            <div className="w-full bg-slate-100 h-2 rounded-full mb-3 overflow-hidden border border-slate-200">
+              <div
+                className={`h-full transition-all duration-150 rounded-full ${
+                  isDone ? 'bg-[#10b981]' : percent >= 80 ? 'bg-[#34d399]' : 'bg-[#f59e0b]'
+                }`}
+                style={{ width: `${percent}%` }}
+              />
+            </div>
+
+            <div
+              style={{ height: isMultiLine ? '320px' : '200px', touchAction: 'none' }}
+              className="relative w-full bg-white rounded-2xl border-2 border-[#cbd5e1] overflow-hidden select-none shadow-inner"
+            >
+              <svg
+                ref={svgRef}
+                viewBox={`0 0 ${widthNeeded} ${heightNeeded}`}
+                preserveAspectRatio="xMidYMid meet"
+                style={{ width: '100%', height: '100%', display: 'block', touchAction: 'none' }}
+                className="cursor-crosshair select-none"
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerLeave={handlePointerUp}
+                onPointerCancel={handlePointerUp}
+              >
+                <defs>
+                  <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor={theme.frontStart} />
+                    <stop offset="100%" stopColor={theme.frontEnd} />
+                  </linearGradient>
+                </defs>
+
+                <g style={{ pointerEvents: 'none' }}>
+                  <line x1="10" y1={Y_TOP_1} x2={widthNeeded - 10} y2={Y_TOP_1} stroke="#fca5a5" strokeWidth="2" />
+                  <line x1="10" y1={Y_MID_1} x2={widthNeeded - 10} y2={Y_MID_1} stroke="#93c5fd" strokeWidth="1.8" strokeDasharray="6 5" />
+                  <line x1="10" y1={Y_BASE_1} x2={widthNeeded - 10} y2={Y_BASE_1} stroke="#60a5fa" strokeWidth="2.4" />
+                  <line x1="10" y1={Y_BOT_1} x2={widthNeeded - 10} y2={Y_BOT_1} stroke="#fca5a5" strokeWidth="2" />
+                </g>
+
+                {isMultiLine && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <line x1="10" y1={Y_TOP_2} x2={widthNeeded - 10} y2={Y_TOP_2} stroke="#fca5a5" strokeWidth="2" />
+                    <line x1="10" y1={Y_MID_2} x2={widthNeeded - 10} y2={Y_MID_2} stroke="#93c5fd" strokeWidth="1.8" strokeDasharray="6 5" />
+                    <line x1="10" y1={Y_BASE_2} x2={widthNeeded - 10} y2={Y_BASE_2} stroke="#60a5fa" strokeWidth="2.4" />
+                    <line x1="10" y1={Y_BOT_2} x2={widthNeeded - 10} y2={Y_BOT_2} stroke="#fca5a5" strokeWidth="2" />
+                  </g>
+                )}
+
+                {!isDone && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <path d={patternPath} stroke="#f1f5f9" strokeWidth={strokeWidth + 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    <path d={patternPath} stroke="#94a3b8" strokeWidth={3} strokeLinecap="round" strokeDasharray="6 6" fill="none" />
+                    {checkpoints.map((pt, i) => (
+                      <circle key={i} cx={pt.x} cy={pt.y} r={covered.has(i) ? 5 : 3.5} fill={covered.has(i) ? '#10b981' : '#94a3b8'} />
+                    ))}
+                    <path d={userPath} stroke={theme.side3d} strokeWidth={strokeWidth + 4} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity={0.35} />
+                    <path d={userPath} stroke={`url(#${gradId})`} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  </g>
+                )}
+
+                {isDone && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <path d={patternPath} transform="translate(5, 5)" stroke={theme.side3d} strokeWidth={strokeWidth + 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    <path d={patternPath} stroke={`url(#${gradId})`} strokeWidth={strokeWidth + 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    <path d={patternPath} transform="translate(-2, -2)" stroke="#ffffff" strokeWidth={strokeWidth * 0.3} strokeLinecap="round" strokeLinejoin="round" strokeOpacity={0.7} fill="none" />
+                  </g>
+                )}
+
+                <rect x={0} y={0} width={widthNeeded} height={heightNeeded} fill="transparent" style={{ pointerEvents: isDone ? 'none' : 'all', cursor: 'crosshair' }} />
+              </svg>
+            </div>
+
+            <div className="flex justify-between items-center w-full mt-3 gap-2 flex-wrap">
+              <span className="text-xs sm:text-sm font-[800] text-[#475569]">
+                {isDone ? (
+                  <span className="text-[#059669] font-[900]">🎉 Poora letter 100% trace ho gaya! Shabaash!</span>
+                ) : (
+                  <span>✏️ Poora letter/ank trace karein — jab poora hoga tabhi complete hoga!</span>
+                )}
+              </span>
+
+              <div className="flex items-center gap-2">
+                {!isDone && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const all = new Set();
+                      checkpoints.forEach((_, i) => all.add(i));
+                      setCovered(all);
+                      triggerCompletion();
+                    }}
+                    className="text-xs font-[800] px-3 py-1.5 rounded-xl border border-[#34d399] bg-[#ecfdf5] hover:bg-[#d1fae5] text-[#059669] transition-colors"
+                  >
+                    ✨ Auto-Fill
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInternalCompleted(false);
+                    setCovered(new Set());
+                    setUserPath('');
+                    setIsDrawing(false);
+                    lastPtRef.current = null;
+                    playDotPopSound();
+                    if (onReset) onReset();
+                  }}
+                  className="text-xs font-[800] px-3 py-1.5 rounded-xl border border-[#cbd5e1] bg-[#f8fafc] hover:bg-slate-100 text-[#334155] transition-colors"
+                >
+                  ↺ Clear
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      /* ========================================================================
+       * 11. PRACTICE STUDIO SECTION (2 Spacious Focused Boards)
+       * ======================================================================== */
+      const StudioSection = ({ currentNumber }) => {
+        const [completedMap, setCompletedMap] = useState({});
+        const ctx = getNumberContext(currentNumber);
+
+        useEffect(() => {
+          setCompletedMap({});
+        }, [currentNumber]);
+
+        const boards = [
+          {
+            id: 'board-num',
+            pattern: 'number-single',
+            label: `Board 1 · Numeral Trace (${currentNumber})`,
+            labelHi: `अंक ${currentNumber} (${ctx.deva})`,
+            speak: `Board 1! Trace Number ${currentNumber}!`,
+            theme: COLOR_THEMES[0],
+          },
+          {
+            id: 'board-word',
+            pattern: 'number-word-upper',
+            label: `Board 2 · Full Spelling Trace (${ctx.wordEnUpper})`,
+            labelHi: `पूरी स्पेलिंग: ${ctx.wordEnUpper} · ${ctx.wordHi}`,
+            speak: `Board 2! Trace full word spelling: ${ctx.wordEn}!`,
+            theme: COLOR_THEMES[1],
+          },
+        ];
+
+        const completedCount = Object.values(completedMap).filter(Boolean).length;
+
+        return (
+          <section className="p-4 sm:p-7 mt-8 md:mt-11 bg-gradient-to-br from-[#ecfdf5] to-[#fffbeb] border-[3px] border-[#10b981] rounded-[26px] shadow-xs" id="overwrite-studio">
+            <div className="flex justify-between items-center flex-wrap gap-3">
+              <div>
+                <p className="text-[11px] tracking-[1.4px] font-[800] text-[#059669] uppercase font-['Outfit',sans-serif]">
+                  Maths Handwriting Board · अंक {currentNumber} और पूरी स्पेलिंग {ctx.wordEnUpper} के ऊपर हाथ फेरें
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-[900] text-[#065f46] font-['Outfit',sans-serif] tracking-tight mt-0.5">
+                  Spacious Overwriting Practice ({currentNumber} · {ctx.wordEnUpper})
+                </h2>
+              </div>
+
+              <div className="flex gap-2.5 items-center flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#34d399] bg-white text-xs font-[800] text-[#059669]">
+                  <span className="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                  <span>★ {completedCount} of {boards.length} Boards Filled</span>
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next = {};
+                    boards.forEach((b) => (next[b.id] = true));
+                    setCompletedMap(next);
+                    playSuccessChime();
+                    speakText(`All overwriting complete for Number ${currentNumber}! ${ctx.wordEn}!`, 'en-US');
+                  }}
+                  className="bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-xl font-[800] text-xs sm:text-sm shadow-[0_3px_0_#059669] transition-transform active:translate-y-0.5"
+                >
+                  ✨ Fill Both Boards
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCompletedMap({});
+                    playDotPopSound();
+                  }}
+                  className="border-2 border-[#34d399] bg-white hover:bg-emerald-50 text-[#059669] px-3 py-1.5 rounded-xl font-[800] text-xs transition-colors"
+                >
+                  ↺ Reset
+                </button>
+              </div>
+            </div>
+
+            <p className="text-sm sm:text-base text-[#374151] mt-2.5 leading-relaxed">
+              Full spelling is <strong>100% complete: {ctx.wordEnUpper} ({ctx.wordHi})</strong> with generous letter spacing!{' '}
+              <span className="font-[800] text-[#059669] font-['Noto_Sans_Devanagari',sans-serif]">
+                (माउस या उंगली से डॉट्स के ऊपर लाइन खींचें, जब तक पूरा trace न हो तब तक complete नहीं होगा!)
+              </span>
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+              {boards.map((b) => (
+                <OverwritingBox
+                  key={`${currentNumber}_${b.id}`}
+                  id={`${currentNumber}_${b.id}`}
+                  pattern={b.pattern}
+                  targetNumber={currentNumber}
+                  label={b.label}
+                  labelHi={b.labelHi}
+                  theme={b.theme}
+                  speakStr={b.speak}
+                  isCompleted={Boolean(completedMap[b.id])}
+                  onComplete={() => setCompletedMap((prev) => ({ ...prev, [b.id]: true }))}
+                  onReset={() => setCompletedMap((prev) => ({ ...prev, [b.id]: false }))}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      };
+
+      /* ========================================================================
+       * 12. REVIEW & MASTERY CERTIFICATE SECTION
+       * ======================================================================== */
+      const CheckAllBar = ({ currentNumber, completedTasks, onCheckAll, onResetAll }) => {
+        const [showResults, setShowResults] = useState(false);
+        const ctx = getNumberContext(currentNumber);
+
+        useEffect(() => {
+          setShowResults(false);
+        }, [currentNumber]);
+
+        const doneCount = Object.values(completedTasks).filter(Boolean).length;
+        const percentage = Math.round((doneCount / 2) * 100);
+
+        return (
+          <>
+            <section className="bg-[#fffbeb] border-[3px] border-[#fcd34d] rounded-[22px] p-4.5 sm:p-6 mt-7 flex justify-between items-center flex-wrap gap-4 shadow-xs">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-[900] text-[#111827] font-['Outfit',sans-serif]">
+                  Review &amp; Verify Mastery for Number {currentNumber} ({ctx.wordEnUpper})!
+                </h2>
+                <p className="text-sm text-[#4b5563] mt-0.5">
+                  Review your child’s progress for Number {currentNumber} ({ctx.wordEn}) and full spelling {ctx.wordEnUpper}.
+                </p>
+              </div>
+
+              <div className="flex gap-3 flex-wrap items-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    onCheckAll();
+                    setShowResults(true);
+                    playSuccessChime();
+                    speakText(`Congratulations! You mastered Number ${currentNumber}! ${ctx.wordEn}!`, 'en-US');
+                  }}
+                  className="bg-[#10b981] hover:bg-[#059669] text-white px-5 py-3 rounded-2xl font-[800] text-sm sm:text-base shadow-[0_4px_0_#059669] transition-transform active:translate-y-0.5 font-['Outfit',sans-serif]"
+                >
+                  Verify all boards ✓
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onResetAll();
+                    setShowResults(false);
+                    playDotPopSound();
+                  }}
+                  className="border-2 border-[#34d399] bg-white hover:bg-emerald-50 text-[#059669] px-4 py-2.5 rounded-2xl font-[800] text-sm transition-colors"
+                >
+                  ↺ Reset
+                </button>
+              </div>
+            </section>
+
+            {showResults && (
+              <section className="bg-white border-[3px] border-[#34d399] rounded-[22px] p-5 sm:p-6 mt-5 text-center shadow-[0_6px_0_#d1fae5] animate-in fade-in zoom-in-95 duration-300">
+                <h2 className="text-2xl font-[900] text-[#065f46] font-['Outfit',sans-serif]">
+                  🎉 Number {currentNumber} ({ctx.wordEnUpper}) Mastery Certificate
+                </h2>
+                <p className="text-lg font-[800] text-[#111827] mt-2 font-['Outfit',sans-serif]">
+                  {doneCount} of 2 Overwriting Boards Completed ({percentage}%)!
+                </p>
+                <p className="text-base text-[#047857] mt-2 font-[700] font-['Noto_Sans_Devanagari',sans-serif]">
+                  🌟 शाबाश! आपने अंक {currentNumber} और पूरी स्पेलिंग {ctx.wordEnUpper} ({ctx.wordHi}) को सही तरीके से लिखना और ठीक {currentNumber} वस्तुएं गिनना सीख लिया है!
+                </p>
+              </section>
+            )}
+
+            <nav className="flex justify-between items-center flex-wrap gap-3.5 py-6 sm:py-8">
+              <a
+                href="#exact-objects-lab"
+                className="bg-[#10b981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl font-[800] text-sm shadow-[0_3px_0_#059669] transition-transform active:translate-y-0.5 font-['Outfit',sans-serif]"
+              >
+                Count Exactly {currentNumber} Objects ↑
+              </a>
+              <a href="#main" className="text-sm font-[800] text-[#059669] hover:underline font-['Outfit',sans-serif]">
+                Back to Top ↑
+              </a>
+            </nav>
+          </>
+        );
+      };
+
+      /* ========================================================================
+       * 13. FOOTER
+       * ======================================================================== */
+      const EconovaFooter = () => (
+        <footer className="w-full mt-12 py-8 px-[4%] md:px-[5.7%] border-t-2 border-[#a7f3d0] bg-white text-[#1f2937] font-['Quicksand',sans-serif]">
+          <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+              <div className="font-['Outfit',sans-serif] font-[900] text-lg text-[#065f46]">
+                ECONOVA · Pre-School Maths Education
+              </div>
+              <p className="text-xs text-[#059669] font-[800] mt-1 font-['Noto_Sans_Devanagari',sans-serif]">
+                अंक 1 से 100 तक की गिनती, स्पेलिंग और 3D ओवरराइटिंग अभ्यास
+              </p>
+            </div>
+            <div className="text-xs text-[#64748b] font-[700]">
+              © {new Date().getFullYear()} Econova Maths Lab. Kid-Safe &amp; Interactive.
+            </div>
+          </div>
+        </footer>
+      );
+
+      /* ========================================================================
+       * 14. ROOT APP COMPONENT & MOUNT
+       * ======================================================================== */
+      function App() {
+        const [currentNumber, setCurrentNumber] = useState(1);
+        const [selectedObject, setSelectedObject] = useState(SELECTABLE_OBJECTS[0]);
+        const [completedTasks, setCompletedTasks] = useState({});
+
+        const handleSelectNumber = (n) => {
+          setCurrentNumber(n);
+          setCompletedTasks({});
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        return (
+          <div className="min-h-screen flex flex-col bg-[#f0fdf4] text-[#1f2937]">
+            <EconovaHeader />
+            <NumberSelectorBar currentNumber={currentNumber} onSelectNumber={handleSelectNumber} />
+            <main id="main" className="flex-1 w-full max-w-[1200px] mx-auto px-3.5 sm:px-6 md:px-7">
+              <HeroSection currentNumber={currentNumber} selectedObject={selectedObject} />
+              <ExactObjectsLab
+                currentNumber={currentNumber}
+                selectedObject={selectedObject}
+                onSelectObject={setSelectedObject}
+              />
+              <StudioSection currentNumber={currentNumber} />
+              <CheckAllBar
+                currentNumber={currentNumber}
+                completedTasks={completedTasks}
+                onCheckAll={() => setCompletedTasks({ 1: true, 2: true })}
+                onResetAll={() => setCompletedTasks({})}
+              />
+            </main>
+            <EconovaFooter />
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
   </body>
 </html>
-
