@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" translate="no" class="notranslate">
   <head>
@@ -47,6 +46,95 @@
       .scrollbar-none {
         -ms-overflow-style: none;
         scrollbar-width: none;
+      }
+      /* Header Custom Branding */
+      header {
+        background: #2dd4bf;
+        border-bottom: 3px solid #10b981;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .nav-wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 28px;
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -1.3px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .logo em {
+        font-style: normal;
+        color: #fde047;
+      }
+      .logo-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        background: #fde047;
+        color: #059669;
+        display: grid;
+        place-items: center;
+        font-size: 29px;
+        transform: rotate(-9deg);
+      }
+      nav.header-nav {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+      nav.header-nav a {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+      }
+      nav.header-nav a:hover {
+        text-decoration: underline;
+        text-underline-offset: 7px;
+      }
+      .mint-btn {
+        background: #10b981;
+        color: #fff;
+        border: 0;
+        border-radius: 16px;
+        padding: 10px 17px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 14px;
+        box-shadow: 0 4px 0 #059669;
+        transition: transform .2s, background .2s;
+        text-decoration: none;
+      }
+      .mint-btn:hover {
+        background: #059669;
+        transform: translateY(-2px);
+      }
+      @media(max-width:900px){
+        .logo{font-size:27px}
+        .logo-mark{width:32px;height:32px;font-size:23px}
+        nav.header-nav{gap:16px}
+      }
+      @media(max-width:700px){
+        .nav-wrap{min-height:76px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;gap:10px}
+        nav.header-nav>a:not(.mint-btn){display:none}
+        .mint-btn{padding:9px 12px;font-size:12px}
       }
     </style>
   </head>
@@ -764,32 +852,21 @@
       };
 
       /* ========================================================================
-       * 6. NAVIGATION HEADER
+       * 6. NAVIGATION HEADER (FIXED TO MATCH MAIN SITE BRANDING)
        * ======================================================================== */
       const EconovaHeader = () => (
-        <header className="sticky top-0 z-50 w-full bg-[#2dd4bf] border-b-4 border-[#10b981] shadow-xs">
-          <div className="w-full max-w-[1200px] min-h-[70px] md:min-h-[80px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white border-2 border-[#10b981] shadow-xs grid place-items-center">
-                <span className="text-xl md:text-2xl">🌱</span>
-              </div>
-              <div>
-                <div className="font-['Outfit',sans-serif] font-[900] text-lg md:text-2xl tracking-tight text-[#064e3b]">
-                  ECONOVA
-                </div>
-                <div className="text-[11px] md:text-xs font-[800] text-[#065f46] -mt-1 font-['Noto_Sans_Devanagari',sans-serif]">
-                  Pre-School Maths Curriculum · 1 to 100
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="hidden sm:inline-block bg-white/90 text-[#065f46] font-[800] text-xs px-3 py-1.5 rounded-xl border border-emerald-300">
-                अंक 1 से 100 Overwriting &amp; Counting
-              </span>
-              <span className="bg-[#fde047] text-[#065f46] font-[900] text-xs px-3 py-1.5 rounded-xl border-2 border-[#059669] shadow-xs">
-                🌟 Kids Edition
-              </span>
-            </div>
+        <header>
+          <div className="nav-wrap">
+            <a className="logo" href="../../index.html" aria-label="Econova home">
+              <span className="logo-mark" aria-hidden="true">✦</span>
+              <span>Econova<em>.vip</em></span>
+            </a>
+            <nav className="header-nav" aria-label="Main navigation">
+              <a href="../../index.html#classes">Our classes</a>
+              <a href="../../index.html#explore">Explore &amp; learn</a>
+              <a href="../../index.html#services">Services</a>
+              <a className="mint-btn" href="../../class-1/index.html">Let’s learn <span aria-hidden="true">↗</span></a>
+            </nav>
           </div>
         </header>
       );
@@ -823,7 +900,7 @@
         };
 
         return (
-          <section className="w-full bg-white border-b-2 border-[#a7f3d0] py-3 px-3 sm:px-6 shadow-xs sticky top-[70px] md:top-[80px] z-40">
+          <section className="w-full bg-white border-b-2 border-[#a7f3d0] py-3 px-3 sm:px-6 shadow-xs sticky top-[76px] md:top-[88px] z-40">
             <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
                 <div className="flex items-center gap-2">
@@ -1886,7 +1963,7 @@
               </p>
             </div>
             <div className="text-xs text-[#64748b] font-[700]">
-              © {new Date().getFullYear()} Econova Maths Lab. Kid-Safe &amp; Interactive.
+              © 2026 Econova Maths Lab. Kid-Safe &amp; Interactive.
             </div>
           </div>
         </footer>
