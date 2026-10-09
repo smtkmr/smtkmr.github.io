@@ -1,0 +1,6 @@
+{
+  "name": "Number 1 Overwriting - Pre-School Maths",
+  "description": "Premium interactive pre-school maths lesson for Number 1 (One) with vibrant 3D illustrations, counting lab, 5-frame, and overwriting practice.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
