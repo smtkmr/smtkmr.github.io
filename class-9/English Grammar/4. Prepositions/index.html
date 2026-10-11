@@ -98,7 +98,7 @@
 <!-- JAVASCRIPT FOR LOCK SCREEN -->
 <script>
   (function() {
-    var SECRET_CODE = "1991";
+    var SECRET_CODE = "econova123";
 
     function doUnlock() {
       var inputVal = document.getElementById("econova-pass-field").value.trim();
@@ -654,6 +654,51 @@
       padding: 10px 12px;
       border-bottom: 1px solid #f1f5f9;
     }
+
+    /* RESPONSIVE MOBILE FIXES */
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 0 12px;
+      }
+      .header-inner {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .logo {
+        font-size: 19px;
+      }
+      .card, .card-gold {
+        padding: 14px;
+        border-radius: 14px;
+        margin-bottom: 16px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-sub {
+        font-size: 15px;
+      }
+      .hero-desc {
+        font-size: 13px;
+      }
+      .sec-title {
+        font-size: 19px;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .choice-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+      .gap-row {
+        padding: 10px 12px;
+      }
+      .btn-opt {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1023,7 +1068,7 @@ function renderGuidedPart() {
             👉 ${escapeHtml(concept.titleHi)}
           </p>
 
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:12px; margin-top:12px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:12px; margin-top:12px;">
             <div style="background:#f0fdf4; border:1px solid #a7f3d0; border-radius:10px; padding:12px; font-size:13px; color:#065f46;">
               <strong style="display:block; margin-bottom:4px; color:#047857;">📖 In-Depth English Explanation:</strong>
               <p style="line-height:1.6;">${escapeHtml(concept.explanationEn)}</p>
