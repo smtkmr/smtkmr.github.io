@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Volleyball Rules, Court Dimensions, Player Rotation & 30-Question Exam (वॉलीबॉल मैदान का माप, रोटेशन व नियम) - Learn volleyball with visual court dimensions, net height, libero rules, 20 practice questions and a 15-minute 30-question exam.">
+  <meta name="theme-color" content="#2dd4bf">
+  <meta property="og:title" content="Volleyball: Court Dimensions, Rotation & Rules (वॉलीबॉल संपूर्ण गाइड) | Econova.vip">
+  <meta property="og:description" content="Master Volleyball with 5 Units, visual court diagrams, 20 concept examples, and a 30-question 15-minute exam.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Volleyball: Court Dimensions, Rotation & Rules (वॉलीबॉल संपूर्ण गाइड) | Econova.vip</title>
+
+  <!-- Google Fonts matching Econova reference design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --body: 'Comic Neue', 'Quicksand', sans-serif;
+      --heading: 'Outfit', 'Quicksand', sans-serif;
+      --hi-font: 'Noto Sans Devanagari', 'Comic Neue', sans-serif;
+      --bg: #f0fdf4;
+      --ink: #1f2937;
+      --brand: #059669;
+      --teal: #2dd4bf;
+      --yellow: #fde047;
+      --line: #34d399;
+      --button: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 75px; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.65; font-size: 14px; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+    h1, h2, h3, h4, .font-heading { font-family: var(--heading); }
+    .font-hi { font-family: var(--hi-font); }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 16px; }
+
+    /* Header & Navigation */
+    header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; }
+    .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logo { font-size: 21px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
+    .logo span span { color: var(--yellow); }
+    .logo-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--yellow); color: var(--brand); display: grid; place-items: center; font-size: 17px; transform: rotate(-8deg); flex-shrink: 0; }
+
+    nav.main-nav { display: flex; align-items: center; gap: 4px; }
+    nav.main-nav a { font-family: var(--heading); font-weight: 700; color: #fff; font-size: 12px; padding: 5px 8px; border-radius: 8px; transition: background 0.15s; }
+    nav.main-nav a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+    .nav-test-btn {
+      background: var(--button);
+      color: #fff !important;
+      border-radius: 12px;
+      padding: 6px 12px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      font-weight: 800;
+      font-family: var(--heading);
+      font-size: 11.5px;
+      box-shadow: 0 3px 0 var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all .15s;
+      cursor: pointer;
+    }
+    .nav-test-btn:hover { background: var(--brand); transform: translateY(-1px); }
+    .nav-test-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--brand); }
+
+    .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 8px 16px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; font-size: 12.5px; }
+    .mint-btn:hover { background: var(--brand); transform: translateY(-1px); }
+    .mint-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--brand); }
+    .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 11.5px; font-weight: bold; padding: 5px 10px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+    .quiet-btn:hover { background: #d1fae5; transform: translateY(-1px); }
+
+    .mint-card { background: #fff; border: 2.5px solid #34d399; border-radius: 18px; }
+    .amber-card { background: #fffbeb; border: 2.5px solid #fcd34d; border-radius: 18px; }
+
+    /* Hero */
+    .hero { padding: 24px 0 16px; display: grid; grid-template-columns: 1.18fr 0.82fr; gap: 24px; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: 5px; background: #fff; border: 1px solid #34d399; border-radius: 30px; padding: 4px 10px; font-size: 10.5px; color: var(--brand); font-weight: bold; }
+    .pill span { width: 6px; height: 6px; border-radius: 50%; background: var(--button); }
+    h1 { font-size: clamp(26px, 3.8vw, 44px); font-weight: 900; line-height: 1.15; margin: 10px 0 8px; font-family: var(--heading); color: #0f172a; }
+    h1 .green { color: var(--brand); }
+
+    .hero-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+    .section { padding: 24px 0 10px; }
+    .rule-card { padding: 16px 18px; margin-bottom: 16px; background: #fff; border: 2px solid #a7f3d0; border-radius: 16px; width: 100%; box-sizing: border-box; }
+    .rule-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+    .badge { font-size: 10.5px; font-weight: bold; padding: 2.5px 7.5px; border-radius: 7px; background: #ecfdf5; color: var(--brand); border: 1px solid #34d399; display: inline-block; }
+    .badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+    .badge-blue { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+
+    .easy-hi { font-family: var(--hi-font); font-size: 13px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 11px 14px; margin: 10px 0; line-height: 1.65; }
+    .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 11px 14px; margin: 10px 0; font-size: 12.5px; color: #991b1b; }
+    .trap-box b { display: block; font-size: 13px; margin-bottom: 3px; color: #b91c1c; }
+
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1.5px solid #cbd5e1; border-radius: 12px; margin: 10px 0; background: #fff; }
+    .compare-table { width: 100%; min-width: 440px; border-collapse: collapse; font-size: 12px; }
+    .compare-table th, .compare-table td { padding: 8px 10px; border: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f1f5f9; font-weight: 800; font-family: var(--heading); }
+
+    .speech-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #e0f2fe;
+      border: 1px solid #7dd3fc;
+      color: #0369a1;
+      padding: 2.5px 7px;
+      border-radius: 7px;
+      font-size: 10.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .speech-chip:hover { background: #bae6fd; transform: scale(1.02); }
+
+    /* Concept 2-Question Pair Box */
+    .concept-pair-box {
+      margin-top: 14px;
+      background: #f8fafc;
+      border: 2px solid #a7f3d0;
+      border-radius: 14px;
+      padding: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .pair-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--brand);
+      font-family: var(--heading);
+      margin-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 5px;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .pair-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 720px) {
+      .pair-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .pair-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 11px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 12px;
+      box-sizing: border-box;
+    }
+    .pair-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .pair-card.wrong { border-color: #ef4444; background: #fef2f2; }
+
+    .choices-sm { display: grid; gap: 5px; margin: 7px 0; width: 100%; }
+    .choice-sm {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      padding: 7px 9px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 11.5px;
+      font-weight: 600;
+      transition: all 0.15s;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      word-break: break-word;
+    }
+    .choice-sm:hover { background: #f1f5f9; border-color: var(--brand); }
+    .choice-sm.selected { background: #fef3c7; border-color: #f59e0b; }
+    .choice-sm.right-choice { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: bold; }
+    .choice-sm.wrong-choice { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .choice-badge-sm { width: 18px; height: 18px; border-radius: 5px; background: #fff; border: 1px solid #94a3b8; display: grid; place-items: center; font-size: 10px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+    /* Test Arena */
+    .test-section { margin-top: 28px; padding: 18px; scroll-margin-top: 75px; width: 100%; box-sizing: border-box; }
+    .test-timer-bar { position: sticky; top: 64px; z-index: 35; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border: 2.5px solid var(--line); border-radius: 14px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; }
+    .timer-pill { font-family: var(--heading); font-size: 16px; font-weight: 900; background: #ecfdf5; color: var(--brand); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 8px; }
+    .timer-pill.urgent { background: #ef4444; color: #fff; border-color: #dc2626; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 5px; margin: 7px 0; }
+    .pal-btn { height: 30px; border: 1.5px solid #cbd5e1; background: #f8fafc; border-radius: 6px; font-family: var(--heading); font-size: 11px; font-weight: 800; color: #475569; display: grid; place-items: center; cursor: pointer; transition: all 0.15s; }
+    .pal-btn:hover { border-color: var(--brand); }
+    .pal-btn.attempted { background: var(--button); color: #fff; border-color: var(--brand); }
+    .pal-btn.review { background: var(--yellow); color: #78350f; border-color: #d97706; }
+    .pal-btn.active { outline: 2px solid var(--brand); outline-offset: 1px; }
+
+    .test-card { padding: 16px; background: #fff; border: 2.5px solid var(--line); border-radius: 16px; width: 100%; box-sizing: border-box; }
+    .choice-lg { display: flex; gap: 9px; align-items: flex-start; padding: 9px 11px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 10px; cursor: pointer; font-size: 13px; font-weight: 600; margin-bottom: 7px; transition: all 0.15s; width: 100%; text-align: left; }
+    .choice-lg:hover { background: #f0fdf4; border-color: var(--brand); }
+    .choice-lg.selected { background: #ecfdf5; border-color: var(--button); color: #065f46; font-weight: bold; }
+
+    .test-actions-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px; }
+
+    /* Results */
+    .results-card { background: #fff; border: 3px solid var(--line); border-radius: 18px; padding: 18px; }
+    .score-circle { font-family: var(--heading); font-size: 40px; font-weight: 900; color: var(--brand); }
+    .concept-diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 9px; margin: 14px 0; }
+    .diag-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 11px; font-size: 11.5px; }
+    .diag-card.mistake { border-color: #fca5a5; background: #fff5f5; }
+
+    .review-q-card { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 11px; margin-bottom: 9px; background: #fff; font-size: 12px; }
+    .review-q-card.wrong { border-color: #f87171; background: #fffaf0; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 400px; width: 100%; padding: 18px; text-align: center; }
+
+    .mobile-float-btn {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 50;
+      background: var(--button);
+      color: #fff;
+      border-radius: 30px;
+      padding: 8px 14px;
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-float-btn:hover { background: var(--brand); transform: scale(1.04); }
+
+    footer { background: #fff; border-top: 2px solid #a7f3d0; padding: 18px 0; margin-top: 36px; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      nav.main-nav { display: none; }
+      .test-timer-bar { top: 58px; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 0 8px; }
+      .rule-card { padding: 12px; border-radius: 14px; }
+      .easy-hi, .trap-box { padding: 9px 11px; font-size: 12px; }
+      .concept-pair-box { padding: 10px 8px; margin-top: 10px; }
+      .nav { min-height: 58px; gap: 6px; }
+      .logo { font-size: 17px; }
+      .nav-test-btn { padding: 5px 10px; font-size: 11px; }
+      .hero-actions { flex-direction: column; width: 100%; gap: 8px; }
+      .hero-actions .mint-btn { width: 100%; justify-content: center; }
+      .palette-grid { grid-template-columns: repeat(6, 1fr); }
+      .test-actions-bar { flex-direction: column-reverse; gap: 7px; }
+      .test-actions-bar > button, .test-actions-bar > div { width: 100%; display: flex; justify-content: space-between; }
+      .test-actions-bar .mint-btn { flex: 1; justify-content: center; }
+      .test-section { padding: 12px 9px; }
+      .test-card { padding: 12px 9px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Floating Quick Test Jump -->
+  <button class="mobile-float-btn" type="button" onclick="scrollToTest()">
+    ⏱ 30-Q Test (15m)
+  </button>
+
+  <!-- Header (Clean Navigation, NO YouTube link, NO sports academy tag) -->
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#main">
+        <span class="logo-mark">✦</span>
+        <span>Econova<span>.vip</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#unit-1">1. History (इतिहास)</a>
+        <a href="#unit-2">2. Court (मैदान का माप)</a>
+        <a href="#unit-3">3. Net &amp; Ball (नेट और बॉल)</a>
+        <a href="#unit-4">4. Rotation (रोटेशन)</a>
+        <a href="#unit-5">5. Rules (नियम)</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="quiet-btn" onclick="playWhistle()" title="Referee Whistle Sound" style="font-size:11px;">
+          <span>📢</span>
+          <span>Whistle (सीटी)</span>
+        </button>
+        <button class="nav-test-btn" type="button" onclick="scrollToTest()" title="Start 30-Question Test">
+          <span style="font-size:12px; line-height:1;">⏱</span>
+          <span>30-Q Test (15m)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" class="wrap">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <div class="pill">
+          <span></span>
+          Volleyball Complete Learning Guide (वॉलीबॉल संपूर्ण गाइड)
+        </div>
+
+        <h1>
+          Volleyball: Court Dimensions, <span class="green">Player Rotation</span> &amp; Rules<br>
+          <span style="font-size: clamp(17px, 2.8vw, 24px); color: #065f46; display: block; margin-top: 4px;" class="font-hi">
+            वॉलीबॉल: खेल का इतिहास, मैदान का माप और आसान नियम
+          </span>
+        </h1>
+
+        <p style="color:#4b5563; font-size:13.5px; line-height:1.7; margin-bottom:12px;" class="font-hi">
+          बच्चों और खेल प्रेमियों के लिए वॉलीबॉल की पूरी और प्रामाणिक जानकारी (Authentic Information)। <strong>18m × 9m Court (मैदान)</strong> का नाप, 3-meter Attack Line (अटैक लाइन), Net Height (पुरुष: 2.43m, महिला: 2.24m), 6 Players का Clockwise Rotation (घड़ी की दिशा में घूमना), Libero (लिबरो) के नियम, और 25/15 Points Scoring System को <strong>Live Interactive Court Diagram</strong>, <strong>20 Concept Questions</strong> और <strong>15-Minute Test</strong> के साथ आसानी से सीखें।
+        </p>
+
+        <div class="hero-actions">
+          <a class="mint-btn" href="#court-visualizer">📐 Court Map (मैदान का नक्शा) →</a>
+          <button class="mint-btn" style="background:#047857; box-shadow:0 3px 0 #064e3b;" type="button" onclick="scrollToTest()">
+            ⏱ 30-Question Test (15m)
+          </button>
+        </div>
+      </div>
+
+      <div class="amber-card" style="padding:16px; text-align:center;">
+        <p style="font-size:10.5px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">Key Facts at a Glance</p>
+        <div style="font-family:var(--heading); font-size:22px; font-weight:900; color:var(--brand); margin:2px 0;">Volleyball Quick Facts!</div>
+        <p style="text-align:left; font-size:12px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;" class="font-hi">
+          <strong>याद रखने योग्य मुख्य बातें (Golden Rules):</strong><br>
+          • <strong>Inventor (खोजकर्ता):</strong> 1895 में William G. Morgan (अमेरिका), पहला नाम <em>Mintonette</em> था।<br>
+          • <strong>Court Size (मैदान का नाप):</strong> 18m लंबाई × 9m चौड़ाई (दोनों तरफ 9m × 9m के दो हिस्से)।<br>
+          • <strong>Net Height (नेट की ऊँचाई):</strong> Men (पुरुष): <strong>2.43m</strong> | Women (महिला): <strong>2.24m</strong>.<br>
+          • <strong>Ball Specs (गेंद का नाप):</strong> Weight (वजन): <strong>260–280g</strong>, Circumference (घेरा): <strong>65–67 cm</strong>.<br>
+          • <strong>Players &amp; Rotation (खिलाड़ी):</strong> कोर्ट पर 6 खिलाड़ी खेलते हैं। सर्विस मिलने पर <strong>Clockwise (घड़ी की दिशा)</strong> में घूमते हैं।<br>
+          • <strong>Libero (लिबरो):</strong> रक्षा करने वाला खिलाड़ी (अलग जर्सी)। सर्विस, ब्लॉक या स्पाइक नहीं कर सकता।<br>
+          • <strong>Scoring (अंक):</strong> सेट 1 से 4 = 25 points; 5वाँ सेट = 15 points (जीत के लिए 2 अंकों की बढ़त)।
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE GROUNDS DIMENSIONS VISUALIZER -->
+    <!-- ========================================== -->
+    <section id="court-visualizer" class="mint-card" style="padding:16px; margin: 16px 0 24px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; border-bottom:1px solid #a7f3d0; padding-bottom:10px; margin-bottom:12px;">
+        <div>
+          <span class="badge badge-amber">Interactive Court Map</span>
+          <h2 style="font-size:18px; font-weight:900; margin-top:2px;">Visual Volleyball Court &amp; Dimensions (मैदान का लाइव नक्शा)</h2>
+          <p style="font-size:12px; color:#475569;" class="font-hi">कोर्ट के किसी भी भाग पर क्लिक करके उसका सटीक माप और नियम समझें:</p>
+        </div>
+        <button type="button" class="quiet-btn" onclick="playWhistle()">📢 Whistle Sound (सीटी)</button>
+      </div>
+
+      <!-- Court Tab Navigation -->
+      <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px;">
+        <button type="button" class="mint-btn" id="tab-btn-court" onclick="switchCourtTab('court')" style="padding:6px 12px; font-size:11.5px;">📐 Full Court (18m × 9m)</button>
+        <button type="button" class="quiet-btn" id="tab-btn-net" onclick="switchCourtTab('net')" style="padding:6px 12px; font-size:11.5px;">🥅 Net &amp; Antenna (नेट व एंटेना)</button>
+        <button type="button" class="quiet-btn" id="tab-btn-rot" onclick="switchCourtTab('rot')" style="padding:6px 12px; font-size:11.5px;">🔄 6 Positions &amp; Rotation (रोटेशन)</button>
+        <button type="button" class="quiet-btn" id="tab-btn-ball" onclick="switchCourtTab('ball')" style="padding:6px 12px; font-size:11.5px;">🏐 Ball Specs (गेंद का नाप)</button>
+      </div>
+
+      <!-- TAB 1: COURT SVG -->
+      <div id="view-court">
+        <div style="font-size:10.5px; color:#059669; margin-bottom:4px;" class="font-hi sm-only">
+          👆 मोबाइल पर कोर्ट को दाएँ-बाएँ स्वाइप करके पूरा दृश्य देख सकते हैं:
+        </div>
+
+        <div style="width:100%; overflow-x:auto; background:#0f172a; border-radius:14px; padding:10px; border:2px solid #34d399;">
+          <svg viewBox="0 0 620 330" style="width:100%; min-width:420px; max-width:640px; margin:auto; display:block;">
+            <!-- Free Zone -->
+            <rect x="15" y="15" width="590" height="300" rx="10" fill="#1e3a8a" opacity="0.9" />
+            <text x="310" y="30" fill="#93c5fd" font-size="9.5" font-weight="bold" text-anchor="middle">
+              FREE ZONE (सुरक्षित क्षेत्र: चारों ओर कम से कम 3m, FIVB विश्व प्रतियोगिताओं में 5m/6.5m)
+            </text>
+
+            <!-- Service Zones -->
+            <rect x="20" y="45" width="40" height="220" fill="#f59e0b" opacity="0.25" stroke="#f59e0b" stroke-dasharray="4 2" />
+            <text x="38" y="155" fill="#fef3c7" font-size="8" font-weight="bold" transform="rotate(-90, 38, 155)" text-anchor="middle">SERVICE ZONE (9m)</text>
+
+            <rect x="560" y="45" width="40" height="220" fill="#f59e0b" opacity="0.25" stroke="#f59e0b" stroke-dasharray="4 2" />
+            <text x="582" y="155" fill="#fef3c7" font-size="8" font-weight="bold" transform="rotate(90, 582, 155)" text-anchor="middle">SERVICE ZONE (9m)</text>
+
+            <!-- Court 18x9m -->
+            <rect x="60" y="45" width="500" height="220" fill="#ea580c" stroke="#ffffff" stroke-width="3" />
+
+            <!-- Attack Line Left -->
+            <rect x="60" y="45" width="166" height="220" fill="#f97316" fill-opacity="0.4" />
+            <text x="140" y="150" fill="#ffedd5" font-size="9" font-weight="bold" text-anchor="middle">BACK ZONE (6m × 9m)</text>
+            <text x="140" y="165" fill="#fed7aa" font-size="7.5" text-anchor="middle">पीछे के खिलाड़ी (Pos 5, 6, 1)</text>
+
+            <rect x="226" y="45" width="84" height="220" fill="#fdba74" fill-opacity="0.3" />
+            <text x="268" y="150" fill="#ffffff" font-size="8.5" font-weight="bold" text-anchor="middle">FRONT ZONE (3m × 9m)</text>
+
+            <line x1="226" y1="35" x2="226" y2="275" stroke="#ffffff" stroke-width="2.5" />
+            <line x1="226" y1="20" x2="226" y2="35" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 3" />
+            <line x1="226" y1="275" x2="226" y2="290" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 3" />
+
+            <!-- Center Line & Net -->
+            <line x1="310" y1="38" x2="310" y2="272" stroke="#facc15" stroke-width="4" />
+            <rect x="307" y="30" width="6" height="250" fill="#ffffff" stroke="#000" stroke-width="1" />
+            <circle cx="310" cy="30" r="4" fill="#ef4444" />
+            <circle cx="310" cy="280" r="4" fill="#ef4444" />
+            <!-- Antennas -->
+            <line x1="310" y1="18" x2="310" y2="45" stroke="#ef4444" stroke-width="2.5" />
+            <line x1="310" y1="265" x2="310" y2="292" stroke="#ef4444" stroke-width="2.5" />
+
+            <!-- Right Side Court -->
+            <rect x="310" y="45" width="84" height="220" fill="#fdba74" fill-opacity="0.3" />
+            <text x="352" y="150" fill="#ffffff" font-size="8.5" font-weight="bold" text-anchor="middle">FRONT ZONE (3m × 9m)</text>
+
+            <line x1="394" y1="35" x2="394" y2="275" stroke="#ffffff" stroke-width="2.5" />
+            <line x1="394" y1="20" x2="394" y2="35" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 3" />
+            <line x1="394" y1="275" x2="394" y2="290" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 3" />
+
+            <rect x="394" y="45" width="166" height="220" fill="#f97316" fill-opacity="0.4" />
+            <text x="477" y="150" fill="#ffedd5" font-size="9" font-weight="bold" text-anchor="middle">BACK ZONE (6m × 9m)</text>
+            <text x="477" y="165" fill="#fed7aa" font-size="7.5" text-anchor="middle">पीछे के खिलाड़ी (Pos 1, 6, 5)</text>
+
+            <!-- Dimension Marks -->
+            <line x1="60" y1="280" x2="560" y2="280" stroke="#fde047" stroke-width="1.5" />
+            <text x="310" y="295" fill="#fde047" font-size="9.5" font-weight="bold" text-anchor="middle">← 18.00 METERS TOTAL LENGTH (कुल लंबाई) →</text>
+            <text x="185" y="40" fill="#fef08a" font-size="8" font-weight="bold" text-anchor="middle">← 9.00m Half →</text>
+            <text x="435" y="40" fill="#fef08a" font-size="8" font-weight="bold" text-anchor="middle">← 9.00m Half →</text>
+            <text x="268" y="270" fill="#fff" font-size="7.5" font-weight="bold" text-anchor="middle">← 3m →</text>
+            <text x="352" y="270" fill="#fff" font-size="7.5" font-weight="bold" text-anchor="middle">← 3m →</text>
+            <text x="48" y="155" fill="#ffffff" font-size="8.5" font-weight="bold" transform="rotate(-90, 48, 155)" text-anchor="middle">← 9.00m WIDTH (चौड़ाई) →</text>
+          </svg>
+        </div>
+
+        <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px; margin-top:10px; font-size:12px;" class="font-hi">
+          <strong>मैदान के प्रमुख बिंदु (Court Essentials):</strong><br>
+          • <strong>Total Area:</strong> 18 मीटर लंबा और 9 मीटर चौड़ा।<br>
+          • <strong>Attack Line (अटैक लाइन):</strong> बीच की रेखा से 3 मीटर दूरी पर खींची जाती है (आगे 3m और पीछे 6m)।<br>
+          • <strong>Boundary Lines (सीमा रेखाएं):</strong> 5 सेमी चौड़ी होती हैं और कोर्ट का ही हिस्सा मानी जाती हैं (रेखा छूने पर गेंद IN होती है)।
+        </div>
+      </div>
+
+      <!-- TAB 2: NET & ANTENNA -->
+      <div id="view-net" style="display:none;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:10px;">
+          <div style="background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px;">
+            <span class="badge">Net Heights</span>
+            <h3 style="font-size:15px; font-weight:800; margin:4px 0;">नेट की सटीक ऊँचाई</h3>
+            <div style="font-size:12.5px; line-height:1.7;" class="font-hi">
+              • <strong>Men (पुरुष):</strong> <strong>2.43 मीटर</strong> (7 फीट 11⅝ इंच)<br>
+              • <strong>Women (महिला):</strong> <strong>2.24 मीटर</strong> (7 फीट 4⅛ इंच)<br>
+              • <strong>Youth / Under-16 Boys:</strong> 2.24m से 2.35m<br>
+              • <strong>Under-14 Kids:</strong> 2.13m से 2.15m<br>
+              <em>(नोट: नेट की ऊँचाई मैदान के बिल्कुल बीच में मापी जाती है।)</em>
+            </div>
+          </div>
+
+          <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:12px; padding:12px;">
+            <span class="badge badge-blue">Antenna Specs</span>
+            <h3 style="font-size:15px; font-weight:800; margin:4px 0;">एंटेना और जाली</h3>
+            <div style="font-size:12.5px; line-height:1.7;" class="font-hi">
+              • <strong>Antenna Length:</strong> 1.80 मीटर लचीली फाइबरग्लास रॉड।<br>
+              • <strong>Above Net:</strong> 80 सेमी भाग 10-10 सेमी लाल और सफेद पट्टियों में ऊपर रहता है।<br>
+              • <strong>Rule:</strong> गेंद को दोनों एंटेना के बीच से ही पार जाना चाहिए। एंटेना छूने पर गेंद OUT होती है।<br>
+              • <strong>Net Mesh:</strong> 1.00m चौड़ा, 9.5m लंबा, जाली के खाने 10cm × 10cm चौकोर।
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: ROTATION SIMULATOR -->
+      <div id="view-rot" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
+          <div style="font-size:12px; font-weight:bold;">Clockwise Rotation (घड़ी की दिशा में रोटेशन):</div>
+          <button type="button" class="mint-btn" onclick="stepRotation()" style="padding:5px 10px; font-size:11px;">🔄 Tap to Rotate Clockwise (घुमाएँ)</button>
+        </div>
+
+        <div style="background:#0f172a; border-radius:12px; padding:10px; border:2px solid #34d399; overflow-x:auto;">
+          <svg id="rot-svg" viewBox="0 0 520 260" style="width:100%; min-width:360px; max-width:520px; margin:auto; display:block;">
+            <rect x="20" y="20" width="480" height="220" fill="#ea580c" stroke="#ffffff" stroke-width="2.5" />
+            <line x1="20" y1="10" x2="20" y2="250" stroke="#facc15" stroke-width="5" />
+            <text x="12" y="130" fill="#facc15" font-size="10" font-weight="bold" transform="rotate(-90, 12, 130)" text-anchor="middle">NET</text>
+            <line x1="170" y1="20" x2="170" y2="240" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 3" />
+            <text x="95" y="35" fill="#fed7aa" font-size="8.5" font-weight="bold" text-anchor="middle">FRONT ROW (आगे के 3)</text>
+            <text x="330" y="35" fill="#fed7aa" font-size="8.5" font-weight="bold" text-anchor="middle">BACK ROW (पीछे के 3)</text>
+            <text x="495" y="225" fill="#fde047" font-size="9" font-weight="bold" text-anchor="end">← Pos 1 SERVE</text>
+
+            <!-- Static numbers -->
+            <text x="95" y="75" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">4</text>
+            <text x="95" y="135" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">3</text>
+            <text x="95" y="200" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">2</text>
+            <text x="330" y="75" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">5</text>
+            <text x="330" y="135" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">6</text>
+            <text x="330" y="200" fill="#fff" opacity="0.25" font-size="20" font-weight="900" text-anchor="middle">1</text>
+
+            <!-- 6 Players -->
+            <g id="players-group"></g>
+          </svg>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:10px; margin-top:10px; font-size:12px;" class="font-hi">
+          <strong>रोटेशन का आसान नियम:</strong> जब विरोधी टीम की सर्विस पर आपकी टीम पॉइंट जीतती है, तो सभी 6 खिलाड़ी <strong>Clockwise (घड़ी की दिशा में)</strong> एक स्थान आगे बढ़ते हैं (Pos 2 वाला खिलाड़ी Pos 1 पर आकर सर्विस करता है)।
+        </div>
+      </div>
+
+      <!-- TAB 4: BALL SPECS -->
+      <div id="view-ball" style="display:none;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:10px;">
+          <div style="background:#fff7ed; border:1.5px solid #fdba74; border-radius:12px; padding:12px; font-size:12.5px; line-height:1.7;" class="font-hi">
+            <span class="badge badge-amber">Weight &amp; Size</span>
+            <h3 style="font-size:15px; font-weight:800; margin:4px 0;">गेंद का सटीक नाप</h3>
+            • <strong>Weight (वजन):</strong> <strong>260 से 280 ग्राम</strong><br>
+            • <strong>Circumference (घेरा):</strong> <strong>65 से 67 सेमी</strong> (25.6–26.4 इंच)<br>
+            • <strong>Air Pressure (हवा का दबाव):</strong> <strong>0.30 से 0.325 kg/cm²</strong> (4.26 से 4.61 psi)
+          </div>
+
+          <div style="background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; font-size:12.5px; line-height:1.7;" class="font-hi">
+            <span class="badge">Material &amp; Color</span>
+            <h3 style="font-size:15px; font-weight:800; margin:4px 0;">सामग्री और रंग</h3>
+            • <strong>Material:</strong> मुलायम चमड़े (leather) या सिंथेटिक लेदर से बनी होती है।<br>
+            • <strong>Panels:</strong> बॉल पर 8 से 18 पैनल होते हैं।<br>
+            • <strong>Colors:</strong> सफेद या चमकीले नीले और पीले (Blue &amp; Yellow) रंगों का संयोजन।
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 01: HISTORY & ORIGIN -->
+    <!-- ========================================== -->
+    <section id="unit-1" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 01 · Origin &amp; History</span>
+        <h2 style="font-size:22px; font-weight:900; margin-top:4px;">1. History &amp; Origin (इतिहास और शुरुआत)</h2>
+      </div>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">A. Invention by William G. Morgan &amp; Naming as Volleyball</h3>
+          <span class="badge badge-amber">1895 Origin</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>खोज और नामकरण (Simple Explanation):</strong><br>
+          • <strong>Invention (खोज):</strong> वॉलीबॉल की खोज <strong>9 फरवरी 1895</strong> को अमेरिका के होलीओक (Massachusetts) में <strong>William G. Morgan</strong> ने की थी।<br>
+          • <strong>Purpose (उद्देश्य):</strong> वे बास्केटबॉल से कम चोट लगने वाला और बिना टकराए खेलने वाला एक इनडोर खेल बनाना चाहते थे।<br>
+          • <strong>Original Name (पहला नाम):</strong> शुरुआत में इसका नाम <strong>&quot;Mintonette&quot; (मिंटोनेट)</strong> रखा गया था।<br>
+          • <strong>Why Volleyball? (वॉलीबॉल नाम क्यों?):</strong> 1896 में <strong>Dr. Alfred Halstead</strong> ने देखा कि खिलाड़ी गेंद को हवा में ही उछाल (volley) रहे हैं, इसलिए उन्होंने इसका नाम <strong>&quot;Volleyball&quot;</strong> रखा।<br>
+          • <strong>Set and Spike (सेट और स्पाइक):</strong> 1916 में फिलीपींस (Philippines) के खिलाड़ियों ने गेंद को हवा में सेट करने और जोर से स्पाइक मारने का खेल शुरू किया।
+        </div>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Year (वर्ष)</th>
+                <th>Milestone (घटना)</th>
+                <th>Key Person (व्यक्ति)</th>
+                <th>Audio 🔊</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1895</strong></td>
+                <td>Invention of Mintonette in Holyoke (USA)</td>
+                <td>William G. Morgan</td>
+                <td><button type="button" class="speech-chip" onclick="speakText('William G Morgan invented volleyball in 1895 in Holyoke Massachusetts')">Listen 🔊</button></td>
+              </tr>
+              <tr>
+                <td><strong>1896</strong></td>
+                <td>Named Volleyball due to volleying action</td>
+                <td>Dr. Alfred Halstead</td>
+                <td><button type="button" class="speech-chip" onclick="speakText('Dr Alfred Halstead named it Volleyball in 1896')">Listen 🔊</button></td>
+              </tr>
+              <tr>
+                <td><strong>1916</strong></td>
+                <td>Set and Spike attack tactic created</td>
+                <td>Philippine Players</td>
+                <td><button type="button" class="speech-chip" onclick="speakText('The set and spike offensive play was developed in the Philippines in 1916')">Listen 🔊</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 2 Questions for 1A -->
+        <div class="concept-pair-box" id="pair-1a"></div>
+      </article>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">B. Global Body (FIVB), Olympic Games &amp; Indian Federation (VFI)</h3>
+          <span class="badge badge-blue">FIVB &amp; Olympics</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>प्रमुख संस्थाएँ और ओलंपिक (Key Organizations):</strong><br>
+          • <strong>FIVB (अंतर्राष्ट्रीय वॉलीबॉल महासंघ):</strong> <strong>अप्रैल 1947</strong> में पेरिस (फ्रांस) में बना। इसके पहले अध्यक्ष <strong>Paul Libaud</strong> थे। अब इसका मुख्य कार्यालय <strong>Lausanne, Switzerland</strong> में है।<br>
+          • <strong>Olympic Debut (ओलंपिक खेल):</strong> वॉलीबॉल पहली बार <strong>1964 टोक्यो ओलंपिक (Tokyo 1964)</strong> में आधिकारिक खेल बना। सोवियत संघ (USSR) ने पुरुष और जापान ने महिला गोल्ड मेडल जीता।<br>
+          • <strong>VFI (भारतीय वॉलीबॉल महासंघ):</strong> भारत में वॉलीबॉल फेडरेशन ऑफ इंडिया (VFI) की स्थापना <strong>1951</strong> में हुई।
+        </div>
+
+        <div class="trap-box">
+          <b>⚠️ याद रखने का आसान तरीका (Easy Tip):</b>
+          <strong>Basketball (बास्केटबॉल)</strong> 1891 में <em>Dr. James Naismith</em> ने बनाया था, जबकि <strong>Volleyball (वॉलीबॉल)</strong> 1895 में <em>William G. Morgan</em> ने बनाया था। दोनों अलग खेल हैं!
+        </div>
+
+        <!-- 2 Questions for 1B -->
+        <div class="concept-pair-box" id="pair-1b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 02: COURT DIMENSIONS -->
+    <!-- ========================================== -->
+    <section id="unit-2" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 02 · Court Dimensions</span>
+        <h2 style="font-size:22px; font-weight:900; margin-top:4px;">2. Court Dimensions &amp; Ground Markings (मैदान का माप और रेखाएँ)</h2>
+      </div>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">A. Court Dimensions (18m × 9m) &amp; 5cm Lines (मैदान का नाप)</h3>
+          <span class="badge">18m × 9m Court</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>मैदान का सटीक माप (Court Measurements):</strong><br>
+          • <strong>Total Dimensions (कुल नाप):</strong> <strong>18 मीटर लंबाई × 9 मीटर चौड़ाई</strong> (18m × 9m)।<br>
+          • <strong>Center Line (बीच की रेखा):</strong> यह कोर्ट को दो बराबर <strong>9m × 9m के हिस्सों</strong> में बांटती है। नेट ठीक इसी रेखा के ऊपर होता है।<br>
+          • <strong>Line Width (रेखाओं की चौड़ाई):</strong> कोर्ट की सभी रेखाएँ <strong>5 सेमी (5 cm) चौड़ी</strong> होती हैं।<br>
+          • <strong>Ball IN Rule:</strong> रेखाएँ कोर्ट का हिस्सा मानी जाती हैं। यदि गेंद रेखा को छूती है तो उसे <strong>IN (अंदर)</strong> माना जाता है और पॉइंट मिलता है।
+        </div>
+
+        <!-- 2 Questions for 2A -->
+        <div class="concept-pair-box" id="pair-2a"></div>
+      </article>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">B. Attack Line (3m Line), Service Zone &amp; Ceiling Height (अटैक व सर्विस रेखा)</h3>
+          <span class="badge badge-amber">3m Attack Line</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>अटैक लाइन और सर्विस ज़ोन (Attack Line &amp; Zones):</strong><br>
+          • <strong>Attack Line (अटैक लाइन / 3-मीटर रेखा):</strong> बीच की रेखा से ठीक <strong>3.00 मीटर</strong> की दूरी पर दोनों तरफ खींची जाती है।<br>
+          • यह कोर्ट को दो हिस्सों में बांटती है: <strong>Front Zone</strong> (आगे का 3m क्षेत्र) और <strong>Back Zone</strong> (पीछे का 6m क्षेत्र)।<br>
+          • <strong>Back-row Rule:</strong> पीछे का खिलाड़ी 3-मीटर लाइन के पीछे से कूदकर ही नेट के ऊपर से स्पाइक मार सकता है।<br>
+          • <strong>Service Zone:</strong> अंतिम रेखा (end line) के पीछे 9 मीटर चौड़ा क्षेत्र, जहाँ से सर्विस की जाती है।<br>
+          • <strong>Ceiling Height (छत की ऊँचाई):</strong> सामान्य मैचों में कम से कम 7 मीटर, और विश्व स्तर के मैचों में कम से कम 12.5 मीटर ऊँची छत होनी चाहिए।
+        </div>
+
+        <!-- 2 Questions for 2B -->
+        <div class="concept-pair-box" id="pair-2b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 03: NET & BALL SPECS -->
+    <!-- ========================================== -->
+    <section id="unit-3" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 03 · Equipment Specs</span>
+        <h2 style="font-size:22px; font-weight:900; margin-top:4px;">3. Net, Antenna &amp; Ball Specs (नेट, एंटेना और गेंद का माप)</h2>
+      </div>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">A. Official Net Heights: Men (2.43m) &amp; Women (2.24m) (नेट की ऊँचाई)</h3>
+          <span class="badge badge-emerald">Net Heights</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>नेट की आधिकारिक ऊँचाई (Official Net Heights):</strong><br>
+          • <strong>Men (पुरुष वर्ग):</strong> <strong>2.43 मीटर</strong> (7 फीट 11⅝ इंच)<br>
+          • <strong>Women (महिला वर्ग):</strong> <strong>2.24 मीटर</strong> (7 फीट 4⅛ इंच)<br>
+          • <strong>Youth / Under-16 Boys:</strong> 2.24m से 2.35m | <strong>Under-14 Kids:</strong> 2.13m से 2.15m<br>
+          • <strong>Net Structure:</strong> 1.00 मीटर चौड़ा, 9.5m लंबा, और जाली के चौकोर खाने <strong>10 सेमी × 10 सेमी</strong> के होते हैं।
+        </div>
+
+        <!-- 2 Questions for 3A -->
+        <div class="concept-pair-box" id="pair-3a"></div>
+      </article>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">B. Antenna Specifications &amp; Official Ball Specs (एंटेना और गेंद)</h3>
+          <span class="badge badge-amber">Antenna &amp; Ball</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>एंटेना और गेंद का नाप (Antenna &amp; Ball Specifications):</strong><br>
+          • <strong>Antenna Length:</strong> <strong>1.80 मीटर</strong> लंबी रॉड, जिसका <strong>80 सेमी भाग</strong> 10-10 सेमी लाल और सफेद पट्टियों के साथ नेट से ऊपर रहता है।<br>
+          • <strong>Crossing Rule:</strong> गेंद को दोनों एंटेना के बीच से ही पार जाना चाहिए। एंटेना छूने पर गेंद OUT होती है।<br>
+          • <strong>Ball Weight (वजन):</strong> <strong>260 से 280 ग्राम</strong><br>
+          • <strong>Ball Circumference (घेरा):</strong> <strong>65 से 67 सेमी</strong> (25.6 से 26.4 इंच)<br>
+          • <strong>Air Pressure (हवा का दबाव):</strong> <strong>0.30 से 0.325 kg/cm²</strong> (4.26 से 4.61 psi)
+        </div>
+
+        <!-- 2 Questions for 3B -->
+        <div class="concept-pair-box" id="pair-3b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 04: POSITIONS, ROTATION & LIBERO -->
+    <!-- ========================================== -->
+    <section id="unit-4" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 04 · Tactical Lineup</span>
+        <h2 style="font-size:22px; font-weight:900; margin-top:4px;">4. Player Positions, Rotation &amp; The Libero (खिलाड़ी, रोटेशन व लिबरो)</h2>
+      </div>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">A. 6 Court Positions &amp; Clockwise Rotation (6 स्थितियाँ और रोटेशन)</h3>
+          <span class="badge">6 Positions</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>कोर्ट पर 6 स्थितियाँ (The 6 Positions):</strong><br>
+          • <strong>Position 1 (Right-Back):</strong> दायाँ पिछला खिलाड़ी — यही खिलाड़ी सर्विस करता है!<br>
+          • <strong>Position 2 (Right-Front):</strong> दायाँ आगे का खिलाड़ी (Opposite Hitter)<br>
+          • <strong>Position 3 (Middle-Front):</strong> बीच का आगे का खिलाड़ी (Middle Blocker)<br>
+          • <strong>Position 4 (Left-Front):</strong> बायाँ आगे का खिलाड़ी (Outside Hitter / Spiker)<br>
+          • <strong>Position 5 (Left-Back):</strong> बायाँ पिछला रक्षात्मक खिलाड़ी (Defender)<br>
+          • <strong>Position 6 (Middle-Back):</strong> बीच का पिछला खिलाड़ी (Defender)<br><br>
+          👉 <strong>Clockwise Rotation (घड़ी की दिशा में घूमना):</strong> जब विरोधी टीम की सर्विस पर आपकी टीम पॉइंट जीतती है, तो सभी 6 खिलाड़ी <strong>Clockwise (घड़ी की दिशा)</strong> में एक स्थान आगे बढ़ते हैं (Pos 2 वाला खिलाड़ी Pos 1 पर आकर सर्विस करता है)।<br>
+          👉 <strong>Positional Fault:</strong> सर्विस हिट होने के क्षण सभी खिलाड़ियों का अपनी सही जगह पर होना जरूरी है। हिट होते ही वे कहीं भी जा सकते हैं।
+        </div>
+
+        <!-- 2 Questions for 4A -->
+        <div class="concept-pair-box" id="pair-4a"></div>
+      </article>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">B. Libero Rules &amp; Strict Restrictions (लिबरो खिलाड़ी के नियम)</h3>
+          <span class="badge badge-red">Libero Rules</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>लिबरो कौन है? (Who is the Libero?):</strong><br>
+          • 1998 में FIVB ने रक्षात्मक खेल को मजबूत करने के लिए <strong>Libero</strong> पद शुरू किया।<br>
+          • लिबरो अपनी टीम के बाकी खिलाड़ियों से <strong>अलग रंग की जर्सी</strong> पहनता है।<br><br>
+          👉 <strong>लिबरो पर लगे 5 सख्त नियम (Strict Restrictions):</strong><br>
+          1. <strong>केवल पीछे की पंक्ति:</strong> वह केवल पिछली पंक्ति (back row) में रक्षा कर सकता है।<br>
+          2. <strong>सर्विस मना है:</strong> अंतरराष्ट्रीय नियमों के अनुसार लिबरो सर्विस नहीं कर सकता।<br>
+          3. <strong>ब्लॉक मना है:</strong> वह नेट पर ब्लॉक नहीं कर सकता।<br>
+          4. <strong>अटैक मना है:</strong> नेट से ऊपर पूरी तरह उठी गेंद पर लिबरो कहीं से भी स्पाइक नहीं मार सकता।<br>
+          5. <strong>फ्रंट-ज़ोन सेट:</strong> यदि लिबरो 3m लाइन के आगे उंगलियों से पास दे, तो कोई साथी उस पर नेट के ऊपर से स्पाइक नहीं मार सकता।
+        </div>
+
+        <!-- 2 Questions for 4B -->
+        <div class="concept-pair-box" id="pair-4b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- UNIT 05: SCORING & RULES -->
+    <!-- ========================================== -->
+    <section id="unit-5" class="section">
+      <div style="margin-bottom:12px;">
+        <span class="badge">Unit 05 · Scoring &amp; Penalties</span>
+        <h2 style="font-size:22px; font-weight:900; margin-top:4px;">5. Scoring System, Skills &amp; Core Rules (अंक प्रणाली, कौशल और फाउल्स)</h2>
+      </div>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">A. Rally Point System (RPS) &amp; Sets Format (25/15 Points) (अंक प्रणाली)</h3>
+          <span class="badge badge-emerald">Rally Point System</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>रैली पॉइंट सिस्टम (RPS):</strong><br>
+          • 1999 से लागू नियम: <strong>हर जीती हुई रैली पर 1 पॉइंट मिलता है</strong>, चाहे सर्विस किसी भी टीम ने की हो!<br><br>
+          👉 <strong>5 सेट का मैच (Best of 5 Sets):</strong><br>
+          • जो टीम पहले 3 सेट जीतती है, वह मैच जीत जाती है।<br>
+          • <strong>सेट 1 से 4:</strong> <strong>25 points</strong> तक खेले जाते हैं (जीतने के लिए कम से कम 2 अंकों की बढ़त अनिवार्य है, जैसे 25-23, 26-24, 28-26)।<br>
+          • <strong>5वाँ निर्णायक सेट:</strong> 2-2 की बराबरी पर 5वाँ सेट <strong>15 points</strong> का होता है (2 अंकों की बढ़त जरूरी, जैसे 15-13)।<br>
+          • <strong>Time-outs:</strong> हर टीम को प्रति सेट 30-30 सेकंड के 2 टाइम-आउट मिलते हैं।
+        </div>
+
+        <!-- 2 Questions for 5A -->
+        <div class="concept-pair-box" id="pair-5a"></div>
+      </article>
+
+      <article class="rule-card">
+        <div class="rule-header">
+          <h3 style="font-size:15px; font-weight:800;">B. 3-Contact Rule, 6 Core Skills &amp; Major Fouls (3-टच नियम व फाउल्स)</h3>
+          <span class="badge badge-red">Skills &amp; Fouls</span>
+        </div>
+
+        <div class="easy-hi">
+          👉 <strong>3-टच नियम (The 3-Contact Rule):</strong><br>
+          • गेंद वापस भेजने के लिए एक टीम को अधिकतम <strong>3 टच</strong> मिलते हैं (Pass, Set, Spike)।<br>
+          • <strong>ब्लॉक का टच नहीं गिना जाता:</strong> नेट पर किया गया ब्लॉक टच टीम के 3 टच में <strong>नहीं गिना जाता</strong>! ब्लॉक के बाद भी टीम के पास पूरे 3 टच रहते हैं।<br><br>
+          👉 <strong>6 मुख्य खेल कौशल (6 Core Skills):</strong><br>
+          1. <strong>Service (सर्विस):</strong> खेल शुरू करना | 2. <strong>Bump / Pass (पास):</strong> कलाइयों से गेंद उठाना | 3. <strong>Set (सेट):</strong> स्पाइकर के लिए गेंद हवा में उठाना | 4. <strong>Spike (स्पाइक):</strong> कूदकर जोरदार मारना | 5. <strong>Block (ब्लॉक):</strong> नेट पर गेंद रोकना | 6. <strong>Dig (डिफेंस):</strong> जमीन पर गिरती गेंद को बचाना।<br><br>
+          👉 <strong>प्रमुख फाउल्स (Major Fouls):</strong> Four Hits (4 बार छूना), Double Contact (एक ही खिलाड़ी द्वारा लगातार दो बार छूना), Lift/Carry (गेंद को रोकना या फेंकना), Net Fault (खेलते समय नेट छूना), Foot Fault (सर्विस करते समय लाइन पर पैर पड़ना)।
+        </div>
+
+        <!-- 2 Questions for 5B -->
+        <div class="concept-pair-box" id="pair-5b"></div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FINAL 30-QUESTION 15-MINUTE TEST ARENA -->
+    <!-- ========================================== -->
+    <section id="test-arena" class="mint-card test-section">
+      <!-- IDLE VIEW -->
+      <div id="test-idle-view" style="text-align:center; max-width:640px; margin:auto;">
+        <span class="badge" style="font-size:12px; padding:3px 10px; margin-bottom:6px;">30 Questions · Strict 15-Minute Exam</span>
+        <h2 style="font-size:24px; font-weight:900; margin:6px 0;">Final Volleyball 30-Question Examination</h2>
+        <p style="font-size:13px; color:#4b5563; line-height:1.65; margin-bottom:16px;" class="font-hi">
+          यह व्यापक परीक्षा-स्तरीय टेस्ट वॉलीबॉल खेल के सभी 5 अध्यायों (इतिहास, 18m × 9m कोर्ट डायमेंशन, 2.43m/2.24m नेट व एंटेना, 6 खिलाड़ी रोटेशन व लिबरो, और 25/15 अंक रैली पॉइंट सिस्टम) का सटीक मूल्यांकन करता है। इसमें <strong>15 मिनट का उल्टी गिनती टाइमर (15:00)</strong> है। समय समाप्त होते ही टेस्ट <strong>स्वतः सबमिट (Auto Submit)</strong> हो जाएगा।
+        </p>
+
+        <button class="mint-btn" type="button" onclick="startExam()" style="font-size:14px; padding:11px 22px; width:100%; max-width:360px;">
+          🚀 Start 30-Question Exam (15:00 Timer)
+        </button>
+      </div>
+
+      <!-- RUNNING VIEW -->
+      <div id="test-running-view" style="display:none;">
+        <div class="test-timer-bar">
+          <div class="timer-pill" id="timer-display">15:00</div>
+          <div style="font-size:12px; font-weight:bold; color:var(--brand);">
+            Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+          </div>
+          <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11px; padding:5px 12px;">
+            Submit Exam ✓
+          </button>
+        </div>
+
+        <!-- Palette -->
+        <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:9px; margin-bottom:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:10.5px; font-weight:bold; color:#475569; margin-bottom:5px; flex-wrap:wrap; gap:5px;">
+            <span>Question Palette (1 to 30):</span>
+            <div style="display:flex; gap:7px;">
+              <span>🟢 Attempted</span>
+              <span>🟡 Review</span>
+              <span>⚪ Left</span>
+            </div>
+          </div>
+          <div class="palette-grid" id="palette-container"></div>
+        </div>
+
+        <!-- Single Question Card -->
+        <div class="test-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:5px;">
+            <span class="badge" id="current-q-concept">Unit</span>
+            <div style="display:flex; gap:5px; align-items:center;">
+              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:10.5px; padding:3px 7px;">
+                🚩 Mark for Review
+              </button>
+              <button type="button" class="speech-chip" onclick="speakCurrentQ()">🔊 Audio</button>
+              <span style="font-size:11px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+            </div>
+          </div>
+
+          <h3 id="current-q-title" style="font-size:15px; font-weight:800; margin-bottom:3px; line-height:1.35;"></h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:12px; color:#475569; margin-bottom:12px; background:#f0fdf4; padding:6px 9px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+
+          <div id="current-q-options"></div>
+
+          <div class="test-actions-bar">
+            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
+            <div style="display:flex; gap:6px;">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:11.5px; padding:6px 12px;">Next Question →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS VIEW -->
+      <div id="test-results-view" style="display:none;"></div>
+    </section>
+
+    <!-- Submit Warning Modal -->
+    <div class="modal-overlay" id="submit-modal" style="display:none;">
+      <div class="modal-box">
+        <div style="font-size:26px; margin-bottom:2px;">⚠️</div>
+        <h3 style="font-size:17px; font-weight:900; margin-bottom:4px;">Unattempted Questions Warning</h3>
+        <p style="font-size:12.5px; color:#475569; margin-bottom:12px;" id="modal-msg" class="font-hi"></p>
+        <div style="display:flex; justify-content:center; gap:8px;">
+          <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:11.5px;">Continue Test (हल करते रहें)</button>
+          <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:11.5px; color:#64748b;">Submit Anyway</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12px; color:#64748b;">
+        <div>
+          <strong style="color:var(--brand); font-size:14px; font-family:var(--heading);">Econova.vip ✦</strong><br>
+          Volleyball Rules, Dimensions &amp; Examination Hub (वॉलीबॉल संपूर्ण गाइड).
+        </div>
+        <div style="display:flex; gap:8px; font-weight:bold; color:var(--brand); flex-wrap:wrap;">
+          <a href="#unit-1">1. History</a>
+          <a href="#unit-2">2. Court</a>
+          <a href="#unit-3">3. Net &amp; Ball</a>
+          <a href="#unit-4">4. Rotation</a>
+          <a href="#unit-5">5. Rules</a>
+          <a href="#test-arena">30-Q Test</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Mount container for build verification -->
+  <div id="root" style="display:none;"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- Complete Standalone JavaScript Engine -->
+  <script>
+    // Audio synthesizer for referee whistle
+    function playWhistle() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        const ctx = new AudioContextClass();
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(2600, ctx.currentTime);
+        osc1.frequency.exponentialRampToValueAtTime(2850, ctx.currentTime + 0.08);
+        osc1.frequency.exponentialRampToValueAtTime(2700, ctx.currentTime + 0.35);
+
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(2650, ctx.currentTime);
+        osc2.frequency.exponentialRampToValueAtTime(2900, ctx.currentTime + 0.08);
+        osc2.frequency.exponentialRampToValueAtTime(2750, ctx.currentTime + 0.35);
+
+        gain.gain.setValueAtTime(0, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.25, ctx.currentTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
+
+        osc1.connect(gain);
+        osc2.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc1.start();
+        osc2.start();
+        osc1.stop(ctx.currentTime + 0.48);
+        osc2.stop(ctx.currentTime + 0.48);
+      } catch (err) {
+        console.warn(err);
+      }
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-GB';
+        utterance.rate = 0.92;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    // Court Visualizer Tab Switcher
+    function switchCourtTab(tab) {
+      const tabs = ['court', 'net', 'rot', 'ball'];
+      tabs.forEach(t => {
+        const v = document.getElementById('view-' + t);
+        const b = document.getElementById('tab-btn-' + t);
+        if (v) v.style.display = t === tab ? 'block' : 'none';
+        if (b) {
+          if (t === tab) {
+            b.className = 'mint-btn';
+          } else {
+            b.className = 'quiet-btn';
+          }
+        }
+      });
+      if (tab === 'rot') renderRotationPlayers();
+    }
+
+    // Rotation Simulator
+    let rotStep = 0;
+    const baseSlots = [
+      { num: 1, x: 330, y: 200, label: 'Pos 1 (Serve)' },
+      { num: 2, x: 95, y: 200, label: 'Pos 2 (Front)' },
+      { num: 3, x: 95, y: 135, label: 'Pos 3 (Middle)' },
+      { num: 4, x: 95, y: 75, label: 'Pos 4 (Front)' },
+      { num: 5, x: 330, y: 75, label: 'Pos 5 (Back)' },
+      { num: 6, x: 330, y: 135, label: 'Pos 6 (Back)' }
+    ];
+
+    function renderRotationPlayers() {
+      const g = document.getElementById('players-group');
+      if (!g) return;
+      let html = '';
+      for (let i = 0; i < 6; i++) {
+        const targetSlot = baseSlots[(i + rotStep) % 6];
+        const isServer = targetSlot.num === 1;
+        const isFront = [2, 3, 4].includes(targetSlot.num);
+        const fill = isServer ? '#22c55e' : isFront ? '#38bdf8' : '#fb923c';
+
+        html += `
+          <g transform="translate(${targetSlot.x}, ${targetSlot.y})">
+            <circle cx="0" cy="0" r="16" fill="${fill}" stroke="#ffffff" stroke-width="2.5" />
+            <text x="0" y="4" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">P${i + 1}</text>
+            ${isServer ? '<text x="0" y="24" fill="#4ade80" font-size="8" font-weight="bold" text-anchor="middle">★ SERVE</text>' : ''}
+          </g>
+        `;
+      }
+      g.innerHTML = html;
+    }
+
+    function stepRotation() {
+      playWhistle();
+      rotStep = (rotStep + 1) % 6;
+      renderRotationPlayers();
+    }
+
+    // 20 Embedded Concept Questions
+    const conceptQuestions = [
+      // 1A
+      {
+        id: 1, sub: '1a', title: '1A. Origin & Inventor',
+        q: "Who invented the sport of volleyball in 1895 in Massachusetts, USA?",
+        hi: "1895 में अमेरिका के मैसाचुसेट्स में वॉलीबॉल खेल का आविष्कार किसने किया था?",
+        opts: ["Dr. James Naismith", "William G. Morgan", "Alfred Halstead", "Pierre de Coubertin"],
+        ans: 1,
+        expl: "वॉलीबॉल का आविष्कार 9 फरवरी 1895 को होलीओक (Massachusetts, USA) में William G. Morgan ने किया था।"
+      },
+      {
+        id: 2, sub: '1a', title: '1A. Original Name',
+        q: "What was the original name given to volleyball before it was renamed?",
+        hi: "पुनः नामकरण से पूर्व वॉलीबॉल को मूलतः क्या नाम दिया गया था?",
+        opts: ["Speedball", "Mintonette", "Volley-court", "Hit-ball"],
+        ans: 1,
+        expl: "शुरुआत में इसका नाम 'मिंटोनेट' (Mintonette) था। 1896 में Dr. Alfred Halstead ने गेंद को हवा में उछालने (volleying) की क्रिया देखकर 'Volleyball' नाम सुझाया।"
+      },
+      // 1B
+      {
+        id: 3, sub: '1b', title: '1B. FIVB Formation',
+        q: "In which year was the International Volleyball Federation (FIVB) established in Paris?",
+        hi: "अंतर्राष्ट्रीय वॉलीबॉल महासंघ (FIVB) की स्थापना पेरिस में किस वर्ष हुई थी?",
+        opts: ["1895", "1924", "1947", "1964"],
+        ans: 2,
+        expl: "FIVB की स्थापना अप्रैल 1947 में पेरिस में हुई थी। इसके पहले अध्यक्ष Paul Libaud थे।"
+      },
+      {
+        id: 4, sub: '1b', title: '1B. Olympic Debut',
+        q: "In which Olympic Games was indoor volleyball first introduced as an official medal sport?",
+        hi: "इंडोर वॉलीबॉल को पहली बार किस ओलंपिक में आधिकारिक पदक खेल बनाया गया?",
+        opts: ["1952 Helsinki", "1960 Rome", "1964 Tokyo", "1972 Munich"],
+        ans: 2,
+        expl: "वॉलीबॉल पहली बार 1964 टोक्यो ओलंपिक (Tokyo 1964) में शामिल हुआ। पुरुष वर्ग में USSR और महिला वर्ग में जापान ने गोल्ड जीता।"
+      },
+      // 2A
+      {
+        id: 5, sub: '2a', title: '2A. Court Dimensions',
+        q: "What are the official playing court dimensions for indoor volleyball?",
+        hi: "इंडोर वॉलीबॉल के खेल मैदान (कोर्ट) का नाप क्या होता है?",
+        opts: ["16m × 8m", "18m × 9m", "20m × 10m", "22m × 11m"],
+        ans: 1,
+        expl: "वॉलीबॉल कोर्ट की कुल लंबाई 18 मीटर और चौड़ाई 9 मीटर होती है (दो 9m × 9m के बराबर हिस्से)।"
+      },
+      {
+        id: 6, sub: '2a', title: '2A. Boundary Line Width',
+        q: "What is the standard width of boundary lines, and is the line considered IN the court?",
+        hi: "कोर्ट की सभी सीमा रेखाओं की चौड़ाई कितनी होती है और क्या रेखा पर गिरी गेंद अंदर (IN) मानी जाती है?",
+        opts: ["5 cm wide; the line is considered IN the court", "5 cm wide; the line is considered OUT", "10 cm wide; line is considered OUT", "8 cm wide; line is neutral"],
+        ans: 0,
+        expl: "कोर्ट की सभी रेखाएँ 5 सेमी चौड़ी होती हैं और कोर्ट का ही हिस्सा होती हैं (रेखा छूने पर गेंद IN होती है)।"
+      },
+      // 2B
+      {
+        id: 7, sub: '2b', title: '2B. Attack Line (3m)',
+        q: "At what distance is the Attack Line drawn from the Center Line in each half?",
+        hi: "प्रत्येक हाफ में बीच की रेखा से अटैक लाइन (3-मीटर रेखा) कितनी दूरी पर होती है?",
+        opts: ["2 meters", "3 meters", "4 meters", "4.5 meters"],
+        ans: 1,
+        expl: "अटैक लाइन बीच की रेखा (Center Line) से ठीक 3.00 मीटर की दूरी पर दोनों पक्षों में समानांतर होती है।"
+      },
+      {
+        id: 8, sub: '2b', title: '2B. Service Zone',
+        q: "What is the width of the service zone located behind each end line?",
+        hi: "प्रत्येक अंतिम रेखा (end line) के पीछे सर्विस ज़ोन की चौड़ाई कितनी होती है?",
+        opts: ["3 meters in right corner", "6 meters in middle", "9 meters (the full width of the court)", "4.5 meters on both sides"],
+        ans: 2,
+        expl: "सर्विस ज़ोन पूरी अंतिम रेखा के पीछे 9 मीटर चौड़ा होता है। सर्वर इस पूरी चौड़ाई में कहीं से भी सर्विस कर सकता है।"
+      },
+      // 3A
+      {
+        id: 9, sub: '3a', title: '3A. Net Heights',
+        q: "What are the official FIVB net heights for Men and Women measured at the center?",
+        hi: "पुरुष और महिला वर्ग के लिए नेट की आधिकारिक ऊँचाई कितनी होती है?",
+        opts: ["Men: 2.50m; Women: 2.30m", "Men: 2.43m; Women: 2.24m", "Men: 2.40m; Women: 2.20m", "Men: 2.45m; Women: 2.25m"],
+        ans: 1,
+        expl: "नेट की आधिकारिक ऊँचाई पुरुष वर्ग के लिए 2.43 मीटर और महिला वर्ग के लिए 2.24 मीटर होती है।"
+      },
+      {
+        id: 10, sub: '3a', title: '3A. Net Mesh Size',
+        q: "What are the standard dimensions of a volleyball net (width and mesh grid)?",
+        hi: "वॉलीबॉल नेट की चौड़ाई और उसके प्रत्येक चौकोर खाने (mesh) का माप क्या होता है?",
+        opts: ["Width: 1.00m; Mesh squares: 10 cm × 10 cm", "Width: 1.20m; Mesh squares: 5 cm × 5 cm", "Width: 0.80m; Mesh squares: 15 cm × 15 cm", "Width: 1.50m; Mesh squares: 10 cm × 10 cm"],
+        ans: 0,
+        expl: "नेट 1.00 मीटर चौड़ा और 9.5m से 10m लंबा होता है। जाली के खाने 10cm × 10cm के चौकोर होते हैं।"
+      },
+      // 3B
+      {
+        id: 11, sub: '3b', title: '3B. Antenna Specs',
+        q: "What is the total length of the antenna, and how much extends above the net?",
+        hi: "वॉलीबॉल एंटेना की कुल लंबाई कितनी होती है और यह नेट के ऊपर कितना निकला रहता है?",
+        opts: ["Total 1.50m; 50 cm above net", "Total 1.80m; 80 cm extends above top of net", "Total 2.00m; 100 cm above net", "Total 1.60m; 60 cm above net"],
+        ans: 1,
+        expl: "एंटेना की कुल लंबाई 1.80 मीटर होती है और इसका 80 सेमी भाग 10-10 सेमी लाल-सफेद पट्टियों के साथ नेट से ऊपर रहता है।"
+      },
+      {
+        id: 12, sub: '3b', title: '3B. Ball Weight & Size',
+        q: "What is the official weight and circumference of a standard regulation volleyball?",
+        hi: "आधिकारिक वॉलीबॉल का वजन और परिधि (घेरा) कितनी होती है?",
+        opts: ["Weight: 260–280 grams; Circumference: 65–67 cm", "Weight: 300–320 grams; Circumference: 68–70 cm", "Weight: 220–240 grams; Circumference: 62–64 cm", "Weight: 350–380 grams; Circumference: 65–67 cm"],
+        ans: 0,
+        expl: "वॉलीबॉल का वजन 260 से 280 ग्राम और परिधि 65 से 67 सेमी होती है।"
+      },
+      // 4A
+      {
+        id: 13, sub: '4a', title: '4A. Server Position',
+        q: "How many players play on the court per team, and which position number serves?",
+        hi: "प्रति टीम कोर्ट पर कितने खिलाड़ी खेलते हैं और कौन सी स्थिति का खिलाड़ी सर्विस करता है?",
+        opts: ["5 players; Position 3 serves", "6 players; Position 1 (Right-Back) serves", "7 players; Position 6 serves", "6 players; Position 4 serves"],
+        ans: 1,
+        expl: "कोर्ट पर 6 खिलाड़ी खेलते हैं। पोजीशन 1 (Right-Back यानी दायाँ पिछला खिलाड़ी) सर्वर होता है।"
+      },
+      {
+        id: 14, sub: '4a', title: '4A. Clockwise Rotation',
+        q: "When a receiving team wins a rally to earn the serve, in which direction do players rotate?",
+        hi: "जब सर्विस प्राप्त कर रही टीम पॉइंट जीतकर सर्विस पाती है, तो खिलाड़ी किस दिशा में घूमते हैं?",
+        opts: ["Counter-clockwise (उल्टी दिशा)", "Clockwise (घड़ी की दिशा में)", "Only front-row players change", "No rotation takes place"],
+        ans: 1,
+        expl: "खिलाड़ी दक्षिणावर्त यानी Clockwise (घड़ी की सुई की दिशा में) एक स्थान आगे बढ़ते हैं।"
+      },
+      // 4B
+      {
+        id: 15, sub: '4b', title: '4B. Libero Jersey',
+        q: "Why does the Libero wear a jersey of a distinctively contrasting color?",
+        hi: "लिबरो अपने साथी खिलाड़ियों से अलग (contrasting) रंग की जर्सी क्यों पहनता है?",
+        opts: ["Because they are team captain", "Because they are a specialized defender with strict restrictions", "Because they are highest scorer", "Because they are a guest player"],
+        ans: 1,
+        expl: "लिबरो केवल रक्षात्मक खेल खेलता है और उस पर कड़े नियम होते हैं, इसलिए रेफरी की पहचान के लिए उसकी जर्सी अलग रंग की होती है।"
+      },
+      {
+        id: 16, sub: '4b', title: '4B. Libero Restrictions',
+        q: "Under official FIVB rules, which of the following is STRICTLY FORBIDDEN for a Libero?",
+        hi: "मानक FIVB नियमों के अनुसार लिबरो के लिए निम्नलिखित में से क्या पूर्णतः वर्जित (मना) है?",
+        opts: ["Digging a spiked ball in back row", "Passing a serve to setter", "Serving, blocking, or attacking a ball above the net", "Replacing a back-row player"],
+        ans: 2,
+        expl: "लिबरो न तो सर्विस कर सकता है, न ब्लॉक कर सकता है, और न ही नेट के ऊपर से आक्रमण (स्पाइक) मार सकता है।"
+      },
+      // 5A
+      {
+        id: 17, sub: '5a', title: '5A. Sets 1 to 4 Points',
+        q: "How many points are needed to win Sets 1 through 4, and by what minimum lead?",
+        hi: "मानक मैच में सेट 1 से 4 जीतने के लिए कितने अंक और कितने अंकों की न्यूनतम बढ़त जरूरी है?",
+        opts: ["21 points with 1-point lead", "25 points with at least 2-point lead (no ceiling)", "25 points with cap at 26", "15 points with 2-point lead"],
+        ans: 1,
+        expl: "सेट 1 से 4 जीतने के लिए कम से कम 25 अंक और 2 अंकों की बढ़त जरूरी होती है (जैसे 25-23, 26-24)।"
+      },
+      {
+        id: 18, sub: '5a', title: '5A. Deciding 5th Set',
+        q: "How many points are played in the 5th and deciding set (Tie-Break)?",
+        hi: "मैच के 5वें और निर्णायक सेट (टाई-ब्रेक) में कितने अंकों का खेल होता है?",
+        opts: ["10 points with 2-point lead", "15 points with at least 2-point lead", "25 points with 2-point lead", "21 points straight"],
+        ans: 1,
+        expl: "5वाँ निर्णायक सेट 15 अंकों का होता है और इसमें भी 2 अंकों की बढ़त अनिवार्य होती है (जैसे 15-13)।"
+      },
+      // 5B
+      {
+        id: 19, sub: '5b', title: '5B. 3-Contact & Block',
+        q: "How many touches does a team get, and does a block contact count as one of them?",
+        hi: "गेंद लौटाने के लिए एक टीम को अधिकतम कितने टच मिलते हैं और क्या ब्लॉक टच को इसमें गिना जाता है?",
+        opts: ["3 touches; a block contact DOES NOT count as one of the 3 touches", "3 touches; a block contact DOES count", "4 touches always", "2 touches only"],
+        ans: 0,
+        expl: "अधिकतम 3 टच मिलते हैं। नेट पर किया गया ब्लॉक टच टीम के 3 टच में नहीं गिना जाता (ब्लॉक के बाद भी पूरे 3 टच मिलते हैं)।"
+      },
+      {
+        id: 20, sub: '5b', title: '5B. Back-Row Attack Rule',
+        q: "When may a back-row player legally attack a ball that is completely above the net?",
+        hi: "पीछे का खिलाड़ी (back-row player) नेट से ऊपर उठी गेंद पर कानूनी रूप से कब स्पाइक मार सकता है?",
+        opts: ["Never under any circumstances", "Only if they jump from behind the 3-meter Attack Line", "Only if opposing team permits", "Only with their foot"],
+        ans: 1,
+        expl: "पीछे का खिलाड़ी तभी स्पाइक मार सकता है जब उसकी टेक-ऑफ छलांग 3-मीटर अटैक लाइन के पीछे से लगी हो।"
+      }
+    ];
+
+    // 30 Final Comprehensive Test Questions
+    const testQuestions = [
+      { id: 1, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "In what year and city was the sport of volleyball originally invented?", hi: "वॉलीबॉल का मूल आविष्कार किस वर्ष और किस शहर में हुआ था?", opts: ["1891 in Springfield, Massachusetts", "1895 in Holyoke, Massachusetts", "1904 in St. Louis, Missouri", "1912 in Chicago, Illinois"], ans: 1, expl: "वॉलीबॉल 1895 में होलीओक (Massachusetts, USA) में William G. Morgan ने खोजा था।" },
+      { id: 2, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "Who gave volleyball its modern name after observing the 'volleying' action of the ball?", hi: "गेंद को हवा में उछालने की क्रिया देखकर खेल को 'Volleyball' नाम किसने दिया?", opts: ["William G. Morgan", "Dr. James Naismith", "Dr. Alfred Halstead", "Paul Libaud"], ans: 2, expl: "1896 में Dr. Alfred Halstead ने खेल में गेंद को हवा में वॉली होते देख यह नाम दिया।" },
+      { id: 3, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "Where is the global headquarters of FIVB located today?", hi: "FIVB (अंतर्राष्ट्रीय वॉलीबॉल महासंघ) का मुख्यालय आज कहाँ स्थित है?", opts: ["Paris, France", "Lausanne, Switzerland", "Geneva, Switzerland", "New York, USA"], ans: 1, expl: "FIVB का स्थायी मुख्यालय लॉज़ेन (Lausanne), स्विट्जरलैंड में स्थित है।" },
+      { id: 4, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "Which country won the first-ever Men's Olympic Volleyball Gold Medal in Tokyo 1964?", hi: "1964 टोक्यो ओलंपिक में पुरुषों का पहला वॉलीबॉल गोल्ड मेडल किसने जीता?", opts: ["Japan", "Soviet Union (USSR)", "Czechoslovakia", "United States"], ans: 1, expl: "1964 टोक्यो ओलंपिक में सोवियत संघ (USSR) ने पुरुषों का स्वर्ण पदक जीता था।" },
+      { id: 5, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "In which country was the offensive attack tactic of 'Set and Spike' (bomba) invented in 1916?", hi: "1916 में 'सेट और स्पाइक' (bomba) की आक्रामक तकनीक किस देश में विकसित हुई?", opts: ["United States", "Philippines", "Brazil", "Japan"], ans: 1, expl: "1916 में फिलीपींस (Philippines) के खिलाड़ियों ने गेंद को सेट करके स्पाइक मारने की तकनीक बनाई।" },
+      { id: 6, unitKey: 'unit1', unitTitle: 'Unit 01: History', q: "In which year was the Volleyball Federation of India (VFI) officially founded?", hi: "भारतीय वॉलीबॉल महासंघ (VFI) की स्थापना किस वर्ष हुई?", opts: ["1947", "1951", "1956", "1962"], ans: 1, expl: "भारतीय वॉलीबॉल महासंघ (VFI) की स्थापना 1951 में हुई थी।" },
+
+      { id: 7, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "What is the total length and width of the official indoor volleyball playing court?", hi: "इंडोर वॉलीबॉल के खेल मैदान (कोर्ट) की कुल लंबाई और चौड़ाई कितनी होती है?", opts: ["15m × 8m", "18m × 9m", "20m × 10m", "24m × 12m"], ans: 1, expl: "कोर्ट की कुल लंबाई 18 मीटर और चौड़ाई 9 मीटर होती है (दो 9m × 9m हिस्से)।" },
+      { id: 8, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "What is the minimum width of the surrounding Free Zone in standard official competitions?", hi: "कोर्ट के चारों ओर फ्री ज़ोन (सुरक्षित क्षेत्र) की न्यूनतम चौड़ाई कितनी होनी चाहिए?", opts: ["At least 1 meter", "Minimum 3 meters (5m for FIVB World Competitions)", "8 meters in front", "No free zone needed"], ans: 1, expl: "कोर्ट के चारों ओर कम से कम 3 मीटर का सुरक्षित खुला क्षेत्र (Free Zone) होना चाहिए।" },
+      { id: 9, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "What is the exact distance from the Center Line to the Attack Line in each half?", hi: "प्रत्येक हाफ में बीच की रेखा से अटैक लाइन (3-मीटर रेखा) कितनी दूरी पर होती है?", opts: ["2.0 meters", "3.0 meters", "4.5 meters", "6.0 meters"], ans: 1, expl: "अटैक लाइन बीच की रेखा (Center Line) से ठीक 3.0 मीटर की दूरी पर होती है।" },
+      { id: 10, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "What is the required width/thickness of all boundary lines on a volleyball court?", hi: "वॉलीबॉल कोर्ट की सभी सीमा रेखाओं की चौड़ाई कितनी होती है?", opts: ["2.5 cm", "5.0 cm", "7.5 cm", "10.0 cm"], ans: 1, expl: "कोर्ट की सभी रेखाएँ 5 सेमी (5 cm) चौड़ी होती हैं और कोर्ट का हिस्सा मानी जाती हैं।" },
+      { id: 11, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "Where is the Service Zone located and how wide is it?", hi: "सर्विस ज़ोन कहाँ स्थित होता है और इसकी चौड़ाई कितनी होती है?", opts: ["Only in right 3-meter corner", "Behind the end line, covering the full 9 meters width", "In front of attack line", "Between substitution zone and table"], ans: 1, expl: "सर्विस ज़ोन अंतिम रेखा के पीछे पूरी 9 मीटर चौड़ाई में फैला होता है।" },
+      { id: 12, unitKey: 'unit2', unitTitle: 'Unit 02: Court Dimensions', q: "What is the minimum ceiling height clearance required for FIVB World & Olympic Competitions?", hi: "FIVB विश्व और ओलंपिक मैचों के लिए कोर्ट के ऊपर छत की न्यूनतम ऊँचाई कितनी होनी चाहिए?", opts: ["7 meters", "9 meters", "12.5 meters", "15 meters"], ans: 2, expl: "विश्व प्रतियोगिताओं में छत की ऊँचाई कम से कम 12.5 मीटर होनी अनिवार्य है (सामान्य मैचों में 7m)।" },
+
+      { id: 13, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the official net height for Senior Men's volleyball competitions?", hi: "सीनियर पुरुष वॉलीबॉल प्रतियोगिताओं के लिए नेट की आधिकारिक ऊँचाई कितनी होती है?", opts: ["2.35 meters", "2.43 meters", "2.48 meters", "2.50 meters"], ans: 1, expl: "पुरुष वर्ग के लिए नेट की आधिकारिक ऊँचाई 2.43 मीटर (7 फीट 11⅝ इंच) होती है।" },
+      { id: 14, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the official net height for Senior Women's volleyball competitions?", hi: "सीनियर महिला वॉलीबॉल प्रतियोगिताओं के लिए नेट की आधिकारिक ऊँचाई कितनी होती है?", opts: ["2.15 meters", "2.24 meters", "2.30 meters", "2.35 meters"], ans: 1, expl: "महिला वर्ग के लिए नेट की आधिकारिक ऊँचाई 2.24 मीटर (7 फीट 4⅛ इंच) होती है।" },
+      { id: 15, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the total length of the antenna, and how much extends above the net?", hi: "नेट पर लगने वाले एंटेना की कुल लंबाई कितनी होती है और नेट के ऊपर कितना भाग रहता है?", opts: ["1.50m long, 50 cm above net", "1.80m long, 80 cm extends above top of net", "2.10m long, 100 cm above net", "1.60m long, 60 cm above net"], ans: 1, expl: "एंटेना 1.80 मीटर लंबा होता है और इसका 80 सेमी भाग 10 सेमी लाल-सफेद पट्टियों में ऊपर रहता है।" },
+      { id: 16, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the official weight range of an FIVB-approved indoor volleyball?", hi: "मानक इंडोर वॉलीबॉल का आधिकारिक वजन कितना होता है?", opts: ["200 to 220 grams", "260 to 280 grams", "300 to 320 grams", "350 to 380 grams"], ans: 1, expl: "मानक वॉलीबॉल का वजन 260 से 280 ग्राम होता है।" },
+      { id: 17, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the official circumference of a standard regulation volleyball?", hi: "मानक वॉलीबॉल की आधिकारिक परिधि (घेरा) कितनी होती है?", opts: ["60 to 62 cm", "65 to 67 cm", "70 to 72 cm", "75 to 77 cm"], ans: 1, expl: "वॉलीबॉल की परिधि 65 से 67 सेमी होती है।" },
+      { id: 18, unitKey: 'unit3', unitTitle: 'Unit 03: Net & Ball', q: "What is the standard internal air pressure of an official volleyball?", hi: "वॉलीबॉल के भीतर हवा का मानक आंतरिक दबाव कितना होना चाहिए?", opts: ["0.15 to 0.20 kg/cm²", "0.30 to 0.325 kg/cm² (4.26 to 4.61 psi)", "0.50 to 0.55 kg/cm²", "0.70 to 0.75 kg/cm²"], ans: 1, expl: "वॉलीबॉल का आंतरिक दबाव 0.30 से 0.325 kg/cm² (4.26 से 4.61 psi) होता है।" },
+
+      { id: 19, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "Which zone number corresponds to the 'Right-Back' player who performs the service?", hi: "कोर्ट पर कौन सा ज़ोन नंबर 'Right-Back' खिलाड़ी का होता है जो सर्विस करता है?", opts: ["Position 1", "Position 2", "Position 4", "Position 6"], ans: 0, expl: "पोजीशन 1 (Right-Back) कोर्ट का दायाँ पिछला कोना होता है जहाँ से सर्विस होती है।" },
+      { id: 20, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "In which sequence are court positions 1 to 6 numbered around the court?", hi: "कोर्ट पर 1 से 6 तक की स्थितियाँ किस क्रम में अंकित होती हैं?", opts: ["Clockwise from left", "Counter-clockwise: Pos 1, Pos 2, Pos 3, Pos 4, Pos 5, Pos 6", "Random order", "Straight line across net"], ans: 1, expl: "पोजीशन नंबरिंग घड़ी की उल्टी दिशा (Counter-clockwise: 1, 2, 3, 4, 5, 6) में होती है, परंतु रोटेशन घड़ी की दिशा में होता है।" },
+      { id: 21, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "When must players be strictly in their rotation positions to avoid a Positional Fault?", hi: "खिलाड़ियों का अपनी सही रोटेशन स्थिति में होना कब अनिवार्य है?", opts: ["Throughout the whole rally", "At the exact moment the ball is hit by the server", "Only during time-out", "Only after 3rd touch"], ans: 1, expl: "सर्वर द्वारा सर्विस की गेंद हिट करने के ठीक क्षण सभी खिलाड़ियों को अपनी सही जगह पर होना चाहिए।" },
+      { id: 22, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "In which year did the FIVB officially introduce the defensive specialist position called the Libero?", hi: "FIVB ने रक्षात्मक विशेषज्ञ खिलाड़ी 'लिबरो' (Libero) का पद किस वर्ष शुरू किया?", opts: ["1984", "1992", "1998", "2004"], ans: 2, expl: "FIVB ने 1998 में रैलियों को लंबा करने के लिए लिबरो पद शुरू किया था।" },
+      { id: 23, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "Can a Libero legally complete an attack hit if the ball is entirely above the top of the net?", hi: "क्या लिबरो ऐसी गेंद पर स्पाइक मार सकता है जो पूरी तरह से नेट के ऊपर हो?", opts: ["Yes, from behind 3m line", "No, a Libero is never permitted to complete an attack hit if the ball is above net", "Yes, once per set", "Yes, with captain permission"], ans: 1, expl: "लिबरो को किसी भी स्थान से ऐसी गेंद पर आक्रमण करने की अनुमति नहीं है जो नेट से ऊपर हो।" },
+      { id: 24, unitKey: 'unit4', unitTitle: 'Unit 04: Positions & Rotation', q: "What rule applies if a Libero sets the ball using overhand finger action inside the Front Zone?", hi: "यदि लिबरो 3-मीटर लाइन के आगे उंगलियों से ओवरहेड पास दे तो क्या नियम लागू होता है?", opts: ["Immediate red card", "A teammate cannot complete an attack hit on that ball above the net", "Automatic point for Libero", "No restriction applies"], ans: 1, expl: "यदि लिबरो 3m लाइन के आगे उंगलियों से सेट करता है, तो कोई साथी उस गेंद पर नेट के ऊपर से आक्रमण नहीं कर सकता।" },
+
+      { id: 25, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "Under the modern Rally Point System (RPS), how is a point awarded?", hi: "आधुनिक रैली पॉइंट सिस्टम (RPS) के तहत अंक कैसे मिलता है?", opts: ["Only serving team scores", "Every single rally won results in a point, regardless of who served", "Only on aces and blocks", "By playing time"], ans: 1, expl: "RPS के तहत प्रत्येक जीती गई रैली पर 1 अंक मिलता है, चाहे सर्विस किसी भी टीम ने की हो।" },
+      { id: 26, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "If the score reaches 24-24 in the first set, when does the set end?", hi: "यदि पहले सेट में स्कोर 24-24 (ड्यूस) हो जाए, तो सेट कब समाप्त होगा?", opts: ["At 25 points", "When one team achieves at least a 2-point lead (e.g. 26-24, 27-25) with no cap", "Match is drawn", "At 30 points max"], ans: 1, expl: "24-24 होने पर सेट तब तक चलता है जब तक कोई टीम 2 अंकों की बढ़त (जैसे 26-24) हासिल न कर ले।" },
+      { id: 27, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "After a legal block contact by a defending team, how many touches are they still allowed?", hi: "वैध ब्लॉक टच के बाद टीम को गेंद वापस भेजने के लिए कितने टच और मिलते हैं?", opts: ["Only 1 touch", "2 touches", "3 touches (the block does NOT count as the first hit)", "4 touches"], ans: 2, expl: "ब्लॉक टच को टीम के 3 हिट में नहीं गिना जाता। ब्लॉक के बाद भी टीम के पास पूरे 3 टच रहते हैं।" },
+      { id: 28, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "What is an illegal contact known as a 'Lift' or 'Carry' in volleyball?", hi: "वॉलीबॉल में 'लिफ्ट' (Lift) या 'कैरी' (Carry) नामक फाउल क्या होता है?", opts: ["When the ball is caught and/or thrown rather than cleanly rebounding", "When player hits with foot", "When player dives on floor", "When player touches with forearms"], ans: 0, expl: "यदि गेंद खिलाड़ी के हाथों पर क्षण भर के लिए भी रुकती है, पकड़ी या फेंकी जाती है तो उसे लिफ्ट फाउल कहते हैं।" },
+      { id: 29, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "Under official FIVB rules, when is contact with the net considered a fault?", hi: "FIVB नियमों के तहत नेट को छूना कब फाउल माना जाता है?", opts: ["Touch by hair at any time", "When a player touches the net between antennas during action of playing ball or interferes", "Never a fault", "Only on loud sound"], ans: 1, expl: "यदि कोई खिलाड़ी गेंद खेलने की क्रिया के दौरान या खेल में बाधा डालते हुए नेट को छूता है तो यह नेट फाउल होता है।" },
+      { id: 30, unitKey: 'unit5', unitTitle: 'Unit 05: Scoring & Rules', q: "How many seconds does a server have to hit the ball after the referee blows the whistle?", hi: "रेफरी द्वारा सर्विस की सीटी बजाने के बाद सर्वर के पास सर्विस करने के लिए कितने सेकंड होते हैं?", opts: ["5 seconds", "8 seconds", "10 seconds", "12 seconds"], ans: 1, expl: "रेफरी की सीटी के बाद सर्वर को 8 सेकंड (8 seconds) के भीतर सर्विस हिट करना अनिवार्य होता है।" }
+    ];
+
+    // Concept Pairs interactive logic
+    const subPairs = [
+      { id: 'pair-1a', title: '1A. Origin & Naming', start: 0 },
+      { id: 'pair-1b', title: '1B. FIVB & Olympics', start: 2 },
+      { id: 'pair-2a', title: '2A. Court Dimensions (18m × 9m)', start: 4 },
+      { id: 'pair-2b', title: '2B. Attack Line & Service Zone', start: 6 },
+      { id: 'pair-3a', title: '3A. Net Heights (2.43m / 2.24m)', start: 8 },
+      { id: 'pair-3b', title: '3B. Antenna & Ball Specs', start: 10 },
+      { id: 'pair-4a', title: '4A. 6 Positions & Clockwise Rotation', start: 12 },
+      { id: 'pair-4b', title: '4B. Libero Rules & Restrictions', start: 14 },
+      { id: 'pair-5a', title: '5A. Rally Point System (25/15 pts)', start: 16 },
+      { id: 'pair-5b', title: '5B. 3-Touch Rule & Major Fouls', start: 18 }
+    ];
+
+    const conceptUserAnswers = {};
+    const conceptChecked = {};
+
+    function renderConceptPairs() {
+      subPairs.forEach(pair => {
+        const box = document.getElementById(pair.id);
+        if (!box) return;
+
+        const pairQs = conceptQuestions.slice(pair.start, pair.start + 2);
+        let html = `
+          <div class="pair-header">
+            <span>✦ कॉन्सेप्ट अभ्यास: 2 प्रश्न (${pair.title})</span>
+            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 7px; border-radius:6px; font-size:10.5px;">Check &amp; Learn</span>
+          </div>
+          <div class="pair-grid">
+        `;
+
+        pairQs.forEach(q => {
+          const uChoice = conceptUserAnswers[q.id];
+          const isChk = conceptChecked[q.id];
+          const isRight = uChoice === q.ans;
+          let cardClass = 'pair-card';
+          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
+
+          let optsHtml = '';
+          q.opts.forEach((opt, idx) => {
+            let oClass = 'choice-sm';
+            if (uChoice === idx) oClass += ' selected';
+            if (isChk) {
+              if (idx === q.ans) oClass += ' right-choice';
+              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
+            }
+            optsHtml += `
+              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
+                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+                <span>${opt}</span>
+              </div>
+            `;
+          });
+
+          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
+          if (isChk) {
+            statusBadge = isRight
+              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
+              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ सही: (${String.fromCharCode(65 + q.ans)})</span>`;
+          }
+
+          html += `
+            <div class="${cardClass}">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
+                  ${statusBadge}
+                  <button type="button" class="speech-chip" onclick="speakText('${q.q.replace(/'/g, "\\'")}')">🔊 Audio</button>
+                </div>
+                <div style="font-weight:700; margin-bottom:2px; line-height:1.35;">${q.q}</div>
+                <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:5px;">${q.hi}</div>
+                <div class="choices-sm">${optsHtml}</div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px; gap:6px;">
+                  <button class="mint-btn" type="button" onclick="checkConceptQ(${q.id})" style="font-size:11px; padding:3px 9px; border-radius:7px;">
+                    Check Answer ✓
+                  </button>
+                  <button class="quiet-btn" type="button" onclick="resetConceptQ(${q.id})" style="font-size:10.5px; padding:2px 7px; border-radius:6px; color:#64748b;">
+                    Reset ↺
+                  </button>
+                </div>
+                ${isChk ? `
+                  <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; font-size:11px; line-height:1.45; color:#78350f;" class="font-hi">
+                    <strong>व्याख्या:</strong> ${q.expl}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        box.innerHTML = html;
+      });
+    }
+
+    function selectConceptOpt(qId, idx) {
+      if (conceptChecked[qId]) return;
+      conceptUserAnswers[qId] = idx;
+      renderConceptPairs();
+    }
+
+    function checkConceptQ(qId) {
+      if (conceptUserAnswers[qId] === undefined) {
+        alert('कृपया पहले कोई एक विकल्प चुनें! (Please choose an option first)');
+        return;
+      }
+      conceptChecked[qId] = true;
+      renderConceptPairs();
+    }
+
+    function resetConceptQ(qId) {
+      delete conceptUserAnswers[qId];
+      delete conceptChecked[qId];
+      renderConceptPairs();
+    }
+
+    // ==========================================
+    // 30-QUESTION 15-MINUTE TEST ENGINE
+    // ==========================================
+    let currentIdx = 0;
+    const testAnswers = {};
+    const testReview = {};
+    let testTimer = null;
+    let secondsLeft = 15 * 60; // 900 seconds
+
+    function scrollToTest() {
+      const arena = document.getElementById('test-arena');
+      if (arena) arena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startExam() {
+      playWhistle();
+      currentIdx = 0;
+      secondsLeft = 15 * 60;
+      for (const k in testAnswers) delete testAnswers[k];
+      for (const k in testReview) delete testReview[k];
+
+      document.getElementById('test-idle-view').style.display = 'none';
+      document.getElementById('test-results-view').style.display = 'none';
+      document.getElementById('test-running-view').style.display = 'block';
+
+      renderPalette();
+      renderCurrentQ();
+      startTimer();
+      scrollToTest();
+    }
+
+    function startTimer() {
+      if (testTimer) clearInterval(testTimer);
+      updateTimerDisplay();
+      testTimer = setInterval(() => {
+        secondsLeft--;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          clearInterval(testTimer);
+          finishExam(true); // Auto Submit on 00:00
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const m = Math.floor(secondsLeft / 60);
+      const s = secondsLeft % 60;
+      const pill = document.getElementById('timer-display');
+      if (!pill) return;
+      pill.textContent = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+      if (secondsLeft <= 120) {
+        pill.classList.add('urgent');
+      } else {
+        pill.classList.remove('urgent');
+      }
+    }
+
+    function renderPalette() {
+      const p = document.getElementById('palette-container');
+      if (!p) return;
+      let html = '';
+      testQuestions.forEach((q, idx) => {
+        let cls = 'pal-btn';
+        if (testAnswers[q.id] !== undefined) cls += ' attempted';
+        if (testReview[q.id]) cls += ' review';
+        if (idx === currentIdx) cls += ' active';
+        html += `<button class="${cls}" type="button" onclick="jumpToQ(${idx})">${idx + 1}</button>`;
+      });
+      p.innerHTML = html;
+
+      const attempted = Object.keys(testAnswers).length;
+      document.getElementById('attempted-count').textContent = attempted;
+      document.getElementById('left-count').textContent = 30 - attempted;
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function renderCurrentQ() {
+      const q = testQuestions[currentIdx];
+      document.getElementById('current-q-concept').textContent = q.unitTitle;
+      document.getElementById('q-counter').textContent = `Q ${currentIdx + 1} of 30`;
+      document.getElementById('current-q-title').textContent = q.q;
+      document.getElementById('current-q-hindi').textContent = q.hi;
+
+      const reviewBtn = document.getElementById('review-btn');
+      if (testReview[q.id]) {
+        reviewBtn.textContent = '🚩 Marked for Review';
+        reviewBtn.style.background = '#fef3c7';
+        reviewBtn.style.borderColor = '#f59e0b';
+      } else {
+        reviewBtn.textContent = '🏳 Mark for Review';
+        reviewBtn.style.background = '#fff';
+        reviewBtn.style.borderColor = 'var(--line)';
+      }
+
+      const optsBox = document.getElementById('current-q-options');
+      let html = '';
+      q.opts.forEach((opt, idx) => {
+        const isSel = testAnswers[q.id] === idx;
+        html += `
+          <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+            <span class="choice-badge-sm" style="width:20px; height:20px; font-size:10.5px; ${isSel ? 'background:var(--brand); color:#fff; border-color:var(--brand);' : ''}">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+      optsBox.innerHTML = html;
+
+      document.getElementById('prev-btn').disabled = currentIdx === 0;
+      document.getElementById('next-btn').textContent = currentIdx === 29 ? 'Review & Submit →' : 'Next Question →';
+    }
+
+    function speakCurrentQ() {
+      const q = testQuestions[currentIdx];
+      speakText(q.q);
+    }
+
+    function selectTestOpt(qId, idx) {
+      testAnswers[qId] = idx;
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function clearCurrentAnswer() {
+      const q = testQuestions[currentIdx];
+      delete testAnswers[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function toggleReviewCurrent() {
+      const q = testQuestions[currentIdx];
+      testReview[q.id] = !testReview[q.id];
+      renderCurrentQ();
+      renderPalette();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderCurrentQ();
+        renderPalette();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < 29) {
+        currentIdx++;
+        renderCurrentQ();
+        renderPalette();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function confirmSubmit() {
+      const attempted = Object.keys(testAnswers).length;
+      const left = 30 - attempted;
+      if (left > 0) {
+        document.getElementById('modal-msg').innerHTML = `
+          आपने 30 में से <strong>${attempted} प्रश्न</strong> हल किए हैं।<br>
+          अभी <strong>${left} प्रश्न शेष</strong> हैं। क्या आप अभी सबमिट करना चाहते हैं?
+        `;
+        document.getElementById('submit-modal').style.display = 'flex';
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('submit-modal').style.display = 'none';
+    }
+
+    function finishExam(isTimeOut) {
+      playWhistle();
+      if (testTimer) clearInterval(testTimer);
+      closeModal();
+
+      document.getElementById('test-running-view').style.display = 'none';
+      const resultsBox = document.getElementById('test-results-view');
+      resultsBox.style.display = 'block';
+
+      let correctCount = 0;
+      const mistakesByUnit = {
+        unit1: { title: 'Unit 01: History (इतिहास)', mistakes: [], total: 6, anchor: '#unit-1' },
+        unit2: { title: 'Unit 02: Court Dimensions (मैदान का माप)', mistakes: [], total: 6, anchor: '#unit-2' },
+        unit3: { title: 'Unit 03: Net & Ball (नेट और बॉल)', mistakes: [], total: 6, anchor: '#unit-3' },
+        unit4: { title: 'Unit 04: Positions & Rotation (रोटेशन)', mistakes: [], total: 6, anchor: '#unit-4' },
+        unit5: { title: 'Unit 05: Scoring & Rules (नियम)', mistakes: [], total: 6, anchor: '#unit-5' }
+      };
+
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        if (isRight) {
+          correctCount++;
+        } else {
+          mistakesByUnit[q.unitKey].mistakes.push(idx + 1);
+        }
+      });
+
+      const percentage = Math.round((correctCount / 30) * 100);
+      let badge = 'National Volleyball Gold Medalist 🏆';
+      let badgeColor = 'var(--brand)';
+      if (percentage < 50) { badge = 'Keep Practicing 📖'; badgeColor = '#dc2626'; }
+      else if (percentage < 75) { badge = 'Good Effort 👍'; badgeColor = '#d97706'; }
+
+      let diagHtml = '';
+      for (const k in mistakesByUnit) {
+        const u = mistakesByUnit[k];
+        const hasMistake = u.mistakes.length > 0;
+        diagHtml += `
+          <div class="diag-card ${hasMistake ? 'mistake' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <strong>${u.title}</strong>
+              <span style="font-weight:bold; color:${hasMistake ? '#dc2626' : 'var(--brand)'};">
+                ${u.total - u.mistakes.length} / ${u.total}
+              </span>
+            </div>
+            ${hasMistake ? `
+              <p style="color:#991b1b; font-size:11px; margin:4px 0;" class="font-hi">
+                गलत प्रश्न: ${u.mistakes.map(m => `<strong>#${m}</strong>`).join(', ')}
+              </p>
+              <a href="${u.anchor}" style="color:var(--brand); font-weight:bold; font-size:11px; text-decoration:underline;">
+                Revise Rule in Theory (थ्योरी पढ़ें) →
+              </a>
+            ` : `
+              <p style="color:#15803d; font-size:11px;">✓ सभी 6 प्रश्न सही (All Correct!)</p>
+            `}
+          </div>
+        `;
+      }
+
+      let reviewHtml = '';
+      testQuestions.forEach((q, idx) => {
+        const uChoice = testAnswers[q.id];
+        const isRight = uChoice === q.ans;
+        const isSkipped = uChoice === undefined;
+
+        reviewHtml += `
+          <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px; flex-wrap:wrap; gap:4px;">
+              <span class="badge">${q.unitTitle} · Q ${idx + 1}</span>
+              <span style="font-weight:bold; font-size:11.5px; color:${isRight ? '#15803d' : '#dc2626'};">
+                ${isRight ? '✓ Correct (+1)' : (isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)')}
+              </span>
+            </div>
+            <div style="font-weight:800; font-size:13px; margin-bottom:2px;">${q.q}</div>
+            <div class="font-hi" style="font-size:11.5px; color:#475569; margin-bottom:6px;">${q.hi}</div>
+            <div style="font-size:11.5px; margin-bottom:5px;">
+              <strong>Your Choice:</strong> ${isSkipped ? '<span style="color:#64748b;">Not Attempted</span>' : `Option (${String.fromCharCode(65 + uChoice)}) ${q.opts[uChoice]}`}<br>
+              <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">Option (${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:6px 9px; font-size:11.5px; color:#166534;" class="font-hi">
+              <strong>व्याख्या:</strong> ${q.expl}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsBox.innerHTML = `
+        <div class="results-card">
+          <div style="text-align:center; max-width:620px; margin:auto;">
+            ${isTimeOut ? '<div class="badge" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5; margin-bottom:8px;">⏱ Time Over! 15:00 Expired - Test Auto Submitted</div>' : ''}
+            <div class="badge" style="background:#f0fdf4; color:var(--brand); border-color:#86efac; margin-bottom:6px;">Exam Completed Successfully</div>
+            <h2 style="font-size:26px; font-weight:900; margin-bottom:3px;">Your Test Scorecard</h2>
+            <div class="score-circle">${correctCount} / 30</div>
+            <div style="font-family:var(--heading); font-size:17px; font-weight:800; color:${badgeColor}; margin-bottom:4px;">
+              ${percentage}% — ${badge}
+            </div>
+            <p style="font-size:12.5px; color:#475569; margin-bottom:14px;" class="font-hi">
+              30 में से <strong>${correctCount} प्रश्न सही</strong>, <strong>${30 - correctCount} गलत/छूटे</strong>।
+            </p>
+
+            <button class="mint-btn" type="button" onclick="startExam()" style="font-size:12.5px; padding:8px 18px;">
+              Retake 30-Question Test ↺
+            </button>
+          </div>
+
+          <div style="margin-top:20px;">
+            <h3 style="font-size:16px; font-weight:900; margin-bottom:4px;">
+              🎯 Unit-Wise Mistake Diagnostics (गलतियों का विश्लेषण):
+            </h3>
+            <p style="font-size:12px; color:#475569; margin-bottom:10px;" class="font-hi">
+              जिस यूनिट में आपकी गलतियाँ हुई हैं, उसके सामने दिए गए लिंक पर क्लिक करके उस नियम को पुनः पढ़ें:
+            </p>
+            <div class="concept-diag-grid">${diagHtml}</div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <h3 style="font-size:16px; font-weight:900; margin-bottom:8px;">
+              📋 Question-by-Question Detailed Review (1 से 30 प्रश्न):
+            </h3>
+            <div>${reviewHtml}</div>
+          </div>
+        </div>
+      `;
+
+      scrollToTest();
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderConceptPairs();
+      renderRotationPlayers();
+    });
+    renderConceptPairs();
+  </script>
+</body>
+</html>
