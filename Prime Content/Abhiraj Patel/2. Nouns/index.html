@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2dd4bf">
+  <title>Nouns · English Grammar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--body:'Comic Sans MS','Chalkboard SE','Comic Neue',sans-serif;--heading:'Outfit','Quicksand',sans-serif;--bg:#f0fdf4;--ink:#1f2937;--brand:#059669;--teal:#2dd4bf;--yellow:#fde047;--line:#34d399;--button:#10b981;--soft:#d1fae5}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    h1,h2,h3,.logo,.eyebrow{font-family:var(--heading)}
+    h1,h2,h3,p{margin:0}
+    
+    .wrap{max-width:1180px;margin:auto;padding:0 28px}
+    
+    /* Header Style */
+    header{background:var(--teal);border-bottom:3px solid var(--button);position:sticky;top:0;z-index:20}
+    .nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-size:32px;font-weight:900;letter-spacing:-1.3px;color:#fff;display:flex;align-items:center;gap:10px}
+    .logo em{font-style:normal;color:var(--yellow)}
+    .logo-mark{width:40px;height:40px;border-radius:14px;background:var(--yellow);color:var(--brand);display:grid;place-items:center;font-size:29px;transform:rotate(-9deg)}
+    nav{display:flex;align-items:center;gap:26px}
+    nav a{font-family:var(--heading);font-weight:600;color:#fff}
+    nav a:hover{text-decoration:underline;text-underline-offset:7px}
+    .mint-btn{background:var(--button);color:#fff;border:0;border-radius:16px;padding:14px 23px;display:inline-flex;justify-content:center;align-items:center;gap:12px;font-weight:800;box-shadow:0 4px 0 var(--brand);transition:transform .2s,background .2s}
+    .mint-btn:hover{background:var(--brand);transform:translateY(-2px)}
+    .nav .mint-btn{font-size:14px;padding:10px 17px}
+
+    .crumb{padding:16px 0;color:var(--brand);font-size:11px;font-weight:bold}
+    .crumb a{color:inherit}
+    
+    .hero{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:26px 30px;margin-bottom:22px;border:2px solid var(--line);border-radius:24px;background:#fff}
+    .eyebrow{color:var(--brand);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+    .hero h1{margin:7px 0;font-size:clamp(28px,4.5vw,42px);line-height:1.15}
+    .hero p:not(.eyebrow){font-size:13px}
+    .badge{display:grid;place-content:center;width:100px;height:100px;border:3px solid #fcd34d;border-radius:25px;background:#fffbeb;color:var(--brand);text-align:center;font-size:32px;font-weight:900}
+    .badge small{font-size:10px}
+    
+    .head{display:flex;justify-content:space-between;align-items:end;margin:24px 0 12px}
+    .head h2{font-size:26px}
+    .search{margin-bottom:10px}
+    .search label{display:block}
+    .search input{width:100%;height:45px;border:2px solid var(--line);border-radius:12px;padding:9px 14px;background:#fff;font-family:inherit;font-size:14px}
+    .status{margin:0 0 12px;color:var(--brand);font-size:12px}
+    
+    .topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .topic{display:grid;grid-template-columns:45px 1fr 20px;align-items:center;gap:12px;min-height:78px;padding:14px;border:2px solid var(--line);border-radius:18px;background:#fff;transition:transform .2s, box-shadow .2s}
+    .topic:hover{transform:translateY(-2px);box-shadow:0 4px 0 #a7f3d0}
+    .topic:nth-child(3n+2){border-color:#fcd34d;background:#fffbeb}
+    .topic-id{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--soft);color:var(--brand);font:800 12px var(--heading)}
+    .topic h3{font-size:14px;line-height:1.35}
+    .topic p{margin-top:3px;color:var(--brand);font-size:11px;font-weight:bold}
+    .arrow{color:var(--brand);font-size:20px}
+    .back{padding:28px 0;color:var(--brand);font-size:13px;font-weight:bold}
+
+    /* Footer Style */
+    footer{background:#fff;border-top:2px solid #a7f3d0;padding:25px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}
+    .footer-brand{font-family:var(--heading);font-size:21px;color:var(--brand);font-weight:900}
+    .footer-links{display:flex;gap:18px}
+    .footer-links a:hover{text-decoration:underline}
+
+    .skip{position:absolute;left:-999px}
+    .skip:focus{left:10px}
+    
+    @media(max-width:900px){
+      .logo{font-size:27px}
+      .logo-mark{width:32px;height:32px;font-size:23px}
+      nav{gap:16px}
+    }
+    @media(max-width:700px){
+      .wrap{padding:0 20px}
+      .nav{min-height:76px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;gap:10px}
+      nav>a:not(.mint-btn){display:none}
+      .nav .mint-btn{padding:9px 12px;font-size:12px}
+      .topics{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr;padding:20px}
+      .badge{display:none}
+      .head{display:block}
+      .head>p{margin-top:6px}
+      .footer-inner{flex-wrap:wrap}
+      .footer-inner>p{order:3;width:100%}
+    }
+  </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://econova.vip/English%20Grammar/2.%20Nouns/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Econova">
+  <meta property="og:title" content="Nouns · English Grammar">
+  <meta property="og:description" content="Learn about Basics & Classification of Nouns and Advanced Noun Structures & Cases with Econova.">
+  <meta property="og:url" content="https://econova.vip/English%20Grammar/2.%20Nouns/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ED7Z4VF58"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8ED7Z4VF58');
+  </script>
+</head>
+<body>
+  <a class="skip" href="#topics">Skip to topics</a>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="../../index.html" aria-label="Econova home">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span>Econova<em>.vip</em></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#classes">Our classes</a>
+        <a href="../../index.html#explore">Explore & learn</a>
+        <a href="../../index.html#services">Services</a>
+        <a class="mint-btn" href="../../class-1/index.html">Let’s learn <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="crumb"><a href="../../index.html">Home</a> / <a href="../index.html">English Grammar</a> / Topic 2</div>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">English Grammar · Chapter 2</p>
+        <h1>Nouns</h1>
+        <p>Master the Basics & Classification of Nouns along with Advanced Noun Structures & Cases.</p>
+      </div>
+      <div class="badge" aria-hidden="true">🏷️<small>LESSON</small></div>
+    </section>
+
+    <section id="topics">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Lesson Sub-topics</p>
+          <h2>Pick a sub-topic and begin</h2>
+        </div>
+        <p>2 sub-topics · Go at your own pace</p>
+      </div>
+
+      <div class="search">
+        <label class="eyebrow" for="q">Find a sub-topic</label>
+        <input id="q" type="search" placeholder="Search sub-topics…">
+      </div>
+      
+      <p class="status" id="status">Showing all 2 sub-topics</p>
+
+      <div class="topics">
+        <a class="topic" href="1.%20Basics%20%26%20Classification%20of%20Nouns/index.html" data-search="basics classification of nouns 1">
+          <span class="topic-id">2-01</span>
+          <span>
+            <h3>1. Basics & Classification of Nouns</h3>
+            <p>Ready to begin · Open lesson</p>
+          </span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="topic" href="2.%20Advanced%20Noun%20Structures%20%26%20Cases/index.html" data-search="advanced noun structures cases 2">
+          <span class="topic-id">2-02</span>
+          <span>
+            <h3>2. Advanced Noun Structures & Cases</h3>
+            <p>Ready to begin · Open lesson</p>
+          </span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="back"><a href="../index.html">← Back to English Grammar</a></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="../../index.html">Econova.vip ✦</a>
+      <p>© 2026 Econova.vip · Made for little minds with big ideas.</p>
+      <div class="footer-links">
+        <a href="../../index.html#classes">Classes</a>
+        <a href="../../index.html#explore">Explore</a>
+        <a href="../../index.html#services">Services</a>
+        <a href="mailto:econovavip@gmail.com">Contact</a>
+        <a href="#">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const q = document.getElementById("q"),
+          items = [...document.querySelectorAll(".topic")],
+          s = document.getElementById("status");
+    q.addEventListener("input", () => {
+      const v = q.value.trim().toLowerCase();
+      let n = 0;
+      items.forEach(a => {
+        a.hidden = !a.dataset.search.includes(v);
+        if(!a.hidden) n++;
+      });
+      s.textContent = v ? "Showing " + n + " of " + items.length + " sub-topics" : "Showing all " + items.length + " sub-topics";
+    });
+  </script>
+</body>
+</html>
