@@ -1,0 +1,6 @@
+{
+  "name": "Comparison of Adjectives - Live Proctoring & Real-Time Records",
+  "description": "Comprehensive English grammar lesson on Comparison of Adjectives with 20 concept examples, 30-question exam, mandatory student entry, screen-switch session termination, and 50 persistent real-time session logs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
