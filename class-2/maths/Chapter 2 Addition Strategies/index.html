@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="Class 2 Maths Chapter 2: Addition Properties, Count On, Doubles, Near Doubles, Make 10, Adding 3 Numbers with 3 Complete 30-Question Timed Tests and Detailed Solutions.">
+  <meta name="description" content="Class 2 Maths: Tens and Ones, Place Value to 100, Base-Ten Models, Addition Sentences, and 3 Timed 30-Question Tests with Detailed Explanations.">
   <meta name="theme-color" content="#2dd4bf">
-  <title>Class 2 Maths: Addition Properties & Strategies | Econova.vip</title>
+  <title>Class 2 Maths: Tens and Ones & Place Value to 100 | Econova.vip</title>
   
-  <!-- Google Fonts matching the reference design -->
+  <!-- Google Fonts matching reference design -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
       overflow-wrap: break-word;
     }
 
-    /* Header & Responsive Navigation */
+    /* Header */
     header { background: var(--teal); border-bottom: 4px solid var(--button); position: sticky; top: 0; z-index: 40; width: 100%; }
     .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .logo { font-size: 24px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px; font-family: var(--heading); flex-shrink: 0; }
@@ -152,12 +152,12 @@
     }
     h1 .green { color: var(--brand); }
     
-    /* Responsive underline without horizontal overflow */
     .underline {
       position: relative;
       display: inline;
       white-space: normal !important;
       word-break: break-word;
+      isolation: isolate;
       background: linear-gradient(120deg, rgba(253, 224, 71, 0.85) 0%, rgba(253, 224, 71, 0.85) 100%);
       background-repeat: no-repeat;
       background-size: 100% 38%;
@@ -168,7 +168,7 @@
 
     .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
 
-    /* Hero 3-Test Direct Launcher Box */
+    /* Hero 3-Test Direct Buttons */
     .hero-test-cards {
       margin-top: 16px;
       background: #ffffff;
@@ -255,16 +255,99 @@
     .trap-box { background: #fef2f2; border: 1.5px solid #f87171; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #991b1b; word-break: break-word; max-width: 100%; box-sizing: border-box; }
     .trap-box b { display: block; font-size: 13.5px; margin-bottom: 4px; color: #b91c1c; }
 
-    /* Visual Components */
-    .domino-box { background: #0f172a; border-radius: 12px; padding: 10px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); max-width: 100%; flex-wrap: wrap; justify-content: center; }
-    .domino-half { width: 36px; height: 50px; background: #1e293b; border-radius: 8px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 3px; padding: 4px; }
-    .domino-dot { width: 8px; height: 8px; border-radius: 50%; background: #ffffff; }
-    .domino-bar { width: 2px; height: 42px; background: #475569; }
+    /* Visual Components for Tens & Ones */
+    .tens-ones-table {
+      border-collapse: collapse;
+      margin: 10px auto;
+      border: 2px solid #059669;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .tens-ones-table th {
+      background: #10b981;
+      color: #fff;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-family: var(--heading);
+      border: 1px solid #059669;
+    }
+    .tens-ones-table td {
+      padding: 8px 18px;
+      font-size: 20px;
+      font-weight: 900;
+      color: #065f46;
+      font-family: var(--heading);
+      text-align: center;
+      border: 1px solid #a7f3d0;
+      background: #f0fdf4;
+    }
 
-    .grid-25 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; max-width: 250px; margin: 8px auto; text-align: center; }
-    .grid-25-cell { padding: 6px 0; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; font-family: var(--heading); font-weight: 800; font-size: 12px; }
-    .grid-25-cell.active-start { background: #fde047; color: #78350f; border-color: #d97706; }
-    .grid-25-cell.active-end { background: #10b981; color: #ffffff; border-color: #059669; }
+    .visual-group-box {
+      background: #f8fafc;
+      border: 2px dashed #94a3b8;
+      border-radius: 14px;
+      padding: 12px;
+      margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+    .ten-column {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 6px;
+      background: #e0f2fe;
+      border: 1.5px solid #38bdf8;
+      border-radius: 8px;
+      align-items: center;
+    }
+    .dot-item {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #0284c7;
+      border: 1px solid #0369a1;
+    }
+    .button-item {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fbbf24;
+      border: 2px solid #b45309;
+      position: relative;
+    }
+    .loose-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      max-width: 60px;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      background: #fef3c7;
+      border: 1.5px solid #f59e0b;
+      border-radius: 8px;
+    }
+
+    /* Base-Ten Blocks Representation */
+    .base-ten-rod {
+      width: 14px;
+      height: 80px;
+      background: repeating-linear-gradient(to bottom, #f59e0b, #f59e0b 7px, #b45309 7px, #b45309 8px);
+      border: 1.5px solid #b45309;
+      border-radius: 3px;
+    }
+    .base-ten-cube {
+      width: 12px;
+      height: 12px;
+      background: #fbbf24;
+      border: 1.5px solid #b45309;
+      border-radius: 2px;
+    }
 
     /* Concept 2-Question Pair Box */
     .concept-pair-box { margin-top: 14px; background: #f8fafc; border: 2px solid #a7f3d0; border-radius: 14px; padding: 12px 14px; max-width: 100%; box-sizing: border-box; }
@@ -390,7 +473,7 @@
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; }
     .modal-box { background: #fff; border: 3px solid #f59e0b; border-radius: 18px; max-width: 420px; width: 100%; padding: 20px; text-align: center; }
 
-    /* Mobile Floating Test Quick Switcher Bar */
+    /* Mobile Floating Test Quick Launcher Bar */
     .mobile-test-float-bar {
       position: fixed;
       bottom: 12px;
@@ -485,10 +568,10 @@
       </a>
 
       <nav class="main-nav">
-        <a href="#topic-1">1. Properties</a>
-        <a href="#topic-2">2. Count On</a>
-        <a href="#topic-3">3. Doubles</a>
-        <a href="#topic-4">4. Make 10 &amp; 3 Addends</a>
+        <a href="#topic-1">1. Tens &amp; Ones</a>
+        <a href="#topic-2">2. Addition Sentences</a>
+        <a href="#topic-3">3. Place Value to 100</a>
+        <a href="#topic-4">4. Place-Value Models</a>
       </nav>
 
       <div class="header-actions">
@@ -512,23 +595,29 @@
       <div>
         <div class="pill">
           <span></span>
-          Class 2 Mathematics · Chapter 2: Addition Properties &amp; Mental Strategies
+          Class 2 Mathematics · Tens &amp; Ones · Place Value to 100
         </div>
 
         <h1>
-          Master <span class="green">Addition Facts</span><br>
-          <span class="underline">Properties &amp; Problem Solving.</span>
+          Master <span class="green">Tens &amp; Ones</span><br>
+          <span class="underline">Place Value to 100.</span>
         </h1>
 
         <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:12px;">
-          Class 2 के प्यारे बच्चों! जोड़ना अब और भी आसान और मजेदार है जब आप सही रणनीति जानते हों! यहाँ प्रस्तुत है आपकी पाठ्यपुस्तक के <strong>Chapter 2 (Addition Properties)</strong> का संपूर्ण सचित्र अध्ययन: <strong>Turn-Around Facts (डोमिनो व क्यूब्स, 2 + 5 = 5 + 2)</strong>, <strong>Count On to Add (संख्या वर्ग व नंबर लाइन)</strong>, <strong>Doubles &amp; Near Doubles (8 + 8 = 16, 8 + 9 = 17)</strong>, <strong>Make 10 Strategy (8 + 5 ➔ 10 + 3 = 13)</strong>, <strong>3 संख्याओं का जोड़</strong> और <strong>फालतू जानकारी से बचने की तरकीबें</strong> — साथ ही <strong>Test 01 (30 Q), Test 02 (30 Q), और Test 03 (30 Q)</strong>!
+          Class 2 के प्यारे बच्चों! आपके प्रदान किए गए <strong>Original Worksheets</strong> के आधार पर यह संपूर्ण सचित्र पाठ तैयार किया गया है: 
+          <strong>Tens &amp; Ones (23 = 2 tens 3 ones, 57 = 5 tens 7 ones)</strong>, 
+          <strong>Mary's Buttons &amp; Ben's 60 Stamps</strong>, 
+          <strong>Pea Pods (30 + 4 = 34), Apple Bags (20 + 5 = 25), Vic's &amp; Steve's Cubes, Mr. Hall's Juice Packs</strong>, 
+          <strong>Circle the Value of Underlined Digits (<u>7</u>3, 5<u>4</u>, 9<u>5</u>, <u>1</u>3...)</strong>, 
+          <strong>Bookcase (43 vs 34) &amp; Concert (75 vs 80)</strong>, 
+          तथा <strong>Base-Ten Models (<u>6</u>1, 5<u>2</u>), Rita (12), Drew (76), Digits 3 &amp; 1, Mr. Lo's Number (18)</strong> — साथ ही <strong>Test 01 (30 Q), Test 02 (30 Q), और Test 03 (30 Q)</strong>!
         </p>
 
         <!-- Direct Test Chooser (Choose Any Test 01, 02, 03) -->
         <div class="hero-test-cards">
           <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; color:var(--brand); display:flex; justify-content:space-between; align-items:center;">
-            <span>⚡ Choose Any Test (30 Questions Each):</span>
-            <span style="font-size:10.5px; color:#64748b; font-weight:600;">Timer Based</span>
+            <span>⚡ Start Any Test (30 Questions Each):</span>
+            <span style="font-size:10.5px; color:#64748b; font-weight:600;">Choose Any Test First</span>
           </div>
           <div class="hero-test-grid">
             <button class="hero-test-btn active-hero-btn" id="hero-tab-btn-1" type="button" onclick="selectAndStartTestSuite(1)">
@@ -536,7 +625,7 @@
                 <span class="htb-num">📝 Test 01</span>
                 <span class="htb-badge">30 Q</span>
               </div>
-              <div class="htb-title">Properties &amp; Count On</div>
+              <div class="htb-title">Tens &amp; Ones + Addition Sentences</div>
               <div class="htb-cta">Start Test 01 →</div>
             </button>
             <button class="hero-test-btn" id="hero-tab-btn-2" type="button" onclick="selectAndStartTestSuite(2)">
@@ -544,7 +633,7 @@
                 <span class="htb-num">⚡ Test 02</span>
                 <span class="htb-badge">30 Q</span>
               </div>
-              <div class="htb-title">Doubles &amp; Near Doubles</div>
+              <div class="htb-title">Place Value to 100 &amp; Digits</div>
               <div class="htb-cta">Start Test 02 →</div>
             </button>
             <button class="hero-test-btn" id="hero-tab-btn-3" type="button" onclick="selectAndStartTestSuite(3)">
@@ -552,147 +641,458 @@
                 <span class="htb-num">🎯 Test 03</span>
                 <span class="htb-badge">30 Q</span>
               </div>
-              <div class="htb-title">Make 10 &amp; 3 Addends</div>
+              <div class="htb-title">Models, Rita, Drew &amp; Mr. Lo</div>
               <div class="htb-cta">Start Test 03 →</div>
             </button>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a class="mint-btn" href="#topic-1">Read Complete Rules &amp; Examples →</a>
+          <a class="mint-btn" href="#topic-1">Read Worksheet Lessons &amp; Examples →</a>
           <button class="quiet-btn" type="button" onclick="scrollToTest()">
-            ⏱ Jump to Arena ↓
+            ⏱ Jump to Test Arena ↓
           </button>
         </div>
       </div>
 
       <div class="amber-card" style="padding:18px; text-align:center;">
-        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">The 4 Golden Strategies</p>
-        <div style="font-family:var(--heading); font-size:28px; font-weight:900; color:var(--brand); margin:4px 0;">Speed &amp; Accuracy!</div>
-        <div style="text-align:left; font-size:12.5px; line-height:1.6; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
-          • <strong>1. Turn-Around Rule:</strong> 4 + 5 = 5 + 4 = 9 (क्रम बदलने पर भी योग नहीं बदलता)।<br>
-          • <strong>2. Zero Rule:</strong> 7 + 0 = 0 + 7 = 7 (शून्य जोड़ने पर संख्या वही रहती है)।<br>
-          • <strong>3. Doubles Rule:</strong> 8 + 8 = 16, तो 8 + 9 = 16 + 1 = <strong>17</strong>!<br>
-          • <strong>4. Make 10 Rule:</strong> 8 + 5 ➔ पहले 8 + 2 = 10, फिर 10 + 3 = <strong>13</strong>!
+        <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">Worksheet Summary</p>
+        <div style="font-family:var(--heading); font-size:26px; font-weight:900; color:var(--brand); margin:4px 0;">Tens &amp; Ones Rules!</div>
+        <div style="text-align:left; font-size:12.5px; line-height:1.65; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+          • <strong>1. Grouping Rule:</strong> 10 Ones = 1 Ten (10 इकाइयाँ = 1 दहाई)।<br>
+          • <strong>2. Expanded Form:</strong> 57 = 5 tens + 7 ones = 50 + 7 = 57!<br>
+          • <strong>3. Place Value of Digit:</strong> In <u>7</u>3, digit 7 is in tens place = <strong>70</strong>. In 5<u>4</u>, digit 4 is in ones place = <strong>4</strong>.<br>
+          • <strong>4. Comparing Rule:</strong> 43 books vs 34 students: 4 tens > 3 tens, so 43 > 34 (Enough books!).
         </div>
       </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 01: ADDITION PROPERTIES -->
+    <!-- UNIT 01: TENS AND ONES (Worksheet 1) -->
     <!-- ========================================== -->
     <section id="topic-1" class="section">
       <div style="margin-bottom:12px;">
-        <span class="badge">Unit 01 · Addition Properties</span>
-        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. Addition Properties: Order &amp; Zero Property (क्रम और शून्य नियम)</h2>
+        <span class="badge">Worksheet Sheet 1 · Tens and Ones</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. Tens and Ones: Grouping &amp; Place Value Chart (दहाई और इकाई)</h2>
       </div>
 
       <article class="rule-card">
         <div class="rule-header">
-          <h3 style="font-size:16px; font-weight:800;">A. Commutative Property: a + b = b + a (Turn-Around Facts)</h3>
-          <span class="badge">Order Property</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Writing How Many Tens and Ones (संख्या को दहाई व इकाई में लिखना)</h3>
+          <span class="badge">Sheet 1: Problems 1 &amp; 2</span>
         </div>
         <p style="font-size:13px; color:#4b5563; line-height:1.7;">
-          जब दो संख्याओं को जोड़ते हैं, तो उनका क्रम (order) बदलने से उत्तर नहीं बदलता! जैसे <strong>April's Domino</strong> में बाएँ 2 बिंदियाँ और दाएँ 5 बिंदियाँ हैं:
+          किसी भी 2-अंकों की संख्या में बायाँ अंक <strong>Tens (दहाई)</strong> और दायाँ अंक <strong>Ones (इकाई)</strong> कहलाता है:
         </p>
-        <div style="text-align:center; margin:12px 0;">
-          <div class="domino-box">
-            <div class="domino-half"><span class="domino-dot"></span><span class="domino-dot"></span></div>
-            <div class="domino-bar"></div>
-            <div class="domino-half"><span class="domino-dot"></span><span class="domino-dot"></span><span class="domino-dot"></span><span class="domino-dot"></span><span class="domino-dot"></span></div>
+
+        <!-- Visual Table matching Worksheet 1 -->
+        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:14px 0;">
+          <div style="text-align:center; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px 16px;">
+            <div style="font-size:13px; font-weight:800; color:var(--brand); margin-bottom:4px;">Worksheet Problem 1</div>
+            <div style="font-size:18px; font-weight:900;">23 = <u>2</u> tens <u>3</u> ones</div>
+            <div style="font-size:13.5px; color:#475569; margin:4px 0;">2 tens + 3 ones = <strong>23</strong></div>
+            <table class="tens-ones-table">
+              <tr><th>tens</th><th>ones</th></tr>
+              <tr><td>2</td><td>3</td></tr>
+            </table>
           </div>
-          <div style="font-weight:bold; font-size:13px; color:#059669; margin-top:6px;">
-            Fact 1: 2 + 5 = 7 &nbsp;|&nbsp; Fact 2: 5 + 2 = 7
+
+          <div style="text-align:center; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px 16px;">
+            <div style="font-size:13px; font-weight:800; color:var(--brand); margin-bottom:4px;">Worksheet Problem 2</div>
+            <div style="font-size:18px; font-weight:900;">57 = <u>5</u> tens <u>7</u> ones</div>
+            <div style="font-size:13.5px; color:#475569; margin:4px 0;">5 tens + 7 ones = <strong>57</strong></div>
+            <table class="tens-ones-table">
+              <tr><th>tens</th><th>ones</th></tr>
+              <tr><td>5</td><td>7</td></tr>
+            </table>
           </div>
         </div>
+
         <div class="easy-hi">
-          👉 <strong>सरल हिंदी ट्रिक (Turn-Around Rule):</strong><br>
-          • <strong>Worksheet 2-1 Problem 3 (Manuel's Runs):</strong> 8 + 4 = 12 और 4 + 8 = 12!<br>
-          • <strong>Problem 4 (Cassie's Zero Fact):</strong> 7 + 0 = 7 और 0 + 7 = 7!<br>
-          • <strong>Problem 5 (Emma's Fact):</strong> 4 + 5 = 9 और 5 + 4 = 9!
+          👉 <strong>सरल हिंदी व्याख्या (वर्कशीट 1 से):</strong><br>
+          • <strong>23:</strong> 2 दहाई (20) और 3 इकाई (3) मिलकर 23 बनते हैं।<br>
+          • <strong>57:</strong> 5 दहाई (50) और 7 इकाई (7) मिलकर 57 बनते हैं।<br>
+          • <strong>नियम:</strong> 10 इकाइयों का 1 बंडल = 1 Ten (दहाई) होता है!
         </div>
+
+        <div class="rule-header" style="margin-top:16px;">
+          <h3 style="font-size:16px; font-weight:800;">B. Word Problems from Sheet 1: Mary's Buttons &amp; Ben's 60 Stamps</h3>
+          <span class="badge">Sheet 1: Problems 3 &amp; 4</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin:12px 0;">
+          <!-- Mary's Buttons -->
+          <div style="background:#fff; border:1.5px solid #fcd34d; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#b45309; font-size:13.5px; margin-bottom:4px;">
+              Worksheet 1, Problem 3: Mary's Buttons
+            </div>
+            <p style="font-size:12.5px; color:#475569; line-height:1.5;">
+              "Mary puts her buttons in <strong>2 groups of ten</strong>. She has <strong>4 left over</strong>. How many buttons does she have in all?"
+            </p>
+            <div class="visual-group-box">
+              <div class="ten-column" title="Group of 10">
+                <span style="font-size:9.5px; font-weight:bold; color:#0369a1;">10</span>
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:2px;">
+                  <span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span>
+                </div>
+              </div>
+              <div class="ten-column" title="Group of 10">
+                <span style="font-size:9.5px; font-weight:bold; color:#0369a1;">10</span>
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:2px;">
+                  <span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span>
+                </div>
+              </div>
+              <div class="loose-group" title="4 Left Over">
+                <span style="font-size:9.5px; font-weight:bold; color:#b45309; width:100%; text-align:center;">4 loose</span>
+                <span class="button-item"></span><span class="button-item"></span><span class="button-item"></span><span class="button-item"></span>
+              </div>
+            </div>
+            <div style="font-weight:bold; font-size:13px; color:#059669; text-align:center;">
+              <u>2</u> tens + <u>4</u> ones = <strong>24 buttons</strong>
+            </div>
+          </div>
+
+          <!-- Ben's Stamps -->
+          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#065f46; font-size:13.5px; margin-bottom:4px;">
+              Worksheet 1, Problem 4: Ben's Stamps
+            </div>
+            <p style="font-size:12.5px; color:#475569; line-height:1.5;">
+              "Ben has a sheet of <strong>60 stamps</strong>. He cuts the sheet apart into groups of 10. How many groups of 10 does he have?"
+            </p>
+            <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:8px; margin:8px 0; text-align:center;">
+              <div style="display:inline-grid; grid-template-columns:repeat(6, 1fr); gap:3px; max-width:200px;">
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+                <div style="height:35px; width:24px; border:1px solid #059669; border-radius:3px; background:#fff; font-size:9px; font-weight:bold; display:grid; place-items:center;">10</div>
+              </div>
+            </div>
+            <div style="font-weight:bold; font-size:13px; color:#059669; text-align:center;">
+              60 = 6 tens ➔ <strong>6 groups of 10</strong>
+            </div>
+          </div>
+        </div>
+
         <div class="concept-pair-box" id="pair-1a"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 02: COUNT ON TO ADD -->
+    <!-- UNIT 02: ADDITION SENTENCES (Worksheet 2) -->
     <!-- ========================================== -->
     <section id="topic-2" class="section">
       <div style="margin-bottom:12px;">
-        <span class="badge">Unit 02 · Count On Strategy</span>
-        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Count On to Add: Number Line &amp; Numbers Square</h2>
+        <span class="badge">Worksheet Sheet 2 · Addition Sentences</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Write an Addition Sentence to Solve (जोड़ के वाक्य)</h2>
       </div>
 
       <article class="rule-card">
         <div class="rule-header">
-          <h3 style="font-size:16px; font-weight:800;">A. Counting On +1, +2, +3 from the Greater Number</h3>
-          <span class="badge">Number Line &amp; Square</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Visual Groups: Pea Pods (मटर) &amp; Apple Bags (सेब)</h3>
+          <span class="badge">Sheet 2: Problems 1 &amp; 2</span>
         </div>
-        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
-          हमेशा <strong>बड़ी संख्या (Greater Number)</strong> से शुरू करें और छोटी संख्या जितना कदम आगे गिनें:
-        </p>
-        <div class="grid-25">
-          <div class="grid-25-cell">1</div><div class="grid-25-cell">2</div><div class="grid-25-cell">3</div><div class="grid-25-cell">4</div><div class="grid-25-cell">5</div>
-          <div class="grid-25-cell active-start">6 (Start)</div><div class="grid-25-cell">7</div><div class="grid-25-cell active-end">8 (2+6=8)</div><div class="grid-25-cell">9</div><div class="grid-25-cell">10</div>
-          <div class="grid-25-cell">11</div><div class="grid-25-cell">12</div><div class="grid-25-cell">13</div><div class="grid-25-cell">14</div><div class="grid-25-cell">15</div>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin:10px 0;">
+          <!-- Pea Pods -->
+          <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#065f46; font-size:13.5px;">Problem 1: How many peas? (मटर)</div>
+            <p style="font-size:12.5px; color:#374151; margin:4px 0;">
+              चित्र में 3 फली (pods) हैं, प्रत्येक में 10 मटर के दाने हैं, और 4 दाने बाहर अलग रखे हैं:
+            </p>
+            <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px; text-align:center; font-size:13px; margin:6px 0;">
+              3 pods of 10 = <strong>30</strong> + 4 loose peas = <strong>4</strong><br>
+              <span style="font-family:var(--heading); font-size:16px; font-weight:900; color:var(--brand);">
+                30 + 4 = 34
+              </span>
+            </div>
+            <div style="font-size:11.5px; color:#065f46; font-weight:bold;">कुल 34 मटर (3 tens + 4 ones = 34)</div>
+          </div>
+
+          <!-- Apple Bags -->
+          <div style="background:#fffbeb; border:1.5px solid #fde68a; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#92400e; font-size:13.5px;">Problem 2: How many apples? (सेब)</div>
+            <p style="font-size:12.5px; color:#374151; margin:4px 0;">
+              चित्र में सेब के 2 बैग हैं (प्रत्येक बैग में 10 सेब = 20), और 5 सेब खुले रखे हैं:
+            </p>
+            <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px; text-align:center; font-size:13px; margin:6px 0;">
+              2 bags of 10 = <strong>20</strong> + 5 loose apples = <strong>5</strong><br>
+              <span style="font-family:var(--heading); font-size:16px; font-weight:900; color:#b45309;">
+                20 + 5 = 25
+              </span>
+            </div>
+            <div style="font-size:11.5px; color:#92400e; font-weight:bold;">कुल 25 सेब (2 tens + 5 ones = 25)</div>
+          </div>
         </div>
-        <div class="trap-box">
-          <b>⚠️ परीक्षा का सबसे बड़ा ट्रैप (The Cabbage vs Tomatoes Trap - Worksheet 2-2):</b>
-          "A farm grows 4 green cabbage, 3 tomatoes, and 2 red cabbage. How many kinds of cabbage do they grow?"<br>
-          छात्र 4 + 3 + 2 = 9 कर देते हैं। याद रखें: <strong>टमाटर (Tomatoes) पत्तागोभी नहीं हैं!</strong> सही उत्तर: 4 + 2 = <strong>6 kinds of cabbage ✅</strong>।
+
+        <div class="rule-header" style="margin-top:16px;">
+          <h3 style="font-size:16px; font-weight:800;">B. Vic, Steve &amp; Mr. Hall's Juice Boxes</h3>
+          <span class="badge">Sheet 2: Problems 3, 4 &amp; 5</span>
         </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin:10px 0;">
+          <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#1e40af; font-size:13px;">Problem 3: Vic uses cubes to show 7 tens and 5 ones.</div>
+            <div style="font-size:12.5px; margin:4px 0;">What number does he show?</div>
+            <div style="font-weight:900; font-size:15px; color:#1d4ed8; text-align:center; background:#fff; padding:6px; border-radius:6px;">
+              70 + 5 = 75
+            </div>
+          </div>
+
+          <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#1e40af; font-size:13px;">Problem 4: Steve uses cubes to show 9 tens and 3 ones.</div>
+            <div style="font-size:12.5px; margin:4px 0;">What number does he show?</div>
+            <div style="font-weight:900; font-size:15px; color:#1d4ed8; text-align:center; background:#fff; padding:6px; border-radius:6px;">
+              90 + 3 = 93
+            </div>
+          </div>
+
+          <div style="background:#fdf2f8; border:1.5px solid #fbcfe8; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#9d174d; font-size:13px;">Problem 5: Mr. Hall has 3 packs of juice boxes (10 boxes each).</div>
+            <div style="font-size:12.5px; margin:4px 0;">Addition sentence:</div>
+            <div style="font-weight:900; font-size:15px; color:#be185d; text-align:center; background:#fff; padding:6px; border-radius:6px;">
+              10 + 10 + 10 = 30 boxes
+            </div>
+          </div>
+        </div>
+
         <div class="concept-pair-box" id="pair-2a"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 03: DOUBLES & NEAR DOUBLES -->
+    <!-- UNIT 03: PLACE VALUE TO 100 (Worksheet 3) -->
     <!-- ========================================== -->
     <section id="topic-3" class="section">
       <div style="margin-bottom:12px;">
-        <span class="badge">Unit 03 · Doubles Facts</span>
-        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Doubles and Near Doubles (डबल्स और लगभग डबल्स)</h2>
+        <span class="badge">Worksheet Sheet 3 · Place Value to 100</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Circle the Value of the Underlined Digit (अंडरलाइन अंक का मान)</h2>
       </div>
 
       <article class="rule-card">
         <div class="rule-header">
-          <h3 style="font-size:16px; font-weight:800;">A. Doubles (n + n) and Near Doubles (n + (n ± 1))</h3>
-          <span class="badge">Quick Doubles</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Exact 12 Digit-Value Problems from Sheet 3</h3>
+          <span class="badge">Sheet 3: Problems 1 to 4</span>
         </div>
-        <div class="easy-hi">
-          • <strong>Doubles Facts:</strong> 5+5=10, 6+6=12, 7+7=14, 8+8=16, 9+9=18, 10+10=20.<br>
-          • <strong>Terry &amp; Derek's Snowflakes:</strong> 8 + 8 = <strong>16 snowflakes</strong>.<br>
-          • <strong>Kim &amp; Ron's Socks:</strong> 9 + 9 = <strong>18 pairs of socks</strong>.<br>
-          • <strong>Near Doubles Rule:</strong> 8 + 9 हल करने के लिए (8 + 8) + 1 = 16 + 1 = <strong>17</strong> करें!
+        <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+          यदि अंक <strong>Tens place (बाईं ओर)</strong> में है, तो उसका मान <strong>10 गुना</strong> होता है (जैसे <u>7</u>3 में 7 का मान 70 है)।<br>
+          यदि अंक <strong>Ones place (दाईं ओर)</strong> में है, तो उसका मान <strong>वही अंक</strong> रहता है (जैसे 5<u>4</u> में 4 का मान 4 है):
+        </p>
+
+        <!-- Grid of 12 worksheet problems -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin:14px 0;">
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>7</u>3</div>
+            <div style="font-size:11px; color:#64748b;">7 or 70?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 70</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">5<u>4</u></div>
+            <div style="font-size:11px; color:#64748b;">4 or 40?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 4</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">9<u>5</u></div>
+            <div style="font-size:11px; color:#64748b;">5 or 50?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 5</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>1</u>3</div>
+            <div style="font-size:11px; color:#64748b;">1 or 10?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 10</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>3</u>7</div>
+            <div style="font-size:11px; color:#64748b;">3 or 30?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 30</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">8<u>3</u></div>
+            <div style="font-size:11px; color:#64748b;">3 or 30?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 3</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">4<u>7</u></div>
+            <div style="font-size:11px; color:#64748b;">7 or 70?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 7</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">8<u>7</u></div>
+            <div style="font-size:11px; color:#64748b;">7 or 70?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 7</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>3</u>1</div>
+            <div style="font-size:11px; color:#64748b;">3 or 30?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 30</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>1</u>7</div>
+            <div style="font-size:11px; color:#64748b;">1 or 10?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 10</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);">2<u>5</u></div>
+            <div style="font-size:11px; color:#64748b;">5 or 50?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 5</div>
+          </div>
+
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:900; font-family:var(--heading);"><u>9</u>4</div>
+            <div style="font-size:11px; color:#64748b;">9 or 90?</div>
+            <div style="font-weight:bold; color:#15803d; font-size:12px; margin-top:2px;">Value: 90</div>
+          </div>
         </div>
+
+        <div class="rule-header" style="margin-top:16px;">
+          <h3 style="font-size:16px; font-weight:800;">B. Real-World Place Value Comparisons from Sheet 3</h3>
+          <span class="badge">Sheet 3: Problems 5 &amp; 6</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin:10px 0;">
+          <!-- Bookcase Problem -->
+          <div style="background:#fffbeb; border:1.5px solid #fde68a; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#92400e; font-size:13.5px;">Problem 5: Bookcase &amp; Students</div>
+            <p style="font-size:12px; color:#475569; margin:4px 0;">
+              "A bookcase has <strong>43 books</strong>. There are <strong>34 students</strong> in the class. Are there enough books for the students? How do you know?"
+            </p>
+            <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px; font-size:12px; margin-top:6px;">
+              • 43 has <strong>4 tens</strong> (40).<br>
+              • 34 has <strong>3 tens</strong> (30).<br>
+              • चूँकि 4 tens &gt; 3 tens, इसलिए <strong>43 &gt; 34</strong>!<br>
+              <strong>उत्तर:</strong> Yes! There are enough books because 43 &gt; 34.
+            </div>
+          </div>
+
+          <!-- Concert Song Books -->
+          <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:12px; padding:12px;">
+            <div style="font-weight:bold; color:#065f46; font-size:13.5px;">Problem 6: Concert Children &amp; Boxes</div>
+            <p style="font-size:12px; color:#475569; margin:4px 0;">
+              "There are <strong>75 children</strong> in the concert. There are <strong>8 boxes</strong> of song books. There are <strong>10 books</strong> in each box. Is there a book for each child in the concert? How do you know?"
+            </p>
+            <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px; font-size:12px; margin-top:6px;">
+              • 8 boxes of 10 books = 8 tens = <strong>80 books</strong>.<br>
+              • बच्चे केवल <strong>75</strong> हैं।<br>
+              • चूँकि <strong>80 &gt; 75</strong>, इसलिए हर बच्चे को किताब मिलेगी!<br>
+              <strong>उत्तर:</strong> Yes! 80 books is more than 75 children.
+            </div>
+          </div>
+        </div>
+
         <div class="concept-pair-box" id="pair-3a"></div>
       </article>
     </section>
 
     <!-- ========================================== -->
-    <!-- UNIT 04: MAKE 10 & 3 NUMBERS -->
+    <!-- UNIT 04: PLACE-VALUE MODELS & RIDDLES (Worksheet 4) -->
     <!-- ========================================== -->
     <section id="topic-4" class="section">
       <div style="margin-bottom:12px;">
-        <span class="badge">Unit 04 · Make 10 &amp; 3 Addends</span>
-        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Make 10 Strategy &amp; Adding Three Numbers</h2>
+        <span class="badge">Worksheet Sheet 4 · Place-Value Models &amp; Riddles</span>
+        <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Models, Rita, Drew, Digits 3 &amp; 1, and Mr. Lo (मॉडल व पहेलियाँ)</h2>
       </div>
 
       <article class="rule-card">
         <div class="rule-header">
-          <h3 style="font-size:16px; font-weight:800;">A. Make 10 Strategy &amp; Spotting 10s in 3 Numbers</h3>
-          <span class="badge">Ten-Frame Strategy</span>
+          <h3 style="font-size:16px; font-weight:800;">A. Base-Ten Models for 61 and 52</h3>
+          <span class="badge">Sheet 4: Problems 1 &amp; 2</span>
         </div>
-        <div class="easy-hi">
-          • <strong>8 + 5:</strong> 8 को 10 बनाने के लिए 2 चाहिए (8 + 2 = 10)। 5 में से 2 गया तो 3 बचा ➔ 10 + 3 = <strong>13</strong>!<br>
-          • <strong>Adding 3 Numbers (6 + 5 + 4):</strong> पहले उन दो को जोड़ें जो 10 बनाते हैं: (6 + 4) = 10, फिर 10 + 5 = <strong>15</strong>!
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin:10px 0;">
+          <!-- Model 61 -->
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:12px; text-align:center;">
+            <div style="font-weight:bold; color:var(--brand); font-size:13.5px; margin-bottom:6px;">
+              Problem 1: What is the value of the 6 in <u>6</u>1?
+            </div>
+            <div style="display:flex; justify-content:center; align-items:flex-end; gap:6px; margin:10px 0;">
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-cube" title="1" style="margin-left:8px;"></div>
+            </div>
+            <div style="font-size:12.5px; color:#475569;">
+              6 tens rods (60) + 1 unit cube (1) = 61<br>
+              अंक 6 का मान = <strong style="color:#059669; font-size:15px;">60</strong>
+            </div>
+          </div>
+
+          <!-- Model 52 -->
+          <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:12px; text-align:center;">
+            <div style="font-weight:bold; color:var(--brand); font-size:13.5px; margin-bottom:6px;">
+              Problem 2: What is the value of the 2 in 5<u>2</u>?
+            </div>
+            <div style="display:flex; justify-content:center; align-items:flex-end; gap:6px; margin:10px 0;">
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div class="base-ten-rod" title="10"></div>
+              <div style="display:flex; flex-direction:column; gap:4px; margin-left:8px;">
+                <div class="base-ten-cube" title="1"></div>
+                <div class="base-ten-cube" title="1"></div>
+              </div>
+            </div>
+            <div style="font-size:12.5px; color:#475569;">
+              5 tens rods (50) + 2 unit cubes (2) = 52<br>
+              अंक 2 का मान = <strong style="color:#059669; font-size:15px;">2</strong>
+            </div>
+          </div>
         </div>
-        <div class="trap-box">
-          <b>⚠️ Extra Information Trap (अनावश्यक जानकारी - Worksheet 2-7):</b>
-          "Benji has 6 fish. TJ has 7 fish and 3 dogs. Max has 4 fish. How many FISH in all?"<br>
-          प्रश्न में केवल <strong>Fish</strong> पूछा है! 3 कुत्तों (dogs) को छोड़ दें: (6 + 4) + 7 = <strong>17 fish ✅</strong>।
+
+        <div class="rule-header" style="margin-top:16px;">
+          <h3 style="font-size:16px; font-weight:800;">B. Rita, Drew, Digits 3 &amp; 1, and Mr. Lo's Secret Number</h3>
+          <span class="badge">Sheet 4: Problems 3, 4, 5 &amp; 6</span>
         </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; margin:10px 0;">
+          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:10px; padding:10px;">
+            <div style="font-weight:bold; color:#065f46; font-size:12.5px;">Problem 3: Rita's Number 12</div>
+            <p style="font-size:12px; color:#475569; margin:3px 0;">
+              "Rita shows 12 with place-value models. She uses 2 ones. How many tens does she use?"
+            </p>
+            <div style="font-weight:bold; color:#059669; font-size:12.5px;">➔ 1 ten (1 ten + 2 ones = 12)</div>
+          </div>
+
+          <div style="background:#fff; border:1.5px solid #a7f3d0; border-radius:10px; padding:10px;">
+            <div style="font-weight:bold; color:#065f46; font-size:12.5px;">Problem 4: Drew's Number 76</div>
+            <p style="font-size:12px; color:#475569; margin:3px 0;">
+              "Drew shows 76 with place-value models. He uses 7 tens. How many ones does he use?"
+            </p>
+            <div style="font-weight:bold; color:#059669; font-size:12.5px;">➔ 6 ones (7 tens + 6 ones = 76)</div>
+          </div>
+
+          <div style="background:#fff; border:1.5px solid #fde68a; border-radius:10px; padding:10px;">
+            <div style="font-weight:bold; color:#92400e; font-size:12.5px;">Problem 5: Digits 3 and 1 Riddle</div>
+            <p style="font-size:12px; color:#475569; margin:3px 0;">
+              "Which two numbers use the digits 3 and 1? Which of these has 3 tens?"
+            </p>
+            <div style="font-weight:bold; color:#b45309; font-size:12.5px;">➔ Numbers: 13 &amp; 31. The one with 3 tens is 31!</div>
+          </div>
+
+          <div style="background:#fff; border:1.5px solid #fde68a; border-radius:10px; padding:10px;">
+            <div style="font-weight:bold; color:#92400e; font-size:12.5px;">Problem 6: Mr. Lo's Number Riddle</div>
+            <p style="font-size:12px; color:#475569; margin:3px 0;">
+              "Mr. Lo is thinking of a number. The ones digit is 8. The tens digit is 1. What is Mr. Lo's number?"
+            </p>
+            <div style="font-weight:bold; color:#b45309; font-size:12.5px;">➔ 1 ten (10) + 8 ones (8) = 18!</div>
+          </div>
+        </div>
+
         <div class="concept-pair-box" id="pair-4a"></div>
       </article>
     </section>
@@ -707,7 +1107,7 @@
             Select Test to Attempt / टेस्ट चुनें (30 Questions Each):
           </span>
           <span style="font-size:11px; color:#64748b; font-weight:600;">
-            Any test can be taken in any order
+            Any test can be chosen in any order
           </span>
         </div>
         <div class="test-selection-grid">
@@ -716,7 +1116,7 @@
               <span class="tsc-title">📝 Test 01</span>
               <span class="tsc-badge">30 Q</span>
             </div>
-            <div class="tsc-topic">Properties &amp; Count On</div>
+            <div class="tsc-topic">Tens &amp; Ones + Addition Sentences</div>
             <div class="tsc-tag" id="ts-status-1">● Selected Active</div>
           </button>
           <button class="test-select-card" id="tab-btn-2" type="button" onclick="switchTestSuite(2)">
@@ -724,7 +1124,7 @@
               <span class="tsc-title">⚡ Test 02</span>
               <span class="tsc-badge">30 Q</span>
             </div>
-            <div class="tsc-topic">Doubles &amp; Near Doubles</div>
+            <div class="tsc-topic">Place Value to 100 &amp; Underlined Digits</div>
             <div class="tsc-tag" id="ts-status-2">Tap to Select</div>
           </button>
           <button class="test-select-card" id="tab-btn-3" type="button" onclick="switchTestSuite(3)">
@@ -732,7 +1132,7 @@
               <span class="tsc-title">🎯 Test 03</span>
               <span class="tsc-badge">30 Q</span>
             </div>
-            <div class="tsc-topic">Make 10 &amp; 3 Numbers</div>
+            <div class="tsc-topic">Models, Rita, Drew &amp; Mr. Lo Riddles</div>
             <div class="tsc-tag" id="ts-status-3">Tap to Select</div>
           </button>
         </div>
@@ -744,10 +1144,10 @@
           30 Questions · Choose Time · Auto-Submit
         </span>
         <h2 id="suite-title" style="font-size:26px; font-weight:900; margin:8px 0;">
-          Test 01 · Addition Properties &amp; Count On
+          Test 01 · Tens &amp; Ones and Addition Sentences
         </h2>
         <p id="suite-desc" style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
-          Worksheets 2-1 to 2-3: डोमिनो टर्न-अराउंड फैक्ट्स, नंबर स्क्वायर, नंबर लाइन और रियल-वर्ल्ड वर्ड प्रॉब्लम्स पर आधारित 30 प्रश्न।
+          Worksheets 1 &amp; 2: Mary's buttons, Ben's 60 stamps, 23, 57, Pea pods, Apple bags, Vic, Steve और Mr. Hall के juice boxes पर आधारित 30 प्रश्न।
         </p>
 
         <!-- Timer Duration Choices -->
@@ -798,23 +1198,33 @@
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
             <span class="badge" id="current-q-concept">Unit</span>
             <div style="display:flex; gap:6px; align-items:center;">
-              <button class="quiet-btn" type="button" id="review-btn" onclick="toggleReviewCurrent()" style="font-size:11px; padding:4px 8px;">
+              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+              <button class="quiet-btn" type="button" onclick="toggleReviewCurrent()" id="review-btn" style="padding:3px 8px; font-size:11px;">
                 🚩 Mark for Review
               </button>
-              <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
             </div>
           </div>
 
-          <h3 id="current-q-title" style="font-size:16px; font-weight:800; margin-bottom:4px; line-height:1.4;"></h3>
-          <p id="current-q-hindi" class="font-hi" style="font-size:12.5px; color:#475569; margin-bottom:14px; background:#f0fdf4; padding:7px 10px; border-radius:8px; border:1px solid #a7f3d0;"></p>
+          <h3 id="current-q-title" style="font-size:16px; font-weight:900; margin-bottom:6px; line-height:1.4;">
+            Q1. Question text here
+          </h3>
+          <p id="current-q-hindi" class="font-hi" style="font-size:13.5px; color:#2563eb; background:#eff6ff; padding:8px 10px; border-radius:8px; margin-bottom:14px;">
+            👉 हिन्दी अनुवाद यहाँ दिखेगा
+          </p>
 
           <div id="current-q-options"></div>
 
           <div class="test-actions-bar">
-            <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">← Previous</button>
-            <div style="display:flex; gap:6px;">
-              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()" style="color:#dc2626; border-color:#fca5a5;">Clear</button>
-              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="font-size:12px; padding:7px 14px;">Next Question →</button>
+            <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()">
+              Clear Selection
+            </button>
+            <div style="display:flex; gap:8px;">
+              <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">
+                ← Previous
+              </button>
+              <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="padding:7px 16px; font-size:12.5px;">
+                Next Question →
+              </button>
             </div>
           </div>
         </div>
@@ -825,160 +1235,159 @@
     </section>
   </main>
 
-  <!-- Submit Warning Modal -->
+  <!-- Submit Confirmation Modal -->
   <div class="modal-overlay" id="submit-modal" style="display:none;">
     <div class="modal-box">
-      <div style="font-size:28px; margin-bottom:4px;">⚠️</div>
-      <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">Unattempted Questions Warning</h3>
-      <p style="font-size:13px; color:#475569; margin-bottom:12px;" id="modal-msg"></p>
-      <div style="display:flex; justify-content:center; gap:8px;">
-        <button class="mint-btn" type="button" onclick="closeModal()" style="font-size:12px;">Continue Test (हल करते रहें)</button>
-        <button class="quiet-btn" type="button" onclick="finishExam(false)" style="font-size:12px; color:#64748b;">Submit Anyway</button>
+      <h3 style="font-size:18px; font-weight:900; color:#b45309; margin-bottom:8px;">
+        ⚠️ Confirm Test Submission
+      </h3>
+      <p id="modal-msg" style="font-size:13px; color:#475569; margin-bottom:16px;">
+        क्या आप वाकई अपना टेस्ट सबमिट करना चाहते हैं?
+      </p>
+      <div style="display:flex; gap:10px; justify-content:center;">
+        <button class="quiet-btn" type="button" onclick="closeModal()">
+          Continue Test (हल करते रहें)
+        </button>
+        <button class="mint-btn" type="button" onclick="finishExam(false)">
+          Submit Now (सबमिट करें)
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; color:#64748b;">
-      <div>
-        <strong style="color:var(--brand); font-size:15px; font-family:var(--heading);">Econova.vip ✦</strong><br>
-        Class 2 Mathematics · Chapter 2: Addition Properties &amp; Mental Strategies.
-      </div>
-      <div style="display:flex; gap:10px; font-weight:bold; color:var(--brand);">
-        <a href="#topic-1">Properties</a>
-        <a href="#topic-2">Count On</a>
-        <a href="#topic-3">Doubles</a>
-        <a href="#topic-4">Make 10</a>
-        <a href="#test-arena">Tests 01-03</a>
-      </div>
+    <div class="wrap" style="text-align:center; font-size:12.5px; color:#64748b;">
+      <p>Class 2 Mathematics · Tens &amp; Ones, Place Value to 100 · 3 Timed Tests (90 Questions)</p>
+      <p style="margin-top:4px;">Strictly Crafted from the 4 Worksheet Attachments · Econova.vip</p>
     </div>
   </footer>
 
-  <div id="root" style="display:none;"></div>
-
-  <!-- ========================================================= -->
-  <!-- COMPLETE JAVASCRIPT CODE EMBEDDED IN INDEX.HTML -->
-  <!-- ========================================================= -->
   <script>
-    // 8 Concept Practice Questions (2 per unit)
-    const conceptQuestions = [
-      { id:1, sub:'1a', q:"What two addition facts can April use to find total dots on a domino showing 2 and 5?", hi:"अप्रैल एक डोमिनो पर बाएँ 2 और दाएँ 5 बिंदियों के लिए कौन से दो जोड़ तथ्य लिख सकती है?", opts:["2 + 5 = 7 and 5 + 2 = 7","2 + 5 = 7 and 7 - 2 = 5","2 + 2 = 4 and 5 + 5 = 10","2 + 5 = 8 and 5 + 2 = 8"], ans:0, expl:"Commutative Property: addends का क्रम बदलने पर भी योग समान रहता है (2 + 5 = 7 और 5 + 2 = 7)।" },
-      { id:2, sub:'1a', q:"Cassie knows that 7 + 0 = 7. How can she write this fact another way using same addends?", hi:"कैसी जानती है कि 7 + 0 = 7। वह उन्हीं संख्याओं से दूसरा जोड़ वाक्य कैसे लिखेगी?", opts:["0 + 7 = 7","7 + 7 = 14","7 - 0 = 7","0 + 0 = 0"], ans:0, expl:"Zero Property & Order Property: किसी संख्या में 0 जोड़ने पर मान नहीं बदलता (0 + 7 = 7)।" },
-      { id:3, sub:'2a', q:"Ken had 4 fish. Now Ken has 7 fish. Count on to find how many fish he bought.", hi:"केन के पास 4 मछलियाँ थीं। अब 7 हैं। आगे गिनकर बताएं उसने कितनी मछलियाँ खरीदीं?", opts:["3 fish (Count on from 4: 5, 6, 7 ➔ 3 more)","4 fish","11 fish","2 fish"], ans:0, expl:"4 से 7 तक गिनें: 5, 6, 7 (3 कदम आगे)। 4 + 3 = 7।" },
-      { id:4, sub:'2a', q:"A farm grows 4 green cabbage, 3 tomatoes, and 2 red cabbage. How many kinds of CABBAGE in all?", hi:"एक खेत में 4 हरी पत्तागोभी, 3 टमाटर, और 2 लाल पत्तागोभी उगाई जाती है। कुल कितने प्रकार की पत्तागोभी हैं?", opts:["6 kinds of cabbage (4 green + 2 red)","9 kinds","7 kinds","5 kinds"], ans:0, expl:"प्रश्न में केवल Cabbage पूछा है! टमाटर को छोड़ दें: 4 + 2 = 6 पत्तागोभी।" },
-      { id:5, sub:'3a', q:"Terry cut 8 white paper snowflakes. Derek cut 8 blue snowflakes. How many did they make in all?", hi:"टेरी ने 8 सफेद स्नोफ्लेक्स और डेरेक ने 8 नीले स्नोफ्लेक्स बनाए। कुल कितने बने?", opts:["8 + 8 = 16 snowflakes","8 + 7 = 15 snowflakes","8 + 1 = 9 snowflakes","8 + 8 = 18 snowflakes"], ans:0, expl:"Doubles Fact: 8 + 8 = 16 स्नोफ्लेक्स।" },
-      { id:6, sub:'3a', q:"Paula knows she can use two doubles facts to find 8 + 9. What are they?", hi:"पॉला 8 + 9 का योग निकालने के लिए कौन से दो डबल्स तथ्य इस्तेमाल कर सकती है?", opts:["8 + 8 + 1 = 17 and 9 + 9 - 1 = 17","8 + 8 = 16 and 9 + 9 = 18","8 + 0 = 8 and 9 + 0 = 9","10 + 7 = 17 and 10 + 8 = 18"], ans:0, expl:"Near Doubles: (8 + 8) + 1 = 17 या (9 + 9) - 1 = 17।" },
-      { id:7, sub:'4a', q:"Use 'Make 10' strategy to solve: 8 + 5 = ___", hi:"'Make 10' नियम से 8 + 5 का हल निकालें:", opts:["13 (Break 5 into 2+3: 8+2=10, then 10+3=13)","12","14","15"], ans:0, expl:"8 को 10 बनाने के लिए 2 लिया: 8 + 2 = 10, शेष 3 बचा ➔ 10 + 3 = 13।" },
-      { id:8, sub:'4a', q:"Benji has 6 fish. TJ has 7 fish and 3 dogs. Max has 4 fish. How many FISH in all?", hi:"बेंजी के पास 6 मछलियाँ, टीजे के पास 7 मछलियाँ व 3 कुत्ते, और मैक्स के पास 4 मछलियाँ हैं। कुल कितनी मछलियाँ हैं?", opts:["17 fish (6 + 4 = 10, then 10 + 7 = 17)","20 animals","14 fish","10 fish"], ans:0, expl:"3 कुत्तों (dogs) को छोड़ दें! केवल मछलियाँ जोड़ें: (6 + 4) + 7 = 10 + 7 = 17 मछलियाँ।" }
-    ];
+    // ==========================================
+    // ALL 90 QUESTIONS STRICTLY FROM USER SHEETS
+    // ==========================================
 
-    // TEST 01 (30 Questions)
+    // TEST 01: 30 Questions (Tens and Ones & Addition Sentences)
     const test01 = [
-      { id:1, unit:'prop', label:'Unit 01: Addition Properties', q:"What two addition facts match a domino with 2 dots on left and 5 dots on right?", hi:"2 और 5 बिंदियों वाले डोमिनो के लिए दो जोड़ तथ्य क्या हैं?", opts:["2 + 5 = 7 and 5 + 2 = 7","2 + 5 = 7 and 5 - 2 = 3","2 + 2 = 4 and 5 + 5 = 10","2 + 7 = 9 and 5 + 7 = 12"], ans:0, expl:"Commutative Property: संख्याओं का क्रम बदलने पर भी योग 7 ही रहेगा।" },
-      { id:2, unit:'prop', label:'Unit 01: Addition Properties', q:"Ken has 6 cubes on the left and 5 on the right. What two sentences match?", hi:"केन के पास बाएँ 6 और दाएँ 5 क्यूब्स हैं। कौन से दो जोड़ वाक्य सही हैं?", opts:["6 + 5 = 11 and 5 + 6 = 11","6 + 5 = 11 and 6 - 5 = 1","6 + 6 = 12 and 5 + 5 = 10","6 + 5 = 10 and 5 + 6 = 10"], ans:0, expl:"6 + 5 = 11 और 5 + 6 = 11।" },
-      { id:3, unit:'prop', label:'Unit 01: Addition Properties', q:"Manuel's team scores 8 runs in game 1 and 4 in game 2. Show two ways to find total runs.", hi:"मैनुएल की टीम गेम 1 में 8 और गेम 2 में 4 रन बनाती है। कुल रन दर्शाने वाले दो तरीके बताएं।", opts:["8 + 4 = 12 and 4 + 8 = 12","8 + 4 = 12 and 8 - 4 = 4","8 + 8 = 16 and 4 + 4 = 8","8 + 2 = 10 and 4 + 2 = 6"], ans:0, expl:"8 + 4 = 12 और 4 + 8 = 12।" },
-      { id:4, unit:'prop', label:'Unit 01: Addition Properties', q:"Cassie knows that 7 + 0 = 7. How can she write this using the same addends?", hi:"कैसी जानती है 7 + 0 = 7। वह उन्हीं संख्याओं से दूसरा जोड़ वाक्य कैसे लिखेगी?", opts:["0 + 7 = 7","7 + 7 = 14","7 - 0 = 7","0 + 0 = 0"], ans:0, expl:"Zero Property: 7 + 0 = 7 और 0 + 7 = 7।" },
-      { id:5, unit:'prop', label:'Unit 01: Addition Properties', q:"Emma knows that 4 + 5 = 9. How can Emma write the fact another way?", hi:"एम्मा जानती है 4 + 5 = 9। वह इसे दूसरे तरीके से कैसे लिखेगी?", opts:["5 + 4 = 9","9 - 5 = 4","4 + 4 = 8","5 + 5 = 10"], ans:0, expl:"Turn-around fact: 4 + 5 = 5 + 4 = 9।" },
-      { id:6, unit:'count', label:'Unit 02: Count On', q:"Count on using the numbers square: 2 + 6 = ___", hi:"संख्या वर्ग से आगे गिनें: 2 + 6 = ___", opts:["8 (Start at 6, count on: 7, 8)","7","9","6"], ans:0, expl:"बड़ी संख्या 6 से 2 आगे गिनें: 7, 8।" },
-      { id:7, unit:'count', label:'Unit 02: Count On', q:"Count on to add: 1 + 8 = ___", hi:"आगे गिनकर जोड़ें: 1 + 8 = ___", opts:["9 (Start at 8, count on 1 ➔ 9)","8","10","7"], ans:0, expl:"8 में 1 जोड़ने पर अगली संख्या 9 आती है।" },
-      { id:8, unit:'count', label:'Unit 02: Count On', q:"Count on: 3 + 9 = ___", hi:"आगे गिनें: 3 + 9 = ___", opts:["12 (Start at 9, count on 3: 10, 11, 12)","11","13","10"], ans:0, expl:"9 से 3 आगे गिनें: 10, 11, 12।" },
-      { id:9, unit:'count', label:'Unit 02: Count On', q:"Count on: 8 + 3 = ___", hi:"आगे गिनें: 8 + 3 = ___", opts:["11","10","12","9"], ans:0, expl:"8 से 3 कदम आगे: 9, 10, 11।" },
-      { id:10, unit:'count', label:'Unit 02: Count On', q:"Ken had 4 fish. Now Ken has 7 fish. How many fish did he buy?", hi:"केन के पास 4 मछलियाँ थीं। अब 7 हैं। उसने कितनी खरीदीं?", opts:["3 fish","4 fish","7 fish","11 fish"], ans:0, expl:"4 से 7 तक गिनें: 5, 6, 7 (3 मछलियाँ)।" },
-      { id:11, unit:'count', label:'Unit 02: Count On', q:"Cherie has some trading cards. She gets 3 more and now has 9. How many at start?", hi:"चेरी के पास कुछ कार्ड थे। 3 और मिलने पर 9 हो गए। शुरुआत में कितने थे?", opts:["6 cards","12 cards","3 cards","7 cards"], ans:0, expl:"6 + 3 = 9, अतः शुरुआत में 6 कार्ड थे।" },
-      { id:12, unit:'count', label:'Unit 02: Count On', q:"Linda & Nell put eggs in basket. 6 eggs in all. Nell put 4 eggs. How many did Linda put?", hi:"टोकरी में कुल 6 अंडे हैं। नेल ने 4 रखे। लिंडा ने कितने रखे?", opts:["2 eggs","4 eggs","10 eggs","3 eggs"], ans:0, expl:"4 + 2 = 6, अतः लिंडा ने 2 अंडे रखे।" },
-      { id:13, unit:'count', label:'Unit 02: Count On', q:"Brown farm has 2 pigs. Green farm has 5 pigs. How many more pigs at Green farm?", hi:"ब्राउन फार्म में 2 और ग्रीन में 5 सूअर हैं। ग्रीन में कितने अधिक हैं?", opts:["3 more pigs","7 more pigs","2 more pigs","4 more pigs"], ans:0, expl:"5 - 2 = 3 अधिक सूअर।" },
-      { id:14, unit:'count', label:'Unit 02: Count On', q:"Sal's cow gives 3 pails in morning and 5 in afternoon. How much milk in one day?", hi:"गाय सुबह 3 और दोपहर में 5 बाल्टी दूध देती है। दिन भर में कितना?", opts:["8 pails","7 pails","9 pails","2 pails"], ans:0, expl:"3 + 5 = 8 बाल्टी।" },
-      { id:15, unit:'count', label:'Unit 02: Count On', q:"Farm grows 4 green cabbage, 3 tomatoes, and 2 red cabbage. How many kinds of cabbage?", hi:"4 हरी पत्तागोभी, 3 टमाटर और 2 लाल पत्तागोभी। कुल कितनी पत्तागोभी हैं?", opts:["6 kinds of cabbage (4 green + 2 red)","9 kinds","7 kinds","5 kinds"], ans:0, expl:"टमाटर को छोड़ दें! 4 + 2 = 6 प्रकार की पत्तागोभी।" },
-      { id:16, unit:'count', label:'Unit 02: Count On', q:"5 ducks in front pond and 2 ducks in back pond. How many ducks in all?", hi:"आगे 5 बत्तखें और पीछे 2 बत्तखें। कुल कितनी हैं?", opts:["7 ducks","8 ducks","3 ducks","10 ducks"], ans:0, expl:"5 + 2 = 7 बत्तखें।" },
-      { id:17, unit:'count', label:'Unit 02: Count On', q:"Peter grows 7 red peppers and his brother grows 2 green peppers. How many peppers?", hi:"7 लाल मिर्च और 2 हरी मिर्च। कुल कितनी मिर्च हैं?", opts:["9 kinds of peppers","8 kinds","5 kinds","10 kinds"], ans:0, expl:"7 + 2 = 9 प्रकार की मिर्च।" },
-      { id:18, unit:'count', label:'Unit 02: Count On', q:"Mr. Rey's fish farm has 5 tanks. 4 tanks are baby fish, rest are adult. How many adult tanks?", hi:"कुल 5 टैंक हैं। 4 छोटी मछलियों के हैं। बड़ी मछलियों के कितने टैंक हैं?", opts:["1 tank of adult fish","4 tanks","9 tanks","2 tanks"], ans:0, expl:"5 - 4 = 1 टैंक।" },
-      { id:19, unit:'count', label:'Unit 02: Count On', q:"Gus sells 6 bunches of corn and his sister sells 2 bunches. How many bunches in all?", hi:"गस 6 भुट्टे और बहन 2 भुट्टे बेचती है। कुल कितने बेचे?", opts:["8 bunches","7 bunches","4 bunches","10 bunches"], ans:0, expl:"6 + 2 = 8 bunches।" },
-      { id:20, unit:'prop', label:'Unit 01: Addition Properties', q:"There is a number between 26 and 29. It has a 7 in the ones place. What is it?", hi:"26 और 29 के बीच वह संख्या जिसका इकाई अंक 7 है:", opts:["27","28","26","29"], ans:0, expl:"26 और 29 के बीच 27 आता है।" },
-      { id:21, unit:'prop', label:'Unit 01: Addition Properties', q:"Toy cars: Red is behind black. Black is behind yellow. Which car is in front?", hi:"लाल काली के पीछे है, काली पीली के पीछे है। सबसे आगे कौन सी है?", opts:["The Yellow car","The Black car","The Red car","The Green car"], ans:0, expl:"पीली कार सबसे आगे है।" },
-      { id:22, unit:'count', label:'Unit 02: Count On', q:"Mae has 4 apples and 13 grapes. How many more grapes does she have?", hi:"4 सेब और 13 अंगूर। अंगूर कितने अधिक हैं?", opts:["9 more grapes (13 - 4 = 9)","8 more grapes","17 more grapes","10 more grapes"], ans:0, expl:"13 - 4 = 9 अधिक अंगूर।" },
-      { id:23, unit:'count', label:'Unit 02: Count On', q:"Tom sees 4 ducks. 1 more joins them. How many ducks are there now?", hi:"4 बत्तखें थीं, 1 और आ गई। अब कितनी हैं?", opts:["5 ducks (4 + 1 = 5)","4 ducks","6 ducks","3 ducks"], ans:0, expl:"4 + 1 = 5 बत्तखें।" },
-      { id:24, unit:'count', label:'Unit 02: Count On', q:"Betty and Josh walked 12 miles. Betty walked on 3 more miles. How many miles did Betty walk?", hi:"12 मील साथ चले, फिर बेट्टी 3 मील और चली। बेट्टी कुल कितने मील चली?", opts:["15 miles (12 + 3 = 15)","14 miles","16 miles","9 miles"], ans:0, expl:"12 + 3 = 15 मील।" },
-      { id:25, unit:'prop', label:'Unit 01: Addition Properties', q:"3 dolls: white, blue, red. White is not tallest. Blue is shortest. Which is tallest?", hi:"सफेद सबसे लंबी नहीं है, नीली सबसे छोटी है। सबसे लंबी कौन सी है?", opts:["The Red doll","The White doll","The Blue doll","All equal"], ans:0, expl:"लाल गुड़िया सबसे लंबी है।" },
-      { id:26, unit:'prop', label:'Unit 01: Addition Properties', q:"Which fact is related to 6 + 2 = 8 by the order property?", hi:"6 + 2 = 8 का संबंधित क्रम तथ्य क्या है?", opts:["2 + 6 = 8","6 - 2 = 4","8 - 2 = 6","6 + 6 = 12"], ans:0, expl:"2 + 6 = 8।" },
-      { id:27, unit:'prop', label:'Unit 01: Addition Properties', q:"If 9 + 0 = 9, what is 0 + 9?", hi:"यदि 9 + 0 = 9 है, तो 0 + 9 क्या है?", opts:["9","0","90","19"], ans:0, expl:"0 + 9 = 9।" },
-      { id:28, unit:'count', label:'Unit 02: Count On', q:"Count on: 4 + 3 = ___", hi:"आगे गिनें: 4 + 3 = ___", opts:["7","6","8","1"], ans:0, expl:"4 से 3 आगे: 5, 6, 7।" },
-      { id:29, unit:'count', label:'Unit 02: Count On', q:"Count on: 2 + 8 = ___", hi:"आगे गिनें: 2 + 8 = ___", opts:["10","8","9","11"], ans:0, expl:"8 से 2 आगे: 9, 10।" },
-      { id:30, unit:'prop', label:'Unit 01: Addition Properties', q:"Why does changing the order of two numbers in addition not change the sum?", hi:"जोड़ में क्रम बदलने से उत्तर क्यों नहीं बदलता?", opts:["Because the total quantity remains exactly the same (Commutative Property)","Because addition makes numbers zero","Because numbers get smaller when flipped","Because order only matters in subtraction"], ans:0, expl:"कुल वस्तुओं की संख्या वही रहती है।" }
+      { id: 1, unit: 'tens', label: 'Sheet 1 · Prob 1', q: "Write how many tens and ones in 23: 23 = ___ tens ___ ones?", hi: "23 में कितनी दहाई और कितनी इकाई हैं?", opts: ["2 tens and 3 ones", "3 tens and 2 ones", "20 tens and 3 ones", "2 tens and 30 ones"], ans: 0, expl: "वर्कशीट 1 के अनुसार: 23 = 2 tens 3 ones (2 tens + 3 ones = 23)!" },
+      { id: 2, unit: 'tens', label: 'Sheet 1 · Prob 2', q: "57 = ___ tens ___ ones. What are the missing numbers?", hi: "57 में दहाई और इकाई के सही अंक क्या हैं?", opts: ["7 tens 5 ones", "5 tens 7 ones", "50 tens 7 ones", "5 tens 70 ones"], ans: 1, expl: "वर्कशीट 1 के अनुसार: 57 = 5 tens 7 ones (5 दहाई + 7 इकाई = 57)!" },
+      { id: 3, unit: 'mary', label: 'Sheet 1 · Prob 3', q: "Mary puts her buttons in 2 groups of ten. She has 4 left over. How many buttons does she have in all?", hi: "मैरी अपने बटनों को 10-10 के 2 समूहों में रखती है और 4 बटन बच जाते हैं। उसके पास कुल कितने बटन हैं?", opts: ["20 buttons", "24 buttons", "42 buttons", "6 buttons"], ans: 1, expl: "2 groups of ten = 20, plus 4 left over = 4. 20 + 4 = 24 buttons!" },
+      { id: 4, unit: 'ben', label: 'Sheet 1 · Prob 4', q: "Ben has a sheet of 60 stamps. He cuts the sheet apart into groups of 10. How many groups of 10 does he have?", hi: "बेन के पास 60 डाक टिकटों की एक शीट है। वह इसे 10-10 के समूहों में काटता है। उसके पास 10-10 के कितने समूह हैं?", opts: ["6 groups of 10", "60 groups of 10", "10 groups of 6", "5 groups of 10"], ans: 0, expl: "60 = 6 tens, इसलिए बेन के पास 10-10 के 6 समूह (6 groups of 10) हैं!" },
+      { id: 5, unit: 'peas', label: 'Sheet 2 · Prob 1', q: "How many peas? Picture shows 3 pea pods (10 peas each) and 4 loose peas. What is the addition sentence?", hi: "3 मटर की फली (प्रत्येक में 10 मटर) और 4 खुले मटर हैं। जोड़ का सही वाक्य क्या होगा?", opts: ["3 + 4 = 7", "30 + 4 = 34", "30 + 40 = 70", "3 + 40 = 43"], ans: 1, expl: "3 pods of 10 = 30. 4 loose peas = 4. Addition sentence: 30 + 4 = 34!" },
+      { id: 6, unit: 'apples', label: 'Sheet 2 · Prob 2', q: "How many apples? Picture shows 2 bags of apples (10 in each bag) and 5 loose apples. What is the total?", hi: "सेब के 2 बैग हैं (प्रत्येक में 10 सेब) और 5 खुले सेब हैं। कुल कितने सेब हैं?", opts: ["25 apples (20 + 5 = 25)", "20 apples", "15 apples", "7 apples"], ans: 0, expl: "2 bags of 10 = 20. 5 loose apples = 5. Addition sentence: 20 + 5 = 25 apples!" },
+      { id: 7, unit: 'vic', label: 'Sheet 2 · Prob 3', q: "Vic uses cubes to show 7 tens and 5 ones. What number does he show?", hi: "विक क्यूब्स की मदद से 7 दहाई और 5 इकाई दर्शाता है। वह कौन सी संख्या दिखा रहा है?", opts: ["57", "75 (70 + 5 = 75)", "705", "12"], ans: 1, expl: "7 tens = 70, 5 ones = 5. Addition sentence: 70 + 5 = 75!" },
+      { id: 8, unit: 'steve', label: 'Sheet 2 · Prob 4', q: "Steve uses cubes to show 9 tens and 3 ones. What number does he show?", hi: "स्टीव 9 दहाई और 3 इकाई दिखाता है। वह कौन सी संख्या दिखा रहा है?", opts: ["39", "93 (90 + 3 = 93)", "903", "12"], ans: 1, expl: "9 tens = 90, 3 ones = 3. Addition sentence: 90 + 3 = 93!" },
+      { id: 9, unit: 'juice', label: 'Sheet 2 · Prob 5', q: "Mr. Hall has 3 packs of juice boxes. Each pack has 10 boxes. How many boxes of juice does he have?", hi: "मिस्टर हॉल के पास जूस बॉक्स के 3 पैक हैं। प्रत्येक पैक में 10 बॉक्स हैं। उनके पास कुल कितने बॉक्स हैं?", opts: ["10 + 10 + 10 = 30 boxes", "10 + 3 = 13 boxes", "3 + 10 = 30 boxes", "30 + 10 = 40 boxes"], ans: 0, expl: "3 packs of 10 boxes = 10 + 10 + 10 = 30 juice boxes!" },
+      { id: 10, unit: 'tens', label: 'Sheet 1 Chart', q: "In the place-value table, if tens is 2 and ones is 3, what is 2 tens + 3 ones?", hi: "तालिका में दहाई 2 और इकाई 3 है। 2 tens + 3 ones का मान क्या होगा?", opts: ["23", "32", "5", "203"], ans: 0, expl: "2 tens (20) + 3 ones (3) = 23!" },
+      { id: 11, unit: 'tens', label: 'Sheet 1 Chart', q: "In the place-value table, if tens is 5 and ones is 7, what is 5 tens + 7 ones?", hi: "तालिका में दहाई 5 और इकाई 7 है। 5 tens + 7 ones का मान क्या होगा?", opts: ["75", "57", "12", "507"], ans: 1, expl: "5 tens (50) + 7 ones (7) = 57!" },
+      { id: 12, unit: 'mary', label: 'Sheet 1 Variation', q: "Mary has 3 groups of ten buttons and 6 left over. What is her addition sentence?", hi: "यदि मैरी के पास 10-10 के 3 समूह और 6 खुले बटन हों, तो जोड़ का वाक्य क्या होगा?", opts: ["30 + 6 = 36", "3 + 6 = 9", "30 + 60 = 90", "3 + 60 = 63"], ans: 0, expl: "3 groups of 10 = 30, plus 6 = 36 buttons (30 + 6 = 36)!" },
+      { id: 13, unit: 'ben', label: 'Sheet 1 Variation', q: "Ben has a sheet of 40 stamps. If he cuts them into groups of 10, how many groups does he get?", hi: "यदि बेन के पास 40 टिकट हों और वह 10-10 के समूह बनाए, तो कितने समूह बनेंगे?", opts: ["4 groups of 10", "40 groups", "10 groups", "14 groups"], ans: 0, expl: "40 = 4 tens = 4 groups of 10!" },
+      { id: 14, unit: 'ben', label: 'Sheet 1 Variation', q: "Ben has a sheet of 80 stamps. How many groups of 10 are in 80 stamps?", hi: "80 टिकटों में 10-10 के कितने समूह होते हैं?", opts: ["8 groups of 10", "80 groups", "18 groups", "10 groups"], ans: 0, expl: "80 stamps = 8 tens = 8 groups of 10!" },
+      { id: 15, unit: 'peas', label: 'Sheet 2 Variation', q: "There are 5 pea pods (10 peas each) and 2 loose peas. How many peas in all?", hi: "5 मटर की फली (10 दाने प्रत्येक) और 2 खुले दाने हैं। कुल कितने मटर हैं?", opts: ["52 (50 + 2 = 52)", "25", "7", "502"], ans: 0, expl: "5 tens (50) + 2 ones (2) = 52 peas!" },
+      { id: 16, unit: 'apples', label: 'Sheet 2 Variation', q: "There are 4 bags of apples (10 in each) and 8 loose apples. What is the addition sentence?", hi: "सेब के 4 बैग (10 प्रत्येक) और 8 खुले सेब हैं। सही जोड़ वाक्य क्या होगा?", opts: ["40 + 8 = 48", "4 + 8 = 12", "40 + 80 = 120", "80 + 4 = 84"], ans: 0, expl: "4 bags of 10 = 40. 8 loose = 8. 40 + 8 = 48 apples!" },
+      { id: 17, unit: 'vic', label: 'Sheet 2 Variation', q: "Vic shows 6 tens and 1 one with cubes. What is his number?", hi: "विक 6 दहाई और 1 इकाई दिखाता है। उसकी संख्या क्या है?", opts: ["61", "16", "601", "7"], ans: 0, expl: "6 tens = 60, 1 one = 1. 60 + 1 = 61!" },
+      { id: 18, unit: 'steve', label: 'Sheet 2 Variation', q: "Steve shows 8 tens and 4 ones with cubes. What addition sentence represents this?", hi: "स्टीव 8 दहाई और 4 इकाई दिखाता है। इसका जोड़ वाक्य क्या है?", opts: ["80 + 4 = 84", "8 + 4 = 12", "40 + 8 = 48", "80 + 40 = 120"], ans: 0, expl: "8 tens = 80, 4 ones = 4. Addition sentence: 80 + 4 = 84!" },
+      { id: 19, unit: 'juice', label: 'Sheet 2 Variation', q: "Mr. Hall has 5 packs of juice boxes with 10 boxes in each pack. How many boxes in all?", hi: "मिस्टर हॉल के पास 10-10 बॉक्स वाले 5 पैक हैं। कुल कितने बॉक्स हैं?", opts: ["50 boxes (10+10+10+10+10 = 50)", "15 boxes", "5 boxes", "105 boxes"], ans: 0, expl: "5 packs of 10 = 10 + 10 + 10 + 10 + 10 = 50 juice boxes!" },
+      { id: 20, unit: 'juice', label: 'Sheet 2 Variation', q: "Mr. Hall has 2 packs of juice boxes (10 in each). What addition sentence shows this?", hi: "मिस्टर हॉल के पास 10-10 वाले 2 पैक हैं। सही जोड़ वाक्य चुनें:", opts: ["10 + 10 = 20", "2 + 10 = 12", "20 + 2 = 22", "10 + 2 = 12"], ans: 0, expl: "2 packs of 10 = 10 + 10 = 20 boxes!" },
+      { id: 21, unit: 'tens', label: 'Concept Review', q: "What does the digit 2 stand for in the number 23?", hi: "संख्या 23 में अंक 2 का क्या अर्थ है?", opts: ["2 tens (or 20)", "2 ones", "23 ones", "2 hundreds"], ans: 0, expl: "23 में अंक 2 दहाई (tens place) पर है, जिसका अर्थ 2 tens = 20 है!" },
+      { id: 22, unit: 'tens', label: 'Concept Review', q: "What does the digit 7 stand for in the number 57?", hi: "संख्या 57 में अंक 7 का क्या अर्थ है?", opts: ["7 ones (or 7)", "7 tens (70)", "57 ones", "7 hundreds"], ans: 0, expl: "57 में अंक 7 इकाई (ones place) पर है, जिसका अर्थ 7 ones = 7 है!" },
+      { id: 23, unit: 'tens', label: 'Tens Grouping', q: "How many ones make 1 ten?", hi: "कितनी इकाइयाँ मिलकर 1 दहाई (1 ten) बनाती हैं?", opts: ["10 ones", "1 one", "100 ones", "20 ones"], ans: 0, expl: "10 ones = 1 ten (10 इकाइयाँ = 1 दहाई)!" },
+      { id: 24, unit: 'mary', label: 'Sheet 1 Review', q: "If Mary had 2 groups of ten buttons and NO left over, how many buttons would she have?", hi: "यदि मैरी के पास 10-10 के 2 समूह हों और एक भी न बचे, तो कुल कितने बटन होंगे?", opts: ["20 buttons", "2 buttons", "10 buttons", "200 buttons"], ans: 0, expl: "2 groups of ten = 2 tens + 0 ones = 20 buttons!" },
+      { id: 25, unit: 'ben', label: 'Sheet 1 Review', q: "How many tens are in the number 60?", hi: "संख्या 60 में कितनी दहाई (tens) होती हैं?", opts: ["6 tens", "60 tens", "0 tens", "16 tens"], ans: 0, expl: "60 = 6 tens and 0 ones (6 दहाई)!" },
+      { id: 26, unit: 'apples', label: 'Sheet 2 Review', q: "Which addition sentence matches 2 bags of 10 apples and 3 loose apples?", hi: "2 बैग (10 सेब प्रत्येक) और 3 खुले सेब के लिए सही वाक्य क्या है?", opts: ["20 + 3 = 23", "2 + 3 = 5", "20 + 30 = 50", "30 + 2 = 32"], ans: 0, expl: "2 tens = 20, 3 ones = 3 ➔ 20 + 3 = 23 apples!" },
+      { id: 27, unit: 'peas', label: 'Sheet 2 Review', q: "Which addition sentence matches 4 pods of 10 peas and 1 loose pea?", hi: "4 फली (10 दाने प्रत्येक) और 1 खुले दाने के लिए सही वाक्य क्या है?", opts: ["40 + 1 = 41", "4 + 1 = 5", "40 + 10 = 50", "10 + 4 = 14"], ans: 0, expl: "4 tens = 40, 1 one = 1 ➔ 40 + 1 = 41 peas!" },
+      { id: 28, unit: 'vic', label: 'Sheet 2 Review', q: "Vic shows 3 tens and 9 ones. What is his number?", hi: "विक 3 दहाई और 9 इकाई दिखाता है। संख्या क्या है?", opts: ["39", "93", "309", "12"], ans: 0, expl: "3 tens (30) + 9 ones (9) = 39!" },
+      { id: 29, unit: 'steve', label: 'Sheet 2 Review', q: "Steve shows 4 tens and 4 ones. What is his number?", hi: "स्टीव 4 दहाई और 4 इकाई दिखाता है। संख्या क्या है?", opts: ["44", "8", "404", "40"], ans: 0, expl: "4 tens (40) + 4 ones (4) = 44!" },
+      { id: 30, unit: 'juice', label: 'Sheet 2 Review', q: "Mr. Hall has 4 packs of juice boxes (10 in each). What is the total count?", hi: "मिस्टर हॉल के पास 10-10 वाले 4 पैक हैं। कुल कितने जूस बॉक्स हैं?", opts: ["40 boxes (10+10+10+10 = 40)", "14 boxes", "4 boxes", "400 boxes"], ans: 0, expl: "4 packs of 10 = 10 + 10 + 10 + 10 = 40 juice boxes!" }
     ];
 
-    // TEST 02 (30 Questions - Doubles & Near Doubles)
+    // TEST 02: 30 Questions (Place Value to 100 & Value of Digits)
     const test02 = [
-      { id:1, unit:'doub', label:'Unit 03: Doubles', q:"Terry cut 8 white snowflakes and Derek cut 8 blue snowflakes. Total snowflakes?", hi:"टेरी ने 8 सफेद और डेरेक ने 8 नीले स्नोफ्लेक्स काटे। कुल कितने बने?", opts:["8 + 8 = 16 snowflakes","8 + 1 = 9 snowflakes","8 + 7 = 15 snowflakes","8 + 8 = 18 snowflakes"], ans:0, expl:"Doubles Fact: 8 + 8 = 16।" },
-      { id:2, unit:'doub', label:'Unit 03: Doubles', q:"Mr. Bean sells 5 melons to Ed and 5 melons to Jose. Total melons sold?", hi:"एड को 5 और जोस को 5 खरबूजे बेचे। कुल कितने बेचे?", opts:["5 + 5 = 10 melons","5 + 4 = 9 melons","5 + 6 = 11 melons","5 + 0 = 5 melons"], ans:0, expl:"5 + 5 = 10 खरबूजे।" },
-      { id:3, unit:'doub', label:'Unit 03: Doubles', q:"Carmen has 6 cards and Miguel has an equal number. Total cards?", hi:"कारमेन के पास 6 और मिगुएल के पास भी 6 कार्ड हैं। कुल कितने कार्ड हैं?", opts:["6 + 6 = 12 cards","6 + 5 = 11 cards","6 + 7 = 13 cards","6 + 1 = 7 cards"], ans:0, expl:"6 + 6 = 12 कार्ड।" },
-      { id:4, unit:'doub', label:'Unit 03: Doubles', q:"Lisa finds 9 markers in room and 9 in kitchen. Total markers found?", hi:"कमरे में 9 और रसोई में 9 मार्कर मिले। कुल कितने मिले?", opts:["9 + 9 = 18 markers","9 + 8 = 17 markers","9 + 10 = 19 markers","9 + 0 = 9 markers"], ans:0, expl:"9 + 9 = 18 मार्कर।" },
-      { id:5, unit:'doub', label:'Unit 03: Doubles', q:"Paula rides bus to school for 7 blocks and rides home for 7 blocks. Total blocks?", hi:"स्कूल जाने के 7 ब्लॉक और आने के 7 ब्लॉक। कुल कितने ब्लॉक?", opts:["7 + 7 = 14 blocks","7 + 6 = 13 blocks","7 + 8 = 15 blocks","7 + 1 = 8 blocks"], ans:0, expl:"7 + 7 = 14 ब्लॉक।" },
-      { id:6, unit:'doub', label:'Unit 03: Doubles', q:"A rug holds 4 pairs of boots. How many individual boots fit? (1 pair = 2 boots)", hi:"4 जोड़ी बूट। कुल कितने बूट आएंगे? (4 + 4)", opts:["4 + 4 = 8 boots","4 + 2 = 6 boots","4 + 1 = 5 boots","2 + 2 = 4 boots"], ans:0, expl:"4 + 4 = 8 बूट।" },
-      { id:7, unit:'doub', label:'Unit 03: Doubles', q:"Dan used 3 stamps and mom used 3 more. Total stamps used?", hi:"डैन ने 3 और माँ ने 3 टिकटें लगाईं। कुल कितनी टिकटें?", opts:["3 + 3 = 6 stamps","3 + 2 = 5 stamps","3 + 4 = 7 stamps","3 + 0 = 3 stamps"], ans:0, expl:"3 + 3 = 6 टिकटें।" },
-      { id:8, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 7 + 6 = ___", hi:"नियर डबल 7 + 6 का मान क्या है?", opts:["13 (Think: 6 + 6 = 12, then 12 + 1 = 13)","14","12","15"], ans:0, expl:"6 + 6 = 12 ➔ 12 + 1 = 13।" },
-      { id:9, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 8 + 9 = ___", hi:"नियर डबल 8 + 9 का मान क्या है?", opts:["17 (Think: 8 + 8 = 16, then 16 + 1 = 17)","16","18","19"], ans:0, expl:"8 + 8 = 16 ➔ 16 + 1 = 17।" },
-      { id:10, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 6 + 5 = ___", hi:"नियर डबल 6 + 5 का मान क्या है?", opts:["11 (Think: 5 + 5 = 10, then 10 + 1 = 11)","12","10","13"], ans:0, expl:"5 + 5 = 10 ➔ 10 + 1 = 11।" },
-      { id:11, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 7 + 8 = ___", hi:"नियर डबल 7 + 8 का मान क्या है?", opts:["15 (Think: 7 + 7 = 14, then 14 + 1 = 15)","14","16","17"], ans:0, expl:"7 + 7 = 14 ➔ 14 + 1 = 15।" },
-      { id:12, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 4 + 3 = ___", hi:"नियर डबल 4 + 3 का मान क्या है?", opts:["7 (Think: 3 + 3 = 6, then 6 + 1 = 7)","6","8","5"], ans:0, expl:"3 + 3 = 6 ➔ 6 + 1 = 7।" },
-      { id:13, unit:'doub', label:'Unit 03: Doubles', q:"Solve near double: 5 + 4 = ___", hi:"नियर डबल 5 + 4 का मान क्या है?", opts:["9 (Think: 4 + 4 = 8, then 8 + 1 = 9)","8","10","7"], ans:0, expl:"4 + 4 = 8 ➔ 8 + 1 = 9।" },
-      { id:14, unit:'doub', label:'Unit 03: Doubles', q:"Vik gets $8. Anya mows grass and gets a dollar more ($9). Total dollars Vik and Anya get?", hi:"विक को $8 मिले और अन्या को $1 अधिक ($9)। कुल कितने डॉलर?", opts:["8 + 9 = 17 dollars","8 + 8 = 16 dollars","9 + 9 = 18 dollars","8 + 1 = 9 dollars"], ans:0, expl:"Near Doubles: 8 + 9 = 17 डॉलर।" },
-      { id:15, unit:'doub', label:'Unit 03: Doubles', q:"Marlene washes 7 pairs jeans on Tue and 1 less pair on Thu (6 pairs). Total jeans?", hi:"मंगलवार को 7 और गुरुवार को 6 जोड़ी जींस। कुल कितनी जींस?", opts:["7 + 6 = 13 pairs of jeans","7 + 7 = 14 pairs of jeans","6 + 6 = 12 pairs of jeans","7 - 1 = 6 pairs of jeans"], ans:0, expl:"Near Doubles: 7 + 6 = 13 जोड़ी।" },
-      { id:16, unit:'doub', label:'Unit 03: Doubles', q:"Scotty finds 2 doubles facts for 7 + 6. What are they?", hi:"स्कॉटी 7 + 6 के लिए कौन से दो डबल्स तथ्य लिख सकता है?", opts:["6 + 6 + 1 = 13 and 7 + 7 - 1 = 13","6 + 6 = 12 and 7 + 7 = 14","7 + 0 = 7 and 6 + 0 = 6","10 + 3 = 13 and 8 + 5 = 13"], ans:0, expl:"(6 + 6) + 1 = 13 और (7 + 7) - 1 = 13।" },
-      { id:17, unit:'doub', label:'Unit 03: Doubles', q:"Chris buys 9 juice boxes. Allen buys 1 less box (8). Total juice boxes?", hi:"क्रिस 9 और एलन 1 कम (8) डिब्बे खरीदता है। कुल कितने डिब्बे?", opts:["9 + 8 = 17 boxes","9 + 9 = 18 boxes","8 + 8 = 16 boxes","9 - 1 = 8 boxes"], ans:0, expl:"9 + 8 = 17 डिब्बे।" },
-      { id:18, unit:'doub', label:'Unit 03: Doubles', q:"One store gives 6 mitts. Another gives 1 more mitt (7). Total mitts?", hi:"एक दुकान 6 और दूसरी 7 ग्लव्स देती है। कुल कितने?", opts:["6 + 7 = 13 mitts","6 + 6 = 12 mitts","7 + 7 = 14 mitts","6 + 1 = 7 mitts"], ans:0, expl:"6 + 7 = 13 ग्लव्स।" },
-      { id:19, unit:'doub', label:'Unit 03: Doubles', q:"Mr. Gomez buys 4 bats. Mr. Moore buys 1 more bat (5). Total bats?", hi:"गोमेज 4 और मूर 5 बल्ले खरीदते हैं। कुल कितने बल्ले?", opts:["4 + 5 = 9 bats","4 + 4 = 8 bats","5 + 5 = 10 bats","4 + 1 = 5 bats"], ans:0, expl:"4 + 5 = 9 बल्ले।" },
-      { id:20, unit:'doub', label:'Unit 03: Doubles', q:"Reed family buys 7 tickets on Wed and 8 tickets on Thu. Total tickets?", hi:"बुधवार को 7 और गुरुवार को 8 टिकट। कुल कितने टिकट?", opts:["7 + 8 = 15 tickets","7 + 7 = 14 tickets","8 + 8 = 16 tickets","7 + 1 = 8 tickets"], ans:0, expl:"7 + 8 = 15 टिकट।" },
-      { id:21, unit:'doub', label:'Unit 03: Doubles', q:"Tigers made 1 more goal than last year (8 goals). Total goals in both years?", hi:"पिछले साल 8 और इस साल 1 ज्यादा (9)। दोनों साल में कुल कितने गोल?", opts:["8 + 9 = 17 goals","8 + 8 = 16 goals","9 + 9 = 18 goals","8 + 1 = 9 goals"], ans:0, expl:"8 + 9 = 17 गोल।" },
-      { id:22, unit:'doub', label:'Unit 03: Doubles', q:"7 pairs of twins in 4th grade. How many students are twins?", hi:"4थी कक्षा में 7 जोड़ी जुड़वाँ बच्चे हैं। कुल कितने जुड़वाँ छात्र हैं?", opts:["7 + 7 = 14 students","7 + 1 = 8 students","7 + 6 = 13 students","7 + 2 = 9 students"], ans:0, expl:"7 + 7 = 14 छात्र।" },
-      { id:23, unit:'doub', label:'Unit 03: Doubles', q:"Mel sold 10 pairs of shoes. How many individual shoes? (1 pair = 2 shoes)", hi:"10 जोड़ी जूते बेचे। कुल कितने जूते बेचे? (10 + 10)", opts:["10 + 10 = 20 shoes","10 + 2 = 12 shoes","10 + 1 = 11 shoes","10 - 2 = 8 shoes"], ans:0, expl:"10 + 10 = 20 जूते।" },
-      { id:24, unit:'doub', label:'Unit 03: Doubles', q:"Which is an exact DOUBLES fact?", hi:"इनमें से कौन सा डबल्स तथ्य है?", opts:["6 + 6 = 12","6 + 5 = 11","7 + 4 = 11","9 + 3 = 12"], ans:0, expl:"6 + 6 = 12।" },
-      { id:25, unit:'doub', label:'Unit 03: Doubles', q:"Which is a NEAR DOUBLES fact?", hi:"इनमें से कौन सा नियर डबल्स तथ्य है?", opts:["8 + 9 = 17","8 + 8 = 16","8 + 2 = 10","8 + 0 = 8"], ans:0, expl:"8 और 9 पास-पास हैं: 8 + 9 = 17।" },
-      { id:26, unit:'doub', label:'Unit 03: Doubles', q:"If 9 + 9 = 18, how can you quickly solve 9 + 8?", hi:"यदि 9 + 9 = 18 है, तो 9 + 8 कैसे निकालेंगे?", opts:["Subtract 1 from 18 to get 17","Add 1 to 18 to get 19","Multiply 9 by 8","Subtract 8 from 9"], ans:0, expl:"18 - 1 = 17।" },
-      { id:27, unit:'doub', label:'Unit 03: Doubles', q:"What is 8 + 8?", hi:"8 + 8 क्या है?", opts:["16","15","17","18"], ans:0, expl:"8 + 8 = 16।" },
-      { id:28, unit:'doub', label:'Unit 03: Doubles', q:"What is 7 + 7?", hi:"7 + 7 क्या है?", opts:["14","13","15","16"], ans:0, expl:"7 + 7 = 14।" },
-      { id:29, unit:'doub', label:'Unit 03: Doubles', q:"If 5 + 5 = 10, what is 5 + 6?", hi:"यदि 5 + 5 = 10 है, तो 5 + 6 क्या है?", opts:["11 (10 + 1 = 11)","10","12","9"], ans:0, expl:"10 + 1 = 11।" },
-      { id:30, unit:'doub', label:'Unit 03: Doubles', q:"What is 8 + 10?", hi:"8 + 10 क्या है?", opts:["18","17","19","80"], ans:0, expl:"10 + 8 = 18।" }
+      { id: 1, unit: 'pv', label: 'Sheet 3 · Prob 1', q: "In 73, what is the value of the underlined digit 7 in <u>7</u>3? (Circle: 7 or 70)", hi: "73 में अंडरलाइन अंक 7 का मान क्या है? (7 या 70)", opts: ["70", "7", "73", "0"], ans: 0, expl: "अंक 7 दहाई (tens place) पर है, इसलिए 7 tens = 70!" },
+      { id: 2, unit: 'pv', label: 'Sheet 3 · Prob 1', q: "In 54, what is the value of the underlined digit 4 in 5<u>4</u>? (Circle: 4 or 40)", hi: "54 में अंडरलाइन अंक 4 का मान क्या है? (4 या 40)", opts: ["4", "40", "54", "14"], ans: 0, expl: "अंक 4 इकाई (ones place) पर है, इसलिए इसका मान 4 है!" },
+      { id: 3, unit: 'pv', label: 'Sheet 3 · Prob 1', q: "In 95, what is the value of the underlined digit 5 in 9<u>5</u>? (Circle: 5 or 50)", hi: "95 में अंडरलाइन अंक 5 का मान क्या है? (5 या 50)", opts: ["5", "50", "95", "9"], ans: 0, expl: "अंक 5 इकाई (ones place) पर है, इसलिए इसका मान 5 है!" },
+      { id: 4, unit: 'pv', label: 'Sheet 3 · Prob 2', q: "In 13, what is the value of the underlined digit 1 in <u>1</u>3? (Circle: 1 or 10)", hi: "13 में अंडरलाइन अंक 1 का मान क्या है? (1 या 10)", opts: ["10", "1", "13", "3"], ans: 0, expl: "अंक 1 दहाई (tens place) पर है, इसलिए 1 ten = 10!" },
+      { id: 5, unit: 'pv', label: 'Sheet 3 · Prob 2', q: "In 37, what is the value of the underlined digit 3 in <u>3</u>7? (Circle: 3 or 30)", hi: "37 में अंडरलाइन अंक 3 का मान क्या है? (3 या 30)", opts: ["30", "3", "37", "7"], ans: 0, expl: "अंक 3 दहाई पर है, इसलिए 3 tens = 30!" },
+      { id: 6, unit: 'pv', label: 'Sheet 3 · Prob 2', q: "In 83, what is the value of the underlined digit 3 in 8<u>3</u>? (Circle: 3 or 30)", hi: "83 में अंडरलाइन अंक 3 का मान क्या है? (3 या 30)", opts: ["3", "30", "83", "8"], ans: 0, expl: "अंक 3 इकाई पर है, इसलिए इसका मान केवल 3 है!" },
+      { id: 7, unit: 'pv', label: 'Sheet 3 · Prob 3', q: "In 47, what is the value of the underlined digit 7 in 4<u>7</u>? (Circle: 7 or 70)", hi: "47 में अंडरलाइन अंक 7 का मान क्या है? (7 या 70)", opts: ["7", "70", "47", "4"], ans: 0, expl: "अंक 7 इकाई पर है, इसलिए मान 7 है!" },
+      { id: 8, unit: 'pv', label: 'Sheet 3 · Prob 3', q: "In 87, what is the value of the underlined digit 7 in 8<u>7</u>? (Circle: 7 or 70)", hi: "87 में अंडरलाइन अंक 7 का मान क्या है? (7 या 70)", opts: ["7", "70", "87", "8"], ans: 0, expl: "अंक 7 इकाई पर है, इसलिए मान 7 है!" },
+      { id: 9, unit: 'pv', label: 'Sheet 3 · Prob 3', q: "In 31, what is the value of the underlined digit 3 in <u>3</u>1? (Circle: 3 or 30)", hi: "31 में अंडरलाइन अंक 3 का मान क्या है? (3 या 30)", opts: ["30", "3", "31", "1"], ans: 0, expl: "अंक 3 दहाई पर है, इसलिए 3 tens = 30!" },
+      { id: 10, unit: 'pv', label: 'Sheet 3 · Prob 4', q: "In 17, what is the value of the underlined digit 1 in <u>1</u>7? (Circle: 1 or 10)", hi: "17 में अंडरलाइन अंक 1 का मान क्या है? (1 या 10)", opts: ["10", "1", "17", "7"], ans: 0, expl: "अंक 1 दहाई पर है, इसलिए 1 ten = 10!" },
+      { id: 11, unit: 'pv', label: 'Sheet 3 · Prob 4', q: "In 25, what is the value of the underlined digit 5 in 2<u>5</u>? (Circle: 5 or 50)", hi: "25 में अंडरलाइन अंक 5 का मान क्या है? (5 या 50)", opts: ["5", "50", "25", "2"], ans: 0, expl: "अंक 5 इकाई पर है, इसलिए मान 5 है!" },
+      { id: 12, unit: 'pv', label: 'Sheet 3 · Prob 4', q: "In 94, what is the value of the underlined digit 9 in <u>9</u>4? (Circle: 9 or 90)", hi: "94 में अंडरलाइन अंक 9 का मान क्या है? (9 या 90)", opts: ["90", "9", "94", "4"], ans: 0, expl: "अंक 9 दहाई पर है, इसलिए 9 tens = 90!" },
+      { id: 13, unit: 'compare', label: 'Sheet 3 · Prob 5', q: "A bookcase has 43 books. There are 34 students in the class. Are there enough books for the students? How do you know?", hi: "बुककेस में 43 किताबें हैं और कक्षा में 34 छात्र हैं। क्या सभी छात्रों के लिए पर्याप्त किताबें हैं?", opts: ["Yes, because 43 > 34 (4 tens > 3 tens)", "No, because 34 > 43", "No, because they are equal", "Cannot be determined"], ans: 0, expl: "43 में 4 tens हैं और 34 में 3 tens हैं। 4 tens > 3 tens (43 > 34), इसलिए हाँ, पर्याप्त किताबें हैं!" },
+      { id: 14, unit: 'compare', label: 'Sheet 3 · Prob 6', q: "There are 75 children in the concert. There are 8 boxes of song books with 10 books in each box. Is there a book for each child?", hi: "कंसर्ट में 75 बच्चे हैं। गानों की किताबों के 8 बॉक्स हैं (प्रत्येक में 10 किताबें)। क्या हर बच्चे के लिए एक किताब है?", opts: ["Yes, 8 boxes of 10 = 80 books, and 80 > 75", "No, because 8 < 75", "No, because 80 < 75", "Yes, exactly 75 books"], ans: 0, expl: "8 boxes of 10 books = 8 tens = 80 books. चूँकि 80 > 75, इसलिए हर बच्चे को किताब मिलेगी!" },
+      { id: 15, unit: 'pv', label: 'Sheet 3 Extra', q: "What is the value of the underlined digit in <u>5</u>0?", hi: "50 में अंडरलाइन अंक 5 का मान क्या है?", opts: ["50 (5 tens = 50)", "5", "0", "500"], ans: 0, expl: "अंक 5 दहाई पर है, इसलिए 5 tens = 50!" },
+      { id: 16, unit: 'pv', label: 'Sheet 3 Extra', q: "What is the value of the underlined digit in 5<u>0</u>?", hi: "50 में अंडरलाइन अंक 0 का मान क्या है?", opts: ["0 (0 ones = 0)", "5", "50", "10"], ans: 0, expl: "अंक 0 इकाई पर है, इसलिए 0 ones = 0!" },
+      { id: 17, unit: 'pv', label: 'Sheet 3 Extra', q: "In which number does the digit 7 have a value of 70?", hi: "किस संख्या में अंक 7 का मान 70 है?", opts: ["73 (tens place)", "47 (ones place)", "87 (ones place)", "17 (ones place)"], ans: 0, expl: "73 में 7 दहाई (tens place) पर है, इसलिए इसका मान 70 है! बाकी सब में 7 इकाई पर है।" },
+      { id: 18, unit: 'pv', label: 'Sheet 3 Extra', q: "In which number does the digit 3 have a value of 3 (ones)?", hi: "किस संख्या में अंक 3 का मान केवल 3 (इकाई) है?", opts: ["83", "37", "31", "30"], ans: 0, expl: "83 में 3 इकाई (ones place) पर है, इसलिए इसका मान 3 है!" },
+      { id: 19, unit: 'pv', label: 'Sheet 3 Extra', q: "In which number does the digit 1 have a value of 10?", hi: "किस संख्या में अंक 1 का मान 10 है?", opts: ["13 and 17", "31", "81", "91"], ans: 0, expl: "13 और 17 दोनों में अंक 1 दहाई (tens place) पर है, इसलिए इसका मान 10 है!" },
+      { id: 20, unit: 'pv', label: 'Sheet 3 Extra', q: "In 95, how many tens and how many ones are there?", hi: "95 में कितनी दहाई और कितनी इकाई हैं?", opts: ["9 tens and 5 ones", "5 tens and 9 ones", "90 tens and 5 ones", "95 tens"], ans: 0, expl: "95 = 9 tens (90) + 5 ones (5)!" },
+      { id: 21, unit: 'compare', label: 'Sheet 3 Story', q: "Teacher has 52 pencils and 25 students. Does each student get at least one pencil? Why?", hi: "अध्यापक के पास 52 पेंसिलें और 25 छात्र हैं। क्या हर छात्र को पेंसिल मिलेगी? क्यों?", opts: ["Yes, because 52 > 25 (5 tens > 2 tens)", "No, because 25 > 52", "No, they need 100", "Cannot say"], ans: 0, expl: "52 में 5 tens हैं और 25 में 2 tens। 52 > 25, इसलिए हाँ, हर छात्र को पेंसिल मिलेगी!" },
+      { id: 22, unit: 'compare', label: 'Sheet 3 Story', q: "A store has 6 boxes of 10 crayons (= 60 crayons). A class needs 64 crayons. Are there enough crayons?", hi: "एक दुकान में 10-10 क्रेयॉन के 6 बॉक्स (60) हैं। क्लास को 64 क्रेयॉन चाहिए। क्या क्रेयॉन पर्याप्त हैं?", opts: ["No, 60 is less than 64", "Yes, 60 > 64", "Yes, exactly enough", "Cannot say"], ans: 0, expl: "6 boxes of 10 = 60 crayons. चूँकि 60 < 64, इसलिए 4 क्रेयॉन कम पड़ेंगे!" },
+      { id: 23, unit: 'pv', label: 'Sheet 3 Logic', q: "What is the value of the tens digit in 47?", hi: "संख्या 47 में दहाई के अंक (4) का मान क्या है?", opts: ["40", "4", "7", "47"], ans: 0, expl: "दहाई का अंक 4 है, जिसका मान 4 tens = 40 है!" },
+      { id: 24, unit: 'pv', label: 'Sheet 3 Logic', q: "What is the value of the ones digit in 87?", hi: "संख्या 87 में इकाई के अंक (7) का मान क्या है?", opts: ["7", "70", "80", "8"], ans: 0, expl: "इकाई का अंक 7 है, जिसका मान 7 ones = 7 है!" },
+      { id: 25, unit: 'pv', label: 'Sheet 3 Logic', q: "In <u>9</u>4, 9 tens equals what value?", hi: "94 में 9 दहाई का मान क्या होता है?", opts: ["90", "9", "94", "40"], ans: 0, expl: "9 tens = 90!" },
+      { id: 26, unit: 'pv', label: 'Sheet 3 Logic', q: "In 5<u>4</u>, 4 ones equals what value?", hi: "54 में 4 इकाई का मान क्या होता है?", opts: ["4", "40", "50", "14"], ans: 0, expl: "4 ones = 4!" },
+      { id: 27, unit: 'compare', label: 'Sheet 3 Review', q: "Which symbol correctly compares the bookcase problem: 43 ___ 34?", hi: "बुककेस प्रश्न की संख्याओं की सही तुलना क्या है: 43 ___ 34?", opts: ["> (43 is greater than 34)", "< (43 is less than 34)", "=", "+"], ans: 0, expl: "4 tens > 3 tens, अतः 43 > 34!" },
+      { id: 28, unit: 'compare', label: 'Sheet 3 Review', q: "How many books are in 8 boxes if each box holds 10 books?", hi: "यदि प्रत्येक बॉक्स में 10 किताबें हों, तो 8 बॉक्स में कुल कितनी किताबें होंगी?", opts: ["80 books (8 tens)", "18 books", "8 books", "800 books"], ans: 0, expl: "8 boxes × 10 = 80 books!" },
+      { id: 29, unit: 'pv', label: 'Sheet 3 Review', q: "What is the value of the underlined digit in <u>2</u>5?", hi: "25 में 2 का मान क्या है यदि वह अंडरलाइन हो: <u>2</u>5?", opts: ["20", "2", "25", "5"], ans: 0, expl: "अंक 2 दहाई पर है, इसलिए 2 tens = 20!" },
+      { id: 30, unit: 'pv', label: 'Sheet 3 Review', q: "What is the value of the underlined digit in <u>8</u>3?", hi: "83 में 8 का मान क्या है यदि वह अंडरलाइन हो: <u>8</u>3?", opts: ["80", "8", "83", "30"], ans: 0, expl: "अंक 8 दहाई पर है, इसलिए 8 tens = 80!" }
     ];
 
-    // TEST 03 (30 Questions - Make 10 & Adding 3 Numbers)
+    // TEST 03: 30 Questions (Place-Value Models, Rita, Drew, Digits 3 & 1, and Mr. Lo)
     const test03 = [
-      { id:1, unit:'ten', label:'Unit 04: Make 10', q:"Use 'Make 10' strategy: 8 + 5 = ___", hi:"'Make 10' नियम से जोड़ें: 8 + 5 = ___", opts:["13 (8 + 2 = 10, then 10 + 3 = 13)","12","14","15"], ans:0, expl:"8 + 2 = 10 ➔ 10 + 3 = 13।" },
-      { id:2, unit:'ten', label:'Unit 04: Make 10', q:"Use 'Make 10' strategy: 9 + 7 = ___", hi:"'Make 10' से जोड़ें: 9 + 7 = ___", opts:["16 (9 + 1 = 10, then 10 + 6 = 16)","15","17","18"], ans:0, expl:"9 + 1 = 10 ➔ 10 + 6 = 16।" },
-      { id:3, unit:'ten', label:'Unit 04: Make 10', q:"Use 'Make 10': 7 + 4 = ___", hi:"'Make 10' से 7 + 4 जोड़ें:", opts:["11 (7 + 3 = 10, then 10 + 1 = 11)","12","10","13"], ans:0, expl:"7 + 3 = 10 ➔ 10 + 1 = 11।" },
-      { id:4, unit:'ten', label:'Unit 04: Make 10', q:"Raul wins 8 chess matches on Sat and 5 on Sun. What two sentences show his wins?", hi:"राउल शनिवार को 8 और रविवार को 5 मैच जीतता है। दो जोड़ वाक्य बताएं:", opts:["8 + 5 = 13 and 10 + 3 = 13","8 + 5 = 13 and 8 + 10 = 18","8 + 2 = 10 and 10 + 5 = 15","8 + 5 = 12 and 10 + 2 = 12"], ans:0, expl:"8 + 5 = 13 और 10 + 3 = 13।" },
-      { id:5, unit:'ten', label:'Unit 04: Make 10', q:"Carla's team won 6 games last year and 9 this year. Make 10 sentences?", hi:"पिछले साल 6 और इस साल 9 मैच। Make 10 के दो वाक्य:", opts:["6 + 9 = 15 and 10 + 5 = 15","6 + 9 = 15 and 10 + 6 = 16","9 + 1 = 10 and 10 + 6 = 16","6 + 4 = 10 and 10 + 9 = 19"], ans:0, expl:"6 + 9 = 15 और 10 + 5 = 15।" },
-      { id:6, unit:'ten', label:'Unit 04: Make 10', q:"Mel bakes 6 loaves of bread. His sister bakes 8 loaves. Total loaves brought to bake sale?", hi:"मेल 6 रोटियाँ और बहन 8 रोटियाँ बनाती है। कुल कितनी रोटियाँ?", opts:["14 loaves (8 + 6 = 10 + 4 = 14)","12 loaves","15 loaves","16 loaves"], ans:0, expl:"8 + 6 = 14 रोटियाँ।" },
-      { id:7, unit:'ten', label:'Unit 04: Make 10', q:"Pauline's mom makes 7 pies and Ann's mom makes 9 pies. Total pies brought?", hi:"पॉलीन की माँ 7 और एन की माँ 9 पाई बनाती हैं। कुल कितनी पाई?", opts:["16 pies (9 + 7 = 10 + 6 = 16)","15 pies","17 pies","14 pies"], ans:0, expl:"9 + 7 = 16 पाई।" },
-      { id:8, unit:'ten', label:'Unit 04: Make 10', q:"Ms. Ling buys 5 boxes of red markers and 8 boxes of blue markers. Total boxes?", hi:"5 डिब्बे लाल और 8 डिब्बे नीले मार्कर। कुल कितने डिब्बे?", opts:["13 boxes of markers (8 + 5 = 10 + 3 = 13)","12 boxes","14 boxes","15 boxes"], ans:0, expl:"8 + 5 = 13 डिब्बे।" },
-      { id:9, unit:'ten', label:'Unit 04: Make 10', q:"Mrs. Quinn buys some pencils. Mr. Lopez buys 7 boxes. Together 15 boxes. Quinn bought?", hi:"श्री लोपेज़ 7 डिब्बे खरीदते हैं। दोनों ने कुल 15 खरीदे। श्रीमती क्विन ने कितने खरीदे?", opts:["8 boxes of pencils (15 - 7 = 8)","7 boxes","9 boxes","6 boxes"], ans:0, expl:"15 - 7 = 8 डिब्बे।" },
-      { id:10, unit:'ten', label:'Unit 04: Make 10', q:"David's class sent 9 letters. Both classes sent 17 letters in all. Ann's class sent?", hi:"डेविड की कक्षा ने 9 पत्र भेजे। कुल 17 पत्र भेजे गए। एन की कक्षा ने कितने भेजे?", opts:["8 letters (17 - 9 = 8)","9 letters","7 letters","10 letters"], ans:0, expl:"17 - 9 = 8 पत्र।" },
-      { id:11, unit:'ten', label:'Unit 04: Make 10', q:"Mrs. Han's class has 5 fish. Ms. Johnson's class has 9 fish. How many more fish?", hi:"हान की कक्षा में 5 और जॉनसन में 9 मछलियाँ। कितनी अधिक मछलियाँ हैं?", opts:["4 more fish (9 - 5 = 4)","5 more fish","14 fish","3 fish"], ans:0, expl:"9 - 5 = 4 अधिक मछलियाँ।" },
-      { id:12, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 6 + 5 + 4 = ___ (Make 10 first!)", hi:"जोड़ें: 6 + 5 + 4 = ___ (पहले 10 बनाएँ)", opts:["15 (Make 10: 6 + 4 = 10, then 10 + 5 = 15)","14","16","13"], ans:0, expl:"(6 + 4) = 10 ➔ 10 + 5 = 15।" },
-      { id:13, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 6 + 2 + 8 = ___", hi:"जोड़ें: 6 + 2 + 8 = ___", opts:["16 (Make 10: 2 + 8 = 10, then 10 + 6 = 16)","15","17","18"], ans:0, expl:"(2 + 8) = 10 ➔ 10 + 6 = 16।" },
-      { id:14, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 7 + 4 + 3 = ___", hi:"जोड़ें: 7 + 4 + 3 = ___", opts:["14 (Make 10: 7 + 3 = 10, then 10 + 4 = 14)","13","15","16"], ans:0, expl:"(7 + 3) = 10 ➔ 10 + 4 = 14।" },
-      { id:15, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 1 + 9 + 4 = ___", hi:"जोड़ें: 1 + 9 + 4 = ___", opts:["14 (Make 10: 1 + 9 = 10, then 10 + 4 = 14)","13","15","12"], ans:0, expl:"(1 + 9) = 10 ➔ 10 + 4 = 14।" },
-      { id:16, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 7 + 6 + 6 = ___ (Look for doubles first!)", hi:"जोड़ें: 7 + 6 + 6 = ___ (पहले डबल्स जोड़ें)", opts:["19 (Doubles: 6 + 6 = 12, then 12 + 7 = 19)","18","20","17"], ans:0, expl:"(6 + 6) = 12 ➔ 12 + 7 = 19।" },
-      { id:17, unit:'three', label:'Unit 04: 3 Numbers', q:"Find sum: 8 + 4 + 2 = ___", hi:"जोड़ें: 8 + 4 + 2 = ___", opts:["14 (Make 10: 8 + 2 = 10, then 10 + 4 = 14)","13","15","16"], ans:0, expl:"(8 + 2) = 10 ➔ 10 + 4 = 14।" },
-      { id:18, unit:'three', label:'Unit 04: 3 Numbers', q:"Benji has 6 fish. TJ has 7 fish and 3 dogs. Max has 4 fish. How many FISH in all?", hi:"बेंजी: 6 मछली, टीजे: 7 मछली व 3 कुत्ते, मैक्स: 4 मछली। कुल कितनी मछलियाँ?", opts:["17 fish (6 + 7 + 4 = 17; ignore 3 dogs)","20 animals","14 fish","10 fish"], ans:0, expl:"कुत्तों (3 dogs) को छोड़ दें: (6 + 4) + 7 = 17 मछलियाँ।" },
-      { id:19, unit:'three', label:'Unit 04: 3 Numbers', q:"Tanks: 5 guppies, 6 angel fish, 8 mollies. How many fish in all?", hi:"5 गप्पी, 6 एंजल फिश, 8 मॉली। कुल कितनी मछलियाँ?", opts:["19 fish (5 + 6 + 8 = 19)","18 fish","20 fish","17 fish"], ans:0, expl:"5 + 6 + 8 = 19 मछलियाँ।" },
-      { id:20, unit:'three', label:'Unit 04: 3 Numbers', q:"Zoo has 5 black bears, 5 brown bears, and 2 polar bears. Total bears?", hi:"5 काले भालू, 5 भूरे भालू, 2 ध्रुवीय भालू। कुल कितने भालू?", opts:["12 bears (5 + 5 = 10, then 10 + 2 = 12)","11 bears","13 bears","10 bears"], ans:0, expl:"(5 + 5) + 2 = 10 + 2 = 12 भालू।" },
-      { id:21, unit:'three', label:'Unit 04: 3 Numbers', q:"Baby zoo: 2 cubs playing, 3 cubs sleeping, 3 cubs eating. Total cubs?", hi:"2 खेल रहे, 3 सो रहे, 3 खा रहे। कुल कितने शावक?", opts:["8 cubs (Doubles: 3 + 3 = 6, then 6 + 2 = 8)","7 cubs","9 cubs","6 cubs"], ans:0, expl:"(3 + 3) + 2 = 6 + 2 = 8 शावक।" },
-      { id:22, unit:'three', label:'Unit 04: 3 Numbers', q:"Ellie feeds 3 lambs and 4 goats. Tom feeds 7 ducks. Total animals fed?", hi:"एली ने 3 मेमनों व 4 बकरियों को, टॉम ने 7 बत्तखों को खिलाया। कुल कितने जानवर?", opts:["14 animals (Make 10: 3 + 7 = 10, then 10 + 4 = 14)","13 animals","15 animals","10 animals"], ans:0, expl:"(3 + 7) + 4 = 10 + 4 = 14 जानवर।" },
-      { id:23, unit:'three', label:'Unit 04: 3 Numbers', q:"6 seals on high rocks, 4 seals and 3 seagulls on low rocks, 5 seals in water. Total SEALS?", hi:"6 सील ऊँची पर, 4 सील व 3 बगुले नीचे, 5 सील पानी में। कुल कितनी सील?", opts:["15 seals (6 + 4 + 5 = 15; ignore 3 seagulls)","18 animals","14 seals","10 seals"], ans:0, expl:"बगुलों (3 seagulls) को छोड़ें: (6 + 4) + 5 = 15 सील।" },
-      { id:24, unit:'three', label:'Unit 04: 3 Numbers', q:"Eric draws 1 lion, 6 birds, 1 tree, 2 houses, and 6 deer. Total ANIMALS drawn?", hi:"1 शेर, 6 पक्षी, 1 पेड़, 2 घर, 6 हिरण। कुल कितने जानवर?", opts:["13 animals (1 lion + 6 birds + 6 deer = 13)","16 things","12 animals","14 animals"], ans:0, expl:"पेड़ और घर जानवर नहीं हैं: 1 + (6 + 6) = 13 जानवर।" },
-      { id:25, unit:'three', label:'Unit 04: 3 Numbers', q:"9 boys, 3 teachers, 2 dogs, and 7 girls watching show. Total PEOPLE watching?", hi:"9 लड़के, 3 शिक्षक, 2 कुत्ते, 7 लड़कियाँ। कुल कितने लोग?", opts:["19 people (9 + 3 + 7 = 19; ignore 2 dogs)","21 including dogs","18 people","20 people"], ans:0, expl:"कुत्तों को छोड़ें: 9 + (3 + 7) = 19 लोग।" },
-      { id:26, unit:'three', label:'Unit 04: 3 Numbers', q:"Tracy read 4 books, Greg read 2, Buster read 6. Total books read by 3 friends?", hi:"ट्रेसी ने 4, ग्रेग ने 2, बस्टर ने 6 किताबें पढ़ीं। कुल कितनी पढ़ीं?", opts:["12 books (Make 10: 4 + 6 = 10, then 10 + 2 = 12)","11 books","13 books","10 books"], ans:0, expl:"(4 + 6) + 2 = 10 + 2 = 12 किताबें।" },
-      { id:27, unit:'three', label:'Unit 04: 3 Numbers', q:"Larry got 3 math games, 8 spelling games, 2 reading games. Total games?", hi:"3 गणित, 8 वर्तनी, 2 पढ़ने के खेल। कुल कितने खेल?", opts:["13 games (Make 10: 8 + 2 = 10, then 10 + 3 = 13)","12 games","14 games","15 games"], ans:0, expl:"(8 + 2) + 3 = 10 + 3 = 13 खेल।" },
-      { id:28, unit:'three', label:'Unit 04: 3 Numbers', q:"Shea watched 5 videos, Drew watched 4, Manuel watched 6. Total videos?", hi:"5 वीडियो, 4 वीडियो, 6 वीडियो। कुल कितने वीडियो?", opts:["15 videos (Make 10: 4 + 6 = 10, then 10 + 5 = 15)","14 videos","16 videos","13 videos"], ans:0, expl:"(4 + 6) + 5 = 10 + 5 = 15 वीडियो।" },
-      { id:29, unit:'three', label:'Unit 04: 3 Numbers', q:"Ms. Blaine put 8 books on top, 2 in middle, 8 on bottom. Total books?", hi:"शीर्ष पर 8, मध्य में 2, नीचे 8 किताबें रखीं। कुल कितनी?", opts:["18 books (Make 10: 8 + 2 = 10, then 10 + 8 = 18)","17 books","19 books","16 books"], ans:0, expl:"(8 + 2) + 8 = 10 + 8 = 18 किताबें।" },
-      { id:30, unit:'three', label:'Unit 04: 3 Numbers', q:"Library has 4 soft chairs, 7 wood chairs, 3 rocking chairs. Total chairs?", hi:"4 नरम, 7 लकड़ी, 3 रॉकिंग कुर्सियाँ। कुल कितनी कुर्सियाँ?", opts:["14 chairs (Make 10: 7 + 3 = 10, then 10 + 4 = 14)","13 chairs","15 chairs","12 chairs"], ans:0, expl:"(7 + 3) + 4 = 10 + 4 = 14 कुर्सियाँ।" }
+      { id: 1, unit: 'models', label: 'Sheet 4 · Prob 1', q: "Picture shows 6 tens rods and 1 unit cube. What is the value of the 6 in <u>6</u>1?", hi: "चित्र में 6 रॉड (10 वाली) और 1 क्यूब है। 61 में 6 का मान क्या है?", opts: ["60", "6", "61", "16"], ans: 0, expl: "वर्कशीट 4: 6 tens rods = 60. अंक 6 का मान 60 है!" },
+      { id: 2, unit: 'models', label: 'Sheet 4 · Prob 2', q: "Picture shows 5 tens rods and 2 unit cubes. What is the value of the 2 in 5<u>2</u>?", hi: "चित्र में 5 रॉड और 2 क्यूब हैं। 52 में 2 का मान क्या है?", opts: ["2", "20", "52", "50"], ans: 0, expl: "वर्कशीट 4: 2 unit cubes = 2. अंक 2 का मान 2 है!" },
+      { id: 3, unit: 'rita', label: 'Sheet 4 · Prob 3', q: "Rita shows the number 12 with place-value models. She uses 2 ones. How many tens does she use?", hi: "रीटा 12 को दर्शाने के लिए 2 इकाई क्यूब्स का उपयोग करती है। वह कितनी दहाई (tens) का उपयोग करेगी?", opts: ["1 ten", "2 tens", "10 tens", "12 tens"], ans: 0, expl: "12 = 1 ten + 2 ones. चूँकि उसने 2 ones लिए हैं, उसे 1 ten चाहिए!" },
+      { id: 4, unit: 'drew', label: 'Sheet 4 · Prob 4', q: "Drew shows the number 76 with place-value models. He uses 7 tens. How many ones does he use?", hi: "ड्रू 76 को दर्शाने के लिए 7 दहाई रॉड्स का उपयोग करता है। वह कितनी इकाई (ones) का उपयोग करेगा?", opts: ["6 ones", "7 ones", "76 ones", "60 ones"], ans: 0, expl: "76 = 7 tens + 6 ones. 7 tens उपयोग करने के बाद उसे 6 ones चाहिए!" },
+      { id: 5, unit: 'riddle', label: 'Sheet 4 · Prob 5', q: "Which two numbers use the digits 3 and 1?", hi: "अंक 3 और 1 का उपयोग करके कौन सी दो 2-अंकीय संख्याएँ बनती हैं?", opts: ["13 and 31", "3 and 1", "30 and 10", "33 and 11"], ans: 0, expl: "अंक 3 और 1 से दो संख्याएँ बनती हैं: 13 और 31!" },
+      { id: 6, unit: 'riddle', label: 'Sheet 4 · Prob 5', q: "Between 13 and 31, which of these numbers has 3 tens?", hi: "13 और 31 में से किस संख्या में 3 दहाई (3 tens) हैं?", opts: ["31 (3 tens and 1 one)", "13 (1 ten and 3 ones)", "Both", "Neither"], ans: 0, expl: "31 में 3 दहाई के स्थान पर है (3 tens = 30), जबकि 13 में केवल 1 ten है!" },
+      { id: 7, unit: 'mrlo', label: 'Sheet 4 · Prob 6', q: "Mr. Lo is thinking of a number. The ones digit is 8. The tens digit is 1. What is Mr. Lo's number?", hi: "मिस्टर लो एक संख्या सोच रहे हैं। इकाई का अंक 8 है और दहाई का अंक 1 है। मिस्टर लो की संख्या क्या है?", opts: ["18", "81", "88", "11"], ans: 0, expl: "Tens digit = 1 (10), Ones digit = 8 (8). संख्या = 18!" },
+      { id: 8, unit: 'models', label: 'Sheet 4 Variation', q: "If you have 4 tens rods and 7 unit cubes, what number do you show?", hi: "यदि आपके पास 4 दहाई रॉड और 7 इकाई क्यूब हों, तो कौन सी संख्या बनेगी?", opts: ["47", "74", "407", "11"], ans: 0, expl: "4 tens (40) + 7 ones (7) = 47!" },
+      { id: 9, unit: 'models', label: 'Sheet 4 Variation', q: "What is the value of 5 in <u>5</u>2?", hi: "संख्या 52 में 5 का मान क्या है?", opts: ["50", "5", "52", "20"], ans: 0, expl: "5 दहाई पर है, इसलिए 5 tens = 50!" },
+      { id: 10, unit: 'models', label: 'Sheet 4 Variation', q: "What is the value of 1 in 6<u>1</u>?", hi: "संख्या 61 में 1 का मान क्या है?", opts: ["1", "10", "60", "61"], ans: 0, expl: "1 इकाई पर है, इसलिए इसका मान 1 है!" },
+      { id: 11, unit: 'rita', label: 'Sheet 4 Variation', q: "Rita shows the number 35 with place-value models. She uses 5 ones. How many tens does she use?", hi: "रीटा 35 को दर्शाने के लिए 5 इकाई उपयोग करती है। वह कितनी दहाई का उपयोग करेगी?", opts: ["3 tens", "5 tens", "35 tens", "30 tens"], ans: 0, expl: "35 = 3 tens + 5 ones, अतः 3 tens!" },
+      { id: 12, unit: 'drew', label: 'Sheet 4 Variation', q: "Drew shows the number 84 with place-value models. He uses 8 tens. How many ones does he use?", hi: "ड्रू 84 को दर्शाने के लिए 8 दहाई उपयोग करता है। वह कितनी इकाई उपयोग करेगा?", opts: ["4 ones", "8 ones", "84 ones", "40 ones"], ans: 0, expl: "84 = 8 tens + 4 ones, अतः 4 ones!" },
+      { id: 13, unit: 'riddle', label: 'Sheet 4 Variation', q: "Which two numbers use the digits 4 and 2?", hi: "अंक 4 और 2 का उपयोग करके कौन सी दो संख्याएँ बनती हैं?", opts: ["24 and 42", "40 and 20", "6 and 2", "44 and 22"], ans: 0, expl: "अंक 4 और 2 से 24 और 42 बनते हैं!" },
+      { id: 14, unit: 'riddle', label: 'Sheet 4 Variation', q: "Between 24 and 42, which number has 4 tens?", hi: "24 और 42 में से किस संख्या में 4 दहाई (4 tens) हैं?", opts: ["42", "24", "Both", "None"], ans: 0, expl: "42 में 4 दहाई पर है (4 tens = 40)!" },
+      { id: 15, unit: 'mrlo', label: 'Sheet 4 Variation', q: "Mr. Lo is thinking of a number. The ones digit is 3. The tens digit is 6. What is Mr. Lo's number?", hi: "मिस्टर लो की संख्या में इकाई 3 है और दहाई 6 है। संख्या क्या है?", opts: ["63", "36", "603", "9"], ans: 0, expl: "Tens = 6, Ones = 3 ➔ संख्या 63 है!" },
+      { id: 16, unit: 'mrlo', label: 'Sheet 4 Variation', q: "A secret number has 9 tens and 0 ones. What is the number?", hi: "एक गुप्त संख्या में 9 दहाई और 0 इकाई हैं। संख्या क्या है?", opts: ["90", "9", "900", "19"], ans: 0, expl: "9 tens + 0 ones = 90!" },
+      { id: 17, unit: 'models', label: 'Base-Ten Rods', q: "How many unit cubes are inside 1 tens rod?", hi: "1 दहाई (tens rod) के अंदर कितने छोटे इकाई क्यूब होते हैं?", opts: ["10 unit cubes", "1 unit cube", "100 unit cubes", "20 unit cubes"], ans: 0, expl: "1 tens rod = 10 unit cubes!" },
+      { id: 18, unit: 'models', label: 'Base-Ten Rods', q: "To show 40, how many tens rods do you need?", hi: "संख्या 40 दर्शाने के लिए कितने tens rods की आवश्यकता होगी?", opts: ["4 tens rods", "40 tens rods", "10 tens rods", "1 tens rod"], ans: 0, expl: "40 = 4 tens, अतः 4 tens rods!" },
+      { id: 19, unit: 'rita', label: 'Sheet 4 Mixed', q: "Rita shows 19 with models. She has 1 ten. How many ones cubes does she need?", hi: "रीटा 19 दर्शाने के लिए 1 दहाई लेती है। उसे कितने इकाई क्यूब्स चाहिए?", opts: ["9 ones cubes", "1 ones cube", "19 ones cubes", "10 ones cubes"], ans: 0, expl: "19 = 1 ten + 9 ones, अतः 9 इकाई क्यूब्स!" },
+      { id: 20, unit: 'drew', label: 'Sheet 4 Mixed', q: "Drew shows 50 with models. He uses 5 tens. How many ones cubes does he use?", hi: "ड्रू 50 दर्शाने के लिए 5 दहाई लेता है। वह कितने इकाई क्यूब उपयोग करेगा?", opts: ["0 ones cubes", "5 ones cubes", "50 ones cubes", "1 ones cube"], ans: 0, expl: "50 = 5 tens + 0 ones, अतः 0 इकाई क्यूब्स!" },
+      { id: 21, unit: 'riddle', label: 'Digits Riddle', q: "Which two numbers can be made from digits 5 and 7?", hi: "अंक 5 और 7 से कौन सी दो 2-अंकीय संख्याएँ बनती हैं?", opts: ["57 and 75", "12 and 2", "50 and 70", "55 and 77"], ans: 0, expl: "5 और 7 से 57 और 75 बनते हैं!" },
+      { id: 22, unit: 'riddle', label: 'Digits Riddle', q: "Between 57 and 75, which number has 7 tens?", hi: "57 और 75 में से किस संख्या में 7 दहाई (7 tens) हैं?", opts: ["75", "57", "Both", "None"], ans: 0, expl: "75 में 7 दहाई पर है (7 tens = 70)!" },
+      { id: 23, unit: 'mrlo', label: 'Mr. Lo Riddle', q: "Mr. Lo thinks of a number where both tens digit and ones digit are 4. What is the number?", hi: "मिस्टर लो एक संख्या सोचते हैं जहाँ दहाई और इकाई दोनों अंक 4 हैं। संख्या क्या है?", opts: ["44", "4", "404", "8"], ans: 0, expl: "4 tens + 4 ones = 44!" },
+      { id: 24, unit: 'models', label: 'Sheet 4 Mastery', q: "7 tens rods and 6 unit cubes equal which number?", hi: "7 दहाई रॉड्स और 6 इकाई क्यूब्स मिलकर क्या बनाते हैं?", opts: ["76", "67", "706", "13"], ans: 0, expl: "7 tens (70) + 6 ones (6) = 76!" },
+      { id: 25, unit: 'models', label: 'Sheet 4 Mastery', q: "6 tens rods and 1 unit cube equal which number?", hi: "6 दहाई रॉड्स और 1 इकाई क्यूब मिलकर क्या बनाते हैं?", opts: ["61", "16", "601", "7"], ans: 0, expl: "6 tens (60) + 1 one (1) = 61!" },
+      { id: 26, unit: 'models', label: 'Sheet 4 Mastery', q: "5 tens rods and 2 unit cubes equal which number?", hi: "5 दहाई रॉड्स और 2 इकाई क्यूब्स मिलकर क्या बनाते हैं?", opts: ["52", "25", "502", "7"], ans: 0, expl: "5 tens (50) + 2 ones (2) = 52!" },
+      { id: 27, unit: 'all', label: 'All Sheets Mixed', q: "Mary's buttons (24) has how many tens and ones?", hi: "मैरी के बटनों (24) में कितनी दहाई और इकाई हैं?", opts: ["2 tens and 4 ones", "4 tens and 2 ones", "24 tens", "20 tens and 4 ones"], ans: 0, expl: "24 = 2 tens and 4 ones!" },
+      { id: 28, unit: 'all', label: 'All Sheets Mixed', q: "Ben's 60 stamps: what is the value of digit 6 in <u>6</u>0?", hi: "बेन के 60 टिकटों में अंक 6 का मान क्या है?", opts: ["60", "6", "0", "600"], ans: 0, expl: "6 दहाई पर है, इसलिए 6 tens = 60!" },
+      { id: 29, unit: 'all', label: 'All Sheets Mixed', q: "In Pea pods problem (30 + 4 = 34), what is the value of 3 in <u>3</u>4?", hi: "मटर समस्या (34) में अंक 3 का मान क्या है?", opts: ["30", "3", "4", "34"], ans: 0, expl: "अंक 3 दहाई पर है, इसलिए मान 30 है!" },
+      { id: 30, unit: 'all', label: 'All Sheets Mixed', q: "In Apple bags problem (20 + 5 = 25), what is the value of 5 in 2<u>5</u>?", hi: "सेब समस्या (25) में अंक 5 का मान क्या है?", opts: ["5", "50", "20", "25"], ans: 0, expl: "अंक 5 इकाई पर है, इसलिए मान 5 है!" }
+    ];
+
+    // Concept Mini Check Questions (2 per unit = 8 Total)
+    const conceptQuestions = [
+      { id: 1, pairId: 'pair-1a', q: "Worksheet 1: In 23 = ___ tens ___ ones, what goes in blanks?", hi: "23 = ___ tens ___ ones में खाली स्थान में क्या आएगा?", opts: ["2 and 3", "3 and 2", "20 and 3", "2 and 30"], ans: 0, expl: "23 = 2 tens and 3 ones." },
+      { id: 2, pairId: 'pair-1a', q: "Mary puts buttons in 2 groups of 10 and 4 left over. Total is?", hi: "मैरी के 10-10 के 2 समूह और 4 खुले बटन कुल कितने हुए?", opts: ["24 buttons", "42 buttons", "6 buttons", "20 buttons"], ans: 0, expl: "2 tens (20) + 4 ones (4) = 24 buttons." },
+
+      { id: 3, pairId: 'pair-2a', q: "3 pea pods (10 peas each) + 4 loose peas = ?", hi: "3 फली (10 प्रत्येक) + 4 खुले मटर = ?", opts: ["30 + 4 = 34", "3 + 4 = 7", "30 + 40 = 70", "40 + 3 = 43"], ans: 0, expl: "3 tens (30) + 4 ones (4) = 34 peas." },
+      { id: 4, pairId: 'pair-2a', q: "Vic shows 7 tens and 5 ones with cubes. What number is it?", hi: "विक 7 दहाई और 5 इकाई दर्शाता है। संख्या क्या है?", opts: ["75 (70 + 5 = 75)", "57", "705", "12"], ans: 0, expl: "7 tens = 70, 5 ones = 5. 70 + 5 = 75." },
+
+      { id: 5, pairId: 'pair-3a', q: "What is the value of the underlined digit in <u>7</u>3?", hi: "73 में अंडरलाइन अंक 7 का मान क्या है?", opts: ["70", "7", "73", "3"], ans: 0, expl: "7 tens = 70." },
+      { id: 6, pairId: 'pair-3a', q: "Bookcase has 43 books, 34 students. Are there enough books?", hi: "43 किताबें, 34 छात्र हैं। क्या किताबें पर्याप्त हैं?", opts: ["Yes, because 43 > 34", "No, because 34 > 43", "No, need 100", "Cannot tell"], ans: 0, expl: "4 tens > 3 tens (43 > 34). Yes, enough books." },
+
+      { id: 7, pairId: 'pair-4a', q: "What is the value of the 6 in <u>6</u>1 with 6 rods and 1 cube?", hi: "6 रॉड्स और 1 क्यूब वाले 61 में 6 का मान क्या है?", opts: ["60", "6", "61", "16"], ans: 0, expl: "6 tens rods = 60." },
+      { id: 8, pairId: 'pair-4a', q: "Mr. Lo thinks of a number: ones digit 8, tens digit 1. What is it?", hi: "मिस्टर लो की संख्या: इकाई 8, दहाई 1। संख्या क्या है?", opts: ["18", "81", "88", "11"], ans: 0, expl: "1 ten + 8 ones = 18." }
     ];
 
     const testSuites = {
-      1: { id: 1, title: 'Test 01 · Addition Properties & Count On', badge: '30 Questions · Test 01', desc: 'Worksheets 2-1 to 2-3: डोमिनो टर्न-अराउंड फैक्ट्स, नंबर स्क्वायर, नंबर लाइन और रियल-वर्ल्ड वर्ड प्रॉब्लम्स पर आधारित 30 प्रश्न।', qs: test01 },
-      2: { id: 2, title: 'Test 02 · Doubles & Near Doubles Mastery', badge: '30 Questions · Test 02', desc: 'Worksheets 2-4 to 2-5: स्नोफ्लेक्स, मोज़े, खरबूजे, और डबल + 1 / डबल - 1 की तीव्र मानसिक जोड़ तकनीकों पर 30 प्रश्न।', qs: test02 },
-      3: { id: 3, title: 'Test 03 · Make 10 & Adding Three Numbers', badge: '30 Questions · Test 03', desc: 'Worksheets 2-6 to 2-8: 10 बनाने की रणनीति, 3 संख्याओं को जोड़ने की तरकीबें और अतिरिक्त भटकाने वाली जानकारी से बचने पर 30 प्रश्न।', qs: test03 }
+      1: { id: 1, title: 'Test 01 · Tens & Ones and Addition Sentences', badge: '30 Questions · Test 01', desc: 'Worksheets 1 & 2: 23, 57, Mary\'s buttons, Ben\'s 60 stamps, Pea pods (34), Apple bags (25), Vic (75), Steve (93), Mr. Hall (30) पर 30 प्रश्न।', qs: test01 },
+      2: { id: 2, title: 'Test 02 · Place Value to 100 & Value of Digits', badge: '30 Questions · Test 02', desc: 'Worksheet 3: 73, 54, 95, 13, 37, 83, 47, 87, 31, 17, 25, 94 के अंडरलाइन अंक, बुककेस (43 vs 34) व कंसर्ट (80 vs 75) पर 30 प्रश्न।', qs: test02 },
+      3: { id: 3, title: 'Test 03 · Base-Ten Models, Rita, Drew & Mr. Lo', badge: '30 Questions · Test 03', desc: 'Worksheet 4: 61, 52 के रॉड मॉडल्स, Rita (12), Drew (76), अंक 3 व 1 की पहेली (13 व 31), और Mr. Lo का गुप्त नंबर (18) पर 30 प्रश्न।', qs: test03 }
     };
 
     let activeSuiteNum = 1;
@@ -1077,7 +1486,7 @@
         updateTimerDisplay();
         if (secondsLeft <= 0) {
           clearInterval(testTimer);
-          finishExam(true); // Auto Submit on 00:00!
+          finishExam(true);
         }
       }, 1000);
     }
@@ -1220,16 +1629,20 @@
       let wrong = 0;
 
       const unitStats = {
-        prop: { name: 'Unit 01: Addition Properties (Order & Zero)', anchor: 'topic-1', total: 0, correct: 0, mistakes: [] },
-        count: { name: 'Unit 02: Count On to Add (Line & Square)', anchor: 'topic-2', total: 0, correct: 0, mistakes: [] },
-        doub: { name: 'Unit 03: Doubles & Near Doubles', anchor: 'topic-3', total: 0, correct: 0, mistakes: [] },
-        ten: { name: 'Unit 04: Make 10 Strategy', anchor: 'topic-4', total: 0, correct: 0, mistakes: [] },
-        three: { name: 'Unit 04: Adding Three Numbers', anchor: 'topic-4', total: 0, correct: 0, mistakes: [] }
+        sheet1: { name: 'Worksheet 1: Tens & Ones, Mary & Ben', anchor: 'topic-1', total: 0, correct: 0, mistakes: [] },
+        sheet2: { name: 'Worksheet 2: Addition Sentences (Peas, Apples, Vic, Steve, Juice)', anchor: 'topic-2', total: 0, correct: 0, mistakes: [] },
+        sheet3: { name: 'Worksheet 3: Place Value to 100, Digit Values, Bookcase & Concert', anchor: 'topic-3', total: 0, correct: 0, mistakes: [] },
+        sheet4: { name: 'Worksheet 4: Base-Ten Models, Rita, Drew, Digits 3 & 1, Mr. Lo', anchor: 'topic-4', total: 0, correct: 0, mistakes: [] }
       };
 
       qs.forEach(q => {
         const u = testAnswers[q.id];
-        const unit = unitStats[q.unit] || unitStats.prop;
+        let cat = 'sheet1';
+        if (['peas', 'apples', 'vic', 'steve', 'juice'].includes(q.unit)) cat = 'sheet2';
+        else if (['pv', 'compare'].includes(q.unit)) cat = 'sheet3';
+        else if (['models', 'rita', 'drew', 'riddle', 'mrlo'].includes(q.unit)) cat = 'sheet4';
+
+        const unit = unitStats[cat];
         unit.total++;
         if (u !== undefined) {
           if (u === q.ans) {
@@ -1268,11 +1681,11 @@
               </div>
             ` : `
               <div style="font-size:11px; color:#15803d; font-weight:bold; margin-bottom:6px;">
-                ✓ All concepts mastered!
+                ✓ All worksheet concepts mastered!
               </div>
             `}
             <a href="#${us.anchor}" style="font-size:11px; font-weight:bold; color:var(--brand); text-decoration:underline;">
-              Revise Rule in Theory →
+              Revise Worksheet Rule in Theory →
             </a>
           </div>
         `;
@@ -1299,7 +1712,7 @@
               ${!isRight && !isSkipped ? `<br><strong>Your Choice:</strong> <span style="color:#b91c1c;">(${String.fromCharCode(65 + u)}) ${q.opts[u]}</span>` : ''}
             </div>
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:6px 8px; font-size:11.5px; color:#334155;">
-              <strong>📖 व्याख्या (Explanation):</strong> ${q.expl}
+              <strong>📖 Worksheet Explanation:</strong> ${q.expl}
             </div>
           </div>
         `;
@@ -1331,10 +1744,10 @@
           <!-- Concept Mistake Diagnostics -->
           <div style="background:#fffbeb; border:2px solid #fcd34d; border-radius:14px; padding:14px; margin-bottom:20px;">
             <h3 style="font-size:16px; font-weight:900; color:#92400e; margin-bottom:4px;">
-              🔍 गलतियों का कॉन्सेप्ट आधारित विश्लेषण (Concept Mistake Diagnostics)
+              🔍 गलतियों का वर्कशीट-आधारित विश्लेषण (Worksheet Concept Mistake Diagnostics)
             </h3>
             <p style="font-size:11.5px; color:#78350f; margin-bottom:10px;">
-              जिस इकाई (Unit) में गलती हुई हो, उसके लिंक पर क्लिक करके सीधे उस नियम को दोबारा पढ़ें:
+              जिस वर्कशीट में गलती हुई हो, उसके लिंक पर क्लिक करके सीधे उस नियम को दोबारा पढ़ें:
             </p>
             <div class="concept-diag-grid">
               ${diagCardsHtml}
@@ -1354,114 +1767,91 @@
       scrollToTest();
     }
 
-    // Concept Pairs
+    // Concept Pairs Rendering
     const subPairs = [
-      { id: 'pair-1a', title: '1. Addition Properties & Turn-Around Facts', start: 0 },
-      { id: 'pair-2a', title: '2. Count On & Missing Addends', start: 2 },
-      { id: 'pair-3a', title: '3. Doubles & Near Doubles', start: 4 },
-      { id: 'pair-4a', title: '4. Make 10 & 3 Numbers', start: 6 }
+      { id: 'pair-1a', title: 'Worksheet 1: Tens & Ones, Mary & Ben', start: 0 },
+      { id: 'pair-2a', title: 'Worksheet 2: Addition Sentences (Peas, Apples, Vic, Steve, Juice)', start: 2 },
+      { id: 'pair-3a', title: 'Worksheet 3: Place Value to 100 & Comparisons', start: 4 },
+      { id: 'pair-4a', title: 'Worksheet 4: Base-Ten Models, Rita, Drew & Mr. Lo', start: 6 }
     ];
 
     function renderConceptPairs() {
-      subPairs.forEach(pair => {
-        const container = document.getElementById(pair.id);
+      subPairs.forEach(sp => {
+        const container = document.getElementById(sp.id);
         if (!container) return;
+        const q1 = conceptQuestions[sp.start];
+        const q2 = conceptQuestions[sp.start + 1];
 
-        const q1 = conceptQuestions[pair.start];
-        const q2 = conceptQuestions[pair.start + 1];
-        const pairQs = [q1, q2];
-
-        let html = `
+        container.innerHTML = `
           <div class="pair-header">
-            <span>✦ कॉन्सेप्ट अभ्यास: 2 उदाहरण प्रश्न (${pair.title})</span>
-            <span style="background:#fff; border:1px solid #cbd5e1; padding:2px 8px; border-radius:6px;">Check &amp; Learn</span>
+            <span>⚡ Interactive Concept Check: ${sp.title}</span>
+            <span>2 Quick Check Questions</span>
           </div>
           <div class="pair-grid">
+            ${renderSingleConceptCard(q1)}
+            ${renderSingleConceptCard(q2)}
+          </div>
         `;
-
-        pairQs.forEach(q => {
-          const uChoice = conceptAnswers[q.id];
-          const isChk = conceptChecked[q.id];
-          const isRight = uChoice === q.ans;
-          let cardClass = 'pair-card';
-          if (isChk) cardClass += isRight ? ' correct' : ' wrong';
-
-          let optsHtml = '';
-          q.opts.forEach((opt, idx) => {
-            let oClass = 'choice-sm';
-            if (uChoice === idx) oClass += ' selected';
-            if (isChk) {
-              if (idx === q.ans) oClass += ' right-choice';
-              else if (uChoice === idx && idx !== q.ans) oClass += ' wrong-choice';
-            }
-            optsHtml += `
-              <div class="${oClass}" onclick="selectConceptOpt(${q.id}, ${idx})">
-                <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
-                <span>${opt}</span>
-              </div>
-            `;
-          });
-
-          let statusBadge = `<span style="font-size:10.5px; font-weight:bold; color:#64748b;">Ex Q${q.id}</span>`;
-          if (isChk) {
-            statusBadge = isRight 
-              ? `<span style="color:#15803d; font-weight:bold; font-size:10.5px;">✓ सही उत्तर</span>`
-              : `<span style="color:#b91c1c; font-weight:bold; font-size:10.5px;">✕ उत्तर: (${String.fromCharCode(65 + q.ans)})</span>`;
-          }
-
-          html += `
-            <div class="${cardClass}">
-              <div>
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-                  <strong style="color:var(--brand); font-size:11.5px;">Q${q.id}.</strong>
-                  ${statusBadge}
-                </div>
-                <div style="font-weight:bold; margin-bottom:3px; line-height:1.35;">${q.q}</div>
-                <div class="font-hi" style="font-size:11px; color:#4b5563; margin-bottom:6px;">👉 ${q.hi}</div>
-                <div class="choices-sm">${optsHtml}</div>
-              </div>
-              <div style="margin-top:6px; padding-top:6px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
-                <div style="display:flex; gap:5px;">
-                  <button class="mint-btn" type="button" style="font-size:10.5px; padding:3px 8px;" onclick="checkConceptQ(${q.id})">Check</button>
-                  <button class="quiet-btn" type="button" style="font-size:10.5px; padding:3px 6px;" onclick="resetConceptQ(${q.id})">Reset</button>
-                </div>
-                <details style="font-size:10.5px;">
-                  <summary style="cursor:pointer; font-weight:bold; color:var(--brand);">व्याख्या</summary>
-                  <p style="margin-top:3px; color:#1e293b;">${q.expl}</p>
-                </details>
-              </div>
-            </div>
-          `;
-        });
-
-        html += `</div>`;
-        container.innerHTML = html;
       });
     }
 
-    function selectConceptOpt(qId, optIdx) {
-      conceptAnswers[qId] = optIdx;
-      conceptChecked[qId] = false;
+    function renderSingleConceptCard(cq) {
+      const isChecked = conceptChecked[cq.id];
+      const userSel = conceptAnswers[cq.id];
+      const isCorrect = userSel === cq.ans;
+
+      let cardClass = 'pair-card';
+      if (isChecked) cardClass += isCorrect ? ' correct' : ' wrong';
+
+      let optsHtml = '';
+      cq.opts.forEach((opt, idx) => {
+        let optClass = 'choice-sm';
+        if (userSel === idx) optClass += ' selected';
+        if (isChecked) {
+          if (idx === cq.ans) optClass += ' right-choice';
+          else if (userSel === idx) optClass += ' wrong-choice';
+        }
+        optsHtml += `
+          <div class="${optClass}" onclick="selectConceptOpt(${cq.id}, ${idx})">
+            <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+            <span>${opt}</span>
+          </div>
+        `;
+      });
+
+      return `
+        <div class="${cardClass}" id="cq-card-${cq.id}">
+          <div>
+            <div style="font-weight:bold; font-size:12.5px; margin-bottom:2px;">${cq.q}</div>
+            <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:6px;">👉 ${cq.hi}</div>
+            <div class="choices-sm">${optsHtml}</div>
+          </div>
+          <div style="margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+            <button class="quiet-btn" type="button" onclick="checkConceptAns(${cq.id})" ${isChecked ? 'disabled style="opacity:0.6;"' : ''}>
+              ${isChecked ? (isCorrect ? '✓ Correct' : '✕ Re-try') : 'Check Answer ✓'}
+            </button>
+            ${isChecked ? `<span style="font-size:11px; font-weight:bold; color:${isCorrect ? '#15803d' : '#b91c1c'};">${isCorrect ? 'Well done!' : 'Explanation: ' + cq.expl}</span>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function selectConceptOpt(cqId, optIdx) {
+      conceptAnswers[cqId] = optIdx;
+      conceptChecked[cqId] = false;
       renderConceptPairs();
     }
 
-    function checkConceptQ(qId) {
-      if (conceptAnswers[qId] === undefined) {
-        alert("कृपया पहले किसी एक विकल्प को चुनें!");
-        return;
-      }
-      conceptChecked[qId] = true;
+    function checkConceptAns(cqId) {
+      if (conceptAnswers[cqId] === undefined) return;
+      conceptChecked[cqId] = true;
       renderConceptPairs();
     }
 
-    function resetConceptQ(qId) {
-      delete conceptAnswers[qId];
-      delete conceptChecked[qId];
-      renderConceptPairs();
-    }
-
+    // Initialize
     window.addEventListener('DOMContentLoaded', () => {
       renderConceptPairs();
+      switchTestSuite(1);
     });
   </script>
 </body>
