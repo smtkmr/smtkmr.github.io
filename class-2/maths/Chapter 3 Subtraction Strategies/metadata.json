@@ -1,0 +1,6 @@
+{
+  "name": "Class 2 Maths: Subtraction Strategies & Fact Families",
+  "description": "Interactive Class 2 Mathematics lesson and 3 rigorous 30-question timed tests based on Chapter 3 worksheets: Count Back, Subtract All & Zero, Doubles to Subtract, Find a Pattern, Relate Addition & Subtraction, Missing Addends, and Fact Families.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
