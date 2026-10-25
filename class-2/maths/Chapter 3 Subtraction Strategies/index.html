@@ -9,13 +9,2835 @@
     <meta property="og:description" content="Interactive Class 2 Mathematics lesson and 3 rigorous 30-question timed tests based on Chapter 3 worksheets: Count Back, Subtract All &amp; Zero, Doubles to Subtract, Find a Pattern, Relate Addition &amp; Subtraction, Missing Addends, and Fact Families." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Outfit:wght@600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Play CDN for standalone execution -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                900: '#1e3a8a',
+              },
+              sunny: {
+                400: '#facc15',
+                500: '#eab308',
+                600: '#ca8a04',
+              },
+              coral: {
+                400: '#fb7185',
+                500: '#f43f5e',
+                600: '#e11d48',
+              },
+              mint: {
+                400: '#4ade80',
+                500: '#22c55e',
+                600: '#16a34a',
+              },
+              purplePencil: {
+                400: '#c084fc',
+                500: '#a855f7',
+                600: '#9333ea',
+              }
+            },
+            fontFamily: {
+              sans: ['Outfit', 'Noto Sans Devanagari', 'Quicksand', 'sans-serif'],
+              math: ['"Comic Neue"', 'Quicksand', 'cursive', 'sans-serif'],
+              hindi: ['"Noto Sans Devanagari"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Outfit', 'Noto Sans Devanagari', 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #fdf4ff 100%);
+        min-height: 100vh;
+        color: #1e293b;
+      }
+      .font-math {
+        font-family: 'Comic Neue', 'Quicksand', cursive, sans-serif;
+      }
+      /* Custom Animations */
+      @keyframes hop {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+      .animate-hop {
+        animation: hop 0.5s ease-in-out infinite;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+        50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.8); }
+      }
+      .glow-active {
+        animation: pulse-glow 2s infinite;
+      }
+      /* Custom Print Styling */
+      @media print {
+        header, nav, .no-print, button:not(.print-include) {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        body {
+          background: #ffffff !important;
+          color: #000000 !important;
+        }
+        .print-card {
+          border: 1px solid #cbd5e1 !important;
+          box-shadow: none !important;
+          break-inside: avoid;
+        }
+      }
+      .triangle-roof {
+        width: 0;
+        height: 0;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid #f97316;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="selection:bg-brand-500 selection:text-white">
+    <!-- App Container -->
+    <div id="app" class="flex flex-col min-h-screen">
+      <!-- HEADER -->
+      <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <!-- Brand & Title -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigate('learn')">
+              <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 transform hover:scale-105 transition-transform">
+                <span class="text-2xl font-black font-math">−</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs uppercase tracking-wider font-extrabold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-full border border-brand-200">
+                    Econova.vip • Grade 2
+                  </span>
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    NCERT Ch 3
+                  </span>
+                </div>
+                <h1 class="text-lg sm:text-xl font-black text-slate-800 tracking-tight leading-tight">
+                  <span id="header-title-text">Subtraction Strategies &amp; Fact Families</span>
+                </h1>
+              </div>
+            </div>
+
+            <!-- Header Controls: Sound, Language Toggle, Quick Links -->
+            <div class="flex items-center gap-2.5">
+              <!-- Audio Toggle -->
+              <button id="btn-sound" onclick="toggleSound()" title="Sound Effects" class="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors flex items-center gap-1.5 text-xs font-bold shadow-xs">
+                <span id="sound-icon" class="text-base">🔊</span>
+                <span class="hidden sm:inline" id="sound-label">Sound On</span>
+              </button>
+
+              <!-- Language Switcher -->
+              <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
+                <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-xs bg-white text-brand-700">
+                  🇬🇧 English
+                </button>
+                <button id="btn-lang-hi" onclick="setLanguage('hi')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
+                  🇮🇳 हिन्दी
+                </button>
+              </div>
+
+              <!-- Quick Printable Button -->
+              <button onclick="navigate('worksheets')" class="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-extrabold bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 transition-colors">
+                <span>🖨️</span>
+                <span id="quick-print-label">Print Worksheets</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Navigation Pills -->
+          <nav class="flex items-center gap-2 overflow-x-auto py-2.5 mt-2 border-t border-slate-100 text-sm font-bold scrollbar-none">
+            <button id="nav-btn-learn" onclick="navigate('learn')" class="nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-brand-600 text-white shadow-md shadow-brand-500/20">
+              <span>📖</span>
+              <span data-i18n="nav_learn">Learn Strategies</span>
+            </button>
+            <button id="nav-btn-lab" onclick="navigate('lab')" class="nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+              <span>🧪</span>
+              <span data-i18n="nav_lab">Math Lab &amp; Tools</span>
+            </button>
+            <button id="nav-btn-tests" onclick="navigate('tests')" class="nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+              <span>🏆</span>
+              <span data-i18n="nav_tests">30-Q Timed Tests (3)</span>
+              <span class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-black">90 Qs</span>
+            </button>
+            <button id="nav-btn-worksheets" onclick="navigate('worksheets')" class="nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+              <span>📝</span>
+              <span data-i18n="nav_worksheets">Worksheet Generator</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        
+        <!-- SECTION 1: LEARN STRATEGIES -->
+        <section id="section-learn" class="space-y-8">
+          <!-- Hero Banner -->
+          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-600 via-indigo-600 to-purple-600 text-white p-6 sm:p-10 shadow-xl shadow-brand-500/10">
+            <div class="relative z-10 max-w-3xl space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold uppercase tracking-wider text-white">
+                <span>🌟</span>
+                <span data-i18n="hero_tag">Chapter 3: Master Subtraction Like a Champion!</span>
+              </div>
+              <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight" data-i18n="hero_title">
+                7 Super Strategies for Fast Subtraction &amp; Fact Families
+              </h2>
+              <p class="text-indigo-100 text-sm sm:text-base leading-relaxed" data-i18n="hero_desc">
+                Learn how to count back with Froggie, use the magical All &amp; Zero rules, crack doubles, spot patterns, think addition to subtract, and build Fact Family Houses!
+              </p>
+              <div class="flex items-center gap-3 pt-2 flex-wrap">
+                <button onclick="navigate('lab')" class="px-5 py-2.5 rounded-xl bg-amber-400 text-slate-900 font-extrabold hover:bg-amber-300 transition-transform transform active:scale-95 shadow-md flex items-center gap-2">
+                  <span>🚀</span>
+                  <span data-i18n="hero_btn_lab">Try Interactive Manipulatives</span>
+                </button>
+                <button onclick="startTest(1)" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold transition-all flex items-center gap-2">
+                  <span>⏱️</span>
+                  <span data-i18n="hero_btn_test">Take 30-Question Test 1</span>
+                </button>
+              </div>
+            </div>
+            <!-- Decorative Background Element -->
+            <div class="absolute -right-12 -bottom-12 opacity-15 pointer-events-none text-9xl font-black select-none">
+              − ± =
+            </div>
+          </div>
+
+          <!-- Strategy Carousel / Tabs -->
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                <span>📚</span>
+                <span data-i18n="strategies_title">The 7 Worksheets Strategies</span>
+              </h3>
+              <span class="text-xs font-bold text-slate-500" data-i18n="click_strategy">Click any card to explore!</span>
+            </div>
+
+            <!-- Strategy Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              
+              <!-- Strategy 1 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-emerald-100 hover:border-emerald-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">1</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200">Count Back</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat1_title">Count Back 1, 2, or 3</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat1_desc">
+                    Start at the bigger number and jump backward by 1, 2, or 3 on the number line.
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-emerald-50/70 p-3 rounded-2xl border border-emerald-100 text-center font-math">
+                    <div class="text-base font-bold text-emerald-800">9 − 3 = ?</div>
+                    <div class="text-xs text-emerald-700 mt-1">Start at 9: 8 (hop 1), 7 (hop 2), <strong class="underline">6</strong> (hop 3)!</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(1)" class="mt-4 w-full py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🐸</span>
+                  <span data-i18n="btn_practice_strat">Practice with Froggie</span>
+                </button>
+              </div>
+
+              <!-- Strategy 2 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-blue-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold">2</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-blue-50 text-blue-700 border border-blue-200">Zero &amp; All</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat2_title">Subtract All &amp; Subtract Zero</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat2_desc">
+                    When you subtract all, nothing is left (0). When you subtract 0, the number never changes!
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-blue-50/70 p-3 rounded-2xl border border-blue-100 text-center font-math space-y-1">
+                    <div class="text-xs text-blue-800 font-bold">8 − 8 = <strong>0</strong> (Subtract All)</div>
+                    <div class="text-xs text-blue-800 font-bold">8 − 0 = <strong>8</strong> (Subtract Zero)</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(2)" class="mt-4 w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🍪</span>
+                  <span data-i18n="btn_cookie_test">Test Cookie Jar Rule</span>
+                </button>
+              </div>
+
+              <!-- Strategy 3 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-purple-100 hover:border-purple-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold">3</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-purple-50 text-purple-700 border border-purple-200">Doubles</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat3_title">Use Doubles to Subtract</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat3_desc">
+                    If you know your addition doubles, subtraction is instant! 7 + 7 = 14, so 14 − 7 = 7.
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-purple-50/70 p-3 rounded-2xl border border-purple-100 text-center font-math">
+                    <div class="text-base font-bold text-purple-800">12 − 6 = 6</div>
+                    <div class="text-xs text-purple-700 mt-1">Because 6 + 6 = 12!</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(3)" class="mt-4 w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🪞</span>
+                  <span data-i18n="btn_doubles_mirror">Doubles Mirror Tool</span>
+                </button>
+              </div>
+
+              <!-- Strategy 4 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-amber-100 hover:border-amber-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold">4</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-amber-50 text-amber-700 border border-amber-200">Patterns</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat4_title">Find a Pattern in Subtraction</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat4_desc">
+                    Spotting number relationships makes subtraction rapid and helps solve complex worksheets.
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-amber-50/70 p-3 rounded-2xl border border-amber-100 text-center font-math text-xs space-y-0.5 text-amber-800">
+                    <div>10 − 1 = 9 &nbsp;|&nbsp; 10 − 2 = 8</div>
+                    <div>10 − 3 = 7 &nbsp;|&nbsp; 10 − 4 = 6</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(4)" class="mt-4 w-full py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🔍</span>
+                  <span data-i18n="btn_pattern_detective">Pattern Detective</span>
+                </button>
+              </div>
+
+              <!-- Strategy 5 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-rose-100 hover:border-rose-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl font-bold">5</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-rose-50 text-rose-700 border border-rose-200">Inverse Ops</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat5_title">Relate Addition &amp; Subtraction</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat5_desc">
+                    Addition puts parts together; subtraction takes one part away from the whole!
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-rose-50/70 p-3 rounded-2xl border border-rose-100 text-center font-math">
+                    <div class="text-xs font-bold text-rose-800">5 + 3 = 8 ⟷ 8 − 3 = 5</div>
+                    <div class="text-[11px] text-rose-700 mt-1">Part 1 + Part 2 = Whole</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(5)" class="mt-4 w-full py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🧱</span>
+                  <span data-i18n="btn_part_whole">Part-Part-Whole Model</span>
+                </button>
+              </div>
+
+              <!-- Strategy 6 & 7 Combo -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-indigo-100 hover:border-indigo-400 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl font-bold">6 &amp; 7</span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-indigo-50 text-indigo-700 border border-indigo-200">Fact Families</span>
+                  </div>
+                  <h4 class="text-lg font-black text-slate-800" data-i18n="strat6_title">Missing Addends &amp; Fact Families</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed" data-i18n="strat6_desc">
+                    Every family of 3 numbers creates 2 addition and 2 subtraction facts living under one roof!
+                  </p>
+                  <!-- Visual Example -->
+                  <div class="bg-indigo-50/70 p-3 rounded-2xl border border-indigo-100 text-center font-math text-xs text-indigo-800 space-y-0.5">
+                    <div>4 + 7 = 11 &nbsp;|&nbsp; 7 + 4 = 11</div>
+                    <div>11 − 4 = 7 &nbsp;|&nbsp; 11 − 7 = 4</div>
+                  </div>
+                </div>
+                <button onclick="openInteractiveStrat(6)" class="mt-4 w-full py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs">
+                  <span>🏠</span>
+                  <span data-i18n="btn_family_house">Build Fact Family House</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Interactive Strategy Demonstration Modal / Container -->
+          <div id="interactive-strat-box" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-brand-200 shadow-lg transition-all">
+            <!-- Will be populated dynamically by showStratView(id) -->
+            <div id="strat-content"></div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: MATH LAB & INTERACTIVE MANIPULATIVES -->
+        <section id="section-lab" class="hidden space-y-8">
+          <div class="border-b border-slate-200 pb-4">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-800 flex items-center gap-2">
+              <span>🧪</span>
+              <span data-i18n="lab_heading">Interactive Math Manipulatives Lab</span>
+            </h2>
+            <p class="text-slate-600 text-sm mt-1" data-i18n="lab_subheading">
+              Use hands-on visual tools to solve problems, count hops, cross out counters, and build number family houses!
+            </p>
+          </div>
+
+          <!-- Tool 1: Froggie Number Line -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <span class="text-xs font-black uppercase text-emerald-600 tracking-wider">Tool 1 • Strategy 1</span>
+                <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                  <span>🐸</span>
+                  <span data-i18n="frog_tool_title">Froggie Number Line (Count Back 1, 2, or 3)</span>
+                </h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-500">Pick starting number:</span>
+                <select id="frog-start" onchange="updateFrogSimulation()" class="bg-slate-100 border border-slate-300 font-bold rounded-lg px-2 py-1 text-sm">
+                  <!-- options 1 to 20 -->
+                </select>
+                <span class="text-xs font-bold text-slate-500">Count back:</span>
+                <select id="frog-hops" onchange="updateFrogSimulation()" class="bg-slate-100 border border-slate-300 font-bold rounded-lg px-2 py-1 text-sm">
+                  <option value="1">− 1</option>
+                  <option value="2" selected>− 2</option>
+                  <option value="3">− 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Number Line Visual -->
+            <div class="overflow-x-auto pb-4 pt-8">
+              <div id="number-line-container" class="min-w-[650px] relative px-4 flex items-center justify-between border-b-4 border-slate-800 pb-2">
+                <!-- Numbers 0 to 20 rendered here -->
+              </div>
+            </div>
+
+            <!-- Result Formula Display -->
+            <div class="flex items-center justify-between bg-emerald-50 rounded-2xl p-4 border border-emerald-200 flex-wrap gap-4">
+              <div class="font-math text-2xl font-black text-emerald-900" id="frog-equation-display">
+                9 − 2 = 7
+              </div>
+              <div class="text-xs sm:text-sm font-semibold text-emerald-800" id="frog-step-explanation">
+                Start at 9. Jump back 1 to 8. Jump back 1 to 7. Answer is 7!
+              </div>
+              <button onclick="animateFrogJump()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center gap-1.5 shadow-sm">
+                <span>🔄</span>
+                <span>Animate Jump</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tool 2: Ten-Frame Counter Subtraction -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <span class="text-xs font-black uppercase text-blue-600 tracking-wider">Tool 2 • Visual Subtraction</span>
+                <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                  <span>🔴</span>
+                  <span data-i18n="tenframe_tool_title">Ten-Frame Counter Pad</span>
+                </h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-500">Total counters:</span>
+                <input type="range" id="tenframe-total" min="1" max="10" value="7" oninput="updateTenFrame()" class="accent-blue-600">
+                <span id="tenframe-total-val" class="font-bold text-sm w-4">7</span>
+                <span class="text-xs font-bold text-slate-500 ml-3">Take away:</span>
+                <input type="range" id="tenframe-sub" min="0" max="7" value="3" oninput="updateTenFrame()" class="accent-rose-500">
+                <span id="tenframe-sub-val" class="font-bold text-sm w-4">3</span>
+              </div>
+            </div>
+
+            <!-- 10-Frame Grid -->
+            <div class="max-w-md mx-auto bg-slate-100 p-4 rounded-2xl border-2 border-slate-300">
+              <div class="grid grid-cols-5 gap-3" id="ten-frame-grid">
+                <!-- 10 cells generated dynamically -->
+              </div>
+            </div>
+
+            <div class="text-center font-math text-2xl font-black text-slate-800" id="tenframe-equation">
+              7 − 3 = 4
+            </div>
+          </div>
+
+          <!-- Tool 3: Fact Family House Generator -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+            <div>
+              <span class="text-xs font-black uppercase text-purple-600 tracking-wider">Tool 3 • Strategy 7</span>
+              <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                <span>🏠</span>
+                <span data-i18n="fact_house_title">Fact Family Roof House Builder</span>
+              </h3>
+              <p class="text-slate-500 text-xs mt-1">Enter any two smaller numbers (parts), and the roof house will calculate the total and generate all 4 related math facts!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <!-- Interactive Controls -->
+              <div class="space-y-4">
+                <div class="flex gap-4">
+                  <div class="flex-1">
+                    <label class="block text-xs font-extrabold text-slate-600 uppercase mb-1">Part A (Addend 1)</label>
+                    <input type="number" id="house-part-a" min="1" max="15" value="6" onchange="buildHouse()" class="w-full text-center text-xl font-black p-3 bg-slate-50 border-2 border-purple-200 rounded-2xl focus:border-purple-600 outline-none">
+                  </div>
+                  <div class="text-2xl font-black text-slate-400 self-center">+</div>
+                  <div class="flex-1">
+                    <label class="block text-xs font-extrabold text-slate-600 uppercase mb-1">Part B (Addend 2)</label>
+                    <input type="number" id="house-part-b" min="1" max="15" value="8" onchange="buildHouse()" class="w-full text-center text-xl font-black p-3 bg-slate-50 border-2 border-purple-200 rounded-2xl focus:border-purple-600 outline-none">
+                  </div>
+                </div>
+
+                <div class="flex gap-2">
+                  <button onclick="setHousePreset(5, 4)" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold rounded-lg border border-purple-200">5 &amp; 4</button>
+                  <button onclick="setHousePreset(7, 7)" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold rounded-lg border border-purple-200">7 &amp; 7 (Doubles!)</button>
+                  <button onclick="setHousePreset(9, 6)" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold rounded-lg border border-purple-200">9 &amp; 6</button>
+                  <button onclick="setHousePreset(8, 0)" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold rounded-lg border border-purple-200">8 &amp; 0 (Zero Rule)</button>
+                </div>
+              </div>
+
+              <!-- Visual House Graphic -->
+              <div class="max-w-xs mx-auto w-full">
+                <div class="relative bg-amber-50 border-4 border-amber-600 rounded-b-3xl shadow-lg pt-2 pb-6 px-4">
+                  <!-- Roof Triangle -->
+                  <div class="absolute -top-14 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[110px] border-l-transparent border-r-[110px] border-r-transparent border-b-[56px] border-b-amber-600">
+                  </div>
+                  <!-- Roof Summit Badge (Sum / Whole) -->
+                  <div class="relative -mt-11 mb-8 z-10 flex justify-center">
+                    <span id="house-sum-badge" class="w-14 h-14 rounded-full bg-yellow-400 border-4 border-amber-700 flex items-center justify-center font-black text-2xl text-slate-900 shadow-md font-math">
+                      14
+                    </span>
+                  </div>
+
+                  <!-- Two Bottom Corners (Addends) -->
+                  <div class="flex justify-between px-2 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 border-2 border-indigo-400 flex items-center justify-center font-black text-xl text-indigo-800 font-math" id="house-corner-a">
+                      6
+                    </div>
+                    <div class="text-xs font-bold text-amber-800 self-center uppercase tracking-wider">Family Members</div>
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 border-2 border-indigo-400 flex items-center justify-center font-black text-xl text-indigo-800 font-math" id="house-corner-b">
+                      8
+                    </div>
+                  </div>
+
+                  <!-- 4 Family Facts (Equations) -->
+                  <div class="bg-white rounded-2xl p-4 border border-amber-200 space-y-2 text-center font-math text-base font-black text-slate-800 shadow-xs" id="house-equations-list">
+                    <div class="text-indigo-600">6 + 8 = 14</div>
+                    <div class="text-indigo-600">8 + 6 = 14</div>
+                    <div class="text-rose-600">14 − 6 = 8</div>
+                    <div class="text-rose-600">14 − 8 = 6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: 30-QUESTION TIMED TESTS (3 RIGOROUS TESTS) -->
+        <section id="section-tests" class="hidden space-y-8">
+          <!-- Test Selection View (when no test is active) -->
+          <div id="test-selector-view" class="space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-extrabold uppercase mb-1">
+                <span>🎯</span>
+                <span>Worksheet Assessment Suite</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-800" data-i18n="tests_suite_title">
+                3 Rigorous 30-Question Timed Tests (90 Questions Total)
+              </h2>
+              <p class="text-slate-600 text-sm mt-1" data-i18n="tests_suite_desc">
+                Complete all 3 comprehensive tests based on the Chapter 3 worksheets. Each test features 30 questions, live timer, scratchpad, instant scoring, question reviews, and gold printable certificates!
+              </p>
+            </div>
+
+            <!-- Test Cards (3 Tests) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <!-- TEST 1 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-emerald-200 hover:border-emerald-500 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-black font-math">T1</span>
+                    <span class="text-xs font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">30 Questions</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-black text-slate-800" data-i18n="t1_name">Test 1: Subtraction Strategies Core</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed" data-i18n="t1_desc">
+                      Count Back 1/2/3, Subtract All &amp; Zero, Doubles subtraction, and Subtraction Patterns.
+                    </p>
+                  </div>
+                  <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1.5 text-xs">
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⏱️ Recommended Time:</span>
+                      <strong class="text-slate-800">20 Minutes</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⭐ Difficulty:</span>
+                      <strong class="text-emerald-600">Standard Class 2</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>🏆 Best Score:</span>
+                      <strong id="best-score-1" class="text-brand-600">Not Attempted</strong>
+                    </div>
+                  </div>
+                </div>
+                <button onclick="startTest(1)" class="mt-6 w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                  <span>🚀</span>
+                  <span data-i18n="btn_start_t1">Start Test 1 (30 Qs)</span>
+                </button>
+              </div>
+
+              <!-- TEST 2 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-blue-200 hover:border-blue-500 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-black font-math">T2</span>
+                    <span class="text-xs font-black uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">30 Questions</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-black text-slate-800" data-i18n="t2_name">Test 2: Inverse Ops &amp; Missing Addends</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed" data-i18n="t2_desc">
+                      Relating addition to subtraction, finding missing addends (a + ? = b), Part-Part-Whole bar models &amp; word scenarios.
+                    </p>
+                  </div>
+                  <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1.5 text-xs">
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⏱️ Recommended Time:</span>
+                      <strong class="text-slate-800">20 Minutes</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⭐ Difficulty:</span>
+                      <strong class="text-blue-600">Advanced Class 2</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>🏆 Best Score:</span>
+                      <strong id="best-score-2" class="text-brand-600">Not Attempted</strong>
+                    </div>
+                  </div>
+                </div>
+                <button onclick="startTest(2)" class="mt-6 w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                  <span>🚀</span>
+                  <span data-i18n="btn_start_t2">Start Test 2 (30 Qs)</span>
+                </button>
+              </div>
+
+              <!-- TEST 3 -->
+              <div class="bg-white rounded-3xl p-6 border-2 border-purple-200 hover:border-purple-500 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-black font-math">T3</span>
+                    <span class="text-xs font-black uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">30 Questions</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-black text-slate-800" data-i18n="t3_name">Test 3: Fact Families Grand Mastery</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed" data-i18n="t3_desc">
+                      Fact triangles, 4-fact family sentences, finding the intruder fact, doubles families, and multi-step math puzzles.
+                    </p>
+                  </div>
+                  <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1.5 text-xs">
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⏱️ Recommended Time:</span>
+                      <strong class="text-slate-800">25 Minutes</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>⭐ Difficulty:</span>
+                      <strong class="text-purple-600">Mastery Level</strong>
+                    </div>
+                    <div class="flex items-center justify-between font-semibold text-slate-600">
+                      <span>🏆 Best Score:</span>
+                      <strong id="best-score-3" class="text-brand-600">Not Attempted</strong>
+                    </div>
+                  </div>
+                </div>
+                <button onclick="startTest(3)" class="mt-6 w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                  <span>🚀</span>
+                  <span data-i18n="btn_start_t3">Start Test 3 (30 Qs)</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ACTIVE TEST RUNNER VIEW -->
+          <div id="test-runner-view" class="hidden space-y-6">
+            <!-- Test Header Bar -->
+            <div class="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-md flex items-center justify-between flex-wrap gap-4">
+              <div class="flex items-center gap-3">
+                <button onclick="confirmExitTest()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold transition-colors">
+                  ✕ Exit
+                </button>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span id="active-test-badge" class="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-brand-100 text-brand-800">Test 1</span>
+                    <span class="text-xs text-slate-500 font-bold" id="active-strategy-tag">Count Back Strategy</span>
+                  </div>
+                  <h3 class="text-base sm:text-lg font-black text-slate-800" id="active-test-title">Chapter 3 Test</h3>
+                </div>
+              </div>
+
+              <!-- Timer and Tools -->
+              <div class="flex items-center gap-3">
+                <!-- Scratchpad toggle -->
+                <button onclick="toggleScratchpad()" class="px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 font-bold text-xs flex items-center gap-1.5 transition-colors">
+                  <span>✏️</span>
+                  <span class="hidden sm:inline">Scratchpad</span>
+                </button>
+
+                <!-- Timer -->
+                <div class="flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-slate-900 text-white font-mono text-base font-bold shadow-inner">
+                  <span>⏱️</span>
+                  <span id="test-timer-display">20:00</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button onclick="finishTest()" class="px-4 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-md transition-transform active:scale-95">
+                  Finish &amp; Submit
+                </button>
+              </div>
+            </div>
+
+            <!-- Popup Scratchpad / Number Line Drawer -->
+            <div id="scratchpad-drawer" class="hidden bg-amber-50/90 backdrop-blur-md rounded-3xl p-4 border-2 border-amber-300 shadow-lg space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-extrabold text-amber-900 flex items-center gap-1">
+                  <span>✏️</span> Student Scratchpad &amp; Quick Number Line (0-20)
+                </span>
+                <button onclick="toggleScratchpad()" class="text-amber-800 font-bold text-xs hover:underline">Close ✕</button>
+              </div>
+              <!-- Mini visual number line -->
+              <div class="overflow-x-auto py-2 bg-white rounded-xl border border-amber-200 px-3 flex justify-between text-xs font-math font-bold text-slate-700 min-w-[500px]">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+              </div>
+              <textarea placeholder="Use this space to type calculations or scratch notes..." class="w-full h-20 p-2.5 rounded-xl border border-amber-200 text-xs font-mono bg-white focus:outline-none"></textarea>
+            </div>
+
+            <!-- Main Question & Palette Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+              
+              <!-- Question Card (Left 3 Columns) -->
+              <div class="lg:col-span-3 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md flex flex-col justify-between space-y-6 min-h-[420px]">
+                <div>
+                  <!-- Question Number & Flag Header -->
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span class="text-sm font-extrabold text-brand-600 uppercase tracking-wider" id="q-counter-text">
+                      Question 1 of 30
+                    </span>
+                    <button id="btn-flag-q" onclick="toggleFlagQuestion()" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-amber-600 transition-colors">
+                      <span id="flag-icon">🚩</span>
+                      <span id="flag-text">Flag for Review</span>
+                    </button>
+                  </div>
+
+                  <!-- Question Text Area -->
+                  <div class="py-6 space-y-4">
+                    <div id="q-text-en" class="text-xl sm:text-2xl font-black text-slate-800 leading-snug">
+                      What is 14 − 7?
+                    </div>
+                    <div id="q-text-hi" class="text-base sm:text-lg font-bold text-slate-600">
+                      14 − 7 क्या होगा?
+                    </div>
+
+                    <!-- Optional Visual Aid / Equation Card -->
+                    <div id="q-visual-aid" class="hidden p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center font-math text-xl font-bold text-indigo-900">
+                    </div>
+                  </div>
+
+                  <!-- Choices Options (A, B, C, D) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2" id="q-options-container">
+                    <!-- 4 Option buttons populated dynamically -->
+                  </div>
+                </div>
+
+                <!-- Footer Navigation Buttons -->
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100 flex-wrap gap-2">
+                  <button id="btn-prev-q" onclick="navigateQuestion(-1)" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center gap-1.5 transition-colors">
+                    <span>←</span> Previous
+                  </button>
+                  <div class="text-xs font-semibold text-slate-500" id="q-status-summary">
+                    Answered: 0 / 30
+                  </div>
+                  <button id="btn-next-q" onclick="navigateQuestion(1)" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs flex items-center gap-1.5 transition-colors shadow-sm">
+                    Next <span>→</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question Palette Grid (Right Column) -->
+              <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-md space-y-4 self-start">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                  <h4 class="text-xs font-extrabold text-slate-700 uppercase tracking-wider">Question Palette (1-30)</h4>
+                  <span class="text-[11px] font-bold text-brand-600" id="palette-answered-count">0/30</span>
+                </div>
+
+                <!-- Palette Grid: 30 boxes -->
+                <div class="grid grid-cols-5 gap-2" id="palette-grid">
+                  <!-- 30 numbered buttons rendered dynamically -->
+                </div>
+
+                <!-- Legend -->
+                <div class="pt-3 border-t border-slate-100 text-[11px] font-semibold text-slate-500 space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-md bg-emerald-500"></span>
+                    <span>Answered (उत्तर दिया)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-md bg-amber-400"></span>
+                    <span>Flagged (समीक्षा के लिए)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-md bg-slate-100 border border-slate-300"></span>
+                    <span>Unanswered (बचा हुआ)</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TEST RESULT & SCORECARD VIEW -->
+          <div id="test-result-view" class="hidden space-y-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-8">
+              <!-- Header Trophy Card -->
+              <div class="text-center max-w-xl mx-auto space-y-3">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-amber-100 text-amber-600 flex items-center justify-center text-4xl shadow-inner animate-bounce">
+                  🏆
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900" id="result-title">
+                  Test Completed! Fabulous Work!
+                </h3>
+                <p class="text-slate-500 text-sm" id="result-subtitle">
+                  Here is your detailed performance breakdown for Class 2 Mathematics.
+                </p>
+              </div>
+
+              <!-- Score Metrics Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="bg-brand-50 p-4 rounded-2xl border border-brand-200 text-center">
+                  <span class="text-xs font-bold text-brand-700 uppercase">Score</span>
+                  <div class="text-2xl sm:text-3xl font-black text-brand-900 mt-1 font-math" id="res-score-val">28/30</div>
+                </div>
+                <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 text-center">
+                  <span class="text-xs font-bold text-emerald-700 uppercase">Accuracy</span>
+                  <div class="text-2xl sm:text-3xl font-black text-emerald-900 mt-1" id="res-accuracy-val">93.3%</div>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-2xl border border-purple-200 text-center">
+                  <span class="text-xs font-bold text-purple-700 uppercase">Time Taken</span>
+                  <div class="text-2xl sm:text-3xl font-black text-purple-900 mt-1 font-mono" id="res-time-val">12:45</div>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-center">
+                  <span class="text-xs font-bold text-amber-700 uppercase">Grade</span>
+                  <div class="text-2xl sm:text-3xl font-black text-amber-900 mt-1" id="res-grade-val">A+ Champ</div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex items-center justify-center gap-3 flex-wrap">
+                <button onclick="openCertificateModal()" class="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm shadow-md flex items-center gap-2">
+                  <span>📜</span>
+                  <span>View &amp; Print Gold Certificate</span>
+                </button>
+                <button onclick="retakeCurrentTest()" class="px-6 py-3 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-black text-sm shadow-md flex items-center gap-2">
+                  <span>🔄</span>
+                  <span>Retake Test</span>
+                </button>
+                <button onclick="returnToTestSelect()" class="px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors">
+                  <span>←</span> All Tests
+                </button>
+              </div>
+
+              <!-- Question-by-Question Review Accordion -->
+              <div class="border-t border-slate-200 pt-8 space-y-4">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-lg font-black text-slate-800 flex items-center gap-2">
+                    <span>🔍</span>
+                    <span>Complete 30-Question Answers &amp; Explanations</span>
+                  </h4>
+                  <span class="text-xs font-bold text-slate-500">Green = Correct, Red = Incorrect</span>
+                </div>
+                <div class="space-y-3" id="results-review-list">
+                  <!-- 30 question review cards populated dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 4: PRINTABLE WORKSHEET GENERATOR -->
+        <section id="section-worksheets" class="hidden space-y-8">
+          <div class="border-b border-slate-200 pb-4 flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-800 flex items-center gap-2">
+                <span>📝</span>
+                <span data-i18n="worksheet_heading">Chapter 3 Printable Homework Worksheets</span>
+              </h2>
+              <p class="text-slate-600 text-sm mt-1" data-i18n="worksheet_subheading">
+                Perfect for teachers, parents, and students. Customize and print professional A4/Letter math practice sheets with answer keys!
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs flex items-center gap-2 shadow-md hover:bg-slate-800">
+                <span>🖨️</span>
+                <span>Print Worksheet Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Controls Bar -->
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between flex-wrap gap-4 no-print">
+            <div class="flex items-center gap-3 flex-wrap">
+              <div>
+                <label class="block text-[11px] font-extrabold text-slate-500 uppercase">Worksheet Type</label>
+                <select id="ws-type" onchange="generateWorksheet()" class="bg-slate-50 border border-slate-300 font-bold text-xs rounded-lg p-2">
+                  <option value="mixed">Mixed Chapter 3 Comprehensive (30 Problems)</option>
+                  <option value="countback">Count Back 1, 2, or 3 (30 Problems)</option>
+                  <option value="zeroall">Subtract All &amp; Zero (30 Problems)</option>
+                  <option value="doubles">Doubles &amp; Halves Subtraction (30 Problems)</option>
+                  <option value="families">Fact Family Houses (12 Houses)</option>
+                </select>
+              </div>
+              <div class="flex items-center gap-2 pt-4">
+                <label class="inline-flex items-center gap-2 text-xs font-bold text-slate-700 cursor-pointer">
+                  <input type="checkbox" id="ws-include-answers" onchange="generateWorksheet()" class="rounded accent-brand-600">
+                  <span>Include Answer Key at bottom</span>
+                </label>
+              </div>
+            </div>
+
+            <button onclick="generateWorksheet()" class="px-4 py-2 bg-brand-50 hover:bg-brand-100 text-brand-700 border border-brand-200 rounded-xl text-xs font-bold">
+              🔄 Regenerate Numbers
+            </button>
+          </div>
+
+          <!-- Printable Sheet Canvas -->
+          <div id="worksheet-paper" class="bg-white p-8 sm:p-12 rounded-3xl border-2 border-slate-300 shadow-lg space-y-6 print-card">
+            <!-- Sheet Header -->
+            <div class="border-b-2 border-slate-800 pb-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <div class="text-xs uppercase font-extrabold tracking-widest text-slate-500">Econova.vip Learning Series • Class 2</div>
+                  <h1 class="text-2xl font-black text-slate-900 mt-0.5" id="ws-title-display">Chapter 3: Subtraction &amp; Fact Families Worksheet</h1>
+                </div>
+                <div class="text-right text-xs font-bold text-slate-500">
+                  <div>Max Marks: 30</div>
+                  <div>Time: 25 Mins</div>
+                </div>
+              </div>
+
+              <!-- Student Details Grid for paper -->
+              <div class="grid grid-cols-3 gap-4 mt-6 text-xs font-bold text-slate-700">
+                <div class="border-b border-slate-400 pb-1">Name: ______________________</div>
+                <div class="border-b border-slate-400 pb-1">Roll No: ___________________</div>
+                <div class="border-b border-slate-400 pb-1">Date: ______________________</div>
+              </div>
+            </div>
+
+            <!-- Worksheet Grid of Problems -->
+            <div id="ws-problems-container" class="py-4">
+              <!-- Dynamically populated problems -->
+            </div>
+
+            <!-- Answer Key section (if toggled) -->
+            <div id="ws-answers-container" class="hidden border-t-2 border-dashed border-slate-400 pt-4 mt-6 text-xs">
+              <h4 class="font-black text-slate-800 uppercase mb-2">Answer Key (Teacher's Guide):</h4>
+              <div id="ws-answers-grid" class="grid grid-cols-5 gap-2 text-slate-600 font-mono"></div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- GOLD CERTIFICATE MODAL -->
+      <div id="modal-certificate" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 border-4 border-amber-400 shadow-2xl relative space-y-6">
+          <button onclick="closeCertificateModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-lg font-black">✕</button>
+
+          <!-- Input for Name -->
+          <div class="no-print space-y-2">
+            <label class="block text-xs font-extrabold text-slate-600 uppercase">Student Name on Certificate:</label>
+            <div class="flex gap-2">
+              <input type="text" id="cert-student-name" value="Little Math Champ" oninput="updateCertPreview()" class="flex-1 p-2.5 rounded-xl border border-slate-300 font-bold text-sm focus:border-brand-500 outline-none">
+              <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-black text-xs hover:bg-amber-400 shadow-sm flex items-center gap-1.5">
+                <span>🖨️</span> Print Award
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Award View -->
+          <div class="bg-gradient-to-b from-amber-50 via-white to-amber-50 p-8 rounded-2xl border-4 border-double border-amber-500 text-center space-y-4 print-card">
+            <div class="text-3xl">🏅 ⭐ 🏅</div>
+            <div class="text-xs uppercase tracking-widest font-extrabold text-amber-700">Certificate of Mathematical Excellence</div>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Econova.vip Young Scholar Award</h2>
+            <p class="text-xs text-slate-500">This certificate is proudly awarded to</p>
+            <div class="text-2xl sm:text-4xl font-black text-brand-700 font-math underline decoration-amber-400 decoration-wavy" id="cert-display-name">
+              Little Math Champ
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto" id="cert-reason">
+              For demonstrating exceptional mastery in Class 2 Mathematics: Subtraction Strategies, Inverse Operations, and Fact Families.
+            </p>
+            
+            <div class="flex justify-between items-center pt-6 px-6 text-xs text-slate-600 border-t border-amber-200">
+              <div class="text-left">
+                <div class="font-bold text-slate-900" id="cert-score-display">Score: 30 / 30</div>
+                <div class="text-[10px]" id="cert-date-display">Date: October 2026</div>
+              </div>
+              <div class="text-center">
+                <div class="w-12 h-12 mx-auto rounded-full bg-amber-400 border-2 border-amber-600 flex items-center justify-center font-black text-slate-900 text-[10px] shadow-sm">
+                  SEAL
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-math text-base font-bold text-slate-800">Econova Maths Faculty</div>
+                <div class="text-[10px]">Head of Mathematics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 no-print">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+          <p class="font-bold text-slate-700">Class 2 Mathematics: Subtraction Strategies &amp; Fact Families • Econova.vip</p>
+          <p>Aligned with NCERT &amp; CBSE Grade 2 Math Chapter 3 Curriculum. Designed for young learners with visual manipulatives &amp; self-paced tests.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- MAIN JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+      // ==========================================
+      // 1. STATE & SOUND SYNTHESIS
+      // ==========================================
+      const state = {
+        lang: 'en', // 'en' or 'hi'
+        activeTab: 'learn',
+        soundEnabled: true,
+        // Tests state
+        activeTestId: null,
+        currentQuestionIndex: 0,
+        userAnswers: {}, // { qIndex: selectedOptionIndex }
+        flaggedQuestions: {}, // { qIndex: boolean }
+        timerInterval: null,
+        timeRemainingSeconds: 20 * 60,
+        testTimeSpent: 0,
+        testScores: {
+          1: localStorage.getItem('econova_math_score_1') || null,
+          2: localStorage.getItem('econova_math_score_2') || null,
+          3: localStorage.getItem('econova_math_score_3') || null,
+        }
+      };
+
+      // Web Audio API Synthesizer (No external mp3 files needed)
+      let audioCtx = null;
+      function playTone(freq, type = 'sine', duration = 0.15) {
+        if (!state.soundEnabled) return;
+        try {
+          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch(e) {}
+      }
+
+      function soundCorrect() {
+        playTone(523.25, 'triangle', 0.1); // C5
+        setTimeout(() => playTone(659.25, 'triangle', 0.1), 100); // E5
+        setTimeout(() => playTone(783.99, 'triangle', 0.2), 200); // G5
+      }
+
+      function soundIncorrect() {
+        playTone(330, 'sawtooth', 0.15);
+        setTimeout(() => playTone(260, 'sawtooth', 0.25), 150);
+      }
+
+      function soundClick() {
+        playTone(800, 'sine', 0.05);
+      }
+
+      function soundFinish() {
+        playTone(440, 'triangle', 0.15);
+        setTimeout(() => playTone(554.37, 'triangle', 0.15), 150);
+        setTimeout(() => playTone(659.25, 'triangle', 0.15), 300);
+        setTimeout(() => playTone(880, 'triangle', 0.4), 450);
+      }
+
+      function toggleSound() {
+        state.soundEnabled = !state.soundEnabled;
+        const icon = document.getElementById('sound-icon');
+        const label = document.getElementById('sound-label');
+        if (state.soundEnabled) {
+          icon.textContent = '🔊';
+          label.textContent = 'Sound On';
+          playTone(600);
+        } else {
+          icon.textContent = '🔇';
+          label.textContent = 'Muted';
+        }
+      }
+
+      // ==========================================
+      // 2. BILINGUAL DICTIONARY & LOCALIZATION
+      // ==========================================
+      const i18n = {
+        en: {
+          nav_learn: "Learn Strategies",
+          nav_lab: "Math Lab & Tools",
+          nav_tests: "30-Q Timed Tests (3)",
+          nav_worksheets: "Worksheet Generator",
+          hero_tag: "Chapter 3: Master Subtraction Like a Champion!",
+          hero_title: "7 Super Strategies for Fast Subtraction & Fact Families",
+          hero_desc: "Learn how to count back with Froggie, use the magical All & Zero rules, crack doubles, spot patterns, think addition to subtract, and build Fact Family Houses!",
+          hero_btn_lab: "Try Interactive Manipulatives",
+          hero_btn_test: "Take 30-Question Test 1",
+          strategies_title: "The 7 Worksheets Strategies",
+          click_strategy: "Click any card to explore!",
+          strat1_title: "Count Back 1, 2, or 3",
+          strat1_desc: "Start at the bigger number and jump backward by 1, 2, or 3 on the number line.",
+          strat2_title: "Subtract All & Subtract Zero",
+          strat2_desc: "When you subtract all, nothing is left (0). When you subtract 0, the number never changes!",
+          strat3_title: "Use Doubles to Subtract",
+          strat3_desc: "If you know your addition doubles, subtraction is instant! 7 + 7 = 14, so 14 − 7 = 7.",
+          strat4_title: "Find a Pattern in Subtraction",
+          strat4_desc: "Spotting number relationships makes subtraction rapid and helps solve complex worksheets.",
+          strat5_title: "Relate Addition & Subtraction",
+          strat5_desc: "Addition puts parts together; subtraction takes one part away from the whole!",
+          strat6_title: "Missing Addends & Fact Families",
+          strat6_desc: "Every family of 3 numbers creates 2 addition and 2 subtraction facts living under one roof!",
+          btn_practice_strat: "Practice with Froggie",
+          btn_cookie_test: "Test Cookie Jar Rule",
+          btn_doubles_mirror: "Doubles Mirror Tool",
+          btn_pattern_detective: "Pattern Detective",
+          btn_part_whole: "Part-Part-Whole Model",
+          btn_family_house: "Build Fact Family House",
+          lab_heading: "Interactive Math Manipulatives Lab",
+          lab_subheading: "Use hands-on visual tools to solve problems, count hops, cross out counters, and build number family houses!",
+          frog_tool_title: "Froggie Number Line (Count Back 1, 2, or 3)",
+          tenframe_tool_title: "Ten-Frame Counter Pad",
+          fact_house_title: "Fact Family Roof House Builder",
+          tests_suite_title: "3 Rigorous 30-Question Timed Tests (90 Questions Total)",
+          tests_suite_desc: "Complete all 3 comprehensive tests based on the Chapter 3 worksheets. Each test features 30 questions, live timer, scratchpad, instant scoring, question reviews, and gold printable certificates!",
+          t1_name: "Test 1: Subtraction Strategies Core",
+          t1_desc: "Count Back 1/2/3, Subtract All & Zero, Doubles subtraction, and Subtraction Patterns.",
+          t2_name: "Test 2: Inverse Ops & Missing Addends",
+          t2_desc: "Relating addition to subtraction, finding missing addends (a + ? = b), Part-Part-Whole bar models & word scenarios.",
+          t3_name: "Test 3: Fact Families Grand Mastery",
+          t3_desc: "Fact triangles, 4-fact family sentences, finding the intruder fact, doubles families, and multi-step math puzzles.",
+          btn_start_t1: "Start Test 1 (30 Qs)",
+          btn_start_t2: "Start Test 2 (30 Qs)",
+          btn_start_t3: "Start Test 3 (30 Qs)",
+          worksheet_heading: "Chapter 3 Printable Homework Worksheets",
+          worksheet_subheading: "Perfect for teachers, parents, and students. Customize and print professional A4/Letter math practice sheets with answer keys!",
+          quick_print: "Print Worksheets"
+        },
+        hi: {
+          nav_learn: "रणनीतियाँ सीखें",
+          nav_lab: "गणित प्रयोगशाला",
+          nav_tests: "30-प्रश्न समयबद्ध परीक्षा (3)",
+          nav_worksheets: "वर्कशीट जनरेटर",
+          hero_tag: "अध्याय 3: घटाव के चैंपियन बनें!",
+          hero_title: "तेज घटाव और संख्या परिवारों की 7 जादुई विधियाँ",
+          hero_desc: "मेंढक (Froggie) के साथ पीछे गिनना सीखें, शून्य और सभी को घटाने के नियम जानें, दुगने का जादू देखें और संख्या परिवार का घर बनाएं!",
+          hero_btn_lab: "दृश्य उपकरण आज़माएं",
+          hero_btn_test: "30-प्रश्न टेस्ट 1 दें",
+          strategies_title: "अध्याय 3 की 7 प्रमुख विधियाँ",
+          click_strategy: "अभ्यास के लिए किसी भी कार्ड पर क्लिक करें!",
+          strat1_title: "1, 2 या 3 पीछे गिनना",
+          strat1_desc: "बड़ी संख्या से शुरू करें और संख्या रेखा पर 1, 2 या 3 कदम पीछे कूदें।",
+          strat2_title: "सब घटाना और शून्य घटाना",
+          strat2_desc: "जब सब घटाते हैं तो 0 बचता है। जब 0 घटाते हैं तो संख्या वही रहती है!",
+          strat3_title: "दुगने से घटाव करना",
+          strat3_desc: "यदि आपको जोड़ के दुगने याद हैं (7+7=14), तो घटाव तुरंत हो जाता है (14−7=7)!",
+          strat4_title: "घटाव में पैटर्न पहचानना",
+          strat4_desc: "संख्याओं के पैटर्न को समझने से घटाव बहुत आसान और तेज हो जाता है।",
+          strat5_title: "जोड़ और घटाव का संबंध",
+          strat5_desc: "जोड़ हिस्सों को मिलाता है; घटाव कुल संख्या में से एक हिस्सा निकालता है!",
+          strat6_title: "गुम संख्या और संख्या परिवार",
+          strat6_desc: "3 संख्याओं का एक परिवार 2 जोड़ और 2 घटाव के समीकरण बनाता है!",
+          btn_practice_strat: "मेंढक के साथ कूदें",
+          btn_cookie_test: "कुकी जार नियम देखें",
+          btn_doubles_mirror: "दुगना दर्पण उपकरण",
+          btn_pattern_detective: "पैटर्न जासूस",
+          btn_part_whole: "भाग-भाग-संपूर्ण मॉडल",
+          btn_family_house: "संख्या परिवार घर बनाएं",
+          lab_heading: "इंटरएक्टिव गणित प्रयोगशाला",
+          lab_subheading: "हाथों से सीखने वाले दृश्य उपकरणों की मदद से समस्याओं को हल करें और संख्या घर बनाएं!",
+          frog_tool_title: "मेंढक संख्या रेखा (1, 2 या 3 पीछे कूदें)",
+          tenframe_tool_title: "दस-ढांचा काउंटर पैड",
+          fact_house_title: "संख्या परिवार का घर",
+          tests_suite_title: "3 व्यापक 30-प्रश्न परीक्षाएं (कुल 90 प्रश्न)",
+          tests_suite_desc: "अध्याय 3 वर्कशीट पर आधारित तीनों परीक्षाएं दें। टाइमर, स्क्रैचपैड, तुरंत परिणाम और प्रिंट करने योग्य स्वर्ण प्रमाणपत्र पाएं!",
+          t1_name: "टेस्ट 1: घटाव की बुनियादी विधियाँ",
+          t1_desc: "1/2/3 पीछे गिनना, शून्य व सब घटाना, दुगने से घटाव, और घटाव पैटर्न।",
+          t2_name: "टेस्ट 2: जोड़-घटाव संबंध और अज्ञात संख्या",
+          t2_desc: "जोड़ और घटाव का उल्टा संबंध, रिक्त स्थान भरना (? + a = b), और शब्द समस्याएं।",
+          t3_name: "टेस्ट 3: संख्या परिवार और संपूर्ण महारत",
+          t3_desc: "संख्या त्रिकोण, 4 समीकरण परिवार, गलत तथ्य खोजना, और चुनौतीपूर्ण पहेलियां।",
+          btn_start_t1: "टेस्ट 1 शुरू करें (30 प्रश्न)",
+          btn_start_t2: "टेस्ट 2 शुरू करें (30 प्रश्न)",
+          btn_start_t3: "टेस्ट 3 शुरू करें (30 प्रश्न)",
+          worksheet_heading: "अध्याय 3 अभ्यास वर्कशीट",
+          worksheet_subheading: "शिक्षकों और अभिभावकों के लिए सर्वोत्तम। उत्तर कुंजी के साथ प्रिंट करें!",
+          quick_print: "वर्कशीट प्रिंट करें"
+        }
+      };
+
+      function setLanguage(lang) {
+        state.lang = lang;
+        document.documentElement.lang = lang;
+        const btnEn = document.getElementById('btn-lang-en');
+        const btnHi = document.getElementById('btn-lang-hi');
+        if (lang === 'en') {
+          btnEn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-xs bg-white text-brand-700";
+          btnHi.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
+          document.getElementById('header-title-text').textContent = "Subtraction Strategies & Fact Families";
+        } else {
+          btnHi.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-xs bg-white text-brand-700";
+          btnEn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
+          document.getElementById('header-title-text').textContent = "घटाव की विधियाँ और संख्या परिवार";
+        }
+
+        // Update elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang] && i18n[lang][key]) {
+            el.innerHTML = i18n[lang][key];
+          }
+        });
+
+        // Re-render active question if in test
+        if (state.activeTestId) {
+          renderQuestion(state.currentQuestionIndex);
+        }
+      }
+
+      // ==========================================
+      // 3. NAVIGATION TABS
+      // ==========================================
+      function navigate(tab) {
+        soundClick();
+        state.activeTab = tab;
+        const sections = ['learn', 'lab', 'tests', 'worksheets'];
+        sections.forEach(s => {
+          const secEl = document.getElementById(`section-${s}`);
+          const btnEl = document.getElementById(`nav-btn-${s}`);
+          if (s === tab) {
+            secEl.classList.remove('hidden');
+            btnEl.className = "nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-brand-600 text-white shadow-md shadow-brand-500/20";
+          } else {
+            secEl.classList.add('hidden');
+            btnEl.className = "nav-tab px-4 py-2 rounded-xl flex items-center gap-2 transition-all shrink-0 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200";
+          }
+        });
+
+        if (tab === 'lab') {
+          initFrogNumberLine();
+          updateTenFrame();
+          buildHouse();
+        } else if (tab === 'worksheets') {
+          generateWorksheet();
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // ==========================================
+      // 4. STRATEGY DEMOS (IN LEARN SECTION)
+      // ==========================================
+      function openInteractiveStrat(stratId) {
+        soundClick();
+        const box = document.getElementById('interactive-strat-box');
+        const container = document.getElementById('strat-content');
+        box.scrollIntoView({ behavior: 'smooth' });
+
+        if (stratId === 1) {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-emerald-800">🐸 Strategy 1: Count Back to Subtract 1, 2, or 3</h4>
+                <button onclick="navigate('lab')" class="text-xs font-bold text-emerald-700 hover:underline">Open Full Number Line →</button>
+              </div>
+              <p class="text-sm text-slate-600">
+                When you subtract 1, 2, or 3, don't count from zero. <strong>Start at the bigger number</strong> and jump backwards!
+              </p>
+              <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 text-center space-y-4">
+                <div class="text-2xl font-black font-math text-emerald-900">Try: 8 − 3</div>
+                <div class="flex items-center justify-center gap-3 font-math text-base font-bold text-slate-700">
+                  <span class="px-3 py-1 bg-white rounded-lg border border-emerald-300">Start: 8</span>
+                  <span>➜</span>
+                  <span class="px-3 py-1 bg-white rounded-lg border border-emerald-300">Hop 1: 7</span>
+                  <span>➜</span>
+                  <span class="px-3 py-1 bg-white rounded-lg border border-emerald-300">Hop 2: 6</span>
+                  <span>➜</span>
+                  <span class="px-3 py-1 bg-emerald-600 text-white rounded-lg font-black text-lg shadow-sm">Hop 3: 5!</span>
+                </div>
+                <div class="text-xs text-emerald-800 font-semibold">Therefore: 8 − 3 = 5!</div>
+              </div>
+            </div>
+          `;
+        } else if (stratId === 2) {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-blue-800">🍪 Strategy 2: Subtract All and Subtract Zero</h4>
+              </div>
+              <p class="text-sm text-slate-600">
+                Two golden rules that make subtraction instantaneous:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-5 rounded-2xl border border-blue-200 space-y-2">
+                  <div class="text-xs font-black uppercase text-blue-700">Rule 1: Subtract All</div>
+                  <div class="text-xl font-black font-math text-blue-900">7 − 7 = 0</div>
+                  <p class="text-xs text-slate-600">If you have 7 balloons and all 7 pop, you have <strong>0</strong> left!</p>
+                </div>
+                <div class="bg-amber-50 p-5 rounded-2xl border border-amber-200 space-y-2">
+                  <div class="text-xs font-black uppercase text-amber-700">Rule 2: Subtract Zero</div>
+                  <div class="text-xl font-black font-math text-amber-900">7 − 0 = 7</div>
+                  <p class="text-xs text-slate-600">If you have 7 cookies and eat 0 cookies, you still have <strong>7</strong> cookies!</p>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (stratId === 3) {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-purple-800">🪞 Strategy 3: Use Known Doubles to Subtract</h4>
+              </div>
+              <p class="text-sm text-slate-600">
+                You already know addition doubles like 4+4=8, 5+5=10, 6+6=12, 7+7=14! Flip them to subtract:
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center font-math">
+                <div class="p-3 bg-purple-50 rounded-xl border border-purple-200">
+                  <div class="text-xs text-purple-600 font-bold">5 + 5 = 10</div>
+                  <div class="text-base font-black text-purple-900 mt-1">10 − 5 = 5</div>
+                </div>
+                <div class="p-3 bg-purple-50 rounded-xl border border-purple-200">
+                  <div class="text-xs text-purple-600 font-bold">6 + 6 = 12</div>
+                  <div class="text-base font-black text-purple-900 mt-1">12 − 6 = 6</div>
+                </div>
+                <div class="p-3 bg-purple-50 rounded-xl border border-purple-200">
+                  <div class="text-xs text-purple-600 font-bold">7 + 7 = 14</div>
+                  <div class="text-base font-black text-purple-900 mt-1">14 − 7 = 7</div>
+                </div>
+                <div class="p-3 bg-purple-50 rounded-xl border border-purple-200">
+                  <div class="text-xs text-purple-600 font-bold">8 + 8 = 16</div>
+                  <div class="text-base font-black text-purple-900 mt-1">16 − 8 = 8</div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (stratId === 4) {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <h4 class="text-lg font-black text-amber-800">🔍 Strategy 4: Find a Pattern</h4>
+              <p class="text-sm text-slate-600">Notice what happens when we subtract 1 more each time:</p>
+              <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 grid grid-cols-3 gap-2 text-center font-math font-bold text-amber-900">
+                <div>9 − 1 = 8</div>
+                <div>9 − 2 = 7</div>
+                <div>9 − 3 = 6</div>
+                <div>9 − 4 = 5</div>
+                <div>9 − 5 = 4</div>
+                <div>9 − 6 = 3</div>
+              </div>
+              <p class="text-xs text-slate-500 text-center font-semibold">Each time the subtrahend goes up by 1, the answer goes down by 1!</p>
+            </div>
+          `;
+        } else if (stratId === 5) {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <h4 class="text-lg font-black text-rose-800">🧱 Strategy 5: Relate Addition &amp; Subtraction</h4>
+              <p class="text-sm text-slate-600">Think of numbers as a Bar Model: Part + Part = Whole!</p>
+              <div class="max-w-md mx-auto bg-rose-50 p-6 rounded-2xl border border-rose-200 space-y-3">
+                <div class="w-full bg-slate-900 text-white text-center py-2 rounded-xl font-math font-black text-lg">Whole: 9</div>
+                <div class="flex gap-2 font-math font-bold text-center">
+                  <div class="w-5/12 bg-rose-500 text-white py-2 rounded-xl">Part: 4</div>
+                  <div class="w-7/12 bg-indigo-500 text-white py-2 rounded-xl">Part: 5</div>
+                </div>
+                <div class="text-center font-math text-sm pt-2 text-rose-950 font-bold space-y-1">
+                  <div>4 + 5 = 9 &nbsp;and&nbsp; 5 + 4 = 9</div>
+                  <div>9 − 4 = 5 &nbsp;and&nbsp; 9 − 5 = 4</div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          container.innerHTML = `
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-indigo-800">🏠 Strategy 6 &amp; 7: Fact Families &amp; Missing Addends</h4>
+                <button onclick="navigate('lab')" class="text-xs font-bold text-indigo-700 hover:underline">Build in Math Lab →</button>
+              </div>
+              <p class="text-sm text-slate-600">
+                A <strong>Fact Family</strong> is a group of 3 related numbers that use the same 4 equations (2 additions and 2 subtractions).
+              </p>
+              <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200 text-center space-y-3 font-math">
+                <div class="text-lg font-bold text-indigo-900">Family of 3, 8, and 11:</div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm font-black">
+                  <div class="p-2 bg-white rounded-lg border border-indigo-300 text-indigo-700">3 + 8 = 11</div>
+                  <div class="p-2 bg-white rounded-lg border border-indigo-300 text-indigo-700">8 + 3 = 11</div>
+                  <div class="p-2 bg-white rounded-lg border border-indigo-300 text-rose-700">11 − 3 = 8</div>
+                  <div class="p-2 bg-white rounded-lg border border-indigo-300 text-rose-700">11 − 8 = 3</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Initial view for strat box
+      openInteractiveStrat(1);
+
+      // ==========================================
+      // 5. INTERACTIVE MANIPULATIVES (MATH LAB)
+      // ==========================================
+      // Tool 1: Frog Number Line
+      function initFrogNumberLine() {
+        const select = document.getElementById('frog-start');
+        if (select && select.children.length === 0) {
+          for (let i = 1; i <= 20; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = i;
+            if (i === 9) opt.selected = true;
+            select.appendChild(opt);
+          }
+        }
+        updateFrogSimulation();
+      }
+
+      function updateFrogSimulation() {
+        const start = parseInt(document.getElementById('frog-start').value, 10);
+        const hops = parseInt(document.getElementById('frog-hops').value, 10);
+        const result = Math.max(0, start - hops);
+
+        // Render number line 0 to 20
+        const container = document.getElementById('number-line-container');
+        container.innerHTML = '';
+        for (let i = 0; i <= 20; i++) {
+          const tick = document.createElement('div');
+          tick.className = 'flex flex-col items-center relative';
+          
+          let highlightClass = 'text-slate-500 font-bold';
+          if (i === start) highlightClass = 'text-emerald-700 font-black scale-125';
+          if (i === result) highlightClass = 'text-indigo-700 font-black scale-125';
+
+          // Frog on current start
+          let frogBadge = '';
+          if (i === start) {
+            frogBadge = `<span id="froggie-icon" class="absolute -top-7 text-2xl transition-all">🐸</span>`;
+          }
+
+          tick.innerHTML = `
+            ${frogBadge}
+            <div class="w-1 h-3 bg-slate-400 mb-1"></div>
+            <span class="text-xs font-math ${highlightClass}">${i}</span>
+          `;
+          container.appendChild(tick);
+        }
+
+        document.getElementById('frog-equation-display').textContent = `${start} − ${hops} = ${result}`;
+        document.getElementById('frog-step-explanation').textContent = `Start at ${start}. Jump back ${hops} steps ➜ Landing on ${result}!`;
+      }
+
+      function animateFrogJump() {
+        soundCorrect();
+        const frog = document.getElementById('froggie-icon');
+        if (frog) {
+          frog.classList.add('animate-hop');
+          setTimeout(() => frog.classList.remove('animate-hop'), 1500);
+        }
+      }
+
+      // Tool 2: Ten Frame
+      function updateTenFrame() {
+        const total = parseInt(document.getElementById('tenframe-total').value, 10);
+        const subInput = document.getElementById('tenframe-sub');
+        subInput.max = total;
+        if (parseInt(subInput.value, 10) > total) subInput.value = total;
+        const sub = parseInt(subInput.value, 10);
+        
+        document.getElementById('tenframe-total-val').textContent = total;
+        document.getElementById('tenframe-sub-val').textContent = sub;
+
+        const grid = document.getElementById('ten-frame-grid');
+        grid.innerHTML = '';
+
+        const remaining = total - sub;
+        for (let i = 1; i <= 10; i++) {
+          const cell = document.createElement('div');
+          cell.className = "w-14 h-14 bg-white border-2 border-slate-300 rounded-2xl flex items-center justify-center font-bold relative";
+          
+          if (i <= remaining) {
+            cell.innerHTML = `<span class="w-9 h-9 rounded-full bg-blue-500 shadow-md"></span>`;
+          } else if (i <= total) {
+            cell.innerHTML = `<span class="w-9 h-9 rounded-full bg-rose-200 border-2 border-rose-400 flex items-center justify-center text-rose-600 font-black text-sm">✕</span>`;
+          }
+          grid.appendChild(cell);
+        }
+
+        document.getElementById('tenframe-equation').textContent = `${total} − ${sub} = ${remaining}`;
+      }
+
+      // Tool 3: Fact Family House
+      function buildHouse() {
+        let a = parseInt(document.getElementById('house-part-a').value, 10) || 1;
+        let b = parseInt(document.getElementById('house-part-b').value, 10) || 1;
+        let sum = a + b;
+
+        document.getElementById('house-sum-badge').textContent = sum;
+        document.getElementById('house-corner-a').textContent = a;
+        document.getElementById('house-corner-b').textContent = b;
+
+        const list = document.getElementById('house-equations-list');
+        if (a === b) {
+          // Doubles fact family has 2 distinct facts
+          list.innerHTML = `
+            <div class="text-indigo-600">${a} + ${b} = ${sum}</div>
+            <div class="text-rose-600">${sum} − ${a} = ${b}</div>
+            <div class="text-xs text-purple-600 font-bold mt-2">⭐ Doubles Family (${a} + ${a})!</div>
+          `;
+        } else {
+          list.innerHTML = `
+            <div class="text-indigo-600">${a} + ${b} = ${sum}</div>
+            <div class="text-indigo-600">${b} + ${a} = ${sum}</div>
+            <div class="text-rose-600">${sum} − ${a} = ${b}</div>
+            <div class="text-rose-600">${sum} − ${b} = ${a}</div>
+          `;
+        }
+      }
+
+      function setHousePreset(a, b) {
+        soundClick();
+        document.getElementById('house-part-a').value = a;
+        document.getElementById('house-part-b').value = b;
+        buildHouse();
+      }
+
+      // ==========================================
+      // 6. QUESTION BANKS (3 TESTS x 30 QUESTIONS = 90 QUESTIONS)
+      // ==========================================
+      
+      // TEST 1: Subtraction Strategies Core (30 Questions)
+      const TEST_1_QUESTIONS = [
+        {
+          qEn: "Count back 1: What is 7 − 1?",
+          qHi: "1 पीछे गिनें: 7 − 1 क्या होगा?",
+          opts: ["5", "6", "8", "7"],
+          ans: 1,
+          strat: "Count Back 1",
+          expEn: "Start at 7 and count back 1 step: 6. So 7 − 1 = 6.",
+          expHi: "7 से शुरू करें और 1 कदम पीछे जाएं: 6। अतः 7 − 1 = 6।"
+        },
+        {
+          qEn: "Count back 2: What is 9 − 2?",
+          qHi: "2 पीछे गिनें: 9 − 2 क्या होगा?",
+          opts: ["7", "6", "8", "5"],
+          ans: 0,
+          strat: "Count Back 2",
+          expEn: "Start at 9. Jump back 2: 8, 7. So 9 − 2 = 7.",
+          expHi: "9 से शुरू करें और 2 कदम पीछे जाएं: 8, 7। अतः 9 − 2 = 7।"
+        },
+        {
+          qEn: "Count back 3: What is 8 − 3?",
+          qHi: "3 पीछे गिनें: 8 − 3 क्या होगा?",
+          opts: ["6", "4", "5", "3"],
+          ans: 2,
+          strat: "Count Back 3",
+          expEn: "Start at 8. Count back 3 hops: 7, 6, 5. So 8 − 3 = 5.",
+          expHi: "8 से शुरू करें। 3 कदम पीछे जाएं: 7, 6, 5। उत्तर 5 है।"
+        },
+        {
+          qEn: "Subtract All: What is 6 − 6?",
+          qHi: "सब घटाना: 6 − 6 क्या होगा?",
+          opts: ["1", "6", "0", "12"],
+          ans: 2,
+          strat: "Subtract All",
+          expEn: "When you subtract a number from itself, you get 0 (All are taken away!).",
+          expHi: "जब किसी संख्या में से वही संख्या घटाई जाती है, तो 0 बचता है।"
+        },
+        {
+          qEn: "Subtract Zero: What is 9 − 0?",
+          qHi: "शून्य घटाना: 9 − 0 क्या होगा?",
+          opts: ["0", "9", "8", "10"],
+          ans: 1,
+          strat: "Subtract Zero",
+          expEn: "Subtracting 0 means taking away nothing. The number stays 9.",
+          expHi: "0 घटाने का अर्थ है कुछ भी न घटाना। संख्या 9 ही रहेगी।"
+        },
+        {
+          qEn: "Use doubles: Since 5 + 5 = 10, what is 10 − 5?",
+          qHi: "दुगने का उपयोग: चूंकि 5 + 5 = 10, तो 10 − 5 क्या होगा?",
+          opts: ["4", "5", "6", "0"],
+          ans: 1,
+          strat: "Doubles Subtraction",
+          expEn: "10 is the double of 5. Taking away 5 leaves 5.",
+          expHi: "10, 5 का दुगना है। 10 में से 5 घटाने पर 5 बचता है।"
+        },
+        {
+          qEn: "Use doubles: 7 + 7 = 14. What is 14 − 7?",
+          qHi: "दुगने का उपयोग: 7 + 7 = 14। तो 14 − 7 क्या होगा?",
+          opts: ["8", "6", "7", "0"],
+          ans: 2,
+          strat: "Doubles Subtraction",
+          expEn: "Double fact: 7 + 7 = 14, therefore 14 − 7 = 7.",
+          expHi: "दुगने का तथ्य: 7 + 7 = 14, इसलिए 14 − 7 = 7।"
+        },
+        {
+          qEn: "Pattern: 10 − 1 = 9, 10 − 2 = 8, 10 − 3 = 7. What is 10 − 4?",
+          qHi: "पैटर्न: 10 − 1 = 9, 10 − 2 = 8, 10 − 3 = 7। तो 10 − 4 क्या होगा?",
+          opts: ["5", "6", "7", "4"],
+          ans: 1,
+          strat: "Find a Pattern",
+          expEn: "The answer decreases by 1 each time: 9, 8, 7, 6.",
+          expHi: "उत्तर हर बार 1 कम हो रहा है: 9, 8, 7, 6।"
+        },
+        {
+          qEn: "Count back 1: What is 15 − 1?",
+          qHi: "1 पीछे गिनें: 15 − 1 क्या होगा?",
+          opts: ["14", "13", "16", "15"],
+          ans: 0,
+          strat: "Count Back 1",
+          expEn: "1 before 15 is 14.",
+          expHi: "15 से ठीक पहले 14 आता है।"
+        },
+        {
+          qEn: "Count back 2: What is 12 − 2?",
+          qHi: "2 पीछे गिनें: 12 − 2 क्या होगा?",
+          opts: ["9", "11", "10", "8"],
+          ans: 2,
+          strat: "Count Back 2",
+          expEn: "12 count back 2: 11, 10.",
+          expHi: "12 से 2 कदम पीछे: 11, 10।"
+        },
+        {
+          qEn: "Count back 3: What is 11 − 3?",
+          qHi: "3 पीछे गिनें: 11 − 3 क्या होगा?",
+          opts: ["9", "8", "7", "6"],
+          ans: 1,
+          strat: "Count Back 3",
+          expEn: "11 count back 3: 10, 9, 8.",
+          expHi: "11 से 3 कदम पीछे: 10, 9, 8।"
+        },
+        {
+          qEn: "Special rule: 14 − 14 = ?",
+          qHi: "विशेष नियम: 14 − 14 = ?",
+          opts: ["14", "1", "0", "28"],
+          ans: 2,
+          strat: "Subtract All",
+          expEn: "Subtracting all gives 0.",
+          expHi: "सभी घटाने पर 0 मिलता है।"
+        },
+        {
+          qEn: "Special rule: 18 − 0 = ?",
+          qHi: "विशेष नियम: 18 − 0 = ?",
+          opts: ["0", "18", "17", "19"],
+          ans: 1,
+          strat: "Subtract Zero",
+          expEn: "Taking away 0 leaves the number unchanged: 18.",
+          expHi: "0 घटाने पर संख्या 18 ही रहती है।"
+        },
+        {
+          qEn: "Doubles subtraction: 8 + 8 = 16. What is 16 − 8?",
+          qHi: "दुगने से घटाव: 8 + 8 = 16। 16 − 8 क्या होगा?",
+          opts: ["8", "7", "9", "6"],
+          ans: 0,
+          strat: "Doubles Subtraction",
+          expEn: "16 − 8 = 8 because 8 + 8 = 16.",
+          expHi: "16 − 8 = 8 क्योंकि 8 + 8 = 16 होता है।"
+        },
+        {
+          qEn: "Doubles subtraction: 6 + 6 = 12. What is 12 − 6?",
+          qHi: "दुगने से घटाव: 6 + 6 = 12। 12 − 6 क्या होगा?",
+          opts: ["5", "7", "6", "0"],
+          ans: 2,
+          strat: "Doubles Subtraction",
+          expEn: "Half of 12 is 6. So 12 − 6 = 6.",
+          expHi: "12 का आधा 6 है। अतः 12 − 6 = 6।"
+        },
+        {
+          qEn: "Pattern: 5 − 5 = 0, 6 − 5 = 1, 7 − 5 = 2. What is 8 − 5?",
+          qHi: "पैटर्न: 5 − 5 = 0, 6 − 5 = 1, 7 − 5 = 2। तो 8 − 5 क्या होगा?",
+          opts: ["3", "4", "2", "5"],
+          ans: 0,
+          strat: "Find a Pattern",
+          expEn: "The pattern increases by 1: 0, 1, 2, 3.",
+          expHi: "पैटर्न 1 बढ़ रहा है: 0, 1, 2, 3।"
+        },
+        {
+          qEn: "Froggie jumps back 2 steps from 6. Where does Froggie land?",
+          qHi: "मेंढक 6 से 2 कदम पीछे कूदता है। वह कहाँ पहुंचेगा?",
+          opts: ["3", "4", "5", "2"],
+          ans: 1,
+          strat: "Count Back 2",
+          expEn: "6 − 2 = 4.",
+          expHi: "6 − 2 = 4।"
+        },
+        {
+          qEn: "A basket had 5 apples. Rohan ate all 5 apples. How many apples are left?",
+          qHi: "एक टोकरी में 5 सेब थे। रोहन ने सभी 5 सेब खा लिए। कितने सेब बचे?",
+          opts: ["5", "1", "0", "10"],
+          ans: 2,
+          strat: "Subtract All",
+          expEn: "5 − 5 = 0 apples left.",
+          expHi: "5 − 5 = 0 सेब बचे।"
+        },
+        {
+          qEn: "Meena had 12 pencils. She gave 0 pencils to her brother. How many pencils does she have now?",
+          qHi: "मीना के पास 12 पेंसिलें थीं। उसने अपने भाई को 0 पेंसिल दी। अब उसके पास कितनी पेंसिलें हैं?",
+          opts: ["0", "11", "12", "1"],
+          ans: 2,
+          strat: "Subtract Zero",
+          expEn: "12 − 0 = 12 pencils.",
+          expHi: "12 − 0 = 12 पेंसिलें।"
+        },
+        {
+          qEn: "Doubles: 9 + 9 = 18. What is 18 − 9?",
+          qHi: "दुगना: 9 + 9 = 18। 18 − 9 क्या होगा?",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Doubles Subtraction",
+          expEn: "18 − 9 = 9.",
+          expHi: "18 − 9 = 9।"
+        },
+        {
+          qEn: "Count back 3: What is 13 − 3?",
+          qHi: "3 पीछे गिनें: 13 − 3 क्या होगा?",
+          opts: ["9", "10", "11", "8"],
+          ans: 1,
+          strat: "Count Back 3",
+          expEn: "13 − 3 = 10.",
+          expHi: "13 − 3 = 10।"
+        },
+        {
+          qEn: "What is 4 − 0?",
+          qHi: "4 − 0 क्या है?",
+          opts: ["0", "4", "3", "5"],
+          ans: 1,
+          strat: "Subtract Zero",
+          expEn: "Any number minus zero is itself: 4.",
+          expHi: "किसी भी संख्या में से शून्य घटाने पर वही संख्या मिलती है: 4।"
+        },
+        {
+          qEn: "What is 11 − 11?",
+          qHi: "11 − 11 क्या है?",
+          opts: ["0", "1", "11", "22"],
+          ans: 0,
+          strat: "Subtract All",
+          expEn: "11 − 11 = 0.",
+          expHi: "11 − 11 = 0।"
+        },
+        {
+          qEn: "Pattern: 20 − 1 = 19, 20 − 2 = 18. What is 20 − 3?",
+          qHi: "पैटर्न: 20 − 1 = 19, 20 − 2 = 18। 20 − 3 क्या होगा?",
+          opts: ["16", "17", "15", "18"],
+          ans: 1,
+          strat: "Find a Pattern",
+          expEn: "Counting back 3 from 20 gives 17.",
+          expHi: "20 से 3 पीछे गिनने पर 17 आता है।"
+        },
+        {
+          qEn: "Doubles: 4 + 4 = 8. What is 8 − 4?",
+          qHi: "दुगना: 4 + 4 = 8। 8 − 4 क्या होगा?",
+          opts: ["2", "4", "6", "0"],
+          ans: 1,
+          strat: "Doubles Subtraction",
+          expEn: "8 − 4 = 4.",
+          expHi: "8 − 4 = 4।"
+        },
+        {
+          qEn: "Count back 2: What is 14 − 2?",
+          qHi: "2 पीछे गिनें: 14 − 2 क्या होगा?",
+          opts: ["11", "12", "13", "10"],
+          ans: 1,
+          strat: "Count Back 2",
+          expEn: "14 count back 2: 13, 12.",
+          expHi: "14 से 2 पीछे: 13, 12।"
+        },
+        {
+          qEn: "Count back 1: What is 19 − 1?",
+          qHi: "1 पीछे गिनें: 19 − 1 क्या होगा?",
+          opts: ["17", "18", "20", "19"],
+          ans: 1,
+          strat: "Count Back 1",
+          expEn: "19 − 1 = 18.",
+          expHi: "19 − 1 = 18।"
+        },
+        {
+          qEn: "Find the missing number: 15 − ___ = 15",
+          qHi: "रिक्त स्थान भरें: 15 − ___ = 15",
+          opts: ["1", "15", "0", "10"],
+          ans: 2,
+          strat: "Subtract Zero",
+          expEn: "15 − 0 = 15.",
+          expHi: "15 − 0 = 15।"
+        },
+        {
+          qEn: "Find the missing number: 13 − ___ = 0",
+          qHi: "रिक्त स्थान भरें: 13 − ___ = 0",
+          opts: ["0", "13", "1", "12"],
+          ans: 1,
+          strat: "Subtract All",
+          expEn: "Subtracting 13 from 13 leaves 0.",
+          expHi: "13 में से 13 घटाने पर 0 आता है।"
+        },
+        {
+          qEn: "Doubles: 10 + 10 = 20. What is 20 − 10?",
+          qHi: "दुगना: 10 + 10 = 20। 20 − 10 क्या होगा?",
+          opts: ["5", "10", "15", "0"],
+          ans: 1,
+          strat: "Doubles Subtraction",
+          expEn: "20 − 10 = 10.",
+          expHi: "20 − 10 = 10।"
+        }
+      ];
+
+      // TEST 2: Inverse Operations & Missing Addends (30 Questions)
+      const TEST_2_QUESTIONS = [
+        {
+          qEn: "If 4 + 5 = 9, what is 9 − 5?",
+          qHi: "यदि 4 + 5 = 9 है, तो 9 − 5 क्या होगा?",
+          opts: ["3", "4", "5", "6"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "Addition and subtraction are opposites. If 4 + 5 = 9, then 9 − 5 = 4.",
+          expHi: "जोड़ और घटाव उल्टे होते हैं। यदि 4 + 5 = 9 है, तो 9 − 5 = 4 होगा।"
+        },
+        {
+          qEn: "If 6 + 2 = 8, what is 8 − 6?",
+          qHi: "यदि 6 + 2 = 8 है, तो 8 − 6 क्या होगा?",
+          opts: ["1", "2", "3", "4"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "8 − 6 = 2.",
+          expHi: "8 − 6 = 2।"
+        },
+        {
+          qEn: "Missing addend: 7 + ___ = 11",
+          qHi: "रिक्त स्थान भरें: 7 + ___ = 11",
+          opts: ["3", "4", "5", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "Think: 11 − 7 = 4. So 7 + 4 = 11.",
+          expHi: "सोचें: 11 − 7 = 4। अतः 7 + 4 = 11।"
+        },
+        {
+          qEn: "Missing addend: 8 + ___ = 15",
+          qHi: "रिक्त स्थान भरें: 8 + ___ = 15",
+          opts: ["6", "7", "8", "9"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "15 − 8 = 7. So 8 + 7 = 15.",
+          expHi: "15 − 8 = 7। अतः 8 + 7 = 15।"
+        },
+        {
+          qEn: "Part-Part-Whole: Whole is 12, one part is 4. What is the other part?",
+          qHi: "संपूर्ण संख्या 12 है, एक हिस्सा 4 है। दूसरा हिस्सा क्या है?",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Part-Part-Whole",
+          expEn: "Whole − Part = 12 − 4 = 8.",
+          expHi: "कुल − हिस्सा = 12 − 4 = 8।"
+        },
+        {
+          qEn: "Part-Part-Whole: Whole is 10, one part is 3. What is the other part?",
+          qHi: "संपूर्ण संख्या 10 है, एक हिस्सा 3 है। दूसरा हिस्सा क्या है?",
+          opts: ["6", "7", "8", "5"],
+          ans: 1,
+          strat: "Part-Part-Whole",
+          expEn: "10 − 3 = 7.",
+          expHi: "10 − 3 = 7।"
+        },
+        {
+          qEn: "Which subtraction fact is related to 3 + 6 = 9?",
+          qHi: "3 + 6 = 9 से संबंधित कौन सा घटाव तथ्य है?",
+          opts: ["9 − 2 = 7", "9 − 3 = 6", "6 − 3 = 3", "9 − 1 = 8"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "9 − 3 = 6 uses the same numbers: 3, 6, and 9.",
+          expHi: "9 − 3 = 6 इन्हीं तीन संख्याओं (3, 6, 9) का उपयोग करता है।"
+        },
+        {
+          qEn: "Which addition fact helps you solve 13 − 8 = ?",
+          qHi: "13 − 8 = ? को हल करने में कौन सा जोड़ तथ्य मदद करता है?",
+          opts: ["8 + 5 = 13", "8 + 2 = 10", "7 + 6 = 13", "8 + 4 = 12"],
+          ans: 0,
+          strat: "Think Addition to Subtract",
+          expEn: "Knowing 8 + 5 = 13 directly gives 13 − 8 = 5.",
+          expHi: "8 + 5 = 13 जानने से तुरंत पता चलता है कि 13 − 8 = 5 है।"
+        },
+        {
+          qEn: "Missing addend: ___ + 4 = 10",
+          qHi: "रिक्त स्थान भरें: ___ + 4 = 10",
+          opts: ["5", "6", "7", "4"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "10 − 4 = 6.",
+          expHi: "10 − 4 = 6।"
+        },
+        {
+          qEn: "Missing addend: ___ + 9 = 16",
+          qHi: "रिक्त स्थान भरें: ___ + 9 = 16",
+          opts: ["6", "7", "8", "5"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "16 − 9 = 7.",
+          expHi: "16 − 9 = 7।"
+        },
+        {
+          qEn: "If 9 + 4 = 13, what is 13 − 9?",
+          qHi: "यदि 9 + 4 = 13 है, तो 13 − 9 क्या होगा?",
+          opts: ["3", "4", "5", "9"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "13 − 9 = 4.",
+          expHi: "13 − 9 = 4।"
+        },
+        {
+          qEn: "If 8 + 6 = 14, what is 14 − 8?",
+          qHi: "यदि 8 + 6 = 14 है, तो 14 − 8 क्या होगा?",
+          opts: ["5", "6", "7", "8"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "14 − 8 = 6.",
+          expHi: "14 − 8 = 6।"
+        },
+        {
+          qEn: "A toy box has 14 cars. 9 cars are red, and the rest are blue. How many cars are blue?",
+          qHi: "एक डिब्बे में 14 गाड़ियाँ हैं। 9 लाल हैं और बाकी नीली हैं। नीली गाड़ियाँ कितनी हैं?",
+          opts: ["4", "5", "6", "7"],
+          ans: 1,
+          strat: "Part-Part-Whole",
+          expEn: "14 − 9 = 5 blue cars.",
+          expHi: "14 − 9 = 5 नीली गाड़ियाँ।"
+        },
+        {
+          qEn: "Pooja needs 16 stickers. She already has 8. How many more stickers does she need?",
+          qHi: "पूजा को 16 स्टिकर चाहिए। उसके पास पहले से 8 हैं। उसे कितने और स्टिकर चाहिए?",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "8 + ___ = 16. Since 16 − 8 = 8, she needs 8 more.",
+          expHi: "8 + ___ = 16। चूंकि 16 − 8 = 8, उसे 8 और चाहिए।"
+        },
+        {
+          qEn: "Find the missing number: 6 + ___ = 13",
+          qHi: "रिक्त स्थान भरें: 6 + ___ = 13",
+          opts: ["6", "7", "8", "9"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "13 − 6 = 7.",
+          expHi: "13 − 6 = 7।"
+        },
+        {
+          qEn: "Which subtraction fact is NOT related to 5 + 7 = 12?",
+          qHi: "कौन सा घटाव तथ्य 5 + 7 = 12 से संबंधित नहीं है?",
+          opts: ["12 − 5 = 7", "12 − 7 = 5", "12 − 4 = 8", "All are related except 12 − 4 = 8"],
+          ans: 2,
+          strat: "Relate Addition & Subtraction",
+          expEn: "12 − 4 = 8 does not belong to the (5, 7, 12) family.",
+          expHi: "12 − 4 = 8 परिवार (5, 7, 12) का सदस्य नहीं है।"
+        },
+        {
+          qEn: "Part-Part-Whole: Whole = 15, Part 1 = 6. What is Part 2?",
+          qHi: "संपूर्ण संख्या = 15, भाग 1 = 6। भाग 2 क्या होगा?",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Part-Part-Whole",
+          expEn: "15 − 6 = 9.",
+          expHi: "15 − 6 = 9।"
+        },
+        {
+          qEn: "If 11 − 4 = 7, which addition equation is true?",
+          qHi: "यदि 11 − 4 = 7 है, तो कौन सा जोड़ समीकरण सत्य है?",
+          opts: ["4 + 7 = 11", "7 + 5 = 11", "4 + 6 = 11", "11 + 4 = 15"],
+          ans: 0,
+          strat: "Relate Addition & Subtraction",
+          expEn: "4 + 7 = 11 is the inverse addition fact.",
+          expHi: "4 + 7 = 11 इसका उल्टा जोड़ तथ्य है।"
+        },
+        {
+          qEn: "Missing addend: 9 + ___ = 17",
+          qHi: "रिक्त स्थान भरें: 9 + ___ = 17",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "17 − 9 = 8.",
+          expHi: "17 − 9 = 8।"
+        },
+        {
+          qEn: "Missing addend: 5 + ___ = 14",
+          qHi: "रिक्त स्थान भरें: 5 + ___ = 14",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "14 − 5 = 9.",
+          expHi: "14 − 5 = 9।"
+        },
+        {
+          qEn: "Which fact family has only 2 unique equations instead of 4?",
+          qHi: "किस संख्या परिवार में 4 के बजाय केवल 2 समीकरण होते हैं?",
+          opts: ["3, 4, 7", "6, 6, 12 (Doubles)", "5, 8, 13", "2, 9, 11"],
+          ans: 1,
+          strat: "Fact Families",
+          expEn: "Doubles like 6 + 6 = 12 have only 6+6=12 and 12-6=6.",
+          expHi: "दुगने जैसे 6 + 6 = 12 में केवल 2 समीकरण होते हैं।"
+        },
+        {
+          qEn: "There were 11 birds on a tree. Some flew away. Now 7 birds are left. How many birds flew away?",
+          qHi: "पेड़ पर 11 पक्षी थे। कुछ उड़ गए। अब 7 पक्षी बचे हैं। कितने पक्षी उड़े?",
+          opts: ["3", "4", "5", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "11 − 7 = 4 birds flew away.",
+          expHi: "11 − 7 = 4 पक्षी उड़े।"
+        },
+        {
+          qEn: "Part-Part-Whole: Whole = 18, Part 1 = 9. What is Part 2?",
+          qHi: "संपूर्ण संख्या = 18, भाग 1 = 9। भाग 2 क्या होगा?",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Part-Part-Whole",
+          expEn: "18 − 9 = 9 (Doubles fact!).",
+          expHi: "18 − 9 = 9 (दुगना तथ्य)।"
+        },
+        {
+          qEn: "Missing addend: ___ + 7 = 15",
+          qHi: "रिक्त स्थान भरें: ___ + 7 = 15",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "15 − 7 = 8.",
+          expHi: "15 − 7 = 8।"
+        },
+        {
+          qEn: "Missing addend: 8 + ___ = 12",
+          qHi: "रिक्त स्थान भरें: 8 + ___ = 12",
+          opts: ["3", "4", "5", "6"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "12 − 8 = 4.",
+          expHi: "12 − 8 = 4।"
+        },
+        {
+          qEn: "If 15 − 7 = 8, then 15 − 8 = ?",
+          qHi: "यदि 15 − 7 = 8 है, तो 15 − 8 = ?",
+          opts: ["6", "7", "8", "9"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "The parts switch places: 15 − 8 = 7.",
+          expHi: "हिस्से आपस में बदल जाते हैं: 15 − 8 = 7।"
+        },
+        {
+          qEn: "Solve: 16 − ___ = 9",
+          qHi: "हल करें: 16 − ___ = 9",
+          opts: ["6", "7", "8", "5"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "16 − 9 = 7.",
+          expHi: "16 − 9 = 7।"
+        },
+        {
+          qEn: "Solve: 17 − ___ = 8",
+          qHi: "हल करें: 17 − ___ = 8",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Missing Addends",
+          expEn: "17 − 8 = 9.",
+          expHi: "17 − 8 = 9।"
+        },
+        {
+          qEn: "A baker made 13 cookies. He sold some and has 5 left. How many cookies did he sell?",
+          qHi: "एक हलवाई ने 13 कुकीज़ बनाईं। उसने कुछ बेचीं और 5 बच गईं। उसने कितनी कुकीज़ बेचीं?",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Word Problem",
+          expEn: "13 − 5 = 8 cookies sold.",
+          expHi: "13 − 5 = 8 कुकीज़ बेची गईं।"
+        },
+        {
+          qEn: "If 10 + 6 = 16, what is 16 − 10?",
+          qHi: "यदि 10 + 6 = 16 है, तो 16 − 10 क्या होगा?",
+          opts: ["5", "6", "7", "10"],
+          ans: 1,
+          strat: "Relate Addition & Subtraction",
+          expEn: "16 − 10 = 6.",
+          expHi: "16 − 10 = 6।"
+        }
+      ];
+
+      // TEST 3: Fact Families Grand Mastery (30 Questions)
+      const TEST_3_QUESTIONS = [
+        {
+          qEn: "Which 3 numbers form a fact family?",
+          qHi: "कौन सी 3 संख्याएँ एक संख्या परिवार बनाती हैं?",
+          opts: ["4, 5, 10", "3, 6, 9", "2, 7, 11", "5, 5, 9"],
+          ans: 1,
+          strat: "Fact Family Recognition",
+          expEn: "3 + 6 = 9, so 3, 6, and 9 form a true fact family.",
+          expHi: "3 + 6 = 9, अतः 3, 6 और 9 एक सही संख्या परिवार बनाते हैं।"
+        },
+        {
+          qEn: "Look at the numbers: 5, 8, 13. Which fact does NOT belong to their family?",
+          qHi: "संख्याएँ देखें: 5, 8, 13। कौन सा तथ्य इनके परिवार का नहीं है?",
+          opts: ["5 + 8 = 13", "13 − 8 = 5", "8 + 5 = 13", "13 − 6 = 7"],
+          ans: 3,
+          strat: "Spot the Intruder",
+          expEn: "13 − 6 = 7 uses 6 and 7, which are not part of the (5, 8, 13) family.",
+          expHi: "13 − 6 = 7 में 6 और 7 हैं, जो (5, 8, 13) परिवार में नहीं हैं।"
+        },
+        {
+          qEn: "In a fact triangle with 15 at the top and 7 at the bottom left, what number is at the bottom right?",
+          qHi: "एक संख्या त्रिकोण में शीर्ष पर 15 और नीचे बाईं ओर 7 है, तो नीचे दाईं ओर क्या होगा?",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Fact Triangle",
+          expEn: "15 − 7 = 8.",
+          expHi: "15 − 7 = 8।"
+        },
+        {
+          qEn: "In a fact triangle with 6 and 9 at the bottom corners, what number sits at the roof apex?",
+          qHi: "एक त्रिकोण में नीचे के कोनों पर 6 और 9 हैं, तो छत के शीर्ष पर क्या होगा?",
+          opts: ["14", "15", "16", "13"],
+          ans: 1,
+          strat: "Fact Triangle",
+          expEn: "6 + 9 = 15 sits at the apex (sum).",
+          expHi: "6 + 9 = 15 शीर्ष (योग) पर होगा।"
+        },
+        {
+          qEn: "Which equation completes the family: 4 + 7 = 11, 7 + 4 = 11, 11 − 7 = 4, and ___?",
+          qHi: "इस परिवार को कौन सा समीकरण पूरा करता है: 4+7=11, 7+4=11, 11−7=4, और ___?",
+          opts: ["11 − 4 = 7", "11 − 5 = 6", "7 − 4 = 3", "11 + 4 = 15"],
+          ans: 0,
+          strat: "Complete 4 Facts",
+          expEn: "The 4th fact is 11 − 4 = 7.",
+          expHi: "चौथा तथ्य 11 − 4 = 7 है।"
+        },
+        {
+          qEn: "How many addition and subtraction equations are in a standard fact family with 3 different numbers?",
+          qHi: "3 अलग-अलग संख्याओं वाले एक सामान्य संख्या परिवार में कितने जोड़ और घटाव समीकरण होते हैं?",
+          opts: ["2", "3", "4 (2 addition + 2 subtraction)", "6"],
+          ans: 2,
+          strat: "Fact Family Rules",
+          expEn: "A standard family has 4 facts: 2 addition and 2 subtraction.",
+          expHi: "एक सामान्य परिवार में 4 तथ्य होते हैं: 2 जोड़ और 2 घटाव।"
+        },
+        {
+          qEn: "For doubles like 5, 5, 10, how many unique equations exist?",
+          qHi: "5, 5, 10 जैसे दुगने परिवार में कितने अलग समीकरण होते हैं?",
+          opts: ["1", "2 (5+5=10 and 10−5=5)", "4", "3"],
+          ans: 1,
+          strat: "Doubles Fact Family",
+          expEn: "Because the addends are identical, there are only 2 unique equations.",
+          expHi: "चूंकि दोनों संख्याएँ समान हैं, केवल 2 समीकरण बनते हैं।"
+        },
+        {
+          qEn: "Which number does NOT belong to the fact family of 6, 8, and 14?",
+          qHi: "6, 8 और 14 के संख्या परिवार में कौन सी संख्या नहीं आती?",
+          opts: ["6", "8", "14", "7"],
+          ans: 3,
+          strat: "Fact Family Members",
+          expEn: "7 does not belong to this family.",
+          expHi: "7 इस परिवार का सदस्य नहीं है।"
+        },
+        {
+          qEn: "Complete the fact: If 16 − 9 = 7, then 7 + ___ = 16",
+          qHi: "तथ्य पूरा करें: यदि 16 − 9 = 7 है, तो 7 + ___ = 16",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Inverse Facts",
+          expEn: "7 + 9 = 16.",
+          expHi: "7 + 9 = 16।"
+        },
+        {
+          qEn: "Which fact family has sum = 12?",
+          qHi: "किस संख्या परिवार का योग 12 है?",
+          opts: ["3, 8, 11", "5, 7, 12", "6, 7, 13", "4, 9, 13"],
+          ans: 1,
+          strat: "Fact Family Recognition",
+          expEn: "5 + 7 = 12.",
+          expHi: "5 + 7 = 12।"
+        },
+        {
+          qEn: "In the fact family (8, 9, 17), what is 17 − 8?",
+          qHi: "संख्या परिवार (8, 9, 17) में, 17 − 8 क्या होगा?",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Fact Family Subtraction",
+          expEn: "17 − 8 = 9.",
+          expHi: "17 − 8 = 9।"
+        },
+        {
+          qEn: "In the fact family (8, 9, 17), what is 17 − 9?",
+          qHi: "संख्या परिवार (8, 9, 17) में, 17 − 9 क्या होगा?",
+          opts: ["7", "8", "9", "6"],
+          ans: 1,
+          strat: "Fact Family Subtraction",
+          expEn: "17 − 9 = 8.",
+          expHi: "17 − 9 = 8।"
+        },
+        {
+          qEn: "Spot the mistake: 4 + 8 = 12, 8 + 4 = 12, 12 − 4 = 8, 12 − 8 = 5. Which equation is wrong?",
+          qHi: "गलती पहचानें: 4+8=12, 8+4=12, 12−4=8, 12−8=5। कौन सा समीकरण गलत है?",
+          opts: ["4 + 8 = 12", "8 + 4 = 12", "12 − 4 = 8", "12 − 8 = 5 (Should be 4!)"],
+          ans: 3,
+          strat: "Error Checking",
+          expEn: "12 − 8 = 4, not 5!",
+          expHi: "12 − 8 = 4 होना चाहिए, 5 नहीं!"
+        },
+        {
+          qEn: "Which two subtraction sentences belong to the numbers 6, 7, 13?",
+          qHi: "संख्या 6, 7, 13 के लिए कौन से दो घटाव वाक्य सही हैं?",
+          opts: ["13 − 6 = 7 and 13 − 7 = 6", "13 − 5 = 8 and 13 − 8 = 5", "7 − 6 = 1 and 13 − 6 = 7", "13 − 3 = 10 and 13 − 7 = 6"],
+          ans: 0,
+          strat: "Fact Family Pairs",
+          expEn: "13 − 6 = 7 and 13 − 7 = 6 belong to this family.",
+          expHi: "13 − 6 = 7 और 13 − 7 = 6 इस परिवार के सदस्य हैं।"
+        },
+        {
+          qEn: "Which two addition sentences belong to the numbers 6, 7, 13?",
+          qHi: "संख्या 6, 7, 13 के लिए कौन से दो जोड़ वाक्य सही हैं?",
+          opts: ["6 + 7 = 13 and 7 + 6 = 13", "6 + 6 = 12 and 7 + 7 = 14", "13 + 6 = 19 and 13 + 7 = 20", "6 + 13 = 19 and 7 + 13 = 20"],
+          ans: 0,
+          strat: "Fact Family Pairs",
+          expEn: "6 + 7 = 13 and 7 + 6 = 13.",
+          expHi: "6 + 7 = 13 और 7 + 6 = 13।"
+        },
+        {
+          qEn: "A fact family roof has numbers 4 and 10 at the bottom. What number must be on the roof peak?",
+          qHi: "एक छत के निचले कोनों पर 4 और 10 हैं। छत के शीर्ष पर कौन सी संख्या होगी?",
+          opts: ["6", "14", "12", "15"],
+          ans: 1,
+          strat: "Fact Triangle",
+          expEn: "4 + 10 = 14.",
+          expHi: "4 + 10 = 14।"
+        },
+        {
+          qEn: "A fact family roof has 16 at the top and 9 at the bottom left. What is at the bottom right?",
+          qHi: "एक छत के शीर्ष पर 16 और नीचे बाईं ओर 9 है। नीचे दाईं ओर क्या है?",
+          opts: ["6", "7", "8", "9"],
+          ans: 1,
+          strat: "Fact Triangle",
+          expEn: "16 − 9 = 7.",
+          expHi: "16 − 9 = 7।"
+        },
+        {
+          qEn: "Which fact family uses the numbers 7, 8, 15?",
+          qHi: "कौन सा तथ्य परिवार 7, 8, 15 संख्याओं का उपयोग करता है?",
+          opts: ["7 + 8 = 15, 15 − 7 = 8", "7 + 7 = 14, 15 − 8 = 7", "8 + 8 = 16, 15 − 7 = 8", "7 + 9 = 16, 16 − 8 = 8"],
+          ans: 0,
+          strat: "Fact Family Recognition",
+          expEn: "7 + 8 = 15 and 15 − 7 = 8.",
+          expHi: "7 + 8 = 15 और 15 − 7 = 8।"
+        },
+        {
+          qEn: "Can the numbers 5, 6, 12 be a fact family?",
+          qHi: "क्या 5, 6, 12 एक संख्या परिवार हो सकते हैं?",
+          opts: ["No, because 5 + 6 = 11, not 12!", "Yes, always", "Only on weekends", "Yes, because 12 is bigger"],
+          ans: 0,
+          strat: "Reasoning & Verification",
+          expEn: "5 + 6 = 11. Since it does not equal 12, they cannot be a fact family.",
+          expHi: "5 + 6 = 11 होता है, 12 नहीं। अतः यह परिवार नहीं है।"
+        },
+        {
+          qEn: "Can the numbers 3, 9, 12 be a fact family?",
+          qHi: "क्या 3, 9, 12 एक संख्या परिवार हो सकते हैं?",
+          opts: ["Yes, because 3 + 9 = 12 and 12 − 3 = 9", "No, impossible", "Only if subtracted", "None of these"],
+          ans: 0,
+          strat: "Reasoning & Verification",
+          expEn: "Yes, 3 + 9 = 12 and 9 + 3 = 12.",
+          expHi: "हाँ, क्योंकि 3 + 9 = 12 और 9 + 3 = 12 होता है।"
+        },
+        {
+          qEn: "What is the missing member of the family: 8, ___, 13?",
+          qHi: "परिवार का लुप्त सदस्य क्या है: 8, ___, 13?",
+          opts: ["4", "5", "6", "7"],
+          ans: 1,
+          strat: "Missing Member",
+          expEn: "13 − 8 = 5. So the missing member is 5.",
+          expHi: "13 − 8 = 5। अतः लुप्त सदस्य 5 है।"
+        },
+        {
+          qEn: "What is the missing member of the family: ___, 7, 14?",
+          qHi: "परिवार का लुप्त सदस्य क्या है: ___, 7, 14?",
+          opts: ["6", "7 (Doubles!)", "8", "9"],
+          ans: 1,
+          strat: "Missing Member",
+          expEn: "14 − 7 = 7. It is a doubles family!",
+          expHi: "14 − 7 = 7। यह दुगने का परिवार है!"
+        },
+        {
+          qEn: "What is the missing member of the family: 9, ___, 18?",
+          qHi: "परिवार का लुप्त सदस्य क्या है: 9, ___, 18?",
+          opts: ["8", "9", "10", "7"],
+          ans: 1,
+          strat: "Missing Member",
+          expEn: "18 − 9 = 9.",
+          expHi: "18 − 9 = 9।"
+        },
+        {
+          qEn: "If 17 − 8 = 9, what is 9 + 8?",
+          qHi: "यदि 17 − 8 = 9 है, तो 9 + 8 क्या होगा?",
+          opts: ["16", "17", "18", "15"],
+          ans: 1,
+          strat: "Inverse Facts",
+          expEn: "9 + 8 = 17.",
+          expHi: "9 + 8 = 17।"
+        },
+        {
+          qEn: "Which fact family equation shows that subtracting zero leaves the number unchanged?",
+          qHi: "कौन सा समीकरण दर्शाता है कि शून्य घटाने पर संख्या नहीं बदलती?",
+          opts: ["9 − 0 = 9", "9 − 9 = 0", "9 + 9 = 18", "0 + 0 = 0"],
+          ans: 0,
+          strat: "Zero Rule in Families",
+          expEn: "9 − 0 = 9.",
+          expHi: "9 − 0 = 9।"
+        },
+        {
+          qEn: "Which of the following is TRUE about all subtraction facts in a fact family?",
+          qHi: "एक संख्या परिवार के सभी घटाव तथ्यों के बारे में क्या सत्य है?",
+          opts: ["They always start with the largest number (the sum / whole)", "They start with zero", "They can start with any number", "They always equal 100"],
+          ans: 0,
+          strat: "Concept Mastery",
+          expEn: "In basic fact families, subtraction starts with the whole (the biggest number).",
+          expHi: "घटाव समीकरण हमेशा सबसे बड़ी संख्या (कुल/योग) से शुरू होते हैं।"
+        },
+        {
+          qEn: "Solve: (14 − 6) + 6 = ?",
+          qHi: "हल करें: (14 − 6) + 6 = ?",
+          opts: ["12", "14", "16", "8"],
+          ans: 1,
+          strat: "Inverse Properties",
+          expEn: "Subtracting 6 and then adding 6 brings you right back to 14!",
+          expHi: "6 घटाकर फिर 6 जोड़ने पर वापस 14 ही मिलता है!"
+        },
+        {
+          qEn: "Solve: (11 + 5) − 5 = ?",
+          qHi: "हल करें: (11 + 5) − 5 = ?",
+          opts: ["10", "11", "12", "16"],
+          ans: 1,
+          strat: "Inverse Properties",
+          expEn: "Adding 5 and subtracting 5 cancel each other out: 11.",
+          expHi: "5 जोड़ना और 5 घटाना एक-दूसरे को समाप्त कर देते हैं: 11।"
+        },
+        {
+          qEn: "Samir wrote: 15 − 7 = 8. What subtraction fact can his friend write using the same numbers?",
+          qHi: "समीर ने लिखा: 15 − 7 = 8। उसका मित्र इन्हीं संख्याओं से कौन सा घटाव वाक्य लिख सकता है?",
+          opts: ["15 − 8 = 7", "8 − 7 = 1", "15 − 5 = 10", "7 − 8 = −1"],
+          ans: 0,
+          strat: "Fact Family Pairs",
+          expEn: "15 − 8 = 7 uses the exact same family members.",
+          expHi: "15 − 8 = 7 ठीक उन्हीं संख्या सदस्यों का उपयोग करता है।"
+        },
+        {
+          qEn: "Mastery: If Whole = 19, Part 1 = 9, what is Part 2?",
+          qHi: "महारत प्रश्न: यदि संपूर्ण = 19, भाग 1 = 9 है, तो भाग 2 क्या होगा?",
+          opts: ["9", "10", "11", "8"],
+          ans: 1,
+          strat: "Grand Mastery",
+          expEn: "19 − 9 = 10.",
+          expHi: "19 − 9 = 10।"
+        }
+      ];
+
+      function getQuestionBank(testId) {
+        if (testId === 1) return TEST_1_QUESTIONS;
+        if (testId === 2) return TEST_2_QUESTIONS;
+        return TEST_3_QUESTIONS;
+      }
+
+      // ==========================================
+      // 7. TEST ENGINE EXECUTION
+      // ==========================================
+      function startTest(testId) {
+        soundClick();
+        state.activeTestId = testId;
+        state.currentQuestionIndex = 0;
+        state.userAnswers = {};
+        state.flaggedQuestions = {};
+        state.testTimeSpent = 0;
+
+        const minutes = testId === 3 ? 25 : 20;
+        state.timeRemainingSeconds = minutes * 60;
+
+        // UI View switching
+        document.getElementById('section-tests').classList.remove('hidden');
+        document.getElementById('test-selector-view').classList.add('hidden');
+        document.getElementById('test-runner-view').classList.remove('hidden');
+        document.getElementById('test-result-view').classList.add('hidden');
+
+        // Update headers
+        const badge = document.getElementById('active-test-badge');
+        const title = document.getElementById('active-test-title');
+        badge.textContent = `Test ${testId}`;
+        if (testId === 1) {
+          title.textContent = "Test 1: Subtraction Strategies Core (30 Questions)";
+        } else if (testId === 2) {
+          title.textContent = "Test 2: Inverse Ops & Missing Addends (30 Questions)";
+        } else {
+          title.textContent = "Test 3: Fact Families Grand Mastery (30 Questions)";
+        }
+
+        buildPalette();
+        renderQuestion(0);
+        startTimer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function startTimer() {
+        if (state.timerInterval) clearInterval(state.timerInterval);
+        updateTimerDisplay();
+        state.timerInterval = setInterval(() => {
+          state.timeRemainingSeconds--;
+          state.testTimeSpent++;
+          updateTimerDisplay();
+          if (state.timeRemainingSeconds <= 0) {
+            clearInterval(state.timerInterval);
+            finishTest();
+          }
+        }, 1000);
+      }
+
+      function updateTimerDisplay() {
+        const mins = Math.floor(Math.max(0, state.timeRemainingSeconds) / 60);
+        const secs = Math.max(0, state.timeRemainingSeconds) % 60;
+        document.getElementById('test-timer-display').textContent = 
+          `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+
+      function buildPalette() {
+        const grid = document.getElementById('palette-grid');
+        grid.innerHTML = '';
+        for (let i = 0; i < 30; i++) {
+          const btn = document.createElement('button');
+          btn.id = `palette-btn-${i}`;
+          btn.textContent = i + 1;
+          btn.onclick = () => {
+            soundClick();
+            renderQuestion(i);
+          };
+          btn.className = "w-full aspect-square rounded-xl text-xs font-black transition-all flex items-center justify-center border border-slate-300 bg-slate-50 text-slate-700 hover:bg-slate-100";
+          grid.appendChild(btn);
+        }
+        updatePaletteStatus();
+      }
+
+      function updatePaletteStatus() {
+        let answeredCount = 0;
+        for (let i = 0; i < 30; i++) {
+          const btn = document.getElementById(`palette-btn-${i}`);
+          if (!btn) continue;
+
+          const isAnswered = state.userAnswers[i] !== undefined;
+          const isFlagged = state.flaggedQuestions[i] === true;
+          const isCurrent = i === state.currentQuestionIndex;
+
+          if (isAnswered) answeredCount++;
+
+          // Default classes
+          let bgClass = "bg-slate-50 text-slate-700 border border-slate-300";
+          if (isAnswered) {
+            bgClass = "bg-emerald-500 text-white border-emerald-600 shadow-xs";
+          }
+          if (isFlagged) {
+            bgClass = "bg-amber-400 text-slate-900 border-amber-500 font-black";
+          }
+          if (isCurrent) {
+            bgClass += " ring-2 ring-brand-500 ring-offset-2";
+          }
+          btn.className = `w-full aspect-square rounded-xl text-xs font-black transition-all flex items-center justify-center ${bgClass}`;
+        }
+
+        document.getElementById('palette-answered-count').textContent = `${answeredCount}/30`;
+        document.getElementById('q-status-summary').textContent = `Answered: ${answeredCount} / 30`;
+      }
+
+      function renderQuestion(index) {
+        state.currentQuestionIndex = index;
+        const qBank = getQuestionBank(state.activeTestId);
+        const q = qBank[index];
+
+        document.getElementById('q-counter-text').textContent = `Question ${index + 1} of 30`;
+        document.getElementById('active-strategy-tag').textContent = q.strat;
+
+        // Texts
+        document.getElementById('q-text-en').textContent = q.qEn;
+        document.getElementById('q-text-hi').textContent = q.qHi;
+
+        // Flag status
+        const isFlagged = state.flaggedQuestions[index] === true;
+        document.getElementById('flag-icon').textContent = isFlagged ? '🚩' : '🏳️';
+        document.getElementById('flag-text').textContent = isFlagged ? 'Flagged' : 'Flag for Review';
+        document.getElementById('btn-flag-q').className = isFlagged 
+          ? "flex items-center gap-1.5 text-xs font-bold text-amber-600"
+          : "flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-amber-600 transition-colors";
+
+        // Options
+        const container = document.getElementById('q-options-container');
+        container.innerHTML = '';
+        const labels = ['A', 'B', 'C', 'D'];
+        q.opts.forEach((opt, optIndex) => {
+          const isSelected = state.userAnswers[index] === optIndex;
+          const optBtn = document.createElement('button');
+          optBtn.onclick = () => selectOption(optIndex);
+
+          let optClass = "p-4 rounded-2xl border-2 text-left font-math text-lg font-bold transition-all flex items-center gap-3 ";
+          if (isSelected) {
+            optClass += "bg-brand-50 border-brand-600 text-brand-950 shadow-md ring-2 ring-brand-400";
+          } else {
+            optClass += "bg-slate-50 border-slate-200 hover:border-brand-300 hover:bg-slate-100/70 text-slate-800";
+          }
+
+          optBtn.className = optClass;
+          optBtn.innerHTML = `
+            <span class="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black ${isSelected ? 'bg-brand-600 text-white' : 'bg-white border border-slate-300 text-slate-600'}">
+              ${labels[optIndex]}
+            </span>
+            <span class="flex-1">${opt}</span>
+          `;
+          container.appendChild(optBtn);
+        });
+
+        // Previous / Next buttons state
+        document.getElementById('btn-prev-q').disabled = index === 0;
+        document.getElementById('btn-prev-q').classList.toggle('opacity-40', index === 0);
+        document.getElementById('btn-next-q').textContent = index === 29 ? 'Finish 🏁' : 'Next →';
+
+        updatePaletteStatus();
+      }
+
+      function selectOption(optIndex) {
+        soundClick();
+        state.userAnswers[state.currentQuestionIndex] = optIndex;
+        renderQuestion(state.currentQuestionIndex);
+      }
+
+      function toggleFlagQuestion() {
+        soundClick();
+        const curr = state.currentQuestionIndex;
+        state.flaggedQuestions[curr] = !state.flaggedQuestions[curr];
+        renderQuestion(curr);
+      }
+
+      function navigateQuestion(direction) {
+        soundClick();
+        const target = state.currentQuestionIndex + direction;
+        if (target >= 0 && target < 30) {
+          renderQuestion(target);
+        } else if (target === 30) {
+          finishTest();
+        }
+      }
+
+      function toggleScratchpad() {
+        soundClick();
+        const drawer = document.getElementById('scratchpad-drawer');
+        drawer.classList.toggle('hidden');
+      }
+
+      function confirmExitTest() {
+        if (confirm("Are you sure you want to exit the test? Your current progress in this test will be lost.")) {
+          if (state.timerInterval) clearInterval(state.timerInterval);
+          state.activeTestId = null;
+          returnToTestSelect();
+        }
+      }
+
+      function returnToTestSelect() {
+        document.getElementById('test-runner-view').classList.add('hidden');
+        document.getElementById('test-result-view').classList.add('hidden');
+        document.getElementById('test-selector-view').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // ==========================================
+      // 8. TEST SCORING & REVIEW
+      // ==========================================
+      function finishTest() {
+        if (state.timerInterval) clearInterval(state.timerInterval);
+        soundFinish();
+
+        const qBank = getQuestionBank(state.activeTestId);
+        let correctCount = 0;
+        const reviewList = document.getElementById('results-review-list');
+        reviewList.innerHTML = '';
+
+        qBank.forEach((q, idx) => {
+          const userAns = state.userAnswers[idx];
+          const isCorrect = userAns === q.ans;
+          if (isCorrect) correctCount++;
+
+          const card = document.createElement('div');
+          card.className = `p-4 sm:p-5 rounded-2xl border-2 transition-all ${isCorrect ? 'bg-emerald-50/60 border-emerald-300' : 'bg-rose-50/60 border-rose-300'}`;
+          
+          const userChoiceLabel = userAns !== undefined ? `${['A','B','C','D'][userAns]}: ${q.opts[userAns]}` : 'Unanswered (छोड़ दिया)';
+          const correctChoiceLabel = `${['A','B','C','D'][q.ans]}: ${q.opts[q.ans]}`;
+
+          card.innerHTML = `
+            <div class="flex items-start justify-between gap-2">
+              <div class="space-y-1">
+                <span class="text-xs font-black uppercase tracking-wider ${isCorrect ? 'text-emerald-700' : 'text-rose-700'}">
+                  Q${idx + 1} • ${q.strat} • ${isCorrect ? '✓ Correct' : '✕ Incorrect'}
+                </span>
+                <div class="text-base font-black text-slate-800">${q.qEn}</div>
+                <div class="text-xs text-slate-600 font-semibold">${q.qHi}</div>
+              </div>
+              <span class="text-2xl">${isCorrect ? '🌟' : '❌'}</span>
+            </div>
+
+            <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-math font-bold">
+              <div class="p-2 rounded-xl ${isCorrect ? 'bg-emerald-100 text-emerald-900' : 'bg-rose-100 text-rose-900'}">
+                Your Answer: ${userChoiceLabel}
+              </div>
+              <div class="p-2 rounded-xl bg-white border border-slate-300 text-slate-900">
+                Correct Answer: ${correctChoiceLabel}
+              </div>
+            </div>
+
+            <div class="mt-2 text-xs text-slate-600 bg-white/70 p-2.5 rounded-xl border border-slate-200">
+              💡 <strong>Explanation:</strong> ${state.lang === 'hi' ? q.expHi : q.expEn}
+            </div>
+          `;
+          reviewList.appendChild(card);
+        });
+
+        // Save Best Score
+        const pct = Math.round((correctCount / 30) * 100);
+        const prev = state.testScores[state.activeTestId];
+        if (!prev || correctCount > parseInt(prev, 10)) {
+          state.testScores[state.activeTestId] = `${correctCount}/30 (${pct}%)`;
+          localStorage.setItem(`econova_math_score_${state.activeTestId}`, state.testScores[state.activeTestId]);
+          const bestEl = document.getElementById(`best-score-${state.activeTestId}`);
+          if (bestEl) bestEl.textContent = state.testScores[state.activeTestId];
+        }
+
+        // Metrics Display
+        document.getElementById('res-score-val').textContent = `${correctCount}/30`;
+        document.getElementById('res-accuracy-val').textContent = `${pct}%`;
+        
+        const mins = Math.floor(state.testTimeSpent / 60);
+        const secs = state.testTimeSpent % 60;
+        document.getElementById('res-time-val').textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+        let grade = "A+ Math Champ!";
+        if (pct < 60) grade = "Keep Practicing!";
+        else if (pct < 80) grade = "Good Job!";
+        else if (pct < 95) grade = "Star Performer!";
+        document.getElementById('res-grade-val').textContent = grade;
+
+        // View toggle
+        document.getElementById('test-runner-view').classList.add('hidden');
+        document.getElementById('test-result-view').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function retakeCurrentTest() {
+        startTest(state.activeTestId || 1);
+      }
+
+      // ==========================================
+      // 9. CERTIFICATE MODAL
+      // ==========================================
+      function openCertificateModal() {
+        soundClick();
+        const score = document.getElementById('res-score-val').textContent || '30/30';
+        document.getElementById('cert-score-display').textContent = `Score: ${score}`;
+        const today = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', day: 'numeric' });
+        document.getElementById('cert-date-display').textContent = `Date: ${today}`;
+        document.getElementById('modal-certificate').classList.remove('hidden');
+      }
+
+      function closeCertificateModal() {
+        document.getElementById('modal-certificate').classList.add('hidden');
+      }
+
+      function updateCertPreview() {
+        const name = document.getElementById('cert-student-name').value || 'Little Math Champ';
+        document.getElementById('cert-display-name').textContent = name;
+      }
+
+      // ==========================================
+      // 10. PRINTABLE WORKSHEET GENERATOR
+      // ==========================================
+      function generateWorksheet() {
+        soundClick();
+        const type = document.getElementById('ws-type').value;
+        const includeAnswers = document.getElementById('ws-include-answers').checked;
+        const container = document.getElementById('ws-problems-container');
+        const ansContainer = document.getElementById('ws-answers-container');
+        const ansGrid = document.getElementById('ws-answers-grid');
+        const titleDisplay = document.getElementById('ws-title-display');
+
+        container.innerHTML = '';
+        ansGrid.innerHTML = '';
+
+        if (includeAnswers) {
+          ansContainer.classList.remove('hidden');
+        } else {
+          ansContainer.classList.add('hidden');
+        }
+
+        if (type === 'families') {
+          titleDisplay.textContent = "Fact Family Roof Houses Worksheet (12 Houses)";
+          const houseGrid = document.createElement('div');
+          houseGrid.className = "grid grid-cols-2 md:grid-cols-3 gap-6 font-math";
+
+          const familiesList = [
+            [4, 5, 9], [3, 7, 10], [6, 8, 14], [2, 9, 11],
+            [5, 8, 13], [7, 7, 14], [6, 9, 15], [8, 9, 17],
+            [3, 8, 11], [5, 7, 12], [4, 8, 12], [6, 6, 12]
+          ];
+
+          familiesList.forEach((fam, idx) => {
+            const [a, b, sum] = fam;
+            const house = document.createElement('div');
+            house.className = "p-4 border-2 border-slate-400 rounded-2xl space-y-2 bg-slate-50/50 print-card";
+            house.innerHTML = `
+              <div class="text-center font-bold text-xs uppercase text-slate-500">House ${idx + 1}</div>
+              <div class="text-center">
+                <span class="inline-block px-3 py-1 bg-amber-200 border-2 border-amber-600 rounded-full font-black text-sm">${sum}</span>
+              </div>
+              <div class="flex justify-between px-2 text-xs font-bold text-slate-700">
+                <span>Part: ${a}</span>
+                <span>Part: ${b}</span>
+              </div>
+              <div class="border-t border-slate-300 pt-2 space-y-1 text-xs">
+                <div>1. ___ + ___ = ___</div>
+                <div>2. ___ + ___ = ___</div>
+                <div>3. ___ − ___ = ___</div>
+                <div>4. ___ − ___ = ___</div>
+              </div>
+            `;
+            houseGrid.appendChild(house);
+
+            if (includeAnswers) {
+              const ansBox = document.createElement('div');
+              ansBox.innerHTML = `<strong>H${idx+1}:</strong> ${a}+${b}=${sum}, ${sum}-${a}=${b}`;
+              ansGrid.appendChild(ansBox);
+            }
+          });
+          container.appendChild(houseGrid);
+          return;
+        }
+
+        // 30 Subtraction Problems Grid
+        let problems = [];
+        if (type === 'countback') {
+          titleDisplay.textContent = "Chapter 3: Count Back 1, 2, or 3 Worksheet (30 Problems)";
+          for (let i = 0; i < 30; i++) {
+            const start = Math.floor(Math.random() * 14) + 6; // 6 to 19
+            const hop = Math.floor(Math.random() * 3) + 1; // 1, 2, or 3
+            problems.push({ a: start, b: hop, ans: start - hop });
+          }
+        } else if (type === 'zeroall') {
+          titleDisplay.textContent = "Chapter 3: Subtract All & Subtract Zero Worksheet (30 Problems)";
+          for (let i = 0; i < 30; i++) {
+            const num = Math.floor(Math.random() * 18) + 2;
+            const isZero = i % 2 === 0;
+            const sub = isZero ? 0 : num;
+            problems.push({ a: num, b: sub, ans: num - sub });
+          }
+        } else if (type === 'doubles') {
+          titleDisplay.textContent = "Chapter 3: Doubles to Subtract Worksheet (30 Problems)";
+          for (let i = 0; i < 30; i++) {
+            const base = (i % 9) + 2; // 2 to 10
+            problems.push({ a: base * 2, b: base, ans: base });
+          }
+        } else {
+          titleDisplay.textContent = "Chapter 3: Subtraction & Fact Families Mixed Worksheet (30 Problems)";
+          for (let i = 0; i < 30; i++) {
+            const mode = i % 4;
+            if (mode === 0) {
+              // count back
+              const s = Math.floor(Math.random() * 12) + 5;
+              const h = Math.floor(Math.random() * 3) + 1;
+              problems.push({ a: s, b: h, ans: s - h });
+            } else if (mode === 1) {
+              // all or zero
+              const s = Math.floor(Math.random() * 15) + 3;
+              const z = (i % 2 === 0) ? 0 : s;
+              problems.push({ a: s, b: z, ans: s - z });
+            } else if (mode === 2) {
+              // doubles
+              const b = Math.floor(Math.random() * 7) + 3;
+              problems.push({ a: b * 2, b: b, ans: b });
+            } else {
+              // fact family inverse
+              const p1 = Math.floor(Math.random() * 8) + 3;
+              const p2 = Math.floor(Math.random() * 8) + 2;
+              problems.push({ a: p1 + p2, b: p1, ans: p2 });
+            }
+          }
+        }
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-3 sm:grid-cols-5 gap-4 font-math text-slate-800";
+
+        problems.forEach((p, idx) => {
+          const item = document.createElement('div');
+          item.className = "p-3 border border-slate-300 rounded-xl bg-slate-50/40 text-center";
+          item.innerHTML = `
+            <div class="text-[10px] font-bold text-slate-400 mb-1">(${idx + 1})</div>
+            <div class="text-lg font-black">${p.a} − ${p.b} = ___</div>
+          `;
+          grid.appendChild(item);
+
+          if (includeAnswers) {
+            const ansBox = document.createElement('div');
+            ansBox.innerHTML = `<strong>${idx + 1}.</strong> ${p.ans}`;
+            ansGrid.appendChild(ansBox);
+          }
+        });
+
+        container.appendChild(grid);
+      }
+
+      // Initialize on load
+      window.addEventListener('DOMContentLoaded', () => {
+        // Load saved scores
+        for (let i = 1; i <= 3; i++) {
+          const sc = localStorage.getItem(`econova_math_score_${i}`);
+          if (sc) {
+            const el = document.getElementById(`best-score-${i}`);
+            if (el) el.textContent = sc;
+          }
+        }
+      });
+    </script>
   </body>
 </html>
-
