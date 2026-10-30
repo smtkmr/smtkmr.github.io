@@ -115,7 +115,7 @@
       .nav-test-btn:hover { background: var(--brand); transform: translateY(-2px); }
       .nav-test-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
 
-      .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 9px 18px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; border: none; }
+      .mint-btn { background: var(--button); color: #fff; border-radius: 14px; padding: 10px 20px; display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-weight: 800; font-family: var(--heading); box-shadow: 0 3px 0 var(--brand); transition: all .15s; cursor: pointer; text-decoration: none; border: none; }
       .mint-btn:hover { background: var(--brand); transform: translateY(-2px); }
       .mint-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--brand); }
       .quiet-btn { border: 1.5px solid var(--line); background: white; color: var(--brand); border-radius: 10px; font-size: 12px; font-weight: bold; padding: 6px 12px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; transition: all 0.15s; text-decoration: none; }
@@ -251,12 +251,12 @@
       .easy-hi { font-family: var(--hi-font); font-size: 13.5px; color: #1e3a8a; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 12px 14px; margin: 12px 0; line-height: 1.7; word-break: break-word; max-width: 100%; box-sizing: border-box; }
       .tip-box { background: #fefce8; border: 1.5px solid #facc15; border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 13px; color: #854d0e; line-height: 1.65; }
 
-      /* Visual containers with ample padding - NO text overlap */
+      /* Visual cards */
       .q-visual-card {
         background: #ffffff;
         border: 2px solid #a7f3d0;
         border-radius: 16px;
-        padding: 14px;
+        padding: 16px;
         margin-bottom: 16px;
         text-align: center;
         max-width: 100%;
@@ -269,19 +269,19 @@
         font-size: 12px;
         color: var(--brand);
         text-transform: uppercase;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         letter-spacing: 0.3px;
       }
       .q-visual-footer {
-        margin-top: 10px;
-        font-size: 12px;
+        margin-top: 12px;
+        font-size: 12.5px;
         color: #334155;
         background: #f8fafc;
         border-radius: 8px;
-        padding: 6px 10px;
+        padding: 8px 12px;
         border: 1px solid #e2e8f0;
         line-height: 1.45;
-        font-weight: 600;
+        font-weight: 700;
       }
 
       /* Concept 2-Question Pair Box */
@@ -421,7 +421,7 @@
         border: 1.5px solid #94a3b8;
         display: grid;
         place-items: center;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 900;
         flex-shrink: 0;
       }
@@ -524,8 +524,1619 @@
   </head>
 
   <body>
-    <!-- React Root Mount -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Mobile Floating Test Quick Launcher Bar -->
+    <div class="mobile-test-float-bar">
+      <span style="font-size:11px; font-weight:900; color:var(--brand); white-space:nowrap;">Tests:</span>
+      <button type="button" class="mt-chip" onclick="selectAndStartTestSuite(1)">📝 Test 01</button>
+      <button type="button" class="mt-chip" onclick="selectAndStartTestSuite(2)">📊 Test 02</button>
+      <button type="button" class="mt-chip" onclick="selectAndStartTestSuite(3)">📈 Test 03</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="wrap nav">
+        <a class="logo" href="#main">
+          <span class="logo-mark">✦</span>
+          <span>Econova<span>.vip</span></span>
+        </a>
+
+        <nav class="main-nav">
+          <a href="#lesson-8-1">8-1 Equal Groups</a>
+          <a href="#lesson-8-2">8-2 Repeated Addition</a>
+          <a href="#lesson-8-3">8-3 Arrays</a>
+          <a href="#lesson-8-4">8-4 Multiply 2s &amp; 5s</a>
+          <a href="#lesson-8-5">8-5 Draw a Picture</a>
+          <a href="#lesson-8-6">8-6 Multiply 10s</a>
+          <a href="#lesson-8-7">8-7 Repeated Subtraction</a>
+          <a href="#lesson-8-8">8-8 Equal Shares</a>
+          <a href="#lesson-8-9">8-9 Strategies</a>
+          <a href="#lesson-8-10">8-10 Remainders</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="yt-btn" href="https://youtu.be/FkKoei0AjBo" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="11" viewBox="0 0 20 14" fill="currentColor">
+              <path d="M19.56 2.18a2.5 2.5 0 0 0-1.76-1.77C16.24 0 10 0 10 0S3.76 0 2.2.41A2.5 2.5 0 0 0 .44 2.18C0 3.74 0 7 0 7s0 3.26.44 4.82a2.5 2.5 0 0 0 1.76 1.77C3.76 14 10 14 10 14s6.24 0 7.8-.41a2.5 2.5 0 0 0 1.76-1.77C20 10.26 20 7 20 7s0-3.26-.44-4.82zM8 10V4l5.2 3L8 10z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+          <button class="nav-test-btn" type="button" onclick="scrollToTest()">
+            <span>Tests (01, 02, 03) ↓</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main id="main" class="wrap">
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <div class="pill">
+            <span></span>
+            Class 2 Mathematics · Chapter 8 · Multiplication &amp; Division
+          </div>
+
+          <h1>
+            Master <span class="green">Multiplication &amp; Division</span><br />
+            <span class="underline">Equal Groups, Arrays, Sharing &amp; Remainders.</span>
+          </h1>
+
+          <p style="color:#4b5563; font-size:14px; line-height:1.75; margin-bottom:12px;">
+            Class 2 के प्यारे बच्चों! आपके प्रदान किए गए <strong>सभी 18 ओरिजिनल वर्कशीट्स</strong> (Chapter 8: 8-1 से 8-10 तक) का यह संपूर्ण सचित्र पाठ है: 
+            <strong>Equal Groups &amp; Skip Counting (Feathers &amp; Birds' Nests)</strong>, 
+            <strong>Repeated Addition &amp; Multiplication Sentences (Trays of Milk, Sandwiches &amp; Blocks)</strong>, 
+            <strong>Arrays with Rows and Columns (Thread Spools, Buttons &amp; Baseballs)</strong>, 
+            <strong>Multiplying 2s, 5s &amp; 10s</strong>, 
+            <strong>Repeated Subtraction Trains &amp; Division (15 ÷ 3 = 5)</strong>, 
+            <strong>Equal Sharing (Pennies &amp; Lizards)</strong>, 
+            तथा <strong>Equal Groups with Remainders (Leftovers)</strong> — साथ में <strong>3 Tough Side Tests (Test 01, Test 02, Test 03: कुल 90 प्रश्न)</strong>!
+          </p>
+
+          <!-- Direct Test Chooser (Choose Any Test 01, 02, 03) -->
+          <div class="hero-test-cards">
+            <div style="font-size:11.5px; font-weight:800; text-transform:uppercase; color:var(--brand); display:flex; justify-content:space-between; align-items:center;">
+              <span>⚡ Start Any Test (30 Questions Each):</span>
+              <span style="font-size:10.5px; color:#64748b; font-weight:600;">Choose Any Test Anytime</span>
+            </div>
+            <div class="hero-test-grid">
+              <button class="hero-test-btn active-hero-btn" id="hero-tab-btn-1" type="button" onclick="selectAndStartTestSuite(1)">
+                <div class="htb-top">
+                  <span class="htb-num">📝 Test 01</span>
+                  <span class="htb-badge">30 Q</span>
+                </div>
+                <div class="htb-title">Equal Groups, Addition &amp; Arrays</div>
+                <div class="htb-cta">Start Test 01 →</div>
+              </button>
+              <button class="hero-test-btn" id="hero-tab-btn-2" type="button" onclick="selectAndStartTestSuite(2)">
+                <div class="htb-top">
+                  <span class="htb-num">📊 Test 02</span>
+                  <span class="htb-badge">30 Q</span>
+                </div>
+                <div class="htb-title">Multiply 2s, 5s, 10s &amp; Strategies</div>
+                <div class="htb-cta">Start Test 02 →</div>
+              </button>
+              <button class="hero-test-btn" id="hero-tab-btn-3" type="button" onclick="selectAndStartTestSuite(3)">
+                <div class="htb-top">
+                  <span class="htb-num">📈 Test 03</span>
+                  <span class="htb-badge">30 Q</span>
+                </div>
+                <div class="htb-title">Repeated Subtraction &amp; Remainders</div>
+                <div class="htb-cta">Start Test 03 →</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="mint-btn" href="#lesson-8-1">Read Worksheet Lessons &amp; Solved Examples →</a>
+            <button class="quiet-btn" type="button" onclick="scrollToTest()">
+              ⏱ Jump to Test Arena ↓
+            </button>
+          </div>
+        </div>
+
+        <div class="amber-card" style="padding:18px; text-align:center;">
+          <p style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--brand); font-family:var(--heading);">Chapter 8 Master Rules</p>
+          <div style="font-family:var(--heading); font-size:24px; font-weight:900; color:var(--brand); margin:4px 0;">Multiplication &amp; Division Rules!</div>
+          <div style="text-align:left; font-size:12.5px; line-height:1.65; background:#fff; padding:10px; border-radius:10px; border:1px solid #fde68a;">
+            • <strong>1. Equal Groups:</strong> Groups having the exact same number of items. Skip counting finds the total quickly.<br />
+            • <strong>2. Repeated Addition = Multiplication:</strong> 3 + 3 + 3 + 3 = 12 can be written as 4 × 3 = 12.<br />
+            • <strong>3. Arrays (Rows × Columns):</strong> Rows go across horizontally; columns stand vertically. Total = Rows × Columns.<br />
+            • <strong>4. Division = Repeated Subtraction:</strong> 15 − 3 − 3 − 3 − 3 − 3 = 0 means 15 ÷ 3 = 5 groups.<br />
+            • <strong>5. Remainder (Leftover):</strong> Items that cannot be divided into complete equal groups are left over.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-1: EQUAL GROUPS & SKIP COUNTING -->
+      <!-- ========================================== -->
+      <section id="lesson-8-1" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-1 · 2NS3.1</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">1. Equal Groups &amp; Skip Counting (समान समूह और स्किप काउंटिंग)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: What are Equal Groups?</h3>
+            <span class="badge">Worksheet 8-1 (Page 123)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            <strong>Equal Groups (बराबर समूह):</strong> जब कई समूहों में वस्तुओं की संख्या एकदम बराबर होती है, तो उन्हें <em>Equal Groups</em> कहते हैं।<br />
+            कुल संख्या जानने के लिए हम एक-एक करके गिनने के बजाय <strong>Skip Counting</strong> (छलांग लगाकर गिनना) करते हैं। जैसे: 3, 6, 9, 12, 15!
+          </p>
+
+          <div class="easy-hi">
+            👉 <strong>हिन्दी में समझें:</strong> अगर आपके पास 5 कटोरी हैं और हर कटोरी में 3-3 जामुन हैं, तो आप 3, 6, 9, 12, 15 गिनकर तुरंत बता सकते हैं कि कुल 15 जामुन हैं!
+          </div>
+
+          <div class="rule-header" style="margin-top:16px;">
+            <h3 style="font-size:16px; font-weight:800;">B. Step-by-Step Solved Examples from Worksheet 8-1</h3>
+            <span class="badge">Solved Problems 1 to 5</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin:12px 0;">
+            <!-- Feathers -->
+            <div style="background:#f0fdf4; border:2px solid #a7f3d0; border-radius:14px; padding:14px; text-align:center;">
+              <div style="font-size:11px; font-weight:900; text-transform:uppercase; color:#065f46; margin-bottom:8px;">Problem 1: 5 Groups of 3 Feathers</div>
+              <div id="lesson-feathers-container" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:8px 0;"></div>
+              <div style="font-size:12.5px; font-weight:bold; color:#1e293b; margin-top:6px;">Skip count: 3, 6, 9, 12, <strong>15 in all</strong>.</div>
+            </div>
+
+            <!-- Nests with Eggs -->
+            <div style="background:#fffbeb; border:2px solid #fde68a; border-radius:14px; padding:14px; text-align:center;">
+              <div style="font-size:11px; font-weight:900; text-transform:uppercase; color:#92400e; margin-bottom:8px;">Problem 2: 3 Nests with 3 Eggs Each</div>
+              <div id="lesson-nests-container" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:8px 0;"></div>
+              <div style="font-size:12.5px; font-weight:bold; color:#1e293b; margin-top:6px;">Skip count: 3, 6, <strong>9 in all</strong>.</div>
+            </div>
+
+            <!-- Music Notes -->
+            <div style="background:#faf5ff; border:2px solid #e9d5ff; border-radius:14px; padding:14px; text-align:center;">
+              <div style="font-size:11px; font-weight:900; text-transform:uppercase; color:#6b21a8; margin-bottom:8px;">Problem 3 &amp; 4: 4 Groups of 6 Notes</div>
+              <div id="lesson-notes-container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:8px 0;"></div>
+              <div style="font-size:12px; color:#374151; margin-top:6px;">
+                • 4 equal groups.<br />
+                • Maya skip counts: 6, 12, 18, <strong>24 notes in all</strong>!
+              </div>
+            </div>
+
+            <!-- Des's Total -->
+            <div style="background:#eff6ff; border:2px solid #bfdbfe; border-radius:14px; padding:14px; text-align:center;">
+              <div style="font-size:11px; font-weight:900; text-transform:uppercase; color:#1e40af; margin-bottom:8px;">Problem 5: Des's Number Sentence</div>
+              <p style="font-size:12px; color:#475569; margin:6px 0;">Des wants to know how many feathers (15) and eggs (9) in all:</p>
+              <div style="font-size:18px; font-weight:900; color:#1d4ed8; background:#fff; padding:8px; border-radius:10px; border:1px solid #bfdbfe;">
+                15 feathers + 9 eggs = 24 in all
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-1"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-2: REPEATED ADDITION -->
+      <!-- ========================================== -->
+      <section id="lesson-8-2" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-2 · 2NS3.1, 2MR3.0</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">2. Repeated Addition &amp; Multiplication Sentences (बार-बार जोड़ और गुणा वाक्य)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: Addition Becomes Multiplication!</h3>
+            <span class="badge">Worksheets 8-2 (Pages 125 &amp; 126)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            जब हम एक ही संख्या को बार-बार जोड़ते हैं (Repeated Addition), तो यह <strong>गुणा (Multiplication)</strong> कहलाता है।<br />
+            <strong>सूत्र:</strong> (समूहों की संख्या) × (प्रत्येक समूह में वस्तुएं) = कुल संख्या!<br />
+            उदाहरण: 4 ट्रे में 3-3 दूध के डिब्बे हैं: 3 + 3 + 3 + 3 = 12 ➔ <strong>4 × 3 = 12</strong>.
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin:14px 0;">
+            <div style="background:#fff; border:2px solid #34d399; border-radius:14px; padding:12px; text-align:center;">
+              <div style="font-size:24px;">🥛 🥛 🥛</div>
+              <div style="font-size:12px; font-weight:bold; margin-top:4px;">4 Trays of 3 Milk Cartons</div>
+              <div style="font-size:13px; font-weight:900; color:#059669; margin-top:2px;">3 + 3 + 3 + 3 = 12<br />4 × 3 = 12</div>
+            </div>
+
+            <div style="background:#fff; border:2px solid #facc15; border-radius:14px; padding:12px; text-align:center;">
+              <div style="font-size:24px;">🍪 🍪</div>
+              <div style="font-size:12px; font-weight:bold; margin-top:4px;">5 Plates of 2 Rolls/Cookies</div>
+              <div style="font-size:13px; font-weight:900; color:#b45309; margin-top:2px;">2 + 2 + 2 + 2 + 2 = 10<br />5 × 2 = 10</div>
+            </div>
+
+            <div style="background:#fff; border:2px solid #38bdf8; border-radius:14px; padding:12px; text-align:center;">
+              <div style="font-size:24px;">🥪 🥪</div>
+              <div style="font-size:12px; font-weight:bold; margin-top:4px;">3 Trays of 2 Sandwiches</div>
+              <div style="font-size:13px; font-weight:900; color:#0284c7; margin-top:2px;">2 + 2 + 2 = 6<br />3 × 2 = 6</div>
+            </div>
+          </div>
+
+          <div class="easy-hi">
+            👉 <strong>Problem-Solving Practice (Page 126):</strong><br />
+            • <strong>Anne's Blocks:</strong> 3 towers of 3 blocks = 3 + 3 + 3 = 9 ➔ <strong>3 × 3 = 9</strong>.<br />
+            • <strong>Cam's Blocks:</strong> 3 towers of 2 blocks = 2 + 2 + 2 = 6 ➔ <strong>3 × 2 = 6</strong>.<br />
+            • <strong>Lisa's Marbles:</strong> 2 groups of 4 marbles = 4 + 4 = 8 ➔ <strong>2 × 4 = 8</strong>.<br />
+            • <strong>Brad's Cards:</strong> 4 groups of 3 cards = 3 + 3 + 3 + 3 = 12 ➔ <strong>4 × 3 = 12</strong>.<br />
+            • <strong>Ms. White:</strong> 2 + 2 + 2 + 2 + 2 = 10 ➔ <strong>5 × 2 = 10</strong>.<br />
+            • <strong>Mr. Yun:</strong> 5 + 5 + 5 = 15 ➔ <strong>3 × 5 = 15</strong>.
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-2"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-3: ARRAYS (ROWS & COLUMNS) -->
+      <!-- ========================================== -->
+      <section id="lesson-8-3" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-3 · 2NS3.1, 2MR1.2</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">3. Arrays: Rows and Columns (सरणी: पंक्तियाँ और स्तंभ)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: What is an Array?</h3>
+            <span class="badge">Worksheets 8-3 (Pages 127 &amp; 128)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            <strong>Array (सरणी):</strong> जब वस्तुओं को बराबर पंक्तियों (Rows - आड़ी रेखाएं) और स्तंभों (Columns - खड़ी रेखाएं) में सजाया जाता है, तो उसे Array कहते हैं।<br />
+            <strong>जादुई नियम:</strong> पंक्तियों की संख्या (Rows) × प्रत्येक पंक्ति में संख्या (Columns) = कुल वस्तुएं!
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin:14px 0;">
+            <div id="array-thread-demo"></div>
+            <div id="array-buttons-demo"></div>
+          </div>
+
+          <div class="easy-hi">
+            👉 <strong>Worksheet 8-3 Solved Arrays:</strong><br />
+            • <strong>Kaya's shirt drawer:</strong> 3 rows of 6 shirts = 3 × 6 = <strong>18 shirts</strong>.<br />
+            • <strong>Jack's baseballs:</strong> 2 rows of 3 balls = 2 × 3 = <strong>6 balls</strong>.<br />
+            • <strong>Inez's baseballs:</strong> 4 rows of 4 balls = 4 × 4 = <strong>16 balls</strong>.<br />
+            • <strong>Kayla's cards:</strong> 5 rows of 2 cards = 5 × 2 = <strong>10 cards</strong>.<br />
+            • <strong>Ms. May's chairs:</strong> 3 rows of 6 chairs = 3 × 6 = <strong>18 chairs</strong>.<br />
+            • <strong>Pat's grid paper:</strong> 4 rows of 5 squares = 4 × 5 = <strong>20 squares</strong>.
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-3"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-4: MULTIPLY 2s AND 5s -->
+      <!-- ========================================== -->
+      <section id="lesson-8-4" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-4 · 2NS3.3, 2MR3.0</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">4. Multiply 2s and 5s (2 और 5 का पहाड़ा और गुणा)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Quick Mental Math Rules</h3>
+            <span class="badge">Worksheets 8-4 (Pages 129 &amp; 130)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            • <strong>Multiply by 2 (दुगना करना):</strong> किसी भी संख्या को 2 से गुणा करने का मतलब है उसे उसी में जोड़ना (Doubling): 2 × 6 = 6 + 6 = 12.<br />
+            • <strong>Multiply by 5 (5 का जादू):</strong> 5 के पहाड़े में इकाई (ones digit) हमेशा <strong>0 या 5</strong> ही होता है: 5, 10, 15, 20, 25, 30, 35, 40!
+          </p>
+
+          <div class="tip-box">
+            ⭐ <strong>Worksheet 8-4 Word Problems:</strong><br />
+            • <strong>Eli's Lunch:</strong> 7 friends × 2 sandwiches = <strong>14 sandwiches</strong>.<br />
+            • <strong>Mia's Camping Trip:</strong> 4 tents × 3 people = <strong>12 people</strong>.<br />
+            • <strong>Dawn's Dogs:</strong> 6 groups × 2 dogs = <strong>12 dogs</strong>.<br />
+            • <strong>Libby's Pies:</strong> 3 pies × 5 apples = <strong>15 apples</strong>.<br />
+            • <strong>Cal's Tomatoes:</strong> 4 plants × 5 tomatoes = <strong>20 tomatoes</strong>.<br />
+            • <strong>Pamela's Goldfish:</strong> 6 tanks × 5 goldfish = <strong>30 goldfish</strong>.
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-4"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-5: DRAW A PICTURE -->
+      <!-- ========================================== -->
+      <section id="lesson-8-5" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-5 · 2NS3.0, 2MR1.0</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">5. Problem-Solving Strategy: Draw a Picture (चित्र बनाकर हल करना)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Visualizing Equal Sharing with Pictures</h3>
+            <span class="badge">Worksheet 8-5 (Page 131)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            जब किसी प्रश्न में वस्तुओं को बराबर बांटना हो (Equal Sharing), तो डिब्बे या घेरे बनाकर चित्र खींचना सबसे सरल और स्पष्ट तरीका है।
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin:14px 0;">
+            <div style="background:#fff; border:2px solid #a7f3d0; border-radius:12px; padding:12px; text-align:center;">
+              <div style="font-weight:bold; font-size:12px; color:#065f46;">1. 8 Sandwiches for 4 Children</div>
+              <div style="font-size:15px; font-weight:900; color:#059669; margin:6px 0;">8 ÷ 4 = 2 sandwiches each</div>
+            </div>
+
+            <div style="background:#fff; border:2px solid #bfdbfe; border-radius:12px; padding:12px; text-align:center;">
+              <div style="font-weight:bold; font-size:12px; color:#1e40af;">2. 18 Sweaters in 2 Suitcases</div>
+              <div style="font-size:15px; font-weight:900; color:#1d4ed8; margin:6px 0;">18 ÷ 2 = 9 sweaters each</div>
+            </div>
+
+            <div style="background:#fff; border:2px solid #fde68a; border-radius:12px; padding:12px; text-align:center;">
+              <div style="font-weight:bold; font-size:12px; color:#92400e;">3. 18 Treats for 3 Dogs</div>
+              <div style="font-size:15px; font-weight:900; color:#b45309; margin:6px 0;">18 ÷ 3 = 6 treats each</div>
+            </div>
+
+            <div style="background:#fff; border:2px solid #e9d5ff; border-radius:12px; padding:12px; text-align:center;">
+              <div style="font-weight:bold; font-size:12px; color:#6b21a8;">4. 25 Seeds in Packets of 5</div>
+              <div style="font-size:15px; font-weight:900; color:#7e22ce; margin:6px 0;">25 ÷ 5 = 5 packets</div>
+            </div>
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-5"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-6: MULTIPLY 10s -->
+      <!-- ========================================== -->
+      <section id="lesson-8-6" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-6 · 2NS3.3</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">6. Multiply 10s (10 का पहाड़ा और शून्य का नियम)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. The Ten Rule: Just Put a Zero!</h3>
+            <span class="badge">Worksheets 8-6 (Pages 133 &amp; 134)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            10 से गुणा करने का नियम सबसे आसान है! किसी भी संख्या को 10 से गुणा करने पर उस संख्या के पीछे एक <strong>0 (शून्य)</strong> लग जाता है:<br />
+            1 × 10 = 10, 2 × 10 = 20, 3 × 10 = 30, 4 × 10 = 40, 5 × 10 = 50, ..., 10 × 10 = 100!
+          </p>
+
+          <div class="easy-hi">
+            👉 <strong>Worksheet 8-6 Solved Word Problems:</strong><br />
+            • <strong>Sue's Cello:</strong> 10 days × 1 hr = <strong>10 hours</strong>.<br />
+            • <strong>Pat's Party:</strong> 10 guests × 7 favors = <strong>70 party favors</strong>.<br />
+            • <strong>Frank's Berries:</strong> 9 baskets × 10 berries = <strong>90 berries</strong>.<br />
+            • <strong>Ron's Bags:</strong> 3 bags × 10 apples = <strong>30 apples</strong>.<br />
+            • <strong>Elena's Bugs:</strong> 10 jars × 5 bugs = <strong>50 bugs</strong>.<br />
+            • <strong>Ellis's Puzzles:</strong> 7 puzzles × 10 pieces = <strong>70 pieces</strong>.<br />
+            • <strong>Kim's DVDs:</strong> 10 shelves × 10 DVDs = <strong>100 DVDs</strong>!
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-6"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-7: REPEATED SUBTRACTION & DIVISION -->
+      <!-- ========================================== -->
+      <section id="lesson-8-7" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-7 · 2NS3.2, 2MR1.2</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">7. Repeated Subtraction and Division (बार-बार घटाना और भाग देना)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: Division is Subtraction!</h3>
+            <span class="badge">Worksheets 8-7 (Pages 135 &amp; 136)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            जैसे गुणा बार-बार जोड़ना होता है, वैसे ही <strong>भाग (Division ÷)</strong> का मतलब होता है एक ही संख्या को बार-बार तब तक घटाना जब तक 0 न आ जाए!<br />
+            जितनी बार आप घटाते हैं, वही आपका उत्तर (Quotient) होता है!
+          </p>
+
+          <div id="cube-train-demo" style="margin:12px 0;"></div>
+
+          <div class="easy-hi">
+            👉 <strong>Connecting Cubes &amp; Solved Problems:</strong><br />
+            • <strong>15 connecting cubes:</strong> Put X on groups of 3 ➔ 15 ÷ 3 = <strong>5 groups</strong>.<br />
+            • <strong>16 connecting cubes:</strong> Put X on groups of 2 ➔ 16 ÷ 2 = <strong>8 groups</strong>.<br />
+            • <strong>14 connecting cubes:</strong> Put X on groups of 7 ➔ 14 ÷ 7 = <strong>2 groups</strong>.<br />
+            • <strong>12 connecting cubes:</strong> Put X on groups of 3 ➔ 12 ÷ 3 = <strong>4 groups</strong>.<br />
+            • <strong>Luisa's 21 peas:</strong> 21 ÷ 3 = <strong>7 groups</strong>.<br />
+            • <strong>Nick's 12 beans:</strong> 12 ÷ 6 = <strong>2 groups</strong>.<br />
+            • <strong>Casey's 6 worms:</strong> 6 ÷ 2 = <strong>3 jars</strong>.
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-7"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-8: FIND EQUAL SHARES -->
+      <!-- ========================================== -->
+      <section id="lesson-8-8" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-8 · 2NS3.2, 2MR1.2</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">8. Find Equal Shares (समान हिस्सेदारी और निष्पक्ष विभाजन)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: Sharing Equally into Groups</h3>
+            <span class="badge">Worksheets 8-8 (Pages 137 &amp; 138)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            जब हम किसी कुल संख्या को बराबर समूहों में बांटते हैं (Equal Shares), तो हम <strong>विभाजन (÷)</strong> करते हैं।<br />
+            कुल सिक्के ÷ समूहों की संख्या = प्रत्येक समूह में सिक्के!
+          </p>
+
+          <div id="sharing-pennies-demo" style="margin:12px 0;"></div>
+
+          <div class="easy-hi">
+            👉 <strong>Pennies &amp; Practice Problems (Pages 137 &amp; 138):</strong><br />
+            • 21 pennies ÷ 7 groups = <strong>3 pennies</strong> each.<br />
+            • 14 pennies ÷ 2 groups = <strong>7 pennies</strong> each.<br />
+            • 18 pennies ÷ 3 groups = <strong>6 pennies</strong> each.<br />
+            • 30 pennies ÷ 6 groups = <strong>5 pennies</strong> each.<br />
+            • 24 pennies ÷ 4 groups = <strong>6 pennies</strong> each.<br />
+            • <strong>Nina's Lizards:</strong> 16 lizards ÷ 4 tanks = <strong>4 lizards</strong> each.<br />
+            • <strong>Martin's Pears:</strong> 18 pears ÷ 9 friends = <strong>2 pears</strong> each.
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-8"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-9: CHOOSE A STRATEGY -->
+      <!-- ========================================== -->
+      <section id="lesson-8-9" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-9 · 2NS3.0, 2MR1.1</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">9. Problem-Solving Investigation: Choose a Strategy (रणनीति चुनें)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Strategies: Make a Table, Use a Model, Draw a Picture</h3>
+            <span class="badge">Worksheet 8-9 (Page 139)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            गणित की समस्याओं को हल करने के लिए आप तीन शक्तिशाली रणनीतियों में से किसी एक को चुन सकते हैं:
+            1. <strong>Make a Table (तालिका बनाना)</strong>, 2. <strong>Use a Model (मॉडल का उपयोग)</strong>, 3. <strong>Draw a Picture (चित्र बनाना)</strong>.
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin:14px 0;">
+            <div style="background:#f0fdf4; border:2px solid #a7f3d0; border-radius:12px; padding:12px;">
+              <strong style="color:#065f46; font-size:13px; display:block; margin-bottom:4px;">1. Grace's Lambs Table Strategy</strong>
+              <div style="font-size:12px; color:#475569;">3 lambs (12 legs). Next lamb = <strong>16 legs (+4)</strong>.</div>
+            </div>
+
+            <div style="background:#faf5ff; border:2px solid #e9d5ff; border-radius:12px; padding:12px;">
+              <strong style="color:#6b21a8; font-size:13px; display:block; margin-bottom:4px;">2. Elvin's 9 CDs in Packs of 3</strong>
+              <div style="font-size:12px; color:#475569;">9 ÷ 3 = <strong>3 packs of CDs</strong>.</div>
+            </div>
+
+            <div style="background:#eff6ff; border:2px solid #bfdbfe; border-radius:12px; padding:12px;">
+              <strong style="color:#1e40af; font-size:13px; display:block; margin-bottom:4px;">3. Lucia's 14 Yarn Balls</strong>
+              <div style="font-size:12px; color:#475569;">2 balls per scarf: 14 ÷ 2 = <strong>7 scarves</strong>.</div>
+            </div>
+
+            <div style="background:#fffbeb; border:2px solid #fde68a; border-radius:12px; padding:12px;">
+              <strong style="color:#92400e; font-size:13px; display:block; margin-bottom:4px;">4. Julian's 6 Clay Pots</strong>
+              <div style="font-size:12px; color:#475569;">2 blocks each: 6 × 2 = <strong>12 blocks of clay</strong>.</div>
+            </div>
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-9"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- LESSON 8-10: EQUAL GROUPS WITH REMAINDERS -->
+      <!-- ========================================== -->
+      <section id="lesson-8-10" className="section">
+        <div style="margin-bottom:12px;">
+          <span class="badge">Lesson 8-10 · 2NS3.2, 2MR1.2</span>
+          <h2 style="font-size:24px; font-weight:900; margin-top:4px;">10. Equal Groups with Remainders (शेषफल वाले समान समूह)</h2>
+        </div>
+
+        <article class="rule-card">
+          <div class="rule-header">
+            <h3 style="font-size:16px; font-weight:800;">A. Concept Explanation: What is a Remainder?</h3>
+            <span class="badge">Worksheets 8-10 (Pages 141 &amp; 142)</span>
+          </div>
+          <p style="font-size:13px; color:#4b5563; line-height:1.7;">
+            जब वस्तुओं को बराबर-बराबर बांटने के बाद कुछ वस्तुएं बच जाती हैं, तो उस बची हुई संख्या को <strong>Remainder (शेषफल)</strong> कहते हैं!<br />
+            <strong>उदाहरण:</strong> 17 स्टिकर 4 दोस्तों में बांटे गए: 4 × 4 = 16 स्टिकर बंट गए, और <strong>1 स्टिकर बच गया</strong> (17 ÷ 4 = 4 remainder 1).
+          </p>
+
+          <div id="remainders-demo" style="margin:12px 0;"></div>
+
+          <div class="easy-hi">
+            👉 <strong>Worksheets 8-10 Solved Examples (Pages 141 &amp; 142):</strong><br />
+            • <strong>17 stickers for 4 friends:</strong> 17 ÷ 4 = <strong>4 remainder 1</strong>.<br />
+            • <strong>12 peanuts for 3 parrots:</strong> 12 ÷ 3 = <strong>4 remainder 0</strong> (कोई शेष नहीं).<br />
+            • <strong>11 gifts for 5 cousins:</strong> 11 ÷ 5 = <strong>2 remainder 1</strong>.<br />
+            • <strong>19 balloons for Ramón and Fran:</strong> 19 ÷ 2 = <strong>9 remainder 1</strong>.<br />
+            • <strong>13 muffins for 4 children:</strong> 13 ÷ 4 = <strong>3 remainder 1</strong>.<br />
+            • <strong>13 bagels for 6 family members:</strong> 13 ÷ 6 = <strong>2 remainder 1</strong>.<br />
+            • <strong>4 people share 9 hot dogs:</strong> 9 ÷ 4 = <strong>2 remainder 1</strong>.<br />
+            • <strong>Lin, Wade, Mara, Jesse:</strong> 22 raffle tickets ÷ 4 = <strong>5 tickets each, 2 left over</strong>!
+          </div>
+
+          <div class="concept-pair-box" id="pair-8-10"></div>
+        </article>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TEST ARENA: TEST 01 / TEST 02 / TEST 03 -->
+      <!-- ========================================== -->
+      <section id="test-arena" class="mint-card test-section">
+        <div style="margin-bottom:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <span style="font-size:12px; font-weight:800; text-transform:uppercase; color:var(--brand);">
+              Select Test to Attempt / टेस्ट चुनें (30 Questions Each):
+            </span>
+            <span style="font-size:11px; color:#64748b; font-weight:600;">
+              Any test can be chosen in any order
+            </span>
+          </div>
+          <div class="test-selection-grid">
+            <button class="test-select-card active" id="tab-btn-1" type="button" onclick="switchTestSuite(1)">
+              <div class="tsc-top">
+                <span class="tsc-title">📝 Test 01</span>
+                <span class="tsc-badge">30 Q</span>
+              </div>
+              <div class="tsc-topic">Equal Groups, Repeated Addition &amp; Arrays</div>
+              <div class="tsc-tag" id="ts-status-1">● Selected Active</div>
+            </button>
+            <button class="test-select-card" id="tab-btn-2" type="button" onclick="switchTestSuite(2)">
+              <div class="tsc-top">
+                <span class="tsc-title">📊 Test 02</span>
+                <span class="tsc-badge">30 Q</span>
+              </div>
+              <div class="tsc-topic">Multiply 2s, 5s, 10s &amp; Strategies</div>
+              <div class="tsc-tag" id="ts-status-2">Tap to Select</div>
+            </button>
+            <button class="test-select-card" id="tab-btn-3" type="button" onclick="switchTestSuite(3)">
+              <div class="tsc-top">
+                <span class="tsc-title">📈 Test 03</span>
+                <span class="tsc-badge">30 Q</span>
+              </div>
+              <div class="tsc-topic">Repeated Subtraction, Equal Shares &amp; Remainders</div>
+              <div class="tsc-tag" id="ts-status-3">Tap to Select</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- IDLE VIEW -->
+        <div id="test-idle-view" style="text-align:center; max-width:680px; margin:auto;">
+          <span class="badge" id="suite-badge" style="font-size:12.5px; padding:4px 12px; margin-bottom:8px;">
+            30 Questions · Choose Time · Auto-Submit
+          </span>
+          <h2 id="suite-title" style="font-size:26px; font-weight:900; margin:8px 0;">
+            Test 01 · Equal Groups, Repeated Addition &amp; Arrays
+          </h2>
+          <p id="suite-desc" style="font-size:13.5px; color:#4b5563; line-height:1.7; margin-bottom:18px;">
+            Worksheets 8-1, 8-2, 8-3: Skip counting feathers &amp; eggs, lunch trays, blocks, arrays of spools, stamps, buttons &amp; baseballs पर 30 प्रामाणिक प्रश्न।
+          </p>
+
+          <!-- Timer Duration Choices -->
+          <div style="background:#f0fdf4; border:1.5px solid #a7f3d0; border-radius:12px; padding:12px; margin-bottom:16px; text-align:left;">
+            <strong style="font-size:12.5px; color:#065f46; display:block; margin-bottom:8px;">
+              ⏱ Choose Timer Duration (समय चुनें):
+            </strong>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="quiet-btn" type="button" onclick="setTimerMins(10)" id="tbtn-10">10 Min</button>
+              <button class="quiet-btn" type="button" onclick="setTimerMins(15)" id="tbtn-15" style="background:#10b981; color:#fff; border-color:#059669;">15 Min (Recommended)</button>
+              <button class="quiet-btn" type="button" onclick="setTimerMins(20)" id="tbtn-20">20 Min</button>
+              <button class="quiet-btn" type="button" onclick="setTimerMins(30)" id="tbtn-30">30 Min</button>
+            </div>
+          </div>
+
+          <button class="mint-btn" id="start-exam-btn" type="button" onclick="startExam()" style="font-size:14.5px; padding:12px 24px; width:100%; max-width:380px;">
+            🚀 Start Test 01 Now (15:00 Timer)
+          </button>
+        </div>
+
+        <!-- RUNNING VIEW -->
+        <div id="test-running-view" style="display:none;">
+          <div class="test-timer-bar">
+            <div class="timer-pill" id="timer-display">15:00</div>
+            <div style="font-size:12.5px; font-weight:bold; color:var(--brand);">
+              Attempted: <span id="attempted-count">0</span> / 30 · Left: <span id="left-count">30</span>
+            </div>
+            <button class="mint-btn" type="button" onclick="confirmSubmit()" style="font-size:11.5px; padding:6px 14px;">
+              Submit Test ✓
+            </button>
+          </div>
+
+          <!-- Palette (1 to 30) -->
+          <div style="background:#fff; border:1.5px solid #cbd5e1; border-radius:12px; padding:10px; margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:bold; color:#475569; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+              <span>Question Palette (1 to 30):</span>
+              <div style="display:flex; gap:8px;">
+                <span>🟢 Attempted</span>
+                <span>🟡 Review</span>
+                <span>⚪ Left</span>
+              </div>
+            </div>
+            <div class="palette-grid" id="palette-container"></div>
+          </div>
+
+          <!-- Single Question Card -->
+          <div class="test-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+              <span class="badge" id="current-q-concept">Unit</span>
+              <div style="display:flex; gap:6px; align-items:center;">
+                <span style="font-size:11.5px; font-weight:bold; color:#64748b;" id="q-counter">Q 1 of 30</span>
+                <button class="quiet-btn" type="button" onclick="toggleReviewCurrent()" id="review-btn" style="padding:3px 8px; font-size:11px;">
+                  🚩 Mark for Review
+                </button>
+              </div>
+            </div>
+
+            <h3 id="current-q-title" style="font-size:16px; font-weight:900; margin-bottom:6px; line-height:1.4;">
+              Q1. Question text here
+            </h3>
+            <p id="current-q-hindi" class="font-hi" style="font-size:13.5px; color:#2563eb; background:#eff6ff; padding:8px 10px; border-radius:8px; margin-bottom:12px;">
+              👉 हिन्दी अनुवाद यहाँ दिखेगा
+            </p>
+
+            <!-- Visual Container -->
+            <div id="current-q-visual" style="margin-bottom:14px;"></div>
+
+            <!-- Options (Clean with NO spoiler hints) -->
+            <div id="current-q-options"></div>
+
+            <div class="test-actions-bar">
+              <button class="quiet-btn" type="button" onclick="clearCurrentAnswer()">
+                Clear Selection
+              </button>
+              <div style="display:flex; gap:8px;">
+                <button class="quiet-btn" type="button" onclick="prevQuestion()" id="prev-btn">
+                  ← Previous
+                </button>
+                <button class="mint-btn" type="button" onclick="nextQuestion()" id="next-btn" style="padding:7px 16px; font-size:12.5px;">
+                  Next Question →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESULTS VIEW -->
+        <div id="test-results-view" style="display:none;"></div>
+      </section>
+    </main>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="modal-overlay" id="submit-modal" style="display:none;">
+      <div class="modal-box">
+        <h3 style="font-size:18px; font-weight:900; color:#b45309; margin-bottom:8px;">
+          ⚠️ Confirm Test Submission
+        </h3>
+        <p id="modal-msg" style="font-size:13px; color:#475569; margin-bottom:16px;">
+          क्या आप वाकई अपना टेस्ट सबमिट करना चाहते हैं?
+        </p>
+        <div style="display:flex; gap:10px; justify-content:center;">
+          <button class="quiet-btn" type="button" onclick="closeModal()">
+            Continue Test (हल करते रहें)
+          </button>
+          <button class="mint-btn" type="button" onclick="finishExam(false)">
+            Submit Now (सबमिट करें)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap" style="text-align:center; font-size:12.5px; color:#64748b;">
+        <p>Class 2 Mathematics · Chapter 8: Multiplication &amp; Division · 3 Timed Tests (90 Questions)</p>
+        <p style="margin-top:4px;">Strictly Crafted from all 18 Chapter 8 Worksheets · Econova.vip</p>
+      </div>
+    </footer>
+
+    <!-- COMPLETE ALL-IN-ONE JAVASCRIPT APPLICATION CODE -->
+    <script>
+      // =========================================================================
+      // VISUAL RENDERERS (CLEAN & NON-OVERLAPPING)
+      // =========================================================================
+      function makeFeatherSvg() {
+        return `
+          <div style="display:inline-flex; flex-direction:column; align-items:center; background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:12px; padding:6px 10px; margin:3px;">
+            <svg width="44" height="34" viewBox="0 0 54 44">
+              <path d="M10 38 C14 26, 22 14, 38 6 C30 18, 24 28, 20 40 Z" fill="#059669" opacity="0.85" />
+              <path d="M20 40 L24 44" stroke="#047857" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M18 40 C22 26, 30 12, 46 4 C38 18, 32 30, 28 42 Z" fill="#10b981" opacity="0.9" />
+              <path d="M28 42 L32 45" stroke="#047857" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M6 36 C10 24, 18 16, 30 8 C26 20, 20 28, 14 38 Z" fill="#34d399" opacity="0.85" />
+              <path d="M14 38 L17 42" stroke="#047857" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+            <span style="font-size:11px; font-weight:900; color:#065f46; background:#fff; border:1px solid #a7f3d0; border-radius:10px; padding:1px 6px; margin-top:4px;">3 feathers</span>
+          </div>
+        `;
+      }
+
+      function makeNestSvg() {
+        return `
+          <div style="display:inline-flex; flex-direction:column; align-items:center; background:#fffbeb; border:1.5px solid #fde68a; border-radius:14px; padding:8px 12px; margin:3px;">
+            <svg width="60" height="40" viewBox="0 0 68 46">
+              <ellipse cx="34" cy="30" rx="30" ry="14" fill="#92400e" />
+              <ellipse cx="34" cy="27" rx="26" ry="11" fill="#78350f" />
+              <path d="M10 28 Q34 42 58 28" stroke="#d97706" stroke-width="2.5" fill="none" />
+              <path d="M14 32 Q34 44 54 32" stroke="#f59e0b" stroke-width="2" fill="none" />
+              <ellipse cx="25" cy="21" rx="7" ry="10" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" transform="rotate(-15 25 21)" />
+              <ellipse cx="43" cy="21" rx="7" ry="10" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" transform="rotate(15 43 21)" />
+              <ellipse cx="34" cy="17" rx="7" ry="10" fill="#ffffff" stroke="#b45309" stroke-width="1.5" />
+            </svg>
+            <div style="font-size:11px; font-weight:900; color:#78350f; background:#fff; border:1px solid #fde68a; border-radius:10px; padding:2px 8px; margin-top:6px;">3 eggs</div>
+          </div>
+        `;
+      }
+
+      function makeNotesSvg() {
+        return `
+          <div style="display:inline-flex; flex-direction:column; align-items:center; background:#faf5ff; border:1.5px solid #e9d5ff; border-radius:14px; padding:6px 12px; margin:3px;">
+            <div style="font-size:20px; font-weight:900; color:#7e22ce; letter-spacing:4px; padding:2px 6px;">♪♪♪♪♪♪</div>
+            <div style="font-size:11px; font-weight:900; color:#6b21a8; background:#f3e8ff; border:1px solid #d8b4fe; border-radius:10px; padding:1px 8px; margin-top:4px;">6 notes</div>
+          </div>
+        `;
+      }
+
+      function renderArrayGrid(rows, cols, icon) {
+        let rHtml = '';
+        for (let r = 0; r < rows; r++) {
+          let cHtml = '';
+          for (let c = 0; c < cols; c++) {
+            cHtml += `<span style="font-size:18px; line-height:1;">${icon}</span>`;
+          }
+          rHtml += `
+            <div style="display:flex; align-items:center; gap:8px; background:#ecfdf5; padding:4px 10px; border-radius:8px; border:1px solid #a7f3d0; margin-bottom:4px;">
+              <span style="font-size:10px; font-weight:800; color:#047857; width:20px;">R${r+1}</span>
+              <div style="display:flex; gap:6px;">${cHtml}</div>
+            </div>
+          `;
+        }
+        return `
+          <div class="q-visual-card">
+            <div class="q-visual-hdr">${rows} Rows × ${cols} Columns = ${rows * cols} Total</div>
+            <div style="display:inline-block; margin:auto;">${rHtml}</div>
+          </div>
+        `;
+      }
+
+      function renderCubeTrain(total, groupSize) {
+        const groups = Math.floor(total / groupSize);
+        const rem = total % groupSize;
+        let gHtml = '';
+        for (let g = 0; g < groups; g++) {
+          let bHtml = '';
+          for (let b = 0; b < groupSize; b++) {
+            bHtml += `<div style="width:20px; height:20px; background:#0d9488; border:1.5px solid #115e59; border-radius:3px; display:grid; place-items:center; font-size:9px; color:#fff; font-weight:900;">■</div>`;
+          }
+          gHtml += `
+            <div style="display:inline-flex; align-items:center; gap:4px; background:#fff1f2; border:1.5px solid #f43f5e; border-radius:8px; padding:4px 6px; margin:3px;">
+              <div style="display:flex; gap:2px;">${bHtml}</div>
+              <span style="font-size:10px; font-weight:900; color:#e11d48; background:#fff; padding:1px 4px; border-radius:4px; border:1px solid #fecdd3;">❌ Grp ${g+1}</span>
+            </div>
+          `;
+        }
+        return `
+          <div class="q-visual-card">
+            <div class="q-visual-hdr">Connecting Cubes: ${total} ÷ ${groupSize} = ${groups} groups</div>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:4px; margin:6px 0;">${gHtml}</div>
+            <div class="q-visual-footer">Repeated Subtraction: ${total} − ${groupSize} ... = 0 (${groups} times)</div>
+          </div>
+        `;
+      }
+
+      function renderSharingVisual(total, groups, name, icon) {
+        const perGroup = Math.floor(total / groups);
+        const leftover = total % groups;
+        let boxesHtml = '';
+        for (let g = 0; g < groups; g++) {
+          let icons = '';
+          for (let i = 0; i < perGroup; i++) icons += `<span style="font-size:16px;">${icon}</span>`;
+          boxesHtml += `
+            <div style="background:#ecfdf5; border:1.5px solid #34d399; border-radius:10px; padding:8px 10px; min-width:70px; text-align:center;">
+              <div style="font-size:10px; font-weight:800; color:#065f46; margin-bottom:4px;">Group ${g+1}</div>
+              <div style="display:flex; justify-content:center; gap:3px; flex-wrap:wrap;">${icons}</div>
+              <div style="font-size:11px; font-weight:900; color:#047857; background:#fff; border-radius:4px; margin-top:4px;">${perGroup}</div>
+            </div>
+          `;
+        }
+
+        let remHtml = '';
+        if (leftover > 0) {
+          remHtml = `
+            <div style="margin-top:10px; display:inline-flex; align-items:center; gap:10px; background:#fef3c7; border:2px solid #f59e0b; border-radius:12px; padding:6px 14px;">
+              <span style="font-size:11.5px; font-weight:900; color:#92400e;">📦 Leftover / Remainder Box:</span>
+              <span style="font-size:16px;">${icon}</span>
+              <span style="font-size:11px; font-weight:900; background:#fde68a; color:#78350f; padding:2px 8px; border-radius:6px;">${leftover} Left Over</span>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="q-visual-card">
+            <div class="q-visual-hdr">Sharing ${total} ${name} into ${groups} Groups:</div>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:6px 0;">${boxesHtml}</div>
+            ${remHtml}
+            <div class="q-visual-footer">Equation: ${total} ÷ ${groups} = ${perGroup} ${leftover > 0 ? `(remainder ${leftover})` : ''}</div>
+          </div>
+        `;
+      }
+
+      // =========================================================================
+      // 1. CONCEPT MINI-CHECKS (20 CLEAN QUESTIONS - NO SPOILER HINTS)
+      // =========================================================================
+      const conceptQuestions = [
+        // 8-1
+        { id: 1, pairId: 'pair-8-1', q: "There are 5 groups of feathers. Each group has 3 feathers. Skip count to find how many in all:", hi: "पंखों के 5 समूह हैं और प्रत्येक में 3 पंख हैं। कुल संख्या बताएं:", opts: ["15 feathers", "12 feathers", "18 feathers", "10 feathers"], ans: 0, expl: "वर्कशीट 8-1, प्रश्न 1: 3, 6, 9, 12, 15 पंख।" },
+        { id: 2, pairId: 'pair-8-1', q: "There are 3 nests. Each nest has 3 eggs. How many eggs are in all?", hi: "3 घोंसले हैं और प्रत्येक में 3 अंडे हैं। कुल कितने अंडे हैं?", opts: ["9 eggs", "6 eggs", "12 eggs", "3 eggs"], ans: 0, expl: "वर्कशीट 8-1, प्रश्न 2: 3 घोंसले × 3 अंडे = 9 अंडे।" },
+
+        // 8-2
+        { id: 3, pairId: 'pair-8-2', q: "Gina's table has 4 trays with 2 juice boxes each. Which addition and multiplication sentences match?", hi: "4 ट्रे और प्रत्येक में 2 जूस बॉक्स हैं। सही समीकरण चुनें:", opts: ["2 + 2 + 2 + 2 = 8 and 4 × 2 = 8", "4 + 4 = 8 and 2 × 4 = 8", "2 + 4 = 6 and 2 × 3 = 6", "4 + 2 = 6"], ans: 0, expl: "वर्कशीट 8-2, प्रश्न 4: 4 समूह × 2 = 8." },
+        { id: 4, pairId: 'pair-8-2', q: "Mr. Yun writes 5 + 5 + 5 = 15. What multiplication sentence can he write from this?", hi: "5 + 5 + 5 = 15 को गुणा में कैसे लिखेंगे?", opts: ["3 × 5 = 15", "5 × 5 = 25", "15 × 1 = 15", "5 × 2 = 10"], ans: 0, expl: "5 को 3 बार जोड़ा गया है: 3 × 5 = 15." },
+
+        // 8-3
+        { id: 5, pairId: 'pair-8-3', q: "An array has 3 rows of spools of thread. Each row has 5 spools. How many spools in all?", hi: "3 पंक्तियाँ और प्रत्येक में 5 रील हैं। कुल कितनी रील हैं?", opts: ["15 spools", "8 spools", "25 spools", "9 spools"], ans: 0, expl: "3 rows × 5 columns = 15 spools." },
+        { id: 6, pairId: 'pair-8-3', q: "Maggie sets up the checker board with 4 checkers in 3 rows. How many checkers does she use?", hi: "3 पंक्तियों में 4-4 गोटियाँ हैं। कुल कितनी गोटियाँ हैं?", opts: ["12 checkers", "7 checkers", "16 checkers", "10 checkers"], ans: 0, expl: "3 पंक्तियाँ × 4 गोटियाँ = 12 checkers." },
+
+        // 8-4
+        { id: 7, pairId: 'pair-8-4', q: "Eli has 7 friends coming to lunch. If each friend eats 2 sandwiches, how many sandwiches should Eli make?", hi: "7 दोस्त हैं और प्रत्येक 2 सैंडविच खाता है। कुल कितने सैंडविच चाहिए?", opts: ["14 sandwiches", "9 sandwiches", "12 sandwiches", "16 sandwiches"], ans: 0, expl: "7 × 2 = 14 sandwiches." },
+        { id: 8, pairId: 'pair-8-4', q: "Pamela's Pet Shop has 6 tanks of goldfish. There are 5 goldfish in each tank. How many goldfish in all?", hi: "6 टैंक हैं और प्रत्येक में 5 मछलियाँ हैं। कुल कितनी मछलियाँ हैं?", opts: ["30 goldfish", "25 goldfish", "35 goldfish", "11 goldfish"], ans: 0, expl: "6 × 5 = 30 goldfish." },
+
+        // 8-5
+        { id: 9, pairId: 'pair-8-5', q: "4 children share a plate of 8 sandwiches equally. How many does each child get?", hi: "4 बच्चे 8 सैंडविच बराबर बांटते हैं। प्रत्येक को कितने मिलेंगे?", opts: ["2 sandwiches", "4 sandwiches", "3 sandwiches", "1 sandwich"], ans: 0, expl: "8 ÷ 4 = 2 sandwiches each." },
+        { id: 10, pairId: 'pair-8-5', q: "Rob buys 25 seeds to plant. Seeds come in packets of 5. How many seed packets is Rob buying?", hi: "25 बीज हैं और 5 का पैकेट है। कितने पैकेट हुए?", opts: ["5 packets", "4 packets", "6 packets", "20 packets"], ans: 0, expl: "25 ÷ 5 = 5 packets." },
+
+        // 8-6
+        { id: 11, pairId: 'pair-8-6', q: "Ron has 3 bags. Each bag has 10 apples. How many apples in all?", hi: "3 बैग हैं और प्रत्येक में 10 सेब हैं। कुल कितने सेब हैं?", opts: ["30 apples", "13 apples", "20 apples", "40 apples"], ans: 0, expl: "3 × 10 = 30 apples." },
+        { id: 12, pairId: 'pair-8-6', q: "Kim's mom built 10 shelves. Kim can fit 10 DVDs on each shelf. How many DVDs will fit in all?", hi: "10 अलमारियाँ हैं और प्रत्येक पर 10 डीवीडी। कुल कितनी डीवीडी आएँगी?", opts: ["100 DVDs", "20 DVDs", "50 DVDs", "90 DVDs"], ans: 0, expl: "10 × 10 = 100 DVDs." },
+
+        // 8-7
+        { id: 13, pairId: 'pair-8-7', q: "There are 15 connecting cubes. Put an X on groups of 3 until 0 are left. How many groups?", hi: "15 क्यूब्स हैं। 3-3 के समूह काटें। कितने समूह बने?", opts: ["5 groups", "4 groups", "6 groups", "3 groups"], ans: 0, expl: "15 − 3 − 3 − 3 − 3 − 3 = 0. यानी 15 ÷ 3 = 5 groups." },
+        { id: 14, pairId: 'pair-8-7', q: "Nick has 12 beans. He subtracts groups of 6. How many equal groups of 6 can he make?", hi: "12 फलियों में से 6-6 के समूह घटाएं। कितने समूह बनेंगे?", opts: ["2 groups", "6 groups", "3 groups", "4 groups"], ans: 0, expl: "12 ÷ 6 = 2 groups." },
+
+        // 8-8
+        { id: 15, pairId: 'pair-8-8', q: "Use 21 pennies to make 7 equal groups. How many pennies are in each group?", hi: "21 सिक्कों को 7 बराबर समूहों में बाँटें। प्रत्येक में कितने होंगे?", opts: ["3 pennies", "7 pennies", "4 pennies", "2 pennies"], ans: 0, expl: "21 ÷ 7 = 3 pennies." },
+        { id: 16, pairId: 'pair-8-8', q: "Nina has 16 lizards. The lizards share 4 equal tanks. How many lizards are in each tank?", hi: "16 छिपकलियाँ 4 बराबर टैंकों में हैं। प्रत्येक में कितनी हैं?", opts: ["4 lizards", "5 lizards", "3 lizards", "8 lizards"], ans: 0, expl: "16 ÷ 4 = 4 lizards." },
+
+        // 8-9
+        { id: 17, pairId: 'pair-8-9', q: "Grace's farm has 3 lambs. Each lamb has 4 legs. If Grace gets another lamb, how many legs in all?", hi: "3 मेमनों के 12 पैर हैं। 1 और मेमना आने पर कुल कितने पैर होंगे?", opts: ["16 legs", "15 legs", "14 legs", "18 legs"], ans: 0, expl: "4 मेमने × 4 पैर = 16 legs." },
+        { id: 18, pairId: 'pair-8-9', q: "Lucia bought 14 balls of yarn. Each scarf takes 2 balls of yarn. How many scarves can Lucia knit?", hi: "14 ऊन के गोले हैं। 1 मफलर में 2 लगते हैं। कितने मफलर बनेंगे?", opts: ["7 scarves", "6 scarves", "8 scarves", "12 scarves"], ans: 0, expl: "14 ÷ 2 = 7 scarves." },
+
+        // 8-10
+        { id: 19, pairId: 'pair-8-10', q: "17 stickers are shared by 4 friends. What is the division sentence with remainder?", hi: "17 स्टिकर 4 दोस्तों में बांटे गए। शेषफल वाला सही वाक्य क्या है?", opts: ["17 ÷ 4 = 4 remainder 1", "17 ÷ 4 = 3 remainder 5", "17 ÷ 4 = 4 remainder 0", "17 ÷ 4 = 5 remainder 2"], ans: 0, expl: "4 × 4 = 16, 17 − 16 = 1 बचा: 4 remainder 1." },
+        { id: 20, pairId: 'pair-8-10', q: "Four people shared 9 hot dogs equally. Were there any hot dogs left over? If so, how many?", hi: "4 लोगों ने 9 हॉट डॉग बांटे। क्या कोई बचा? कितने?", opts: ["Yes, 1 hot dog left over", "No, none left over", "Yes, 2 hot dogs left over", "Yes, 3 hot dogs left over"], ans: 0, expl: "9 ÷ 4 = 2 remainder 1. अतः 1 बचा।" }
+      ];
+
+      // =========================================================================
+      // 2. TEST 01 (30 QUESTIONS - CLEAN OPTIONS WITHOUT SPOILERS)
+      // =========================================================================
+      const test01 = [
+        { id: 1, label: '8-1 · Skip Counting', q: "Look at the 5 groups of feathers. Each group has 3 feathers. How many feathers in all?", hi: "पंखों के 5 समूह देखें (प्रत्येक में 3)। कुल कितने पंख हैं?", opts: ["15 feathers", "12 feathers", "18 feathers", "10 feathers"], ans: 0, expl: "3, 6, 9, 12, 15 कुल पंख।", visual: 'feather' },
+        { id: 2, label: '8-1 · Nests with Eggs', q: "There are 3 nests on a branch. Each nest contains 3 eggs. How many eggs in all?", hi: "3 घोंसले हैं और प्रत्येक में 3 अंडे हैं। कुल कितने अंडे हैं?", opts: ["9 eggs", "6 eggs", "12 eggs", "8 eggs"], ans: 0, expl: "3 × 3 = 9 अंडे।", visual: 'nest' },
+        { id: 3, label: '8-1 · Music Notes', q: "There are 4 clusters of music notes. Each cluster has 6 notes. How many equal groups are there?", hi: "संगीत सुरों के समूह में कितने बराबर समूह हैं?", opts: ["4 equal groups", "6 equal groups", "24 equal groups", "3 equal groups"], ans: 0, expl: "यहाँ 4 बराबर समूह हैं।", visual: 'notes' },
+        { id: 4, label: '8-1 · Skip Counting Notes', q: "Maya uses skip counting on the 4 groups of 6 music notes. How many notes will she find?", hi: "माया 6-6 के 4 समूहों को गिनती है। कुल कितने सुर मिलेंगे?", opts: ["24 notes", "20 notes", "18 notes", "30 notes"], ans: 0, expl: "6, 12, 18, 24 सुर।", visual: 'notes' },
+        { id: 5, label: '8-1 · Total Sentence', q: "Des wants to know how many feathers (15) and eggs (9) in all. Which addition sentence is correct?", hi: "15 पंख और 9 अंडों के लिए सही जोड़ वाक्य क्या है?", opts: ["15 + 9 = 24", "15 − 9 = 6", "15 + 10 = 25", "12 + 12 = 24"], ans: 0, expl: "15 + 9 = 24 कुल।" },
+        { id: 6, label: '8-2 · Milk Cartons', q: "Look at 4 trays with 3 milk cartons each. Which addition sentence matches?", hi: "4 ट्रे और 3 दूध के कार्टन प्रति ट्रे का जोड़ वाक्य क्या है?", opts: ["3 + 3 + 3 + 3 = 12", "4 + 4 + 4 = 12", "3 + 3 = 6", "4 + 3 = 7"], ans: 0, expl: "3 + 3 + 3 + 3 = 12." },
+        { id: 7, label: '8-2 · Plates of Rolls', q: "There are 5 plates. Each plate has 2 rolls. How many rolls are there in all?", hi: "5 प्लेटें हैं और प्रत्येक में 2 रोल हैं। कुल कितने रोल हैं?", opts: ["10 rolls", "7 rolls", "12 rolls", "8 rolls"], ans: 0, expl: "5 × 2 = 10 rolls." },
+        { id: 8, label: '8-2 · Sandwiches on Trays', q: "There are 3 trays with 2 sandwiches each. Which multiplication sentence matches?", hi: "3 ट्रे और 2 सैंडविच प्रति ट्रे का गुणा वाक्य क्या है?", opts: ["3 × 2 = 6", "2 × 2 = 4", "3 × 3 = 9", "3 + 2 = 5"], ans: 0, expl: "3 × 2 = 6." },
+        { id: 9, label: '8-2 · Gina\'s Juice Boxes', q: "Gina's lunch table has 4 trays. Each tray has 2 juice boxes. How many juice boxes on Gina's table?", hi: "4 ट्रे और प्रत्येक में 2 जूस बॉक्स। कुल कितने जूस बॉक्स हैं?", opts: ["8 juice boxes", "6 juice boxes", "10 juice boxes", "12 juice boxes"], ans: 0, expl: "4 × 2 = 8 juice boxes." },
+        { id: 10, label: '8-2 · Josh\'s Carrot Sticks', q: "Josh's table has 2 trays. Each tray has 5 carrot sticks. How many carrot sticks in all?", hi: "2 ट्रे और प्रत्येक में 5 गाजर की डंडियाँ। कुल कितने गाजर हैं?", opts: ["10 carrot sticks", "7 carrot sticks", "15 carrot sticks", "8 carrot sticks"], ans: 0, expl: "2 × 5 = 10 carrot sticks." },
+        { id: 11, label: '8-2 · Anne\'s Blocks', q: "Anne built 3 towers with 3 blocks in each tower. How many blocks does she have?", hi: "ऐन ने 3-3 ब्लॉक के 3 टॉवर बनाए। कुल कितने ब्लॉक हैं?", opts: ["9 blocks", "6 blocks", "12 blocks", "8 blocks"], ans: 0, expl: "3 × 3 = 9 blocks." },
+        { id: 12, label: '8-2 · Cam\'s Blocks', q: "Cam has 3 towers of blocks with 2 blocks in each tower. How many blocks does Cam have?", hi: "कैम के पास 3 टॉवर (2-2 ब्लॉक) हैं। कितने ब्लॉक हैं?", opts: ["6 blocks", "5 blocks", "8 blocks", "9 blocks"], ans: 0, expl: "3 × 2 = 6 blocks." },
+        { id: 13, label: '8-2 · Lisa\'s Marbles', q: "Lisa plays with 2 groups of marbles. Each group has 4 marbles. How many marbles does she use?", hi: "2 समूहों में 4-4 कंचे हैं। कुल कितने कंचे हैं?", opts: ["8 marbles", "6 marbles", "10 marbles", "12 marbles"], ans: 0, expl: "2 × 4 = 8 marbles." },
+        { id: 14, label: '8-2 · Brad\'s Cards', q: "Brad makes 4 groups of cards. Each group has 3 cards. How many cards does he make?", hi: "4 समूहों में 3-3 कार्ड हैं। कुल कितने कार्ड हैं?", opts: ["12 cards", "7 cards", "9 cards", "15 cards"], ans: 0, expl: "4 × 3 = 12 cards." },
+        { id: 15, label: '8-2 · Ms. White\'s Sentence', q: "Ms. White writes: 2 + 2 + 2 + 2 + 2 = 10. What multiplication sentence can she write?", hi: "2 + 2 + 2 + 2 + 2 = 10 का गुणा वाक्य क्या होगा?", opts: ["5 × 2 = 10", "2 × 2 = 4", "10 × 1 = 10", "5 + 2 = 7"], ans: 0, expl: "5 × 2 = 10." },
+        { id: 16, label: '8-3 · Thread Spools Array', q: "An array shows 3 rows of spools of thread. Each row has 5 spools. What multiplication sentence matches?", hi: "3 पंक्तियाँ और 5 रील प्रति पंक्ति का गुणा वाक्य क्या है?", opts: ["3 × 5 = 15", "3 + 5 = 8", "5 + 3 = 8", "3 × 3 = 9"], ans: 0, expl: "3 rows × 5 = 15 spools.", visual: 'array_thread' },
+        { id: 17, label: '8-3 · Stamps Array', q: "Look at the stamp array: 2 rows of 4 stamps. How many stamps in all?", hi: "2 पंक्तियों में 4-4 स्टाम्प हैं। कुल कितने स्टाम्प हैं?", opts: ["8 stamps", "6 stamps", "10 stamps", "12 stamps"], ans: 0, expl: "2 × 4 = 8 stamps." },
+        { id: 18, label: '8-3 · Yarn Balls Array', q: "An array shows 2 rows of 6 yarn balls. How many yarn balls are there in all?", hi: "ऊन के गोलों की 2 पंक्तियाँ (6 प्रति पंक्ति)। कुल कितने गोले हैं?", opts: ["12 yarn balls", "8 yarn balls", "14 yarn balls", "10 yarn balls"], ans: 0, expl: "2 × 6 = 12 yarn balls." },
+        { id: 19, label: '8-3 · Buttons Array', q: "An array has 4 rows of 5 buttons. What is the total number of buttons?", hi: "4 पंक्तियों में 5-5 बटन हैं। कुल कितने बटन हैं?", opts: ["20 buttons", "15 buttons", "25 buttons", "9 buttons"], ans: 0, expl: "4 × 5 = 20 buttons.", visual: 'array_buttons' },
+        { id: 20, label: '8-3 · Kaya\'s Shirts', q: "Kaya's shirt drawer has 3 rows of shirts. There are 6 shirts in each row. How many shirts does Kaya have?", hi: "काया की दराज में 3 पंक्तियाँ हैं (6 शर्ट प्रति पंक्ति)। कुल कितनी शर्ट हैं?", opts: ["18 shirts", "15 shirts", "21 shirts", "9 shirts"], ans: 0, expl: "3 × 6 = 18 shirts." },
+        { id: 21, label: '8-3 · Tens Place Mystery', q: "Look at the numbers: 15, 8, 12, 20, 18. Which of these numbers have a 1 in the tens place?", hi: "15, 8, 12, 20, 18 में से किन संख्याओं के दहाई के स्थान पर 1 है?", opts: ["15, 12, and 18", "Only 15", "20 and 8", "All of them"], ans: 0, expl: "15, 12, 18 में दहाई 1 है।" },
+        { id: 22, label: '8-3 · Jack\'s Baseballs', q: "Jack arranges his baseballs in 2 rows of 3 balls. How many balls does Jack have in all?", hi: "जैक 2 पंक्तियों में 3-3 गेंदें रखता है। कुल कितनी गेंदें हैं?", opts: ["6 balls", "5 balls", "8 balls", "9 balls"], ans: 0, expl: "2 × 3 = 6 balls." },
+        { id: 23, label: '8-3 · Inez\'s Baseballs', q: "Inez has 4 rows of 4 baseballs. How many balls does Inez have in all?", hi: "इनेज़ के पास 4 पंक्तियाँ हैं (4 प्रति पंक्ति)। कुल कितनी गेंदें हैं?", opts: ["16 balls", "12 balls", "20 balls", "8 balls"], ans: 0, expl: "4 × 4 = 16 balls." },
+        { id: 24, label: '8-3 · Kayla\'s Cards', q: "Kayla places cards in 5 rows. Each row has 2 cards. How many cards are there in all?", hi: "कायला 5 पंक्तियों में 2-2 कार्ड रखती है। कुल कितने कार्ड हैं?", opts: ["10 cards", "7 cards", "12 cards", "8 cards"], ans: 0, expl: "5 × 2 = 10 cards." },
+        { id: 25, label: '8-3 · Ms. May\'s Chairs', q: "Ms. May puts chairs in 3 rows. She puts 6 chairs in each row. How many chairs does she use?", hi: "मिस मे 3 पंक्तियों में 6-6 कुर्सियाँ रखती हैं। कुल कितनी कुर्सियाँ हैं?", opts: ["18 chairs", "15 chairs", "9 chairs", "24 chairs"], ans: 0, expl: "3 × 6 = 18 chairs." },
+        { id: 26, label: '8-3 · Pat\'s Grid Paper', q: "Pat colors 4 rows on grid paper. Each row has 5 squares. How many squares does he color?", hi: "पैट ग्रिड पेपर पर 4 पंक्तियाँ (5 वर्ग प्रति पंक्ति) रंगता है। कितने वर्ग रंगे?", opts: ["20 squares", "9 squares", "25 squares", "16 squares"], ans: 0, expl: "4 × 5 = 20 squares." },
+        { id: 27, label: '8-1 · Equal Group Concept', q: "What does it mean for groups to be 'equal groups'?", hi: "'बराबर समूह' (equal groups) का क्या अर्थ है?", opts: ["Each group contains the exact same number of items", "Groups have different numbers of items", "There is only 1 item in total", "Groups must be shaped like triangles"], ans: 0, expl: "प्रत्येक समूह में वस्तुओं की संख्या बराबर हो।" },
+        { id: 28, label: '8-2 · Multiplication Meaning', q: "In the multiplication sentence 4 × 3 = 12, what does the number 4 represent?", hi: "4 × 3 = 12 में संख्या 4 क्या दर्शाती है?", opts: ["The number of equal groups", "The number of items in each group", "The total answer", "The remainder"], ans: 0, expl: "समूहों की संख्या।" },
+        { id: 29, label: '8-3 · Row vs Column', q: "In an array, what direction do ROWS go?", hi: "एक सरणी में ROWS (पंक्तियाँ) किस दिशा में होती हैं?", opts: ["Side to side (horizontally from left to right)", "Up and down (vertically)", "Diagonally like a kite", "In circles"], ans: 0, expl: "बाएँ से दाएँ (horizontal)." },
+        { id: 30, label: '8-1 · Skip Count Pattern', q: "If you skip count by 3s four times, what sequence do you get?", hi: "3-3 करके 4 बार आगे गिनने पर कौन सा क्रम मिलेगा?", opts: ["3, 6, 9, 12", "3, 4, 5, 6", "3, 6, 9, 15", "2, 4, 6, 8"], ans: 0, expl: "3, 6, 9, 12." }
+      ];
+
+      // =========================================================================
+      // 3. TEST 02 (30 QUESTIONS - CLEAN OPTIONS WITHOUT SPOILERS)
+      // =========================================================================
+      const test02 = [
+        { id: 1, label: '8-4 · Multiply 5s', q: "What is 5 × 8?", hi: "5 × 8 का मान क्या है?", opts: ["40", "35", "45", "48"], ans: 0, expl: "5 × 8 = 40." },
+        { id: 2, label: '8-4 · Multiply 2s and 5s', q: "What is 2 × 5?", hi: "2 × 5 का मान क्या है?", opts: ["10", "7", "12", "20"], ans: 0, expl: "2 × 5 = 10." },
+        { id: 3, label: '8-4 · Multiply 5s', q: "What is 5 × 7?", hi: "5 × 7 का मान क्या है?", opts: ["35", "30", "40", "25"], ans: 0, expl: "5 × 7 = 35." },
+        { id: 4, label: '8-4 · Multiply 2s', q: "What is 2 × 9?", hi: "2 × 9 का मान क्या है?", opts: ["18", "16", "20", "14"], ans: 0, expl: "2 × 9 = 18." },
+        { id: 5, label: '8-4 · Multiply 2s', q: "What is 8 × 2?", hi: "8 × 2 का मान क्या है?", opts: ["16", "18", "14", "10"], ans: 0, expl: "8 × 2 = 16." },
+        { id: 6, label: '8-4 · Camping Trip Tents', q: "Mia and her family have 4 tents. Each tent can hold 3 people. How many people can sleep in tents?", hi: "4 तंबू हैं और प्रत्येक में 3 लोग आ सकते हैं। कुल कितने लोग सो सकते हैं?", opts: ["12 people", "7 people", "10 people", "15 people"], ans: 0, expl: "4 × 3 = 12 people." },
+        { id: 7, label: '8-4 · Walking Dogs', q: "Dawn walks 6 groups of dogs each week. There are 2 dogs in each group. How many dogs does Dawn walk each week?", hi: "डॉन 6 समूहों में 2-2 कुत्तों को टहलाती है। कुल कितने कुत्ते हैं?", opts: ["12 dogs", "8 dogs", "14 dogs", "10 dogs"], ans: 0, expl: "6 × 2 = 12 dogs." },
+        { id: 8, label: '8-4 · Libby\'s Apple Pies', q: "Libby is baking 3 pies. Each pie uses 5 apples. How many apples will Libby use in all?", hi: "3 पाई हैं और प्रत्येक में 5 सेब लगते हैं। कुल कितने सेब चाहिए?", opts: ["15 apples", "8 apples", "12 apples", "20 apples"], ans: 0, expl: "3 × 5 = 15 apples." },
+        { id: 9, label: '8-4 · Joe and Evan Marbles', q: "Joe and Evan each have 6 marbles. How many marbles in all?", hi: "दो लड़कों के पास 6-6 कंचे हैं। कुल कितने कंचे हैं?", opts: ["12 marbles", "6 marbles", "8 marbles", "14 marbles"], ans: 0, expl: "2 × 6 = 12 marbles." },
+        { id: 10, label: '8-4 · Cal\'s Tomato Plants', q: "Cal plants 4 tomato plants. If each plant grows 5 tomatoes, how many tomatoes will Cal have in all?", hi: "4 पौधे और प्रत्येक पर 5 टमाटर। कुल कितने टमाटर हुए?", opts: ["20 tomatoes", "9 tomatoes", "25 tomatoes", "15 tomatoes"], ans: 0, expl: "4 × 5 = 20 tomatoes." },
+        { id: 11, label: '8-4 · Yoko\'s Erasers', q: "Yoko buys a pack of erasers in 5 colors. There are 2 erasers for each color. How many erasers does Yoko have?", hi: "5 रंगों के 2-2 इरेज़र हैं। कुल कितने इरेज़र हैं?", opts: ["10 erasers", "7 erasers", "12 erasers", "8 erasers"], ans: 0, expl: "5 × 2 = 10 erasers." },
+        { id: 12, label: '8-4 · Raul\'s Pairs of Shoes', q: "Raul has 7 pairs of shoes. There are 2 shoes in each pair. How many single shoes does Raul have?", hi: "7 जोड़ी जूते हैं। कुल कितने एकल जूते हैं?", opts: ["14 single shoes", "9 shoes", "12 shoes", "16 shoes"], ans: 0, expl: "7 × 2 = 14 shoes." },
+        { id: 13, label: '8-5 · Sweaters in Suitcases', q: "Aki needs to pack 18 sweaters into 2 suitcases equally. How many sweaters in each suitcase?", hi: "18 स्वेटर 2 सूटकेस में बराबर रखें। प्रत्येक में कितने आएँगे?", opts: ["9 sweaters", "8 sweaters", "10 sweaters", "6 sweaters"], ans: 0, expl: "18 ÷ 2 = 9 sweaters." },
+        { id: 14, label: '8-5 · Dog Treats', q: "Killian has a bag of 18 dog treats. He feeds the treats to his 3 dogs equally. How many treats does each dog get?", hi: "18 ट्रीट्स 3 कुत्तों में बराबर बांटी गईं। प्रत्येक को कितने मिले?", opts: ["6 treats", "5 treats", "9 treats", "4 treats"], ans: 0, expl: "18 ÷ 3 = 6 treats." },
+        { id: 15, label: '8-6 · Multiply 10s', q: "What is 10 × 6?", hi: "10 × 6 का मान क्या है?", opts: ["60", "16", "50", "70"], ans: 0, expl: "10 × 6 = 60." },
+        { id: 16, label: '8-6 · Multiply 10s', q: "What is 9 × 10?", hi: "9 × 10 का मान क्या है?", opts: ["90", "19", "80", "100"], ans: 0, expl: "9 × 10 = 90." },
+        { id: 17, label: '8-6 · Sue\'s Cello Practice', q: "Sue practiced cello for 10 days in a row. She practiced 1 hour each day. How many hours did Sue practice in all?", hi: "10 दिन तक प्रतिदिन 1 घंटा अभ्यास किया। कुल कितने घंटे हुए?", opts: ["10 hours", "11 hours", "9 hours", "20 hours"], ans: 0, expl: "10 × 1 = 10 hours." },
+        { id: 18, label: '8-6 · Pat\'s Party Favors', q: "Pat wants each of his 10 guests to have 7 party favors. How many party favors will he need in all?", hi: "10 मेहमानों के लिए 7-7 फेवर चाहिए। कुल कितने चाहिए?", opts: ["70 party favors", "17 party favors", "60 party favors", "80 party favors"], ans: 0, expl: "10 × 7 = 70 party favors." },
+        { id: 19, label: '8-6 · Frank\'s Berry Baskets', q: "Frank picked 9 baskets of berries. There were 10 berries in each basket. How many berries did Frank pick in all?", hi: "9 टोकरियों में 10-10 बेरीज थीं। कुल कितनी बेरीज हुईं?", opts: ["90 berries", "80 berries", "19 berries", "100 berries"], ans: 0, expl: "9 × 10 = 90 berries." },
+        { id: 20, label: '8-6 · Elena\'s Bug Jars', q: "Elena has 10 jars. Each jar has 5 bugs. How many bugs does Elena have in all?", hi: "10 जार में 5-5 कीड़े हैं। कुल कितने कीड़े हैं?", opts: ["50 bugs", "15 bugs", "40 bugs", "60 bugs"], ans: 0, expl: "10 × 5 = 50 bugs." },
+        { id: 21, label: '8-6 · Bert & Mark Book Reports', q: "Bert and Mark each wrote 10 book reports. How many book reports did they write in all?", hi: "दो लड़कों ने 10-10 रिपोर्ट लिखीं। कुल कितनी हुईं?", opts: ["20 book reports", "10 book reports", "30 book reports", "12 book reports"], ans: 0, expl: "2 × 10 = 20 reports." },
+        { id: 22, label: '8-6 · Ellis\'s Puzzles', q: "Ellis finished 7 puzzles. Each puzzle had 10 pieces. How many pieces did Ellis use?", hi: "7 पहेलियों में 10-10 टुकड़े थे। कुल कितने टुकड़े इस्तेमाल हुए?", opts: ["70 pieces", "17 pieces", "60 pieces", "80 pieces"], ans: 0, expl: "7 × 10 = 70 pieces." },
+        { id: 23, label: '8-6 · Lauren\'s Orange Juice', q: "Lauren gave 10 friends 2 glasses of orange juice each. How many glasses did Lauren make in all?", hi: "10 दोस्तों को 2-2 गिलास जूस दिया। कुल कितने गिलास बने?", opts: ["20 glasses", "12 glasses", "30 glasses", "15 glasses"], ans: 0, expl: "10 × 2 = 20 glasses." },
+        { id: 24, label: '8-9 · Elvin\'s CD Packs', q: "Elvin orders 9 CDs. The CDs come in packs of 3. How many packs will Elvin get?", hi: "9 सीडी 3-3 के पैक में आती हैं। कितने पैक मिलेंगे?", opts: ["3 packs", "6 packs", "4 packs", "2 packs"], ans: 0, expl: "9 ÷ 3 = 3 packs." },
+        { id: 25, label: '8-9 · Julian\'s Clay Pots', q: "Julian made 6 clay pots. He used 2 blocks of clay for each pot. How many blocks of clay did he use in all?", hi: "6 बर्तन बनाए (2 ब्लॉक प्रति बर्तन)। कुल कितने ब्लॉक लगे?", opts: ["12 blocks", "8 blocks", "14 blocks", "10 blocks"], ans: 0, expl: "6 × 2 = 12 blocks." },
+        { id: 26, label: '8-9 · Grace\'s Lambs Table', q: "Grace's farm has 3 lambs (4 legs each = 12 legs). If Grace makes a table for 1, 2, 3, and 4 lambs, what is the pattern in legs?", hi: "मेमनों के पैरों में क्या पैटर्न है?", opts: ["Add 4 legs each time", "Add 2 legs each time", "Add 10 legs each time", "Multiply by 1"], ans: 0, expl: "हर बार 4 पैर जुड़ते हैं (+4 pattern)." },
+        { id: 27, label: '8-6 · Multiply by 10 Rule', q: "When you multiply any whole number by 10, what digit will always be in the ones place?", hi: "10 से गुणा करने पर इकाई के स्थान पर हमेशा क्या आता है?", opts: ["0 (Zero)", "5", "1", "10"], ans: 0, expl: "हमेशा 0 आता है।" },
+        { id: 28, label: '8-4 · Multiply 5 Ending Digits', q: "The multiples of 5 always end with which digits?", hi: "5 के गुणज हमेशा किन अंकों पर समाप्त होते हैं?", opts: ["0 or 5", "Only 2 or 4", "Only 0", "Any odd number"], ans: 0, expl: "0 या 5 पर।" },
+        { id: 29, label: '8-5 · Problem Strategy', q: "Why is 'Draw a Picture' a great strategy when dividing items equally?", hi: "चित्र बनाना क्यों मददगार होता है?", opts: ["It helps you visually see and distribute items into equal groups", "Because drawing makes numbers bigger", "Because you don't have to count", "Because it is required by law"], ans: 0, expl: "चित्र से बराबर बांटना स्पष्ट दिखता है।" },
+        { id: 30, label: '8-9 · Problem Strategies', q: "Which three problem-solving strategies are listed in Worksheet 8-9?", hi: "वर्कशीट 8-9 में कौन सी 3 रणनीतियाँ सुझाई गई हैं?", opts: ["Make a table, Use a model, Draw a picture", "Guess, Skip, Forget", "Run, Jump, Play", "Add, Subtract only"], ans: 0, expl: "Make a table, Use a model, Draw a picture." }
+      ];
+
+      // =========================================================================
+      // 4. TEST 03 (30 QUESTIONS - CLEAN OPTIONS WITHOUT SPOILERS)
+      // =========================================================================
+      const test03 = [
+        { id: 1, label: '8-7 · Cubes by 3s', q: "There are 15 connecting cubes in a train. Put an X on groups of 3. How many groups can you cross off?", hi: "15 क्यूब्स में 3-3 के समूह काटें। कितने समूह बनेंगे?", opts: ["5 groups", "3 groups", "4 groups", "6 groups"], ans: 0, expl: "15 ÷ 3 = 5 groups.", visual: 'cube_train' },
+        { id: 2, label: '8-7 · Cubes by 2s', q: "There are 16 connecting cubes. Put an X on groups of 2. How many groups?", hi: "16 क्यूब्स में 2-2 के समूह काटें। कितने समूह बनेंगे?", opts: ["8 groups", "6 groups", "7 groups", "9 groups"], ans: 0, expl: "16 ÷ 2 = 8 groups." },
+        { id: 3, label: '8-7 · Cubes by 7s', q: "There are 14 connecting cubes. Put an X on groups of 7. How many groups?", hi: "14 क्यूब्स में 7-7 के समूह काटें। कितने समूह बनेंगे?", opts: ["2 groups", "7 groups", "3 groups", "1 group"], ans: 0, expl: "14 ÷ 7 = 2 groups." },
+        { id: 4, label: '8-7 · Cubes by 3s', q: "There are 12 connecting cubes. Put an X on groups of 3. How many groups?", hi: "12 क्यूब्स में 3-3 के समूह काटें। कितने समूह बनेंगे?", opts: ["4 groups", "3 groups", "5 groups", "6 groups"], ans: 0, expl: "12 ÷ 3 = 4 groups." },
+        { id: 5, label: '8-7 · Luisa\'s Peas', q: "Luisa has 21 peas. She puts them into groups of 3. How many groups does Luisa have?", hi: "21 मटर के दानों को 3-3 के समूहों में रखें। कितने समूह बनेंगे?", opts: ["7 groups", "6 groups", "8 groups", "9 groups"], ans: 0, expl: "21 ÷ 3 = 7 groups." },
+        { id: 6, label: '8-7 · Boxes in Cars', q: "There are 9 boxes. Each car has 3 boxes. How many cars are needed?", hi: "9 बक्से हैं और 3 बक्से प्रति कार। कितनी कारें चाहिए?", opts: ["3 cars", "4 cars", "2 cars", "6 cars"], ans: 0, expl: "9 ÷ 3 = 3 cars." },
+        { id: 7, label: '8-7 · Bags in Vans', q: "There are 10 bags. Each van has 5 bags. How many vans are needed?", hi: "10 बैग हैं और 5 बैग प्रति वैन। कितनी वैन चाहिए?", opts: ["2 vans", "5 vans", "3 vans", "1 van"], ans: 0, expl: "10 ÷ 5 = 2 vans." },
+        { id: 8, label: '8-7 · Jane\'s Eggs', q: "Jane has 15 eggs. She subtracts groups of 3. How many equal groups of 3 does she make?", hi: "15 अंडों में से 3-3 के कितने समूह बनेंगे?", opts: ["5 groups", "3 groups", "4 groups", "6 groups"], ans: 0, expl: "15 ÷ 3 = 5 groups." },
+        { id: 9, label: '8-7 · Casey\'s Worms', q: "Casey digs up 6 worms. She puts each pair (2) in a jar. How many jars does Casey need?", hi: "6 केंचुओं को 2-2 करके जार में रखा। कितने जार चाहिए?", opts: ["3 jars", "2 jars", "4 jars", "6 jars"], ans: 0, expl: "6 ÷ 2 = 3 jars." },
+        { id: 10, label: '8-7 · Mark\'s Rocks', q: "Mark has 20 rocks. He puts them in groups of 5 in boxes. How many boxes does Mark use?", hi: "20 पत्थरों को 5-5 करके बक्सों में रखा। कितने बक्से चाहिए?", opts: ["4 boxes", "5 boxes", "3 boxes", "6 boxes"], ans: 0, expl: "20 ÷ 5 = 4 boxes." },
+        { id: 11, label: '8-8 · Pennies by 2s', q: "You have 14 pennies shared into 2 equal groups. How many in each group?", hi: "14 सिक्के 2 बराबर समूहों में बांटें। प्रत्येक में कितने होंगे?", opts: ["7 pennies", "6 pennies", "8 pennies", "5 pennies"], ans: 0, expl: "14 ÷ 2 = 7 pennies.", visual: 'pennies' },
+        { id: 12, label: '8-8 · Pennies by 3s', q: "You have 18 pennies shared into 3 equal groups. How many pennies in each group?", hi: "18 सिक्के 3 बराबर समूहों में बांटें। प्रत्येक में कितने होंगे?", opts: ["6 pennies", "5 pennies", "7 pennies", "9 pennies"], ans: 0, expl: "18 ÷ 3 = 6 pennies." },
+        { id: 13, label: '8-8 · Pennies by 6s', q: "You have 30 pennies shared into 6 equal groups. How many pennies in each group?", hi: "30 सिक्के 6 बराबर समूहों में बांटें। प्रत्येक में कितने होंगे?", opts: ["5 pennies", "6 pennies", "4 pennies", "7 pennies"], ans: 0, expl: "30 ÷ 6 = 5 pennies." },
+        { id: 14, label: '8-8 · Pennies by 8s', q: "You have 24 pennies shared into 8 equal groups. How many pennies in each group?", hi: "24 सिक्के 8 बराबर समूहों में बांटें। प्रत्येक में कितने होंगे?", opts: ["3 pennies", "4 pennies", "2 pennies", "6 pennies"], ans: 0, expl: "24 ÷ 8 = 3 pennies." },
+        { id: 15, label: '8-8 · Pennies by 4s', q: "You have 24 pennies shared into 4 equal groups. How many pennies in each group?", hi: "24 सिक्के 4 बराबर समूहों में बांटें। प्रत्येक में कितने होंगे?", opts: ["6 pennies", "8 pennies", "5 pennies", "7 pennies"], ans: 0, expl: "24 ÷ 4 = 6 pennies." },
+        { id: 16, label: '8-8 · Martin\'s Pears', q: "Martin had 18 pears. He gave an equal number of pears to 9 friends. How many pears did each friend get?", hi: "18 नाशपाती 9 दोस्तों में बराबर बांटीं। प्रत्येक को कितनी मिलीं?", opts: ["2 pears", "3 pears", "1 pear", "4 pears"], ans: 0, expl: "18 ÷ 9 = 2 pears." },
+        { id: 17, label: '8-8 · Bees on Bushes', q: "There are 8 bees on bushes in 2 equal groups. How many bees in each group?", hi: "8 मधुमक्खियाँ 2 बराबर समूहों में हैं। प्रत्येक में कितनी हैं?", opts: ["4 bees", "2 bees", "6 bees", "3 bees"], ans: 0, expl: "8 ÷ 2 = 4 bees." },
+        { id: 18, label: '8-8 · Bugs on Ground', q: "There are 15 bugs on the ground in 5 equal groups. How many bugs in each group?", hi: "15 कीड़े 5 बराबर समूहों में हैं। प्रत्येक में कितने हैं?", opts: ["3 bugs", "5 bugs", "2 bugs", "4 bugs"], ans: 0, expl: "15 ÷ 5 = 3 bugs." },
+        { id: 19, label: '8-8 · Rob\'s Seeds', q: "Rob has 10 seeds. He puts them into 2 equal groups. How many seeds in each group?", hi: "10 बीज 2 बराबर समूहों में रखे। प्रत्येक में कितने हैं?", opts: ["5 seeds", "4 seeds", "2 seeds", "8 seeds"], ans: 0, expl: "10 ÷ 2 = 5 seeds." },
+        { id: 20, label: '8-8 · Riley\'s Flower Bulbs', q: "Riley has 12 bulbs. She divides them into 3 equal groups. How many bulbs in each group?", hi: "12 बल्ब 3 बराबर समूहों में बांटे। प्रत्येक में कितने हैं?", opts: ["4 bulbs", "3 bulbs", "5 bulbs", "6 bulbs"], ans: 0, expl: "12 ÷ 3 = 4 bulbs." },
+        { id: 21, label: '8-8 · Friends Share Flowers', q: "Four friends share equally the 8 flowers they picked. How many flowers will each friend get?", hi: "4 दोस्त 8 फूल बराबर बांटते हैं। प्रत्येक को कितने मिलेंगे?", opts: ["2 flowers", "4 flowers", "1 flower", "3 flowers"], ans: 0, expl: "8 ÷ 4 = 2 flowers each." },
+        { id: 22, label: '8-10 · Peanuts for Parrots', q: "12 peanuts are shared by 3 parrots. What is the division result with remainder?", hi: "12 मूंगफली 3 तोतों में बांटी गईं। शेषफल क्या है?", opts: ["12 ÷ 3 = 4 remainder 0", "12 ÷ 3 = 3 remainder 3", "12 ÷ 3 = 4 remainder 1", "12 ÷ 3 = 2 remainder 6"], ans: 0, expl: "12 ÷ 3 = 4 remainder 0 (पूरा बंट गया)." },
+        { id: 23, label: '8-10 · Gifts for 5 Cousins', q: "11 gifts are shared equally by 5 cousins. How many gifts does each get, and how many left over?", hi: "11 उपहार 5 भाइयों में बांटे। प्रत्येक को कितने मिले और कितने बचे?", opts: ["2 gifts each, 1 gift left over", "2 gifts each, 0 left over", "1 gift each, 6 left over", "3 gifts each, 0 left over"], ans: 0, expl: "5 × 2 = 10, 11 − 10 = 1 बचा (2 remainder 1)." },
+        { id: 24, label: '8-10 · Balloons Left Over', q: "Ramón and Fran bought 19 balloons and shared them equally. Were there any left over?", hi: "19 गुब्बारे 2 लोगों में बांटे। क्या कोई बचा?", opts: ["Yes, 1 balloon left over", "No, none left over", "Yes, 2 balloons left over", "Yes, 3 balloons left over"], ans: 0, expl: "19 ÷ 2 = 9 remainder 1." },
+        { id: 25, label: '8-10 · O\'Brien Muffins', q: "The O'Brien children bought 13 muffins. The 4 children shared them equally. Were there any left over?", hi: "13 मफिन 4 बच्चों में बांटे। क्या कोई मफिन बचा?", opts: ["Yes, 1 muffin left over", "No, none left over", "Yes, 2 muffins left over", "Yes, 3 muffins left over"], ans: 0, expl: "13 ÷ 4 = 3 remainder 1.", visual: 'remainders' },
+        { id: 26, label: '8-10 · Bagels for Family of 6', q: "13 bagels were shared by a family of 6. How many bagels does each get, and what is remainder?", hi: "13 बैगल्स 6 लोगों में बांटे। प्रत्येक को कितने मिले और शेष क्या है?", opts: ["2 bagels each, remainder 1", "2 bagels each, remainder 0", "1 bagel each, remainder 7", "3 bagels each, remainder 1"], ans: 0, expl: "6 × 2 = 12, 13 − 12 = 1 बचा。" },
+        { id: 27, label: '8-10 · Dahl Brothers CDs', q: "9 CDs are shared by the 4 Dahl brothers. How many CDs does each get, and what is remainder?", hi: "9 सीडी 4 भाइयों में बांटीं। प्रत्येक को कितनी मिलीं और शेष क्या है?", opts: ["2 CDs each, remainder 1", "2 CDs each, remainder 2", "1 CD each, remainder 5", "3 CDs each, remainder 0"], ans: 0, expl: "4 × 2 = 8, 9 − 8 = 1 बचा।" },
+        { id: 28, label: '8-10 · Split $16 among 3 Friends', q: "Uri, Ryan, and Sondra split 16 dollars equally. How much money does each get, and what is remainder?", hi: "16 डॉलर 3 दोस्तों में बांटे। प्रत्येक को कितने मिले और शेष क्या है?", opts: ["5 dollars each, remainder 1 dollar", "4 dollars each, remainder 4 dollars", "5 dollars each, remainder 0", "6 dollars each"], ans: 0, expl: "3 × 5 = 15, 16 − 15 = 1 बचा।" },
+        { id: 29, label: '8-10 · Chris\'s Airplanes', q: "Chris has 17 model airplanes on 4 shelves equally. Are there any airplanes left over?", hi: "17 हवाई जहाज 4 अलमारियों पर रखे। क्या कोई बचा?", opts: ["Yes, 1 airplane left over", "No, none left over", "Yes, 2 airplanes left over", "Yes, 3 airplanes left over"], ans: 0, expl: "17 ÷ 4 = 4 remainder 1." },
+        { id: 30, label: '8-10 · Raffle Tickets for 4 Friends', q: "Lin, Wade, Mara, and Jesse split 22 raffle tickets equally. How many does each get, and how many left over?", hi: "22 टिकट 4 दोस्तों में बांटे। प्रत्येक को कितने मिले और कितने बचे?", opts: ["5 tickets each, 2 tickets left over", "5 tickets each, 1 ticket left over", "4 tickets each, 6 tickets left over", "6 tickets each, 0 left over"], ans: 0, expl: "4 × 5 = 20, 22 − 20 = 2 बचे।" }
+      ];
+
+      const testSuites = {
+        1: { id: 1, title: 'Test 01 · Equal Groups, Repeated Addition & Arrays', badge: '30 Questions · Test 01', desc: 'Worksheets 8-1, 8-2, 8-3: Skip counting feathers & eggs, lunch trays, blocks, arrays of spools, stamps, buttons & baseballs पर 30 प्रामाणिक प्रश्न।', qs: test01 },
+        2: { id: 2, title: 'Test 02 · Multiply 2s, 5s, 10s & Strategies', badge: '30 Questions · Test 02', desc: 'Worksheets 8-4, 8-5, 8-6, 8-9: Camping tents, apple pies, dog walking, sweater suitcases, multiplying 10s, DVD shelves & strategy tables पर 30 प्रश्न।', qs: test02 },
+        3: { id: 3, title: 'Test 03 · Repeated Subtraction, Equal Shares & Remainders', badge: '30 Questions · Test 03', desc: 'Worksheets 8-7, 8-8, 8-10: Cube trains repeated subtraction, sharing pennies, lizard tanks, flowers, and leftovers / remainders पर 30 गहन प्रश्न।', qs: test03 }
+      };
+
+      // App State
+      let activeSuiteNum = 1;
+      let currentIdx = 0;
+      let chosenMinutes = 15;
+      let secondsLeft = 15 * 60;
+      let testTimer = null;
+      const testAnswers = {};
+      const testReview = {};
+      const conceptAnswers = {};
+      const conceptChecked = {};
+
+      // =========================================================================
+      // LESSON DEMOS POPULATION
+      // =========================================================================
+      function populateLessonDemos() {
+        // Feathers
+        const fEl = document.getElementById('lesson-feathers-container');
+        if (fEl) {
+          let h = '';
+          for (let i = 0; i < 5; i++) h += makeFeatherSvg();
+          fEl.innerHTML = h;
+        }
+
+        // Nests
+        const nEl = document.getElementById('lesson-nests-container');
+        if (nEl) {
+          let h = '';
+          for (let i = 0; i < 3; i++) h += makeNestSvg();
+          nEl.innerHTML = h;
+        }
+
+        // Notes
+        const mEl = document.getElementById('lesson-notes-container');
+        if (mEl) {
+          let h = '';
+          for (let i = 0; i < 4; i++) h += makeNotesSvg();
+          mEl.innerHTML = h;
+        }
+
+        // Arrays Demo
+        const atEl = document.getElementById('array-thread-demo');
+        if (atEl) atEl.innerHTML = renderArrayGrid(3, 5, '🧵');
+
+        const abEl = document.getElementById('array-buttons-demo');
+        if (abEl) abEl.innerHTML = renderArrayGrid(4, 5, '🔘');
+
+        // Cube Train
+        const ctEl = document.getElementById('cube-train-demo');
+        if (ctEl) ctEl.innerHTML = renderCubeTrain(15, 3);
+
+        // Sharing Pennies
+        const spEl = document.getElementById('sharing-pennies-demo');
+        if (spEl) spEl.innerHTML = renderSharingVisual(21, 7, 'Pennies', '🪙');
+
+        // Remainders Demo
+        const remEl = document.getElementById('remainders-demo');
+        if (remEl) remEl.innerHTML = renderSharingVisual(17, 4, 'Stickers', '⭐');
+      }
+
+      // =========================================================================
+      // TEST ARENA EXECUTION FUNCTIONS
+      // =========================================================================
+      function selectAndStartTestSuite(num) {
+        switchTestSuite(num);
+        scrollToTest();
+      }
+
+      function switchTestSuite(num) {
+        if (testTimer) clearInterval(testTimer);
+        activeSuiteNum = num;
+        [1, 2, 3].forEach(n => {
+          const btn = document.getElementById('tab-btn-' + n);
+          const status = document.getElementById('ts-status-' + n);
+          const heroBtn = document.getElementById('hero-tab-btn-' + n);
+          if (btn) {
+            if (n === num) {
+              btn.classList.add('active');
+              if (status) status.innerText = '● Selected Active';
+            } else {
+              btn.classList.remove('active');
+              if (status) status.innerText = 'Tap to Select';
+            }
+          }
+          if (heroBtn) {
+            if (n === num) heroBtn.classList.add('active-hero-btn');
+            else heroBtn.classList.remove('active-hero-btn');
+          }
+        });
+
+        const s = testSuites[num];
+        document.getElementById('suite-badge').innerText = s.badge;
+        document.getElementById('suite-title').innerText = s.title;
+        document.getElementById('suite-desc').innerText = s.desc;
+        document.getElementById('start-exam-btn').innerText = `🚀 Start Test 0${num} Now (${chosenMinutes}:00 Timer)`;
+
+        document.getElementById('test-idle-view').style.display = 'block';
+        document.getElementById('test-running-view').style.display = 'none';
+        document.getElementById('test-results-view').style.display = 'none';
+      }
+
+      function setTimerMins(m) {
+        chosenMinutes = m;
+        [10, 15, 20, 30].forEach(n => {
+          const b = document.getElementById('tbtn-' + n);
+          if (b) {
+            if (n === m) {
+              b.style.background = '#10b981';
+              b.style.color = '#fff';
+              b.style.borderColor = '#059669';
+            } else {
+              b.style.background = '#fff';
+              b.style.color = 'var(--brand)';
+              b.style.borderColor = 'var(--line)';
+            }
+          }
+        });
+        document.getElementById('start-exam-btn').innerText = `🚀 Start Test 0${activeSuiteNum} Now (${chosenMinutes}:00 Timer)`;
+      }
+
+      function scrollToTest() {
+        const el = document.getElementById('test-arena');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function startExam() {
+        currentIdx = 0;
+        secondsLeft = chosenMinutes * 60;
+        for (const k in testAnswers) delete testAnswers[k];
+        for (const k in testReview) delete testReview[k];
+
+        document.getElementById('test-idle-view').style.display = 'none';
+        document.getElementById('test-results-view').style.display = 'none';
+        document.getElementById('test-running-view').style.display = 'block';
+
+        renderPalette();
+        renderCurrentQ();
+        startTimer();
+        scrollToTest();
+      }
+
+      function startTimer() {
+        if (testTimer) clearInterval(testTimer);
+        updateTimerDisplay();
+        testTimer = setInterval(() => {
+          secondsLeft--;
+          updateTimerDisplay();
+          if (secondsLeft <= 0) {
+            clearInterval(testTimer);
+            finishExam(true);
+          }
+        }, 1000);
+      }
+
+      function updateTimerDisplay() {
+        const mins = Math.floor(secondsLeft / 60);
+        const secs = secondsLeft % 60;
+        const el = document.getElementById('timer-display');
+        if (!el) return;
+        el.innerText = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        if (secondsLeft <= 120) el.classList.add('urgent');
+        else el.classList.remove('urgent');
+      }
+
+      function getActiveQuestions() {
+        return testSuites[activeSuiteNum].qs;
+      }
+
+      function renderPalette() {
+        const qs = getActiveQuestions();
+        const container = document.getElementById('palette-container');
+        if (!container) return;
+        let html = '';
+        qs.forEach((q, idx) => {
+          let pClass = 'pal-btn';
+          if (testAnswers[q.id] !== undefined) pClass += ' attempted';
+          if (testReview[q.id]) pClass += ' review';
+          if (currentIdx === idx) pClass += ' active';
+          html += `<div class="${pClass}" onclick="jumpToQ(${idx})">${q.id}</div>`;
+        });
+        container.innerHTML = html;
+
+        const attempted = Object.keys(testAnswers).length;
+        document.getElementById('attempted-count').innerText = attempted;
+        document.getElementById('left-count').innerText = qs.length - attempted;
+      }
+
+      function jumpToQ(idx) {
+        currentIdx = idx;
+        renderPalette();
+        renderCurrentQ();
+      }
+
+      function renderCurrentQ() {
+        const qs = getActiveQuestions();
+        const q = qs[currentIdx];
+        document.getElementById('current-q-concept').innerText = q.label;
+        document.getElementById('q-counter').innerText = `Q ${q.id} of ${qs.length}`;
+        document.getElementById('current-q-title').innerHTML = `Q${q.id}. ${q.q}`;
+        document.getElementById('current-q-hindi').innerHTML = `👉 ${q.hi}`;
+
+        const visualEl = document.getElementById('current-q-visual');
+        let vHtml = '';
+        if (q.visual === 'feather') {
+          vHtml = `
+            <div class="q-visual-card">
+              <div class="q-visual-hdr">5 Groups of 3 Feathers</div>
+              <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+                ${makeFeatherSvg()}${makeFeatherSvg()}${makeFeatherSvg()}${makeFeatherSvg()}${makeFeatherSvg()}
+              </div>
+            </div>
+          `;
+        } else if (q.visual === 'nest') {
+          vHtml = `
+            <div class="q-visual-card">
+              <div class="q-visual-hdr">3 Nests with 3 Eggs Each</div>
+              <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+                ${makeNestSvg()}${makeNestSvg()}${makeNestSvg()}
+              </div>
+            </div>
+          `;
+        } else if (q.visual === 'notes') {
+          vHtml = `
+            <div class="q-visual-card">
+              <div class="q-visual-hdr">4 Equal Groups of 6 Notes</div>
+              <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+                ${makeNotesSvg()}${makeNotesSvg()}${makeNotesSvg()}${makeNotesSvg()}
+              </div>
+            </div>
+          `;
+        } else if (q.visual === 'array_thread') {
+          vHtml = renderArrayGrid(3, 5, '🧵');
+        } else if (q.visual === 'array_buttons') {
+          vHtml = renderArrayGrid(4, 5, '🔘');
+        } else if (q.visual === 'cube_train') {
+          vHtml = renderCubeTrain(15, 3);
+        } else if (q.visual === 'pennies') {
+          vHtml = renderSharingVisual(14, 2, 'Pennies', '🪙');
+        } else if (q.visual === 'remainders') {
+          vHtml = renderSharingVisual(13, 4, 'Muffins', '🧁');
+        }
+
+        if (vHtml) {
+          visualEl.innerHTML = vHtml;
+          visualEl.style.display = 'block';
+        } else {
+          visualEl.innerHTML = '';
+          visualEl.style.display = 'none';
+        }
+
+        const revBtn = document.getElementById('review-btn');
+        revBtn.innerText = testReview[q.id] ? '🚩 Marked for Review' : '🚩 Mark for Review';
+        revBtn.style.background = testReview[q.id] ? '#fef3c7' : '#fff';
+
+        const userSel = testAnswers[q.id];
+        let optsHtml = '';
+        q.opts.forEach((opt, idx) => {
+          const isSel = userSel === idx;
+          optsHtml += `
+            <div class="choice-lg ${isSel ? 'selected' : ''}" onclick="selectTestOpt(${q.id}, ${idx})">
+              <span class="choice-badge-lg">
+                ${String.fromCharCode(65 + idx)}
+              </span>
+              <span style="flex:1;">${opt}</span>
+            </div>
+          `;
+        });
+        document.getElementById('current-q-options').innerHTML = optsHtml;
+        document.getElementById('prev-btn').disabled = (currentIdx === 0);
+        document.getElementById('next-btn').innerText = (currentIdx === qs.length - 1) ? 'Finish & Submit' : 'Next Question →';
+      }
+
+      function selectTestOpt(qId, optIdx) {
+        testAnswers[qId] = optIdx;
+        renderPalette();
+        renderCurrentQ();
+      }
+
+      function clearCurrentAnswer() {
+        const qs = getActiveQuestions();
+        const q = qs[currentIdx];
+        delete testAnswers[q.id];
+        renderPalette();
+        renderCurrentQ();
+      }
+
+      function toggleReviewCurrent() {
+        const qs = getActiveQuestions();
+        const q = qs[currentIdx];
+        testReview[q.id] = !testReview[q.id];
+        renderPalette();
+        renderCurrentQ();
+      }
+
+      function nextQuestion() {
+        const qs = getActiveQuestions();
+        if (currentIdx < qs.length - 1) {
+          currentIdx++;
+          renderPalette();
+          renderCurrentQ();
+        } else {
+          confirmSubmit();
+        }
+      }
+
+      function prevQuestion() {
+        if (currentIdx > 0) {
+          currentIdx--;
+          renderPalette();
+          renderCurrentQ();
+        }
+      }
+
+      function confirmSubmit() {
+        const qs = getActiveQuestions();
+        const attempted = Object.keys(testAnswers).length;
+        const left = qs.length - attempted;
+        if (left > 0) {
+          document.getElementById('modal-msg').innerHTML = `आपने 30 में से केवल <strong>${attempted} प्रश्न हल किए हैं</strong> (${left} प्रश्न अभी शेष हैं)। क्या आप सचमुच टेस्ट सबमिट करना चाहते हैं?`;
+          document.getElementById('submit-modal').style.display = 'flex';
+        } else {
+          finishExam(false);
+        }
+      }
+
+      function closeModal() {
+        document.getElementById('submit-modal').style.display = 'none';
+      }
+
+      function finishExam(autoSubmitted) {
+        closeModal();
+        if (testTimer) clearInterval(testTimer);
+
+        document.getElementById('test-running-view').style.display = 'none';
+        const resultsEl = document.getElementById('test-results-view');
+        resultsEl.style.display = 'block';
+
+        const qs = getActiveQuestions();
+        let score = 0;
+        let correct = 0;
+        let wrong = 0;
+
+        const unitStats = {
+          u1: { name: 'Lesson 8-1: Equal Groups & Skip Counting', anchor: 'lesson-8-1', total: 0, correct: 0, mistakes: [] },
+          u2: { name: 'Lesson 8-2: Repeated Addition & Multiplication Sentences', anchor: 'lesson-8-2', total: 0, correct: 0, mistakes: [] },
+          u3: { name: 'Lesson 8-3: Arrays (Rows & Columns)', anchor: 'lesson-8-3', total: 0, correct: 0, mistakes: [] },
+          u4: { name: 'Lesson 8-4: Multiply 2s and 5s', anchor: 'lesson-8-4', total: 0, correct: 0, mistakes: [] },
+          u5: { name: 'Lesson 8-5: Strategy: Draw a Picture', anchor: 'lesson-8-5', total: 0, correct: 0, mistakes: [] },
+          u6: { name: 'Lesson 8-6: Multiply 10s', anchor: 'lesson-8-6', total: 0, correct: 0, mistakes: [] },
+          u7: { name: 'Lesson 8-7: Repeated Subtraction & Division', anchor: 'lesson-8-7', total: 0, correct: 0, mistakes: [] },
+          u8: { name: 'Lesson 8-8: Equal Shares & Division', anchor: 'lesson-8-8', total: 0, correct: 0, mistakes: [] },
+          u9: { name: 'Lesson 8-9: Choose a Strategy', anchor: 'lesson-8-9', total: 0, correct: 0, mistakes: [] },
+          u10: { name: 'Lesson 8-10: Equal Groups with Remainders', anchor: 'lesson-8-10', total: 0, correct: 0, mistakes: [] }
+        };
+
+        qs.forEach(q => {
+          let cat = 'u1';
+          if (q.label.startsWith('8-1')) cat = 'u1';
+          else if (q.label.startsWith('8-2')) cat = 'u2';
+          else if (q.label.startsWith('8-3')) cat = 'u3';
+          else if (q.label.startsWith('8-4')) cat = 'u4';
+          else if (q.label.startsWith('8-5')) cat = 'u5';
+          else if (q.label.startsWith('8-6')) cat = 'u6';
+          else if (q.label.startsWith('8-7')) cat = 'u7';
+          else if (q.label.startsWith('8-8')) cat = 'u8';
+          else if (q.label.startsWith('8-9')) cat = 'u9';
+          else if (q.label.startsWith('8-10')) cat = 'u10';
+
+          const unit = unitStats[cat];
+          unit.total++;
+          const u = testAnswers[q.id];
+          if (u !== undefined) {
+            if (u === q.ans) {
+              score++;
+              correct++;
+              unit.correct++;
+            } else {
+              wrong++;
+              unit.mistakes.push(q.id);
+            }
+          } else {
+            unit.mistakes.push(q.id);
+          }
+        });
+
+        const accuracy = Math.round((correct / qs.length) * 100);
+        const timeTakenSec = (chosenMinutes * 60) - secondsLeft;
+        const timeTakenStr = `${Math.floor(timeTakenSec / 60)}m ${timeTakenSec % 60}s`;
+
+        let diagCardsHtml = '';
+        for (const k in unitStats) {
+          const us = unitStats[k];
+          if (us.total === 0) continue;
+          const hasMistakes = us.mistakes.length > 0;
+          diagCardsHtml += `
+            <div class="diag-card ${hasMistakes ? 'mistake' : ''}">
+              <div style="font-weight:bold; font-size:12.5px; margin-bottom:4px; color:${hasMistakes ? '#b91c1c' : '#059669'};">
+                ${us.name}
+              </div>
+              <div style="font-size:11.5px; margin-bottom:5px;">
+                ${us.correct} / ${us.total} Correct (${Math.round((us.correct / us.total) * 100)}%)
+              </div>
+              ${hasMistakes ? `
+                <div style="font-size:11px; color:#991b1b; margin-bottom:6px;">
+                  ⚠️ Mistakes in Q: <strong>${us.mistakes.join(', ')}</strong>
+                </div>
+              ` : `
+                <div style="font-size:11px; color:#15803d; font-weight:bold; margin-bottom:6px;">
+                  ✓ All worksheet concepts mastered!
+                </div>
+              `}
+              <a href="#${us.anchor}" style="font-size:11px; font-weight:bold; color:var(--brand); text-decoration:underline;">
+                Revise Worksheet Rule in Theory →
+              </a>
+            </div>
+          `;
+        }
+
+        let reviewHtml = '';
+        qs.forEach(q => {
+          const u = testAnswers[q.id];
+          const isRight = u === q.ans;
+          const isSkipped = u === undefined;
+
+          reviewHtml += `
+            <div class="review-q-card ${!isRight ? 'wrong' : ''}">
+              <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:11.5px;">
+                <span class="badge">${q.label}</span>
+                <span style="font-weight:bold; color:${isRight ? '#15803d' : '#b91c1c'};">
+                  ${isRight ? '✓ Correct (+1)' : isSkipped ? '⚪ Skipped (0)' : '✕ Incorrect (0)'}
+                </span>
+              </div>
+              <div style="font-weight:bold; font-size:13.5px; margin-bottom:3px;">Q${q.id}. ${q.q}</div>
+              <div class="font-hi" style="font-size:12px; color:#475569; margin-bottom:8px;">👉 ${q.hi}</div>
+              <div style="font-size:12px; margin-bottom:6px;">
+                <strong>Correct Answer:</strong> <span style="color:#15803d; font-weight:bold;">(${String.fromCharCode(65 + q.ans)}) ${q.opts[q.ans]}</span>
+                ${!isRight && !isSkipped ? `<br><strong>Your Choice:</strong> <span style="color:#b91c1c;">(${String.fromCharCode(65 + u)}) ${q.opts[u]}</span>` : ''}
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 10px; font-size:12px; color:#334155;">
+                <strong>📖 Worksheet Explanation:</strong> ${q.expl}
+              </div>
+            </div>
+          `;
+        });
+
+        resultsEl.innerHTML = `
+          <div class="results-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; border-bottom:2px solid #a7f3d0; padding-bottom:14px; margin-bottom:18px;">
+              <div>
+                <span class="badge" style="font-size:11.5px;">${testSuites[activeSuiteNum].title} Results</span>
+                <h2 style="font-size:26px; font-weight:900; margin:4px 0;">
+                  Your Score: <span class="score-circle">${score}</span> / 30
+                </h2>
+                <p style="font-size:12px; color:#475569;">
+                  Accuracy: <strong>${accuracy}%</strong> · Time Taken: <strong>${timeTakenStr}</strong>
+                  ${autoSubmitted ? ' · <span style="color:#dc2626; font-weight:bold;">(Auto Submitted at 00:00 Time Limit)</span>' : ''}
+                </p>
+              </div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button class="mint-btn" type="button" onclick="startExam()">
+                  🔄 Retake Test 0${activeSuiteNum}
+                </button>
+                ${activeSuiteNum !== 1 ? `<button class="quiet-btn" type="button" onclick="selectAndStartTestSuite(1)" style="font-weight:bold;">📝 Take Test 01 (30 Q)</button>` : ''}
+                ${activeSuiteNum !== 2 ? `<button class="quiet-btn" type="button" onclick="selectAndStartTestSuite(2)" style="font-weight:bold;">📊 Take Test 02 (30 Q)</button>` : ''}
+                ${activeSuiteNum !== 3 ? `<button class="quiet-btn" type="button" onclick="selectAndStartTestSuite(3)" style="font-weight:bold;">📈 Take Test 03 (30 Q)</button>` : ''}
+              </div>
+            </div>
+
+            <!-- Concept Mistake Diagnostics -->
+            <div style="background:#fffbeb; border:2px solid #fcd34d; border-radius:14px; padding:14px; margin-bottom:20px;">
+              <h3 style="font-size:16px; font-weight:900; color:#92400e; margin-bottom:4px;">
+                🔍 गलतियों का वर्कशीट-आधारित विश्लेषण (Worksheet Concept Mistake Diagnostics)
+              </h3>
+              <p style="font-size:11.5px; color:#78350f; margin-bottom:10px;">
+                जिस वर्कशीट में गलती हुई हो, उसके लिंक पर क्लिक करके सीधे उस नियम को दोबारा पढ़ें:
+              </p>
+              <div class="concept-diag-grid">
+                ${diagCardsHtml}
+              </div>
+            </div>
+
+            <!-- Detailed Review -->
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:12px;">
+              Detailed Question Review (1 to 30)
+            </h3>
+            <div>
+              ${reviewHtml}
+            </div>
+          </div>
+        `;
+
+        scrollToTest();
+      }
+
+      // =========================================================================
+      // CONCEPT PAIRS RENDERING (2 QUESTIONS PER LESSON)
+      // =========================================================================
+      const subPairs = [
+        { id: 'pair-8-1', title: '8-1: Equal Groups & Skip Counting', start: 0 },
+        { id: 'pair-8-2', title: '8-2: Repeated Addition', start: 2 },
+        { id: 'pair-8-3', title: '8-3: Arrays (Rows & Columns)', start: 4 },
+        { id: 'pair-8-4', title: '8-4: Multiply 2s and 5s', start: 6 },
+        { id: 'pair-8-5', title: '8-5: Strategy: Draw a Picture', start: 8 },
+        { id: 'pair-8-6', title: '8-6: Multiply 10s', start: 10 },
+        { id: 'pair-8-7', title: '8-7: Repeated Subtraction & Division', start: 12 },
+        { id: 'pair-8-8', title: '8-8: Equal Shares', start: 14 },
+        { id: 'pair-8-9', title: '8-9: Choose a Strategy', start: 16 },
+        { id: 'pair-8-10', title: '8-10: Equal Groups with Remainders', start: 18 }
+      ];
+
+      function renderConceptPairs() {
+        subPairs.forEach(sp => {
+          const container = document.getElementById(sp.id);
+          if (!container) return;
+          const q1 = conceptQuestions[sp.start];
+          const q2 = conceptQuestions[sp.start + 1];
+
+          container.innerHTML = `
+            <div class="pair-header">
+              <span>⚡ Interactive Concept Check: ${sp.title}</span>
+              <span>2 Quick Check Questions</span>
+            </div>
+            <div class="pair-grid">
+              ${renderSingleConceptCard(q1)}
+              ${renderSingleConceptCard(q2)}
+            </div>
+          `;
+        });
+      }
+
+      function renderSingleConceptCard(cq) {
+        const isChecked = conceptChecked[cq.id];
+        const userSel = conceptAnswers[cq.id];
+        const isCorrect = userSel === cq.ans;
+
+        let cardClass = 'pair-card';
+        if (isChecked) cardClass += isCorrect ? ' correct' : ' wrong';
+
+        let optsHtml = '';
+        cq.opts.forEach((opt, idx) => {
+          let optClass = 'choice-sm';
+          if (userSel === idx) optClass += ' selected';
+          if (isChecked) {
+            if (idx === cq.ans) optClass += ' right-choice';
+            else if (userSel === idx) optClass += ' wrong-choice';
+          }
+          optsHtml += `
+            <div class="${optClass}" onclick="selectConceptOpt(${cq.id}, ${idx})">
+              <span class="choice-badge-sm">${String.fromCharCode(65 + idx)}</span>
+              <span style="flex:1;">${opt}</span>
+            </div>
+          `;
+        });
+
+        return `
+          <div class="${cardClass}" id="cq-card-${cq.id}">
+            <div>
+              <div style="font-weight:bold; font-size:12.5px; margin-bottom:2px;">${cq.q}</div>
+              <div class="font-hi" style="font-size:11px; color:#475569; margin-bottom:6px;">👉 ${cq.hi}</div>
+              <div class="choices-sm">${optsHtml}</div>
+            </div>
+            <div style="margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+              <button class="quiet-btn" type="button" onclick="checkConceptAns(${cq.id})" ${isChecked ? 'disabled style="opacity:0.6;"' : ''}>
+                ${isChecked ? (isCorrect ? '✓ Correct' : '✕ Re-try') : 'Check Answer ✓'}
+              </button>
+              ${isChecked ? `<span style="font-size:11px; font-weight:bold; color:${isCorrect ? '#15803d' : '#b91c1c'};">${isCorrect ? 'Well done!' : 'Explanation: ' + cq.expl}</span>` : ''}
+            </div>
+          </div>
+        `;
+      }
+
+      function selectConceptOpt(cqId, optIdx) {
+        conceptAnswers[cqId] = optIdx;
+        conceptChecked[cqId] = false;
+        renderConceptPairs();
+      }
+
+      function checkConceptAns(cqId) {
+        if (conceptAnswers[cqId] === undefined) return;
+        conceptChecked[cqId] = true;
+        renderConceptPairs();
+      }
+
+      // Expose functions globally
+      window.selectAndStartTestSuite = selectAndStartTestSuite;
+      window.switchTestSuite = switchTestSuite;
+      window.setTimerMins = setTimerMins;
+      window.scrollToTest = scrollToTest;
+      window.startExam = startExam;
+      window.jumpToQ = jumpToQ;
+      window.selectTestOpt = selectTestOpt;
+      window.clearCurrentAnswer = clearCurrentAnswer;
+      window.toggleReviewCurrent = toggleReviewCurrent;
+      window.nextQuestion = nextQuestion;
+      window.prevQuestion = prevQuestion;
+      window.confirmSubmit = confirmSubmit;
+      window.closeModal = closeModal;
+      window.finishExam = finishExam;
+      window.selectConceptOpt = selectConceptOpt;
+      window.checkConceptAns = checkConceptAns;
+
+      // Boot application
+      window.addEventListener('DOMContentLoaded', () => {
+        populateLessonDemos();
+        renderConceptPairs();
+        switchTestSuite(1);
+      });
+    </script>
   </body>
 </html>
