@@ -1533,20 +1533,16 @@
 
     // Concept Mini Check Questions (2 per topic = 10 Total)
     const conceptQuestions = [
-      { id: 1, pairId: 'pair-1a', q: "Sheet 5-1: Lydia has 20 red pencils and twice as many black pencils. Total pencils in all?", hi: "लिडिया के पास 20 लाल और दोगुनी काली पेंसिलें हैं। कुल कितनी पेंसिलें हैं?", opts: ["60 pencils (20 + 40)", "40 pencils", "20 pencils", "80 pencils"], ans: 0, expl: "Red = 20, Black = 40, Total = 60 pencils." },
-      { id: 2, pairId: 'pair-1a', q: "Sheet 5-2: Which sum is the result of adding doubles?", hi: "इनमें से कौन सा योग 'डबल्स' जोड़ने से बना है?", opts: ["24 + 24 = 48", "34 + 35 = 69", "47 + 40 = 87", "73 + 20 = 93"], ans: 0, expl: "24 + 24 = 48 is adding doubles." },
-
-      { id: 3, pairId: 'pair-2a', q: "Sheet 5-3: Grandpa brings 10 hot dogs, Patty brings 5 more, Joe brings 12 more than Patty. Joe brings?", hi: "दादाजी 10 लाते हैं, पैटी 5 अधिक, जो पैटी से 12 अधिक लाता है। जो कितने लाएगा?", opts: ["27 hot dogs (10+5+12)", "22 hot dogs", "17 hot dogs", "15 hot dogs"], ans: 0, expl: "Grandpa = 10 ➔ Patty = 15 ➔ Joe = 27." },
-      { id: 4, pairId: 'pair-2a', q: "Sheet 5-3: Lee brings 4 chickens, Selma brings 5 more, Ira brings 6 more than Selma. Ira brings?", hi: "ली 4 लाती है, सेल्मा 5 अधिक, इरा सेल्मा से 6 अधिक लाती है। इरा कितनी लाती है?", opts: ["15 chickens (4+5+6)", "9 chickens", "11 chickens", "10 chickens"], ans: 0, expl: "Lee = 4 ➔ Selma = 9 ➔ Ira = 15." },
-
-      { id: 5, pairId: 'pair-3a', q: "Sheet 5-4: In 24 + 7, why do you regroup ones as tens?", hi: "24 + 7 में हम इकाइयों को दहाई में क्यों बदलते हैं?", opts: ["Because 4 + 7 = 11, which is 10 or more", "Because 2 + 7 = 9", "Because it ends in 0", "No regrouping needed"], ans: 0, expl: "4 + 7 = 11 ones = 1 ten 1 one." },
-      { id: 6, pairId: 'pair-3a', q: "Sheet 5-5: What is the sum of 56 + 8 with regrouping?", hi: "56 + 8 का योग क्या है?", opts: ["64", "54", "62", "74"], ans: 0, expl: "56 + 8 = 64 (regroup 1 ten)." },
-
-      { id: 7, pairId: 'pair-4a', q: "Sheet 5-6: Sara has 57 apples. Mom needs 21 for 1 pie. Can mom bake 2 pies?", hi: "सारा के पास 57 सेब हैं। 1 पाई के लिए 21 सेब चाहिए। क्या माँ 2 पाई बना सकती हैं?", opts: ["Yes, because 2 pies need 42 apples, and 57 > 42", "No, 57 is less than 42", "No, need 100 apples", "Cannot tell"], ans: 0, expl: "2 pies = 21 + 21 = 42. Since 57 > 42, YES!" },
-      { id: 8, pairId: 'pair-4a', q: "Sheet 5-6: Sandy has 7 dimes (70¢) and 26 pennies (26¢). Pen costs 87¢. Can she buy it?", hi: "सैंडी के पास 70¢ + 26¢ = 96¢ हैं। पेन 87¢ का है। क्या वह खरीद सकती है?", opts: ["Yes, 96¢ is greater than 87¢", "No, 96¢ < 87¢", "No, exact change needed", "Cannot tell"], ans: 0, expl: "70 + 26 = 96¢. Since 96 > 87, YES!" },
-
-      { id: 9, pairId: 'pair-5a', q: "Sheet 5-7: Sam counts 16 birds and 28 birds. About how many birds? (round each)", hi: "16 पक्षी और 28 पक्षी। लगभग कितने पक्षी हैं?", opts: ["About 50 birds (20 + 30)", "About 40 birds", "About 60 birds", "About 30 birds"], ans: 0, expl: "16 ➔ 20, 28 ➔ 30. 20 + 30 = 50." },
-      { id: 10, pairId: 'pair-5a', q: "Sheet 5-9: Sierra is 2nd. Judges liked Sierra's pie better than Madge's. Who won 1st?", hi: "सिएरा दूसरे स्थान पर आई और मैडगे से बेहतर थी। प्रथम स्थान किसने जीता?", opts: ["Tyra won 1st place", "Madge won 1st place", "Sierra won 1st place", "Tie for 1st"], ans: 0, expl: "Sierra = 2nd, Madge = 3rd, so Tyra = 1st!" }
+      {"id":1,"pairId":"pair-1a","q":"Sheet 5-1: Lydia has 20 red pencils and twice as many black pencils. Total pencils in all?","hi":"लिडिया के पास 20 लाल और दोगुनी काली पेंसिलें हैं। कुल कितनी पेंसिलें हैं?","opts":["40 pencils","60 pencils (20 + 40)","20 pencils","80 pencils"],"ans":1,"expl":"Red = 20, Black = 40, Total = 60 pencils."},
+      {"id":2,"pairId":"pair-1a","q":"Sheet 5-2: Which sum is the result of adding doubles?","hi":"इनमें से कौन सा योग 'डबल्स' जोड़ने से बना है?","opts":["34 + 35 = 69","47 + 40 = 87","24 + 24 = 48","73 + 20 = 93"],"ans":2,"expl":"24 + 24 = 48 is adding doubles."},
+      {"id":3,"pairId":"pair-2a","q":"Sheet 5-3: Grandpa brings 10 hot dogs, Patty brings 5 more, Joe brings 12 more than Patty. Joe brings?","hi":"दादाजी 10 लाते हैं, पैटी 5 अधिक, जो पैटी से 12 अधिक लाता है। जो कितने लाएगा?","opts":["22 hot dogs","17 hot dogs","15 hot dogs","27 hot dogs (10+5+12)"],"ans":3,"expl":"Grandpa = 10 ➔ Patty = 15 ➔ Joe = 27."},
+      {"id":4,"pairId":"pair-2a","q":"Sheet 5-3: Lee brings 4 chickens, Selma brings 5 more, Ira brings 6 more than Selma. Ira brings?","hi":"ली 4 लाती है, सेल्मा 5 अधिक, इरा सेल्मा से 6 अधिक लाती है। इरा कितनी लाती है?","opts":["15 chickens (4+5+6)","11 chickens","10 chickens","9 chickens"],"ans":0,"expl":"Lee = 4 ➔ Selma = 9 ➔ Ira = 15."},
+      {"id":5,"pairId":"pair-3a","q":"Sheet 5-4: In 24 + 7, why do you regroup ones as tens?","hi":"24 + 7 में हम इकाइयों को दहाई में क्यों बदलते हैं?","opts":["Because 2 + 7 = 9","Because it ends in 0","Because 4 + 7 = 11, which is 10 or more","No regrouping needed"],"ans":2,"expl":"4 + 7 = 11 ones = 1 ten 1 one."},
+      {"id":6,"pairId":"pair-3a","q":"Sheet 5-5: What is the sum of 56 + 8 with regrouping?","hi":"56 + 8 का योग क्या है?","opts":["54","64","62","74"],"ans":1,"expl":"56 + 8 = 64 (regroup 1 ten)."},
+      {"id":7,"pairId":"pair-4a","q":"Sheet 5-6: Sara has 57 apples. Mom needs 21 for 1 pie. Can mom bake 2 pies?","hi":"सारा के पास 57 सेब हैं। 1 पाई के लिए 21 सेब चाहिए। क्या माँ 2 पाई बना सकती हैं?","opts":["No, need 100 apples","No, 57 is less than 42","Cannot tell","Yes, because 2 pies need 42 apples, and 57 > 42"],"ans":3,"expl":"2 pies = 21 + 21 = 42. Since 57 > 42, YES!"},
+      {"id":8,"pairId":"pair-4a","q":"Sheet 5-6: Sandy has 7 dimes (70¢) and 26 pennies (26¢). Pen costs 87¢. Can she buy it?","hi":"सैंडी के पास 70¢ + 26¢ = 96¢ हैं। पेन 87¢ का है। क्या वह खरीद सकती है?","opts":["Yes, 96¢ is greater than 87¢","Cannot tell","No, 96¢ < 87¢","No, exact change needed"],"ans":0,"expl":"70 + 26 = 96¢. Since 96 > 87, YES!"},
+      {"id":9,"pairId":"pair-5a","q":"Sheet 5-7: Sam counts 16 birds and 28 birds. About how many birds? (round each)","hi":"16 पक्षी और 28 पक्षी। लगभग कितने पक्षी हैं?","opts":["About 40 birds","About 60 birds","About 50 birds (20 + 30)","About 30 birds"],"ans":2,"expl":"16 ➔ 20, 28 ➔ 30. 20 + 30 = 50."},
+      {"id":10,"pairId":"pair-5a","q":"Sheet 5-9: Sierra is 2nd. Judges liked Sierra's pie better than Madge's. Who won 1st?","hi":"सिएरा दूसरे स्थान पर आई और मैडगे से बेहतर थी। प्रथम स्थान किसने जीता?","opts":["Sierra won 1st place","Tyra won 1st place","Madge won 1st place","Tie for 1st"],"ans":1,"expl":"Sierra = 2nd, Madge = 3rd, so Tyra = 1st!"}
     ];
 
     const testSuites = {
@@ -2105,5 +2101,7 @@
       switchTestSuite(1);
     });
   </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
